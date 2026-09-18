@@ -1,0 +1,8 @@
+channel,prior,factor,residual,rationale
+"bulk electron-lifetime excursion",0.03,4.033e-05,1.210e-06,"a bulk purity transient shorter than ~5 min is unphysical (circulation time-scales); P(no other long-drift event in 300 s) x tau-window coincidence"
+"local transient absorber (bubble/particulate/plume)",0.05,1.207e-02,6.036e-04,"loss must land in V (p_V/(p_V+p_E) ~ 0.11) x e^-1 population factor x 0.3 transient-only (Kr map excludes persistent)"
+"field distortion / charge trapping (PTFE, floating conductor)",0.03,2.000e-02,6.000e-04,"static -> 83mKr (x,y,z) map and position-dependent band; only a transient localised region survives (as above)"
+"extraction / gas-gap dip",0.02,2.000e-02,4.000e-04,"x4.6 gain deficit = 23x map amplitude; static -> map; transient bubble/wave -> S2 shape"
+"S2 saturation / clipping / truncated window",0.02,1.000e-03,2.000e-05,"S2 is 100-200x below the alpha template class; remnant width 0.4 sigma vs 10-20 % tolerance"
+"S1/S2 mis-pairing (accidental)",0.02,5.000e-02,1.000e-03,"P022: x708 mismodelling excluded at 4.3 sigma; cathode-emission loophole open"
+"unknown pathology",0.01,3.000e-01,3.000e-03,"not testable with public information"

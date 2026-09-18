@@ -1,0 +1,265 @@
+
+WARNING: No data out here, you are beyond the AmBe endpoint of about 300 keV.
+
+WARNING: No data out here, you are beyond the AmBe endpoint of about 300 keV.
+
+WARNING: No data out here, you are beyond the AmBe endpoint of about 300 keV.
+
+WARNING: No data out here, you are beyond the AmBe endpoint of about 300 keV.
+
+WARNING: No data out here, you are beyond the AmBe endpoint of about 300 keV.
+
+WARNING: No data out here, you are beyond the AmBe endpoint of about 300 keV.
+
+WARNING: No data out here, you are beyond the AmBe endpoint of about 300 keV.
+
+WARNING: No data out here, you are beyond the AmBe endpoint of about 300 keV.
+
+WARNING: No data out here, you are beyond the AmBe endpoint of about 300 keV.
+
+WARNING: No data out here, you are beyond the AmBe endpoint of about 300 keV.
+{
+ "geometry": {
+  "n_Xe_cm3": 1.3292118359642168e+22,
+  "N_T_FV": 2.1588233611694695e+28,
+  "R_FV_cm": 64.6213751963284,
+  "H_FV_cm": 123.8,
+  "S_FV_cm2": 76504.36829058905,
+  "Lbar_FV_cm": 84.91739582061335,
+  "R_TPC_cm": 72.8,
+  "H_TPC_cm": 145.6,
+  "S_TPC_cm2": 99899.63045520797,
+  "Lbar_TPC_cm": 97.06666666666666,
+  "live_s": 19008000.0,
+  "M_TPC_t": 7.030269993901169
+ },
+ "F2_check": {
+  "F2_30_over_248_helm": 1249.3264777740926,
+  "F2_30_over_248_shell": 6809.43062194734,
+  "F2_248_helm": 0.00016337974009870973,
+  "F2_248_shell": 2.9112393004355904e-05
+ },
+ "unit_check_contact_vs_lzcommon": [
+  1.0000000000000002,
+  1.0000000000000007,
+  1.0000000000000002,
+  1.0000000000000004
+ ],
+ "mcp_m_min_GeV": {
+  "E248": 74.94391086163631,
+  "E200": 63.34605278913392
+ },
+ "mcp_equivalent_sigma_SI_1TeV_cm2": 4.545345877329527e-42,
+ "mcp_lowE_events_at_eps1_1TeV": 229320.34070371155,
+ "N_lo_O1_helm_1TeV_check": 820.0247542855234,
+ "N_lo_relativistic_MCP": {
+  "helm": 96410.26391363655,
+  "shell": 321932.42198086367
+ },
+ "mcp_relativistic": {
+  "sigma_win_per_eps2_cm2": 2.2279613527156418e-30,
+  "sigma_lo_per_eps2_cm2": 2.147880616730039e-25,
+  "N_lo": 96405.64968113144,
+  "Phi_eps2_one_event_cm2s": 1.093802255493094e-06,
+  "NR_over_ER_same_energy": 0.0002254654989715363,
+  "ER_per_NR": 4435.268387232249,
+  "track_keV_per_eps2_1p3m": 351866.6666666666,
+  "eps_for_track_1keV": 0.0016858189702949396,
+  "overburden_loss_GeV_per_eps2": 1000.2325000000001
+ },
+ "simp_sigma_for_lambda": {
+  "sigma_lambda_eq_Lbar_TPC_cm2": 7.750606429655013e-25,
+  "sigma_lambda_eq_146cm_cm2": 5.167070953103341e-25,
+  "Lbar_TPC_cm": 97.06666666666666
+ },
+ "chord_MC": {
+  "mean_cm": 96.98445104306627,
+  "analytic_4V_over_S": 97.06666666666666,
+  "median_cm": 103.08610180835595,
+  "p10": 24.21936931506699,
+  "p90": 154.60918912101965
+ },
+ "simp_P1": {
+  "sigma_at_max_P1_cm2": 6.812920690579595e-25,
+  "P1_max": 0.3109018148295652,
+  "P1_at_sigma_lambda_TPC": 0.30972662016265656,
+  "Pmulti_at_sigma_lambda_TPC": 0.27037166946227065
+ },
+ "heavy_kinematics": {
+  "Emax_700kms_keV": 1334.5020178722407,
+  "Emax_vmax_keV": 1719.3659366851732,
+  "vmax_kms": 794.5524695547821,
+  "vmin_248_heavy_kms": 301.76180097499804
+ },
+ "HESB_energy_map": {
+  "E_at_S1c_600": 291.743817488932,
+  "E_at_S1c_800": 375.3911484944532,
+  "E_at_S1c_1700": 731.8299284022768,
+  "S1c_at_248": 497.7547910477417
+ },
+ "HESB_p0_given_one_window_event": {
+  "flat (opaque composite)": 0.19275401792977542,
+  "contact x Helm": 0.8403021708665439,
+  "contact x shell": 0.6162768511755823
+ },
+ "P0_mid_and_hesb_given_one_window_event": {
+  "flat (opaque composite)": 0.008110295433469512,
+  "contact x Helm": 1.8783033894819705e-12,
+  "contact x shell": 1.1997349477786327e-35
+ },
+ "simp_sigma_MS_lt_1_flat_cm2": 1.22935641763001e-25,
+ "shm_mean_speed_kms": 354.0939890249264,
+ "simp_overburden_min_mass_GeV": {
+  "coherent": 3661.77277509301,
+  "geometric": 1156635.2404820577
+ },
+ "continuous_tracks": {
+  "nuclearite_M<1.5ng (sigma=pi(1e-8cm)^2)": {
+   "sigma_cm2": 3.141592653589793e-16,
+   "dEdx_keV_per_cm": 2786643670.8808336,
+   "E_over_chord_keV": 270490212320.16623,
+   "lambda_cm": 2.394726540731464e-07
+  },
+  "nuclear-size composite R=4 fm": {
+   "sigma_cm2": 5.026548245743669e-25,
+   "dEdx_keV_per_cm": 4.458629873409334,
+   "E_over_chord_keV": 432.78433971226605,
+   "lambda_cm": 149.67040879571647
+  },
+  "R = 1e-10 cm composite": {
+   "sigma_cm2": 3.141592653589793e-20,
+   "dEdx_keV_per_cm": 278664.3670880834,
+   "E_over_chord_keV": 27049021.23201663,
+   "lambda_cm": 0.0023947265407314637
+  },
+  "CHAMP (charge e)": {
+   "dEdx_keV_per_cm": 73623.09031408558,
+   "E_over_chord_keV": 7146347.96648724,
+   "overburden_loss_GeV": 51742.23478088021,
+   "m_min_survive_30pct_GeV": 63270206079.90798
+  },
+  "Dirac monopole (Z_eff = beta/2alpha)": {
+   "Z_eff": 0.15998601155603456,
+   "dEdx_keV_per_cm": 1884.4215672554096,
+   "E_over_chord_keV": 182914.52012825842,
+   "dEdx_keV_per_cm_AK_estimate": 12033.268783316733
+  }
+ },
+ "flux_ceiling": {
+  "F_one_event_FV_cm2_s_sr": 2.1889078086291773e-13,
+  "F_one_event_TPC_cm2_s_sr": 1.676292578685737e-13,
+  "F_90UL_FV": 9.543638045623213e-13,
+  "Phi_4pi_FV_cm2_s": 2.7506626763899024e-12,
+  "m_for_one_FV_traversal_GeV": 3.861912898999914e+18,
+  "m_Planck_GeV": 1.22e+19,
+  "traversals_Planck_mass": 0.31655023762294376,
+  "Parker_bound_recalled": 1e-15,
+  "MACRO_recalled": 1.4e-16,
+  "ratio_to_Parker": 218.89078086291772,
+  "ratio_to_MACRO": 1563.5055775922694
+ },
+ "inelastic": {
+  "q_248_MeV": 246.38151463763305,
+  "R_for_qR_eq_1_fm": 0.8009001027947236,
+  "delta_max_heavy_limit_keV": 404.9952161370885,
+  "mass_ceiling_p1_GeV": 3.861912898999914e+18
+ }
+}
+
+--- MCP halo ---
+     m_GeV response     R_lo_unit    R_win_unit          N_lo  eps_one_event  N_lo_events_at_eps1  KE_700kms_keV
+0      60     Helm  3.545657e+21  0.000000e+00           inf            NaN                  NaN     163.559558
+1      60    shell  3.491141e+21  0.000000e+00           inf            NaN                  NaN     163.559558
+2     100     Helm  2.463884e+21  3.742141e+14  6.584156e+06   3.067473e-08         6.584156e+06     272.599264
+3     100    shell  2.425005e+21  1.132271e+14  2.141719e+07   5.576552e-08         2.141719e+07     272.599264
+4     200     Helm  1.334696e+21  1.945588e+15  6.860116e+05   1.345288e-08         6.860116e+05     545.198527
+5     200    shell  1.313331e+21  5.778809e+14  2.272667e+06   2.468435e-08         2.272667e+06     545.198527
+6     400     Helm  6.879020e+20  2.114195e+15  3.253730e+05   1.290530e-08         3.253730e+05    1090.397055
+7     400    shell  6.768299e+20  6.238460e+14  1.084931e+06   2.375758e-08         1.084931e+06    1090.397055
+8    1000     Helm  2.793483e+20  1.218158e+15  2.293203e+05   1.700157e-08         2.293203e+05    2725.992637
+9    1000    shell  2.748396e+20  3.582289e+14  7.672179e+05   3.135166e-08         7.672179e+05    2725.992637
+10   4000     Helm  7.030549e+19  3.560968e+14  1.974337e+05   3.144538e-08         1.974337e+05   10903.970549
+11   4000    shell  6.916936e+19  1.045578e+14  6.615417e+05   5.803134e-08         6.615417e+05   10903.970549
+12  10000     Helm  2.815787e+19  1.466693e+14  1.919821e+05   4.899720e-08         1.919821e+05   27259.926373
+13  10000    shell  2.770273e+19  4.305252e+13  6.434637e+05   9.043604e-08         6.434637e+05   27259.926373
+
+--- MCP stopping ---
+    m_GeV  eps_one_event  KE_700_GeV  dE_nuclear_GeV  dE_electronic_est_GeV     frac_loss   rL_Earth_km   rL_helio_AU  eps_rL_1AU  eps_stopped_in_overburden
+0    100   3.067473e-08    0.000273    2.586314e-11           4.856059e-11  2.730151e-07  8.463377e+08  3.394403e+04    0.001041                   0.000059
+1   1000   1.700157e-08    0.002726    8.100450e-12           1.491766e-11  8.443935e-09  1.526987e+10  6.124280e+05    0.010412                   0.000185
+2  10000   4.899720e-08    0.027260    6.742266e-11           1.238982e-10  7.018392e-09  5.298503e+10  2.125068e+06    0.104122                   0.000585
+
+--- SIMP spectral fractions ---
+                   spectrum     f_win      f_lo     f_mid    f_hesb         N_lo  N_mid_per_win  N_hesb_per_win  N_above270_per_win  P0_mid_and_hesb  frac_below_1keV
+0  flat (opaque composite)  0.106659  0.152594  0.337926  0.175597     1.430673       3.168281        1.646340            3.298973     8.110295e-03         0.001800
+1           contact x Helm  0.000983  0.664260  0.026359  0.000171   676.055312      26.826658        0.173994            0.385438     1.878303e-12         0.028028
+2          contact x shell  0.000293  0.664231  0.023382  0.000142  2270.426487      79.924319        0.484059            1.003213     1.199735e-35         0.028905
+
+--- SIMP mass for one event ---
+                    spectrum   sigma_N_cm2    lambda_cm        P1  m_one_event_GeV  N_traversals_TPC  N_lo_events  N_hesb_events
+0   flat (opaque composite)  1.000000e-26  7523.255308  0.012684     4.570822e+15       1103.280198     1.430673       1.646340
+1   flat (opaque composite)  7.750606e-25    97.066667  0.309727     1.116108e+17         45.182896     1.430673       1.646340
+2   flat (opaque composite)  1.000000e-24    75.232553  0.294884     1.062620e+17         47.457186     1.430673       1.646340
+3   flat (opaque composite)  1.000000e-23     7.523255  0.031612     1.139138e+16        442.694060     1.430673       1.646340
+4            contact x Helm  1.000000e-26  7523.255308  0.012684     4.210671e+13     119764.683047   676.055312       0.173994
+5            contact x Helm  7.750606e-25    97.066667  0.309727     1.028166e+15       4904.751556   676.055312       0.173994
+6            contact x Helm  1.000000e-24    75.232553  0.294884     9.788929e+14       5151.633177   676.055312       0.173994
+7            contact x Helm  1.000000e-23     7.523255  0.031612     1.049382e+14      48055.891812   676.055312       0.173994
+8           contact x shell  1.000000e-26  7523.255308  0.012684     1.253740e+13     402228.238088  2270.426487       0.484059
+9           contact x shell  7.750606e-25    97.066667  0.309727     3.061395e+14      16472.548721  2270.426487       0.484059
+10          contact x shell  1.000000e-24    75.232553  0.294884     2.914684e+14      17301.697657  2270.426487       0.484059
+11          contact x shell  1.000000e-23     7.523255  0.031612     3.124566e+13     161395.130864  2270.426487       0.484059
+
+--- overburden ---
+            m_GeV    scaling  sigma_Xe_cm2  N_rock_scatters  frac_energy_loss  transparent_30pct
+0   1.000000e+03   coherent  7.750606e-25        17.155613      1.153620e+00              False
+1   1.000000e+03  geometric  7.750606e-25      8779.973885      3.319208e+02              False
+2   1.000000e+04   coherent  7.750606e-25        14.881772      1.084325e-01               True
+3   1.000000e+04  geometric  7.750606e-25      8779.973885      3.454420e+01              False
+4   1.000000e+05   coherent  7.750606e-25        14.656068      1.076766e-02               True
+5   1.000000e+05  geometric  7.750606e-25      8779.973885      3.468474e+00              False
+6   1.000000e+06   coherent  7.750606e-25        14.633517      1.076003e-03               True
+7   1.000000e+06  geometric  7.750606e-25      8779.973885      3.469884e-01              False
+8   1.000000e+08   coherent  7.750606e-25        14.631037      1.075919e-05               True
+9   1.000000e+08  geometric  7.750606e-25      8779.973885      3.470040e-03               True
+10  1.000000e+10   coherent  7.750606e-25        14.631012      1.075918e-07               True
+11  1.000000e+10  geometric  7.750606e-25      8779.973885      3.470041e-05               True
+12  1.000000e+12   coherent  7.750606e-25        14.631012      1.075918e-09               True
+13  1.000000e+12  geometric  7.750606e-25      8779.973885      3.470041e-07               True
+14  1.000000e+14   coherent  7.750606e-25        14.631012      1.075918e-11               True
+15  1.000000e+14  geometric  7.750606e-25      8779.973885      3.470041e-09               True
+16  1.000000e+16   coherent  7.750606e-25        14.631012      1.075918e-13               True
+17  1.000000e+16  geometric  7.750606e-25      8779.973885      3.470041e-11               True
+
+--- flux/mass ---
+           m_GeV  N_traversals_FV    p_required  sigma_N_required_cm2
+0  1.000000e+06     3.861913e+12  2.589390e-13          2.293760e-37
+1  1.000000e+08     3.861913e+10  2.589390e-11          2.294074e-35
+2  1.000000e+10     3.861913e+08  2.589390e-09          2.294070e-33
+3  1.000000e+12     3.861913e+06  2.589390e-07          2.294070e-31
+4  1.000000e+14     3.861913e+04  2.589390e-05          2.294100e-29
+5  1.000000e+16     3.861913e+02  2.589390e-03          2.297045e-27
+6  1.000000e+18     3.861913e+00  2.589390e-01          2.654947e-25
+7  1.220000e+19     3.165502e-01  3.159056e+00                   NaN
+
+--- inelastic ---
+           m_GeV  delta_max_248_keV  delta_max_270_136Xe_keV  vmin_248_elastic_kms
+0  1.000000e+02         101.475962                81.154909            671.078400
+1  1.000000e+03         374.643291               388.995079            338.693461
+2  1.000000e+04         401.960024               419.779096            305.454967
+3  1.000000e+06         404.964864               423.165338            301.798733
+4  1.000000e+09         404.995186               423.199508            301.761838
+5  1.000000e+12         404.995216               423.199542            301.761801
+6  1.000000e+15         404.995216               423.199542            301.761801
+7  1.000000e+18         404.995216               423.199542            301.761801
+
+--- summary ---
+                                      candidate                                                    required                                                                                          existing_bound                                                                               verdict
+0            halo millicharged, 100 GeV-10 TeV                                       eps = 1.7e-08 (1 TeV)  none relevant at eps~1e-7 (recalled: LZ/XENON1T MCP-DM limits eps <~ 1e-9-1e-8 for elastic; uncertain)         N_lo = 2.3e+05 (Helm) / 7.7e+05 (shell): excluded by the empty low-energy ROI
+1          relativistic millicharged (CR / SN)                              Phi eps^2 = 1.1e-06 cm^-2 s^-1                                           recalled: Plestid et al. 2020 / ArgoNeuT / SENSEI (uncertain)                                        N_lo = 96410/321932, 4435 ERs per NR: excluded
+2    pointlike SIMP, one scatter per traversal                    sigma_Xe ~ 7.8e-25 cm^2, m ~ 1.0e+15 GeV                           recalled: MJD/CRESST/EDELWEISS surface, XENON1T/DEAP multiscatter (uncertain)                                N_lo = 676: excluded; 26 % of traversals multi-scatter
+3       opaque heavy composite (flat spectrum)           sigma_Xe ~ 7.8e-25 cm^2 (R~4 fm), m ~ 1.1e+17 GeV                                 recalled: DEAP-3600 / MJD multiscatter, MICA, rocky planets (uncertain)             N_lo = 1.43 but 1.6 HE-SB events per window event (0 observed, p = 0.193)
+4  nuclearites / Q-balls (sigma >= 1e-16 cm^2)                                 none: dE/dx = sigma rho v^2                                                           recalled: MACRO, SLIM, MICA, Ohya (uncertain)                          2.8e+09 keV/cm continuous track: not a point-like 248 keV NR
+5      CHAMP (charge e) / monopole at 700 km/s                                                        none                                          recalled: MACRO/Parker (monopoles); CHAMP stopping (uncertain)  7.4e+04 / 1.9e+03 keV/cm electronic track; CHAMP needs m > 6e+10 GeV to reach 1478 m
+6         superheavy / Planck-scale DM (p ~ 1)              F = 2.2e-13 cm^-2 s^-1 sr^-1, m <= 3.9e+18 GeV                                      Parker 1e-15, MACRO 1.4e-16 cm^-2 s^-1 sr^-1 (recalled, monopoles)         flux ceiling: m <= 3.9e+18 GeV x p; Planck mass gives 0.32 traversals per run
+7           inelastic composite (dark nucleus)  delta <= 405 keV (m -> inf), R_D < 0.80 fm, m <= 4e+18 GeV                                                 P042: tau(chi2->chi1 gamma) > 0.43 us; P030/P007 window      viable only as the IDM window of P007/P021 with a composite UV completion (P023)

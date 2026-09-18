@@ -1,0 +1,54 @@
+{
+ "id": "P097",
+ "title": "A dark disk or co-rotating substructure: would a slow, co-rotating dark-matter component change anything for the 248 keV event at delta ~ 300 keV?",
+ "date": "2026-09-16",
+ "agent_tools": [
+  {"tool": "Read", "count": 21, "detail": "PAPER_GUIDE.md; papers P055, P030, P018, P068, P058, P034, P007, P021, P006, P003, P012; work/P055/details.md; code/P055_gaia_substructures.py; code/common/lzcommon.py lines 108-217 and 310-400; code/P058_kernels_worker.py; code/P068_astro_band.py lines 205-255; three P097 figures"},
+  {"tool": "Bash", "count": 12, "detail": "ls P058 cache + grep lzcommon API + ENVIRONMENT_versions; inspect P058 cache npz / P058 worker / P012 L10 grep / P068 cache listing; P068 grid check + WimPyDD diff_rate timing test; first run attempt (failed: no `timeout` on macOS, work dir missing for tee); run 1 of P097_dark_disk.py; run 2 + pandas prints of all result columns; run 3 (log regeneration) + ls; run 4 (corrected 272-670 keV band) + prints + version check + ledger grep; four wc -w budget checks of the paper"},
+  {"tool": "Write", "count": 5, "detail": "output/code/P097_dark_disk.py; output/work/P097/details.md; output/provenance/P097.json; output/papers/P097.md (twice: first draft and budget rewrite)"},
+  {"tool": "Edit", "count": 17, "detail": "P097_dark_disk.py x6: exothermic all-energy total rate (x2), summary-table rows, high-energy band without ROI roll-off (x2), figure title; P097.md x10: tightening abstract, results, headline, key numbers to the PAPER_GUIDE budgets; P097.json x1: tool counts"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python from the simulation root"},
+  {"name": "numpy", "version": "2.5.3", "functions": "linspace/arange grids, polynomial.legendre.leggauss, linalg.lstsq (first-harmonic fits), trapezoid, matrix products K @ delta_eta, savez_compressed/load"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf/erfc (analytic eta, efficiency), stats.ncx2.sf (exact fraction of a Gaussian component above a lab speed)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame/to_csv result tables"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; three PNG figures"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "diff_rate(sum_over_streams=False) per-stream kernels for elastic O1 and O6 (computed here); eft_hamiltonian via lz.wd_hamiltonian; v_earth_sun (Earth-velocity validation); streamed_halo_function via lz.wd_halo (rate validation); cached diff_rate kernels of P058 (iso O1, delta = +/-250..380 keV) and P068 (Higgsino-Z delta = 250-445 keV, L10) reused"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ constants (exposure, efficiency points), V0_KMS, VESC_KMS, V_SUN_PEC, eta0, vmin_kms, E_R_range_keV, mu_red, m_nucleus_gev, A_XE_MEAN, C_KMS, M_V_GEV, wd, wd_halo, wd_hamiltonian, wd_c_from_anand"},
+  {"name": "none: derived by hand", "version": "", "functions": "exothermic recoil-window width Delta E(v) = (2 mu/m_N) v sqrt(2 mu |delta|) and the resulting velocity-distribution independence of the integrated exothermic rate; N_lo(f) algebra"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P097_dark_disk.py", "purpose": "Earth-velocity vector; dark-disk lab-frame kinematics, modulation and tail fractions; per-stream WimPyDD kernels (own O1/O6, cached P058/P068 kernels) with analytic delta_eta for SHM and disk on 93 days; endothermic, elastic (N_lo), exothermic and Higgsino-window results; summary table; figures", "command": ".venv/bin/python output/code/P097_dark_disk.py   (run from /Users/reza/LZ_simulation; 26 s cold, 2-4 s with cache)"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules, deliverables, template, budgets"},
+  {"file": "output/papers/P055.md; output/work/P055/details.md; output/code/P055_gaia_substructures.py", "parts_used": "Earth-frame construction (J2000 matrices, equinox, v_orb), closed-form isotropic speed density, angular-grid truncated density, kernel/LR method, Sausage numbers (eta ratios 0.814/0.801/0.800, LR unchanged, elastic a1 +7-17%), substructure (1-f) results"},
+  {"file": "output/papers/P030.md", "parts_used": "analytic stream eta, N_lo(stream) = 1182, v_esc-stream boosts, delta_max ceiling"},
+  {"file": "output/papers/P018.md; output/papers/P068.md", "parts_used": "v_esc/tail systematics on delta(N=1) (+/-11-30 keV), reference values delta_H = 365.7, d10 = 0.279, a1(300/350/366/380)"},
+  {"file": "output/work/P068/kernel_cache/hig_m1000_d*.npz, L10_m1000_d0.0.npz; output/code/P068_astro_band.py lines 205-255", "parts_used": "Higgsino-Z and L10 per-stream kernels on the 0-950 km/s grid; Hamiltonian definitions"},
+  {"file": "output/work/P058/cache/K_iso_1000_*.npz; output/code/P058_kernels_worker.py; output/papers/P058.md; output/work/P058/P058_modulation.csv", "parts_used": "isoscalar O1 endothermic and exothermic kernels on the 0-844 km/s grid; exothermic anchors (a1 4.2/3.2/2.3 %, R_ROI, 2.2-9 companions, 99th percentile)"},
+  {"file": "output/papers/P007.md; output/papers/P021.md; output/papers/P006.md; output/papers/P034.md; output/papers/P003.md; output/papers/P012.md", "parts_used": "Higgsino delta(N=1) = 366 and exclusion factors 226/1.9; P021 kappa-hat 7.4e-5/2.19 and sigma_n 6.5e-38; LR method and values; a1 values; N_lo(O1) 2752, L10 0.20, O6 0.43; d10 = 0.28"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "constants, eta0, kinematics, WimPyDD wrappers, coupling convention"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Dark-disk kinematics: lag 0-150 km/s relative to the LSR, dispersion 50-90 km/s", "presumed_source": "Read, Lake, Agertz, Debattista 2008; Read et al. 2009", "reliability": "likely"},
+  {"item": "Dark-disk density rho_DD/rho_halo ~ 0.25-1.5", "presumed_source": "Read et al. 2008", "reliability": "likely"},
+  {"item": "Dark-disk density ~ 0.1-0.2 rho_halo for the Milky Way's quiescent merger history", "presumed_source": "Purcell, Bullock, Kaplinghat 2009", "reliability": "likely"},
+  {"item": "Fiducial direct-detection dark disk v_lag = 50, sigma = 50 km/s", "presumed_source": "Bruch, Read, Baudis, Lake 2009", "reliability": "likely"},
+  {"item": "Gaia-era limits on a thin dark disk: surface density <~ 3-6 Msun/pc^2 for scale heights <~ 100 pc; thicker disks much less constrained", "presumed_source": "Schutz, Lin, Safdi, Wu 2018; Buch, Leung, Fan 2019", "reliability": "uncertain"},
+  {"item": "J2000 equatorial-to-Galactic rotation matrix, obliquity 23.4393 deg, Earth orbital speed 29.79 km/s", "presumed_source": "Hipparcos/ESA 1997 definition; standard astronomy", "reliability": "certain"},
+  {"item": "March equinox 2023: 20 March 21:24 UTC", "presumed_source": "astronomical almanac (via P055)", "reliability": "likely"},
+  {"item": "|x| for x ~ N(m, sigma^2 I_3) follows a non-central chi distribution with 3 dof and non-centrality (|m|/sigma)^2", "presumed_source": "standard statistics", "reliability": "certain"},
+  {"item": "Exothermic recoil window E+ - E- = (2 mu^2 v^2/m_N) sqrt(1 + 2|delta|/(mu v^2)) ~ (2 mu/m_N) v sqrt(2 mu |delta|); integrated exothermic rate independent of the velocity distribution to O(mu v^2/|delta|)", "presumed_source": "derived by hand from two-body kinematics", "reliability": "certain"},
+  {"item": "rho_0 ~ 0.3 GeV/cm^3 is a local dynamical measurement that includes any disk dark matter, so a disk fraction replaces rather than adds halo density", "presumed_source": "standard interpretation of local-density determinations", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First script invocation failed before running: `timeout` is not available on macOS and `tee` was pointed at a directory the script had not yet created; rerun without timeout after mkdir.",
+  "First version of the 272-670 keV exothermic band applied the ROI efficiency roll-off (so it measured only 272-300 keV); replaced by the plateau-efficiency band to represent P058's empty high-energy region."
+ ],
+ "wimpydd_generated_files": "none (diff_rate only; own kernel cache written to output/work/P097/cache/o1_m1000_d0.npz and o6_m1000_d0.npz)"
+}

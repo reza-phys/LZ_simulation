@@ -1,0 +1,234 @@
+--- Part 1 kinematics ---
+June_vesc544   vmax=809.1  dmax248(400/1000/4000)= 341.1/386.6/409.4  mmin_el(216/248/280)= 65.3/72.8/80.3  mmin(d=300)=259 mmin(d=350)=453
+avg_vesc544    vmax=794.6  dmax248(400/1000/4000)= 329.1/374.6/397.4  mmin_el(216/248/280)= 67.2/74.9/82.8  mmin(d=300)=289 mmin(d=350)=552
+Dec_vesc544    vmax=779.6  dmax248(400/1000/4000)= 316.8/362.3/385.1  mmin_el(216/248/280)= 69.2/77.3/85.5  mmin(d=300)=328 mmin(d=350)=711
+June_vesc500   vmax=765.1  dmax248(400/1000/4000)= 304.9/350.5/373.2  mmin_el(216/248/280)= 71.3/79.7/88.3  mmin(d=300)=376 mmin(d=350)=985
+June_vesc600   vmax=865.1  dmax248(400/1000/4000)= 387.1/432.6/455.4  mmin_el(216/248/280)= 59.1/65.6/72.1  mmin(d=300)=186 mmin(d=350)=269
+====================
+WARNING
+Only some of the isotopes contained in
+WimPyDD/WimPyC/Sun/densities.tab
+were loaded:
+['1H', '4He', '3He', '12C', '13C', '14N', '15N', '16O', '17O', '18O', '20Ne', '23Na', '24Mg', '27Al', '28Si', '32S', '40Ar', '40Ca', '56Fe', '58Ni']
+the following targets could not be initialized and were ignored:
+['P', 'Cl', 'K', 'Sc', 'Ti', 'V', 'Cr', 'Mn', 'Co']
+====================
+====================
+WARNING
+Only some of the isotopes contained in
+WimPyDD/WimPyC/Earth/densities.tab
+were loaded:
+['16O', '28Si', '27Al', '56Fe', '40Ca', '23Na', '24Mg', '58Ni', '31P', '32S']
+the following targets could not be initialized and were ignored:
+['39K', '48Ti', '59Co']
+====================
+looking for 12C in list of pre-defined targets:
+12C found in predefined carbon element object
+looking for 13C in list of pre-defined targets:
+13C found in predefined carbon element object
+looking for 14N in list of pre-defined targets:
+14N found in predefined nitrogen element object
+looking for 15N in list of pre-defined targets:
+15N found in predefined nitrogen element object
+looking for 16O in list of pre-defined targets:
+16O found in predefined oxygen element object
+looking for 17O in list of pre-defined targets:
+17O found in predefined oxygen element object
+looking for 18O in list of pre-defined targets:
+18O found in predefined oxygen element object
+looking for 1H in list of pre-defined targets:
+1H found in predefined hydrogen element object
+looking for 20Ne in list of pre-defined targets:
+20Ne found in predefined neon element object
+looking for 23Na in list of pre-defined targets:
+23Na found in predefined sodium element object
+looking for 24Mg in list of pre-defined targets:
+24Mg found in predefined magnesium element object
+looking for 27Al in list of pre-defined targets:
+27Al found in predefined aluminium element object
+looking for 28Si in list of pre-defined targets:
+28Si found in predefined silicon element object
+looking for 31P in list of pre-defined targets:
+31P found in predefined phosphorus element object
+looking for 32S in list of pre-defined targets:
+32S found in predefined sulfur element object
+looking for 3He in list of pre-defined targets:
+3He found in predefined helium element object
+looking for 40Ar in list of pre-defined targets:
+40Ar found in predefined argon element object
+looking for 40Ca in list of pre-defined targets:
+40Ca found in predefined calcium element object
+looking for 4He in list of pre-defined targets:
+4He found in predefined helium element object
+looking for 56Fe in list of pre-defined targets:
+56Fe found in predefined iron element object
+looking for 58Ni in list of pre-defined targets:
+58Ni found in predefined nickel element object
+looking for 12C in list of pre-defined targets:
+12C found in predefined carbon element object
+looking for 13C in list of pre-defined targets:
+13C found in predefined carbon element object
+looking for 14N in list of pre-defined targets:
+14N found in predefined nitrogen element object
+looking for 15N in list of pre-defined targets:
+15N found in predefined nitrogen element object
+looking for 16O in list of pre-defined targets:
+16O found in predefined oxygen element object
+looking for 17O in list of pre-defined targets:
+17O found in predefined oxygen element object
+looking for 18O in list of pre-defined targets:
+18O found in predefined oxygen element object
+looking for 1H in list of pre-defined targets:
+1H found in predefined hydrogen element object
+looking for 20Ne in list of pre-defined targets:
+20Ne found in predefined neon element object
+looking for 23Na in list of pre-defined targets:
+23Na found in predefined sodium element object
+looking for 24Mg in list of pre-defined targets:
+24Mg found in predefined magnesium element object
+looking for 27Al in list of pre-defined targets:
+27Al found in predefined aluminium element object
+looking for 28Si in list of pre-defined targets:
+28Si found in predefined silicon element object
+looking for 31P in list of pre-defined targets:
+31P found in predefined phosphorus element object
+looking for 32S in list of pre-defined targets:
+32S found in predefined sulfur element object
+looking for 3He in list of pre-defined targets:
+3He found in predefined helium element object
+looking for 40Ar in list of pre-defined targets:
+40Ar found in predefined argon element object
+looking for 40Ca in list of pre-defined targets:
+40Ca found in predefined calcium element object
+looking for 4He in list of pre-defined targets:
+4He found in predefined helium element object
+looking for 56Fe in list of pre-defined targets:
+56Fe found in predefined iron element object
+looking for 58Ni in list of pre-defined targets:
+58Ni found in predefined nickel element object
+WimPyDD v_max (eta>0) June/Dec/avg: {'June': 810.4852426213107, 'Dec': 781.8359179589795, 'avg': 795.1225612806404}  default grid max: 794.5524695547821
+--- Part 2 spectra (June, day 167) ---
+Fig.1 comparison: {
+"0": {
+"onset_June": 1.0,
+"peak_June": 1.0,
+"peak_rate_June": 11043319.14748608,
+"dip_June": 267.0,
+"onset_avg": 1.0,
+"peak_rate_avg": 11423780.376410332,
+"dip_avg": 267.0,
+"rate_10keV_avg": 6973193.540495365,
+"rate_248_June": 123.50944297770955,
+"rate_248_avg": 118.02787070261239,
+"dip100_June": 102.0
+},
+"200": {
+"onset_June": 30.0,
+"peak_June": 53.0,
+"peak_rate_June": 2533.6462808967467,
+"dip_June": 266.0,
+"onset_avg": 32.0,
+"peak_rate_avg": 1896.158041191219,
+"dip_avg": 266.0,
+"rate_10keV_avg": 0.0,
+"rate_248_June": 9.793277793807151,
+"rate_248_avg": 8.214469521683354,
+"dip100_June": 102.0
+},
+"300": {
+"onset_June": 85.0,
+"peak_June": 166.0,
+"peak_rate_June": 24.03715110776049,
+"dip_June": 266.0,
+"onset_avg": 92.0,
+"peak_rate_avg": 15.726116701547815,
+"dip_avg": 266.0,
+"rate_10keV_avg": 0.0,
+"rate_248_June": 0.9414713950479523,
+"rate_248_avg": 0.6544416188721949
+}
+}
+--- Part 3 rate ratios ---
+{
+"400": {
+"R300_June_eff": 687.2990208033792,
+"R0_June_eff": 334726560.5667096,
+"R200_June_eff": 148426.27232795907,
+"r350_over_r300": 1.0005763213724383e-07,
+"r380_over_r300": 0.0,
+"r325_over_r300": 0.04382238303963091,
+"r400_over_r300": 0.0,
+"r300_over_r0": 2.053314859865754e-06,
+"r300_over_r200": 0.0046305752345834035,
+"June_over_Dec_300": 8.769023866176068,
+"June_over_Dec_350": Infinity,
+"June_over_Dec_250": 2.080081677060567,
+"June_over_Dec_200": 1.8346667712382037,
+"delta_10pct_of_R300": 320.33214220432103,
+"delta_1pct_of_R300": 331.00818384462997
+},
+"1000": {
+"R300_June_eff": 1696.3639602568521,
+"R0_June_eff": 137443385.3911038,
+"R200_June_eff": 114821.51255746296,
+"r350_over_r300": 0.032271701006166394,
+"r380_over_r300": 0.0001325049820132792,
+"r325_over_r300": 0.26340808963904255,
+"r400_over_r300": 2.5266315991398345e-07,
+"r300_over_r0": 1.2342274278458303e-05,
+"r300_over_r200": 0.014773921040344237,
+"June_over_Dec_300": 2.4121464779685744,
+"June_over_Dec_350": 27.726126735198083,
+"June_over_Dec_250": 1.7557800988859629,
+"June_over_Dec_200": 1.64980956947444,
+"delta_10pct_of_R300": 338.03228085955226,
+"delta_1pct_of_R300": 359.2644914174749
+},
+"4000": {
+"R300_June_eff": 793.5426807095891,
+"R0_June_eff": 34762871.03187589,
+"R200_June_eff": 38620.31738217967,
+"r350_over_r300": 0.07848644005096056,
+"r380_over_r300": 0.00417880154847158,
+"r325_over_r300": 0.344447380468539,
+"r400_over_r300": 0.00010683034691311571,
+"r300_over_r0": 2.2827305603784808e-05,
+"r300_over_r200": 0.020547285328000656,
+"June_over_Dec_300": 1.9871958635082585,
+"June_over_Dec_350": 5.630870252096666,
+"June_over_Dec_250": 1.66178383270075,
+"June_over_Dec_200": 1.5832200862240948,
+"delta_10pct_of_R300": 346.3284203214626,
+"delta_1pct_of_R300": 372.8862894450946
+}
+}
+--- Part 4 degeneracy ---
+0 {'KS_400_1000': 0.0073, 'KS_1000_4000': 0.0032, 'KS_400_4000': 0.0106, 'KS_200_1000': 0.022, 'KS_100_1000': 0.0599}
+100 {'KS_400_1000': 0.0088, 'KS_1000_4000': 0.0039, 'KS_400_4000': 0.0127, 'KS_200_1000': 0.0271, 'KS_100_1000': 0.0741}
+200 {'KS_400_1000': 0.0271, 'KS_1000_4000': 0.0109, 'KS_400_4000': 0.0379, 'KS_200_1000': 0.1003, 'KS_100_1000': 0.5448}
+250 {'KS_400_1000': 0.0592, 'KS_1000_4000': 0.0249, 'KS_400_4000': 0.084}
+300 {'KS_400_1000': 0.059, 'KS_1000_4000': 0.0105, 'KS_400_4000': 0.0692}
+325 {'KS_400_1000': 0.2798, 'KS_1000_4000': 0.0475, 'KS_400_4000': 0.3219}
+350 {'KS_400_1000': 0.9763, 'KS_1000_4000': 0.1466, 'KS_400_4000': 0.9784}
+--- Part 5 band fractions (June, eff-weighted) ---
+{'m_chi_GeV': 400, 'delta_keV': 250, 'f_band_216_280_eff': 0.03961467402350041, 'percentile_248_eff': 0.9979127667623979, 'percentile_216_eff': 0.9602253695385262, 'f_above_248_eff': 0.002087233237602071}
+{'m_chi_GeV': 400, 'delta_keV': 300, 'f_band_216_280_eff': 0.07773555065529654, 'percentile_248_eff': 0.9956232778474048, 'percentile_216_eff': 0.9218803102332593, 'f_above_248_eff': 0.004376722152595214}
+{'m_chi_GeV': 400, 'delta_keV': 325, 'f_band_216_280_eff': 0.19826547963419566, 'percentile_248_eff': 0.9871030931505035, 'percentile_216_eff': 0.800230204605144, 'f_above_248_eff': 0.012896906849496514}
+{'m_chi_GeV': 400, 'delta_keV': 350, 'f_band_216_280_eff': 0.894579721287389, 'percentile_248_eff': 0.00996876754489913, 'percentile_216_eff': 0.0, 'f_above_248_eff': 0.9900312324551008}
+{'m_chi_GeV': 1000, 'delta_keV': 250, 'f_band_216_280_eff': 0.04291956726875442, 'percentile_248_eff': 0.9975128283646517, 'percentile_216_eff': 0.9568772189899191, 'f_above_248_eff': 0.0024871716353482842}
+{'m_chi_GeV': 1000, 'delta_keV': 300, 'f_band_216_280_eff': 0.07521358476989387, 'percentile_248_eff': 0.995244827913647, 'percentile_216_eff': 0.9243587853199712, 'f_above_248_eff': 0.00475517208635301}
+{'m_chi_GeV': 1000, 'delta_keV': 325, 'f_band_216_280_eff': 0.11134857368446487, 'percentile_248_eff': 0.9923522444473462, 'percentile_216_eff': 0.8878989217381378, 'f_above_248_eff': 0.0076477555526538454}
+{'m_chi_GeV': 1000, 'delta_keV': 350, 'f_band_216_280_eff': 0.22971794039109505, 'percentile_248_eff': 0.9809897537623503, 'percentile_216_eff': 0.768058595991355, 'f_above_248_eff': 0.019010246237649686}
+{'m_chi_GeV': 1000, 'delta_keV': 375, 'f_band_216_280_eff': 0.6813197730974812, 'percentile_248_eff': 0.8617640971620142, 'percentile_216_eff': 0.29096621630860814, 'f_above_248_eff': 0.1382359028379858}
+{'m_chi_GeV': 1000, 'delta_keV': 380, 'f_band_216_280_eff': 0.7665036685916103, 'percentile_248_eff': 0.7411932227698586, 'percentile_216_eff': 0.16843120499008163, 'f_above_248_eff': 0.25880677723014145}
+{'m_chi_GeV': 1000, 'delta_keV': 390, 'f_band_216_280_eff': 0.7190812520186606, 'percentile_248_eff': 0.1352912917905905, 'percentile_216_eff': 0.0, 'f_above_248_eff': 0.8647087082094095}
+{'m_chi_GeV': 1000, 'delta_keV': 400, 'f_band_216_280_eff': 0.5194868997505954, 'percentile_248_eff': 0.0, 'percentile_216_eff': 0.0, 'f_above_248_eff': 1.0}
+{'m_chi_GeV': 4000, 'delta_keV': 250, 'f_band_216_280_eff': 0.04393943734450157, 'percentile_248_eff': 0.9973731490058382, 'percentile_216_eff': 0.955841245066606, 'f_above_248_eff': 0.0026268509941618223}
+{'m_chi_GeV': 4000, 'delta_keV': 300, 'f_band_216_280_eff': 0.07559897655314762, 'percentile_248_eff': 0.9950854361327447, 'percentile_216_eff': 0.9239535623858065, 'f_above_248_eff': 0.004914563867255306}
+{'m_chi_GeV': 4000, 'delta_keV': 325, 'f_band_216_280_eff': 0.10168458953849283, 'percentile_248_eff': 0.9929096548154299, 'percentile_216_eff': 0.8976250859925793, 'f_above_248_eff': 0.007090345184570079}
+{'m_chi_GeV': 4000, 'delta_keV': 350, 'f_band_216_280_eff': 0.16614923577937382, 'percentile_248_eff': 0.9869457193863042, 'percentile_216_eff': 0.8324342872385158, 'f_above_248_eff': 0.013054280613695846}
+{'m_chi_GeV': 4000, 'delta_keV': 375, 'f_band_216_280_eff': 0.3716317437347175, 'percentile_248_eff': 0.9611348158464819, 'percentile_216_eff': 0.6231556931334874, 'f_above_248_eff': 0.03886518415351814}
+{'m_chi_GeV': 4000, 'delta_keV': 380, 'f_band_216_280_eff': 0.45287273284402646, 'percentile_248_eff': 0.9466442447375453, 'percentile_216_eff': 0.5394417651008195, 'f_above_248_eff': 0.05335575526245473}
+{'m_chi_GeV': 4000, 'delta_keV': 390, 'f_band_216_280_eff': 0.667500538811428, 'percentile_248_eff': 0.8828688165831082, 'percentile_216_eff': 0.3118201372271119, 'f_above_248_eff': 0.11713118341689177}
+{'m_chi_GeV': 4000, 'delta_keV': 400, 'f_band_216_280_eff': 0.8219435899333813, 'percentile_248_eff': 0.673050478026263, 'percentile_216_eff': 0.09699674862450663, 'f_above_248_eff': 0.32694952197373695}
+--- wrote output/work/P002/results.json

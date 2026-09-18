@@ -1,0 +1,21 @@
+strategy,target,observable,exposure_for_3sigma,events_needed,time_or_date,source,notes
+"Keep counting (present generation, LZ-like ROI)","Xe (LZ 4.7 t; XENONnT, PandaX-4T)",high-energy NR count vs <1e-3 bkg,5 sigma at best fit: 12.3 (L10) - 5.7 (d380) t yr,2-4,2027-2028 (P050); untouched LZ data already 6.8 t yr (P020),"P050, P020",
+Extend ROI to 400 keV (present generation),Xe,count + spectral shape,acceptance 0.83-0.93 for d>=350,2-4,by ~2030 (P050),"P050, P038",
+"60 t xenon, 400 keV ROI",Xe (XLZD-class),count; L10 vs inelastic shape,5 sigma: 8.5/9.6/3.6/1.1/0.13 t yr (L10/300/350/366/380),4-6 for shape,2032 + 1 day to 2 months live,P050,
+Annual modulation,Xe,June clustering vs flat,3 sigma: 274/84/33/19/15 t yr (d=300/330/350/366/380),97/29/12/6.5/5.3,LZ 2029-30 only if d>=366; 60 t 0.3-5.7 yr,P034,
+CaWO4 delta-meter,"W (CRESST-like, 700 keV ROI)",W/Xe count ratio 16-693,100 kg yr + 20 t yr Xe: sigma_delta 99/10/3.5/0.8 keV,3 (2.1 kg yr for L10 vs d366),kg yr-scale exposures: few years,"P046, P015",
+Isotopically enriched xenon,90 % 136Xe,spin (x0.106) vs inelastic (x1.0) rate,12.8 t yr per detector (natural + enriched),9 (5 at d=380),nEXO-grade xenon; 2030s,P047,
+NaI modulation,I (DAMA/COSINE/ANAIS),S_m 1e-7 cpd/kg/keV,2e8-8e9 t yr DAMA-like,-,excluded as a route,"P028, P015",
+"Directional heavy-gas TPC (Xe, 40 Torr, 1000 m3 = 287 kg), d=300",Xe gas,"recoil dipole toward anti-apex (30 deg, 70 % HT)",246 yr at 0.12 ev/yr,30,246 years,this work (rate: P015/P050 xenon window fractions),recoils within 41 deg of the wind for 90 %
+"Directional CF3I TPC (40 Torr, 1000 m3 = 278 kg I), d=300",I gas,recoil dipole,431 yr at 0.070 ev/yr,30,431 years,this work; I/Xe from P015/P046,
+"Directional heavy-gas TPC (Xe, 40 Torr, 1000 m3 = 287 kg), d=350",Xe gas,"recoil dipole toward anti-apex (30 deg, 70 % HT)",111 yr at 0.22 ev/yr,25,111 years,this work (rate: P015/P050 xenon window fractions),recoils within 27 deg of the wind for 90 %
+"Directional CF3I TPC (40 Torr, 1000 m3 = 278 kg I), d=350",I gas,recoil dipole,384 yr at 0.065 ev/yr,25,384 years,this work; I/Xe from P015/P046,
+"Directional heavy-gas TPC (Xe, 40 Torr, 1000 m3 = 287 kg), d=366",Xe gas,"recoil dipole toward anti-apex (30 deg, 70 % HT)",41 yr at 0.60 ev/yr,24,41 years,this work (rate: P015/P050 xenon window fractions),recoils within 21 deg of the wind for 90 %
+"Directional CF3I TPC (40 Torr, 1000 m3 = 278 kg I), d=366",I gas,recoil dipole,301 yr at 0.081 ev/yr,24,301 years,this work; I/Xe from P015/P046,
+"Directional heavy-gas TPC (Xe, 40 Torr, 1000 m3 = 287 kg), d=380",Xe gas,"recoil dipole toward anti-apex (30 deg, 70 % HT)",6 yr at 3.61 ev/yr,23,6 years,this work (rate: P015/P050 xenon window fractions),recoils within 12 deg of the wind for 90 %
+"Directional CF3I TPC (40 Torr, 1000 m3 = 278 kg I), d=380",I gas,recoil dipole,282 yr at 0.080 ev/yr,23,282 years,this work; I/Xe from P015/P046,
+"Nuclear emulsion (NEWSdm-like, 100 kg yr, Ag), d=300",Ag (ceiling 332 keV; Br blind),sub-um track direction,1.9e-03 events per 100 kg yr,-,not viable; blind for d > 332 keV,this work (Helm Ag/Xe),
+"Directional fluorine TPC (1000 m3 He:SF6, 125 kg F, E>20 keV), L10",F gas,"recoil dipole (30 deg, 70 % HT)",2738 yr at 0.018 ev/yr,50,2738 years; x2738 target mass (342 t F) for ~1 yr,this work (WimPyDD L10 on 19F),
+"Directional fluorine TPC (1000 m3 CF4 40 Torr, 166 kg F, E>20 keV), L10",F gas,"recoil dipole (30 deg, 70 % HT)",2053 yr at 0.024 ev/yr,50,2053 years; x2053 target mass (342 t F) for ~1 yr,this work (WimPyDD L10 on 19F),
+"Directional fluorine TPC (1000 m3 He:SF6, 125 kg F, E>50 keV), L10",F gas,"recoil dipole (30 deg, 70 % HT)",3573 yr at 0.014 ev/yr,51,3573 years; x3573 target mass (446 t F) for ~1 yr,this work (WimPyDD L10 on 19F),
+"Directional fluorine TPC (1000 m3 CF4 40 Torr, 166 kg F, E>50 keV), L10",F gas,"recoil dipole (30 deg, 70 % HT)",2680 yr at 0.019 ev/yr,51,2680 years; x2680 target mass (446 t F) for ~1 yr,this work (WimPyDD L10 on 19F),

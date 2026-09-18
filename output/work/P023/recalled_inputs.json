@@ -1,0 +1,213 @@
+[
+ {
+  "item": "fine-structure constant alpha = 1/137.036",
+  "value": 0.0072973525205055605,
+  "presumed_source": "PDG",
+  "reliability": "certain"
+ },
+ {
+  "item": "G_F = 1.1664e-5 GeV^-2",
+  "value": 1.1664e-05,
+  "presumed_source": "PDG",
+  "reliability": "certain"
+ },
+ {
+  "item": "electron mass 0.510999 MeV",
+  "value": 0.000510999,
+  "presumed_source": "PDG",
+  "reliability": "certain"
+ },
+ {
+  "item": "nucleon g-factors g_p = 5.5857, g_n = -3.8261",
+  "value": [
+   5.5857,
+   -3.8261
+  ],
+  "presumed_source": "PDG",
+  "reliability": "certain"
+ },
+ {
+  "item": "hbar = 6.5821e-25 GeV s",
+  "value": 6.5821e-25,
+  "presumed_source": "PDG",
+  "reliability": "certain"
+ },
+ {
+  "item": "age of the Universe 13.8 Gyr",
+  "value": 4.3549488e+17,
+  "presumed_source": "Planck 2018",
+  "reliability": "certain"
+ },
+ {
+  "item": "hadron masses [MeV]: N 938.9, Delta 1232, Lambda 1115.7, Sigma0 1192.6, Sigma(1385) 1384.6, B 5279.5, B* 5324.7, D 1867.2, D* 2008.6, eta_c 2984.1, J/psi 3096.9, eta_b 9398.7, Upsilon 9460.3, Sigma_c 2453.5, Sigma_c* 2518.1, Sigma_b 5813, Sigma_b* 5833",
+  "value": {
+   "N": 938.9,
+   "Delta": 1232.0,
+   "Lam": 1115.7,
+   "Sig0": 1192.6,
+   "SigStar": 1384.6,
+   "B": 5279.5,
+   "Bstar": 5324.7,
+   "D": 1867.2,
+   "Dstar": 2008.6,
+   "etac": 2984.1,
+   "Jpsi": 3096.9,
+   "etab": 9398.7,
+   "Ups": 9460.3,
+   "Sigc": 2453.5,
+   "SigcStar": 2518.1,
+   "Sigb": 5813.0,
+   "SigbStar": 5833.0
+  },
+  "presumed_source": "PDG",
+  "reliability": "certain (+-1-3 MeV for averages)"
+ },
+ {
+  "item": "MSbar quark masses m_c = 1.27 GeV, m_b = 4.18 GeV",
+  "value": [
+   1.27,
+   4.18
+  ],
+  "presumed_source": "PDG",
+  "reliability": "certain"
+ },
+ {
+  "item": "Lambda_QCD^(3), MSbar ~ 0.33 GeV",
+  "value": 0.33,
+  "presumed_source": "PDG QCD review",
+  "reliability": "likely (+-0.03)"
+ },
+ {
+  "item": "alpha_s(m_c) ~ 0.38, alpha_s(m_b) ~ 0.22",
+  "value": [
+   0.38,
+   0.22
+  ],
+  "presumed_source": "PDG running",
+  "reliability": "likely"
+ },
+ {
+  "item": "m_s - m_ud ~ 93 MeV (MSbar 2 GeV)",
+  "value": 0.093,
+  "presumed_source": "PDG",
+  "reliability": "likely"
+ },
+ {
+  "item": "hydrogen 21 cm hyperfine splitting 1420.4 MHz; A_21 = 2.87e-15 s^-1",
+  "value": [
+   1420.4,
+   2.87e-15
+  ],
+  "presumed_source": "standard atomic physics",
+  "reliability": "certain"
+ },
+ {
+  "item": "positronium ground-state hfs 203.4 GHz; leading order (7/12) alpha^4 m_e",
+  "value": 203.4,
+  "presumed_source": "standard QED",
+  "reliability": "certain"
+ },
+ {
+  "item": "Omega_DM h^2 = 0.120",
+  "value": 0.12,
+  "presumed_source": "Planck 2018",
+  "reliability": "certain"
+ },
+ {
+  "item": "rho_c/h^2 = 1.0537e-5 GeV cm^-3",
+  "value": 1.0537e-05,
+  "presumed_source": "PDG",
+  "reliability": "certain"
+ },
+ {
+  "item": "entropy density today s_0 = 2891 cm^-3",
+  "value": 2891.0,
+  "presumed_source": "PDG",
+  "reliability": "certain"
+ },
+ {
+  "item": "baryon asymmetry n_B/s = 8.7e-11",
+  "value": 8.7e-11,
+  "presumed_source": "Planck/PDG",
+  "reliability": "certain"
+ },
+ {
+  "item": "thermal relic <sigma v> = 2.2e-26 cm^3/s (m >> 10 GeV)",
+  "value": 2.2e-26,
+  "presumed_source": "Steigman-Dasgupta-Beacom 2012",
+  "reliability": "certain"
+ },
+ {
+  "item": "nucleon axial charges Delta u = 0.842, Delta d = -0.427, Delta s = -0.085",
+  "value": [
+   0.842,
+   -0.427,
+   -0.085
+  ],
+  "presumed_source": "HERMES/COMPASS-era values",
+  "reliability": "likely"
+ },
+ {
+  "item": "LXe attenuation length of a 300 keV gamma ~ 2 cm (+-50%)",
+  "value": 2.0,
+  "presumed_source": "NIST XCOM-type tables (mu/rho ~ 0.15-0.2 cm^2/g)",
+  "reliability": "uncertain"
+ },
+ {
+  "item": "MiDM de-excitation width Gamma(chi2 -> chi1 gamma) = mu_tr^2 delta^3 / pi",
+  "value": "formula",
+  "presumed_source": "Chang, Weiner, Yavin 2010 (MiDM)",
+  "reliability": "likely"
+ },
+ {
+  "item": "<sigma v>(Q Qbar -> A_D A_D) ~ pi alpha_D^2 / m_Q^2",
+  "value": "formula",
+  "presumed_source": "secluded-DM literature (also P011)",
+  "reliability": "likely"
+ },
+ {
+  "item": "lightest glueball 0++ mass ~ 1.7 GeV ~ 5-6 Lambda_QCD^(3)",
+  "value": 5.5,
+  "presumed_source": "lattice QCD (Morningstar-Peardon) + PDG",
+  "reliability": "likely"
+ },
+ {
+  "item": "post-scatter chi2 speed ~ 750 km/s (v_min(248 keV, delta=300) ~ 700 km/s; the recoil takes <1% of the momentum)",
+  "value": 750.0,
+  "presumed_source": "kinematics (lzcommon)",
+  "reliability": "certain (order)"
+ },
+ {
+  "item": "LZ TPC: 1.46 m drift x 1.46 m diameter; mean remaining chord ~1 m",
+  "value": [
+   1.46,
+   1.0
+  ],
+  "presumed_source": "LZ detector papers",
+  "reliability": "likely"
+ },
+ {
+  "item": "photon-mediated dipole NREFT: c1 = e mu Q/(2 m_chi), c5 = 2 e mu m_N Q/q^2, c4 = e mu g_N/m_N, c6 = -e mu g_N m_N/q^2 (Anand normalisation)",
+  "value": "formula",
+  "presumed_source": "Fitzpatrick et al. 2012 / Anand et al. 2014 via P012",
+  "reliability": "likely"
+ },
+ {
+  "item": "Fermi contact hfs: Delta E = (8/3) alpha^4 mu_red^3/(m1 m2) (g1 g2/4); quarkonium colour factor C_F = 4/3 (SU(3)), 3/4 (SU(2))",
+  "value": "formula",
+  "presumed_source": "standard QED / QCD textbooks",
+  "reliability": "certain"
+ },
+ {
+  "item": "HQET: heavy-light hyperfine splitting m_H*^2 - m_H^2 = const (Lambda^2), i.e. delta ~ Lambda^2/m_Q",
+  "value": "formula",
+  "presumed_source": "HQET (Neubert review)",
+  "reliability": "certain"
+ },
+ {
+  "item": "one-loop running Lambda = mu exp(-2 pi/(b0 alpha(mu))), b0 = (11 N - 2 n_f)/3",
+  "value": "formula",
+  "presumed_source": "standard",
+  "reliability": "certain"
+ }
+]

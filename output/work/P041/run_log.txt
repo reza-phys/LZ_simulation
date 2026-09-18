@@ -1,0 +1,94 @@
+E_ee (W=13.44 eV) = 69.6 keV; nestpy LZ-ER yields: Nph = 3839, Ne = 1340; P010 N_e = 1226
+survival needed f = 0.219 (nestpy variant 0.201); loss L = 0.781; ER mean log10 S2c = 4.626
+Fig.4 colour census (S1c 500-580, log S2c 4.15-4.9): [((np.int64(128), np.int64(128), np.int64(128)), 13082), ((np.int64(255), np.int64(255), np.int64(255)), 8550), ((np.int64(0), np.int64(0), np.int64(128)), 823), ((np.int64(254), np.int64(254), np.int64(254)), 402), ((np.int64(129), np.int64(129), np.int64(129)), 397), ((np.int64(87), np.int64(103), np.int64(103)), 249)]
+grey ER lower envelope at S1c 500-580: median log10 S2c = 4.374 (columns: 450:4.31, 460:4.29, 470:4.29, 480:4.27, 490:4.30, 500:4.25, 510:4.30, 520:4.33, 530:4.42, 540:4.37, 550:4.35, 560:4.38, 570:4.37, 580:4.39, 590:4.37, 600:4.37)
+grey pixels at S1c 520-800 in log S2c 4.15-4.30: 0 (one plotted point ~ 10-15 px); envelope S1c 330/400/500/600/700/800: 4.17/4.32/4.25/4.37/4.37/4.43
+black pixels inside the ROI at S1c 330-600: 134 (the event alone ~ a few tens of px)
+
+Landing regions at S1c = 540 (log10 S2c -> survival fraction f):
+  ER cloud (f > envelope)                       log S2c [4.374, 5.000]  f in [0.560, 1.000]
+  strip (out of ROI, empty)                     log S2c [4.150, 4.374]  f in [0.334, 0.560]
+  gap G (in ROI, above NR+2sigma, empty)        log S2c [4.078, 4.150]  f in [0.283, 0.334]
+  V (NR band +-2sigma, 1 event)                 log S2c [3.952, 4.078]  f in [0.212, 0.283]
+  below NR-2sigma (to S2 threshold, empty)      log S2c [2.810, 3.952]  f in [0.015, 0.212]
+flat-in-loss probabilities: {'ER cloud (f > envelope)': np.float64(0.44), 'strip (out of ROI, empty)': np.float64(0.226), 'gap G (in ROI, above NR+2sigma, empty)': np.float64(0.051), 'V (NR band +-2sigma, 1 event)': np.float64(0.071), 'below NR-2sigma (to S2 threshold, empty)': np.float64(0.197)}
+
+ROI ER count (Table I) = 1704; ER band exits ROI at 18.9 keV -> dR/dE ~ 98/keV/2.84 t yr
+parent ER populations (flat extrapolation, x0.5-2 bracket): 60-80 keV 2521; 30-78 keV (S1c 250-600) 5261
+136Xe 2nbb in FV: 19.4 mBq = 70/h; Rn chain 17/h (bracket 8-34)
+monitor events (beta + alpha, full FV, all energies): 155/h (bracket 112-239)
+
+=== 2. Electron lifetime ===
+  calibration lifetime inf ms -> true lifetime needed 566 us
+  calibration lifetime 10.0 ms -> true lifetime needed 536 us
+  calibration lifetime 5.0 ms -> true lifetime needed 508 us
+  ER cloud (f > envelope)                       drift window [    -0,    328] us -> FV fraction 0.264
+  strip (out of ROI, empty)                     drift window [   328,    621] us -> FV fraction 0.327
+  gap G (in ROI, above NR+2sigma, empty)        drift window [   621,    715] us -> FV fraction 0.106
+  V (NR band +-2sigma, 1 event)                 drift window [   715,    878] us -> FV fraction 0.183
+  below NR-2sigma (to S2 threshold, empty)      drift window [   878,   2367] us -> FV fraction 0.120
+  science-sample rate 0.324/h; fraction at drift > 800 us 0.207 -> 0.067/h
+  parent 30-78 keV ERs: 1.00/h; monitor betas+alphas at drift > 800 us: 32/h
+  excursion of    10 s: P(no monitor event at drift > 500 us) = 7.92e-01
+  excursion of    30 s: P(no monitor event at drift > 500 us) = 4.96e-01
+  excursion of    60 s: P(no monitor event at drift > 500 us) = 2.46e-01
+  excursion of   300 s: P(no monitor event at drift > 500 us) = 9.04e-04
+  excursion of   600 s: P(no monitor event at drift > 500 us) = 8.17e-07
+  excursion of  3600 s: P(no monitor event at drift > 500 us) = 2.97e-37
+  under tau_e = 566 us the ER median at 859 us drops by 0.66 dex; at 985 us by 0.76 dex
+  lifetime 2.5 ms uncorrected at 859 us: loss 29.1 %
+  lifetime 5.0 ms uncorrected at 859 us: loss 15.8 %
+  lifetime 10.0 ms uncorrected at 859 us: loss 8.2 %
+
+=== 3. Local absorber ===
+  sigma_T = 3.07 mm (2.93-3.21); sigma_L = 2.07 mm -> S2 sigma_t = 1.49 us (P022: 1.49)
+  2-sigma footprint 1.19 cm2 vs TPC 16650 cm2 -> 7.1e-05
+  disk radius giving exactly 78 % loss for a centred cloud: 1.74 sigma = 5.4 mm
+  Rd =  1.74 sigma (  5.4 mm): hit-zone   9.79 cm2; p_V 0.012 p_G 0.010 p_strip 0.053 p_below 0.000 | p_empty 0.063 | p_V/(p_V+p_empty) 0.160
+  Rd =  2.00 sigma (  6.1 mm): hit-zone  10.69 cm2; p_V 0.015 p_G 0.011 p_strip 0.056 p_below 0.016 | p_empty 0.083 | p_V/(p_V+p_empty) 0.148
+  Rd =  3.00 sigma (  9.2 mm): hit-zone  14.55 cm2; p_V 0.020 p_G 0.014 p_strip 0.065 p_below 0.078 | p_empty 0.157 | p_V/(p_V+p_empty) 0.114
+  Rd =  5.00 sigma ( 15.4 mm): hit-zone  24.04 cm2; p_V 0.023 p_G 0.016 p_strip 0.069 p_below 0.117 | p_empty 0.202 | p_V/(p_V+p_empty) 0.104
+  Rd = 10.00 sigma ( 30.7 mm): hit-zone  58.18 cm2; p_V 0.022 p_G 0.014 p_strip 0.059 p_below 0.119 | p_empty 0.191 | p_V/(p_V+p_empty) 0.104
+  Rd = 20.00 sigma ( 61.5 mm): hit-zone 170.99 cm2; p_V 0.016 p_G 0.008 p_strip 0.041 p_below 0.087 | p_empty 0.137 | p_V/(p_V+p_empty) 0.105
+
+  Population budget with N_par = 5261 ERs at S1c 250-600 (x0.5-2):
+  Rd  1.74s target N_V=0.1: area fraction 1.59e-03 (2.7 persistent hit-zones), expected empty-region ERs 0.52, all-energy affected ERs 65
+  Rd  1.74s target N_V=0.001: area fraction 1.59e-05 (0.0 persistent hit-zones), expected empty-region ERs 0.01, all-energy affected ERs 1
+     ML scenario: eps* = 2.55e-03; P(1 in V, 0 in empty) = 0.059; all-energy affected 104
+  Rd  2.00s target N_V=0.1: area fraction 1.31e-03 (2.0 persistent hit-zones), expected empty-region ERs 0.57, all-energy affected ERs 70
+  Rd  2.00s target N_V=0.001: area fraction 1.31e-05 (0.0 persistent hit-zones), expected empty-region ERs 0.01, all-energy affected ERs 1
+     ML scenario: eps* = 1.94e-03; P(1 in V, 0 in empty) = 0.055; all-energy affected 104
+  Rd  3.00s target N_V=0.1: area fraction 9.45e-04 (1.1 persistent hit-zones), expected empty-region ERs 0.78, all-energy affected ERs 92
+  Rd  3.00s target N_V=0.001: area fraction 9.45e-06 (0.0 persistent hit-zones), expected empty-region ERs 0.01, all-energy affected ERs 1
+     ML scenario: eps* = 1.07e-03; P(1 in V, 0 in empty) = 0.042; all-energy affected 104
+  Rd  5.00s target N_V=0.1: area fraction 8.12e-04 (0.6 persistent hit-zones), expected empty-region ERs 0.86, all-energy affected ERs 100
+  Rd  5.00s target N_V=0.001: area fraction 8.12e-06 (0.0 persistent hit-zones), expected empty-region ERs 0.01, all-energy affected ERs 1
+     ML scenario: eps* = 8.42e-04; P(1 in V, 0 in empty) = 0.038; all-energy affected 104
+  Rd 10.00s target N_V=0.1: area fraction 8.60e-04 (0.2 persistent hit-zones), expected empty-region ERs 0.86, all-energy affected ERs 101
+  Rd 10.00s target N_V=0.001: area fraction 8.60e-06 (0.0 persistent hit-zones), expected empty-region ERs 0.01, all-energy affected ERs 1
+     ML scenario: eps* = 8.91e-04; P(1 in V, 0 in empty) = 0.038; all-energy affected 104
+  Rd 20.00s target N_V=0.1: area fraction 1.18e-03 (0.1 persistent hit-zones), expected empty-region ERs 0.85, all-energy affected ERs 99
+  Rd 20.00s target N_V=0.001: area fraction 1.18e-05 (0.0 persistent hit-zones), expected empty-region ERs 0.01, all-energy affected ERs 1
+     ML scenario: eps* = 1.24e-03; P(1 in V, 0 in empty) = 0.039; all-energy affected 104
+  flat-in-loss: p_V 0.071, p_empty 0.474, p_V/(p_V+p_E) 0.130; given 1 in V, ML expects 6.7 in empty regions, P(0) = 0.001
+  83mKr per cm2 per injection 6-60 -> a 78 % deficit in a 1 cm2 cell is a 19-61 sigma hole
+  plume of length 0.3 cm: local lifetime 1.4 us (bulk >~ 5000 us) -> enrichment x3512
+  plume of length 1.0 cm: local lifetime 4.7 us (bulk >~ 5000 us) -> enrichment x1054
+  plume of length 3.0 cm: local lifetime 14.2 us (bulk >~ 5000 us) -> enrichment x351
+
+=== 4. Extraction / pulse pathologies ===
+  local extraction efficiency needed 0.175 (bulk 0.8); required S2 gain deficit x4.56 = 356 % vs map amplitude <~ 20 % -> 18x typical
+  g2 uncertainty 3.2 %; NR-band sigma 7.5 %
+  truncated S2 keeping 0.22 of area: remnant sigma = 0.48 of the true sigma, skew -1.25 (P022 width tolerance 10-20 %)
+  alpha S2 (template class): 20073-40146 electrons = 75-149 x the event's S2; hypothetical true ER S2 42297 phd ~ 83mKr class (27103 phd)
+
+=== 5. Channel summary ===
+  bulk excursion: tau must lie in [554, 680] us -> window factor 0.045; P(silent 300 s) = 9.0e-04 (60 s: 0.25)
+  bulk electron-lifetime excursion                             prior 0.03 x factor 4.03e-05 = 1.21e-06
+  local transient absorber (bubble/particulate/plume)          prior 0.05 x factor 1.21e-02 = 6.04e-04
+  field distortion / charge trapping (PTFE, floating conductor) prior 0.03 x factor 2.00e-02 = 6.00e-04
+  extraction / gas-gap dip                                     prior 0.02 x factor 2.00e-02 = 4.00e-04
+  S2 saturation / clipping / truncated window                  prior 0.02 x factor 1.00e-03 = 2.00e-05
+  S1/S2 mis-pairing (accidental)                               prior 0.02 x factor 5.00e-02 = 1.00e-03
+  unknown pathology                                            prior 0.01 x factor 3.00e-01 = 3.00e-03
+  total artefact residual mass 0.006 (prior 0.18 -> shrink x32)

@@ -1,0 +1,60 @@
+{
+ "id": "P096",
+ "title": "Large liquid-scintillator detectors as high-energy recoil detectors: can Borexino, KamLAND, JUNO or SNO+ see the LZ models through 12C, 13C and 1H recoils?",
+ "date": "2026-09-16",
+ "agent_tools": [
+  {"tool": "Read", "count": 11, "detail": "PAPER_GUIDE.md; papers P046, P067, P012, P003, P021, P057, P058; code/common/lzcommon.py; figures P096_fig1 (twice), P096_fig2"},
+  {"tool": "Bash", "count": 14, "detail": "WimPyDD module attribute listing; package/Targets listings and C.tab/H.tab/O.tab; ledger tail, data_requests, ENVIRONMENT_versions; greps of P012/P058/P021 details and P046 script; head of dossier; WimPyDD target/isotope introspection (2 runs); rate/timing test on H, C13, C, Xe; package.py itar table and diff_rate signature; script runs x5 (.venv/bin/python output/code/P096_scintillators.py, first with error trace); table/summary printout; find WimPyDD -newer (no generated files); wc -w on the paper"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P096_scintillators.py; output/work/P096/details.md; output/provenance/P096.json; output/papers/P096.md"},
+  {"tool": "Edit", "count": 10, "detail": "script fixes: c14_pdf self-reference; scalar return of the light-output helper; Birks quenching model replacing the Cecil formula; central-Q windows in table blocks; systematic-floor reach; figure quenching call; carbon electronic fraction 0.75 -> 0.6; figure label placement"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python, run from the simulation root"},
+  {"name": "numpy", "version": "2.5.3", "functions": "arrays, trapezoid, interp, linspace/arange, savez/load cache"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats.norm.cdf (LZ efficiency), integrate.cumulative_trapezoid (quantiles), special (via lzcommon.eta0)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, to_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend, pyplot (2 figures)"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "diff_rate (per-stream kernels with sum_over_streams=False; delta<0), eft_hamiltonian (L10 with (4,'q2') and 6), streamed_halo_function via lz.wd_halo; targets WD.H (1H itar=21), WD.C (12C itar=1, 13C itar=0 -> vanishing responses), WD.O (16O itar=18), WD.Xe"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ constants, v_earth_kms, eta0, mu_red, E_R_range_keV, m_nucleus_gev, wd_halo (explicit vmin grid), wd_hamiltonian, wd_rate, wd_c_SI_from_sigma_n, GEV_TO_CM2"},
+  {"name": "none: derived by hand", "version": "-", "functions": "free-proton spin averages for O6/L10; 13C single-particle spin factor; exothermic sigma*v scaling; Birks integration formula"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P096_scintillators.py", "purpose": "kinematic ceilings and A_min; L10/O6 on 1H (WimPyDD) and 13C (analytic) normalised to LZ's 1 event; SI reference; exothermic O1 kernels on C/H/O with kappa from the endothermic Xe ROI count (24-day annual mean); Birks quenching, 14C background, thresholds, S/B, reach; tables and figures", "command": ".venv/bin/python output/code/P096_scintillators.py   (add --recompute to ignore output/work/P096/P096_cache.npz; 66 s cold, 1 s cached)"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all"},
+  {"file": "output/papers/P046.md, P067.md, P012.md, P003.md, P021.md, P057.md, P058.md", "parts_used": "headline results, ceilings/A_min (P067), L10 reduction and N(d10=1) (P012), kappa-hat table (P021), exothermic method and f2 limits (P058), normalisation convention (P003)"},
+  {"file": "output/work/P012/details.md; output/work/P058/details.md; output/work/P058/P058_f2_limits.csv; output/work/P021/details.md", "parts_used": "L10 Hamiltonian coefficients; per-stream kernel method, inputs table, f2 joint limits (2.8e-3/5.7e-5/4.8e-6/1.7e-7), R_ROI = 916; N_unit and kappa-hat vs delta"},
+  {"file": "output/code/P046_multi_target.py; output/code/P012_magnetic_dipole.py", "parts_used": "WimPyDD per-isotope/target call pattern; L10 eft_hamiltonian construction"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "whole module"},
+  {"file": "WimPyDD/package.py; WimPyDD/Targets/C.tab, H.tab, O.tab", "parts_used": "itar table (12C 1, 16O 18, 1H 21; 13C 0 = vanishing responses); isotope abundances/spins; diff_rate signature"},
+  {"file": "output/00_evidence_dossier.md; output/results_ledger.csv; output/data_requests/index.csv; environment/ENVIRONMENT_versions.txt", "parts_used": "context, ledger tail, existing DR numbers, package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Borexino 278 t PC+PPO (data 2007-2021); KamLAND ~1 kt; JUNO 20 kt LAB (commissioning 2025-26); SNO+ 780 t LAB and 905 t water phase", "presumed_source": "experiment papers", "reliability": "certain (Borexino, KamLAND, JUNO mass) / likely (SNO+ masses, dates)"},
+  {"item": "PC = C9H12; LAB ~ C18H30; KamLAND scintillator 80% dodecane + 20% PC", "presumed_source": "detector papers", "reliability": "certain / likely / likely"},
+  {"item": "thresholds: Borexino ~50 keVee hardware; KamLAND and SNO+ ~200 keVee physics; JUNO ~100 keVee trigger", "presumed_source": "detector papers", "reliability": "uncertain"},
+  {"item": "14C/12C = 2.7e-18 in Borexino PC; ~1e-17 in LAB detectors", "presumed_source": "Borexino 14C paper; JUNO/SNO+ design", "reliability": "likely / uncertain"},
+  {"item": "14C half-life 5730 yr, Q_beta = 156.5 keV, allowed spectrum with Fermi function", "presumed_source": "nuclear data", "reliability": "certain"},
+  {"item": "Birks constant kB = 0.0098 cm/MeV for LAB; LAB density 0.86 g/cm3", "presumed_source": "von Krosigk et al. 2013", "reliability": "likely / certain"},
+  {"item": "proton electronic stopping power in hydrocarbon/water: 170, 270, 430, 640, 810, 790, 680, 580, 420, 262, 116, 45.7 MeV cm2/g at 1, 3, 10, 30, 80, 100, 200, 300, 500, 1000, 3000, 10000 keV", "presumed_source": "NIST PSTAR", "reliability": "likely (+-20%)"},
+  {"item": "carbon-ion electronic stopping ~2500 MeV cm2/g at 300 keV (LSS, ~sqrt(E)), electronic fraction ~0.6; literature carbon quenching factors 0.02-0.06", "presumed_source": "SRIM / scintillator quenching papers", "reliability": "uncertain"},
+  {"item": "Cecil-Anderson-Madey NE-213 proton light output L = 0.83E - 2.82[1-exp(-0.25 E^0.93)] MeVee", "presumed_source": "NIM 161 (1979) 439", "reliability": "likely (valid above ~0.3 MeV)"},
+  {"item": "13C ground state 1/2-, p1/2 neutron; single-particle <S_n> = -1/6 (shell model ~ -0.17); abundance 1.07%; HO length b = 1.64 fm", "presumed_source": "nuclear structure", "reliability": "likely / certain / likely"},
+  {"item": "SD scaling (J+1)/J (a_p<S_p>+a_n<S_n>)^2; spin averages <S_i S_j> = delta_ij/4; Anand dsigma/dE prefactor 2 m_T/(4 pi v^2)", "presumed_source": "Engel-Pittel-Vogel 1992; Anand et al. 2014", "reliability": "certain"},
+  {"item": "sigma_n = 1e-47 cm2 ~ LZ 2024 SI limit at 1 TeV", "presumed_source": "LZ PRL 135, 011802 (2025)", "reliability": "likely"},
+  {"item": "Cherenkov: protons need >~480 MeV in water; sub-MeV ions give no light", "presumed_source": "textbook", "reliability": "certain"},
+  {"item": "exothermic kinematics E* = |delta| mu/m_N, half-width mu v sqrt(2 mu |delta|)/m_N, sigma v -> sigma_0 F^2 sqrt(2|delta|/mu)", "presumed_source": "Tucker-Smith & Weiner 2001; Graham et al. 2010", "reliability": "certain"},
+  {"item": "LSS electronic stopping proportional to ion velocity at low energy", "presumed_source": "Lindhard et al.", "reliability": "certain"},
+  {"item": "14C pile-up fraction estimate (~0.4% in 100 ns at 3e4 Bq) - qualitative only", "presumed_source": "arithmetic on recalled rates", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Using WD.C13 directly as a WimPyDD target (TypeError: isotope object) and, in any case, 13C has itar = 0 so all its nuclear response functions vanish in WimPyDD; replaced by an analytic single-particle estimate validated against WimPyDD's 1H rate (0.94-0.97 agreement).",
+  "Cecil-Anderson-Madey light-output formula below 0.3 MeV (gives Q_p = 0.014 at 100 keV, an artefact of the fit); replaced by a Birks integration over a tabulated stopping power, Cecil kept as the low-side cross-check at 300 keV.",
+  "A 24-day annual mean of the endothermic Xe ROI count at delta = 380 keV differs from P021 by 45% (tail sampling); noted, not resolved (only enters kappa(380)).",
+  "NR/ER pulse-shape discrimination at 10-60 keVee in LAB: no reliable recalled value; treated as a free rejection factor (1, 1e-2, 1e-4) and as the rejection needed to match LZ."
+ ],
+ "wimpydd_generated_files": []
+}

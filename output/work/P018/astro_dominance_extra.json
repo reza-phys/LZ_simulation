@@ -1,0 +1,38 @@
+{
+ "400_june16": {
+  "gaia_x1p54dex_poisson_band": 309.1941661829255,
+  "gaia_x0p7dex_nuclear": 261.00671140939596,
+  "gaia_x10": 290.7621247113164,
+  "shape_x1p54": 134.81362288840813
+ },
+ "400_annual": {
+  "gaia_x1p54dex_poisson_band": 304.07389441396515,
+  "gaia_x0p7dex_nuclear": 252.40480961923848,
+  "gaia_x10": 283.63532110091745,
+  "shape_x1p54": 129.69289403054879
+ },
+ "1000_june16": {
+  "gaia_x1p54dex_poisson_band": 348.75331940341465,
+  "gaia_x0p7dex_nuclear": 292.8637059724349,
+  "gaia_x10": 323.9864864864865,
+  "shape_x1p54": 150.08411321543724
+ },
+ "1000_annual": {
+  "gaia_x1p54dex_poisson_band": 344.0254914995122,
+  "gaia_x0p7dex_nuclear": 285.26402640264024,
+  "gaia_x10": 317.0858895705521,
+  "shape_x1p54": 144.19397283665853
+ },
+ "4000_june16": {
+  "gaia_x1p54dex_poisson_band": 372.67633894241686,
+  "gaia_x0p7dex_nuclear": 308.84341637010675,
+  "gaia_x10": 342.62996941896023,
+  "shape_x1p54": 161.76860325666695
+ },
+ "4000_annual": {
+  "gaia_x1p54dex_poisson_band": 368.02927705735675,
+  "gaia_x0p7dex_nuclear": 301.2863705972435,
+  "gaia_x10": 335.211038961039,
+  "shape_x1p54": 154.10309803018612
+ }
+}

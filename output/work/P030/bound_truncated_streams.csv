@@ -1,0 +1,4 @@
+v_gal_kms,v_lab_june16,numeric_vs_analytic_eta0,numeric_vs_analytic_max_abs_deta_diff_rel,fraction_of_stream_beyond_vesc,v_max_truncated,N_untrunc_pure_d350,N_trunc_pure_d350,boost_trunc_f0.01_d350,N_untrunc_pure_d365,N_trunc_pure_d365,boost_trunc_f0.01_d365,N_untrunc_pure_d380,N_trunc_pure_d380,boost_trunc_f0.01_d380,N_untrunc_pure_d385,N_trunc_pure_d385,boost_trunc_f0.01_d385,N_untrunc_pure_d390,N_trunc_pure_d390,boost_trunc_f0.01_d390,N_untrunc_pure_d400,N_trunc_pure_d400,boost_trunc_f0.01_d400
+500,766,1,5.204e-07,0.01532,810,1.906e+04,1.664e+04,7.036,3338,2232,7.717,428.9,210.8,7.721,207.8,100.5,8.058,98.9,42.2,8.943,20.73,2.165,16.48
+530,796,1,5.204e-07,0.2537,810,9.317e+04,5.957e+04,22.64,3.205e+04,1.102e+04,34.2,7359,1078,35.42,4178,595.7,42.89,2303,296.7,56.91,661,20.81,149.8
+544,810,1,5.204e-07,0.5147,810,1.439e+05,7.888e+04,29.66,6.472e+04,1.625e+04,49.97,1.994e+04,1564,50.95,1.237e+04,899.3,64.25,7389,474.8,90.48,2396,37.58,269.7

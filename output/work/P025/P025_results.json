@@ -1,0 +1,411 @@
+{
+ "constants": {
+  "GEV2_TO_CM3S": 1.1673299900773522e-17,
+  "g2": 0.6515669940861065,
+  "alpha2": 0.03378378378378378,
+  "s2w": 0.2312,
+  "planck_pann": 3.5e-28,
+  "f_eff": {
+   "WW": 0.2,
+   "ee": 0.45,
+   "mumu": 0.2,
+   "hadrons(pi)": 0.2,
+   "cascade_mix": 0.35
+  }
+ },
+ "recalled_limits": {
+  "Fermi-LAT dSph (15 dSph, 6 yr; Ackermann+2015 / Albert+2017), WW~bb": {
+   "at1TeV": 1e-25,
+   "index": 1.0,
+   "band": 2.0,
+   "reliability": "likely (factor ~2)",
+   "channel": "WW/bb"
+  },
+  "H.E.S.S. Galactic Centre (Einasto; 254 h 2016 / 546 h 2022), WW": {
+   "at1TeV": 4e-26,
+   "index": 0.5,
+   "band": 3.0,
+   "reliability": "likely (Einasto); x10 weaker for cored profiles",
+   "channel": "WW"
+  },
+  "AMS-02 antiprotons (Cuoco+2017, Cui+2017 style analyses), WW~bb": {
+   "at1TeV": 1e-25,
+   "index": 1.0,
+   "band": 5.0,
+   "reliability": "uncertain (propagation, x3-10)",
+   "channel": "WW/bb"
+  },
+  "Fermi-LAT dSph, tau tau": {
+   "at1TeV": 1e-25,
+   "index": 1.0,
+   "band": 2.0,
+   "reliability": "likely",
+   "channel": "tautau"
+  },
+  "Fermi-LAT dSph, mu mu": {
+   "at1TeV": 1e-24,
+   "index": 1.0,
+   "band": 3.0,
+   "reliability": "uncertain",
+   "channel": "mumu"
+  },
+  "H.E.S.S. Galactic Centre (Einasto), tau tau": {
+   "at1TeV": 1e-26,
+   "index": 0.5,
+   "band": 3.0,
+   "reliability": "likely (Einasto)",
+   "channel": "tautau"
+  },
+  "H.E.S.S. inner-Galaxy line search (Abdallah+2018), gamma gamma": {
+   "at1TeV": 4e-28,
+   "index": 1.0,
+   "band": 3.0,
+   "reliability": "likely (order of magnitude; Einasto)",
+   "channel": "gammagamma"
+  }
+ },
+ "higgsino": {
+  "1000": {
+   "sigv_today_S1": 9.55233866055935e-27,
+   "sigv_today_S3": 2.8657015981678046e-26,
+   "ratio_fermi_S1": 0.0955233866055935,
+   "ratio_fermi_S3": 0.28657015981678047,
+   "ratio_hess_S1": 0.23880846651398374,
+   "ratio_hess_S3": 0.7164253995419512,
+   "ratio_ams_S1": 0.0955233866055935,
+   "ratio_planck_S3": 0.01637543770381603,
+   "line_gg": 8.625160210709213e-29,
+   "line_gg_plus_half_gZ": 1.2131261795881189e-28,
+   "ratio_line_S1": 0.30328154489702974,
+   "ratio_line_S3": 0.9098446346910891
+  },
+  "1100": {
+   "sigv_today_S1": 7.909633652339514e-27,
+   "sigv_today_S3": 2.372890095701854e-26,
+   "ratio_fermi_S1": 0.07190576047581376,
+   "ratio_fermi_S3": 0.21571728142744126,
+   "ratio_hess_S1": 0.1885384945535926,
+   "ratio_hess_S3": 0.5656154836607777,
+   "ratio_ams_S1": 0.07190576047581376,
+   "ratio_planck_S3": 0.012326701795853788,
+   "line_gg": 8.625160210709213e-29,
+   "line_gg_plus_half_gZ": 1.2131261795881189e-28,
+   "ratio_line_S1": 0.2757104953609361,
+   "ratio_line_S3": 0.8271314860828083
+  }
+ },
+ "higgsino_thermal_mass_ADG": 1166.7639327559925,
+ "higgsino_line": {
+  "gg": 8.625160210709213e-29,
+  "gZ": 7.012203170343951e-29,
+  "gg_plus_half_gZ": 1.2131261795881189e-28
+ },
+ "wino_WW_3TeV_check": 9.301384123503709e-27,
+ "darkphoton": {
+  "300_eff": {
+   "m_GeV": 300.0,
+   "convention": "eff",
+   "alpha_D": 0.010391442408757478,
+   "sigv_today": 4.4e-26,
+   "aD_m_GeV": 3.1174327226272434,
+   "S_allowed_CMB_mix": 6.818181818181818,
+   "S_allowed_CMB_ee": 5.303030303030303,
+   "S_sat_at_mA": {
+    "0.1": 233.12000330523566,
+    "0.3": 62.459475643182735,
+    "1": 21.820447399039733,
+    "3": 17.267468324535816,
+    "10": 1.9498270421113268,
+    "30": 1.2365528355826327
+   },
+   "S_GC_at_mA": {
+    "0.1": 65.27192147194121,
+    "1": 21.121297583493043,
+    "10": 1.9494669300179288
+   },
+   "S_freezeout_hulthen_1GeV": 1.0552379275169883,
+   "S_coulomb_rec_unsaturated": 3264567.913155392,
+   "S_coulomb_GC": 65.29135826310784,
+   "resonances_mA_GeV": [
+    1.8951718402916877,
+    0.47379296007292193,
+    0.21057464892129862,
+    0.11844824001823048,
+    0.0758068736116675
+   ],
+   "mA_min_CMB_all_heavier_ok": 4.017954424527638,
+   "mA_min_CMB_any_ok": 4.017954424527638,
+   "frac_subGeV_CMB_allowed": 0.0,
+   "S_freezeout_coulomb": 1.0553960671557776,
+   "mA_min_dSph_all_heavier_ok": 9.456265333021063,
+   "S_allowed_dSph_cascade": 2.045454545454545,
+   "S_sat_valley_min_formula_6_over_epsphi_at_1GeV": 18.70459633576346,
+   "delta_check_alphaD_mA_over_2delta_at_1GeV": 14.195959574805299,
+   "delta_check_alphaD2_m_over_4delta": 11.06373722689789
+  },
+  "300_P011": {
+   "m_GeV": 300.0,
+   "convention": "P011",
+   "alpha_D": 0.007347859393541885,
+   "sigv_today": 2.2000000000000004e-26,
+   "aD_m_GeV": 2.2043578180625656,
+   "S_allowed_CMB_mix": 13.636363636363635,
+   "S_allowed_CMB_ee": 10.606060606060604,
+   "S_sat_at_mA": {
+    "0.1": 172.66636236077076,
+    "0.3": 361.7140297050774,
+    "1": 58.57222282614766,
+    "3": 5.91458799991964,
+    "10": 1.587438874357297,
+    "30": 1.160881179888182
+   },
+   "S_GC_at_mA": {
+    "0.1": 45.880914622320375,
+    "1": 46.42008645217818,
+    "10": 1.5872507304192753
+   },
+   "S_freezeout_hulthen_1GeV": 1.0388547798419612,
+   "S_coulomb_rec_unsaturated": 2308398.1090361937,
+   "S_coulomb_GC": 46.16796218072387,
+   "resonances_mA_GeV": [
+    1.340088859784041,
+    0.33502221494601025,
+    0.1488987621982268,
+    0.08375555373650256,
+    0.05360355439136164
+   ],
+   "mA_min_CMB_all_heavier_ok": 2.2493916639557803,
+   "mA_min_CMB_any_ok": 2.2493916639557803,
+   "frac_subGeV_CMB_allowed": 0.0,
+   "S_freezeout_coulomb": 1.0389666514533276,
+   "mA_min_dSph_all_heavier_ok": 3.6534517760527603,
+   "S_allowed_dSph_cascade": 4.09090909090909,
+   "S_sat_valley_min_formula_6_over_epsphi_at_1GeV": 13.226146908375394,
+   "delta_check_alphaD_mA_over_2delta_at_1GeV": 10.038059280794924,
+   "delta_check_alphaD2_m_over_4delta": 5.531868613448947
+  },
+  "1000_eff": {
+   "m_GeV": 1000.0,
+   "convention": "eff",
+   "alpha_D": 0.03463814136252493,
+   "sigv_today": 4.400000000000001e-26,
+   "aD_m_GeV": 34.638141362524934,
+   "S_allowed_CMB_mix": 22.727272727272723,
+   "S_allowed_CMB_ee": 17.67676767676767,
+   "S_sat_at_mA": {
+    "0.1": 2080.859234728907,
+    "0.3": 805.312431027918,
+    "1": 224.89788243199092,
+    "3": 87.08579827168245,
+    "10": 21.28079428536707,
+    "30": 29.115393828602773
+   },
+   "S_GC_at_mA": {
+    "0.1": 217.63786169997277,
+    "1": 165.9631283264845,
+    "10": 21.218267077973874
+   },
+   "S_freezeout_hulthen_1GeV": 1.1921487513066356,
+   "S_coulomb_rec_unsaturated": 10881893.043851307,
+   "S_coulomb_GC": 217.63786087702613,
+   "resonances_mA_GeV": [
+    21.057464892129868,
+    5.264366223032467,
+    2.339718321347763,
+    1.3160915557581168,
+    0.8422985956851947
+   ],
+   "mA_min_CMB_all_heavier_ok": 31.64100817161027,
+   "mA_min_CMB_any_ok": 9.190288850262759,
+   "frac_subGeV_CMB_allowed": 0.0,
+   "S_freezeout_coulomb": 1.1923053225512652,
+   "mA_min_dSph_all_heavier_ok": 44.559075354461484,
+   "S_allowed_dSph_cascade": 6.818181818181817,
+   "S_sat_valley_min_formula_6_over_epsphi_at_1GeV": 207.8288481751496,
+   "delta_check_alphaD_mA_over_2delta_at_1GeV": 47.319865249351,
+   "delta_check_alphaD2_m_over_4delta": 409.7680454406627
+  },
+  "1000_P011": {
+   "m_GeV": 1000.0,
+   "convention": "P011",
+   "alpha_D": 0.024492864645139615,
+   "sigv_today": 2.2e-26,
+   "aD_m_GeV": 24.492864645139615,
+   "S_allowed_CMB_mix": 45.45454545454545,
+   "S_allowed_CMB_ee": 35.35353535353535,
+   "S_sat_at_mA": {
+    "0.1": 4166.589771054159,
+    "0.3": 24604.9218898721,
+    "1": 797.1753218650907,
+    "3": 113.75583143125317,
+    "10": 36.10275479099671,
+    "30": 7.642268700254116
+   },
+   "S_GC_at_mA": {
+    "0.1": 153.89320791439204,
+    "1": 176.50643315047014,
+    "10": 35.624406753210636
+   },
+   "S_freezeout_hulthen_1GeV": 1.1336092262428765,
+   "S_coulomb_rec_unsaturated": 7694660.363453979,
+   "S_coulomb_GC": 153.89320726907957,
+   "resonances_mA_GeV": [
+    14.889876219822678,
+    3.7224690549556696,
+    1.6544306910914086,
+    0.9306172637389174,
+    0.5955950487929071
+   ],
+   "mA_min_CMB_all_heavier_ok": 19.855111964445797,
+   "mA_min_CMB_any_ok": 5.145045698609968,
+   "frac_subGeV_CMB_allowed": 0.0,
+   "S_freezeout_coulomb": 1.133720541408091,
+   "mA_min_dSph_all_heavier_ok": 25.184098425539048,
+   "S_allowed_dSph_cascade": 13.636363636363635,
+   "S_sat_valley_min_formula_6_over_epsphi_at_1GeV": 146.95718787083769,
+   "delta_check_alphaD_mA_over_2delta_at_1GeV": 33.46019760264975,
+   "delta_check_alphaD2_m_over_4delta": 204.8840227203313
+  },
+  "3000_eff": {
+   "m_GeV": 3000.0,
+   "convention": "eff",
+   "alpha_D": 0.10391442408757477,
+   "sigv_today": 4.4e-26,
+   "aD_m_GeV": 311.7432722627243,
+   "S_allowed_CMB_mix": 68.18181818181819,
+   "S_allowed_CMB_ee": 53.030303030303024,
+   "S_sat_at_mA": {
+    "0.1": 18914.208447409714,
+    "0.3": 37273.49278905718,
+    "1": 4173.443028325543,
+    "3": 23667.373278535422,
+    "10": 233.12000330523566,
+    "30": 62.45947564318272
+   },
+   "S_GC_at_mA": {
+    "0.1": 652.9135826310783,
+    "1": 652.5350389016131,
+    "10": 223.28207006135895
+   },
+   "S_freezeout_hulthen_1GeV": 1.6407365552163593,
+   "S_coulomb_rec_unsaturated": 32645679.13155391,
+   "S_coulomb_GC": 652.9135826310783,
+   "resonances_mA_GeV": [
+    189.51718402916876,
+    47.37929600729219,
+    21.05746489212986,
+    11.844824001823048,
+    7.58068736116675
+   ],
+   "mA_min_CMB_all_heavier_ok": 60.986195191226074,
+   "mA_min_CMB_any_ok": 28.770584552924483,
+   "frac_subGeV_CMB_allowed": 0.0,
+   "S_freezeout_coulomb": 1.6408801113534903,
+   "mA_min_dSph_all_heavier_ok": NaN,
+   "S_allowed_dSph_cascade": 20.454545454545453,
+   "S_sat_valley_min_formula_6_over_epsphi_at_1GeV": 1870.4596335763458,
+   "delta_check_alphaD_mA_over_2delta_at_1GeV": 141.95959574805298,
+   "delta_check_alphaD2_m_over_4delta": 11063.737226897889
+  },
+  "3000_P011": {
+   "m_GeV": 3000.0,
+   "convention": "P011",
+   "alpha_D": 0.07347859393541883,
+   "sigv_today": 2.1999999999999995e-26,
+   "aD_m_GeV": 220.4357818062565,
+   "S_allowed_CMB_mix": 136.3636363636364,
+   "S_allowed_CMB_ee": 106.06060606060608,
+   "S_sat_at_mA": {
+    "0.1": 14848.218858864868,
+    "0.3": 25965.125521075566,
+    "1": 1401.447321404243,
+    "3": 627.3145787572932,
+    "10": 172.66636236077042,
+    "30": 361.7140297050791
+   },
+   "S_GC_at_mA": {
+    "0.1": 461.6796218072386,
+    "1": 458.7840419500832,
+    "10": 163.61136093455468
+   },
+   "S_freezeout_hulthen_1GeV": 1.4334861661636749,
+   "S_coulomb_rec_unsaturated": 23083981.09036193,
+   "S_coulomb_GC": 461.6796218072386,
+   "resonances_mA_GeV": [
+    134.0088859784041,
+    33.502221494601024,
+    14.889876219822677,
+    8.375555373650256,
+    5.360355439136164
+   ],
+   "mA_min_CMB_all_heavier_ok": 40.133254625006565,
+   "mA_min_CMB_any_ok": 10.499084698785463,
+   "frac_subGeV_CMB_allowed": 0.0,
+   "S_freezeout_coulomb": 1.4335927296788407,
+   "mA_min_dSph_all_heavier_ok": NaN,
+   "S_allowed_dSph_cascade": 40.90909090909092,
+   "S_sat_valley_min_formula_6_over_epsphi_at_1GeV": 1322.614690837539,
+   "delta_check_alphaD_mA_over_2delta_at_1GeV": 100.38059280794923,
+   "delta_check_alphaD2_m_over_4delta": 5531.868613448944
+  }
+ },
+ "L10": {
+  "d10": 0.28,
+  "G_rel_GeV2": 4.6193613271029155e-06,
+  "Lambda6_GeV": 465.2742662743587,
+  "G8_GeV4": 5.247161382431422e-06,
+  "Lambda8_GeV": 20.89387030604371,
+  "C_q_GeV2": 7.698935545171524e-06,
+  "sigv_dim6_kappa1": 3.3036680030716018e-21,
+  "sigv_dim6_kappa6": 1.982200801842961e-20,
+  "sigv_dim8_literal": 1.9497017977454563e-17,
+  "unitarity_v03": 4.889700428189408e-22,
+  "unitarity_v1e3": 1.4669101284568223e-19,
+  "omega_fraction_symmetric": 6.6592647867598655e-06,
+  "ratio_to_qq_limit_dim6": 33036.680030716016,
+  "ratio_to_qq_limit_dim8": 194970179.7745456,
+  "g_chi_g_N_for_M2TeV": 18.477445308411664
+ },
+ "summary": [
+  {
+   "model": "Higgsino doublet, 1 TeV, delta=366 keV",
+   "sigv_today": "9.6e-27 (S=1) - 2.9e-26 (S=3)",
+   "channel": "W+W- (54%), ZZ (46%)",
+   "strongest_bound": "H.E.S.S. GC Einasto ~4e-26 (likely, profile x10)",
+   "ratio": "0.24-0.7",
+   "verdict": "allowed; marginal only for S~3 and a cuspy profile; CTA-testable"
+  },
+  {
+   "model": "Higgsino line",
+   "sigv_today": "1e-28 (S=1)",
+   "channel": "gamma gamma + gamma Z/2",
+   "strongest_bound": "H.E.S.S. line ~4e-28 (likely)",
+   "ratio": "0.30-0.91",
+   "verdict": "allowed (x3-10 below)"
+  },
+  {
+   "model": "Dark photon, 1 TeV, alpha_D=0.035 (relic), m_A' < 9 GeV",
+   "sigv_today": "4.4e-26 x S_sat (S_sat=225 at 1 GeV)",
+   "channel": "A'A' -> 4l / 2l+hadrons",
+   "strongest_bound": "Planck p_ann (S_allowed=23)",
+   "ratio": "10 at m_A'=1 GeV",
+   "verdict": "excluded at every sub-GeV and few-GeV mass (valleys included)"
+  },
+  {
+   "model": "Dark photon, 1 TeV, m_A' = 9-32 GeV (valleys) or >= 32 GeV",
+   "sigv_today": "4.4e-26 x S<23",
+   "channel": "A'A' -> leptons+hadrons (soft gammas)",
+   "strongest_bound": "Planck; Fermi dSph cascades ~3e-25 (uncertain) need m_A' >= 45 GeV",
+   "ratio": "<1",
+   "verdict": "allowed (CMB); dwarfs marginal below ~50 GeV"
+  },
+  {
+   "model": "L10 contact dipole, 1 TeV, d10=0.28 (symmetric Dirac)",
+   "sigv_today": "3e-21-2e-20 (dim-6); 2e-17 (literal dim-8)",
+   "channel": "q qbar (tensor)",
+   "strongest_bound": "Fermi/H.E.S.S. qq ~1e-25; unitarity",
+   "ratio": "3e+04",
+   "verdict": "excluded as a symmetric thermal WIMP; EFT invalid; viable only as asymmetric Dirac DM (no annihilation today)"
+  }
+ ]
+}

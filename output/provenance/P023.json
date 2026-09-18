@@ -1,0 +1,68 @@
+{
+ "id": "P023",
+ "title": "Composite dark-baryon dark matter with a 300 keV hyperfine splitting: a UV origin for the LZ event?",
+ "date": "2026-09-08",
+ "agent_tools": [
+  {"tool": "Read", "count": 14, "detail": "provenance/PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv; papers/P002.md, P003.md, P007.md, P011.md, P012.md, P014.md; provenance/P011.json (format); code/common/lzcommon.py lines 1-125 and 300-373; code/P012_magnetic_dipole.py lines 36-59 and 220-259 (efficiency model, photon-dipole NREFT coefficients); output figures P023_fig1-4 (visual check)"},
+  {"tool": "Bash", "count": 17, "detail": "ls papers/work/provenance + cat ENVIRONMENT_versions; grep lzcommon API + ls work dirs + wc; cat P011/P012/P007 result files (output too large, saved by harness); grep P011 sigma_p rows at 1000 GeV + head of P011/P012/P007 JSON/CSV; python print of P012 summary + grep plan for P021-P023; grep P012/P007/P003 scripts for coefficients and efficiency; WimPyDD timing test ($TMPDIR/t_wd.py); full run of P023_composite_idm.py (354 s); cached re-run + column prints of ceiling and rate tables; grep dataviz palette hex values; wc -w word-budget checks of papers/P023.md x6 (+ JSON validity check)"},
+  {"tool": "Write", "count": 5, "detail": "code/P023_composite_idm.py; work/P023/details.md; provenance/P023.json; papers/P023.md (written twice: full rewrite to meet the word budget)"},
+  {"tool": "Edit", "count": 20, "detail": "script (4): single-site delta-ceiling block; computed Fig. 3 label; summary JSON key; local scan subset (scan_ph) replacing a variable defined later. papers/P023.md (14, one a no-op): word-budget trims of Results, Key Numbers, Headline, Abstract, Conclusion. details.md and P023.json tool tallies (2 + 2 corrections)"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (form/colour rules; palette slots blue/orange/aqua/yellow used)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python from the simulation root"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian with q- and mchi-dependent Wilson coefficients (photon-dipole c1,c4,c5,c6; A' propagator factor q^2/(q^2+mA^2); O4 constant), streamed_halo_function via lz.wd_halo (explicit vmin grid to 844 km/s, 12-day annual mean and day 167), diff_rate with delta = 0-390 keV via lz.wd_rate"},
+  {"name": "numpy", "version": "2.5.3", "functions": "arrays, trapezoid, logspace, interpolation in log"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf (efficiency), optimize.brentq (Lambda_D solution)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, to_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg), fill_between, axhspan/axvspan; 4 PNG figures"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ constants (exposure, efficiency edges, plateau), M_NUCLEON_GEV, HBARC_GEV_FM, GEV_TO_CM2, VESC_KMS, wd, wd_halo, wd_hamiltonian, wd_rate"},
+  {"name": "none: derived by hand", "version": "", "functions": "Fermi-contact hyperfine formula and its equal-mass/colour-factor limits; HQET K = delta*m_Q calibration on B/D and Sigma_c/Sigma_b; one-loop Lambda_D; epsilon translation mu_tr = eps sqrt(alpha_D/alpha) e/(2 m_const); lifetime-geometry P_in = 1-exp(-L/v tau) and the delta ceiling; asymmetric relic eta_D; geometric self-interaction and annihilation estimates"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P023_composite_idm.py", "purpose": "Parts 1-5: hyperfine scaling solutions and validations; WimPyDD photon-M1, massive-A' and Z-axial O4 inelastic rates (1 TeV, delta scan 200-390 keV, June/annual halos, 400/4000 GeV); mu_tr(N=1); chi2 lifetime and single-site delta ceiling; cosmology; benchmark table; figures; summary and recalled-input JSON", "command": ".venv/bin/python output/code/P023_composite_idm.py   (first run 354 s; later runs 1 s from P023_spectra_cache.npz; --recompute to redo)"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules, deliverables, word budgets"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "event summary, explanations I/J/K, open question 10"},
+  {"file": "output/results_ledger.csv", "parts_used": "rows P001-P020 (headlines of P002, P003, P006, P007, P011, P012)"},
+  {"file": "output/papers/P002.md", "parts_used": "delta_max(248 keV) = 387 keV at 1 TeV, m_min = 259 GeV at delta = 300, spectral percentiles"},
+  {"file": "output/papers/P003.md", "parts_used": "WimPyDD c0 = cp+cn convention; efficiency model; N_lo per 200-270 keV event criterion; O1 elastic N_lo = 2752"},
+  {"file": "output/papers/P007.md and work/P007/relic_and_lifetime.json", "parts_used": "Higgsino N(delta) = 790 at 300 keV, delta(N=1) = 366 keV, (c m_v^2)^2 = 0.0777, chi2 lifetime ~2e6 s, 12-day annual halo recipe"},
+  {"file": "output/papers/P011.md, work/P011/sigma_p_required.csv (1000 GeV rows), summary.json, relic_lifetime.json", "parts_used": "sigma_p(N=1) and eps = 8.7e-7 (1 GeV, alpha_D = 0.1, delta = 300); A' propagator factors; chi2 -> chi1 nu nu lifetime and the exothermic eps floor"},
+  {"file": "output/papers/P012.md, work/P012/P012_photon_dipole.csv, P012_summary.json, code/P012_magnetic_dipole.py", "parts_used": "photon-dipole NREFT coefficients and WimPyDD implementation; elastic N(1 mu_N) = 1.193e12 and mu = 2.1e-5 mu_N for one high-energy event; L10-equivalent moment 2.8e-5 mu_N; efficiency function"},
+  {"file": "output/papers/P014.md", "parts_used": "format model for an estimated MODEL/COMP paper; Higgsino chi2 lifetimes"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "constants, WimPyDD wrapper"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "alpha = 1/137.036, G_F = 1.1664e-5 GeV^-2, m_e, hbar, g_p = 5.5857, g_n = -3.8261", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "hadron masses (N, Delta, Lambda, Sigma0, Sigma(1385), B, B*, D, D*, eta_c, J/psi, eta_b, Upsilon, Sigma_c, Sigma_c*, Sigma_b, Sigma_b*) to 1-3 MeV", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "MSbar m_c = 1.27, m_b = 4.18 GeV", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "Lambda_QCD^(3) ~ 0.33 GeV; alpha_s(m_c) ~ 0.38, alpha_s(m_b) ~ 0.22; m_s - m_ud ~ 93 MeV", "presumed_source": "PDG QCD review", "reliability": "likely"},
+  {"item": "Fermi-contact hyperfine formula (8/3) alpha^4 mu^3/(m1 m2)(g1 g2/4); positronium 7/12; colour factors C_F = 4/3 (SU(3)), 3/4 (SU(2))", "presumed_source": "QED/QCD textbooks", "reliability": "certain (reproduces 1418.8 MHz and 204.4 GHz)"},
+  {"item": "hydrogen 21 cm: 1420.4 MHz, A = 2.87e-15 s^-1; positronium hfs 203.4 GHz", "presumed_source": "atomic physics", "reliability": "certain"},
+  {"item": "HQET: m_H*^2 - m_H^2 = const, hyperfine splitting ~ Lambda^2/m_Q", "presumed_source": "Neubert 1994 review", "reliability": "certain (confirmed by B/D and Sigma_b/Sigma_c ratios to 5%)"},
+  {"item": "one-loop running Lambda = mu exp(-2 pi/(b0 alpha)), b0 = (11N - 2 n_f)/3", "presumed_source": "standard", "reliability": "certain"},
+  {"item": "photon-mediated magnetic-dipole NREFT coefficients c1, c4, c5, c6 (Anand normalisation)", "presumed_source": "Fitzpatrick et al. 2012 / Anand et al. 2014, via P012", "reliability": "likely (P012 validated against LZ Fig. 1 shape; elastic normalisation reproduced here to 0.4%)"},
+  {"item": "nucleon axial charges Delta u = 0.842, Delta d = -0.427, Delta s = -0.085 and the reduction gamma^mu gamma5 x gamma_mu gamma5 -> -4 S_chi.S_N giving c4 = 4 sqrt2 G_F g_A^chi a_N", "presumed_source": "HERMES/COMPASS-era values; standard NR reduction", "reliability": "likely (factor-2 convention risk)"},
+  {"item": "MiDM de-excitation width Gamma = mu_tr^2 delta^3/pi", "presumed_source": "Chang, Weiner, Yavin 2010", "reliability": "likely (within x3 of the 21 cm rate)"},
+  {"item": "<sigma v>(Q Qbar -> A_D A_D) ~ pi alpha_D^2/m_Q^2; thermal <sigma v> = 2.2e-26 cm^3/s", "presumed_source": "secluded-DM literature; Steigman-Dasgupta-Beacom 2012", "reliability": "likely / certain"},
+  {"item": "Omega_DM h^2 = 0.120, rho_c/h^2 = 1.0537e-5 GeV cm^-3, s_0 = 2891 cm^-3, n_B/s = 8.7e-11, t_U = 13.8 Gyr", "presumed_source": "Planck 2018 / PDG", "reliability": "certain"},
+  {"item": "lightest glueball ~ 5.5 Lambda (1.7 GeV in QCD)", "presumed_source": "lattice QCD", "reliability": "likely"},
+  {"item": "LXe attenuation length of a 300 keV gamma ~ 2 cm (+-50%)", "presumed_source": "NIST XCOM-type tables", "reliability": "uncertain"},
+  {"item": "LZ TPC 1.46 m x 1.46 m; mean remaining chord ~1 m; post-scatter chi2 speed ~750 km/s", "presumed_source": "LZ detector papers; kinematics", "reliability": "likely / certain (order)"},
+  {"item": "BaBar dark-photon ceiling eps <~ 1e-3 for m_A' <~ 1-10 GeV (used qualitatively)", "presumed_source": "BaBar 2014/2017 via P011", "reliability": "likely"},
+  {"item": "bibliographic details of Alves et al. 2010, Chang-Weiner-Yavin 2010, Kaplan et al. 2010, Kribs et al. 2010, Antipin et al. 2015, Bagnasco-Dine-Thomas 1994, Forestell et al. 2017, Neubert 1994", "presumed_source": "memory", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "The assignment's Lambda_D^3/m_Q^2 heavy-light scaling was not used: HQET fixes delta ~ Lambda^2/m_Q and the B/D and Sigma_b/Sigma_c data confirm the 1/m_Q law to 5%",
+  "A genuine spin-0 -> spin-1 NREFT response is not available in WimPyDD; the spin-1/2 MiDM operator basis is used with an O(1) spin-factor caveat",
+  "Millicharge bounds for the Coulombic dark atom and glueball-decay cosmology for the heavy-light scenario were left qualitative",
+  "First draft of the single-site block referenced a variable defined only in the figure section; replaced by a local subset before running. Fig. 3 label initially hard-coded (16 us) and replaced by the computed 12.7 us",
+  "WimPyDD velocity-grid jitter visible in the delta = 366 keV spectrum (few-% effect on integrated counts); not smoothed"
+ ],
+ "wimpydd_generated_files": "none (diff_rate kernels only; no response-function files written)"
+}

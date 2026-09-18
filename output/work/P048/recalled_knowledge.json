@@ -1,0 +1,107 @@
+[
+ {
+  "item": "alpha(mZ)=1/127.95, sin^2 theta_W=0.2312, mZ=91.1876, Gamma_Z=2.4952, mW=80.377 GeV, G_F",
+  "presumed_source": "PDG",
+  "reliability": "certain"
+ },
+ {
+  "item": "13 TeV NLO+NLL pure-wino chi1+-chi2^0 cross-sections 12 pb ... 1.3 fb for 100-1000 GeV (P014 table)",
+  "presumed_source": "LHC SUSY xsec WG via corpus P014",
+  "reliability": "likely (factor ~1.5)"
+ },
+ {
+  "item": "Higgsino chi+-chi0 channels = 1/2 of wino C1N2 at equal mass; chi+chi- + chi1chi2 add ~50%",
+  "presumed_source": "P014 (SU(2) Wigner-Eckart)",
+  "reliability": "likely"
+ },
+ {
+  "item": "Parton-luminosity tau-scaling: sigma(m, s2) = sigma(m sqrt(s1/s2), s1) x s1/s2 (neglects PDF Q^2 evolution)",
+  "presumed_source": "collinear factorisation; own derivation",
+  "reliability": "likely (x/\u00f71.5 at fixed tau)"
+ },
+ {
+  "item": "Assignment/literature 100 TeV Higgsino sigma(chi+chi- + chi+-chi0) ~ 30 fb at 1 TeV; Low-Wang 2014 Higgsino total ~60 fb",
+  "presumed_source": "Low & Wang JHEP 08 (2014) 161; assignment",
+  "reliability": "uncertain (factor 3)"
+ },
+ {
+  "item": "Tree-level e+e-/mu+mu- -> f fbar with s-channel gamma+Z: sigma = (4 pi alpha^2/3s) beta {(3-beta^2)/2 [Q^2 - 2 Q v_l v_f Re chi + (v_l^2+a_l^2) v_f^2 |chi|^2] + beta^2 (v_l^2+a_l^2) a_f^2 |chi|^2}, chi = s/(4 s_W^2 c_W^2 (s - mZ^2 + i mZ Gamma_Z)), v = g_L+g_R, a = g_L-g_R with g_L = T3 - Q s_W^2",
+  "presumed_source": "standard textbook (Peskin-Schroeder ch. 21; LEP2 literature)",
+  "reliability": "certain (massless limit reproduces R-ratio formula)"
+ },
+ {
+  "item": "Pure-Higgsino chargino is vector-like under the Z: g_L = g_R = 1/2 - s_W^2; neutral Dirac Higgsino g_L=g_R=-1/2; Y=1 triplet: (T3,Q) = (1,2),(0,1),(-1,0)",
+  "presumed_source": "SU(2)xU(1) quantum numbers",
+  "reliability": "certain"
+ },
+ {
+  "item": "Tracklet radii: ATLAS Run-2 pixel tracklet needs 4 hits, r >~ 12 cm; ITk/FCC-hh 'short tracklet' proposals r ~ 5-10 cm; CMS-like tracks r >~ 30 cm; MuC vertex detector innermost layer ~3 cm with 10-degree nozzles",
+  "presumed_source": "ATLAS EPJC 82 (2022) 606; Fukuda et al. 2018; Saito et al. 2019; FCC-hh CDR; MuC detector concept (Capdevilla et al. 2021)",
+  "reliability": "uncertain"
+ },
+ {
+  "item": "ATLAS 136 fb^-1 disappearing-track wino exclusion 660 GeV (tau=0.2 ns), ~5 selected events for exclusion; fake-tracklet backgrounds O(few-10) events",
+  "presumed_source": "ATLAS EPJC 82 (2022) 606 via P014",
+  "reliability": "likely (masses) / uncertain (event counts)"
+ },
+ {
+  "item": "Projected tracklet backgrounds: HL-LHC 3 ab^-1 ~ 30 (10-100) events; FCC-hh 30 ab^-1 ~ 100 (10-1000, pile-up 1000); MuC ~ 1-10 after BIB rejection",
+  "presumed_source": "scaling of ATLAS Run-2 counts; Saito et al. 2019; Capdevilla et al. 2021",
+  "reliability": "uncertain"
+ },
+ {
+  "item": "Fixed-order angular distribution for vector-coupled fermion pairs d sigma/d cos theta ~ 2 - beta^2 sin^2 theta; pair-mass spectrum from dL/dtau ~ tau^-a with a = -slope/2",
+  "presumed_source": "own derivation from the sigma_ff formula; luminosity power law fitted to the P014 anchor slopes",
+  "reliability": "likely"
+ },
+ {
+  "item": "eps_kin calibration assumes the ATLAS wino exclusion corresponds to ~5 selected signal events and 1.5 x C1N2 produced",
+  "presumed_source": "P014 toy",
+  "reliability": "uncertain (factor 2)"
+ },
+ {
+  "item": "Higgsino channel split of the extra 50%: chi+chi- ~ 1/3 and chi1chi2 ~ 1/6 of the chi+-chi0 rate",
+  "presumed_source": "own estimate from Z/W couplings",
+  "reliability": "uncertain"
+ },
+ {
+  "item": "MuC tracklet reconstruction efficiency 50% after BIB-driven quality cuts",
+  "presumed_source": "assumption motivated by Capdevilla et al. 2021",
+  "reliability": "uncertain"
+ },
+ {
+  "item": "Collinear ISR: dP/dx dtheta^2 = (alpha/2pi)(1+(1-x)^2)/x / theta^2, integrated over 10-170 degrees -> ln(1/theta_min^2) ~ 3.5 per beam",
+  "presumed_source": "Weizsaecker-Williams / electron structure function",
+  "reliability": "likely (factor ~2 for wide-angle photons)"
+ },
+ {
+  "item": "sigma(l+l- -> nu nubar, 3 flavours) at multi-TeV ~ 50-100 pb, dominated by t-channel W exchange (asymptotically G_F^2 mW^2/pi ~ 110 pb scale)",
+  "presumed_source": "standard result; own estimate",
+  "reliability": "uncertain (factor 2)"
+ },
+ {
+  "item": "Literature MuC reach: 10 TeV, 10 ab^-1: mono-photon 95% CL reach covers/nears the 1.1 TeV Higgsino (Han-Liu-Wang-Wang 2020); disappearing tracks discover it at 5 sigma (Capdevilla-Meloni-Simoniello-Zurita 2021); 3 TeV MuC excludes it",
+  "presumed_source": "arXiv:2009.11287; JHEP 06 (2021) 133",
+  "reliability": "likely (qualitative), uncertain (numbers)"
+ },
+ {
+  "item": "chi2 lifetimes: tau(chi2->chi1 gamma) ~ 0.06 s (loop dipole, uncertain O(1)), tau(chi2->chi1 nu nubar) = 4.6e5 s (P014)",
+  "presumed_source": "corpus P014",
+  "reliability": "corpus (photon channel uncertain)"
+ },
+ {
+  "item": "P014 tree-level (Delta m+- - Delta m_rad)/delta = (0.1-2.1)e-3 depending on gaugino hierarchy and tan beta; Delta m_rad theory uncertainty +-10 MeV (scheme), two-loop could reduce to ~+-3 MeV",
+  "presumed_source": "corpus P014",
+  "reliability": "corpus"
+ },
+ {
+  "item": "Oblique W parameter from a heavy vector-coupled fermion multiplet: W = g^2 mW^2 Sum(T3^2)/(60 pi^2 m^2) (per Dirac fermion, from the q^4 term of the vacuum polarisation, alpha/(15 pi) q^2/m^2); FCC-ee/CEPC projected sensitivity |W| ~ 3e-5 (LEP ~ 1e-3)",
+  "presumed_source": "Barbieri-Pomarol-Rattazzi-Strumia 2004 definitions; own one-loop expansion; Di Luzio-Groeber-Panico JHEP 2018 for sensitivity",
+  "reliability": "likely (formula) / uncertain (sensitivity)"
+ },
+ {
+  "item": "P007: delta(N=1) = 366 (1 TeV), 375 (2 TeV) keV; N falls x5 per 10 keV near delta_max; P018 halo systematic on delta -17/+11 keV",
+  "presumed_source": "corpus P007/P018",
+  "reliability": "corpus"
+ }
+]

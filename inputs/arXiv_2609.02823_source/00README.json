@@ -1,0 +1,93 @@
+{
+   "sources" : [
+      {
+         "usage" : "toplevel",
+         "filename" : "main.tex"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "Fig1_combined_recoils.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "Fig2_Calibrations.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "Fig3_roi_events_in_fv.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "Fig4_science_sample_wbands.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "Fig5_NR_distance_3panels_no_sig.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "Fig6_O1_L10_limit_stacked.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "FigS1a_science_sample_marked.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "FigS1b_delayed_sample_marked.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "FigS1c_prompt_sample_marked.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "FigS1d_salt_sample_marked.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "FigS2_efficiency_werror.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "FigS3a_accs_baseline.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "FigS3b_accs_all_cuts.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "FigS4_mssi_sidebands_s1logs2.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "FigS5a_LE_MSSI_rz.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "FigS5b_HE_MSSI_rz.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "FigS6_mssi_HE_wall_and_rfr_sidebands_s1logs2.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "FigS7_O1_as_SI.pdf"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "main.bbl"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "references.bib"
+      }
+   ],
+   "spec_version" : 1,
+   "texlive_version" : "2025",
+   "process" : {
+      "compiler" : "pdflatex"
+   }
+}

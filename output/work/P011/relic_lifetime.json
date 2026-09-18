@@ -1,0 +1,34 @@
+{
+ "relic": {
+  "300.0": {
+   "alpha_D_thermal": 0.007347859393541885,
+   "g_D_thermal": 0.30386826810551926
+  },
+  "1000.0": {
+   "alpha_D_thermal": 0.024492864645139615,
+   "g_D_thermal": 0.554785016504735
+  },
+  "3000.0": {
+   "alpha_D_thermal": 0.07347859393541883,
+   "g_D_thermal": 0.9609158358641392
+  },
+  "s_channel_over_AA_ratio_scaling": "sigma v(ff) / sigma v(A A) ~ (alpha eps^2/alpha_D) x Sum_f N_c Q_f^2 (~ 20/3 for f lighter than 1 TeV); with eps <= 1e-3 this is < 1e-3, negligible",
+  "s_channel_only_if_mA_above_mchi": "if m_A > m_chi the A A channel closes and <sigma v>(chi1 chi2 -> f f) ~ 16 pi alpha alpha_D eps^2 N_eff m^2 / (3 m_A^4) needs eps ~ O(1) for alpha_D <= 1: excluded by dark-photon searches, so m_A < m_chi is required"
+ },
+ "chi2_width_formula": "Gamma = 3 G_eff^2 delta^5/(120 pi^3), G_eff = g_D eps tan(theta_W) g/(4 cos(theta_W) m_Z^2)",
+ "tau_examples_s": {
+  "eps=1e-06,alpha_D=0.1,delta=250": 4.743295151606153e+18,
+  "eps=1e-06,alpha_D=0.1,delta=300": 1.9062239388849329e+18,
+  "eps=1e-06,alpha_D=0.1,delta=365": 7.150161817286181e+17,
+  "eps=1e-05,alpha_D=0.1,delta=250": 4.743295151606151e+16,
+  "eps=1e-05,alpha_D=0.1,delta=300": 1.906223938884932e+16,
+  "eps=1e-05,alpha_D=0.1,delta=365": 7150161817286177.0,
+  "eps=0.0001,alpha_D=0.1,delta=250": 474329515160615.25,
+  "eps=0.0001,alpha_D=0.1,delta=300": 190622393888493.25,
+  "eps=0.0001,alpha_D=0.1,delta=365": 71501618172861.78,
+  "eps=0.001,alpha_D=0.1,delta=250": 4743295151606.153,
+  "eps=0.001,alpha_D=0.1,delta=300": 1906223938884.9329,
+  "eps=0.001,alpha_D=0.1,delta=365": 715016181728.618
+ },
+ "t_universe_s": 4.3549488e+17
+}

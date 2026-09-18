@@ -1,0 +1,214 @@
+====================
+WARNING
+Only some of the isotopes contained in
+WimPyDD/WimPyC/Sun/densities.tab
+were loaded:
+['1H', '4He', '3He', '12C', '13C', '14N', '15N', '16O', '17O', '18O', '20Ne', '23Na', '24Mg', '27Al', '28Si', '32S', '40Ar', '40Ca', '56Fe', '58Ni']
+the following targets could not be initialized and were ignored:
+['P', 'Cl', 'K', 'Sc', 'Ti', 'V', 'Cr', 'Mn', 'Co']
+====================
+====================
+WARNING
+Only some of the isotopes contained in
+WimPyDD/WimPyC/Earth/densities.tab
+were loaded:
+['16O', '28Si', '27Al', '56Fe', '40Ca', '23Na', '24Mg', '58Ni', '31P', '32S']
+the following targets could not be initialized and were ignored:
+['39K', '48Ti', '59Co']
+====================
+looking for 12C in list of pre-defined targets:
+12C found in predefined carbon element object
+looking for 13C in list of pre-defined targets:
+13C found in predefined carbon element object
+looking for 14N in list of pre-defined targets:
+14N found in predefined nitrogen element object
+looking for 15N in list of pre-defined targets:
+15N found in predefined nitrogen element object
+looking for 16O in list of pre-defined targets:
+16O found in predefined oxygen element object
+looking for 17O in list of pre-defined targets:
+17O found in predefined oxygen element object
+looking for 18O in list of pre-defined targets:
+18O found in predefined oxygen element object
+looking for 1H in list of pre-defined targets:
+1H found in predefined hydrogen element object
+looking for 20Ne in list of pre-defined targets:
+20Ne found in predefined neon element object
+looking for 23Na in list of pre-defined targets:
+23Na found in predefined sodium element object
+looking for 24Mg in list of pre-defined targets:
+24Mg found in predefined magnesium element object
+looking for 27Al in list of pre-defined targets:
+27Al found in predefined aluminium element object
+looking for 28Si in list of pre-defined targets:
+28Si found in predefined silicon element object
+looking for 31P in list of pre-defined targets:
+31P found in predefined phosphorus element object
+looking for 32S in list of pre-defined targets:
+32S found in predefined sulfur element object
+looking for 3He in list of pre-defined targets:
+3He found in predefined helium element object
+looking for 40Ar in list of pre-defined targets:
+40Ar found in predefined argon element object
+looking for 40Ca in list of pre-defined targets:
+40Ca found in predefined calcium element object
+looking for 4He in list of pre-defined targets:
+4He found in predefined helium element object
+looking for 56Fe in list of pre-defined targets:
+56Fe found in predefined iron element object
+looking for 58Ni in list of pre-defined targets:
+58Ni found in predefined nickel element object
+looking for 12C in list of pre-defined targets:
+12C found in predefined carbon element object
+looking for 13C in list of pre-defined targets:
+13C found in predefined carbon element object
+looking for 14N in list of pre-defined targets:
+14N found in predefined nitrogen element object
+looking for 15N in list of pre-defined targets:
+15N found in predefined nitrogen element object
+looking for 16O in list of pre-defined targets:
+16O found in predefined oxygen element object
+looking for 17O in list of pre-defined targets:
+17O found in predefined oxygen element object
+looking for 18O in list of pre-defined targets:
+18O found in predefined oxygen element object
+looking for 1H in list of pre-defined targets:
+1H found in predefined hydrogen element object
+looking for 20Ne in list of pre-defined targets:
+20Ne found in predefined neon element object
+looking for 23Na in list of pre-defined targets:
+23Na found in predefined sodium element object
+looking for 24Mg in list of pre-defined targets:
+24Mg found in predefined magnesium element object
+looking for 27Al in list of pre-defined targets:
+27Al found in predefined aluminium element object
+looking for 28Si in list of pre-defined targets:
+28Si found in predefined silicon element object
+looking for 31P in list of pre-defined targets:
+31P found in predefined phosphorus element object
+looking for 32S in list of pre-defined targets:
+32S found in predefined sulfur element object
+looking for 3He in list of pre-defined targets:
+3He found in predefined helium element object
+looking for 40Ar in list of pre-defined targets:
+40Ar found in predefined argon element object
+looking for 40Ca in list of pre-defined targets:
+40Ca found in predefined calcium element object
+looking for 4He in list of pre-defined targets:
+4He found in predefined helium element object
+looking for 56Fe in list of pre-defined targets:
+56Fe found in predefined iron element object
+looking for 58Ni in list of pre-defined targets:
+58Ni found in predefined nickel element object
+halo (Sun frame): <1/v>^-1 = 287.9 km/s, <v> = 355.5 km/s, v_rms = 379.9 km/s
+
+=== NS: B=0.6308, v_esc,loc=0.6077c (Newtonian 0.6077c), gamma=1.2591, R_inf=15.11 km
+N_n=1.781e+57, n_n=2.460e+38 cm^-3, sigma_crit,n=2.540e-45 cm^2, sigma_crit,p(Y_p=0.07)=3.629e-44
+dE_max (one scatter) = 1.100 GeV; single-scatter capture up to m_chi = 1.37e+06 GeV; q_typ = 0.72 GeV vs p_F~0.4
+rho=0.3 v_star=Sun: Mdot=44.22 g/s, L_inf=8.179e+21 erg/s, T_loc=1885 K, T_inf=1497 K; with annihilation T_inf=2223 K
+rho=0.3 v_star=400: Mdot=31.42 g/s, L_inf=5.812e+21 erg/s, T_loc=1731 K, T_inf=1375 K; with annihilation T_inf=2041 K
+rho=0.4 v_star=Sun: Mdot=58.96 g/s, L_inf=1.091e+22 erg/s, T_loc=2026 K, T_inf=1609 K; with annihilation T_inf=2389 K
+rho=0.4 v_star=400: Mdot=41.90 g/s, L_inf=7.750e+21 erg/s, T_loc=1860 K, T_inf=1477 K; with annihilation T_inf=2193 K
+rho=1.0 v_star=Sun: Mdot=147.40 g/s, L_inf=2.726e+22 erg/s, T_loc=2548 K, T_inf=2023 K; with annihilation T_inf=3004 K
+rho=1.0 v_star=400: Mdot=104.75 g/s, L_inf=1.937e+22 erg/s, T_loc=2339 K, T_inf=1858 K; with annihilation T_inf=2758 K
+Higgsino (P007) sigma_n: sigma/sigma_crit = 2.91e+06, f = 1.0000, mfp = 5.49e-01 cm, R/mfp = 2.18e+06; f(FF 0.03)=1.000
+dark photon (P011) sigma_p, delta=250: sigma/sigma_crit = 3.31e+01, f = 0.9992, mfp = 4.84e+04 cm, R/mfp = 2.48e+01; f(FF 0.03)=0.604
+dark photon (P011) sigma_p, delta=300: sigma/sigma_crit = 2.37e+02, f = 1.0000, mfp = 6.75e+03 cm, R/mfp = 1.78e+02; f(FF 0.03)=0.982
+dark photon (P011) sigma_p, delta=350: sigma/sigma_crit = 8.27e+03, f = 1.0000, mfp = 1.94e+02 cm, R/mfp = 6.20e+03; f(FF 0.03)=1.000
+dark photon (P011) sigma_p, delta=365: sigma/sigma_crit = 6.34e+04, f = 1.0000, mfp = 2.52e+01 cm, R/mfp = 4.75e+04; f(FF 0.03)=1.000
+P021 best-fit sigma_n, delta=300: sigma/sigma_crit = 8.65e+02, f = 1.0000, mfp = 1.85e+03 cm, R/mfp = 6.48e+02; f(FF 0.03)=0.999
+P021 best-fit sigma_n, delta=350: sigma/sigma_crit = 4.56e+04, f = 1.0000, mfp = 3.51e+01 cm, R/mfp = 3.42e+04; f(FF 0.03)=1.000
+P021 best-fit sigma_n, delta=380: sigma/sigma_crit = 2.56e+07, f = 1.0000, mfp = 6.25e-02 cm, R/mfp = 1.92e+07; f(FF 0.03)=1.000
+
+=== inelastic threshold in NS: delta_max(NR) = 173.3 MeV, relativistic CM KE = 243.2 MeV; delta=380 keV is 1.56e-03 of it
+Higgsino tau_gamma ~0.06-0.1 s (P014/P026): c tau = 1.80e+04 km, R/(c tau) = 6.67e-04
+Higgsino tau_nunu 4.6e5 s (P014/P026): c tau = 1.38e+11 km, R/(c tau) = 8.70e-11
+dark photon tau_nunu >= 7e16 s (P011/P026): c tau = 2.10e+22 km, R/(c tau) = 5.72e-22
+assignment lower bracket 0.02 s: c tau = 6.00e+03 km, R/(c tau) = 2.00e-03
+
+=== near-IR flux (rho=0.4):
+ d_pc                 case       T_inf  lam_um    F_nJy        AB  t_5sigma_s_F200W
+   10              kinetic 1609.115509     2.0 0.433384 32.307885      1.078152e+06
+   10 kinetic+annihilation 2389.048286     2.0 1.938675 30.681303      5.387843e+04
+   10  hypothetical 2000 K 2000.000000     2.0 1.055168 31.341762      1.818788e+05
+   30              kinetic 1609.115509     2.0 0.048154 34.693491      8.733035e+07
+   30 kinetic+annihilation 2389.048286     2.0 0.215408 33.066909      4.364153e+06
+   30  hypothetical 2000 K 2000.000000     2.0 0.117241 33.727368      1.473219e+07
+  100              kinetic 1609.115509     2.0 0.004334 37.307885      1.078152e+10
+  100 kinetic+annihilation 2389.048286     2.0 0.019387 35.681303      5.387843e+08
+  100  hypothetical 2000 K 2000.000000     2.0 0.010552 36.341762      1.818788e+09
+T_inf=2000 K needs rho = 0.95 GeV/cm^3 (kinetic only) or 0.20 (kinetic+annihilation)
+ISM Bondi accretion: Mdot=3.08e+10 g/s, L=5.70e+30 erg/s = 5.2e+08 x DM kinetic heating
+
+=== WD: v_esc surface 5761 km/s, centre (x1.58 from WimPyC profile) 9078 km/s; WimPyC WD: 3722/5866 km/s
+N_C=9.98e+55, sigma_crit per C nucleus = 2.01e-38 cm^2; coherence factors iso 19970, p-only 4993, Higgsino 4270
+ delta  E_minus_keV  E_plus_keV    P_cap  sigma_crit_n_iso  sigma_crit_p_darkphoton  sigma_crit_n_Higgsino
+     0     0.000000 8093.553938 0.047478      2.124866e-41             8.499463e-41           9.937928e-41
+   300    11.754291 7488.432266 0.078364      1.287368e-41             5.149472e-41           6.020978e-41
+   350    16.222820 7385.069173 0.085204      1.184017e-41             4.736068e-41           5.537609e-41
+   366    17.820169 7351.825564 0.087519      1.152702e-41             4.610807e-41           5.391148e-41
+   380    19.286020 7322.669235 0.089597      1.125968e-41             4.503873e-41           5.266117e-41
+                                model        f    rho     Mdot_g_s        L_ann      T_kin       T_ann
+              Higgsino (P007) sigma_n 0.999953    0.4 1.657858e+04 1.490008e+25  49.559435  425.161519
+              Higgsino (P007) sigma_n 0.999953 1000.0 4.144645e+07 3.725021e+28 350.438127 3006.345935
+dark photon (P011) sigma_p, delta=250 0.025649    0.4 4.252398e+02 3.821865e+23  19.833438  170.147510
+dark photon (P011) sigma_p, delta=250 0.025649 1000.0 1.063099e+06 9.554661e+26 140.243583 1203.124583
+dark photon (P011) sigma_p, delta=300 0.152314    0.4 2.525270e+03 2.269600e+24  30.961108  265.609801
+dark photon (P011) sigma_p, delta=300 0.152314 1000.0 6.313176e+06 5.674000e+27 218.928095 1878.144917
+dark photon (P011) sigma_p, delta=350 0.977864    0.4 1.621236e+04 1.457094e+25  49.283448  422.793871
+dark photon (P011) sigma_p, delta=350 0.977864 1000.0 4.053090e+07 3.642736e+28 348.486600 2989.604135
+dark photon (P011) sigma_p, delta=365 0.999643    0.4 1.657344e+04 1.489546e+25  49.555593  425.128559
+dark photon (P011) sigma_p, delta=365 0.999643 1000.0 4.143360e+07 3.723866e+28 350.410960 3006.112868
+     P021 best-fit sigma_n, delta=300 0.155295    0.4 2.574695e+03 2.314020e+24  31.111501  266.899992
+     P021 best-fit sigma_n, delta=300 0.155295 1000.0 6.436737e+06 5.785050e+27 219.991530 1887.267939
+     P021 best-fit sigma_n, delta=350 0.990700    0.4 1.642517e+04 1.476221e+25  49.444386  424.174533
+     P021 best-fit sigma_n, delta=350 0.990700 1000.0 4.106292e+07 3.690551e+28 349.624607 2999.366889
+     P021 best-fit sigma_n, delta=380 1.000000    0.4 1.657936e+04 1.490079e+25  49.560019  425.166531
+     P021 best-fit sigma_n, delta=380 1.000000 1000.0 4.144840e+07 3.725196e+28 350.442258 3006.381375
+faintest M4 WD L ~ 1.21e+29 erg/s
+
+=== Sun: profile mass integral = 1.000 Msun; v_esc centre 1373, surface 618 km/s
+                       body        A  dmax_surface_keV  dmax_centre_keV
+               NS (neutron)   1.0000     243214.126837    243214.126837
+           WD 1 Msun (C-12)  12.0000       2046.005778      5073.182740
+           WD 1 Msun (O-16)  16.0000       2717.992477      6739.410355
+ WimPyC WD 0.49 Msun (C-12)  12.0000        857.171153      2121.008803
+                   Sun (1H)   1.0079          2.422997        10.272812
+                  Sun (4He)   4.0026          9.595530        40.682295
+                  Sun (16O)  15.9950         37.923141       160.783240
+                 Sun (56Fe)  55.9350        127.928797       542.381410
+                 Sun (58Ni)  57.9350        132.268780       560.781693
+Earth lab, Xe (LZ, 16 June) 131.2900        386.615113              NaN
+delta=300: need w >= 1044 km/s on Fe -> r <= 0.34 Rsun (mass fraction 0.70)
+delta=350: need w >= 1127 km/s on Fe -> r <= 0.27 Rsun (mass fraction 0.53)
+delta=366: need w >= 1153 km/s on Fe -> r <= 0.25 Rsun (mass fraction 0.49)
+delta=380: need w >= 1174 km/s on Fe -> r <= 0.23 Rsun (mass fraction 0.42)
+own Gould integral (0.8 s): Fe elastic iso 1e-42: 2.467e+20; Fe delta=300 iso 1e-42: 2.161e+20; H elastic 1e-42: 2.528e+18
+WimPyC probe values (elastic H1 2.53e18, elastic Fe56 2.42e20, inelastic Fe56 delta=300 2.14e20 at sigma=1e-42, rho=0.4)
+WimPyC Higgsino (Z exchange) delta=0: C_Fe=4.218e+23 C_Ni=2.118e+22 s^-1 (C/geom=4.3e-04); Gamma_A=2.215e+23, t_eq=3.87e+06 yr  [20.1 s]
+WimPyC Higgsino (Z exchange) delta=300: C_Fe=3.681e+23 C_Ni=1.995e+22 s^-1 (C/geom=3.8e-04); Gamma_A=1.940e+23, t_eq=4.13e+06 yr  [33.5 s]
+WimPyC Higgsino (Z exchange) delta=350: C_Fe=1.692e+23 C_Ni=9.530e+21 s^-1 (C/geom=1.7e-04); Gamma_A=8.936e+22, t_eq=6.09e+06 yr  [32.4 s]
+WimPyC Higgsino (Z exchange) delta=366: C_Fe=1.235e+23 C_Ni=7.087e+21 s^-1 (C/geom=1.3e-04); Gamma_A=6.532e+22, t_eq=7.13e+06 yr  [34.0 s]
+WimPyC Higgsino (Z exchange) delta=380: C_Fe=9.089e+22 C_Ni=5.317e+21 s^-1 (C/geom=9.4e-05); Gamma_A=4.811e+22, t_eq=8.30e+06 yr  [32.3 s]
+WimPyC dark photon (proton-only) delta=250: C_Fe=9.747e+19 C_Ni=5.717e+18 s^-1 (C/geom=1.0e-07); Gamma_A=5.159e+19, t_eq=2.54e+08 yr  [28.2 s]
+WimPyC dark photon (proton-only) delta=300: C_Fe=4.197e+20 C_Ni=2.486e+19 s^-1 (C/geom=4.3e-07); Gamma_A=2.223e+20, t_eq=1.22e+08 yr  [30.6 s]
+WimPyC dark photon (proton-only) delta=350: C_Fe=6.923e+21 C_Ni=4.194e+20 s^-1 (C/geom=7.2e-06); Gamma_A=3.671e+21, t_eq=3.01e+07 yr  [37.7 s]
+WimPyC dark photon (proton-only) delta=365: C_Fe=4.000e+22 C_Ni=2.453e+21 s^-1 (C/geom=4.1e-05); Gamma_A=2.123e+22, t_eq=1.25e+07 yr  [41.0 s]
+WimPyC isoscalar P021 fit delta=300: C_Fe=4.692e+20 C_Ni=2.662e+19 s^-1 (C/geom=4.8e-07); Gamma_A=2.479e+20, t_eq=1.16e+08 yr  [45.1 s]
+WimPyC isoscalar P021 fit delta=350: C_Fe=1.153e+22 C_Ni=6.743e+20 s^-1 (C/geom=1.2e-05); Gamma_A=6.102e+21, t_eq=2.33e+07 yr  [71.1 s]
+WimPyC isoscalar P021 fit delta=380: C_Fe=3.520e+24 C_Ni=2.126e+23 s^-1 (C/geom=3.6e-03); Gamma_A=1.866e+24, t_eq=1.33e+06 yr  [61.6 s]
+reference elastic H capture at 1e-40: C=2.535e+20 s^-1 -> Gamma_A ~ 1.27e+20
+  Higgsino (Z exchange) delta=300: r_apo=0.46 Rsun, t_eq(orbit)=3.49e+09 yr, Gamma_A(orbit)=1.46e+23
+  Higgsino (Z exchange) delta=350: r_apo=0.61 Rsun, t_eq(orbit)=7.80e+09 yr, Gamma_A(orbit)=2.51e+22
+  Higgsino (Z exchange) delta=366: r_apo=0.68 Rsun, t_eq(orbit)=1.07e+10 yr, Gamma_A(orbit)=1.08e+22
+  Higgsino (Z exchange) delta=380: r_apo=0.75 Rsun, t_eq(orbit)=1.43e+10 yr, Gamma_A(orbit)=4.65e+21
+  dark photon (proton-only) delta=250: r_apo=0.36 Rsun, t_eq(orbit)=1.46e+11 yr, Gamma_A(orbit)=5.13e+16
+  dark photon (proton-only) delta=300: r_apo=0.46 Rsun, t_eq(orbit)=1.03e+11 yr, Gamma_A(orbit)=4.43e+17
+  dark photon (proton-only) delta=350: r_apo=0.61 Rsun, t_eq(orbit)=3.85e+10 yr, Gamma_A(orbit)=5.19e+19
+  dark photon (proton-only) delta=365: r_apo=0.67 Rsun, t_eq(orbit)=1.84e+10 yr, Gamma_A(orbit)=1.27e+21
+  isoscalar P021 fit delta=300: r_apo=0.46 Rsun, t_eq(orbit)=9.75e+10 yr, Gamma_A(orbit)=5.51e+17
+  isoscalar P021 fit delta=350: r_apo=0.61 Rsun, t_eq(orbit)=2.99e+10 yr, Gamma_A(orbit)=1.43e+20
+  isoscalar P021 fit delta=380: r_apo=0.75 Rsun, t_eq(orbit)=2.30e+09 yr, Gamma_A(orbit)=1.74e+24
+thermal V_eff = 1.98e+26 cm^3
+
+wrote output/work/P039/results.json; 17 recalled items

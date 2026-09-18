@@ -1,0 +1,135 @@
+# LZ simulation research environment: exact versions
+# generated 2026-09-16T15:23Z by environment/setup.sh
+
+## System
+Darwin Rezas-MacBook-Air-3.local 25.6.0 Darwin Kernel Version 25.6.0: Fri Jul 31 19:11:03 PDT 2026; root:xnu-12377.161.14~5/RELEASE_ARM64_T8132 arm64
+macOS 26.6.2
+
+## Python interpreter
+Python 3.12.13
+path: .venv/bin/python   (installed from: requirements.lock.txt (exact pins))
+
+## Python packages (uv pip freeze)
+asteval==1.0.10
+astropy==8.0.1
+astropy-iers-data==0.2026.9.14.0.56.43
+asttokens==3.0.2
+attrs==26.1.0
+awkward==2.13.0
+awkward-cpp==56
+boltons==26.2.0
+camb==2.0.4
+cffi==2.1.1
+charset-normalizer==3.5.1
+click==8.5.0
+cloudpickle==3.1.2
+contourpy==1.4.0
+corner==2.3.0
+cramjam==2.12.1
+cryptography==50.0.1
+cycler==0.12.1
+dill==0.4.1
+directdm==2.2.2
+dynesty==3.1.0
+emcee==3.1.6
+et-xmlfile==2.0.0
+executing==2.2.1
+fonttools==4.65.0
+formulaic==1.2.2
+fsspec==2026.7.0
+h5py==3.16.0
+healpy==1.20.0
+hepunits==2.4.6
+iminuit==2.32.0
+interface-meta==2.0.1
+ipython==9.17.1
+ipython-pygments-lexers==1.1.1
+jedi==0.20.0
+joblib==1.6.0
+jsonpatch==1.33
+jsonpointer==3.1.1
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+kiwisolver==1.5.1
+llvmlite==0.49.0
+lmfit==1.3.4
+matplotlib==3.11.2
+matplotlib-inline==0.2.2
+mpmath==1.3.0
+narwhals==2.26.0
+nestpy==2.1.1
+networkx==3.6.1
+numba==0.67.0
+numericalunits==1.28
+numpy==2.5.3
+opencv-python-headless==5.0.0.93
+openpyxl==3.1.5
+packaging==26.3
+pandas==3.0.5
+parso==0.8.7
+particle==1.0.1
+patsy==1.0.3
+pdfminer-six==20260107
+pdfplumber==0.11.10
+periodictable==2.1.0
+pexpect==4.9.0
+pillow==12.3.0
+prompt-toolkit==3.0.53
+psutil==7.2.2
+ptyprocess==0.7.0
+pure-eval==0.2.4
+pycparser==3.0
+pyerfa==2.0.1.5
+pygments==2.21.0
+pyhf==0.7.6
+pymupdf==1.28.2
+pyparsing==3.3.2
+pypdfium2==5.13.0
+python-dateutil==2.9.0.post0
+pyyaml==6.0.3
+radioactivedecay==0.6.1
+referencing==0.37.0
+rpds-py==2026.6.3
+scikit-learn==1.9.1
+scipy==1.18.1
+seaborn==0.13.2
+setuptools==80.10.2
+six==1.17.0
+stack-data==0.6.3
+statsmodels==0.15.0
+sympy==1.14.0
+tabulate==0.10.0
+threadpoolctl==3.7.0
+tqdm==4.70.1
+traitlets==5.16.1
+typing-extensions==4.16.0
+uncertainties==3.2.3
+uproot==5.7.6
+wcwidth==0.8.3
+wimprates==0.5.0
+wrapt==2.4.1
+xxhash==4.0.1
+
+## Source-installed Python package
+WimPyDD==2.0.4  source: https://wimpydd.hepforge.org/code/master_code/WimPyDD_2.0.4_without_response_functions.zip  sha256: 30129efa94bade741f14b6528e0cceedec9c56ad45f7e5e31454abb16f0eb002
+  location: WimPyDD/ in the simulation root; run with the working directory = simulation root
+
+## LaTeX
+pdfTeX 3.141592653-2.6-1.40.29 (TeX Live 2026)
+BibTeX 0.99e (TeX Live 2026)
+  revtex4-2.cls      available
+  siunitx.sty        available
+  mhchem.sty         available
+  cleveref.sty       available
+  physics.sty        available
+  tikz-feynman.sty   available
+  feynmp.sty         available
+  booktabs.sty       available
+  natbib.sty         available
+
+## Tooling used to build and run (not for use inside the simulation)
+uv 0.11.13
+Claude Code 2.1.272 (Claude Code)
+
+## Deliberately not provided
+network access; Fortran/C++ physics codes (micrOMEGAs, MadGraph, CLASS, DarkSUSY); ROOT; package installation

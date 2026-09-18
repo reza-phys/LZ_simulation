@@ -1,0 +1,220 @@
+=== P086 mediator cosmology ===
+[1] g*(T) validation (exact integrals, smoothed QCD switch at 170 MeV):
+   T =    1e-05 GeV : g* =   3.371  g*s =   3.918   t = 1.32e+04 s
+   T =   0.0001 GeV : g* =   4.311  g*s =   4.790   t = 119 s
+   T =    0.001 GeV : g* =  10.589  g*s =  10.583   t = 0.745 s
+   T =    0.005 GeV : g* =  10.747  g*s =  10.746   t = 0.0296 s
+   T =     0.02 GeV : g* =  11.327  g*s =  11.242   t = 0.00183 s
+   T =      0.1 GeV : g* =  17.206  g*s =  16.909   t = 6.16e-05 s
+   T =     0.15 GeV : g* =  25.859  g*s =  25.562   t = 2.34e-05 s
+   T =      0.2 GeV : g* =  58.652  g*s =  58.424   t = 8.19e-06 s
+   T =      0.5 GeV : g* =  69.287  g*s =  68.578   t = 1.18e-06 s
+   T =        1 GeV : g* =  76.351  g*s =  75.511   t = 2.8e-07 s
+   T =       10 GeV : g* =  86.219  g*s =  86.128   t = 2.61e-09 s
+   T =      100 GeV : g* = 103.545  g*s = 102.863   t = 2.39e-11 s
+   T =     1000 GeV : g* = 106.717  g*s = 106.701   t = 2.34e-13 s
+   (textbook: g*=106.75 above ~300 GeV, ~86 at 10 GeV, 10.75 at 10 MeV, 3.363/3.909 (g*/g*s) at T<<m_e)
+   t(T=1 MeV) = 0.745 s, t(0.1 MeV) = 119 s (textbook ~1 s and ~100-150 s)
+   T(z=1100) = 2.59e-10 GeV -> t = 1.16e+13 s (textbook 1.2e13 s)
+[1b] DeltaN_eff of a relativistic relic vs T_dec (Planck bound DeltaN_eff < 0.3, recalled likely):
+ T_dec_GeV  gstar_s  dNeff_scalar_1dof  dNeff_vector_3dof  dNeff_darksector_7p5  dNeff_Majorana_pair_4f
+     0.002     10.7              0.571               1.71                  4.29                       2
+     0.005     10.7               0.57               1.71                  4.27                    1.99
+      0.01     10.8              0.569               1.71                  4.27                    1.99
+      0.03     12.3              0.473               1.42                  3.55                    1.66
+       0.1     16.9              0.311              0.934                  2.34                    1.09
+      0.15     25.6              0.179              0.538                  1.35                   0.628
+       0.2     58.4             0.0596              0.179                 0.447                   0.209
+       0.5     68.6             0.0481              0.144                 0.361                   0.169
+         1     75.5             0.0423              0.127                 0.318                   0.148
+         5     85.4              0.036              0.108                  0.27                   0.126
+        50     96.6             0.0305             0.0915                 0.229                   0.107
+     1e+03      107             0.0267             0.0801                   0.2                  0.0935
+   1-dof scalar needs T_dec > 0.109 GeV; 3-dof vector T_dec > 0.169 GeV to satisfy DeltaN_eff<0.3
+   n/n_rel of a m=0.3 GeV species at T_nu,dec=2 MeV: exp(-m/T) ~ 7.2e-66 -> DeltaN_eff = 0 in practice
+   n/n_rel of a m=1.0 GeV species at T_nu,dec=2 MeV: exp(-m/T) ~ 7.1e-218 -> DeltaN_eff = 0 in practice
+[2] Dark photon widths and lifetimes
+   m_A'= 0.30 GeV eps=1e-6: Gamma=1.39e-15 GeV; BR(ee,mumu,tautau,had)=0.53,0.47,0.00,0.01; R=0.02; tau=4.74e-10 s
+   m_A'= 0.50 GeV eps=1e-6: Gamma=2.88e-15 GeV; BR(ee,mumu,tautau,had)=0.42,0.42,0.00,0.16; R=0.38; tau=2.29e-10 s
+   m_A'= 0.78 GeV eps=1e-6: Gamma=1.41e-14 GeV; BR(ee,mumu,tautau,had)=0.13,0.13,0.00,0.73; R=5.49; tau=4.66e-11 s
+   m_A'= 1.00 GeV eps=1e-6: Gamma=5.99e-15 GeV; BR(ee,mumu,tautau,had)=0.41,0.41,0.00,0.19; R=0.46; tau=1.1e-10 s
+   m_A'= 3.00 GeV eps=1e-6: Gamma=2.99e-14 GeV; BR(ee,mumu,tautau,had)=0.24,0.24,0.00,0.51; R=2.10; tau=2.2e-11 s
+   m_A'=10.00 GeV eps=1e-6: Gamma=1.58e-13 GeV; BR(ee,mumu,tautau,had)=0.15,0.15,0.15,0.54; R=3.50; tau=4.17e-12 s
+   m_A'=30.00 GeV eps=1e-6: Gamma=5e-13 GeV; BR(ee,mumu,tautau,had)=0.15,0.15,0.15,0.56; R=3.85; tau=1.32e-12 s
+   tau_A'=1 s at eps=2.16e-11; tau=1e-2 s at eps=2.16e-10 (m_A'=0.304 GeV)
+   tau_A'=1 s at eps=1.05e-11; tau=1e-2 s at eps=1.05e-10 (m_A'=1.01 GeV)
+   tau_A'=1 s at eps=4.71e-12; tau=1e-2 s at eps=4.71e-11 (m_A'=2.97 GeV)
+   tau_A'=1 s at eps=2.05e-12; tau=1e-2 s at eps=2.05e-11 (m_A'=9.91 GeV)
+   P011 band point m_A'=0.3 GeV, eps=1.1e-07 (delta=300 keV): tau_A' = 3.92e-08 s, i.e. t=tau at T ~ 2.6 GeV (>> m_A': decays in equilibrium)
+   P011 band point m_A'=1 GeV, eps=8.7e-07 (delta=300 keV): tau_A' = 1.45e-10 s, i.e. t=tau at T ~ 41.5 GeV (>> m_A': decays in equilibrium)
+   P011 band point m_A'=3 GeV, eps=7.4e-06 (delta=300 keV): tau_A' = 4.02e-13 s, i.e. t=tau at T ~ 764 GeV (>> m_A': decays in equilibrium)
+   P011 band point m_A'=10 GeV, eps=8.3e-05 (delta=300 keV): tau_A' = 6.05e-16 s, i.e. t=tau at T ~ 1.97e+04 GeV (>> m_A': decays in equilibrium)
+   P011 band point m_A'=30 GeV, eps=7.5e-04 (delta=300 keV): tau_A' = 2.34e-18 s, i.e. t=tau at T ~ 3.16e+05 GeV (>> m_A': decays in equilibrium)
+[2b] Thermalisation with the SM plasma via f fbar <-> A' (criterion A: Y_FI = Y_eq(T=m); B: Gamma K1/K2 = H at T=m/3):
+   m_A'= 0.10 GeV: eps_therm(A) = 2.30e-09, (B) = 1.86e-09; tau_A' at eps_therm(A) = 5.08e-04 s; 1/H(T=m) = 1.16e-04 s
+   m_A'= 0.30 GeV: eps_therm(A) = 1.98e-09, (B) = 2.51e-09; tau_A' at eps_therm(A) = 1.19e-04 s; 1/H(T=m) = 6.51e-06 s
+   m_A'= 1.01 GeV: eps_therm(A) = 6.43e-09, (B) = 5.68e-09; tau_A' at eps_therm(A) = 2.67e-06 s; 1/H(T=m) = 5.39e-07 s
+   m_A'= 2.97 GeV: eps_therm(A) = 1.04e-08, (B) = 7.76e-09; tau_A' at eps_therm(A) = 2.04e-07 s; 1/H(T=m) = 5.96e-08 s
+   m_A'= 9.91 GeV: eps_therm(A) = 1.62e-08, (B) = 1.16e-08; tau_A' at eps_therm(A) = 1.61e-08 s; 1/H(T=m) = 5.31e-09 s
+   m_A'=30.01 GeV: eps_therm(A) = 2.74e-08, (B) = 1.97e-08; tau_A' at eps_therm(A) = 1.76e-09 s; 1/H(T=m) = 5.61e-10 s
+[2c] chi-SM kinetic coupling (rough, x3): eps needed for Gamma(chi f -> chi f) = H at T=1 TeV / 40 GeV / 1 GeV, m_A'=1 GeV: 2.9e-07 / 5.6e-08 / 8.4e-09
+[2d] Freeze-in yield scaling check (Y_FI ~ eps^2) and analytic comparison Y_FI ~ 405 sqrt(10) g M_Pl Gamma/(8 pi^4 1.66 g*s sqrt(g*) m^2)... order of magnitude
+   m=0.304 eps=1e-11: Y_FI = 2.24e-07 (analytic 1.07e-07); Y_FI(2e-11)/Y_FI(1e-11) = 4.00
+   m=1.01 eps=1e-11: Y_FI = 1.8e-08 (analytic 3.18e-08); Y_FI(2e-11)/Y_FI(1e-11) = 4.00
+   m=9.91 eps=1e-11: Y_FI = 2.5e-09 (analytic 7.23e-09); Y_FI(2e-11)/Y_FI(1e-11) = 4.00
+[2e] Late-decaying A' (freeze-in population, eps < eps_therm): scan for BBN/FIRAS exclusion
+   scanned 446 (m,eps) points with tau>1 s below the thermalisation line; 88 excluded
+   m_A'=0.05 GeV: excluded eps in [1.6e-14, 2.5e-11] (tau 8.6e+00-2.2e+07 s), reasons: BBN envelope
+   m_A'=0.107 GeV: excluded eps in [1.6e-14, 6.3e-12] (tau 6.4e+01-1.0e+07 s), reasons: BBN envelope
+   m_A'=0.229 GeV: excluded eps in [2.5e-14, 1.0e-13] (tau 7.7e+04-1.2e+06 s), reasons: BBN envelope
+   max mY/xi_max among tau>1 s points: 12.9
+   max eps ever excluded: 2.51e-11 (LZ band needs eps >= 1e-7)
+[3] Dark Higgs: g_D = 1.121 (alpha_D = 0.1). Mass relations: charge-q_h Higgs, m_A' = q_h g_D v_D, m_h = sqrt(2 lambda) v_D
+   q_h=1 lambda=0.1 : r = m_h/m_A' = 0.399  (v_D/m_A' = 0.892)
+   q_h=1 lambda=0.3 : r = m_h/m_A' = 0.691  (v_D/m_A' = 0.892)
+   q_h=1 lambda=1.0 : r = m_h/m_A' = 1.262  (v_D/m_A' = 0.892)
+   q_h=1 lambda=2.0 : r = m_h/m_A' = 1.784  (v_D/m_A' = 0.892)
+   q_h=1 lambda=4.0 : r = m_h/m_A' = 2.523  (v_D/m_A' = 0.892)
+   q_h=1: r >= 1 needs lambda >= 0.63 ; r >= 2 (prompt h->A'A') needs lambda >= 2.5
+   q_h=2 lambda=0.1 : r = m_h/m_A' = 0.199  (v_D/m_A' = 0.446)
+   q_h=2 lambda=0.3 : r = m_h/m_A' = 0.345  (v_D/m_A' = 0.446)
+   q_h=2 lambda=1.0 : r = m_h/m_A' = 0.631  (v_D/m_A' = 0.446)
+   q_h=2 lambda=2.0 : r = m_h/m_A' = 0.892  (v_D/m_A' = 0.446)
+   q_h=2 lambda=4.0 : r = m_h/m_A' = 1.262  (v_D/m_A' = 0.446)
+   q_h=2: r >= 1 needs lambda >= 2.51 ; r >= 2 (prompt h->A'A') needs lambda >= 10.1
+[3a] Dark-Higgs relic yield Y_h (Boltzmann, alpha_D=0.1); m Y_DM = 4.4e-10 GeV for comparison
+ m_A_GeV    r  m_h_GeV      Y_h   mY_GeV  Omega_h_h2  Omega_over_DM
+       1  0.5      0.5 1.56e-06 7.79e-07         214       1.77e+03
+       1  0.6      0.6 6.44e-08 3.86e-08        10.6           87.8
+       1  0.7      0.7 1.53e-09 1.07e-09       0.294           2.44
+       1  0.8      0.8 1.84e-11 1.47e-11     0.00404         0.0335
+       1  0.9      0.9 9.18e-14 8.26e-14    2.27e-05       0.000188
+       1 0.95     0.95 4.26e-15 4.05e-15    1.11e-06        9.2e-06
+       1 0.99     0.99 3.15e-16 3.12e-16    8.55e-08       7.08e-07
+       1 1.05     1.05  3.4e-16 3.57e-16    9.81e-08       8.12e-07
+       1  1.2      1.2 2.16e-16 2.59e-16    7.11e-08       5.89e-07
+       1  1.5      1.5 1.97e-16 2.96e-16    8.12e-08       6.72e-07
+       1  2.5      2.5 2.52e-16  6.3e-16    1.73e-07       1.43e-06
+       3  0.5      1.5 1.63e-06 2.45e-06         672       5.56e+03
+       3  0.6      1.8 7.69e-08 1.38e-07          38            315
+       3  0.7      2.1 2.11e-09 4.43e-09        1.21           10.1
+       3  0.8      2.4 2.97e-11 7.13e-11      0.0196          0.162
+       3  0.9      2.7 1.79e-13 4.82e-13    0.000132         0.0011
+       3 0.95     2.85 9.27e-15 2.64e-14    7.25e-06          6e-05
+       3 0.99     2.97 7.69e-16 2.28e-15    6.26e-07       5.19e-06
+       3 1.05     3.15 8.89e-16  2.8e-15    7.68e-07       6.36e-06
+       3  1.2      3.6 5.61e-16 2.02e-15    5.54e-07       4.59e-06
+       3  1.5      4.5 5.03e-16 2.26e-15    6.21e-07       5.14e-06
+       3  2.5      7.5 4.99e-16 3.74e-15    1.03e-06       8.51e-06
+      10  0.5        5 7.66e-07 3.83e-06    1.05e+03       8.71e+03
+      10  0.6        6  4.2e-08 2.52e-07        69.1            572
+      10  0.7        7 1.38e-09 9.69e-09        2.66             22
+      10  0.8        8 2.44e-11 1.95e-10      0.0536          0.444
+      10  0.9        9 1.93e-13 1.74e-12    0.000476        0.00395
+      10 0.95      9.5 1.18e-14 1.12e-13    3.08e-05       0.000255
+      10 0.99      9.9 1.23e-15 1.22e-14    3.34e-06       2.77e-05
+      10 1.05     10.5  1.7e-15 1.78e-14    4.89e-06       4.05e-05
+      10  1.2       12 1.05e-15 1.25e-14    3.44e-06       2.85e-05
+      10  1.5       15 9.15e-16 1.37e-14    3.76e-06       3.12e-05
+      10  2.5       25 1.11e-15 2.76e-14    7.59e-06       6.28e-05
+   analytic check r=1.5,m_A'=1: <sv>=0.0104 GeV^-2 -> Omega h^2 ~ 4.2e-08 vs ODE 8.1e-08
+   3->2 cannibal rate at x=20, m_h=1 GeV, lambda=1: Gamma_32 ~ 1.1e-27 GeV vs H = 1.3e-21 GeV -> negligible
+[3b] Dark-Higgs lifetimes (no Higgs portal):
+   m_A'= 1.0 r=0.50 m_h= 0.50: tau(eps=1e-07)=1.5e+13 s tau(eps=1e-06)=1.5e+09 s tau(eps=1e-05)=1.5e+05 s tau(eps=1e-04)=1.5e+01 s tau(eps=1e-03)=1.5e-03 s
+   m_A'= 1.0 r=0.90 m_h= 0.90: tau(eps=1e-07)=3.5e+10 s tau(eps=1e-06)=3.5e+06 s tau(eps=1e-05)=3.5e+02 s tau(eps=1e-04)=3.5e-02 s tau(eps=1e-03)=3.5e-06 s
+   m_A'= 1.0 r=1.20 m_h= 1.20: tau(eps=1e-07)=3.0e-03 s tau(eps=1e-06)=3.0e-05 s tau(eps=1e-05)=3.0e-07 s tau(eps=1e-04)=3.0e-09 s tau(eps=1e-03)=3.0e-11 s
+   m_A'= 1.0 r=2.50 m_h= 2.50: tau(eps=1e-07)=2.1e-24 s tau(eps=1e-06)=2.1e-24 s tau(eps=1e-05)=2.1e-24 s tau(eps=1e-04)=2.1e-24 s tau(eps=1e-03)=2.1e-24 s
+   m_A'= 3.0 r=0.50 m_h= 1.50: tau(eps=1e-07)=1.2e+12 s tau(eps=1e-06)=1.2e+08 s tau(eps=1e-05)=1.2e+04 s tau(eps=1e-04)=1.2e+00 s tau(eps=1e-03)=1.2e-04 s
+   m_A'= 3.0 r=0.90 m_h= 2.70: tau(eps=1e-07)=4.4e+09 s tau(eps=1e-06)=4.4e+05 s tau(eps=1e-05)=4.4e+01 s tau(eps=1e-04)=4.4e-03 s tau(eps=1e-03)=4.4e-07 s
+   m_A'= 3.0 r=1.20 m_h= 3.60: tau(eps=1e-07)=6.9e-04 s tau(eps=1e-06)=6.9e-06 s tau(eps=1e-05)=6.9e-08 s tau(eps=1e-04)=6.9e-10 s tau(eps=1e-03)=6.9e-12 s
+   m_A'= 3.0 r=2.50 m_h= 7.50: tau(eps=1e-07)=7.0e-25 s tau(eps=1e-06)=7.0e-25 s tau(eps=1e-05)=7.0e-25 s tau(eps=1e-04)=7.0e-25 s tau(eps=1e-03)=7.0e-25 s
+   m_A'=10.0 r=0.50 m_h= 5.00: tau(eps=1e-07)=5.9e+11 s tau(eps=1e-06)=5.9e+07 s tau(eps=1e-05)=5.9e+03 s tau(eps=1e-04)=5.9e-01 s tau(eps=1e-03)=5.9e-05 s
+   m_A'=10.0 r=0.90 m_h= 9.00: tau(eps=1e-07)=5.8e+08 s tau(eps=1e-06)=5.8e+04 s tau(eps=1e-05)=5.8e+00 s tau(eps=1e-04)=5.8e-04 s tau(eps=1e-03)=5.8e-08 s
+   m_A'=10.0 r=1.20 m_h=12.00: tau(eps=1e-07)=1.5e-04 s tau(eps=1e-06)=1.5e-06 s tau(eps=1e-05)=1.5e-08 s tau(eps=1e-04)=1.5e-10 s tau(eps=1e-03)=1.5e-12 s
+   m_A'=10.0 r=2.50 m_h=25.00: tau(eps=1e-07)=2.1e-25 s tau(eps=1e-06)=2.1e-25 s tau(eps=1e-05)=2.1e-25 s tau(eps=1e-04)=2.1e-25 s tau(eps=1e-03)=2.1e-25 s
+   channel split at m_A'=1, r=0.9, eps=1e-6: loop 6.22e-34, 4f 1.89e-31 GeV
+[3c] Dark-Higgs exclusion in the (m_A', eps) plane (yield from Boltzmann, decay via loop+4f (+3-body))
+   r=0.5 m_A'=0.295 GeV: mY_h = 1.92e-07 GeV (Omega_h/Omega_DM=4.4e+02); tau_h<1 s needs eps >= 3.46e-04; excluded eps in [1.0e-10, 1.8e-04]
+   r=0.5 m_A'=1.05 GeV: mY_h = 8.16e-07 GeV (Omega_h/Omega_DM=1.9e+03); tau_h<1 s needs eps >= 1.97e-04; excluded eps in [1.0e-10, 1.2e-04]
+   r=0.5 m_A'=2.88 GeV: mY_h = 2.37e-06 GeV (Omega_h/Omega_DM=5.4e+03); tau_h<1 s needs eps >= 1.17e-04; excluded eps in [1.0e-10, 8.3e-05]
+   r=0.5 m_A'=10.2 GeV: mY_h = 3.93e-06 GeV (Omega_h/Omega_DM=8.9e+03); tau_h<1 s needs eps >= 8.68e-05; excluded eps in [1.0e-10, 6.8e-05]
+   r=0.5 m_A'=28.2 GeV: mY_h = 1.29e-05 GeV (Omega_h/Omega_DM=2.9e+04); tau_h<1 s needs eps >= 6.45e-05; excluded eps in [1.0e-10, 5.6e-05]
+   r=0.7 m_A'=0.295 GeV: mY_h = 1.96e-10 GeV (Omega_h/Omega_DM=0.45); tau_h<1 s needs eps >= 1.58e-04; excluded eps in [1.8e-10, 1.8e-05]
+   r=0.7 m_A'=1.05 GeV: mY_h = 1.14e-09 GeV (Omega_h/Omega_DM=2.6); tau_h<1 s needs eps >= 1.10e-04; excluded eps in [1.0e-10, 1.8e-05]
+   r=0.7 m_A'=2.88 GeV: mY_h = 4.21e-09 GeV (Omega_h/Omega_DM=9.6); tau_h<1 s needs eps >= 8.09e-05; excluded eps in [1.0e-10, 1.8e-05]
+   r=0.7 m_A'=10.2 GeV: mY_h = 9.99e-09 GeV (Omega_h/Omega_DM=23); tau_h<1 s needs eps >= 4.47e-05; excluded eps in [1.0e-10, 1.2e-05]
+   r=0.7 m_A'=28.2 GeV: mY_h = 4.06e-08 GeV (Omega_h/Omega_DM=92); tau_h<1 s needs eps >= 3.05e-05; excluded eps in [1.0e-10, 1.2e-05]
+   r=0.9 m_A'=0.295 GeV: mY_h = 1.02e-14 GeV (Omega_h/Omega_DM=2.3e-05); tau_h<1 s needs eps >= 6.21e-05; excluded eps in [6.8e-10, 3.8e-08]
+   r=0.9 m_A'=1.05 GeV: mY_h = 8.88e-14 GeV (Omega_h/Omega_DM=0.0002); tau_h<1 s needs eps >= 4.23e-05; excluded eps in [3.2e-10, 6.8e-08]
+   r=0.9 m_A'=2.88 GeV: mY_h = 4.52e-13 GeV (Omega_h/Omega_DM=0.001); tau_h<1 s needs eps >= 2.71e-05; excluded eps in [1.2e-10, 8.3e-07]
+   r=0.9 m_A'=10.2 GeV: mY_h = 1.80e-12 GeV (Omega_h/Omega_DM=0.0041); tau_h<1 s needs eps >= 1.55e-05; excluded eps in [1.0e-10, 6.8e-07]
+   r=0.9 m_A'=28.2 GeV: mY_h = 9.91e-12 GeV (Omega_h/Omega_DM=0.023); tau_h<1 s needs eps >= 1.16e-05; excluded eps in [1.0e-10, 6.8e-07]
+   r=1.2 m_A'=0.295 GeV: mY_h = 2.41e-17 GeV (Omega_h/Omega_DM=5.5e-08); tau_h<1 s needs eps >= 1.20e-08; excluded none
+   r=1.2 m_A'=1.05 GeV: mY_h = 2.82e-16 GeV (Omega_h/Omega_DM=6.4e-07); tau_h<1 s needs eps >= 5.08e-09; excluded none
+   r=1.2 m_A'=2.88 GeV: mY_h = 1.87e-15 GeV (Omega_h/Omega_DM=4.3e-06); tau_h<1 s needs eps >= 2.68e-09; excluded none
+   r=1.2 m_A'=10.2 GeV: mY_h = 1.30e-14 GeV (Omega_h/Omega_DM=3e-05); tau_h<1 s needs eps >= 1.23e-09; excluded none
+   r=1.2 m_A'=28.2 GeV: mY_h = 7.77e-14 GeV (Omega_h/Omega_DM=0.00018); tau_h<1 s needs eps >= 7.18e-10; excluded none
+   exclusion reasons by r: r=0.5: {'overclosure (quasi-stable)': np.int64(16), 'BBN envelope': np.int64(9), 'Planck (post-recombination injection)': np.int64(8), 'FIRAS y': np.int64(7), 'FIRAS mu': np.int64(6)}; r=0.7: {'Planck (post-recombination injection)': np.int64(10), 'BBN envelope': np.int64(9), 'overclosure (quasi-stable)': np.int64(9), 'FIRAS y': np.int64(7), 'FIRAS mu': np.int64(3), 'Planck decaying DM (tau > t_U)': np.int64(2)}; r=0.9: {'Planck (post-recombination injection)': np.int64(8), 'Planck decaying DM (tau > t_U)': np.int64(6), 'FIRAS y': np.int64(4), 'FIRAS mu': np.int64(2), 'BBN envelope': np.int64(1)}; r=1.2: {}
+[3d] Higgs-portal mixing needed for tau_h <= 1 s (0.1 s), and implied lambda_hphi ~ theta m_H^2/(v v_D), v_D = m_A'/(2 g_D)
+   m_A'=  0.3 r=0.5 m_h= 0.15: Gamma_SM-like=2.57e-14 GeV; theta >= 5.1e-06 (1 s), 1.6e-05 (0.1 s); lambda_hphi >= 2.4e-03
+   m_A'=  0.3 r=0.9 m_h= 0.27: Gamma_SM-like=4.77e-10 GeV; theta >= 3.7e-08 (1 s), 1.2e-07 (0.1 s); lambda_hphi >= 1.8e-05
+   m_A'=  1.0 r=0.5 m_h= 0.50: Gamma_SM-like=2.73e-09 GeV; theta >= 1.6e-08 (1 s), 4.9e-08 (0.1 s); lambda_hphi >= 2.2e-06
+   m_A'=  1.0 r=0.9 m_h= 0.90: Gamma_SM-like=6.06e-09 GeV; theta >= 1.0e-08 (1 s), 3.3e-08 (0.1 s); lambda_hphi >= 1.5e-06
+   m_A'=  3.0 r=0.5 m_h= 1.50: Gamma_SM-like=2.20e-08 GeV; theta >= 5.5e-09 (1 s), 1.7e-08 (0.1 s); lambda_hphi >= 2.6e-07
+   m_A'=  3.0 r=0.9 m_h= 2.70: Gamma_SM-like=5.83e-08 GeV; theta >= 3.4e-09 (1 s), 1.1e-08 (0.1 s); lambda_hphi >= 1.6e-07
+   m_A'= 10.0 r=0.5 m_h= 5.00: Gamma_SM-like=8.37e-06 GeV; theta >= 2.8e-10 (1 s), 8.9e-10 (0.1 s); lambda_hphi >= 4.0e-09
+   m_A'= 10.0 r=0.9 m_h= 9.00: Gamma_SM-like=3.62e-05 GeV; theta >= 1.3e-10 (1 s), 4.3e-10 (0.1 s); lambda_hphi >= 1.9e-09
+   m_A'= 30.0 r=0.5 m_h=15.00: Gamma_SM-like=2.55e-04 GeV; theta >= 5.1e-11 (1 s), 1.6e-10 (0.1 s); lambda_hphi >= 2.4e-10
+   m_A'= 30.0 r=0.9 m_h=27.00: Gamma_SM-like=8.61e-04 GeV; theta >= 2.8e-11 (1 s), 8.7e-11 (0.1 s); lambda_hphi >= 1.3e-10
+[4] chi1 self-interactions at m_chi=1 TeV, alpha_D=0.1 (attractive/repulsive average for the near-degenerate pseudo-Dirac pair)
+ v_kms  m_A_GeV     beta  mv_over_mA  sigmaT_att_GeV2  sigmaT_rep_GeV2  sigma_over_m_classical_cm2_g  sigma_over_m_adopted_cm2_g  quantum_regime_unitarity_x4_cm2_g  classical_regime
+    30      0.3 5.99e+03       0.334         3.24e+03         1.79e+03                      0.000549                    0.000549                             0.0011             False
+    30        1    2e+04         0.1              370              213                      6.37e-05                    6.37e-05                             0.0011             False
+    30        3 5.99e+04      0.0334             49.9             29.8                       8.7e-06                     8.7e-06                             0.0011             False
+    30       10    2e+05        0.01             5.44             3.36                      9.61e-07                    9.61e-07                             0.0011             False
+    30       30 5.99e+05     0.00334             0.71             0.45                      1.27e-07                    1.27e-07                             0.0011             False
+   300      0.3     59.9        3.34              779              732                      0.000165                    0.000165                            1.1e-05              True
+   300        1      200           1              107             94.5                       2.2e-05                     2.2e-05                            1.1e-05              True
+   300        3      599       0.334             17.5             14.6                       3.5e-06                     3.5e-06                            1.1e-05             False
+   300       10    2e+03         0.1             2.29              1.2                      3.81e-07                    3.81e-07                            1.1e-05             False
+   300       30 5.99e+03      0.0334            0.324            0.179                      5.49e-08                    5.49e-08                            1.1e-05             False
+ 1e+03      0.3     5.39        11.1              322              372                      7.58e-05                    7.58e-05                           9.87e-07              True
+ 1e+03        1       18        3.34             45.8             45.4                      9.96e-06                    9.96e-06                           9.87e-07              True
+ 1e+03        3     53.9        1.11             7.51             7.09                      1.59e-06                    1.59e-06                           9.87e-07              True
+ 1e+03       10      180       0.334             1.03            0.916                      2.13e-07                    2.13e-07                           9.87e-07             False
+ 1e+03       30      539       0.111            0.168            0.141                      3.38e-08                    3.38e-08                           9.87e-07             False
+ 4e+03      0.3    0.337        44.5             25.4             23.4                      5.33e-06                    5.33e-06                           6.17e-08              True
+ 4e+03        1     1.12        13.3             11.3             10.5                      2.38e-06                    2.38e-06                           6.17e-08              True
+ 4e+03        3     3.37        4.45             2.61             3.35                      6.52e-07                    6.52e-07                           6.17e-08              True
+ 4e+03       10     11.2        1.33            0.386            0.354                      8.08e-08                    8.08e-08                           6.17e-08              True
+ 4e+03       30     33.7       0.445           0.0636           0.0616                      1.37e-08                    1.37e-08                           6.17e-08             False
+   Bullet cluster: sigma/m < ~1 cm^2/g (recalled, likely); dwarf-core-relevant range 0.1-1 cm^2/g at v~30 km/s
+   chi1 chi1 -> chi2 chi2 up-scattering: KE(1000 km/s) = 5.6 MeV >> 2 delta = 0.6 MeV -> open at cluster speeds; at 30 km/s KE = 5.01 keV -> closed
+[5] Z' m=500 GeV, g_q=0.017: Gamma(qq)=6.90e-02 GeV, tau=9.5e-24 s (decays at T~TeV; only standard freeze-out, P054)
+[5] Z' m=2000 GeV, g_q=0.020: Gamma(qq)=3.82e-01 GeV, tau=1.7e-24 s (decays at T~TeV; only standard freeze-out, P054)
+[6] LZ band reconstruction from P011 (1 TeV, alpha_D=0.1): eps(m_A'=1 GeV, delta=300) = 8.651e-07 (P011: 8.65e-7)
+   eps(10 GeV, 300) = 8.280e-05 (P011 8.28e-5); eps(0.3, 300) = 1.117e-07 (P011 1.12e-7)
+   delta=250 keV: chi2 floor m>=5.01 GeV; Planck (P025) m>=9.2; BaBar m<=56.9; surviving: m_A' = 9.2-56.9 GeV, eps = 2.6e-05-1e-03
+      dark Higgs r=0.5 (no portal): excludes 46% of the band above the chi2 floor [[5.010914104296085, 15.592935646247932]]; 29% of the surviving segment [[9.2, 15.644076137598233]]
+      dark Higgs r=0.7 (no portal): excludes 12% of the band above the chi2 floor [[5.010914104296085, 6.635052936073729]]; 0% of the surviving segment []
+      dark Higgs r=0.9 (no portal): excludes 0% of the band above the chi2 floor []; 0% of the surviving segment []
+      dark Higgs r=1.2 (no portal): excludes 0% of the band above the chi2 floor []; 0% of the surviving segment []
+   delta=300 keV: chi2 floor m>=2.56 GeV; Planck (P025) m>=9.2; BaBar m<=34.8; surviving: m_A' = 9.2-34.8 GeV, eps = 7.0e-05-1e-03
+      dark Higgs r=0.5 (no portal): excludes 50% of the band above the chi2 floor [[2.5566791357406458, 9.613259886332088]]; 3% of the surviving segment [[9.2, 9.576142743404914]]
+      dark Higgs r=0.7 (no portal): excludes 21% of the band above the chi2 floor [[2.5566791357406458, 4.434717922879619]]; 0% of the surviving segment []
+      dark Higgs r=0.9 (no portal): excludes 0% of the band above the chi2 floor []; 0% of the surviving segment []
+      dark Higgs r=1.2 (no portal): excludes 0% of the band above the chi2 floor []; 0% of the surviving segment []
+   delta=350 keV: chi2 floor m>=0.92 GeV; Planck (P025) m>=9.2; BaBar m<=14.3; surviving: m_A' = 9.2-14.3 GeV, eps = 4.1e-04-1e-03
+      dark Higgs r=0.5 (no portal): excludes 60% of the band above the chi2 floor [[0.9192132301240133, 4.747158276091731]]; 0% of the surviving segment []
+      dark Higgs r=0.7 (no portal): excludes 26% of the band above the chi2 floor [[0.9192132301240133, 1.8577838006915708]]; 0% of the surviving segment []
+      dark Higgs r=0.9 (no portal): excludes 0% of the band above the chi2 floor []; 0% of the surviving segment []
+      dark Higgs r=1.2 (no portal): excludes 0% of the band above the chi2 floor []; 0% of the surviving segment []
+   delta=380 keV: chi2 floor m>=0.13 GeV; Planck (P025) m>=9.2; BaBar m<=3.9; surviving: NONE (Planck floor above BaBar ceiling)
+      dark Higgs r=0.5 (no portal): excludes 70% of the band above the chi2 floor [[0.1253082546012845, 1.397198112212138]]; 0% of the surviving segment []
+      dark Higgs r=0.7 (no portal): excludes 38% of the band above the chi2 floor [[0.1253082546012845, 0.45605963176772385]]; 0% of the surviving segment []
+      dark Higgs r=0.9 (no portal): excludes 0% of the band above the chi2 floor []; 0% of the surviving segment []
+      dark Higgs r=1.2 (no portal): excludes 0% of the band above the chi2 floor []; 0% of the surviving segment []
+   in-band (delta=300): m_A'=2.56 eps=5.44e-06 tau_A'=8.72e-13 s, eps/eps_therm=5.7e+02, ratio to tau=1 s line 1.1e+06
+   in-band (delta=300): m_A'=9.20 eps=7.01e-05 tau_A'=9.23e-16 s, eps/eps_therm=4.5e+03, ratio to tau=1 s line 3.3e+07
+   in-band (delta=300): m_A'=34.75 eps=1.00e-03 tau_A'=1.14e-18 s, eps/eps_therm=3.4e+04, ratio to tau=1 s line 9.4e+08
+Runtime 36.3 s. Figures: P086_fig1_gstar_neff.png, P086_fig2_tau_map.png, P086_fig3_dark_higgs.png, P086_fig4_combined_map.png

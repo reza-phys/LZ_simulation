@@ -1,0 +1,55 @@
+{
+  "id": "P070",
+  "title": "Position as a discriminant: the (r, z) likelihood ratio between a uniform signal and wall/RFR MSSI at the LZ event, and what LZ left on the table by not using position",
+  "date": "2026-09-12",
+  "agent_tools": [
+    {"tool": "Read", "count": 13, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (page 1 + grep of rows P013/P016/P019/P022/P024/P033/P045-P050); papers P033, P004, P022, P029, P053, P016, P013; Fig3_roi_events_in_fv.png; FigS5a_LE_MSSI_rz.png; the two P070 figures"},
+    {"tool": "Bash", "count": 14, "detail": "ls papers/work/figures/data_requests/P033 runs; grep tex for FV/MSSI/position passages and sed of l.116-141,164-168,733-736,746-783; cat P033_summary.json, P033_post.json, wall_1461_forced12.json, npz keys; grep P033/P022 scripts and P033 details; sed P033 script l.196-250,605-632; lzcommon l.21-60 + API grep; ENVIRONMENT_versions grep; P016 results head; P004 fig5 CSV; n_emitted of all forced12 runs; PB214/POS_CLASS grep; mkdir work/P070; two PyMuPDF exploration scripts (drawings/text; ticks/frame/markers); two runs of P070_position_likelihood.py; post-run extraction of profiles/histograms; wc -w checks"},
+    {"tool": "Write", "count": 4, "detail": "output/code/P070_position_likelihood.py; work/P070/details.md; provenance/P070.json; papers/P070.md"},
+    {"tool": "Edit", "count": 7, "detail": "script: 214Pb line weights; Fig. S5a duplicate-event handling and KS; five extra scenarios; equal-normalised-PDF source mix; science z/edge histograms; figure label; console printing"},
+    {"tool": "Skill", "count": 1, "detail": "dataviz (palette and mark rules read; JS validator not run per PAPER_GUIDE)"}
+  ],
+  "software": [
+    {"name": "python", "version": "3.12.13", "functions": "interpreter .venv/bin/python"},
+    {"name": "numpy", "version": "2.5.3", "functions": "meshgrid grids, histogram/histogram2d re-binning, searchsorted bin lookup, polyfit axis calibration and lambda fits, trapezoid volumes"},
+    {"name": "scipy", "version": "1.18.1", "functions": "stats.kstest, stats.kstwo.sf, stats.binom.sf, stats.binomtest, stats.chi2.sf, stats.norm.isf/sf; special.expn (E2); optimize.brentq"},
+    {"name": "pandas", "version": "3.0.5", "functions": "DataFrame tables, CSV I/O"},
+    {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend, pcolormesh, step, hist, scatter, colorbar"},
+    {"name": "pymupdf", "version": "1.28.2", "functions": "Document/Page.get_drawings (vector paths, colours, dashes, rects), Page.get_text('blocks') for axis labels"},
+    {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ constants (event position, wall distances, local significance)"}
+  ],
+  "scripts_and_commands": [
+    {"path": "output/code/P070_position_likelihood.py", "purpose": "vector digitisation of Fig. 3/S5a, FV geometry and mass, position PDFs from P033 maps and analytic forms, likelihood ratios at the event, population uniformity/KS tests, counterfactual 3D single-event significance, two figures", "command": "cd /Users/reza/LZ_simulation && .venv/bin/python output/code/P070_position_likelihood.py > output/work/P070/run_log.txt 2>&1"}
+  ],
+  "local_inputs": [
+    {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "l.116-141 (Fig. 3 caption, FV paragraph), l.164-168 (event position), l.184-196 and 710-736 (MSSI model, 'we do not use the position explicitly'), l.746-755 (Fig. S5 caption), l.765-783 (MSSI count table)"},
+    {"file": "inputs/arXiv_2609.02823_source/Fig3_roi_events_in_fv.pdf", "parts_used": "all vector paths: 1710 science dots, 66 prompt-veto crosses, 55 delayed-veto circles, star, two FV contours, FV top/bottom lines, dashed reconstructed wall, tick marks"},
+    {"file": "inputs/arXiv_2609.02823_source/FigS5a_LE_MSSI_rz.pdf", "parts_used": "5.4 t contours, three prompt-veto crosses, one science dot (the event), star"},
+    {"file": "inputs/figures_png/Fig3_roi_events_in_fv.png; FigS5a_LE_MSSI_rz.png", "parts_used": "visual inspection"},
+    {"file": "output/work/P033/runs/*_forced12.npz, *_general.npz, *.json", "parts_used": "h2_wall12, h2_rfr12, h2_wall_roi (d, z) maps per source and line; n_emitted"},
+    {"file": "output/code/P033_mssi_geometry_mc.py", "parts_used": "DBINS/ZBINS, MIX_W, PB214 fractions, class definitions, POS_CLASS"},
+    {"file": "output/work/P033/P033_summary.json, P033_post.json, details.md", "parts_used": "f_pos per source, depth-profile numbers, energy-class fractions 0.053/0.067"},
+    {"file": "output/papers/P004.md, P022.md, P019 ledger row, P013.md, P016.md, P053.md, P029.md, P008 ledger row", "parts_used": "f_nb = 0.035; accidentals 1.49e-4, T_max, v_d, cathode-emission acceptance; atm-nu 3.4e-5; neutrons 7e-6 and lambda 14.2 cm; b_H 5.7e-4; 214Pb attenuation lengths; N_eff 12.2"},
+    {"file": "output/00_evidence_dossier.md; output/results_ledger.csv; output/provenance/PAPER_GUIDE.md", "parts_used": "context, N_eff 13.9, format rules"},
+    {"file": "output/code/common/lzcommon.py", "parts_used": "lz.LZ event and significance constants"},
+    {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+  ],
+  "recalled_knowledge": [
+    {"item": "LZ TPC inner (true wall) radius 72.8 cm", "presumed_source": "LZ design/TDR papers", "reliability": "likely (Fig. 3 axis ends at 73.0^2)"},
+    {"item": "Gate-cathode drift length 145.6 cm", "presumed_source": "LZ design papers", "reliability": "certain here: the dashed active-volume lines are drawn at z = 0.00 and 145.60 cm"},
+    {"item": "LXe density 2.86 g/cm^3 at ~175 K", "presumed_source": "standard LXe property tables", "reliability": "likely (2.86-2.89)"},
+    {"item": "214Pb gamma attenuation lengths 2.7/2.2/1.5 cm at 352/295/242 keV in LXe", "presumed_source": "NIST XCOM as used by P053", "reliability": "likely"},
+    {"item": "Single-event profile-likelihood statistic q0 = 2[ln(1+s/b) - s], Wilks Z = sqrt(q0)", "presumed_source": "Cowan et al. 2011", "reliability": "certain"},
+    {"item": "Escape probability to an infinite plane sink from height z: (1/2) E2(z/lambda) for isotropic emission", "presumed_source": "radiative transfer / exponential integral", "reliability": "certain"},
+    {"item": "matplotlib star marker: glyph anchor ~10 % of the marker radius below the bbox centre", "presumed_source": "matplotlib marker path definition", "reliability": "likely"}
+  ],
+  "datasets": "none",
+  "data_requests": "none",
+  "failed_or_abandoned": [
+    "PNG pixel digitisation superseded by exact PDF vector paths",
+    "Reconstructed-distance variant via single map bins discarded (MC noise in 1 x 5 cm bins); analytic exponential used instead",
+    "Top-source wall-MSSI map has zero MC content at the event (LR infinite); enters only through the equal mix",
+    "Equal-normalised-PDF source mix (LR 4.6) vs P033 equal-photon mix (15.1): neither is LZ's true source mix; reported as a range"
+  ],
+  "wimpydd_generated_files": "none"
+}

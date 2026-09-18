@@ -1,0 +1,86 @@
+window,halo,rate_unit_d10_per_tyr_element
+Xe_full,annual,2.76898
+Xe_LZ270,annual,1.17538
+Xe_5_1000,annual,2.62788
+I_full,annual,21.0431
+I_5_1000,annual,20.9156
+W_full,annual,0.137621
+W_10_1300,annual,0.129391
+W_110_1300,annual,0.000328369
+W_220_1300,annual,4.20029e-08
+Ge_full,annual,0.677045
+Ge_1_1000,annual,0.677045
+Xe_full,june16,2.99227
+Xe_LZ270,june16,1.19887
+Xe_5_1000,june16,2.83151
+I_full,june16,22.6489
+I_5_1000,june16,22.4725
+W_full,june16,0.134558
+W_10_1300,june16,0.126564
+W_110_1300,june16,0.000328143
+W_220_1300,june16,4.29755e-08
+Ge_full,june16,0.733248
+Ge_1_1000,june16,0.733248
+Xe_full,dec16,2.5498
+Xe_LZ270,dec16,1.15081
+Xe_5_1000,dec16,2.42728
+I_full,dec16,19.4613
+I_5_1000,dec16,19.3782
+W_full,dec16,0.140731
+W_10_1300,dec16,0.132259
+W_110_1300,dec16,0.000328384
+W_220_1300,dec16,4.09833e-08
+Ge_full,dec16,0.621826
+Ge_1_1000,dec16,0.621826
+Xe_full,annual_vesc528,2.72245
+Xe_LZ270,annual_vesc528,1.17484
+Xe_5_1000,annual_vesc528,2.58944
+I_full,annual_vesc528,20.7434
+I_5_1000,annual_vesc528,20.6451
+W_full,annual_vesc528,0.137899
+W_10_1300,annual_vesc528,0.129649
+W_110_1300,annual_vesc528,0.000328717
+W_220_1300,annual_vesc528,4.19674e-08
+Ge_full,annual_vesc528,0.666375
+Ge_1_1000,annual_vesc528,0.666375
+Xe_full,annual_vesc560,2.8085
+Xe_LZ270,annual_vesc560,1.17595
+Xe_5_1000,annual_vesc560,2.65996
+I_full,annual_vesc560,21.2912
+I_5_1000,annual_vesc560,21.1355
+W_full,annual_vesc560,0.137413
+W_10_1300,annual_vesc560,0.129197
+W_110_1300,annual_vesc560,0.000328066
+W_220_1300,annual_vesc560,4.20114e-08
+Ge_full,annual_vesc560,0.686507
+Ge_1_1000,annual_vesc560,0.686507
+Xe_full,annual_v0220,2.1877
+Xe_LZ270,annual_v0220,1.11866
+Xe_5_1000,annual_v0220,2.08888
+I_full,annual_v0220,16.7888
+I_5_1000,annual_v0220,16.7442
+W_full,annual_v0220,0.145615
+W_10_1300,annual_v0220,0.136801
+W_110_1300,annual_v0220,0.000331279
+W_220_1300,annual_v0220,3.96794e-08
+Ge_full,annual_v0220,0.529872
+Ge_1_1000,annual_v0220,0.529872
+Xe_full,annual_v0250,3.203
+Xe_LZ270,annual_v0250,1.20181
+Xe_5_1000,annual_v0250,3.02248
+I_full,annual_v0250,24.133
+I_5_1000,annual_v0250,23.9064
+W_full,annual_v0250,0.13285
+W_10_1300,annual_v0250,0.124958
+W_110_1300,annual_v0250,0.00032518
+W_220_1300,annual_v0250,4.30731e-08
+Ge_full,annual_v0250,0.78319
+Ge_1_1000,annual_v0250,0.78319
+ratio W/Xe full,annual,0.0497011
+ratio I/Xe full,annual,7.59958
+ratio Ge/Xe full,annual,0.24451
+ratio W(10-1300)/Xe(5-1000),annual,0.0492379
+ratio I(5-1000)/Xe(5-1000),annual,7.9591
+ratio W/Xe zero-q spin estimate,-,0.0743069
+ratio I/Xe zero-q spin estimate,-,1.75316
+ratio Ge/Xe zero-q spin estimate,-,0.314563

@@ -1,0 +1,70 @@
+{
+ "id": "P084",
+ "title": "Sommerfeld-enhanced annihilation and the CMB, dwarf-spheroidal and antiproton constraints on the electroweak multiplets that fit the LZ event",
+ "date": "2026-09-16",
+ "agent_tools": [
+  {"tool": "Read", "count": 11, "detail": "provenance/PAPER_GUIDE.md; papers/P025.md, P037.md, P007.md, P054.md; work/P025/details.md; work/P084/figures/P084_fig1_S_vs_mass.png, P084_fig2_sigv_vs_limits.png (x2), P084_fig3_S_vs_v.png"},
+  {"tool": "Bash", "count": 11, "detail": "ls papers/ provenance/ + check P075.md absent + head results_ledger.csv + grep ledger rows + head ENVIRONMENT_versions.txt; grep P037 details (thermal/splitting/resonance) + grep ledger + head P037.json; grep lzcommon constants + ls work/P025 data_requests; grep dataviz palette.md hex values; timing test (exec of script definitions, single solves); run P084_sommerfeld_indirect.py (x4: syntax error, full run, rerun with evasion fractions, rerun with fixed Fig. 2) + pandas extraction of excluded mass ranges + wc -w run_log; wc -w budget checks of P084.md + json.load of P084.json (x4)"},
+  {"tool": "Write", "count": 6, "detail": "code/P084_sommerfeld_indirect.py; work/P084/details.md; provenance/P084.json; papers/P084.md (x3: draft and two budget-trimming rewrites)"},
+  {"tool": "Edit", "count": 12, "detail": "script (x3): hyphenated keyword names -> valid identifiers; evasion fraction f_max, delta at f_max and S along the (3,1)/(2,1/2) mass bands; Fig. 2 layout (legend below, y-range, band labels). papers/P084.md (x7): word-budget trims. provenance/P084.json (x1): tool counts; details.md (x1): tool counts"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (categorical palette slots 1-4 for the four multiplets; JS validator skipped per PAPER_GUIDE)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python from the simulation root"},
+  {"name": "numpy", "version": "2.5.3", "functions": "linalg.solve (matching conditions), diag, logspace, interp, complex arrays"},
+  {"name": "scipy", "version": "1.18.1", "functions": "integrate.solve_ivp (DOP853, complex, rtol 1e-10) for the coupled radial Schroedinger equation"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame/to_csv/read_csv for all result tables"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; three PNG figures"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "not imported (no LZ rate computed here; constants re-declared in the script)"},
+  {"name": "none: derived by hand", "version": "-", "functions": "SU(2) ladder factors C+^2 = (n-1-Q)(Q+1); Z couplings (g/c_W)(Q c_W^2 - Y); positronium-normalised threshold formula sigma v = |sum a_j|^2/(32 pi m^2); channel annihilation vectors a^WW, a^ZZ, a^gg, a^Zg; potential matrix (W Yukawa off-diagonal, Z Yukawa + Coulomb diagonal); one-loop splitting alpha_2 m_W [Q^2 sin^2(theta_W/2) + Q Y (1-c_W)/c_W]; Dirac <-> Majorana two-body basis rotation; incoming-flux normalisation of the multi-channel solution"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P084_sommerfeld_indirect.py", "purpose": "tree-level cross-sections; multi-channel Sommerfeld solver with validation (Coulomb, Hulthen, wino, Majorana-basis delta check, convergence); S at benchmark masses/velocities; S(v) curves; 0.5-12 TeV mass scan and resonance finder; recalled limits, thermal fractions, verdict table; three figures; results JSON", "command": ".venv/bin/python output/code/P084_sommerfeld_indirect.py  (26 s)"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules, deliverables, template, word budgets"},
+  {"file": "output/papers/P025.md; output/work/P025/details.md", "parts_used": "Higgsino tree cross-sections (9.6e-27, 7.9e-27), S = 1-3 bracket, one-loop line 1.2e-28, limit anchors and scalings, Hulthen formula and inelastic argument (Sec. 3.2, 3.4), thermal mass 1167 GeV"},
+  {"file": "output/papers/P037.md; output/work/P037/details.md (grep)", "parts_used": "delta(N=1) = 365.8/374.1/379.2/382.7 keV at 1 TeV and 2/4 TeV values, windows, Delta m(Q=1) = 342/511/680/850 MeV, recalled thermal masses 1.1/~2/~2.4/~4.5 TeV, x5 per 10 keV fall of N(delta)"},
+  {"file": "output/papers/P007.md", "parts_used": "delta(N=1) vs mass (366 keV at 1 TeV, 375 at 2 TeV), Omega h^2 = 0.099 at 1 TeV, Delta m = 355 MeV"},
+  {"file": "output/papers/P054.md", "parts_used": "non-thermal / heavy-mediator context for sub-component scenarios; CMB S_0 = 1.2-2.2 comparison"},
+  {"file": "output/results_ledger.csv", "parts_used": "header (ledger row keys) and rows P007/P025/P037/P054"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"},
+  {"file": "dataviz skill references/palette.md", "parts_used": "categorical hex values for four series and text/grid greys"}
+ ],
+ "recalled_knowledge": [
+  {"item": "sin^2 theta_W = 0.2312, alpha_2(m_Z) = 1/29.6 (g = 0.6516), m_W = 80.377 GeV, m_Z = 91.1876 GeV, alpha(0) = 1/137.036", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "1 GeV^-2 = 1.1673e-17 cm^3 s^-1", "presumed_source": "hbar^2 c^3 conversion", "reliability": "certain"},
+  {"item": "para-positronium: Gamma = alpha^5 m/2, |psi(0)|^2 = m^3 alpha^3/(8 pi) -> sigma v(1S0 -> gamma gamma) = 4 pi alpha^2/m^2, spin-averaged pi alpha^2/m^2", "presumed_source": "QED textbooks", "reliability": "certain"},
+  {"item": "pure wino tree-level sigma v(chi0 chi0 -> W+W-) = 2 pi alpha_2^2/m^2; real n-plet g^4 (n^2-1)^2/(512 pi M^2)", "presumed_source": "Hisano et al. 2005; Cirelli-Strumia-Tamburini 2007", "reliability": "likely"},
+  {"item": "Hisano et al. wino Sommerfeld matrices: V_01 = -sqrt2 alpha_2 e^{-m_W r}/r, V_11 = 2 dm - alpha/r - alpha_2 c_W^2 e^{-m_Z r}/r, Gamma_WW ~ [[2, sqrt2],[sqrt2, 1]]", "presumed_source": "Hisano, Matsumoto, Nojiri, Saito PRD 71 (2005)", "reliability": "likely (reproduced by our derivation)"},
+  {"item": "one-loop EW splitting M_Q - M_0 = alpha_2 m_W [Q^2 sin^2(theta_W/2) + Q Y (1-c_W)/c_W]; wino 166 MeV", "presumed_source": "Cirelli-Fornengo-Strumia 2006", "reliability": "likely (re-derived; matches P007/P037 to 5-7 %)"},
+  {"item": "wino first Sommerfeld resonance at 2.3-2.5 TeV; second near 9 TeV", "presumed_source": "Hisano et al. 2005; Beneke et al.", "reliability": "likely"},
+  {"item": "wino 3 TeV line cross-section gamma gamma + Z gamma/2 ~ (1-3)e-26 cm^3/s, in tension with H.E.S.S. line limits for NFW/Einasto", "presumed_source": "Cohen-Lisanti-Pierce-Slatyer 2013; Fan-Reece 2013", "reliability": "uncertain"},
+  {"item": "Hulthen closed-form Sommerfeld factor (as in P025 Sec. 3.2) approximates the Yukawa problem to ~10 %", "presumed_source": "Cassel 2010; Slatyer 2010", "reliability": "likely"},
+  {"item": "inelastic (delta) corrections to S negligible when delta << alpha m_V and delta << alpha^2 m", "presumed_source": "Slatyer JCAP 2010", "reliability": "likely (verified numerically here)"},
+  {"item": "thermal masses: doublet 1.1 TeV (certain); (3,1) ~2 TeV, (4,3/2) ~2.4 TeV, (5,2) ~4.5 TeV (uncertain, +-30 %); wino 2.7-3.0 TeV, (5,0) 9.4 TeV (likely)", "presumed_source": "Cirelli-Fornengo-Strumia 2006 / P037", "reliability": "uncertain for Y>=1"},
+  {"item": "Sommerfeld effects at freeze-out raise thermal masses of large multiplets ((5,0): 4.4 -> 9.4 TeV)", "presumed_source": "Cirelli-Strumia-Tamburini 2007", "reliability": "likely"},
+  {"item": "Omega h^2 ~ 1/<sigma v>_eff ~ M^2 -> thermal fraction f = (M/M_th)^2 below the thermal mass", "presumed_source": "standard freeze-out scaling", "reliability": "likely (log corrections ignored)"},
+  {"item": "Planck p_ann < 3.5e-28 cm^3 s^-1 GeV^-1 (3.2e-28 in Planck 2018)", "presumed_source": "Planck 2018 VI", "reliability": "likely"},
+  {"item": "f_eff(W+W-) at TeV = 0.2-0.35", "presumed_source": "Slatyer PRD 93 (2016)", "reliability": "likely"},
+  {"item": "Fermi-LAT dSph WW limit ~1e-25 cm^3/s at 1 TeV, ~ m", "presumed_source": "Ackermann et al. 2015; Albert et al. 2017", "reliability": "likely (x2)"},
+  {"item": "H.E.S.S. GC WW limit (Einasto) (0.5-4)e-26 cm^3/s at 1 TeV, ~ m^0.5; x10 weaker for cored profiles", "presumed_source": "H.E.S.S. 2016/2022", "reliability": "uncertain"},
+  {"item": "AMS-02 antiproton WW-like limit (1-10)e-26 cm^3/s at 1 TeV", "presumed_source": "Cuoco et al. 2017; Cui et al. 2017", "reliability": "uncertain"},
+  {"item": "H.E.S.S. gamma-ray line limit (Einasto) (1-4)e-28 cm^3/s at 1 TeV, ~ m", "presumed_source": "H.E.S.S. 2018 line search", "reliability": "uncertain"},
+  {"item": "line convention: limits on gamma gamma apply to sigma v(gamma gamma) + 1/2 sigma v(Z gamma)", "presumed_source": "standard", "reliability": "certain"},
+  {"item": "characteristic relative velocities: Milky Way ~1e-3 c, dwarf spheroidals 1e-5-1e-4 c, recombination -> 0", "presumed_source": "standard", "reliability": "certain"},
+  {"item": "1S0 initial state cannot annihilate through a single s-channel vector boson (J^PC = 0-+)", "presumed_source": "angular momentum / C-parity", "reliability": "certain"},
+  {"item": "electroweak Sudakov corrections reduce exclusive TeV WW/line rates by O(10-30 %)", "presumed_source": "Baumgart et al.; Ovanesyan et al.", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Outward integration of a matrix of regular solutions: with several closed channels the closed-channel rows degenerate onto the fastest-growing mode; replaced by inward integration of decaying basis solutions (stable, validated).",
+  "First run failed on hyphenated keyword arguments (S_tot_MW_v3e-4); renamed.",
+  "The assignment's recalled 'quintuplet resonance at 9-10 TeV' is not reproduced for either (5,0) (peaks 0.8, 3.1, 6.1, 8.0 TeV; S = 60 at 9.4 TeV) or (5,2); reported as a discrepancy with an uncertain recollection.",
+  "Coherent combination of the Sommerfeld-induced and hard one-loop gamma-ray lines not attempted (quoted separately; factor <= 4 in the Higgsino line).",
+  "Non-maximal-hypercharge multiplets (4,1/2), (5,1) not treated (neutral state not extremal; extra inert-sector couplings).",
+  "dataviz JavaScript palette validator not run (node not allowed)."
+ ],
+ "wimpydd_generated_files": "none"
+}

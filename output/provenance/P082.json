@@ -1,0 +1,73 @@
+{
+ "id": "P082",
+ "title": "A global direct-detection combination for inelastic dark matter after the LZ event: the surviving (m_chi, delta, sigma_n) region",
+ "date": "2026-09-16",
+ "agent_tools": [
+  {"tool": "Read", "count": 20, "detail": "PAPER_GUIDE.md; papers P059, P021, P038, P069, P005, P046, P035; work/P021/details.md; work/P059/details.md; code/P021_full_likelihood.py; code/P059_archival_xenon.py; common/lzcommon.py (lines 1-62, 305-405); own figures x6 (fig1, fig2 x2, fig3 x3)"},
+  {"tool": "Bash", "count": 16, "detail": "ls of work/P059,P021,P038,P069,P002 and papers/data_requests; python inspection of P021/P038 npz formats, lzcommon API, P059/P069 CSVs; inspection of P015 figS7_curves.json, P046 rates_vs_delta.csv/kernels.npz, P038 acceptance CSV, P069 hidden events, P016/P007 JSON, DR index, tex bib/Fig. S7 caption, dossier grep; WimPyDD per-stream kernel timing test + ENVIRONMENT_versions; greps of P038/P046/P002 details; '.venv/bin/python output/code/P082_global_idm.py --spectra-only 200 300 600'; '... --spectra-only 2000 10000'; '.venv/bin/python output/code/P082_global_idm.py' x5 (initial, future-block fix, shift-summary fix, 100 keV floor, figure fix); JSON result print + ls; wc -w budget checks x3"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P082_global_idm.py; output/work/P082/details.md; output/provenance/P082.json; output/papers/P082.md"},
+  {"tool": "Edit", "count": 16, "detail": "script (12): future-exposure block (1 TeV conditional maximum, Higgsino truth), Fig. 3 labels/legend/xlim (4), Fig. 2 legend, shift summary split by delta, 100 keV archival floor (4); paper trims to the word budgets (4)"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (guidance only; node validator not run per PAPER_GUIDE)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "arrays, logspace, gradient, nanmax, interp, savez/load"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats.norm.pdf/cdf, special.erf, optimize (imported)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, read_csv, groupby, to_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; contour/contourf, fill_between, barh/bar"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian (via lzcommon.wd_hamiltonian), streamed_halo_function (via lzcommon.wd_halo, explicit v_min grid), diff_rate(sum_over_streams=False) per-stream kernels for Xe"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ, M_V_GEV, M_NUCLEON_GEV, A_XE_MEAN, AMU_GEV, C_KMS, mu_red, m_nucleus_gev, vmax_kms, v_earth_kms, delta_max_kev, E_R_range_keV, wd, wd_halo, wd_hamiltonian, wd_c_from_anand"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P082_global_idm.py", "purpose": "build/cache WimPyDD O1 isoscalar spectra for 200, 300, 600 GeV (per-stream kernels x three halos)", "command": ".venv/bin/python output/code/P082_global_idm.py --spectra-only 200 300 600"},
+  {"path": "output/code/P082_global_idm.py", "purpose": "build/cache spectra for 2000 and 10000 GeV", "command": ".venv/bin/python output/code/P082_global_idm.py --spectra-only 2000 10000"},
+  {"path": "output/code/P082_global_idm.py", "purpose": "joint LZ + archival likelihood over (m, delta, kappa); regions, best-fit shift, Higgsino window, exclusion-mode limits, non-xenon comparison, future-exposure projections, figures", "command": ".venv/bin/python output/code/P082_global_idm.py"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "l.116 (same S1c range as SR1 NREFT), l.117 exposure/efficiency, l.455-457 event, l.798-818 O1-as-cross-section and Fig. S7 caption, bibliography entries l.352-412 (CRESST, Bramante, PICO, XENON1T, PandaX-4T)"},
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules and templates"},
+  {"file": "output/papers/P059.md, P021.md, P038.md, P069.md, P005.md, P046.md, P035.md", "parts_used": "headline results, archival exposures, likelihood model, edge treatment, hidden-event counts, non-xenon programme"},
+  {"file": "output/work/P021/details.md, output/code/P021_full_likelihood.py, output/work/P021/spectra_s_400.npz, spectra_s_1000.npz, spectra_s_4000.npz, spectra_hig_1000.npz", "parts_used": "likelihood model (Fig. 5 bins, theta nuisance, b_H, resolution), kernel construction, cached O1s and Higgsino spectra"},
+  {"file": "output/work/P059/details.md, output/code/P059_archival_xenon.py", "parts_used": "archival exposure table with reliability flags, acceptance models, combination method and results for comparison"},
+  {"file": "output/work/P038/P038_mc_efficiency.csv, output/work/P038/spectra_s_1000_full.npz, output/work/P038/details.md", "parts_used": "NEST-LZ MC efficiency P_pass_600/P_pass_1000 vs E (0.955 plateau); 1000 GeV spectra to 800 keV for the 1000 phd future variant; edge prescription"},
+  {"file": "output/work/P016/P016_results.json", "parts_used": "fig5_top_digitised (bins, model, data) for the low-energy likelihood"},
+  {"file": "output/work/P007/higgsino_couplings.json", "parts_used": "sigma_SI_equiv_cm2_by_mass -> kappa_H(m); WimPyDD Higgsino couplings (through P021 spectra)"},
+  {"file": "output/work/P015/figS7_curves.json", "parts_used": "digitised CRESST-II and PICO curves of LZ Fig. S7 (curves_points, curves_summary)"},
+  {"file": "output/work/P046/rates_vs_delta.csv, output/work/P046/details.md", "parts_used": "unit-coupling tungsten (W_10_1300_annual) and iodine (I_5_1000_annual) rates per t yr vs delta at 1000 GeV; CaWO4 mass fraction 0.6385"},
+  {"file": "output/work/P069/P069_exposure_ledger.csv, P069_hidden_events.csv", "parts_used": "untouched exposures (LZ 6.76, XENONnT 3.0, PandaX-4T 2.5 t yr) and hidden-event counts for comparison"},
+  {"file": "output/results_ledger.csv", "parts_used": "rows of IDM/XEXP papers and P002/P003/P007/P012/P015/P016/P028/P050"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "constants, kinematics, WimPyDD wrappers and coupling convention"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "(hbar c)^2 = 0.3894e-27 GeV^2 cm^2", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "chi^2 quantiles 1.0/2.706 (1 dof) and 2.30/4.61 (2 dof); Wilks asymptotics Z = sqrt(q0)", "presumed_source": "Cowan et al. 2011", "reliability": "certain"},
+  {"item": "Poisson 90% CL upper limits: 2.303 events for n = 0, 3.89 for n = 1", "presumed_source": "standard statistics", "reliability": "certain"},
+  {"item": "LZ SR1: 60 live days x 5.5 t fiducial = 0.90 t yr; g1 = 0.114 phd/photon in SR1", "presumed_source": "LZ SR1 papers (2022-2024)", "reliability": "likely"},
+  {"item": "LZ SR1 NREFT search saw no NR-band-like events at high S1c (treated as zero-event data above 100 keV)", "presumed_source": "arXiv:2312.02030", "reliability": "uncertain"},
+  {"item": "XENON1T 2018: 1.0 t yr, ROI 4.9-40.9 keV", "presumed_source": "PRL 121, 111302", "reliability": "certain (exposure) / likely (ROI)"},
+  {"item": "LUX 2021 EFT search: 3.35e4 kg d; high-energy ROI edge 100-250 keV", "presumed_source": "PRD 104, 062005", "reliability": "likely (exposure) / uncertain (edge)"},
+  {"item": "PandaX-II 2019 SD-EFT: 54 t d; ROI edge 50-150 keV", "presumed_source": "PLB 792, 193", "reliability": "likely / uncertain"},
+  {"item": "XENONnT 3.1 t yr and PandaX-4T 1.54 t yr with low-energy ROIs ending near 60 and 100 keV", "presumed_source": "PRL 135, 221003; PRL 134, 011805 (exposures cited by LZ)", "reliability": "certain (exposures) / uncertain (edges)"},
+  {"item": "PICO-60 CF3I exposure ~1335 kg d; iodine mass fraction of CF3I 127/196.9", "presumed_source": "PICO-60 CF3I PRD 93, 052014 (2016); atomic masses", "reliability": "likely / certain"},
+  {"item": "PICO-60 CF3I + C3F8 inelastic dark matter search published 2023 (PRD 108, 062003)", "presumed_source": "LZ bibliography entry l.410", "reliability": "certain"},
+  {"item": "CDMS-II inelastic dark matter search (2011) covering delta up to ~150 keV in germanium", "presumed_source": "Ahmed et al., PRD 83, 112002 (2011)", "reliability": "likely"},
+  {"item": "No NaI(Tl) (DAMA/LIBRA, COSINE-100, ANAIS-112) or germanium analysis with a > 200 keV inelastic window is known to the authors", "presumed_source": "statement of ignorance (P028 found none)", "reliability": "uncertain (absence claim)"},
+  {"item": "CaWO4 tungsten mass fraction 0.6385; Okabe-Ito palette is colour-vision-deficiency safe", "presumed_source": "atomic masses; Okabe & Ito 2008", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Zero-event treatment of the low-energy ROIs (XENON1T, XENONnT, PandaX-4T, SR1 below 100 keV) down to 5 keV: predicted 2.4-4.4 events at delta = 110-190 keV and drove kappa_hat to zero there, contradicting the published background-limited limits; replaced by a 100 keV true-energy floor (no change > 0.1% at delta >= 300 keV).",
+  "Future-exposure Asimov block first used the global (m, delta) maximum (10 TeV, 405 keV) mapped onto the 1 TeV grid (delta = 395, kappa_hat = 0), giving zero Asimov counts; replaced by the 1 TeV conditional maximum plus a Higgsino-point truth.",
+  "Count-based extrapolation of the PICO iodine limit beyond 366.8 keV abandoned (the curve's delta-slope is inconsistent with a fixed-count limit); curves extrapolated with their own log-slopes and flagged.",
+  "Region area alone as the shrinkage metric for null outcomes is ambiguous (region re-centres at lower delta and grows); kappa upper edge and delta range reported alongside."
+ ],
+ "wimpydd_generated_files": [
+  "output/work/P082/cache/spectra_s_200.npz",
+  "output/work/P082/cache/spectra_s_300.npz",
+  "output/work/P082/cache/spectra_s_600.npz",
+  "output/work/P082/cache/spectra_s_2000.npz",
+  "output/work/P082/cache/spectra_s_10000.npz"
+ ]
+}

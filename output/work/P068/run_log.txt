@@ -1,0 +1,26 @@
+[   0.0s] prior set A: n=400, Spearman(v0, vesc) = 0.466, frames {'sun': 134, 'annual': 133, 'june': 133}
+[   0.0s] prior set B: n=200, Spearman(v0, vesc) = 0.029, frames {'june': 67, 'annual': 67, 'sun': 66}
+[   0.0s] prior set C: n=200, Spearman(v0, vesc) = 0.518, frames {'sun': 67, 'annual': 67, 'june': 66}
+[   0.2s] validation: eta vs analytic max rel dev (sun/june, v<=780) = 2.60e-05 / 3.04e-06
+[   0.2s] validation: eta/eta_SHM(700 km/s, June) Lisanti k=0.5/1/1.5/2 = {'0.5': 0.8410132553326254, '1.0': 0.5567178383421708, '1.5': 0.3359499527874399, '2.0': 0.1965630864084353}
+[   0.2s] kernels: iso x 4, Higgsino x 40, L10 x 1 (cache output/work/P068/kernel_cache)
+[   0.2s]   iso kernels done
+[   0.2s]   Higgsino kernel 10/40
+[   0.2s]   Higgsino kernel 20/40
+[   0.2s]   Higgsino kernel 30/40
+[   0.2s]   Higgsino kernel 40/40
+[   0.2s]   all kernels done
+[   0.2s] building halo library
+[   0.3s]   set A loaded from cache
+[   0.4s]   set B loaded from cache
+[   0.4s]   set C loaded from cache
+[   0.4s] reference (Baxter) N_iso June: {300.0: '1.917e+04', 350.0: '613.7', 366.0: '65.05', 380.0: '2.435'} ; annual: {300.0: '1.335e+04', 350.0: '253.4', 366.0: '20.2', 380.0: '0.6182'}
+[   0.4s] reference N_hig Sun-frame at 300/350/380 = 721.2 / 5.94 / 0.023 (P007: 790/11.1/0.098)
+[   0.4s] reference L10 N_unit_wd Sun-frame = 3.3238 (P012 3.3295); d10_lz = 0.2793
+[   0.4s] reference pct248 June: {300.0: 99.52400887941738, 350.0: 98.09316943273595} (P002 99.5/98.1)
+[   0.5s] outputs for set A done
+[   0.6s] outputs for set B done
+[   0.7s] outputs for set C done
+[   0.8s] reference a1: {'300.0': '0.430', '350.0': '1.185', '366.0': '1.533', '380.0': '1.683', 'L10': '0.021'} (P034 0.43/1.18/1.52/1.66)
+[   0.8s] reference Higgsino delta(N=1): {'sun': '360.3', 'june': '372.1', 'annual': '365.7'} (P018 annual 365.7; P007 Sun 366)
+[   1.5s] done; runtime 2 s

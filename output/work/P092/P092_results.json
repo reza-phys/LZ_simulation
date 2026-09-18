@@ -1,0 +1,523 @@
+{
+ "inputs": {
+  "v_sun_gal": [
+   11.1,
+   250.2,
+   7.3
+  ],
+  "v0": 238.0,
+  "vesc": 544.0,
+  "m_chi": 1000.0,
+  "deltas": [
+   300.0,
+   350.0,
+   366.0,
+   380.0,
+   385.0
+  ],
+  "event_utc": "2023-06-16T21:22:39",
+  "lat": 44.352,
+  "lon": -103.751,
+  "depth_km": 1.478,
+  "v_rot_kms": 0.3319428089705017,
+  "E_grid": [
+   60.0,
+   400.0,
+   2.0
+  ],
+  "efficiency": "P034 parametrisation of Fig. S2 (edge 269.9, width 15, plateau 0.96)"
+ },
+ "frames": {
+  "v_orb_event_gal": [
+   1.0119357337015058,
+   14.724007379709429,
+   -25.34375246801254
+  ],
+  "v_lab_geocentric_event": [
+   12.111935733701506,
+   264.9240073797094,
+   -18.04375246801254
+  ],
+  "s_geocentric_event": 265.81385531320325,
+  "s_wimprates_event": 265.9773059244271,
+  "s_P055_event": 265.96311733275246,
+  "astropy_minus_wimprates_vector_kms": 1.011605475988409,
+  "lzcommon_cosine": 265.06308061604346,
+  "ephemeris_check": {
+   "perihelion 2023-01-04": {
+    "speed_kms": 30.27472077937326,
+    "r_AU": 0.9832955704792142,
+    "r_v_angle_deg": 90.00024639455931
+   },
+   "aphelion 2023-07-06": {
+    "speed_kms": 29.282062619076942,
+    "r_AU": 1.0166805749319352,
+    "r_v_angle_deg": 89.99994146284472
+   },
+   "event": {
+    "speed_kms": 29.3279081491806,
+    "r_AU": 1.0158860902957276,
+    "r_v_angle_deg": 89.69243755590703
+   }
+  },
+  "astropy_minus_wimprates_apex_projection_kms": -0.16157593554989416,
+  "apex_ra_dec": [
+   319.4439893983107,
+   43.747590190620045
+  ],
+  "diurnal_amplitude_kms": 0.2397931768179289,
+  "s_rot_mean": 265.814004449352,
+  "s_rot_min": 265.5741613288895,
+  "s_rot_max": 266.05374750221074,
+  "s_rot_p2p": 0.47958617332125186,
+  "utc_of_max_speed_h": 4.6,
+  "utc_of_min_speed_h": 16.566666666666666,
+  "s_event": 265.7413639157097,
+  "s_event_minus_mean": -0.07264053364229994,
+  "s_event_minus_geocentric": -0.07249139749353617,
+  "rot_projection_event": -0.0726887743864337,
+  "orbital_drift_per_day_kms": -0.05234642025163794,
+  "s_full_mean": 265.8348538994725,
+  "sidereal_mean_minus_geocentric": 0.00014913614876377324,
+  "lst_event_h": 8.11988176546415,
+  "apex_ha_event_h": 10.823615805576772,
+  "apex_alt_event": -0.5075270173434832,
+  "apex_az_event": 347.3503759007982,
+  "apex_alt_min": -1.9004093483819733,
+  "apex_alt_max": 89.39558914439434,
+  "frac_day_apex_below_horizon": 0.11450381679389313,
+  "utc_upper_culmination_h": 10.583333333333334,
+  "utc_lower_culmination_h": 22.55,
+  "utc_apex_east_h": 4.6,
+  "utc_apex_west_h": 16.566666666666666
+ },
+ "kinematics": {
+  "ddmax_dv_keV_per_kms": 0.8218402700365232,
+  "per_mass": {
+   "400": {
+    "dmax_mean": 341.65794665209603,
+    "dmax_event": 341.5982477363118,
+    "dmax_min": 341.46083391720856,
+    "dmax_max": 341.85497714739677,
+    "p2p": 0.39414323018820596
+   },
+   "1000": {
+    "dmax_mean": 387.18583471844664,
+    "dmax_event": 387.1261358026624,
+    "dmax_min": 386.98872198355923,
+    "dmax_max": 387.3828652137474,
+    "p2p": 0.3941432301881491
+   },
+   "4000": {
+    "dmax_mean": 409.949778751622,
+    "dmax_event": 409.89007983583775,
+    "dmax_min": 409.7526660167345,
+    "dmax_max": 410.1468092469227,
+    "p2p": 0.39414323018820596
+   }
+  }
+ },
+ "validation": [
+  {
+   "delta": 300.0,
+   "v_lab_wimpydd_day": 265.92152294147445,
+   "N_roi_wimpydd": 6237950417656.92,
+   "N_roi_analytic": 6238414134886.372,
+   "ratio": 1.0000743380755543,
+   "spectrum_ratio_min": 0.9975867273053265,
+   "spectrum_ratio_max": 1.0018619618666171
+  },
+  {
+   "delta": 350.0,
+   "v_lab_wimpydd_day": 265.92152294147445,
+   "N_roi_wimpydd": 201831032377.16132,
+   "N_roi_analytic": 202466176393.31003,
+   "ratio": 1.0031469096137893,
+   "spectrum_ratio_min": 0.8202031808811814,
+   "spectrum_ratio_max": 1.0090355530695718
+  },
+  {
+   "delta": 366.0,
+   "v_lab_wimpydd_day": 265.92152294147445,
+   "N_roi_wimpydd": 21760636708.76939,
+   "N_roi_analytic": 21921415042.128777,
+   "ratio": 1.0073884939816395,
+   "spectrum_ratio_min": 0.9953745038159931,
+   "spectrum_ratio_max": 1.0165472006838454
+  },
+  {
+   "delta": 380.0,
+   "v_lab_wimpydd_day": 265.92152294147445,
+   "N_roi_wimpydd": 891940208.3740767,
+   "N_roi_analytic": 901819675.133276,
+   "ratio": 1.0110763778406275,
+   "spectrum_ratio_min": 0.934162747904917,
+   "spectrum_ratio_max": 1.0194305496950373
+  },
+  {
+   "delta": 385.0,
+   "v_lab_wimpydd_day": 265.92152294147445,
+   "N_roi_wimpydd": 220739067.13032708,
+   "N_roi_analytic": 224331963.2622796,
+   "ratio": 1.0162766662859513,
+   "spectrum_ratio_min": 0.9776452558599149,
+   "spectrum_ratio_max": 1.0232831009844927
+  }
+ ],
+ "modulation": {
+  "300": {
+   "mean_rate": 6220868728513.043,
+   "p2p_frac": 0.012590413701214546,
+   "a1": 0.006295247288979296,
+   "phase_LST_deg_of_max": 229.44416110675218,
+   "UTC_of_max_h": 4.583333333333333,
+   "KL_nats": 9.913144571473716e-06,
+   "N3_llr": 453944.30130618846,
+   "N3_cos": 454199.77606351214,
+   "LR_event": 0.9980893245380793,
+   "LR_event_fullseries": 0.9976001808413226,
+   "dlnR_dv_per_kms": 0.026253070715249294,
+   "rate_event": 6208982667281.644,
+   "rate_event_over_geocentric": 0.9980980431292787,
+   "frac_of_day_zero": 0.0,
+   "annual_P034": {
+    "a1": 0.43,
+    "KL": 0.047,
+    "N3": 96.5
+   },
+   "N3_ratio_diurnal_over_annual": 4704.086023898326,
+   "KL_ratio_annual_over_diurnal": 4741.179719626832
+  },
+  "350": {
+   "mean_rate": 200838017692.01166,
+   "p2p_frac": 0.03629452306978147,
+   "a1": 0.018147233186134884,
+   "phase_LST_deg_of_max": 229.44463544944722,
+   "UTC_of_max_h": 4.583333333333333,
+   "KL_nats": 8.237969755656673e-05,
+   "N3_llr": 54626.7801870859,
+   "N3_cos": 54657.73937845633,
+   "LR_event": 0.9944599665819331,
+   "LR_event_fullseries": 0.9930507959000292,
+   "dlnR_dv_per_kms": 0.07568338584644607,
+   "rate_event": 199725368362.3796,
+   "rate_event_over_geocentric": 0.9945241854294533,
+   "frac_of_day_zero": 0.0,
+   "annual_P034": {
+    "a1": 1.18,
+    "KL": 0.39,
+    "N3": 11.5
+   },
+   "N3_ratio_diurnal_over_annual": 4750.154798877034,
+   "KL_ratio_annual_over_diurnal": 4734.176157082917
+  },
+  "366": {
+   "mean_rate": 21619767847.574158,
+   "p2p_frac": 0.06269659898927682,
+   "a1": 0.03134762474100019,
+   "phase_LST_deg_of_max": 229.44523422084487,
+   "UTC_of_max_h": 4.583333333333333,
+   "KL_nats": 0.00024582895638814204,
+   "N3_llr": 18307.01704225963,
+   "N3_cos": 18317.37458204263,
+   "LR_event": 0.9903605968251082,
+   "LR_event_fullseries": 0.9879266676829564,
+   "dlnR_dv_per_kms": 0.13075042975028595,
+   "rate_event": 21411366188.743828,
+   "rate_event_over_geocentric": 0.9905559022254247,
+   "frac_of_day_zero": 0.0,
+   "annual_P034": {
+    "a1": 1.52,
+    "KL": 0.72,
+    "N3": 6.5
+   },
+   "N3_ratio_diurnal_over_annual": 2816.4641603476357,
+   "KL_ratio_annual_over_diurnal": 2928.865706378316
+  },
+  "380": {
+   "mean_rate": 881461362.9621454,
+   "p2p_frac": 0.10467074647532817,
+   "a1": 0.052329797743992316,
+   "phase_LST_deg_of_max": 229.44659093914987,
+   "UTC_of_max_h": 4.583333333333333,
+   "KL_nats": 0.0006851407052844887,
+   "N3_llr": 6569.257285454137,
+   "N3_cos": 6573.162860350446,
+   "LR_event": 0.9836492829056402,
+   "LR_event_fullseries": 0.9795722320067216,
+   "dlnR_dv_per_kms": 0.21831680163558786,
+   "rate_event": 867048837.5867426,
+   "rate_event_over_geocentric": 0.9842884857534363,
+   "frac_of_day_zero": 0.0,
+   "annual_P034": {
+    "a1": 1.66,
+    "KL": 0.9,
+    "N3": 5.3
+   },
+   "N3_ratio_diurnal_over_annual": 1239.4825066894598,
+   "KL_ratio_annual_over_diurnal": 1313.5987878961243
+  },
+  "385": {
+   "mean_rate": 219259520.32834893,
+   "p2p_frac": 0.1050374398485449,
+   "a1": 0.05251182619837106,
+   "phase_LST_deg_of_max": 229.44688230916086,
+   "UTC_of_max_h": 4.583333333333333,
+   "KL_nats": 0.0006899183405233936,
+   "N3_llr": 6523.5533993997105,
+   "N3_cos": 6527.671055275316,
+   "LR_event": 0.9835361336805747,
+   "LR_event_fullseries": 0.9794337195012944,
+   "dlnR_dv_per_kms": 0.2190661219957022,
+   "rate_event": 215649660.89640167,
+   "rate_event_over_geocentric": 0.9842473796858948,
+   "frac_of_day_zero": 0.0
+  }
+ },
+ "season_amplitude": {
+  "2 June (peak)": {
+   "300.0": 0.0062584993788833065,
+   "350.0": 0.01788981798685114,
+   "366.0": 0.03073473146529446,
+   "380.0": 0.051693158456977056,
+   "385.0": 0.052740403261536846
+  },
+  "16 June (event)": {
+   "300.0": 0.006295231738345864,
+   "350.0": 0.01814641829688135,
+   "366.0": 0.03134287104231252,
+   "380.0": 0.05230296938657407,
+   "385.0": 0.052482286920126464
+  },
+  "1 Sep (mean)": {
+   "300.0": 0.007369690557036784,
+   "350.0": 0.0269541611970578,
+   "366.0": 0.052059222233832,
+   "380.0": 0.05475577199747285,
+   "385.0": 0.08393207957630348
+  },
+  "1 Dec (trough)": {
+   "300.0": 0.008759224949773619,
+   "350.0": 0.04285564684573498,
+   "366.0": 0.0608054868100579,
+   "380.0": 0.5676400068340515,
+   "385.0": NaN
+  }
+ },
+ "halo_variants": {
+  "528": {
+   "300.0": 0.007448701731030293,
+   "350.0": 0.027814167444402214,
+   "366.0": 0.053605767550815434,
+   "380.0": 0.05639694613016798,
+   "385.0": 0.09565403261306293
+  },
+  "560": {
+   "300.0": 0.005531266679058337,
+   "350.0": 0.0131494344699301,
+   "366.0": 0.02013740524715017,
+   "380.0": 0.03239780534737524,
+   "385.0": 0.03919628247264862
+  }
+ },
+ "gravity": {
+  "700.0": {
+   "earth_blueshift_kms": 0.08944007142857141,
+   "earth_blueshift_frac": 0.00012777153061224486,
+   "earth_focusing_density_anisotropy": 0.00025554306122448973,
+   "sun_blueshift_kms": 1.2660071428571429,
+   "sun_focusing_density": 0.0036171632653061226,
+   "sun_focusing_daily_change": 3.0791827662883336e-07,
+   "delta_max_shift_earth_keV": 0.07350545245494305,
+   "delta_max_shift_sun_keV": 1.0404556521538815
+  },
+  "750.0": {
+   "earth_blueshift_kms": 0.0834774,
+   "earth_blueshift_frac": 0.00011130319999999999,
+   "earth_focusing_density_anisotropy": 0.00022260639999999998,
+   "sun_blueshift_kms": 1.1816066666666667,
+   "sun_focusing_density": 0.003150951111111111,
+   "sun_focusing_daily_change": 2.682310320855615e-07,
+   "delta_max_shift_earth_keV": 0.06860508895794686,
+   "delta_max_shift_sun_keV": 0.9710919420102894
+  },
+  "810.0": {
+   "earth_blueshift_kms": 0.07729388888888888,
+   "earth_blueshift_frac": 9.542455418381344e-05,
+   "earth_focusing_density_anisotropy": 0.00019084910836762687,
+   "sun_blueshift_kms": 1.0940802469135802,
+   "sun_focusing_density": 0.0027014327084285933,
+   "sun_focusing_daily_change": 2.2996487661656508e-07,
+   "delta_max_shift_earth_keV": 0.06352323051661746,
+   "delta_max_shift_sun_keV": 0.8991592055650827
+  }
+ },
+ "earth_ceilings": {
+  "O": {
+   "A": 16,
+   "delta_ceiling_keV": 53.57647936568757,
+   "vmin_delta300_kms": 1916.2790183028183
+  },
+  "Fe": {
+   "A": 56,
+   "delta_ceiling_keV": 180.87720479858453,
+   "vmin_delta300_kms": 1042.9270009789257
+  },
+  "Si": {
+   "A": 28,
+   "delta_ceiling_keV": 92.73744895063092,
+   "vmin_delta300_kms": 1456.526054699188
+  },
+  "Mg": {
+   "A": 24,
+   "delta_ceiling_keV": 79.77894053685718,
+   "vmin_delta300_kms": 1570.3689441974495
+  },
+  "Ni": {
+   "A": 58,
+   "delta_ceiling_keV": 187.0059873332325,
+   "vmin_delta300_kms": 1025.694612968565
+  },
+  "Ca": {
+   "A": 40,
+   "delta_ceiling_keV": 131.0543897577958,
+   "vmin_delta300_kms": 1225.2368329549884
+  },
+  "Al": {
+   "A": 27,
+   "delta_ceiling_keV": 89.50665282566914,
+   "vmin_delta300_kms": 1482.580118799007
+  },
+  "S": {
+   "A": 32,
+   "delta_ceiling_keV": 105.6021862820652,
+   "vmin_delta300_kms": 1364.9268454228275
+  }
+ },
+ "shadowing": {
+  "lambda_earth_km_at_1e38": 4408.963456108714,
+  "lambda_rock_km_at_1e38": 25382.229550280543,
+  "sum_fA3_earth": 68351.93000000001,
+  "sigma_stopped_by_overburden": 1.7173362347957064e-34,
+  "path_event_km": 204.71333781851638,
+  "path_min_km": 1.4780822210459519,
+  "path_horizon_km": 137.18653547633852,
+  "path_max_km": 462.88266971412736,
+  "shadow_amplitude_if_elastic": {
+   "1e-38": 0.1049867331226784,
+   "1e-40": 0.001049867331226784,
+   "1e-42": 1.049867331226784e-05,
+   "1e-45": 1.049867331226784e-08
+  },
+  "sigma_el_for_1e4_shadow": 9.5250130207546e-42,
+  "one_event_sigma": {
+   "300.0": {
+    "N_unit_16June_2p84tyr": 17667267188977.043,
+    "sigma_n_one_event_cm2": 1.5411205837512204e-42,
+    "lambda_earth_km_if_elastic": 28608815.57611097
+   },
+   "350.0": {
+    "N_unit_16June_2p84tyr": 570379970245.3131,
+    "sigma_n_one_event_cm2": 4.773552814600928e-41,
+    "lambda_earth_km_if_elastic": 923623.0596680443
+   },
+   "366.0": {
+    "N_unit_16June_2p84tyr": 61400140687.1106,
+    "sigma_n_one_event_cm2": 4.434418035345117e-40,
+    "lambda_earth_km_if_elastic": 99425.9770045694
+   },
+   "380.0": {
+    "N_unit_16June_2p84tyr": 2503350270.812493,
+    "sigma_n_one_event_cm2": 1.0876380121878869e-38,
+    "lambda_earth_km_if_elastic": 4053.704823390336
+   },
+   "385.0": {
+    "N_unit_16June_2p84tyr": 622697037.7325109,
+    "sigma_n_one_event_cm2": 4.3724937608039535e-38,
+    "lambda_earth_km_if_elastic": 1008.3407083691425
+   }
+  },
+  "sigma_unit_coupling": 2.722738912356508e-29
+ },
+ "recalled": [
+  {
+   "item": "SURF Davis campus latitude 44.352 N, longitude 103.751 W",
+   "value": "44.352",
+   "presumed_source": "geography (as P042/P067)",
+   "reliability": "likely"
+  },
+  {
+   "item": "Davis campus depth 4850 ft = 1.478 km below surface",
+   "value": "1.478",
+   "presumed_source": "SURF public description",
+   "reliability": "likely"
+  },
+  {
+   "item": "Earth sidereal rotation rate 7.2921150e-5 rad/s",
+   "value": "7.292115e-05",
+   "presumed_source": "IERS conventions",
+   "reliability": "certain"
+  },
+  {
+   "item": "Earth mean radius 6371.0 km; geocentric radius at 44.35 deg lat 6367.5 km (WGS84 a=6378.137, f=1/298.257)",
+   "value": "6367.5",
+   "presumed_source": "WGS84",
+   "reliability": "certain"
+  },
+  {
+   "item": "GMST(h) = 18.697374558 + 24.06570982441908 D, D = JD(UT1) - 2451545.0; |UT1-UTC| < 1 s in 2023",
+   "value": "formula",
+   "presumed_source": "USNO",
+   "reliability": "certain"
+  },
+  {
+   "item": "Earth surface escape speed 11.19 km/s",
+   "value": "11.19",
+   "presumed_source": "standard",
+   "reliability": "certain"
+  },
+  {
+   "item": "Solar escape speed at 1 AU 42.1 km/s",
+   "value": "42.1",
+   "presumed_source": "standard",
+   "reliability": "certain"
+  },
+  {
+   "item": "geodetic-geocentric latitude difference (0.19 deg) and 23-yr precession (0.32 deg) neglected: < 0.003 km/s",
+   "value": "note",
+   "presumed_source": "geometry",
+   "reliability": "certain"
+  },
+  {
+   "item": "Earth perihelion 4 Jan 2023 (~30.29 km/s), aphelion 6 Jul 2023 (~29.29 km/s); e = 0.0167",
+   "value": "dates/speeds",
+   "presumed_source": "almanac",
+   "reliability": "certain"
+  },
+  {
+   "item": "Sun gravitational focusing of DM changes annual-modulation phase mainly at low v_min (Lee, Lisanti, Peter, Safdi 2014)",
+   "value": "qualitative",
+   "presumed_source": "PRL 112, 011301",
+   "reliability": "likely"
+  },
+  {
+   "item": "Earth bulk composition by mass: O 0.30, Fe 0.32, Si 0.15, Mg 0.14, Ni 0.018, Ca 0.015, Al 0.014, S 0.029; mean density 5.51 g/cm3",
+   "value": "{'O': (16, 0.3), 'Fe': (56, 0.32), 'Si': (28, 0.15), 'Mg': (24, 0.14), 'Ni': (58, 0.018), 'Ca': (40, 0.015), 'Al': (27, 0.014), 'S': (32, 0.029)}",
+   "presumed_source": "geochemistry (McDonough & Sun 1995-type)",
+   "reliability": "likely"
+  },
+  {
+   "item": "crust rock: density 2.7 g/cm3; by mass O 0.47, Si 0.28, Al 0.08, Fe 0.05, Ca 0.04, Mg 0.02, K+Na 0.05",
+   "value": "{'O': (16, 0.47), 'Si': (28, 0.28), 'Al': (27, 0.08), 'Fe': (56, 0.05), 'Ca': (40, 0.04), 'Mg': (24, 0.02), 'K': (39, 0.05)}",
+   "presumed_source": "geochemistry",
+   "reliability": "likely"
+  },
+  {
+   "item": "LZ elastic SI limit at 1 TeV ~ 1e-45 cm2 (2024 WS result scaled ~ m_chi from ~2e-47 at 40 GeV)",
+   "value": "1e-45",
+   "presumed_source": "LZ 2024 WS paper",
+   "reliability": "likely"
+  }
+ ],
+ "runtime_s": 23.288623094558716
+}

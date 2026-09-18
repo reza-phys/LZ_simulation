@@ -1,0 +1,11 @@
+rows 95
+categories {'STAT': 10, 'IDM': 11, 'EFT': 7, 'BKG': 14, 'XEXP': 8, 'HALO': 7, 'RESP': 6, 'COMP': 11, 'NUC': 6, 'EXO': 4, 'PROJ': 6, 'MODEL': 5}
+stances {'stat reassess': 11, 'neutral': 79, 'supports DM': 5}
+result types {'computed': 81, 'estimated': 14}
+confidence {'high': 29, 'medium': 65, 'low': 1}
+DR rows [('P012', 'DR-001 (pending)', 'provisional pending DR-001: d10 values and derived moments could change by a fac'), ('P045', 'DR-001 (pending, filed by P012)', "provisional pending DR-001 for the identification of LZ's lower-edge constructio"), ('P052', 'DR-002 (filed)', 'provisional pending DR-002: toy-calibrated L10 (3.0-3.2 sigma) and O1s d350 Z an'), ('P060', 'none (GCN/SNEWS/GOES check deliberately not filed: cannot change the conclusion)', 'none'), ('P093', 'DR-003 (filed, pending)', 'provisional pending DR-003: NR:ER and NR:ART odds and the unpublished-handle ran')]
+provisional [('P012', 'provisional pending DR-001: d10 values and derived moments could change by a factor 2; shoulder and '), ('P045', "provisional pending DR-001 for the identification of LZ's lower-edge construction (0.31-0.38 vs 0.10"), ('P052', 'provisional pending DR-002: toy-calibrated L10 (3.0-3.2 sigma) and O1s d350 Z and the isoscalar-inel'), ('P068', "none (d10 scale inherits P012's provisional DR-001 factor; bands and ratios unaffected)"), ('P093', 'provisional pending DR-003: NR:ER and NR:ART odds and the unpublished-handle ranking could move by +')]
+dates [('2026-09-03', 6), ('2026-09-04', 6), ('2026-09-05', 8), ('2026-09-08', 10), ('2026-09-09', 10), ('2026-09-10', 10), ('2026-09-11', 10), ('2026-09-12', 10), ('2026-09-15', 11), ('2026-09-16', 14)]
+recalled items (sum of leading counts) 1123
+scripts 104
+provenance files 95 tool totals {'Read': 1600, 'Bash': 1442, 'Write': 425, 'Skill': 58, 'Edit': 1292, 'ToolSearch': 24, 'Monitor': 8, 'TaskStop': 21}

@@ -1,0 +1,63 @@
+{
+ "id": "P014",
+ "title": "Collider constraints on electroweak-multiplet inelastic dark matter after the LZ event",
+ "date": "2026-09-05",
+ "agent_tools": [
+  {"tool": "Read", "count": 13, "detail": "provenance/PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv; papers/P007.md; papers/P002.md; work/P007/details.md; work/P007/gaugino_masses_for_splitting.csv; dataviz skill palette.md; work/P014/figures/P014_fig1_mass_vs_ctau.png (x3 iterations); work/P014/figures/P014_fig2_pairs_vs_mass.png (x2)"},
+  {"tool": "Bash", "count": 13, "detail": "ls output/{papers,work,code,provenance,data_requests} + cat environment/ENVIRONMENT_versions.txt; grep -nE '^(def |class |[A-Z_0-9]+ *=)' output/code/common/lzcommon.py; .venv/bin/python output/code/P014_collider_constraints.py (x5: one SyntaxError run, four successful runs including figure iterations); sed of run_log.txt Part E + ls work/P014; python -c json.load validation of P014.json; wc -w on the paper body (x4, trimming to 546 words)"},
+  {"tool": "Write", "count": 4, "detail": "code/P014_collider_constraints.py; work/P014/details.md; provenance/P014.json; papers/P014.md"},
+  {"tool": "Edit", "count": 22, "detail": "script (11): rename hyphenated dict key; on-shell c_W in the wino splitting; asymptote/scheme printouts; constraint-map string; alpha(0) systematic; figure-label placements (6 edits over two iterations). papers/P014.md (9): trimming Abstract/Results/Caveats/Conclusion from 625 to 546 body words. provenance/P014.json (2): tool-count corrections"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette and chart rules for the two figures)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "logspace, polyfit/polyval, exp, sqrt, log1p"},
+  {"name": "scipy", "version": "1.18.1", "functions": "integrate.quad (Feynman-parameter loop function; leptonic phase-space integral)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "read_csv, DataFrame, groupby, to_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg backend), log axes, annotate, fill_between"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "m_chi_min_gev, vmax_kms, v_earth_kms"},
+  {"name": "none: derived by hand", "version": "-", "functions": "SU(2) Wigner-Eckart coupling factors; W-exchange four-fermion operator; heavy-limit pion and leptonic widths; Majorana decomposition of the Z and dipole currents; Gamma(chi2 -> chi1 nu nubar) = G_F^2 delta^5/(20 pi^3)"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P014_collider_constraints.py", "purpose": "radiative and tree-level chargino splittings, chargino widths/lifetimes, recalled cross-sections and pair counts, tracklet survival probabilities and toy yield, kinematic floors, constraint map, chi2 decays, two figures, result JSON/CSVs", "command": ".venv/bin/python output/code/P014_collider_constraints.py"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules and deliverable formats"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "sections 1-3, 5-6 (event summary, delta_max values, open question 10)"},
+  {"file": "output/results_ledger.csv", "parts_used": "rows P001-P010 (P002 and P007 headline numbers)"},
+  {"file": "output/papers/P007.md", "parts_used": "fit points delta(N=1) and 90% bands at mu = 300-4000 GeV; PeV gaugino requirement; recalled bounds used there"},
+  {"file": "output/papers/P002.md", "parts_used": "kinematic floors 259/453/821 GeV; delta_max values"},
+  {"file": "output/work/P007/details.md", "parts_used": "sections 7-8 (splitting formula, tree-level charged-neutral splitting, chi2 lifetime estimate, constraints)"},
+  {"file": "output/work/P007/gaugino_masses_for_splitting.csv", "parts_used": "tree_charged_neutral_MeV for all hierarchies, tan beta and mu values"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "m_chi_min_gev, vmax_kms, v_earth_kms"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "alpha_em(m_Z)=1/127.95, sin^2 theta_W=0.2312, m_Z=91.1876, m_W=80.377 GeV, G_F=1.1664e-5 GeV^-2", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "f_pi = 130.2 MeV (130 MeV convention), |V_ud| = 0.974, m_pi+- = 139.57, m_mu = 105.66 MeV", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "One-loop EW mass splitting of a heavy SU(2) multiplet, Delta M = alpha_2 M/(4 pi){(Q^2-Q'^2) s_W^2 f(m_Z/M) + (Q-Q')(Q+Q'-2Y)[f(m_W/M)-f(m_Z/M)]}, f(r) -> 2 pi r", "presumed_source": "Thomas & Wells PRL 81 (1998) 34; Cirelli, Fornengo, Strumia NPB 753 (2006) 178", "reliability": "likely (asymptotes alpha m_Z/2 and alpha_2 m_W (1-c_W)/2 reproduced here)"},
+  {"item": "Two-loop wino splitting 164-165 MeV at TeV masses", "presumed_source": "Ibe, Matsumoto, Sato PLB 721 (2013) 252", "reliability": "likely"},
+  {"item": "Chargino widths Gamma(pi) = kappa^2 G_F^2 f_pi^2 |V_ud|^2 Delta^3 (1-m_pi^2/Delta^2)^1/2/pi and Gamma(l nu) = kappa^2 G_F^2 Delta^5/(15 pi^3) x phase space; kappa^2 = 1 doublet, 2 triplet", "presumed_source": "Chen, Drees, Gunion PRD 55 (1997) 330; derived here", "reliability": "likely (reproduces wino c tau ~ 6 cm, BR(pi) 97.7%)"},
+  {"item": "P007 fit points delta(N=1) = 310/342/366/375/376 keV at mu = 300/500/1000/2000/4000 GeV with 90% bands", "presumed_source": "corpus P007", "reliability": "corpus"},
+  {"item": "13 TeV NLO+NLL pure-wino chi1+- chi2^0 cross-section: 12 pb (100 GeV), 1.8 (200), 0.39 (300), 0.12 (400), 0.046 (500), 0.020 (600), 0.0046 (800), 0.0013 pb (1000 GeV)", "presumed_source": "LHC SUSY Cross Section Working Group tables as reproduced in ATLAS/CMS electroweakino papers", "reliability": "likely (factor ~1.5)"},
+  {"item": "Higgsino chi+-chi0 channels = 1/2 of the wino chi1+-chi2^0 cross-section at equal mass; chi+chi- and chi1chi2 add ~+50%", "presumed_source": "SU(2) Wigner-Eckart; derived here", "reliability": "likely (channel fractions uncertain)"},
+  {"item": "Alternative parametrisation sigma(chi+chi- + chi+-chi0) ~ 20 fb (300 GeV), 1 fb (600), 0.1 fb (1 TeV)", "presumed_source": "assignment; order of magnitude", "reliability": "uncertain"},
+  {"item": "ATLAS pixel-tracklet disappearing-track search (136 fb^-1, 2022): 4 pixel hits, decay radius >~ 12 cm; excludes pure wino to ~660 GeV and Higgsino-cross-section charginos to ~210 GeV, both for tau = 0.2 ns", "presumed_source": "ATLAS EPJC 82 (2022) 606, arXiv:2201.02472", "reliability": "likely"},
+  {"item": "CMS disappearing-track Run 2: wino ~880 GeV at tau = 3 ns, ~470 GeV at tau = 0.2 ns", "presumed_source": "CMS arXiv:2004.05153", "reliability": "uncertain"},
+  {"item": "LEP2 chargino bound 92-103.5 GeV (92 GeV for Delta m ~ 0.1-3 GeV)", "presumed_source": "LEP SUSY Working Group combinations", "reliability": "certain"},
+  {"item": "Soft-lepton compressed searches exclude Higgsinos to ~210-250 GeV for Delta m ~ 5-30 GeV; monojet-type limits on degenerate electroweakinos <~ 100-150 GeV", "presumed_source": "ATLAS arXiv:1911.12606 and 2021 update; CMS soft-lepton; monojet interpretations", "reliability": "likely (soft lepton), uncertain (monojet)"},
+  {"item": "Prospects: HL-LHC disappearing tracks wino ~0.9-1.1 TeV, Higgsino <~ 200-300 GeV only with short tracklets; FCC-hh 100 TeV 30 ab^-1: wino discovery ~3 TeV, Higgsino ~1 TeV; 10 TeV muon collider covers both thermal targets", "presumed_source": "CERN YR arXiv:1812.07831; Fukuda et al. PLB 781 (2018) 306; Mahbubani et al. JHEP 06 (2017) 119; Saito et al. EPJC 79 (2019) 469; Capdevilla et al. JHEP 06 (2021) 133; Han et al. arXiv:1805.00015", "reliability": "uncertain (numbers), likely (qualitative)"},
+  {"item": "Thermal masses: Higgsino ~1.1 TeV, wino ~2.7-3.0 TeV", "presumed_source": "standard results (Cirelli et al.; Hisano et al. with Sommerfeld enhancement)", "reliability": "certain/likely"},
+  {"item": "Magnetic-dipole transition decay Gamma(chi2 -> chi1 gamma) = mu_12^2 delta^3/pi", "presumed_source": "inelastic-DM literature (e.g. Weiner & Yavin 2012)", "reliability": "likely"},
+  {"item": "Heavy Dirac Higgsino loop magnetic moment ~ (alpha_2/2 pi) e/(2 mu) x O(1)", "presumed_source": "order-of-magnitude estimate (Schwinger-like coefficient for M >> m_W)", "reliability": "uncertain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First script run: SyntaxError from a hyphenated keyword in the summary dict (renamed).",
+  "Wino splitting first evaluated with MSbar cos^2 theta_W in the W/Z-difference term (173 MeV at 1 TeV, 5% above literature); switched to on-shell c_W = m_W/m_Z (161 MeV), MSbar kept as the scheme systematic.",
+  "Figure 1 annotation placement needed three iterations to remove label collisions.",
+  "Parton-level beta-gamma spectrum for Drell-Yan charginos not attempted (no PDFs offline); representative fixed beta-gamma values used and the toy tracklet yield labelled an upper bound."
+ ],
+ "wimpydd_generated_files": "none"
+}

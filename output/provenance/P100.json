@@ -1,0 +1,52 @@
+{
+ "id": "P100",
+ "title": "Two weeks after: a critical review of the interpretations of the LZ 248 keV event",
+ "date": "2026-09-16",
+ "agent_tools": [
+  {"tool": "Read", "count": 44, "detail": "PAPER_GUIDE.md; persisted pandas dump of the ledger (2 pages, all 97 then-present rows); data_requests/index.csv, DR-001.md, DR-002.md, DR-003.md; papers P001, P003, P004, P007, P008, P009, P016, P020, P021, P024, P027, P033, P035, P038, P052, P054, P056, P061, P068, P069, P071, P073, P076, P079, P081, P082, P083, P084, P088, P089, P090, P091, P093, P098, P099 (35 pages); provenance/P099.json (format template); dataviz references/palette.md; figures/P100_fig1_stance_confidence_by_category.png (x2)"},
+  {"tool": "Bash", "count": 15, "detail": "ls papers/data_requests + P090/P091 existence checks (x4, incl. one combined with cat ENVIRONMENT_versions.txt and P099 work listing); python pandas dump of all ledger rows (id/category/stance/confidence/data dependence/recalled/title/headline); python pandas tallies of stance/confidence/category/DR/recalled-uncertain; corpus grep for halo-frame words and 'does not exist' substitutions; grep of LZ fulltext.tex for salt/blind, fiducial, stability, 2024 search, Data Release; targeted grep for out-of-order citations (one pattern exceeded ugrep complexity, replaced); python checks of newly added ledger rows (P090, then P091); runs of output/code/P100_review_tallies.py (x6: first failed on a 97-row assertion after the ledger grew to 98; later runs 1.4 s with log capture); word-budget and JSON validity checks (x2)"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P100_review_tallies.py; output/work/P100/details.md; output/papers/P100.md; output/provenance/P100.json"},
+  {"tool": "Edit", "count": 19, "detail": "P100_review_tallies.py (x9): replace 97-row assertion by a count and add pages not in the ledger (P090, then P091); STAT verdict row and bias dict updated with P091; figure x-label, legend placement (below axes), figure height; print/JSON keys for page-added ids. P100.md (x5): Results table/text compressed to budget; ledger-row counts and P091 wording. details.md (x4): P091/ledger status, tally table, out-of-order paragraph, failed approaches, tool counts. P100.json (x1): tool counts and ledger status"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (form and colour guidance; reference palette values used; JS validator skipped per PAPER_GUIDE)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python run from the simulation root"},
+  {"name": "pandas", "version": "3.0.5", "functions": "read_csv, concat, crosstab, value_counts, DataFrame, to_csv, to_json"},
+  {"name": "numpy", "version": "2.5.3", "functions": "arange, zeros, nansum, nanmedian"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend, pyplot.subplots, barh, text, legend (bbox_to_anchor), savefig"},
+  {"name": "re / json / pathlib (stdlib)", "version": "python 3.12.13", "functions": "regex parsing of stance/confidence/data_dependence fields and halo-frame scan; JSON dumps; file globbing"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "imported; lz.LZ['exposure_tyr'] printed as a sanity check; no numerical routine called"},
+  {"name": "WimPyDD / nestpy / scipy", "version": "2.0.4 / 2.1.1 / 1.18.1", "functions": "not called; all physics numbers are quoted from the cited corpus pages"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P100_review_tallies.py", "purpose": "Load the ledger (98 rows) plus pages not yet in it (P091); tally stance classes, confidences, result types, primary categories, data-request dependencies, recalled-knowledge counts and 'uncertain' flags; scan every paper page for halo-frame conventions; tabulate convention spreads, recalled-uncertain dependencies and the data-request map; write the hand-authored 12-category verdict table (CSV/JSON/MD); compute the bias ratios; draw the category x stance / category x confidence figure", "command": ".venv/bin/python output/code/P100_review_tallies.py > output/work/P100/run_log.txt 2>&1   (runtime ~1.4 s)"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules, template, word budgets, final-report format"},
+  {"file": "output/results_ledger.csv", "parts_used": "all 99 rows (97 at start; P090 and P091 appended during writing; tallies unchanged by the appends): id, taxonomy_category, title, headline_result, key_numbers, stance, confidence, result_type, data_requests, data_dependence, recalled_knowledge"},
+  {"file": "output/papers/P001, P003, P004, P007, P008, P009, P016, P020, P021, P024, P027, P033, P035, P038, P052, P054, P056, P061, P068, P069, P071, P073, P076, P079, P081, P082, P083, P084, P088, P089, P090, P091, P093, P098, P099 (.md)", "parts_used": "full pages: headline, key numbers, results, caveats, stance, confidence, data dependence"},
+  {"file": "output/papers/P0*.md (all 99 pages)", "parts_used": "regex scan for 'Sun-frame', 'annual/time-averaged', '16 June' and for out-of-order citation phrases"},
+  {"file": "output/data_requests/index.csv, DR-001.md, DR-002.md, DR-003.md", "parts_used": "requester, content, 'what could change', fallback, status"},
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "l. 60/94/282 Data Release; l. 92 AmBe 0-330 keV; l. 112 2024 search 3-80 phd; l. 132/137 FV 4.71 t (-14.5 %), 8 cm stand-off; l. 160-165, 428-434 salting and non-blind statement; l. 300-303 57Co CSD deployment 25 min before the event, 'no abnormalities'; l. 316 MSSI validation volumes"},
+  {"file": "output/provenance/P099.json; output/work/P099/details.md (header)", "parts_used": "format templates"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "import; LZ constants dict"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [],
+ "datasets": "none",
+ "data_requests": [
+  {"id": "DR-001", "status": "pending (discussed; P012/P045 provisional; P025/P044/P068 inherit)"},
+  {"id": "DR-002", "status": "pending (discussed; P052 provisional; P090 and the STAT b_H anchor inherit)"},
+  {"id": "DR-003", "status": "pending (discussed; P093/P099 provisional; P061/P081/P091 mixture weights inherit; largest leverage on the corpus bottom line)"}
+ ],
+ "failed_or_abandoned": [
+  "Regex search for explicit 'P0XX does not exist' substitutions in the one-page papers found none; out-of-order evidence taken instead from the P006 coordinator note, P061 'awaits P083', P050 'not yet available', and the ledger row counts read by P099 (88), P091 (95) and this review (97 -> 98). One multi-line grep exceeded the grep engine's complexity limit and was replaced by simpler patterns.",
+  "First run of P100_review_tallies.py failed on an assertion of 97 ledger rows because the coordinator appended P090 while the review was being written; replaced by a row count plus page-based inclusion of papers absent from the ledger (used transiently for P091 until its row appeared; final run adds none).",
+  "The first page draft said P091 'was counted from its page'; corrected when its ledger row appeared during the word-budget check.",
+  "First figure placed legends inside the axes over the COMP bar; moved below the axes and the figure heightened.",
+  "A misleading 'P090_included_from_page' flag (true because of P091) was replaced by an explicit list of page-added ids.",
+  "Dataviz JavaScript palette validator not run (PAPER_GUIDE rule).",
+  "No new data request filed: the review recommends one for LZ's AmBe 200-330 keV band data (details.md section 9.4) but computes nothing that needs it."
+ ],
+ "wimpydd_generated_files": []
+}

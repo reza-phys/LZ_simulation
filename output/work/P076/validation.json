@@ -1,0 +1,10 @@
+{
+ "H elastic iso 1e-42 (own)": 2.5794482751006484e+18,
+ "Fe56 elastic iso 1e-42 (own)": 2.483654378308033e+20,
+ "Fe56 delta=300 iso 1e-42 (own)": 2.171520744828055e+20,
+ "H elastic (WimPyC)": 2.5345151965678807e+18,
+ "Fe56 elastic (WimPyC)": 2.4211878999991933e+20,
+ "Fe56 delta=300 (WimPyC)": 2.1360579677102205e+20,
+ "C_geom (WimPyC)": 1.0238670355484978e+27,
+ "C_geom (own, surface v_esc)": 1.0238670355484975e+27
+}

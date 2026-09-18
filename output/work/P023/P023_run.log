@@ -1,0 +1,38 @@
+=== Part 1: hyperfine scaling relations ===
+  hydrogen hfs from contact formula: 1418.8 MHz (measured 1420.4; leading order 1418.8)
+  positronium (7/12) alpha^4 m_e: 204.4 GHz (measured 203.4)
+  Coulombic alpha^4 m scaling: (Ups-eta_b)/(J/psi-eta_c) obs 0.55 vs (a_s(m_b)/a_s(m_c))^4 m_b/m_c = 0.37
+  HQET 1/m_Q scaling: (B*-B)/(D*-D) obs 0.320, (Sig_b*-Sig_b)/(Sig_c*-Sig_c) obs 0.310 vs m_c/m_b = 0.304
+  Coulombic SU(3) formula for J/psi-eta_c: 27.9 MeV (obs 113); Upsilon-eta_b: 10.3 MeV (obs 62) -> QCD quarkonia are 4-6x more compact than Coulombic
+  HQET constants K = delta*m_Q: B 0.189, D 0.180 (mean 0.184 GeV^2 = 1.69 Lambda^2); Sigma_b 0.084, Sigma_c 0.082 (mean 0.083 GeV^2 = 0.76 Lambda^2)
+  M=1 TeV, delta=300 keV: Coulombic alpha_eff = 0.0366 (m_Q = 500 GeV), E_B = 168 MeV, a0 = 0.0215 fm, 2S-1S = 126 MeV; SU(3)_D alpha_D = 0.0275 -> Lambda_D = 8.5 eV; SU(2)_D alpha_D = 0.0488 -> Lambda_D = 2.2e+02 eV
+  heavy-light: Lambda_D = 0.421 GeV (meson-like), 0.627 GeV (Sigma_Q-like); at Lambda_D = Lambda_QCD: delta = 184 / 83 keV
+  light baryon: delta/M = 3.0e-07 vs (Delta-N)/N = 0.31: suppression 9.6e-07; Sigma0-Lambda-type breaking needs dm_q = 0.36 MeV
+  mass at which Lambda_D = Lambda_QCD gives delta = 300 keV: 614 GeV (meson), 276 GeV (baryon)
+=== Part 2: transition cross-sections (WimPyDD) ===
+  Z-axial: a_p = 0.677, a_n = -0.592; c4_p = 2.233e-05, c4_n = -1.953e-05 GeV^-2 (WimPyDD c0 = 2.80e-06, c1 = 4.19e-05)
+  loaded cached spectra (52 configs)
+  photon dipole 1 TeV annual: N(1 mu_N) ROI = 2.253e+07 (d=300), 8.665e+04 (d=366); elastic 1.188e+12, elastic N_lo/hi = 356
+  mu_tr(N_ROI=1): d=300: 2.107e-04 mu_N = 2.215e-18 e cm = 0.225 e/(2 m_chi); d=366: 3.397e-03 mu_N = 3.572e-17 e cm = 3.621 e/(2 m_chi)
+  mu_tr(N_hi=1): d=300 3.007e-04 mu_N; d=366 3.531e-03 mu_N; N_lo per hi event: 0 (d=300)
+  June-16 halo: N ratio june/annual = 1.42 (d=300), 3.16 (d=366)
+  mass 400 GeV, d=300: mu(N=1) = 3.996e-04 mu_N = 0.170 e/(2m_chi)
+  mass 4000 GeV, d=300: mu(N=1) = 2.953e-04 mu_N = 1.259 e/(2m_chi)
+  massive A' m_A = 0.3 GeV: rate suppression vs photon S = 1.223e-01 (d=300)
+  massive A' m_A = 1.0 GeV: rate suppression vs photon S = 2.194e-03 (d=300)
+  massive A' m_A = 3.0 GeV: rate suppression vs photon S = 2.961e-05 (d=300)
+  Z-axial O4 (g_A^chi = 0.5, 1 TeV): N = 0.642 (d=300), 0.00272 (d=366); N=1 at delta = 290 keV; g_A^chi for N=1 at d=300: 0.624, d=366: 9.582
+  vs P012: mu(N_hi=1, d=300)/mu_elastic(P012) = 14.29; vs L10-equivalent 2.8e-5 mu_N: 7.52
+  d=300: eps(A, Coulombic, massless A') = 0.0501; eps(B, heavy-light, massless A', alpha_D=0.1) = 2.55e-05; m_A'=1 GeV: 0.000545 (P011 vector: 8.7e-7); EW-charged light baryon natural mu = 2.81e-03 mu_N -> 178 events
+  d=366: eps(A, Coulombic, massless A') = 0.788; eps(B, heavy-light, massless A', alpha_D=0.1) = 0.000455; m_A'=1 GeV: 0.0097 (P011 vector: 8.7e-7); EW-charged light baryon natural mu = 2.81e-03 mu_N -> 0.687 events
+=== Part 3: chi2 lifetime ===
+  formula check on H 21 cm: Gamma = mu_B^2 dE^3/pi -> 8.61e-15 s^-1 vs measured 2.87e-15 s^-1 (ratio 3.0; spin-matrix-element factor)
+  d=300, mu = 2.11e-04 mu_N: tau = 6.63e-05 s, decay length 49.7 m, P(decay inside 1 m) = 1.99e-02, tau/t_U = 1.5e-22
+  d=366, mu = 3.40e-03 mu_N: tau = 1.4e-07 s, decay length 0.105 m, P(decay inside 1 m) = 1.00e+00, tau/t_U = 3.2e-25
+  TPC crossing time 1.95 us at 750 km/s; tau >= 12.7 us keeps P(decay inside) <= 10%; a 300 keV gamma travels ~2 cm in LXe
+  mu giving tau = 2 us at delta = 300 keV: 1.21e-03 mu_N (6x the LZ value -> 33x the rate)
+  single-site ceiling on delta (tau >= 12.7 us, P_in <= 10%): 326 keV (N=1), 306 keV (N=3.65), 350 keV (N=0.105); tau = crossing time (1.95 us): 347 / 333 / 364 keV
+=== Part 4: cosmology / self-interactions ===
+  1 TeV: eta_D = 4.37e-13 = 5.03e-03 eta_B; A: sigma/m = 3.3e-08 cm^2/g, <sv> = 1.97e-25 -> Omega_sym h^2 = 0.013; thermal alpha = 0.0122 -> delta = 3.7 keV
+  B: Lambda_D = 0.42 GeV, sigma/m = 1.6e-05 cm^2/g, <sv>_strong = 2.5e-16 cm^3/s -> symmetric fraction 8.9e-11; glueball ~ 2.3 GeV
+  C: sigma/m = 2.5e-11 cm^2/g, symmetric fraction 5.6e-05

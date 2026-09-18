@@ -1,0 +1,73 @@
+{
+ "id": "P037",
+ "title": "Which electroweak multiplets can be inelastic dark matter with a 100-400 keV neutral splitting?",
+ "date": "2026-09-09",
+ "agent_tools": [
+  {"tool": "Read", "count": 16, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (2 pages); papers P007.md, P014.md, P021.md, P023.md, P011.md; work/P007/details.md; code/common/lzcommon.py lines 300-373; work/P014/details.md lines 25-65; code/P007_higgsino_inelastic.py lines 150-210; work/P037/figures/P037_fig1_delta_vs_Y.png (x2); work/P037/figures/P037_fig2_lambda_vs_delta.png (x2)"},
+  {"tool": "Bash", "count": 9, "detail": "ls work/P007 work/P014 papers data_requests + head/wc N_events_grid.csv + cat gaugino_masses_for_splitting.csv + head ENVIRONMENT_versions.txt; grep def/constants in lzcommon.py; cat higgsino_couplings.json, delta_for_N_events.csv, lz_intervals_digitised.csv, comparison_with_LZ_intervals.json + pandas print of 1 TeV grid; grep P014 details + head radiative_splitting_vs_mass.csv + cat data_requests/index.csv; grep P007 script; grep fulltext.tex for Higgsino/inelastic; grep dataviz palette.md; run P037_ew_multiplets.py (x3, incl. one with summary print + WimPyDD-file check); sed/ls of run_log and outputs; stat of 56Fe response file; wc -w of P037.md"},
+  {"tool": "Write", "count": 4, "detail": "code/P037_ew_multiplets.py; work/P037/details.md; papers/P037.md; provenance/P037.json"},
+  {"tool": "Edit", "count": 7, "detail": "script: ctau NaN for states lighter than neutral + lighter-than-neutral flags + (4,1/2) crossing mass; verdict annotation; fig1 tick labels; fig2 text position (x2); fig2 ylim"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette and chart rules for the two figures)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python from the simulation root"},
+  {"name": "numpy", "version": "2.5.3", "functions": "arange, linspace, trapezoid, argmax/argmin, isclose"},
+  {"name": "scipy", "version": "1.18.1", "functions": "integrate.quad (one-loop f~(r)), special.erf/erfc (LZ efficiency), optimize.brentq ((4,1/2) crossing mass)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "read_csv of P007 grids/tables, DataFrame/to_csv of all result tables"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; two PNG figures"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian (via lz.wd_hamiltonian), streamed_halo_function on explicit 0-830 km/s grid (via lz.wd_halo), diff_rate with delta (via lz.wd_rate) for the four-point cross-check of the (2Y)^2 scaling"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ dict (exposure, efficiency plateau/edges), A_XE_MEAN, AMU_GEV, M_NUCLEON_GEV, M_V_GEV, v_earth_kms, vmax_kms, delta_max_kev, E_R_range_keV, wd, wd_halo, wd_hamiltonian, wd_rate"},
+  {"name": "none: derived by hand", "version": "-", "functions": "multiplet charge assignments, Z coupling -(g/c_W)Y, operator dimension 3+4Y, Lambda(delta) inversion, identification Lambda_eff = 4M_1/g'^2 and 4M_2/g^2, heavy-mass limit of the one-loop splitting, SU(2) Clebsch factors kappa^2"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P037_ew_multiplets.py", "purpose": "Parts A-E: multiplet table and cross-sections; Lambda tables and gaugino cross-check; (2Y)^2-scaled P007 grid -> delta(N=3.65,1,0.105), evasion windows, exclusion factors, WimPyDD cross-check; one-loop charged-neutral splittings; summary table; two figures; JSON", "command": ".venv/bin/python output/code/P037_ew_multiplets.py"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules and deliverable format"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "sections 1-6 (event, kinematics, delta_max, open question 10)"},
+  {"file": "output/results_ledger.csv", "parts_used": "rows P001-P030 (headlines of P002, P003, P007, P011, P014, P018, P021, P023)"},
+  {"file": "output/papers/P007.md", "parts_used": "sigma_n, couplings, delta(N=1) table, gaugino formula, 90% band 0.105-3.65"},
+  {"file": "output/papers/P014.md", "parts_used": "Y=0 Z-coupling remark, one-loop splittings, disappearing-track reach, wino ctau"},
+  {"file": "output/papers/P021.md", "parts_used": "shape-preferred delta = 380 keV, 68% band 360-385 keV, Higgsino crossing 365-370 keV"},
+  {"file": "output/papers/P023.md", "parts_used": "composite alternative for context"},
+  {"file": "output/papers/P011.md", "parts_used": "dark-photon alternative for context; Higgsino-equivalent sigma_p"},
+  {"file": "output/work/P007/details.md", "parts_used": "sections 2-7: coupling derivation, WimPyDD convention, efficiency model, halos, N grid, delta(N) method, gaugino mass matrix"},
+  {"file": "output/work/P007/N_events_grid.csv", "parts_used": "N(m, delta) for all halos and efficiency widths (scaled by (2Y)^2)"},
+  {"file": "output/work/P007/gaugino_masses_for_splitting.csv", "parts_used": "mu = 1 TeV, tan beta = 10 rows: M1 (bino-only) and M2 (wino-only) for delta = 300-385 keV"},
+  {"file": "output/work/P007/lz_intervals_digitised.csv", "parts_used": "Fig. 6 upper edges (c1s m_v^2)^2 at delta = 100-350 keV, 1 TeV"},
+  {"file": "output/work/P007/higgsino_couplings.json, delta_for_N_events.csv, comparison_with_LZ_intervals.json", "parts_used": "cross-check values (sigma_n, vector factor, Sun-frame N at 300/370 keV, N at LZ upper edges)"},
+  {"file": "output/work/P014/details.md", "parts_used": "section 2: one-loop formula, f~(r) definition, scheme values 341.8/356.3/160.7/172.8 MeV"},
+  {"file": "output/work/P014/radiative_splitting_vs_mass.csv", "parts_used": "Higgsino/wino dm and ctau vs mass for validation"},
+  {"file": "output/code/P007_higgsino_inelastic.py", "parts_used": "efficiency function, v_min grid, E grid, kernel integration (mirrored for the cross-check)"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "WimPyDD wrapper, kinematics, constants"},
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "grep of Theory paragraph (lines 49-57: O1^s 'resembles a Higgsino model', inelastic references) and LEE grid (line 492)"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"},
+  {"file": "output/data_requests/index.csv", "parts_used": "existing DR numbers (none needed)"}
+ ],
+ "recalled_knowledge": [
+  {"item": "G_F = 1.166e-5 GeV^-2, sin^2 theta_W = 0.231, m_Z = 91.19 GeV, m_W = 80.37 GeV, alpha(m_Z) = 1/127.95", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "Higgs vev v = 246.2 GeV; M_Planck = 1.22e19 GeV", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "Z coupling of a fermion (g/c_W)(T_3 - Q s_W^2); nucleon vector charges g_V^p = (1-4 s_W^2)/4, g_V^n = -1/4", "presumed_source": "Standard Model textbook", "reliability": "certain"},
+  {"item": "SU(2) Clebsch-Gordan |<T3+-1|T^+-|T3>|^2 = (j -+ T3)(j +- T3 + 1)", "presumed_source": "angular-momentum algebra", "reliability": "certain"},
+  {"item": "One-loop electroweak mass splitting formula Delta m = (alpha_2 M/4pi){(Q^2-Q'^2) s_W^2 f(m_Z/M) + (Q-Q')(Q+Q'-2Y)[f(m_W/M)-f(m_Z/M)]}, heavy limit (alpha_2/2)[...]", "presumed_source": "Cirelli, Fornengo, Strumia, NPB 753, 178 (2006); reproduced P014's values", "reliability": "likely"},
+  {"item": "Fermion multiplets with n >= 6 make g_2 non-perturbative below M_Pl (quintuplet is the largest MDM fermion)", "presumed_source": "Cirelli-Fornengo-Strumia 2006", "reliability": "likely"},
+  {"item": "Y != 0 electroweak multiplets are excluded by Z-exchange elastic scattering unless the neutral Dirac state is split", "presumed_source": "minimal-dark-matter literature", "reliability": "certain"},
+  {"item": "Thermal relic mass of the pure Higgsino doublet 1.1 TeV", "presumed_source": "standard result", "reliability": "certain"},
+  {"item": "Thermal wino (3,0) 2.7-3.0 TeV; quintuplet (5,0) 9.4 TeV with Sommerfeld", "presumed_source": "Cirelli-Strumia 2009 / Hisano et al.", "reliability": "likely"},
+  {"item": "Thermal masses of (3,1) ~ 2 TeV, (4,1/2) and (4,3/2) ~ 2.4 TeV, (5,1) and (5,2) ~ 4.5 TeV", "presumed_source": "Cirelli-Fornengo-Strumia 2006 Table 1", "reliability": "uncertain (+-30%; Sommerfeld corrections raise them)"},
+  {"item": "LZ 2024 SI limit ~ 5e-47 cm^2 at 1 TeV", "presumed_source": "LZ 2024 WS result (as recalled by P007)", "reliability": "likely"},
+  {"item": "Chargino -> neutralino + pion width proportional to kappa^2 f_pi^2 Delta m^3 (used only as a scaling of P014's ctau)", "presumed_source": "Thomas-Wells 1998 / Chen-Drees-Gunion 1997", "reliability": "likely"},
+  {"item": "Hill-Solon loop-level sigma_SI 1e-49 - 1e-47 cm^2 for electroweak multiplets (mentioned, unused quantitatively)", "presumed_source": "Hill & Solon 2014", "reliability": "likely"},
+  {"item": "Remarks in the MDM literature that certain Y != 0 multiplets have a charged lightest component", "presumed_source": "Cirelli-Fornengo-Strumia 2006", "reliability": "uncertain (our own computation is used; the literature attribution is tentative)"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First chargino-lifetime scaling gave a negative ctau for the (5,1) Q=-1 state (which is lighter than the neutral one); replaced by a NaN plus an explicit 'lighter than neutral' flag and a brentq solve for the (4,1/2) crossing mass (1361 GeV).",
+  "A full WimPyDD recomputation of N(m, delta) for each Y was not done: the (2Y)^2 scaling is exact (identical c_p/c_n) and was verified live at four points to 1e-4.",
+  "Figure label collisions (fig. 1 tick labels, fig. 2 M_DM caption on the gridline) fixed in two iterations."
+ ],
+ "wimpydd_generated_files": [
+  "WimPyDD/WimPyC/Response_functions/spin_1_2/56Fe_c_1_c_1.npy (rewritten by WimPyDD at import time, 2026-09-16 13:52:04, during the P037 run; not used by the analysis)"
+ ]
+}

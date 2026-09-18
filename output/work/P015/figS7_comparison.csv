@@ -1,0 +1,16 @@
+delta_keV,curve,sigma_cm2,LZ_upper_cm2,LZ_lower_cm2,ratio_to_LZ_upper,ratio_to_LZ_bestfit
+250,"CRESST-II 2016 (orange)",1.623e-38,1.183e-42,8.815e-44,1.372e+04,5.727e+04
+250,"PICO 2023 (red)",2.948e-39,1.183e-42,8.815e-44,2492,1.04e+04
+250,"XENON1T 2018 (green)",nan,1.183e-42,8.815e-44,nan,nan
+250,"PandaX-4T 2021 (blue)",4.988e-40,1.183e-42,8.815e-44,421.7,1760
+250,"LZ 2024 (violet)",1.886e-42,1.183e-42,8.815e-44,1.594,6.653
+300,"CRESST-II 2016 (orange)",9.285e-38,7.925e-42,3.921e-43,1.172e+04,4.249e+04
+300,"PICO 2023 (red)",2.472e-38,7.925e-42,3.921e-43,3119,1.131e+04
+300,"XENON1T 2018 (green)",nan,7.925e-42,3.921e-43,nan,nan
+300,"PandaX-4T 2021 (blue)",9.528e-36,7.925e-42,3.921e-43,1.202e+06,4.36e+06
+300,"LZ 2024 (violet)",nan,7.925e-42,3.921e-43,nan,nan
+350,"CRESST-II 2016 (orange)",9.062e-37,6.862e-40,4.225e-41,1321,8089
+350,"PICO 2023 (red)",3.391e-37,6.862e-40,4.225e-41,494.1,3027
+350,"XENON1T 2018 (green)",nan,6.862e-40,4.225e-41,nan,nan
+350,"PandaX-4T 2021 (blue)",nan,6.862e-40,4.225e-41,nan,nan
+350,"LZ 2024 (violet)",nan,6.862e-40,4.225e-41,nan,nan

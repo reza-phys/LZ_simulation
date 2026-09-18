@@ -1,0 +1,11 @@
+name,element,exposure_kgd,mass_fraction,element_exposure_tyr,reliability,note,N_at_LZ_bestfit_delta250,N_at_LZ_bestfit_delta300,N_at_LZ_bestfit_delta350,N_at_LZ_bestfit_delta366,N_at_LZ_bestfit_delta380
+"PICO-60 C3F8 (2019)","F",1404,0.8084,0.003107,"likely","complete C3F8 exposure 1404 kg d, thresholds 2.45 and 3.3 keV; bubble chamber: no upper energy cut",0,0,0,0,0
+"PICO-60 CF3I (2016; recast in PICO 2023 inelastic paper)","I",1335,0.6478,0.002368,"uncertain","CF3I run ~1335 kg d at 13.6 keV threshold; iodine recoils nucleate bubbles; no upper energy cut",0.0006592,0.0006019,0.0005528,0.0006868,0.0006842
+"DEAP-3600 (2019)","Ar",7.58e+05,1,2.075,"likely","758 t d; ROI roughly 50-100 keV_nr (uncertain); irrelevant because argon is kinematically blind",0,0,0,0,0
+"DEAP-3600 PLR (2026)","Ar",1e+06,1,2.738,"uncertain (placeholder ~1000 t d)","exposure not recalled; any value gives zero because argon is blind for delta >= 250 keV",0,0,0,0,0
+"CRESST-II Lise (2016)","W",52,0.6385,9.091e-05,"uncertain","~52 kg d CaWO4, ROI 0.3-40 keV; the Fig. S7 CRESST-II curve is the Bramante et al. (2016) recast",0.0003282,0.0006241,0.005873,0.04092,0.8086
+"CRESST-III (2019)","W",3.64,0.6385,6.363e-06,"uncertain","~3.6 kg d, ROI to 16 keV",2.297e-05,4.369e-05,0.0004111,0.002864,0.0566
+"DAMA/LIBRA phase1+phase2","I",8.985e+05,0.8466,2.083,"likely","2.46 t yr NaI(Tl) total (1.33 + 1.13); no NR/ER discrimination; single-hit spectra published mainly <= 20 keVee",0.5798,0.5295,0.4863,0.6041,0.6019
+"COSINE-100","I",7.305e+04,0.8466,0.1693,"uncertain","~0.2 t yr NaI(Tl) (assignment); no NR/ER discrimination",0.04714,0.04305,0.03954,0.04912,0.04893
+"ANAIS-112 (3 yr)","I",1.233e+05,0.8466,0.2857,"uncertain","112.5 kg x 3 yr ~ 0.34 t yr NaI(Tl)",0.07955,0.07264,0.06672,0.08289,0.08257
+"LZ (this paper)","Xe",1.037e+06,1,2.84,"certain (paper)","2.84 t yr; counts here are the full-window (efficiency-free) counts, larger than the fitted 1.0 by 1/eff-fraction",1.126,1.221,2.241,5.764,36.15

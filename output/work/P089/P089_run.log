@@ -1,0 +1,905 @@
+
+===== run 2026-09-16 16:30:07 =====
+  computed L3s: 6 s; pairs [(11, 11)]; R(200-270)=8.991e+06 /t/yr
+  computed L6s: 3 s; pairs [(1, 1), (3, 1), (3, 3)]; R(200-270)=1.799e+11 /t/yr
+  computed L6s_flip: 3 s; pairs [(1, 1), (3, 1), (3, 3)]; R(200-270)=1.723e+12 /t/yr
+  computed L6v: 3 s; pairs [(1, 1), (3, 1), (3, 3)]; R(200-270)=2.036e+11 /t/yr
+  computed L6v_flip: 3 s; pairs [(1, 1), (3, 1), (3, 3)]; R(200-270)=5.235e+10 /t/yr
+  computed L7s: 6 s; pairs [(7, 7), (9, 9)]; R(200-270)=1.997e+05 /t/yr
+  computed L7v: 7 s; pairs [(7, 7), (9, 9)]; R(200-270)=1.548e+05 /t/yr
+  computed L8s: 3 s; pairs [(10, 10)]; R(200-270)=3.942e+10 /t/yr
+  computed L9s: 7 s; pairs [(1, 1), (5, 5), (5, 4), (4, 4), (4, 6), (6, 4), (6, 6)]; R(200-270)=1.750e+09 /t/yr
+  computed L9s_flip: 6 s; pairs [(1, 1), (5, 5), (5, 4), (4, 4), (4, 6), (6, 4), (6, 6)]; R(200-270)=9.456e+08 /t/yr
+  computed L9v: 5 s; pairs [(1, 1), (5, 5), (5, 4), (4, 4), (4, 6), (6, 4), (6, 6)]; R(200-270)=1.844e+09 /t/yr
+  computed L9v_flip: 5 s; pairs [(1, 1), (5, 5), (5, 4), (4, 4), (4, 6), (6, 4), (6, 6)]; R(200-270)=7.795e+08 /t/yr
+  L10s: sub-sampled from P057 cache (m1000_L10)
+  computed L10v: 6 s; pairs [(4, 4), (4, 6), (6, 4), (6, 6)]; R(200-270)=1.203e+09 /t/yr
+  computed L12s: 5 s; pairs [(12, 12), (12, 15), (15, 12), (15, 15), (10, 10)]; R(200-270)=1.610e+07 /t/yr
+  computed L12s_flip: 4 s; pairs [(12, 12), (12, 15), (15, 12), (15, 15), (10, 10)]; R(200-270)=8.969e+10 /t/yr
+  computed L12v: 4 s; pairs [(12, 12), (12, 15), (15, 12), (15, 15), (10, 10)]; R(200-270)=1.556e+07 /t/yr
+  computed L12v_flip: 4 s; pairs [(12, 12), (12, 15), (15, 12), (15, 15), (10, 10)]; R(200-270)=7.079e+09 /t/yr
+  computed L13s: 3 s; pairs [(8, 8), (8, 9), (9, 9)]; R(200-270)=2.758e+10 /t/yr
+  computed L13s_flip: 3 s; pairs [(8, 8), (8, 9), (9, 9)]; R(200-270)=1.471e+10 /t/yr
+  computed L13v: 3 s; pairs [(8, 8), (8, 9), (9, 9)]; R(200-270)=2.897e+10 /t/yr
+  computed L13v_flip: 3 s; pairs [(8, 8), (8, 9), (9, 9)]; R(200-270)=1.201e+10 /t/yr
+  computed L18s: 3 s; pairs [(11, 11), (15, 11), (15, 15)]; R(200-270)=1.147e+10 /t/yr
+  computed L18s_flip: 3 s; pairs [(11, 11), (15, 11), (15, 15)]; R(200-270)=1.077e+11 /t/yr
+  computed L18v: 3 s; pairs [(11, 11), (15, 11), (15, 15)]; R(200-270)=1.357e+10 /t/yr
+  computed L18v_flip: 3 s; pairs [(11, 11), (15, 11), (15, 15)]; R(200-270)=3.659e+09 /t/yr
+  computed L20s: 3 s; pairs [(6, 6)]; R(200-270)=2.540e+09 /t/yr
+  O1s: sub-sampled from P057 cache
+  computed O1v: 1 s; pairs [(1, 1)]; R(200-270)=8.928e+13 /t/yr
+  computed O3s: 1 s; pairs [(3, 3)]; R(200-270)=8.712e+10 /t/yr
+  computed O3v: 1 s; pairs [(3, 3)]; R(200-270)=7.066e+09 /t/yr
+  O4s: sub-sampled from P057 cache
+  computed O4v: 3 s; pairs [(4, 4)]; R(200-270)=5.437e+10 /t/yr
+  computed O5s: 3 s; pairs [(5, 5)]; R(200-270)=2.403e+08 /t/yr
+  O5v: sub-sampled from P057 cache
+  O6s: sub-sampled from P057 cache
+  O6v: sub-sampled from P057 cache
+  computed O7s: 1 s; pairs [(7, 7)]; R(200-270)=4.856e+04 /t/yr
+  computed O7v: 1 s; pairs [(7, 7)]; R(200-270)=3.763e+04 /t/yr
+  computed O8s: 3 s; pairs [(8, 8)]; R(200-270)=3.725e+09 /t/yr
+  computed O8v: 3 s; pairs [(8, 8)]; R(200-270)=3.910e+09 /t/yr
+  O9s: sub-sampled from P057 cache
+  O9v: sub-sampled from P057 cache
+  O10s: sub-sampled from P057 cache
+  O10v: sub-sampled from P057 cache
+  computed O11s: 3 s; pairs [(11, 11)]; R(200-270)=1.021e+13 /t/yr
+  computed O11v: 3 s; pairs [(11, 11)]; R(200-270)=1.511e+12 /t/yr
+  computed O12s: 3 s; pairs [(12, 12)]; R(200-270)=3.356e+11 /t/yr
+  computed O12v: 3 s; pairs [(12, 12)]; R(200-270)=2.821e+10 /t/yr
+  O13s: sub-sampled from P057 cache
+  computed O13v: 4 s; pairs [(13, 13)]; R(200-270)=1.455e+07 /t/yr
+  O14s: sub-sampled from P057 cache
+  O14v: sub-sampled from P057 cache
+  O15s: sub-sampled from P057 cache
+  O15v: sub-sampled from P057 cache
+  computed L10s_full: 5 s; pairs [(4, 4), (4, 6), (6, 4), (6, 6), (1, 1)]; R(200-270)=1.545e+09 /t/yr
+79 spectra available (56 cached files)
+
+Closure checks:
+          pair                                          predicted_rate_ratio  wimpydd_ratio_median  rel_scatter                                                                                       note
+      L3s/O11s                                                      0.000001          8.803543e-07 2.952259e-16                                                                                        NaN
+      L8s/O10s                                                           4.0          1.469644e+10 2.681592e-16                                                                                        NaN
+      L20s/O6s                                                          16.0          5.878577e+10 2.072990e-16                                                                                        NaN
+L10s_full/L10s                                                           1.0          3.674113e+09 3.674127e+09 max |deviation| over 10-400 keV: size of the dropped (q^4/4 mchi mN mM^2) O1 term at 1 TeV
+L12s_flip/L12s >>1 if Sigma-prime/Phi-doubleprime cancel in the derived sign          5.400955e+03 4.569209e-01                                                                                        NaN
+      L12s/O6s                    slowly varying (<v_perp^2> + Phi~/Sigma'')          2.543295e+08 3.866224e-01                                                                       log-log slope -0.580
+L12v_flip/L12v >>1 if Sigma-prime/Phi-doubleprime cancel in the derived sign          2.175273e+02 7.146476e-01                                                                                        NaN
+      L12v/O6v                    slowly varying (<v_perp^2> + Phi~/Sigma'')          7.457107e+08 4.486025e-01                                                                       log-log slope -0.167
+      L9s/L10s                                            1/4 + O5 admixture          4.087014e+09 6.638559e-01                                                                       log-log slope -1.664
+      L9v/L10v                                            1/4 + O5 admixture          1.430232e+00 4.004062e-01                                                                       log-log slope -0.864
+
+Number of spectral classes (average linkage, Hellinger threshold):
+  all_68: observed: H<0.005:40,H<0.01:37,H<0.02:34,H<0.03:34,H<0.05:31,H<0.1:29,H<0.15:19,H<0.2:17; true_energy: H<0.005:40,H<0.01:37,H<0.02:35,H<0.03:34,H<0.05:31,H<0.1:29,H<0.15:23,H<0.2:17; resolution_x1p5: H<0.005:40,H<0.01:37,H<0.02:34,H<0.03:33,H<0.05:31,H<0.1:29,H<0.15:19,H<0.2:15
+  TableS6_40L: observed: H<0.005:30,H<0.01:27,H<0.02:24,H<0.03:24,H<0.05:22,H<0.1:21,H<0.15:19,H<0.2:16; true_energy: H<0.005:30,H<0.01:27,H<0.02:25,H<0.03:24,H<0.05:22,H<0.1:21,H<0.15:20,H<0.2:16; resolution_x1p5: H<0.005:30,H<0.01:27,H<0.02:24,H<0.03:23,H<0.05:22,H<0.1:21,H<0.15:19,H<0.2:15
+  S6_plus_elastic_S7_44: observed: H<0.005:30,H<0.01:27,H<0.02:24,H<0.03:24,H<0.05:22,H<0.1:21,H<0.15:19,H<0.2:16; true_energy: H<0.005:30,H<0.01:27,H<0.02:25,H<0.03:24,H<0.05:22,H<0.1:21,H<0.15:20,H<0.2:16; resolution_x1p5: H<0.005:30,H<0.01:27,H<0.02:24,H<0.03:23,H<0.05:22,H<0.1:21,H<0.15:19,H<0.2:15
+  compatible_Z>=3.0_at_1TeV: observed: H<0.005:19,H<0.01:17,H<0.02:14,H<0.03:14,H<0.05:13,H<0.1:13,H<0.15:12,H<0.2:10; true_energy: H<0.005:19,H<0.01:17,H<0.02:15,H<0.03:14,H<0.05:13,H<0.1:13,H<0.15:12,H<0.2:10; resolution_x1p5: H<0.005:19,H<0.01:17,H<0.02:14,H<0.03:14,H<0.05:13,H<0.1:13,H<0.15:12,H<0.2:9
+
+Classes at H < 0.02:
+  [L3v] L3v, L17v, O11v
+  [L7v] L7v, O7v
+  [L7s] L7s, O7s
+  [L1v] L1v, L5v, O1v
+  [L1s] L1s, L5s, O1s
+  [L13s] L13s
+  [O8s] O8s
+  [L17s] L3s, L17s, O11s
+  [O12s] O12s
+  [O4s] L15s, L15v, O4s, O4v
+  [L9s] L9s
+  [O5s] O5s
+  [L13v] L13v
+  [O8v] O8v
+  [O12v] O12v
+  [L12s] L12s
+  [O15s] O15s
+  [L12v] L12v
+  [L16v] L16v, O13v
+  [L16s] L16s, O13s
+  [O3s] O3s
+  [L6v] L6v
+  [L6s] L6s
+  [L18s] L18s
+  [L10s] L10s, L10v
+  [L9v] L9v
+  [O5v] O5v
+  [L20s] L4s, L4v, L20s, L20v, O6s, O6v
+  [O15v] O15v
+  [L11s] L11s, L14s, L19s, O9s, O14s
+  [L11v] L11v, L14v, L19v, O9v, O14v
+  [L2v] L2s, L2v, L8s, L8v, O10s, O10v
+  [O3v] O3v
+  [L18v] L18v
+
+Classes at H < 0.05:
+  [L3v] L3v, L17v, O11v
+  [L7s] L7s, L7v, O7s, O7v
+  [L1v] L1v, L5v, O1v
+  [L1s] L1s, L5s, O1s
+  [L13s] L13s, O8s
+  [L17s] L3s, L17s, O11s
+  [O12s] O12s
+  [O4s] L15s, L15v, O4s, O4v
+  [L9s] L9s
+  [O5s] O5s
+  [L13v] L13v
+  [O8v] O8v
+  [O12v] O12v
+  [L12s] L12s
+  [O15s] O15s
+  [L12v] L12v
+  [L16v] L16v, O13v
+  [L16s] L16s, O13s
+  [O3s] O3s
+  [L6v] L6v
+  [L6s] L6s
+  [L18s] L18s
+  [L10s] L10s, L10v
+  [L9v] L9v
+  [O5v] O5v
+  [L20s] L4s, L4v, L20s, L20v, O6s, O6v
+  [O15v] O15v
+  [L11s] L11s, L11v, L14s, L14v, L19s, L19v, O9s, O9v, O14s, O14v
+  [L2v] L2s, L2v, L8s, L8v, O10s, O10v
+  [O3v] O3v
+  [L18v] L18v
+
+===== run 2026-09-16 16:32:52 =====
+79 spectra available (56 cached files)
+
+Closure checks:
+          pair                                          predicted_rate_ratio  wimpydd_ratio_median  rel_scatter                                                                                       note
+      L3s/O11s                                                      0.000001          8.803543e-07 2.952259e-16                                                                                        NaN
+      L8s/O10s                                                           4.0          1.469644e+10 2.681592e-16                                                                                        NaN
+      L20s/O6s                                                          16.0          5.878577e+10 2.072990e-16                                                                                        NaN
+L10s_full/L10s                                                           1.0          3.674113e+09 3.674127e+09 max |deviation| over 10-400 keV: size of the dropped (q^4/4 mchi mN mM^2) O1 term at 1 TeV
+L12s_flip/L12s >>1 if Sigma-prime/Phi-doubleprime cancel in the derived sign          5.400955e+03 4.569209e-01                                                                                        NaN
+      L12s/O6s                    slowly varying (<v_perp^2> + Phi~/Sigma'')          2.543295e+08 3.866224e-01                                                                       log-log slope -0.580
+L12v_flip/L12v >>1 if Sigma-prime/Phi-doubleprime cancel in the derived sign          2.175273e+02 7.146476e-01                                                                                        NaN
+      L12v/O6v                    slowly varying (<v_perp^2> + Phi~/Sigma'')          7.457107e+08 4.486025e-01                                                                       log-log slope -0.167
+      L9s/L10s                                            1/4 + O5 admixture          4.087014e+09 6.638559e-01                                                                       log-log slope -1.664
+      L9v/L10v                                            1/4 + O5 admixture          1.430232e+00 4.004062e-01                                                                       log-log slope -0.864
+
+Number of spectral classes (average linkage, Hellinger threshold):
+  all_68: observed: H<0.005:40,H<0.01:37,H<0.02:34,H<0.03:34,H<0.05:31,H<0.1:29,H<0.15:19,H<0.2:17; true_energy: H<0.005:40,H<0.01:37,H<0.02:35,H<0.03:34,H<0.05:31,H<0.1:29,H<0.15:23,H<0.2:17; resolution_x1p5: H<0.005:40,H<0.01:37,H<0.02:34,H<0.03:33,H<0.05:31,H<0.1:29,H<0.15:19,H<0.2:15
+  TableS6_40L: observed: H<0.005:30,H<0.01:27,H<0.02:24,H<0.03:24,H<0.05:22,H<0.1:21,H<0.15:19,H<0.2:16; true_energy: H<0.005:30,H<0.01:27,H<0.02:25,H<0.03:24,H<0.05:22,H<0.1:21,H<0.15:20,H<0.2:16; resolution_x1p5: H<0.005:30,H<0.01:27,H<0.02:24,H<0.03:23,H<0.05:22,H<0.1:21,H<0.15:19,H<0.2:15
+  S6_plus_elastic_S7_44: observed: H<0.005:30,H<0.01:27,H<0.02:24,H<0.03:24,H<0.05:22,H<0.1:21,H<0.15:19,H<0.2:16; true_energy: H<0.005:30,H<0.01:27,H<0.02:25,H<0.03:24,H<0.05:22,H<0.1:21,H<0.15:20,H<0.2:16; resolution_x1p5: H<0.005:30,H<0.01:27,H<0.02:24,H<0.03:23,H<0.05:22,H<0.1:21,H<0.15:19,H<0.2:15
+  compatible_Z>=3.0_at_1TeV: observed: H<0.005:19,H<0.01:17,H<0.02:14,H<0.03:14,H<0.05:13,H<0.1:13,H<0.15:12,H<0.2:10; true_energy: H<0.005:19,H<0.01:17,H<0.02:15,H<0.03:14,H<0.05:13,H<0.1:13,H<0.15:12,H<0.2:10; resolution_x1p5: H<0.005:19,H<0.01:17,H<0.02:14,H<0.03:14,H<0.05:13,H<0.1:13,H<0.15:12,H<0.2:9
+
+Classes at H < 0.02:
+  [L3v] L3v, L17v, O11v
+  [L7v] L7v, O7v
+  [L7s] L7s, O7s
+  [L1v] L1v, L5v, O1v
+  [L1s] L1s, L5s, O1s
+  [L13s] L13s
+  [O8s] O8s
+  [L17s] L3s, L17s, O11s
+  [O12s] O12s
+  [O4s] L15s, L15v, O4s, O4v
+  [L9s] L9s
+  [O5s] O5s
+  [L13v] L13v
+  [O8v] O8v
+  [O12v] O12v
+  [L12s] L12s
+  [O15s] O15s
+  [L12v] L12v
+  [L16v] L16v, O13v
+  [L16s] L16s, O13s
+  [O3s] O3s
+  [L6v] L6v
+  [L6s] L6s
+  [L18s] L18s
+  [L10s] L10s, L10v
+  [L9v] L9v
+  [O5v] O5v
+  [L20s] L4s, L4v, L20s, L20v, O6s, O6v
+  [O15v] O15v
+  [L11s] L11s, L14s, L19s, O9s, O14s
+  [L11v] L11v, L14v, L19v, O9v, O14v
+  [L2v] L2s, L2v, L8s, L8v, O10s, O10v
+  [O3v] O3v
+  [L18v] L18v
+
+Classes at H < 0.05:
+  [L3v] L3v, L17v, O11v
+  [L7s] L7s, L7v, O7s, O7v
+  [L1v] L1v, L5v, O1v
+  [L1s] L1s, L5s, O1s
+  [L13s] L13s, O8s
+  [L17s] L3s, L17s, O11s
+  [O12s] O12s
+  [O4s] L15s, L15v, O4s, O4v
+  [L9s] L9s
+  [O5s] O5s
+  [L13v] L13v
+  [O8v] O8v
+  [O12v] O12v
+  [L12s] L12s
+  [O15s] O15s
+  [L12v] L12v
+  [L16v] L16v, O13v
+  [L16s] L16s, O13s
+  [O3s] O3s
+  [L6v] L6v
+  [L6s] L6s
+  [L18s] L18s
+  [L10s] L10s, L10v
+  [L9v] L9v
+  [O5v] O5v
+  [L20s] L4s, L4v, L20s, L20v, O6s, O6v
+  [O15v] O15v
+  [L11s] L11s, L11v, L14s, L14v, L19s, L19v, O9s, O9v, O14s, O14v
+  [L2v] L2s, L2v, L8s, L8v, O10s, O10v
+  [O3v] O3v
+  [L18v] L18v
+
+Mapping table (selected columns):
+entry                                   NR_reduction                                                               responses  class_H0.02 class_rep_H0.02  H_to_rep     N_lo   N_2p84  Z_pred_P016  Z_LZ_1000  resid_Z_LZ_minus_pred_1000
+  L1s                                             O1                                                                       M            5             L1s         0 2.77e+03 1.66e+09        0.158          0                      -0.158
+  L1v                                             O1                                                                       M            4             L1v         0      473 1.36e+17         1.43        1.3                      -0.135
+  L2s                                            O10                                                              q2 Sigma''           32             L2v   0.00785     2.95       75         3.31          3                      -0.314
+  L2v                                            O10                                                              q2 Sigma''           32             L2v         0     3.02     71.3         3.31        3.1                      -0.209
+  L3s                                 -(mN/mchi) O11                                                                    q2 M            8            L17s  1.05e-08      261  7.7e+09         1.76        1.7                     -0.0589
+  L3v                                 -(mN/mchi) O11                                                                    q2 M            1             L3v         0     34.7 1.47e+08         2.63        2.6                     -0.0265
+  L4s                                  -(mN/mchi) O6                                                              q4 Sigma''           28            L20s         0    0.397 4.65e-07         3.54        3.1                      -0.441
+  L4v                                  -(mN/mchi) O6                                                              q4 Sigma''           28            L20s   0.00818    0.408 4.41e-07         3.54        3.1                       -0.44
+  L5s                                             O1                                                                       M            5             L1s         0 2.77e+03 1.66e+09        0.158          0                      -0.158
+  L5v                                             O1                                                                       M            4             L1v         0      473 1.36e+17         1.43        1.3                      -0.135
+  L6s                            (q2/2mN2) O1 + 2 O3                               q4 M + q2 Phi'' + q4 Phi''M + q2v2 Sigma'           23             L6s         0     31.8 2.65e+13         2.66        2.6                     -0.0574
+  L6v                            (q2/2mN2) O1 + 2 O3                               q4 M + q2 Phi'' + q4 Phi''M + q2v2 Sigma'           22             L6v         0     1.41 1.91e+12         3.43        3.3                      -0.132
+  L7s                          -2 O7 + 2(mN/mchi) O9                                        v2 Sigma' + (mN/mchi)2 q2 Sigma'            3             L7s         0     30.9  2.4e+07         2.67        2.7                      0.0316
+  L7v                          -2 O7 + 2(mN/mchi) O9                                        v2 Sigma' + (mN/mchi)2 q2 Sigma'            2             L7v         0       34 2.02e+07         2.63        2.7                      0.0666
+  L8s                                         -2 O10                                                              q2 Sigma''           32             L2v   0.00785     2.95  1.1e+12         3.31          3                      -0.314
+  L8v                                         -2 O10                                                              q2 Sigma''           32             L2v         0     3.02      285         3.31          3                      -0.309
+  L9s (q2/2 mchi mN) O1 - 2 O5 - 2[(q2/mN2) O4 - O6]                            (mN/mchi)2 q4 M + q2v2 (M+Delta) + q4 Sigma'           11             L9s         0     7.79 5.64e+10         3.09          3                     -0.0935
+  L9v (q2/2 mchi mN) O1 - 2 O5 - 2[(q2/mN2) O4 - O6]                            (mN/mchi)2 q4 M + q2v2 (M+Delta) + q4 Sigma'           26             L9v         0    0.691 1.73e+10         3.51        3.2                      -0.306
+ L10s                            4[(q2/mN2) O4 - O6]                                                               q4 Sigma'           25            L10s         0    0.197     3.34         3.57        3.4                      -0.168
+ L10v                            4[(q2/mN2) O4 - O6]                                                               q4 Sigma'           25            L10s    0.0193    0.202 9.34e+09         3.57        3.4                      -0.168
+ L11s                                          -4 O9                                                               q2 Sigma'           30            L11s         0     2.07      112         3.38        3.2                      -0.176
+ L11v                                          -4 O9                                                               q2 Sigma'           31            L11v         0     2.21     86.6         3.37        3.2                      -0.165
+ L12s -4[(q2/mN2) O12 + O15] - (mN/mchi)(q2/mN2) O10 q4 v2 Sigma'' + q4 Phi~' (Sigma', Phi'' cancel) + (mN/mchi)2 q4 Sigma''           16            L12s         0     1.03  1.8e+08         3.47        3.2                      -0.269
+ L12v -4[(q2/mN2) O12 + O15] - (mN/mchi)(q2/mN2) O10 q4 v2 Sigma'' + q4 Phi~' (Sigma', Phi'' cancel) + (mN/mchi)2 q4 Sigma''           18            L12v         0     1.28 2.62e+08         3.44        3.2                      -0.244
+ L13s                                    2 O8 - 2 O9                           v2 (M+Delta) + q2 Sigma' - Delta Sigma' cross            6            L13s         0       84 7.71e+12         2.29        2.5                       0.215
+ L13v                                    2 O8 - 2 O9                           v2 (M+Delta) + q2 Sigma' - Delta Sigma' cross           13            L13v         0     6.42 8.86e+11         3.14          3                      -0.143
+ L14s                                           4 O9                                                               q2 Sigma'           30            L11s         0     2.07      112         3.38        3.1                      -0.276
+ L14v                                           4 O9                                                               q2 Sigma'           31            L11v  1.49e-08     2.21     86.6         3.37        3.1                      -0.265
+ L15s                                          -4 O4                                                        Sigma' + Sigma''           10             O4s         0     27.6 3.24e+04         2.71        2.7                    -0.00755
+ L15v                                          -4 O4                                                        Sigma' + Sigma''           10             O4s   0.00643     28.8 1.08e+14         2.69        2.7                     0.00729
+ L16s                                         -4 O13                                                q2 v2 Sigma'' + q2 Phi~'           20            L16s         0      4.7     1.16         3.22        3.4                       0.183
+ L16v                                         -4 O13                                                q2 v2 Sigma'' + q2 Phi~'           19            L16v         0     9.01 1.34e+10         3.05        3.2                       0.146
+ L17s                                         -2 O11                                                                    q2 M            8            L17s         0      261  3.5e+16         1.76        1.8                      0.0411
+ L17v                                         -2 O11                                                                    q2 M            1             L3v  1.05e-08     34.7 6.66e+14         2.63        2.6                     -0.0265
+ L18s                          -(q2/mN2) O11 + 4 O15                              q6 M + q4 Phi'' + q6 Phi''M + q4 v2 Sigma'           24            L18s         0     4.19 5.43e+11         3.24        3.1                      -0.142
+ L18v                          -(q2/mN2) O11 + 4 O15                              q6 M + q4 Phi'' + q6 Phi''M + q4 v2 Sigma'           34            L18v         0     0.18 6.35e+10         3.57        2.9                      -0.671
+ L19s                                          4 O14                                                            q2 v2 Sigma'           30            L11s    0.0177     2.35  5.9e-05         3.35          3                      -0.355
+ L19v                                          4 O14                                                            q2 v2 Sigma'           31            L11v     0.018     2.51 4.59e-05         3.34          3                      -0.344
+ L20s                                           4 O6                                                              q4 Sigma''           28            L20s         0    0.397 3.11e+10         3.54        3.2                      -0.341
+ L20v                                           4 O6                                                              q4 Sigma''           28            L20s   0.00818    0.408     8.01         3.54        3.2                       -0.34
+  O1s                                             O1                                                                       M            5             L1s         0 2.77e+03 1.66e+09        0.158          0                      -0.158
+  O1v                                             O1                                                                       M            4             L1v         0      473 1.36e+17         1.43        1.3                      -0.135
+  O3s                                             O3                                      q2 Phi'' + q2v2 Sigma' + q2 Phi''M           21             O3s         0       12 5.36e+12         2.97        NaN                         NaN
+  O3v                                             O3                                      q2 Phi'' + q2v2 Sigma' + q2 Phi''M           33             O3v         0      4.9 3.31e+11         3.21        NaN                         NaN
+  O4s                                             O4                                                        Sigma' + Sigma''           10             O4s         0     27.6 2.03e+03         2.71        2.7                    -0.00755
+  O4v                                             O4                                                        Sigma' + Sigma''           10             O4s   0.00643     28.8 6.72e+12         2.69        2.7                     0.00729
+  O5s                                             O5                                                        q2v2 (M + Delta)           12             O5s         0     14.2 1.38e+10         2.92        NaN                         NaN
+  O5v                                             O5                                                        q2v2 (M + Delta)           27             O5v         0        1    0.969         3.47        NaN                         NaN
+  O6s                                             O6                                                              q4 Sigma''           28            L20s         0    0.397    0.528         3.54        NaN                         NaN
+  O6v                                             O6                                                              q4 Sigma''           28            L20s   0.00818    0.408    0.501         3.54        NaN                         NaN
+  O7s                                             O7                                                               v2 Sigma'            3             L7s    0.0021     31.7 5.98e+06         2.66        NaN                         NaN
+  O7v                                             O7                                                               v2 Sigma'            2             L7v   0.00202       35 5.02e+06         2.62        NaN                         NaN
+  O8s                                             O8                                                          v2 (M + Delta)            7             O8s         0      155 1.93e+12         2.02        NaN                         NaN
+  O8v                                             O8                                                          v2 (M + Delta)           14             O8v         0     8.99 1.87e+11         3.05        NaN                         NaN
+  O9s                                             O9                                                               q2 Sigma'           30            L11s         0     2.07     6.97         3.38        NaN                         NaN
+  O9v                                             O9                                                               q2 Sigma'           31            L11v  1.49e-08     2.21     5.42         3.37        NaN                         NaN
+ O10s                                            O10                                                              q2 Sigma''           32             L2v   0.00785     2.95       75         3.31        NaN                         NaN
+ O10v                                            O10                                                              q2 Sigma''           32             L2v         0     3.02     71.3         3.31        NaN                         NaN
+ O11s                                            O11                                                                    q2 M            8            L17s         0      261 8.75e+15         1.76        NaN                         NaN
+ O11v                                            O11                                                                    q2 M            1             L3v  1.05e-08     34.7 1.66e+14         2.63        NaN                         NaN
+ O12s                                            O12                                   v2 (Sigma' + Sigma'' + Phi'') + Phi~'            9            O12s         0     98.4  1.2e+14         2.22        NaN                         NaN
+ O12v                                            O12                                   v2 (Sigma' + Sigma'' + Phi'') + Phi~'           15            O12v         0     41.1 5.16e+12         2.57        NaN                         NaN
+ O13s                                            O13                                                 q2v2 Sigma'' + q2 Phi~'           20            L16s         0      4.7   0.0725         3.22        NaN                         NaN
+ O13v                                            O13                                                 q2v2 Sigma'' + q2 Phi~'           19            L16v         0     9.01 8.39e+08         3.05        NaN                         NaN
+ O14s                                            O14                                                             q2v2 Sigma'           30            L11s    0.0177     2.35 3.69e-06         3.35        NaN                         NaN
+ O14v                                            O14                                                             q2v2 Sigma'           31            L11v     0.018     2.51 2.87e-06         3.34        NaN                         NaN
+ O15s                                            O15                                                 q4 v2 Sigma' + q4 Phi''           17            O15s         0     1.73     6.38          3.4        NaN                         NaN
+ O15v                                            O15                                                 q4 v2 Sigma' + q4 Phi''           29            O15v         0      0.7    0.654          3.5        NaN                         NaN
+
+Exact pairs (LZ statement) -- analytic coupling ratios and LZ Z scatter:
+     pair operator              coupling_map  ratio_d_a_over_d_b_1TeV  H_numerical                                                                     dZ_100_200_400_1000_4000  max_abs_dZ  rms_dZ_ge100
+  L1s/L5s      O1s                   d1 = d5                  1.00000 0.000000e+00                                                                    [0.0, 0.0, 0.0, 0.0, 0.0]         0.0      0.000000
+  L1v/L5v      O1v                   d1 = d5                  1.00000 0.000000e+00                                  [0.0, 0.0, -0.39999999999999997, 0.0, -0.10000000000000009]         0.4      0.184391
+  L2s/L8s     O10s                 d2 = 2 d8                  2.00000 0.000000e+00                                    [0.10000000000000009, 0.0, 0.0, 0.0, 0.10000000000000009]         0.1      0.063246
+  L2v/L8v     O10v                 d2 = 2 d8                  2.00000 0.000000e+00    [0.0, -0.3999999999999999, 0.10000000000000009, 0.10000000000000009, 0.10000000000000009]         0.4      0.194936
+ L3s/L17s     O11s      d3 = 2 (mchi/mN) d17               2131.57805 1.053671e-08                                  [0.0, 0.0, -0.10000000000000009, -0.10000000000000009, 0.0]         0.1      0.063246
+ L3v/L17v     O11v      d3 = 2 (mchi/mN) d17               2131.57805 1.053671e-08                                                    [0.2, 0.10000000000000009, 0.0, 0.0, 0.0]         0.2      0.100000
+ L4s/L20s      O6s      d4 = 4 (mchi/mN) d20               4263.15610 0.000000e+00 [-0.10000000000000009, 0.0, -0.10000000000000009, -0.10000000000000009, -0.2999999999999998]         0.3      0.154919
+ L4v/L20v      O6v      d4 = 4 (mchi/mN) d20               4263.15610 0.000000e+00 [0.0, 0.10000000000000009, -0.09999999999999964, -0.10000000000000009, -0.19999999999999973]         0.2      0.118322
+L11s/L14s      O9s d11 = d14 (opposite sign)                  1.00000 0.000000e+00    [0.0, 0.10000000000000009, 0.10000000000000009, 0.10000000000000009, 0.10000000000000009]         0.1      0.089443
+L11v/L14v      O9v d11 = d14 (opposite sign)                  1.00000 1.490116e-08                    [0.0, 0.0, 0.10000000000000009, 0.10000000000000009, 0.10000000000000009]         0.1      0.077460
+
+Isoscalar vs isovector per Lagrangian:
+ L  LZ_declares_sv_indistinguishable    H_sv  N3sigma_gauss  same_class_H0p02  same_class_H0p05  Z_LZ_1000_s  Z_LZ_1000_v   N_lo_s  N_lo_v  rate_ratio_v_over_s_200_270
+ 1                             False   0.135             94             False             False            0          1.3 2.77e+03     473                     4.72e+08
+ 2                              True 0.00785       1.86e+04              True              True            3          3.1     2.95    3.02                        0.917
+ 3                             False    0.23           27.2             False             False          1.7          2.6      261    34.7                        0.143
+ 4                              True 0.00818       1.71e+04              True              True          3.1          3.1    0.397   0.408                        0.917
+ 5                             False   0.135             94             False             False            0          1.3 2.77e+03     473                     4.72e+08
+ 6                             False   0.387           10.7             False             False          2.6          3.3     31.8    1.41                         1.14
+ 7                              True  0.0301        1.4e+03             False              True          2.7          2.7     30.9      34                        0.774
+ 8                              True 0.00785       1.86e+04              True              True            3            3     2.95    3.02                      2.5e-10
+ 9                             False   0.377           7.06             False             False            3          3.2     7.79   0.691                         1.05
+10                              True  0.0193       3.24e+03              True              True          3.4          3.4    0.197   0.202                     2.86e+09
+11                              True  0.0317       1.18e+03             False              True          3.2          3.2     2.07    2.21                        0.776
+12                             False    0.24           20.5             False             False          3.2          3.2     1.03    1.28                         0.95
+13                             False    0.31           17.8             False             False          2.5            3       84    6.42                         1.05
+14                              True  0.0317       1.18e+03             False              True          3.1          3.1     2.07    2.21                        0.776
+15                              True 0.00643       2.78e+04              True              True          2.7          2.7     27.6    28.8                     3.16e+09
+16                             False   0.249           22.4             False             False          3.4          3.2      4.7    9.01                     4.97e+09
+17                             False    0.23           27.2             False             False          1.8          2.6      261    34.7                        0.143
+18                             False   0.522           3.43             False             False          3.1          2.9     4.19    0.18                          1.2
+19                              True  0.0323       1.14e+03             False              True            3            3     2.35    2.51                        0.776
+20                              True 0.00818       1.71e+04              True              True          3.2          3.2    0.397   0.408                      2.5e-10
+
+Sign variants of interfering Lagrangians:
+model flipped_operator  H_base_vs_flip  N_lo_base  N_lo_flip  R_hi_flip_over_base  Z_pred_base  Z_pred_flip  Z_LZ_1000
+  L6s               O3           0.272       31.8       23.7                 9.85         2.66         2.76        2.6
+  L6v               O3            0.43       1.41       12.5                0.247         3.43         2.96        3.3
+  L9s               O5            0.11       7.79       14.5                0.539         3.09         2.92          3
+  L9v               O5           0.215      0.691       1.11                0.421         3.51         3.46        3.2
+ L12s              O15           0.105       1.03       1.73             5.58e+03         3.47          3.4        3.2
+ L12v              O15           0.418       1.28      0.702                  470         3.44          3.5        3.2
+ L13s               O9           0.055         84        158                0.532         2.29         2.01        2.5
+ L13v               O9           0.192       6.42        9.7                0.413         3.14         3.03          3
+ L18s              O15           0.345       4.19       3.41                 9.71         3.24         3.29        3.1
+ L18v              O15           0.535       0.18       1.42                0.259         3.57         3.43        2.9
+
+Table S6 vs P016-curve prediction from N_lo: rms 0.25 sigma, max 0.67; worst ['L18v', 'L4s', 'L4v', 'L19s', 'L19v', 'L20s']
+
+Spectral ratios (log-log slope over 20-400 keV, rms about power law, ratio at 248 keV):
+  L12s/L20s: slope -0.631, rms 0.3900 dex, ratio(248) 0.0065
+  L12v/L20v: slope -0.181, rms 0.4542 dex, ratio(248) 3.323e+07
+  L19s/L11s: slope -0.081, rms 0.0074 dex, ratio(248) 4.874e-07
+  L16s/L2s: slope -0.156, rms 0.5644 dex, ratio(248) 0.01792
+  L16s/L20s: slope -1.155, rms 0.5648 dex, ratio(248) 1.758e-11
+  L9s/L10s: slope -1.760, rms 0.3044 dex, ratio(248) 4.436e+09
+  L9v/L10v: slope -1.030, rms 0.2401 dex, ratio(248) 1.653
+  L18s/L3s: slope +2.830, rms 0.5182 dex, ratio(248) 3840
+  L6s/O3s: slope +1.669, rms 0.8940 dex, ratio(248) 1.241
+  L6v/O3v: slope +0.651, rms 0.8234 dex, ratio(248) 66.97
+  L7s/O7s: slope +0.019, rms 0.0024 dex, ratio(248) 4.125
+  L13s/O8s: slope -0.081, rms 0.2387 dex, ratio(248) 7.321
+  L13v/O9v: slope -1.022, rms 0.2391 dex, ratio(248) 9.499e+10
+  L16s/L16v: slope +0.017, rms 0.7450 dex, ratio(248) 1.453e-10
+  L12s/L12v: slope -0.450, rms 0.5087 dex, ratio(248) 0.7856
+
+Done. Elapsed 1 s
+
+===== run 2026-09-16 16:34:44 =====
+  computed L3s: 8 s; pairs [(11, 11)]; R(200-270)=2.447e-03 /t/yr
+  computed L6s: 3 s; pairs [(1, 1), (3, 1), (3, 3)]; R(200-270)=4.896e+01 /t/yr
+  computed L6s_flip: 4 s; pairs [(1, 1), (3, 1), (3, 3)]; R(200-270)=4.689e+02 /t/yr
+  computed L6v: 4 s; pairs [(1, 1), (3, 1), (3, 3)]; R(200-270)=5.541e+01 /t/yr
+  computed L6v_flip: 4 s; pairs [(1, 1), (3, 1), (3, 3)]; R(200-270)=1.425e+01 /t/yr
+  computed L7s: 9 s; pairs [(7, 7), (9, 9)]; R(200-270)=5.436e-05 /t/yr
+  computed L7v: 10 s; pairs [(7, 7), (9, 9)]; R(200-270)=4.213e-05 /t/yr
+  computed L8s: 4 s; pairs [(10, 10)]; R(200-270)=1.073e+01 /t/yr
+  computed L9s: 9 s; pairs [(1, 1), (5, 5), (5, 4), (4, 4), (4, 6), (6, 4), (6, 6)]; R(200-270)=4.763e-01 /t/yr
+  computed L9s_flip: 9 s; pairs [(1, 1), (5, 5), (5, 4), (4, 4), (4, 6), (6, 4), (6, 6)]; R(200-270)=2.574e-01 /t/yr
+  computed L9v: 9 s; pairs [(1, 1), (5, 5), (5, 4), (4, 4), (4, 6), (6, 4), (6, 6)]; R(200-270)=5.019e-01 /t/yr
+  computed L9v_flip: 8 s; pairs [(1, 1), (5, 5), (5, 4), (4, 4), (4, 6), (6, 4), (6, 6)]; R(200-270)=2.122e-01 /t/yr
+  L10s: sub-sampled from P057 cache (m1000_L10)
+  computed L10v: 9 s; pairs [(4, 4), (4, 6), (6, 4), (6, 6)]; R(200-270)=3.274e-01 /t/yr
+  computed L12s: 10 s; pairs [(12, 12), (12, 15), (15, 12), (15, 15), (10, 10)]; R(200-270)=4.383e-03 /t/yr
+  computed L12s_flip: 7 s; pairs [(12, 12), (12, 15), (15, 12), (15, 15), (10, 10)]; R(200-270)=2.441e+01 /t/yr
+  computed L12v: 7 s; pairs [(12, 12), (12, 15), (15, 12), (15, 15), (10, 10)]; R(200-270)=4.236e-03 /t/yr
+  computed L12v_flip: 7 s; pairs [(12, 12), (12, 15), (15, 12), (15, 15), (10, 10)]; R(200-270)=1.927e+00 /t/yr
+  computed L13s: 6 s; pairs [(8, 8), (8, 9), (9, 9)]; R(200-270)=7.508e+00 /t/yr
+  computed L13s_flip: 6 s; pairs [(8, 8), (8, 9), (9, 9)]; R(200-270)=4.004e+00 /t/yr
+  computed L13v: 6 s; pairs [(8, 8), (8, 9), (9, 9)]; R(200-270)=7.886e+00 /t/yr
+  computed L13v_flip: 8 s; pairs [(8, 8), (8, 9), (9, 9)]; R(200-270)=3.270e+00 /t/yr
+  computed L18s: 7 s; pairs [(11, 11), (15, 11), (15, 15)]; R(200-270)=3.121e+00 /t/yr
+  computed L18s_flip: 7 s; pairs [(11, 11), (15, 11), (15, 15)]; R(200-270)=2.932e+01 /t/yr
+  computed L18v: 6 s; pairs [(11, 11), (15, 11), (15, 15)]; R(200-270)=3.693e+00 /t/yr
+  computed L18v_flip: 6 s; pairs [(11, 11), (15, 11), (15, 15)]; R(200-270)=9.960e-01 /t/yr
+  computed L20s: 7 s; pairs [(6, 6)]; R(200-270)=6.913e-01 /t/yr
+  O1s: sub-sampled from P057 cache
+  computed O1v: 2 s; pairs [(1, 1)]; R(200-270)=2.430e+04 /t/yr
+  computed O3s: 2 s; pairs [(3, 3)]; R(200-270)=2.371e+01 /t/yr
+  computed O3v: 2 s; pairs [(3, 3)]; R(200-270)=1.923e+00 /t/yr
+  O4s: sub-sampled from P057 cache
+  computed O4v: 4 s; pairs [(4, 4)]; R(200-270)=1.480e+01 /t/yr
+  computed O5s: 5 s; pairs [(5, 5)]; R(200-270)=6.539e-02 /t/yr
+  O5v: sub-sampled from P057 cache
+  O6s: sub-sampled from P057 cache
+  O6v: sub-sampled from P057 cache
+  computed O7s: 2 s; pairs [(7, 7)]; R(200-270)=1.322e-05 /t/yr
+  computed O7v: 2 s; pairs [(7, 7)]; R(200-270)=1.024e-05 /t/yr
+  computed O8s: 4 s; pairs [(8, 8)]; R(200-270)=1.014e+00 /t/yr
+  computed O8v: 4 s; pairs [(8, 8)]; R(200-270)=1.064e+00 /t/yr
+  O9s: sub-sampled from P057 cache
+  O9v: sub-sampled from P057 cache
+  O10s: sub-sampled from P057 cache
+  O10v: sub-sampled from P057 cache
+  computed O11s: 4 s; pairs [(11, 11)]; R(200-270)=2.780e+03 /t/yr
+  computed O11v: 4 s; pairs [(11, 11)]; R(200-270)=4.113e+02 /t/yr
+  computed O12s: 5 s; pairs [(12, 12)]; R(200-270)=9.135e+01 /t/yr
+  computed O12v: 5 s; pairs [(12, 12)]; R(200-270)=7.677e+00 /t/yr
+  O13s: sub-sampled from P057 cache
+  computed O13v: 6 s; pairs [(13, 13)]; R(200-270)=3.959e-03 /t/yr
+  O14s: sub-sampled from P057 cache
+  O14v: sub-sampled from P057 cache
+  O15s: sub-sampled from P057 cache
+  O15v: sub-sampled from P057 cache
+  computed L10s_full: 6 s; pairs [(4, 4), (4, 6), (6, 4), (6, 6), (1, 1)]; R(200-270)=4.204e-01 /t/yr
+79 spectra available (56 cached files)
+
+Closure checks:
+          pair                                          predicted_rate_ratio  wimpydd_ratio_median  rel_scatter                                                                                       note
+      L3s/O11s                                                      0.000001          8.803543e-07 2.901573e-16                                                                                        NaN
+      L8s/O10s                                                           4.0          4.000000e+00 0.000000e+00                                                                                        NaN
+      L20s/O6s                                                          16.0          1.600000e+01 0.000000e+00                                                                                        NaN
+L10s_full/L10s                                                           1.0          1.000001e+00 4.448029e-06 max |deviation| over 10-400 keV: size of the dropped (q^4/4 mchi mN mM^2) O1 term at 1 TeV
+L12s_flip/L12s >>1 if Sigma-prime/Phi-doubleprime cancel in the derived sign          5.400955e+03 4.569209e-01                                                                                        NaN
+      L12s/O6s                    slowly varying (<v_perp^2> + Phi~/Sigma'')          6.922207e-02 3.866224e-01                                                                       log-log slope -0.580
+L12v_flip/L12v >>1 if Sigma-prime/Phi-doubleprime cancel in the derived sign          2.175273e+02 7.146476e-01                                                                                        NaN
+      L12v/O6v                    slowly varying (<v_perp^2> + Phi~/Sigma'')          2.029636e-01 4.486025e-01                                                                       log-log slope -0.167
+      L9s/L10s                                            1/4 + O5 admixture          1.112382e+00 6.638559e-01                                                                       log-log slope -1.664
+      L9v/L10v                                            1/4 + O5 admixture          1.430232e+00 4.004062e-01                                                                       log-log slope -0.864
+
+Number of spectral classes (average linkage, Hellinger threshold):
+  all_68: observed: H<0.005:40,H<0.01:37,H<0.02:34,H<0.03:34,H<0.05:31,H<0.1:29,H<0.15:19,H<0.2:17; true_energy: H<0.005:40,H<0.01:37,H<0.02:35,H<0.03:34,H<0.05:31,H<0.1:29,H<0.15:23,H<0.2:17; resolution_x1p5: H<0.005:40,H<0.01:37,H<0.02:34,H<0.03:33,H<0.05:31,H<0.1:29,H<0.15:19,H<0.2:15
+  TableS6_40L: observed: H<0.005:30,H<0.01:27,H<0.02:24,H<0.03:24,H<0.05:22,H<0.1:21,H<0.15:19,H<0.2:16; true_energy: H<0.005:30,H<0.01:27,H<0.02:25,H<0.03:24,H<0.05:22,H<0.1:21,H<0.15:20,H<0.2:16; resolution_x1p5: H<0.005:30,H<0.01:27,H<0.02:24,H<0.03:23,H<0.05:22,H<0.1:21,H<0.15:19,H<0.2:15
+  S6_plus_elastic_S7_44: observed: H<0.005:30,H<0.01:27,H<0.02:24,H<0.03:24,H<0.05:22,H<0.1:21,H<0.15:19,H<0.2:16; true_energy: H<0.005:30,H<0.01:27,H<0.02:25,H<0.03:24,H<0.05:22,H<0.1:21,H<0.15:20,H<0.2:16; resolution_x1p5: H<0.005:30,H<0.01:27,H<0.02:24,H<0.03:23,H<0.05:22,H<0.1:21,H<0.15:19,H<0.2:15
+  compatible_Z>=3.0_at_1TeV: observed: H<0.005:19,H<0.01:17,H<0.02:14,H<0.03:14,H<0.05:13,H<0.1:13,H<0.15:12,H<0.2:10; true_energy: H<0.005:19,H<0.01:17,H<0.02:15,H<0.03:14,H<0.05:13,H<0.1:13,H<0.15:12,H<0.2:10; resolution_x1p5: H<0.005:19,H<0.01:17,H<0.02:14,H<0.03:14,H<0.05:13,H<0.1:13,H<0.15:12,H<0.2:9
+
+Classes at H < 0.02:
+  [L3v] L3v, L17v, O11v
+  [L7v] L7v, O7v
+  [L7s] L7s, O7s
+  [L1v] L1v, L5v, O1v
+  [L1s] L1s, L5s, O1s
+  [L13s] L13s
+  [O8s] O8s
+  [L17s] L3s, L17s, O11s
+  [O12s] O12s
+  [O4s] L15s, L15v, O4s, O4v
+  [L9s] L9s
+  [O5s] O5s
+  [L13v] L13v
+  [O8v] O8v
+  [O12v] O12v
+  [L12s] L12s
+  [O15s] O15s
+  [L12v] L12v
+  [L16v] L16v, O13v
+  [L16s] L16s, O13s
+  [O3s] O3s
+  [L6v] L6v
+  [L6s] L6s
+  [L18s] L18s
+  [L10s] L10s, L10v
+  [L9v] L9v
+  [O5v] O5v
+  [L20s] L4s, L4v, L20s, L20v, O6s, O6v
+  [O15v] O15v
+  [L11s] L11s, L14s, L19s, O9s, O14s
+  [L11v] L11v, L14v, L19v, O9v, O14v
+  [L2v] L2s, L2v, L8s, L8v, O10s, O10v
+  [O3v] O3v
+  [L18v] L18v
+
+Classes at H < 0.05:
+  [L3v] L3v, L17v, O11v
+  [L7s] L7s, L7v, O7s, O7v
+  [L1v] L1v, L5v, O1v
+  [L1s] L1s, L5s, O1s
+  [L13s] L13s, O8s
+  [L17s] L3s, L17s, O11s
+  [O12s] O12s
+  [O4s] L15s, L15v, O4s, O4v
+  [L9s] L9s
+  [O5s] O5s
+  [L13v] L13v
+  [O8v] O8v
+  [O12v] O12v
+  [L12s] L12s
+  [O15s] O15s
+  [L12v] L12v
+  [L16v] L16v, O13v
+  [L16s] L16s, O13s
+  [O3s] O3s
+  [L6v] L6v
+  [L6s] L6s
+  [L18s] L18s
+  [L10s] L10s, L10v
+  [L9v] L9v
+  [O5v] O5v
+  [L20s] L4s, L4v, L20s, L20v, O6s, O6v
+  [O15v] O15v
+  [L11s] L11s, L11v, L14s, L14v, L19s, L19v, O9s, O9v, O14s, O14v
+  [L2v] L2s, L2v, L8s, L8v, O10s, O10v
+  [O3v] O3v
+  [L18v] L18v
+
+Mapping table (selected columns):
+entry                                   NR_reduction                                                               responses  class_H0.02 class_rep_H0.02  H_to_rep     N_lo   N_2p84  Z_pred_P016  Z_LZ_1000  resid_Z_LZ_minus_pred_1000
+  L1s                                             O1                                                                       M            5             L1s         0 2.77e+03 1.66e+09        0.158          0                      -0.158
+  L1v                                             O1                                                                       M            4             L1v         0      473 3.71e+07         1.43        1.3                      -0.135
+  L2s                                            O10                                                              q2 Sigma''           32             L2v   0.00785     2.95       75         3.31          3                      -0.314
+  L2v                                            O10                                                              q2 Sigma''           32             L2v         0     3.02     71.3         3.31        3.1                      -0.209
+  L3s                                 -(mN/mchi) O11                                                                    q2 M            8            L17s  1.05e-08      261      2.1         1.76        1.7                     -0.0589
+  L3v                                 -(mN/mchi) O11                                                                    q2 M            1             L3v         0     34.7   0.0399         2.63        2.6                     -0.0265
+  L4s                                  -(mN/mchi) O6                                                              q4 Sigma''           28            L20s         0    0.397 4.65e-07         3.54        3.1                      -0.441
+  L4v                                  -(mN/mchi) O6                                                              q4 Sigma''           28            L20s   0.00818    0.408 4.41e-07         3.54        3.1                       -0.44
+  L5s                                             O1                                                                       M            5             L1s         0 2.77e+03 1.66e+09        0.158          0                      -0.158
+  L5v                                             O1                                                                       M            4             L1v         0      473 3.71e+07         1.43        1.3                      -0.135
+  L6s                            (q2/2mN2) O1 + 2 O3                               q4 M + q2 Phi'' + q4 Phi''M + q2v2 Sigma'           23             L6s         0     31.8 7.21e+03         2.66        2.6                     -0.0574
+  L6v                            (q2/2mN2) O1 + 2 O3                               q4 M + q2 Phi'' + q4 Phi''M + q2v2 Sigma'           22             L6v         0     1.41      519         3.43        3.3                      -0.132
+  L7s                          -2 O7 + 2(mN/mchi) O9                                        v2 Sigma' + (mN/mchi)2 q2 Sigma'            3             L7s         0     30.9  0.00654         2.67        2.7                      0.0316
+  L7v                          -2 O7 + 2(mN/mchi) O9                                        v2 Sigma' + (mN/mchi)2 q2 Sigma'            2             L7v         0       34  0.00549         2.63        2.7                      0.0666
+  L8s                                         -2 O10                                                              q2 Sigma''           32             L2v   0.00785     2.95      300         3.31          3                      -0.314
+  L8v                                         -2 O10                                                              q2 Sigma''           32             L2v         0     3.02      285         3.31          3                      -0.309
+  L9s (q2/2 mchi mN) O1 - 2 O5 - 2[(q2/mN2) O4 - O6]                            (mN/mchi)2 q4 M + q2v2 (M+Delta) + q4 Sigma'           11             L9s         0     7.79     15.4         3.09          3                     -0.0935
+  L9v (q2/2 mchi mN) O1 - 2 O5 - 2[(q2/mN2) O4 - O6]                            (mN/mchi)2 q4 M + q2v2 (M+Delta) + q4 Sigma'           26             L9v         0    0.691     4.72         3.51        3.2                      -0.306
+ L10s                            4[(q2/mN2) O4 - O6]                                                               q4 Sigma'           25            L10s         0    0.197     3.34         3.57        3.4                      -0.168
+ L10v                            4[(q2/mN2) O4 - O6]                                                               q4 Sigma'           25            L10s    0.0193    0.202     2.54         3.57        3.4                      -0.168
+ L11s                                          -4 O9                                                               q2 Sigma'           30            L11s         0     2.07      112         3.38        3.2                      -0.176
+ L11v                                          -4 O9                                                               q2 Sigma'           31            L11v         0     2.21     86.6         3.37        3.2                      -0.165
+ L12s -4[(q2/mN2) O12 + O15] - (mN/mchi)(q2/mN2) O10 q4 v2 Sigma'' + q4 Phi~' (Sigma', Phi'' cancel) + (mN/mchi)2 q4 Sigma''           16            L12s         0     1.03   0.0491         3.47        3.2                      -0.269
+ L12v -4[(q2/mN2) O12 + O15] - (mN/mchi)(q2/mN2) O10 q4 v2 Sigma'' + q4 Phi~' (Sigma', Phi'' cancel) + (mN/mchi)2 q4 Sigma''           18            L12v         0     1.28   0.0714         3.44        3.2                      -0.244
+ L13s                                    2 O8 - 2 O9                           v2 (M+Delta) + q2 Sigma' - Delta Sigma' cross            6            L13s         0       84  2.1e+03         2.29        2.5                       0.215
+ L13v                                    2 O8 - 2 O9                           v2 (M+Delta) + q2 Sigma' - Delta Sigma' cross           13            L13v         0     6.42      241         3.14          3                      -0.143
+ L14s                                           4 O9                                                               q2 Sigma'           30            L11s         0     2.07      112         3.38        3.1                      -0.276
+ L14v                                           4 O9                                                               q2 Sigma'           31            L11v  1.49e-08     2.21     86.6         3.37        3.1                      -0.265
+ L15s                                          -4 O4                                                        Sigma' + Sigma''           10             O4s         0     27.6 3.24e+04         2.71        2.7                    -0.00755
+ L15v                                          -4 O4                                                        Sigma' + Sigma''           10             O4s   0.00643     28.8 2.93e+04         2.69        2.7                     0.00729
+ L16s                                         -4 O13                                                q2 v2 Sigma'' + q2 Phi~'           20            L16s         0      4.7     1.16         3.22        3.4                       0.183
+ L16v                                         -4 O13                                                q2 v2 Sigma'' + q2 Phi~'           19            L16v         0     9.01     3.66         3.05        3.2                       0.146
+ L17s                                         -2 O11                                                                    q2 M            8            L17s         0      261 9.53e+06         1.76        1.8                      0.0411
+ L17v                                         -2 O11                                                                    q2 M            1             L3v  1.49e-08     34.7 1.81e+05         2.63        2.6                     -0.0265
+ L18s                          -(q2/mN2) O11 + 4 O15                              q6 M + q4 Phi'' + q6 Phi''M + q4 v2 Sigma'           24            L18s         0     4.19      148         3.24        3.1                      -0.142
+ L18v                          -(q2/mN2) O11 + 4 O15                              q6 M + q4 Phi'' + q6 Phi''M + q4 v2 Sigma'           34            L18v         0     0.18     17.3         3.57        2.9                      -0.671
+ L19s                                          4 O14                                                            q2 v2 Sigma'           30            L11s    0.0177     2.35  5.9e-05         3.35          3                      -0.355
+ L19v                                          4 O14                                                            q2 v2 Sigma'           31            L11v     0.018     2.51 4.59e-05         3.34          3                      -0.344
+ L20s                                           4 O6                                                              q4 Sigma''           28            L20s         0    0.397     8.45         3.54        3.2                      -0.341
+ L20v                                           4 O6                                                              q4 Sigma''           28            L20s   0.00818    0.408     8.01         3.54        3.2                       -0.34
+  O1s                                             O1                                                                       M            5             L1s         0 2.77e+03 1.66e+09        0.158          0                      -0.158
+  O1v                                             O1                                                                       M            4             L1v         0      473 3.71e+07         1.43        1.3                      -0.135
+  O3s                                             O3                                      q2 Phi'' + q2v2 Sigma' + q2 Phi''M           21             O3s         0       12 1.46e+03         2.97        NaN                         NaN
+  O3v                                             O3                                      q2 Phi'' + q2v2 Sigma' + q2 Phi''M           33             O3v         0      4.9     90.2         3.21        NaN                         NaN
+  O4s                                             O4                                                        Sigma' + Sigma''           10             O4s         0     27.6 2.03e+03         2.71        2.7                    -0.00755
+  O4v                                             O4                                                        Sigma' + Sigma''           10             O4s   0.00643     28.8 1.83e+03         2.69        2.7                     0.00729
+  O5s                                             O5                                                        q2v2 (M + Delta)           12             O5s         0     14.2     3.77         2.92        NaN                         NaN
+  O5v                                             O5                                                        q2v2 (M + Delta)           27             O5v         0        1    0.969         3.47        NaN                         NaN
+  O6s                                             O6                                                              q4 Sigma''           28            L20s         0    0.397    0.528         3.54        NaN                         NaN
+  O6v                                             O6                                                              q4 Sigma''           28            L20s   0.00818    0.408    0.501         3.54        NaN                         NaN
+  O7s                                             O7                                                               v2 Sigma'            3             L7s    0.0021     31.7  0.00163         2.66        NaN                         NaN
+  O7v                                             O7                                                               v2 Sigma'            2             L7v   0.00202       35  0.00137         2.62        NaN                         NaN
+  O8s                                             O8                                                          v2 (M + Delta)            7             O8s         0      155      525         2.02        NaN                         NaN
+  O8v                                             O8                                                          v2 (M + Delta)           14             O8v         0     8.99     50.9         3.05        NaN                         NaN
+  O9s                                             O9                                                               q2 Sigma'           30            L11s         0     2.07     6.97         3.38        NaN                         NaN
+  O9v                                             O9                                                               q2 Sigma'           31            L11v  1.49e-08     2.21     5.42         3.37        NaN                         NaN
+ O10s                                            O10                                                              q2 Sigma''           32             L2v   0.00785     2.95       75         3.31        NaN                         NaN
+ O10v                                            O10                                                              q2 Sigma''           32             L2v         0     3.02     71.3         3.31        NaN                         NaN
+ O11s                                            O11                                                                    q2 M            8            L17s         0      261 2.38e+06         1.76        NaN                         NaN
+ O11v                                            O11                                                                    q2 M            1             L3v  1.49e-08     34.7 4.53e+04         2.63        NaN                         NaN
+ O12s                                            O12                                   v2 (Sigma' + Sigma'' + Phi'') + Phi~'            9            O12s         0     98.4 3.27e+04         2.22        NaN                         NaN
+ O12v                                            O12                                   v2 (Sigma' + Sigma'' + Phi'') + Phi~'           15            O12v         0     41.1  1.4e+03         2.57        NaN                         NaN
+ O13s                                            O13                                                 q2v2 Sigma'' + q2 Phi~'           20            L16s         0      4.7   0.0725         3.22        NaN                         NaN
+ O13v                                            O13                                                 q2v2 Sigma'' + q2 Phi~'           19            L16v         0     9.01    0.228         3.05        NaN                         NaN
+ O14s                                            O14                                                             q2v2 Sigma'           30            L11s    0.0177     2.35 3.69e-06         3.35        NaN                         NaN
+ O14v                                            O14                                                             q2v2 Sigma'           31            L11v     0.018     2.51 2.87e-06         3.34        NaN                         NaN
+ O15s                                            O15                                                 q4 v2 Sigma' + q4 Phi''           17            O15s         0     1.73     6.38          3.4        NaN                         NaN
+ O15v                                            O15                                                 q4 v2 Sigma' + q4 Phi''           29            O15v         0      0.7    0.654          3.5        NaN                         NaN
+
+Exact pairs (LZ statement) -- analytic coupling ratios and LZ Z scatter:
+     pair operator              coupling_map  ratio_d_a_over_d_b_1TeV  H_numerical                                                                     dZ_100_200_400_1000_4000  max_abs_dZ  rms_dZ_ge100
+  L1s/L5s      O1s                   d1 = d5                  1.00000 0.000000e+00                                                                    [0.0, 0.0, 0.0, 0.0, 0.0]         0.0      0.000000
+  L1v/L5v      O1v                   d1 = d5                  1.00000 0.000000e+00                                  [0.0, 0.0, -0.39999999999999997, 0.0, -0.10000000000000009]         0.4      0.184391
+  L2s/L8s     O10s                 d2 = 2 d8                  2.00000 1.053671e-08                                    [0.10000000000000009, 0.0, 0.0, 0.0, 0.10000000000000009]         0.1      0.063246
+  L2v/L8v     O10v                 d2 = 2 d8                  2.00000 0.000000e+00    [0.0, -0.3999999999999999, 0.10000000000000009, 0.10000000000000009, 0.10000000000000009]         0.4      0.194936
+ L3s/L17s     O11s      d3 = 2 (mchi/mN) d17               2131.57805 1.053671e-08                                  [0.0, 0.0, -0.10000000000000009, -0.10000000000000009, 0.0]         0.1      0.063246
+ L3v/L17v     O11v      d3 = 2 (mchi/mN) d17               2131.57805 1.490116e-08                                                    [0.2, 0.10000000000000009, 0.0, 0.0, 0.0]         0.2      0.100000
+ L4s/L20s      O6s      d4 = 4 (mchi/mN) d20               4263.15610 0.000000e+00 [-0.10000000000000009, 0.0, -0.10000000000000009, -0.10000000000000009, -0.2999999999999998]         0.3      0.154919
+ L4v/L20v      O6v      d4 = 4 (mchi/mN) d20               4263.15610 0.000000e+00 [0.0, 0.10000000000000009, -0.09999999999999964, -0.10000000000000009, -0.19999999999999973]         0.2      0.118322
+L11s/L14s      O9s d11 = d14 (opposite sign)                  1.00000 0.000000e+00    [0.0, 0.10000000000000009, 0.10000000000000009, 0.10000000000000009, 0.10000000000000009]         0.1      0.089443
+L11v/L14v      O9v d11 = d14 (opposite sign)                  1.00000 1.490116e-08                    [0.0, 0.0, 0.10000000000000009, 0.10000000000000009, 0.10000000000000009]         0.1      0.077460
+
+Isoscalar vs isovector per Lagrangian:
+ L  LZ_declares_sv_indistinguishable    H_sv  N3sigma_gauss  same_class_H0p02  same_class_H0p05  Z_LZ_1000_s  Z_LZ_1000_v   N_lo_s  N_lo_v  rate_ratio_v_over_s_200_270
+ 1                             False   0.135             94             False             False            0          1.3 2.77e+03     473                        0.128
+ 2                              True 0.00785       1.86e+04              True              True            3          3.1     2.95    3.02                        0.917
+ 3                             False    0.23           27.2             False             False          1.7          2.6      261    34.7                        0.143
+ 4                              True 0.00818       1.71e+04              True              True          3.1          3.1    0.397   0.408                        0.917
+ 5                             False   0.135             94             False             False            0          1.3 2.77e+03     473                        0.128
+ 6                             False   0.387           10.7             False             False          2.6          3.3     31.8    1.41                         1.14
+ 7                              True  0.0301        1.4e+03             False              True          2.7          2.7     30.9      34                        0.774
+ 8                              True 0.00785       1.86e+04              True              True            3            3     2.95    3.02                        0.917
+ 9                             False   0.377           7.06             False             False            3          3.2     7.79   0.691                         1.05
+10                              True  0.0193       3.24e+03              True              True          3.4          3.4    0.197   0.202                        0.778
+11                              True  0.0317       1.18e+03             False              True          3.2          3.2     2.07    2.21                        0.776
+12                             False    0.24           20.5             False             False          3.2          3.2     1.03    1.28                         0.95
+13                             False    0.31           17.8             False             False          2.5            3       84    6.42                         1.05
+14                              True  0.0317       1.18e+03             False              True          3.1          3.1     2.07    2.21                        0.776
+15                              True 0.00643       2.78e+04              True              True          2.7          2.7     27.6    28.8                        0.861
+16                             False   0.249           22.4             False             False          3.4          3.2      4.7    9.01                         1.35
+17                             False    0.23           27.2             False             False          1.8          2.6      261    34.7                        0.143
+18                             False   0.522           3.43             False             False          3.1          2.9     4.19    0.18                          1.2
+19                              True  0.0323       1.14e+03             False              True            3            3     2.35    2.51                        0.776
+20                              True 0.00818       1.71e+04              True              True          3.2          3.2    0.397   0.408                        0.917
+
+Sign variants of interfering Lagrangians:
+model flipped_operator  H_base_vs_flip  N_lo_base  N_lo_flip  R_hi_flip_over_base  Z_pred_base  Z_pred_flip  Z_LZ_1000
+  L6s               O3           0.272       31.8       23.7                 9.85         2.66         2.76        2.6
+  L6v               O3            0.43       1.41       12.5                0.247         3.43         2.96        3.3
+  L9s               O5            0.11       7.79       14.5                0.539         3.09         2.92          3
+  L9v               O5           0.215      0.691       1.11                0.421         3.51         3.46        3.2
+ L12s              O15           0.105       1.03       1.73             5.58e+03         3.47          3.4        3.2
+ L12v              O15           0.418       1.28      0.702                  470         3.44          3.5        3.2
+ L13s               O9           0.055         84        158                0.532         2.29         2.01        2.5
+ L13v               O9           0.192       6.42        9.7                0.413         3.14         3.03          3
+ L18s              O15           0.345       4.19       3.41                 9.71         3.24         3.29        3.1
+ L18v              O15           0.535       0.18       1.42                0.259         3.57         3.43        2.9
+
+Table S6 vs P016-curve prediction from N_lo: rms 0.25 sigma, max 0.67; worst ['L18v', 'L4s', 'L4v', 'L19s', 'L19v', 'L20s']
+
+Z regression over 40 entries: log N_lo only rms 0.38; + log p248 rms 0.26; coefficients [5.94288198 0.21257045 1.05087631]
+  largest two-variable residuals: L18v:-0.73, L17s:+0.50, L1v:-0.48, L5v:-0.48, L18s:+0.43, L1s:-0.40
+
+Spectral ratios (log-log slope over 20-400 keV, rms about power law, ratio at 248 keV):
+  L12s/L20s: slope -0.634, rms 0.4597 dex, ratio(248) 0.0065
+  L12v/L20v: slope -1.039, rms 0.4259 dex, ratio(248) 0.009044
+  L19s/L11s: slope -0.063, rms 0.0047 dex, ratio(248) 4.874e-07
+  L16s/L2s: slope -0.313, rms 0.5463 dex, ratio(248) 0.01792
+  L16s/L20s: slope -1.313, rms 0.5467 dex, ratio(248) 0.06459
+  L9s/L10s: slope -1.885, rms 0.2730 dex, ratio(248) 1.207
+  L9v/L10v: slope -0.821, rms 0.1825 dex, ratio(248) 1.653
+  L18s/L3s: slope +2.290, rms 0.4891 dex, ratio(248) 786.3
+  L6s/O3s: slope +0.269, rms 0.8217 dex, ratio(248) 1.241
+  L6v/O3v: slope +0.628, rms 0.7235 dex, ratio(248) 66.97
+  L7s/O7s: slope +0.013, rms 0.0013 dex, ratio(248) 4.125
+  L13s/O8s: slope +0.367, rms 0.1460 dex, ratio(248) 7.321
+  L13v/O9v: slope -0.812, rms 0.1823 dex, ratio(248) 25.85
+  L16s/L16v: slope +0.794, rms 0.6871 dex, ratio(248) 0.534
+  L12s/L12v: slope +0.424, rms 0.4934 dex, ratio(248) 0.7856
+
+Done. Elapsed 239 s
+
+===== run 2026-09-16 16:40:51 =====
+79 spectra available (56 cached files)
+
+Closure checks:
+          pair                                          predicted_rate_ratio  wimpydd_ratio_median  rel_scatter                                                                                       note
+      L3s/O11s                                                      0.000001          8.803543e-07 2.901573e-16                                                                                        NaN
+      L8s/O10s                                                           4.0          4.000000e+00 0.000000e+00                                                                                        NaN
+      L20s/O6s                                                          16.0          1.600000e+01 0.000000e+00                                                                                        NaN
+L10s_full/L10s                                                           1.0          1.000001e+00 4.448029e-06 max |deviation| over 10-400 keV: size of the dropped (q^4/4 mchi mN mM^2) O1 term at 1 TeV
+L12s_flip/L12s >>1 if Sigma-prime/Phi-doubleprime cancel in the derived sign          5.400955e+03 4.569209e-01                                                                                        NaN
+      L12s/O6s                    slowly varying (<v_perp^2> + Phi~/Sigma'')          6.922207e-02 3.866224e-01                                                                       log-log slope -0.580
+L12v_flip/L12v >>1 if Sigma-prime/Phi-doubleprime cancel in the derived sign          2.175273e+02 7.146476e-01                                                                                        NaN
+      L12v/O6v                    slowly varying (<v_perp^2> + Phi~/Sigma'')          2.029636e-01 4.486025e-01                                                                       log-log slope -0.167
+      L9s/L10s                                            1/4 + O5 admixture          1.112382e+00 6.638559e-01                                                                       log-log slope -1.664
+      L9v/L10v                                            1/4 + O5 admixture          1.430232e+00 4.004062e-01                                                                       log-log slope -0.864
+
+Number of spectral classes (average linkage, Hellinger threshold):
+  all_68: observed: H<0.005:40,H<0.01:37,H<0.02:34,H<0.03:34,H<0.05:31,H<0.1:29,H<0.15:19,H<0.2:17; true_energy: H<0.005:40,H<0.01:37,H<0.02:35,H<0.03:34,H<0.05:31,H<0.1:29,H<0.15:23,H<0.2:17; resolution_x1p5: H<0.005:40,H<0.01:37,H<0.02:34,H<0.03:33,H<0.05:31,H<0.1:29,H<0.15:19,H<0.2:15
+  TableS6_40L: observed: H<0.005:30,H<0.01:27,H<0.02:24,H<0.03:24,H<0.05:22,H<0.1:21,H<0.15:19,H<0.2:16; true_energy: H<0.005:30,H<0.01:27,H<0.02:25,H<0.03:24,H<0.05:22,H<0.1:21,H<0.15:20,H<0.2:16; resolution_x1p5: H<0.005:30,H<0.01:27,H<0.02:24,H<0.03:23,H<0.05:22,H<0.1:21,H<0.15:19,H<0.2:15
+  S6_plus_elastic_S7_44: observed: H<0.005:30,H<0.01:27,H<0.02:24,H<0.03:24,H<0.05:22,H<0.1:21,H<0.15:19,H<0.2:16; true_energy: H<0.005:30,H<0.01:27,H<0.02:25,H<0.03:24,H<0.05:22,H<0.1:21,H<0.15:20,H<0.2:16; resolution_x1p5: H<0.005:30,H<0.01:27,H<0.02:24,H<0.03:23,H<0.05:22,H<0.1:21,H<0.15:19,H<0.2:15
+  compatible_Z>=3.0_at_1TeV: observed: H<0.005:19,H<0.01:17,H<0.02:14,H<0.03:14,H<0.05:13,H<0.1:13,H<0.15:12,H<0.2:10; true_energy: H<0.005:19,H<0.01:17,H<0.02:15,H<0.03:14,H<0.05:13,H<0.1:13,H<0.15:12,H<0.2:10; resolution_x1p5: H<0.005:19,H<0.01:17,H<0.02:14,H<0.03:14,H<0.05:13,H<0.1:13,H<0.15:12,H<0.2:9
+
+Classes at H < 0.02:
+  [L3v] L3v, L17v, O11v
+  [L7v] L7v, O7v
+  [L7s] L7s, O7s
+  [L1v] L1v, L5v, O1v
+  [L1s] L1s, L5s, O1s
+  [L13s] L13s
+  [O8s] O8s
+  [L17s] L3s, L17s, O11s
+  [O12s] O12s
+  [O4s] L15s, L15v, O4s, O4v
+  [L9s] L9s
+  [O5s] O5s
+  [L13v] L13v
+  [O8v] O8v
+  [O12v] O12v
+  [L12s] L12s
+  [O15s] O15s
+  [L12v] L12v
+  [L16v] L16v, O13v
+  [L16s] L16s, O13s
+  [O3s] O3s
+  [L6v] L6v
+  [L6s] L6s
+  [L18s] L18s
+  [L10s] L10s, L10v
+  [L9v] L9v
+  [O5v] O5v
+  [L20s] L4s, L4v, L20s, L20v, O6s, O6v
+  [O15v] O15v
+  [L11s] L11s, L14s, L19s, O9s, O14s
+  [L11v] L11v, L14v, L19v, O9v, O14v
+  [L2v] L2s, L2v, L8s, L8v, O10s, O10v
+  [O3v] O3v
+  [L18v] L18v
+
+Classes at H < 0.05:
+  [L3v] L3v, L17v, O11v
+  [L7s] L7s, L7v, O7s, O7v
+  [L1v] L1v, L5v, O1v
+  [L1s] L1s, L5s, O1s
+  [L13s] L13s, O8s
+  [L17s] L3s, L17s, O11s
+  [O12s] O12s
+  [O4s] L15s, L15v, O4s, O4v
+  [L9s] L9s
+  [O5s] O5s
+  [L13v] L13v
+  [O8v] O8v
+  [O12v] O12v
+  [L12s] L12s
+  [O15s] O15s
+  [L12v] L12v
+  [L16v] L16v, O13v
+  [L16s] L16s, O13s
+  [O3s] O3s
+  [L6v] L6v
+  [L6s] L6s
+  [L18s] L18s
+  [L10s] L10s, L10v
+  [L9v] L9v
+  [O5v] O5v
+  [L20s] L4s, L4v, L20s, L20v, O6s, O6v
+  [O15v] O15v
+  [L11s] L11s, L11v, L14s, L14v, L19s, L19v, O9s, O9v, O14s, O14v
+  [L2v] L2s, L2v, L8s, L8v, O10s, O10v
+  [O3v] O3v
+  [L18v] L18v
+
+Mapping table (selected columns):
+entry                                   NR_reduction                                                               responses  class_H0.02 class_rep_H0.02  H_to_rep     N_lo   N_2p84  Z_pred_P016  Z_LZ_1000  resid_Z_LZ_minus_pred_1000
+  L1s                                             O1                                                                       M            5             L1s         0 2.77e+03 1.66e+09        0.158          0                      -0.158
+  L1v                                             O1                                                                       M            4             L1v         0      473 3.71e+07         1.43        1.3                      -0.135
+  L2s                                            O10                                                              q2 Sigma''           32             L2v   0.00785     2.95       75         3.31          3                      -0.314
+  L2v                                            O10                                                              q2 Sigma''           32             L2v         0     3.02     71.3         3.31        3.1                      -0.209
+  L3s                                 -(mN/mchi) O11                                                                    q2 M            8            L17s  1.05e-08      261      2.1         1.76        1.7                     -0.0589
+  L3v                                 -(mN/mchi) O11                                                                    q2 M            1             L3v         0     34.7   0.0399         2.63        2.6                     -0.0265
+  L4s                                  -(mN/mchi) O6                                                              q4 Sigma''           28            L20s         0    0.397 4.65e-07         3.54        3.1                      -0.441
+  L4v                                  -(mN/mchi) O6                                                              q4 Sigma''           28            L20s   0.00818    0.408 4.41e-07         3.54        3.1                       -0.44
+  L5s                                             O1                                                                       M            5             L1s         0 2.77e+03 1.66e+09        0.158          0                      -0.158
+  L5v                                             O1                                                                       M            4             L1v         0      473 3.71e+07         1.43        1.3                      -0.135
+  L6s                            (q2/2mN2) O1 + 2 O3                               q4 M + q2 Phi'' + q4 Phi''M + q2v2 Sigma'           23             L6s         0     31.8 7.21e+03         2.66        2.6                     -0.0574
+  L6v                            (q2/2mN2) O1 + 2 O3                               q4 M + q2 Phi'' + q4 Phi''M + q2v2 Sigma'           22             L6v         0     1.41      519         3.43        3.3                      -0.132
+  L7s                          -2 O7 + 2(mN/mchi) O9                                        v2 Sigma' + (mN/mchi)2 q2 Sigma'            3             L7s         0     30.9  0.00654         2.67        2.7                      0.0316
+  L7v                          -2 O7 + 2(mN/mchi) O9                                        v2 Sigma' + (mN/mchi)2 q2 Sigma'            2             L7v         0       34  0.00549         2.63        2.7                      0.0666
+  L8s                                         -2 O10                                                              q2 Sigma''           32             L2v   0.00785     2.95      300         3.31          3                      -0.314
+  L8v                                         -2 O10                                                              q2 Sigma''           32             L2v         0     3.02      285         3.31          3                      -0.309
+  L9s (q2/2 mchi mN) O1 - 2 O5 - 2[(q2/mN2) O4 - O6]                            (mN/mchi)2 q4 M + q2v2 (M+Delta) + q4 Sigma'           11             L9s         0     7.79     15.4         3.09          3                     -0.0935
+  L9v (q2/2 mchi mN) O1 - 2 O5 - 2[(q2/mN2) O4 - O6]                            (mN/mchi)2 q4 M + q2v2 (M+Delta) + q4 Sigma'           26             L9v         0    0.691     4.72         3.51        3.2                      -0.306
+ L10s                            4[(q2/mN2) O4 - O6]                                                               q4 Sigma'           25            L10s         0    0.197     3.34         3.57        3.4                      -0.168
+ L10v                            4[(q2/mN2) O4 - O6]                                                               q4 Sigma'           25            L10s    0.0193    0.202     2.54         3.57        3.4                      -0.168
+ L11s                                          -4 O9                                                               q2 Sigma'           30            L11s         0     2.07      112         3.38        3.2                      -0.176
+ L11v                                          -4 O9                                                               q2 Sigma'           31            L11v         0     2.21     86.6         3.37        3.2                      -0.165
+ L12s -4[(q2/mN2) O12 + O15] - (mN/mchi)(q2/mN2) O10 q4 v2 Sigma'' + q4 Phi~' (Sigma', Phi'' cancel) + (mN/mchi)2 q4 Sigma''           16            L12s         0     1.03   0.0491         3.47        3.2                      -0.269
+ L12v -4[(q2/mN2) O12 + O15] - (mN/mchi)(q2/mN2) O10 q4 v2 Sigma'' + q4 Phi~' (Sigma', Phi'' cancel) + (mN/mchi)2 q4 Sigma''           18            L12v         0     1.28   0.0714         3.44        3.2                      -0.244
+ L13s                                    2 O8 - 2 O9                           v2 (M+Delta) + q2 Sigma' - Delta Sigma' cross            6            L13s         0       84  2.1e+03         2.29        2.5                       0.215
+ L13v                                    2 O8 - 2 O9                           v2 (M+Delta) + q2 Sigma' - Delta Sigma' cross           13            L13v         0     6.42      241         3.14          3                      -0.143
+ L14s                                           4 O9                                                               q2 Sigma'           30            L11s         0     2.07      112         3.38        3.1                      -0.276
+ L14v                                           4 O9                                                               q2 Sigma'           31            L11v  1.49e-08     2.21     86.6         3.37        3.1                      -0.265
+ L15s                                          -4 O4                                                        Sigma' + Sigma''           10             O4s         0     27.6 3.24e+04         2.71        2.7                    -0.00755
+ L15v                                          -4 O4                                                        Sigma' + Sigma''           10             O4s   0.00643     28.8 2.93e+04         2.69        2.7                     0.00729
+ L16s                                         -4 O13                                                q2 v2 Sigma'' + q2 Phi~'           20            L16s         0      4.7     1.16         3.22        3.4                       0.183
+ L16v                                         -4 O13                                                q2 v2 Sigma'' + q2 Phi~'           19            L16v         0     9.01     3.66         3.05        3.2                       0.146
+ L17s                                         -2 O11                                                                    q2 M            8            L17s         0      261 9.53e+06         1.76        1.8                      0.0411
+ L17v                                         -2 O11                                                                    q2 M            1             L3v  1.49e-08     34.7 1.81e+05         2.63        2.6                     -0.0265
+ L18s                          -(q2/mN2) O11 + 4 O15                              q6 M + q4 Phi'' + q6 Phi''M + q4 v2 Sigma'           24            L18s         0     4.19      148         3.24        3.1                      -0.142
+ L18v                          -(q2/mN2) O11 + 4 O15                              q6 M + q4 Phi'' + q6 Phi''M + q4 v2 Sigma'           34            L18v         0     0.18     17.3         3.57        2.9                      -0.671
+ L19s                                          4 O14                                                            q2 v2 Sigma'           30            L11s    0.0177     2.35  5.9e-05         3.35          3                      -0.355
+ L19v                                          4 O14                                                            q2 v2 Sigma'           31            L11v     0.018     2.51 4.59e-05         3.34          3                      -0.344
+ L20s                                           4 O6                                                              q4 Sigma''           28            L20s         0    0.397     8.45         3.54        3.2                      -0.341
+ L20v                                           4 O6                                                              q4 Sigma''           28            L20s   0.00818    0.408     8.01         3.54        3.2                       -0.34
+  O1s                                             O1                                                                       M            5             L1s         0 2.77e+03 1.66e+09        0.158          0                      -0.158
+  O1v                                             O1                                                                       M            4             L1v         0      473 3.71e+07         1.43        1.3                      -0.135
+  O3s                                             O3                                      q2 Phi'' + q2v2 Sigma' + q2 Phi''M           21             O3s         0       12 1.46e+03         2.97        NaN                         NaN
+  O3v                                             O3                                      q2 Phi'' + q2v2 Sigma' + q2 Phi''M           33             O3v         0      4.9     90.2         3.21        NaN                         NaN
+  O4s                                             O4                                                        Sigma' + Sigma''           10             O4s         0     27.6 2.03e+03         2.71        2.7                    -0.00755
+  O4v                                             O4                                                        Sigma' + Sigma''           10             O4s   0.00643     28.8 1.83e+03         2.69        2.7                     0.00729
+  O5s                                             O5                                                        q2v2 (M + Delta)           12             O5s         0     14.2     3.77         2.92        NaN                         NaN
+  O5v                                             O5                                                        q2v2 (M + Delta)           27             O5v         0        1    0.969         3.47        NaN                         NaN
+  O6s                                             O6                                                              q4 Sigma''           28            L20s         0    0.397    0.528         3.54        NaN                         NaN
+  O6v                                             O6                                                              q4 Sigma''           28            L20s   0.00818    0.408    0.501         3.54        NaN                         NaN
+  O7s                                             O7                                                               v2 Sigma'            3             L7s    0.0021     31.7  0.00163         2.66        NaN                         NaN
+  O7v                                             O7                                                               v2 Sigma'            2             L7v   0.00202       35  0.00137         2.62        NaN                         NaN
+  O8s                                             O8                                                          v2 (M + Delta)            7             O8s         0      155      525         2.02        NaN                         NaN
+  O8v                                             O8                                                          v2 (M + Delta)           14             O8v         0     8.99     50.9         3.05        NaN                         NaN
+  O9s                                             O9                                                               q2 Sigma'           30            L11s         0     2.07     6.97         3.38        NaN                         NaN
+  O9v                                             O9                                                               q2 Sigma'           31            L11v  1.49e-08     2.21     5.42         3.37        NaN                         NaN
+ O10s                                            O10                                                              q2 Sigma''           32             L2v   0.00785     2.95       75         3.31        NaN                         NaN
+ O10v                                            O10                                                              q2 Sigma''           32             L2v         0     3.02     71.3         3.31        NaN                         NaN
+ O11s                                            O11                                                                    q2 M            8            L17s         0      261 2.38e+06         1.76        NaN                         NaN
+ O11v                                            O11                                                                    q2 M            1             L3v  1.49e-08     34.7 4.53e+04         2.63        NaN                         NaN
+ O12s                                            O12                                   v2 (Sigma' + Sigma'' + Phi'') + Phi~'            9            O12s         0     98.4 3.27e+04         2.22        NaN                         NaN
+ O12v                                            O12                                   v2 (Sigma' + Sigma'' + Phi'') + Phi~'           15            O12v         0     41.1  1.4e+03         2.57        NaN                         NaN
+ O13s                                            O13                                                 q2v2 Sigma'' + q2 Phi~'           20            L16s         0      4.7   0.0725         3.22        NaN                         NaN
+ O13v                                            O13                                                 q2v2 Sigma'' + q2 Phi~'           19            L16v         0     9.01    0.228         3.05        NaN                         NaN
+ O14s                                            O14                                                             q2v2 Sigma'           30            L11s    0.0177     2.35 3.69e-06         3.35        NaN                         NaN
+ O14v                                            O14                                                             q2v2 Sigma'           31            L11v     0.018     2.51 2.87e-06         3.34        NaN                         NaN
+ O15s                                            O15                                                 q4 v2 Sigma' + q4 Phi''           17            O15s         0     1.73     6.38          3.4        NaN                         NaN
+ O15v                                            O15                                                 q4 v2 Sigma' + q4 Phi''           29            O15v         0      0.7    0.654          3.5        NaN                         NaN
+
+Exact pairs (LZ statement) -- analytic coupling ratios and LZ Z scatter:
+     pair operator              coupling_map  ratio_d_a_over_d_b_1TeV  H_numerical                                                                     dZ_100_200_400_1000_4000  max_abs_dZ  rms_dZ_ge100
+  L1s/L5s      O1s                   d1 = d5                  1.00000 0.000000e+00                                                                    [0.0, 0.0, 0.0, 0.0, 0.0]         0.0      0.000000
+  L1v/L5v      O1v                   d1 = d5                  1.00000 0.000000e+00                                  [0.0, 0.0, -0.39999999999999997, 0.0, -0.10000000000000009]         0.4      0.184391
+  L2s/L8s     O10s                 d2 = 2 d8                  2.00000 1.053671e-08                                    [0.10000000000000009, 0.0, 0.0, 0.0, 0.10000000000000009]         0.1      0.063246
+  L2v/L8v     O10v                 d2 = 2 d8                  2.00000 0.000000e+00    [0.0, -0.3999999999999999, 0.10000000000000009, 0.10000000000000009, 0.10000000000000009]         0.4      0.194936
+ L3s/L17s     O11s      d3 = 2 (mchi/mN) d17               2131.57805 1.053671e-08                                  [0.0, 0.0, -0.10000000000000009, -0.10000000000000009, 0.0]         0.1      0.063246
+ L3v/L17v     O11v      d3 = 2 (mchi/mN) d17               2131.57805 1.490116e-08                                                    [0.2, 0.10000000000000009, 0.0, 0.0, 0.0]         0.2      0.100000
+ L4s/L20s      O6s      d4 = 4 (mchi/mN) d20               4263.15610 0.000000e+00 [-0.10000000000000009, 0.0, -0.10000000000000009, -0.10000000000000009, -0.2999999999999998]         0.3      0.154919
+ L4v/L20v      O6v      d4 = 4 (mchi/mN) d20               4263.15610 0.000000e+00 [0.0, 0.10000000000000009, -0.09999999999999964, -0.10000000000000009, -0.19999999999999973]         0.2      0.118322
+L11s/L14s      O9s d11 = d14 (opposite sign)                  1.00000 0.000000e+00    [0.0, 0.10000000000000009, 0.10000000000000009, 0.10000000000000009, 0.10000000000000009]         0.1      0.089443
+L11v/L14v      O9v d11 = d14 (opposite sign)                  1.00000 1.490116e-08                    [0.0, 0.0, 0.10000000000000009, 0.10000000000000009, 0.10000000000000009]         0.1      0.077460
+
+Isoscalar vs isovector per Lagrangian:
+ L  LZ_declares_sv_indistinguishable    H_sv  N3sigma_gauss  same_class_H0p02  same_class_H0p05  Z_LZ_1000_s  Z_LZ_1000_v   N_lo_s  N_lo_v  rate_ratio_v_over_s_200_270
+ 1                             False   0.135             94             False             False            0          1.3 2.77e+03     473                        0.128
+ 2                              True 0.00785       1.86e+04              True              True            3          3.1     2.95    3.02                        0.917
+ 3                             False    0.23           27.2             False             False          1.7          2.6      261    34.7                        0.143
+ 4                              True 0.00818       1.71e+04              True              True          3.1          3.1    0.397   0.408                        0.917
+ 5                             False   0.135             94             False             False            0          1.3 2.77e+03     473                        0.128
+ 6                             False   0.387           10.7             False             False          2.6          3.3     31.8    1.41                         1.14
+ 7                              True  0.0301        1.4e+03             False              True          2.7          2.7     30.9      34                        0.774
+ 8                              True 0.00785       1.86e+04              True              True            3            3     2.95    3.02                        0.917
+ 9                             False   0.377           7.06             False             False            3          3.2     7.79   0.691                         1.05
+10                              True  0.0193       3.24e+03              True              True          3.4          3.4    0.197   0.202                        0.778
+11                              True  0.0317       1.18e+03             False              True          3.2          3.2     2.07    2.21                        0.776
+12                             False    0.24           20.5             False             False          3.2          3.2     1.03    1.28                         0.95
+13                             False    0.31           17.8             False             False          2.5            3       84    6.42                         1.05
+14                              True  0.0317       1.18e+03             False              True          3.1          3.1     2.07    2.21                        0.776
+15                              True 0.00643       2.78e+04              True              True          2.7          2.7     27.6    28.8                        0.861
+16                             False   0.249           22.4             False             False          3.4          3.2      4.7    9.01                         1.35
+17                             False    0.23           27.2             False             False          1.8          2.6      261    34.7                        0.143
+18                             False   0.522           3.43             False             False          3.1          2.9     4.19    0.18                          1.2
+19                              True  0.0323       1.14e+03             False              True            3            3     2.35    2.51                        0.776
+20                              True 0.00818       1.71e+04              True              True          3.2          3.2    0.397   0.408                        0.917
+
+Sign variants of interfering Lagrangians:
+model flipped_operator  H_base_vs_flip  N_lo_base  N_lo_flip  R_hi_flip_over_base  Z_pred_base  Z_pred_flip  Z_LZ_1000
+  L6s               O3           0.272       31.8       23.7                 9.85         2.66         2.76        2.6
+  L6v               O3            0.43       1.41       12.5                0.247         3.43         2.96        3.3
+  L9s               O5            0.11       7.79       14.5                0.539         3.09         2.92          3
+  L9v               O5           0.215      0.691       1.11                0.421         3.51         3.46        3.2
+ L12s              O15           0.105       1.03       1.73             5.58e+03         3.47          3.4        3.2
+ L12v              O15           0.418       1.28      0.702                  470         3.44          3.5        3.2
+ L13s               O9           0.055         84        158                0.532         2.29         2.01        2.5
+ L13v               O9           0.192       6.42        9.7                0.413         3.14         3.03          3
+ L18s              O15           0.345       4.19       3.41                 9.71         3.24         3.29        3.1
+ L18v              O15           0.535       0.18       1.42                0.259         3.57         3.43        2.9
+
+Table S6 vs P016-curve prediction from N_lo: rms 0.25 sigma, max 0.67; worst ['L18v', 'L4s', 'L4v', 'L19s', 'L19v', 'L20s']
+
+Z regression over 40 entries: log N_lo only rms 0.38; + log p248 rms 0.26; coefficients [5.94288198 0.21257045 1.05087631]
+  largest two-variable residuals: L18v:-0.73, L17s:+0.50, L1v:-0.48, L5v:-0.48, L18s:+0.43, L1s:-0.40
+
+Spectral ratios (log-log slope over 20-400 keV, rms about power law, ratio at 248 keV):
+  L12s/L20s: slope -0.634, rms 0.4597 dex, ratio(248) 0.0065
+  L12v/L20v: slope -1.039, rms 0.4259 dex, ratio(248) 0.009044
+  L19s/L11s: slope -0.063, rms 0.0047 dex, ratio(248) 4.874e-07
+  L16s/L2s: slope -0.313, rms 0.5463 dex, ratio(248) 0.01792
+  L16s/L20s: slope -1.313, rms 0.5467 dex, ratio(248) 0.06459
+  L9s/L10s: slope -1.885, rms 0.2730 dex, ratio(248) 1.207
+  L9v/L10v: slope -0.821, rms 0.1825 dex, ratio(248) 1.653
+  L18s/L3s: slope +2.290, rms 0.4891 dex, ratio(248) 786.3
+  L6s/O3s: slope +0.269, rms 0.8217 dex, ratio(248) 1.241
+  L6v/O3v: slope +0.628, rms 0.7235 dex, ratio(248) 66.97
+  L7s/O7s: slope +0.013, rms 0.0013 dex, ratio(248) 4.125
+  L13s/O8s: slope +0.367, rms 0.1460 dex, ratio(248) 7.321
+  L13v/O9v: slope -0.812, rms 0.1823 dex, ratio(248) 25.85
+  L16s/L16v: slope +0.794, rms 0.6871 dex, ratio(248) 0.534
+  L12s/L12v: slope +0.424, rms 0.4934 dex, ratio(248) 0.7856
+
+Done. Elapsed 1 s

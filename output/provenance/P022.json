@@ -1,0 +1,54 @@
+{
+ "id": "P022",
+ "title": "Accidental coincidences at high S1: could an isolated 540 phd S1 and a 270-electron S2 fake the LZ event?",
+ "date": "2026-09-08",
+ "agent_tools": [
+  {"tool": "Read", "count": 22, "detail": "output/provenance/PAPER_GUIDE.md; output/00_evidence_dossier.md; output/results_ledger.csv; output/papers/P004.md, P010.md, P013.md, P016.md; output/code/P004_wall_mssi.py; output/work/P004/P004_fig5_digitised.csv; inputs/LZ_arXiv_2609.02823_fulltext.tex lines 84-203, 220-334, 436-449, 515-584, 690-712; output/work/P010/details.md lines 112-127; inputs/figures_png/FigS3a_accs_baseline.png, FigS3b_accs_all_cuts.png, Fig5_NR_distance_3panels_no_sig.png, Fig3_roi_events_in_fv.png; output/work/P022/figures/P022_fig5_accidentals_digitised.png, P022_figS3_rates_and_k.png"},
+  {"tool": "Bash", "count": 15, "detail": "grep -n -i accidental/spurious/UDT/PDT in fulltext.tex + ls inputs/figures_png output/work/P004 output/code; grep lzcommon constants + PIL image sizes + package versions; scratchpad explore.py (frame detection, three PNGs); sed/head of lzcommon, P004.json, P004 details, ledger row; scratchpad ticks.py (tick marks, dominant colours); viridis probe + grep P013/P010 details + versions; scratchpad ticks2.py (log S2c ticks, colour-bar probe, 2D cell grid); scratchpad cb.py (colour-bar ticks, black data dots); .venv/bin/python output/code/P022_accidentals.py (run 1); run 2 (failed on ordering) + JSON print; run 3 (final) + JSON print + ls; grep P004 details sections + P013.json format; final run with log redirect; wc -w budget checks (x4)"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P022_accidentals.py; output/work/P022/details.md; output/provenance/P022.json; output/papers/P022.md"},
+  {"tool": "Edit", "count": 16, "detail": "P022_accidentals.py (7): Fig. 3 z-tick filtering by regular spacing; factorisation block restructured around the pre-cut UDT sample; RFR enhancement-needed entries; k-required Poisson exclusion block; dropped an ill-defined S2 fraction; moved N_nb range ahead of its use (2). P022.md (9): STANCE line to an allowed value; Results/headline/key numbers/conclusion trimmed to the word budget in three passes"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "array arithmetic, interp, polyfit/polyval, nanmedian, nansum, where, unique"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats.poisson (implicit via exp), stats.gamma.ppf (Poisson intervals), stats.norm.isf, ndimage.label, ndimage.center_of_mass, ndimage.sum"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; colormaps['viridis'] for colour-to-value inversion; step/plot/fill_between figures"},
+  {"name": "Pillow", "version": "12.3.0", "functions": "PIL.Image.open/convert('RGB') pixel access for digitisation"},
+  {"name": "nestpy", "version": "2.1.1", "functions": "via lzcommon.nest_er_yields / nest_nr_yields (LZ_WS2024 detector, LZ-tuned beta and NR parameters)"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ constants dict (live days, exposure, g1, g2, event coordinates, ROI, Table I numbers), nest_er_yields, nest_nr_yields"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P022_accidentals.py", "purpose": "digitise Fig. 5 (three panels, accidentals and total), Fig. S3a/b (projections, UDT data points, viridis 2D map column at S1c 500-600), Fig. 3 drift axis; factorised rates; RFR ER-rate estimate; S2-width arithmetic; mismodelling factor k and UDT Poisson exclusion; two figures; JSON/CSV tables", "command": ".venv/bin/python output/code/P022_accidentals.py > output/work/P022/run_log.txt 2>&1"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Data Analysis (ROI, FV, g1/g2, drift, RFR), accidentals paragraph (l.180-182), Table I, Fig. 3/5/S1/S3 captions, Discussion (l.296-327), Tables S1-S2 accidentals rows, supplement Accidental backgrounds (l.697-708), waveform analysis (l.690-695)"},
+  {"file": "inputs/figures_png/Fig5_NR_distance_3panels_no_sig.png", "parts_used": "pixel digitisation of the yellow accidentals and blue total histograms in all three panels"},
+  {"file": "inputs/figures_png/FigS3a_accs_baseline.png", "parts_used": "S1c and log10 S2c projections (model line, UDT data dots), colour bar, 2D map column S1c 500-600"},
+  {"file": "inputs/figures_png/FigS3b_accs_all_cuts.png", "parts_used": "same as S3a, after all cuts"},
+  {"file": "inputs/figures_png/Fig3_roi_events_in_fv.png", "parts_used": "z and drift-time axis ticks -> T_max = 1049 us, t_event = 859 us"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "sections 2, 4, 5 (explanation E), 6"},
+  {"file": "output/results_ledger.csv", "parts_used": "P001-P020 headline results"},
+  {"file": "output/papers/P004.md; output/code/P004_wall_mssi.py; output/work/P004/P004_fig5_digitised.csv", "parts_used": "Fig. 5 digitisation method and bottom-panel calibration; MSSI neighbourhood fraction; k-required/k-allowed framing"},
+  {"file": "output/papers/P010.md; output/work/P010/details.md", "parts_used": "ROI flat-ER acceptance 19.4 keV (85 events per keVee in 2.84 t yr); band-width calibration"},
+  {"file": "output/papers/P013.md; output/papers/P016.md", "parts_used": "excluded-background context; Fig. 5 top-panel usage"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "LZ dict, nest_er_yields, nest_nr_yields"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "LZ gate-cathode drift length 145.6 cm", "presumed_source": "LZ TDR / instrument paper", "reliability": "likely"},
+  {"item": "LZ active radius 72.8 cm (145.6 cm diameter)", "presumed_source": "LZ instrument paper", "reliability": "likely"},
+  {"item": "LZ active LXe mass 7.0 t", "presumed_source": "LZ papers", "reliability": "certain"},
+  {"item": "LXe density 2.86 g/cm3 at operating temperature", "presumed_source": "standard", "reliability": "likely"},
+  {"item": "longitudinal electron diffusion D_L ~ 25 cm2/s at ~100 V/cm in LXe", "presumed_source": "LUX/EXO-200 measurements", "reliability": "likely (+-40 %)"},
+  {"item": "detector-gamma ER rate density next to the PMT arrays is x10-1000 that of the inner FV; isolated-S2 (>645 phd) rate in a LZ-class TPC of order 1 mHz-1 Hz", "presumed_source": "generic self-shielding and electron-emission literature (LUX, XENON, LZ)", "reliability": "uncertain (bracketed, not used for the headline)"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Absolute separation of R_S1 and R_S2: the paper gives neither rate nor the UDT window length; only products and a bracket are reported (assumption A: UDT window = T_max).",
+  "Compton/geometry model of the S1 hit pattern for RFR-origin light: superseded by LZ's own template test (event inconsistent with an RFR MSSI template).",
+  "Second script run failed (KeyError: k_req range used before definition); fixed by reordering.",
+  "First Fig. 3 calibration mis-identified FV boundary lines as z ticks (T_gate = 342 us); fixed by filtering ticks at regular 130 px spacing."
+ ],
+ "wimpydd_generated_files": []
+}

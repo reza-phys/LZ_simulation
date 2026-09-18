@@ -1,0 +1,49 @@
+{
+ "id": "P079",
+ "title": "Optimal ROI and fiducial design for the next LZ high-energy analysis: trading fiducial mass against MSSI with a 3D likelihood",
+ "date": "2026-09-15",
+ "agent_tools": [
+  {"tool": "Read", "count": 18, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (lines 1-13, rest via Bash/csv); papers P038, P033, P070, P004, P050, P020, P022; fulltext.tex lines 112-141, 184-197, 300-320, 765-784; lzcommon.py lines 1-125; figures P079_fig1_Z_map.png (x2), P079_fig2_bkg_mass_vs_s.png"},
+  {"tool": "Bash", "count": 21, "detail": "ledger id/title listing (python csv); grep -n fiducial|MSSI|5.4 t in fulltext.tex; ls work dirs + grep lzcommon defs; head/wc of P070 fv_contours/profiles + cat P070_results.json; cat P033_summary.json, P038_mssi_vs_edge.csv, P038_acceptance_vs_delta.csv, P004_results.json; ledger headline rows P016/P019/P033/P038/P070/P041/P053/P069; P038 npz keys/results; ls P050 + CSV previews; grep P050 script; P050/P038 cache inspection; P070 details grep; contour statistics; 4 runs of .venv/bin/python output/code/P079_roi_fv_optimisation.py (+1 JSON summary print); cat ENVIRONMENT_versions.txt + ls outputs; 4 word-count checks of the paper"},
+  {"tool": "Write", "count": 5, "detail": "output/code/P079_roi_fv_optimisation.py; output/work/P079/details.md; output/provenance/P079.json; output/papers/P079.md (written twice: full rewrite for the word budget)"},
+  {"tool": "Edit", "count": 19, "detail": "script (14): leakage -> reconstruction floor, LZ-table lambda scenario, HE-SB check, d_reco_min feasibility, brentq bracket, config list, 3D column, exact-Poisson P(5 sigma) metrics, figure labels; paper (4): word-budget trims; provenance (1): tool counts"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "trapezoid, interp, exp/log1p, gradient, array ops, searchsorted"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf, optimize.brentq, stats.poisson (sf, pmf), stats.norm (cdf, isf)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "read_csv, DataFrame, pivot, to_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend: pcolormesh, contour, fill_between, twinx"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "imported (LZ constants dictionary consulted; no numerical function used)"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "not re-run: L10 and inelastic O1 spectra (1 TeV, Baxter annual halo) reused from output/work/P050/P050_spectra_cache.npz"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P079_roi_fv_optimisation.py", "purpose": "FV geometry from P070's digitised contour (families A/B/C), mass calibration, wall/RFR MSSI volume integrals calibrated to LZ's MSSI table, S1c-edge acceptance from P050 spectra with P038 efficiencies, Asimov Z / exact-Poisson P(5 sigma) / 5 sigma live time / exclusion reach over (s, z_b, edge), position-binned soft-FV likelihood, recommendation table and two figures", "command": ".venv/bin/python output/code/P079_roi_fv_optimisation.py"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Data Analysis and FV paragraph (l.112-139: 4.71 t, 14.5 %, 1e-4 criterion, stand-offs 8.0/6.0, mean 10.7/7.2, max 18.2/10.4, z cuts 12.8/9.0 cm); MSSI paragraphs (l.184-196); Discussion sideband paragraph (l.316-318: 5.4 t volume, 1e-2 criterion, HE SB); MSSI counts table (l.765-783)"},
+  {"file": "output/work/P070/fv_contours.csv", "parts_used": "r_mean47(z), r_min54/r_max54(z), r_wall_reco(z) digitised from Fig. 3"},
+  {"file": "output/work/P070/P070_results.json, profiles_z.csv, profiles_d.csv, details.md", "parts_used": "drawn z-ranges (9.64-135.75; 5.4 t: 2.15-135.75), masses 4.36/4.27/4.92 t, stand-off statistics, lambda_z 6.5 and 214Pb 2.7 cm, lambda_eff 4.82, prompt-veto lambda 3.3 cm"},
+  {"file": "output/work/P033/P033_summary.json; papers/P033.md", "parts_used": "wall-MSSI depth profile exp(-d/4.3 cm), f_pos values"},
+  {"file": "output/work/P038/P038_mssi_vs_edge.csv; P038_results.json", "parts_used": "added wall/RFR MSSI vs S1c edge (exp/pow models); E50 and erf sigma for 600/700/800/1000/1200 phd; NR-band share 0.15"},
+  {"file": "output/work/P050/P050_spectra_cache.npz; P050_background_bins.csv; P050_normalisation.csv; code/P050_next_generation.py", "parts_used": "L10 and inelastic O1 (delta 300-382 keV) spectra; uniform-background extension 1.03e-4 per 100 keV; efficiency form"},
+  {"file": "output/papers/P004.md, P022.md, P020.md, P016/P019/P041 ledger rows", "parts_used": "f_nb 0.035; accidentals 1.5e-4; atm-nu 3.4e-5; b_H 5.7e-4; untouched exposure 884 d x 220/371 = 524 live d; sigma_T 3.07 mm"},
+  {"file": "output/00_evidence_dossier.md; output/results_ledger.csv; output/provenance/PAPER_GUIDE.md", "parts_used": "context, corpus numbers, format rules"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "LZ constants dictionary (lines 1-125) for cross-checking"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "LZ TPC radius 72.8 cm", "presumed_source": "LZ detector papers; consistent with Fig. 3 frame (P070)", "reliability": "likely"},
+  {"item": "LZ gate-cathode drift length 145.6 cm", "presumed_source": "LZ detector papers; confirmed by P070's digitised active-volume lines", "reliability": "likely"},
+  {"item": "LXe density 2.86 g/cm^3 at LZ conditions", "presumed_source": "standard LXe property (2.86-2.89)", "reliability": "likely"},
+  {"item": "Asimov discovery significance sqrt(2[(s+b)ln(1+s/b)-s]) and one-sided 5 sigma p = 2.87e-7", "presumed_source": "Cowan, Cranmer, Gross, Vitells 2011; Gaussian tail", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Wall leakage modelled as an exponential background term with lambda_leak = 0.50 cm (from the 1e-4/1e-2 contour criteria): dominates every configuration inside s = 7 cm and describes low-S2 events; replaced by a reconstruction floor d_reco >= 3 cm (10 sigma at 3 mm resolution).",
+  "Single wall-MSSI depth scale: LZ's own MSSI table (5.4 t annulus / 4.7 t FV = 6.25; HE SB 5.0) implies lambda = 1.23-1.36 cm versus P033's 4.3 cm; kept both as scenarios instead of choosing one.",
+  "Cylinder FV family (B) as a candidate: its contour lies outside the reconstructed wall near the cathode (d_reco,min = 0.6 cm at s = 6), so LZ's bottom flare is required by the reconstruction offset (6.2 cm at the bottom)."
+ ],
+ "wimpydd_generated_files": "none"
+}

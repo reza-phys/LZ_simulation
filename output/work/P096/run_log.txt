@@ -1,0 +1,63 @@
+v_E(16 June) = 265.1 km/s, v_max = 809.1 km/s
+mass fractions LAB {'C': 0.8773, 'H': 0.1227} PC {'C': 0.8994, 'H': 0.1006} KamLAND {'C': 0.8568, 'H': 0.1432}
+1H        1 TeV: ceiling     3.4 keV, E_R,max(elastic)    13.5 keV, v_min(delta=300)   7612 km/s, (380)   8567 km/s
+12C       1 TeV: ceiling    40.3 keV, E_R,max(elastic)   159.3 keV, v_min(delta=300)   2209 km/s, (380)   2486 km/s
+13C       1 TeV: ceiling    43.6 keV, E_R,max(elastic)   172.2 keV, v_min(delta=300)   2123 km/s, (380)   2389 km/s
+16O       1 TeV: ceiling    53.5 keV, E_R,max(elastic)   210.8 keV, v_min(delta=300)   1916 km/s, (380)   2157 km/s
+Xe(131.3) 1 TeV: ceiling   397.1 keV, E_R,max(elastic)  1415.3 keV, v_min(delta=300)    703 km/s, (380)    791 km/s
+A_min(delta) for m = 400/1000/4000 GeV: {300: {400.0: 112, 1000.0: 97, 4000.0: 91}, 350: {400.0: 136, 1000.0: 115, 4000.0: 106}, 366: {400.0: 145, 1000.0: 120, 4000.0: 111}, 380: {400.0: 152, 1000.0: 126, 4000.0: 116}}
+halos built (0 s)
+L10: LZ accepted events at unit coupling (2.84 t yr, June halo) = 3.405 (200-270 keV: 1.207); scale to 1.0 event: 0.2937  [P012 (Sun frame, all E): N(d10=1) ours = 3.34]
+O6: LZ accepted events at unit coupling (2.84 t yr, June halo) = 0.536 (200-270 keV: 0.124); scale to 1.0 event: 1.8673  [P012 (Sun frame, all E): N(d10=1) ours = 3.34]
+L10 Sun-frame check: N(unit) = 3.331  (0 s)
+analytic/WimPyDD on 1H: O6 ratio mean 0.9397 (rms 0.0724); L10 ratio mean 0.9692 (rms 0.0746); WimPyDD L10/O6 at 4 keV = 31.02 (analytic 32)
+13C mass fraction of natural carbon 0.0116; spin factor (2<S_n>)^2 = 0.1111; F^2(q) at E_R,max = 0.785
+SI reference totals per tonne of element per yr (sigma_n=1e-47, 1 TeV): C 3.332e-03, H 1.993e-06, O 7.752e-03  (0 s)
+endothermic Xe kernel delta=300 done (0 s)
+exothermic C/H/O kernels delta=300 done (0 s)
+endothermic Xe kernel delta=350 done (0 s)
+exothermic C/H/O kernels delta=350 done (0 s)
+endothermic Xe kernel delta=366 done (0 s)
+exothermic C/H/O kernels delta=366 done (0 s)
+endothermic Xe kernel delta=380 done (0 s)
+exothermic C/H/O kernels delta=380 done (0 s)
+exothermic Xe kernel (300, validation) done (0 s)
+delta=300: N_endo,ROI(unit, annual 24-day) = 1.338e+04 (June 1.945e+04, Dec 8251); kappa = 1/N = 7.472e-05  [P021 annual: 1.35e4 / 258.7 / - / 0.456 at 300/350/380]
+delta=350: N_endo,ROI(unit, annual 24-day) = 255.6 (June 636.7, Dec 26.02); kappa = 1/N = 0.003912  [P021 annual: 1.35e4 / 258.7 / - / 0.456 at 300/350/380]
+delta=366: N_endo,ROI(unit, annual 24-day) = 20.9 (June 69.5, Dec 0.182); kappa = 1/N = 0.04786  [P021 annual: 1.35e4 / 258.7 / - / 0.456 at 300/350/380]
+delta=380: N_endo,ROI(unit, annual 24-day) = 0.6626 (June 2.709, Dec 1.51e-05); kappa = 1/N = 1.509  [P021 annual: 1.35e4 / 258.7 / - / 0.456 at 300/350/380]
+  exo C delta=300: E*=297 keV, peak 292, 16/50/84% = 249/305/371 keV, E+(v_max)=608; N(unit)=4.340e+07 /t/yr (June x1.000); kappa*N = 3.243e+03 /t/yr at f2=1
+  exo H delta=300: E*=300 keV, peak 300, 16/50/84% = 283/301/319 keV, E+(v_max)=371; N(unit)=1.251e+05 /t/yr (June x1.000); kappa*N = 9.350e+00 /t/yr at f2=1
+  exo O delta=300: E*=296 keV, peak 288, 16/50/84% = 240/303/380 keV, E+(v_max)=672; N(unit)=7.463e+07 /t/yr (June x0.999); kappa*N = 5.577e+03 /t/yr at f2=1
+  exo C delta=350: E*=346 keV, peak 338, 16/50/84% = 293/353/425 keV, E+(v_max)=674; N(unit)=4.415e+07 /t/yr (June x1.000); kappa*N = 1.727e+05 /t/yr at f2=1
+  exo H delta=350: E*=350 keV, peak 350, 16/50/84% = 332/351/370 keV, E+(v_max)=426; N(unit)=1.348e+05 /t/yr (June x1.000); kappa*N = 5.273e+02 /t/yr at f2=1
+  exo O delta=350: E*=345 keV, peak 332, 16/50/84% = 283/351/433 keV, E+(v_max)=740; N(unit)=7.372e+07 /t/yr (June x0.999); kappa*N = 2.884e+05 /t/yr at f2=1
+  exo C delta=366: E*=362 keV, peak 358, 16/50/84% = 307/369/442 keV, E+(v_max)=695; N(unit)=4.428e+07 /t/yr (June x1.000); kappa*N = 2.119e+06 /t/yr at f2=1
+  exo H delta=366: E*=366 keV, peak 366, 16/50/84% = 348/367/387 keV, E+(v_max)=443; N(unit)=1.378e+05 /t/yr (June x1.000); kappa*N = 6.593e+03 /t/yr at f2=1
+  exo O delta=366: E*=361 keV, peak 348, 16/50/84% = 297/366/450 keV, E+(v_max)=761; N(unit)=7.327e+07 /t/yr (June x0.999); kappa*N = 3.506e+06 /t/yr at f2=1
+  exo C delta=380: E*=376 keV, peak 368, 16/50/84% = 320/383/457 keV, E+(v_max)=713; N(unit)=4.437e+07 /t/yr (June x1.000); kappa*N = 6.697e+07 /t/yr at f2=1
+  exo H delta=380: E*=380 keV, peak 380, 16/50/84% = 361/381/401 keV, E+(v_max)=458; N(unit)=1.403e+05 /t/yr (June x1.000); kappa*N = 2.117e+05 /t/yr at f2=1
+  exo O delta=380: E*=374 keV, peak 362, 16/50/84% = 309/380/465 keV, E+(v_max)=780; N(unit)=7.281e+07 /t/yr (June x0.999); kappa*N = 1.099e+08 /t/yr at f2=1
+validation: Xe exothermic ROI count per unit (annual) 1.24e+07; R_ROI = 926.4  [P058: 916]
+Birks proton quenching Q_p(E) = {4.6: 0.34, 6.0: 0.322, 14.0: 0.263, 100.0: 0.16, 300.0: 0.153, 1000.0: 0.22} | Cecil cross-check {300.0: 0.093, 500.0: 0.136, 1000.0: 0.206}
+Birks-LSS carbon quenching Q_C(E) = {57.0: 0.0964, 100.0: 0.077, 300.0: 0.0484, 380.0: 0.0436} ; adopted range at 300 keV (0.029, 0.082)
+14C fraction of decays in 5-15 / 10-30 / 20-40 / 50-156 keVee: 0.110 / 0.230 / 0.229 / 0.447
+L10 at LZ best fit: 1.123e-07 events per tonne of H per yr (median E_R 4.6 keV, E_R,max 13.5); 3.950e-03 per tonne of 13C per yr (median 57 keV)
+O6 at LZ best fit: 2.302e-08 events per tonne of H per yr (median E_R 4.6 keV, E_R,max 13.5); 7.847e-04 per tonne of 13C per yr (median 57 keV)
+reach Borexino delta=300: S(f2=1) C 8.107e+05/yr, 14C in C window 2.717e+08/yr -> f2_90(stat) = 2.60e-02 = 9.3 x P058; sys floor (1e-3) 3.35e-01 = 1.2e+02 x P058; H line: S 2.616e+02, B 2.320e+08, f2_90 = 7.45e+01 (2.7e+04 x P058); rejection needed to match LZ: C 1.2e-02, H 1.4e-09
+reach Borexino delta=350: S(f2=1) C 4.318e+07/yr, 14C in C window 2.769e+08/yr -> f2_90(stat) = 4.93e-04 = 8.7 x P058; sys floor (1e-3) 6.41e-03 = 1.1e+02 x P058; H line: S 1.475e+04, B 2.345e+08, f2_90 = 1.33e+00 (2.3e+04 x P058); rejection needed to match LZ: C 1.3e-02, H 1.8e-09
+reach Borexino delta=366: S(f2=1) C 5.298e+08/yr, 14C in C window 2.773e+08/yr -> f2_90(stat) = 4.02e-05 = 8.4 x P058; sys floor (1e-3) 5.23e-04 = 1.1e+02 x P058; H line: S 1.844e+05, B 2.327e+08, f2_90 = 1.06e-01 (2.2e+04 x P058); rejection needed to match LZ: C 1.4e-02, H 2.1e-09
+reach Borexino delta=380: S(f2=1) C 1.674e+10/yr, 14C in C window 2.776e+08/yr -> f2_90(stat) = 1.27e-06 = 7.5 x P058; sys floor (1e-3) 1.66e-05 = 98 x P058; H line: S 5.922e+06, B 2.310e+08, f2_90 = 3.29e-03 (1.9e+04 x P058); rejection needed to match LZ: C 1.8e-02, H 2.7e-09
+reach KamLAND  delta=300: S(f2=1) C 2.778e+06/yr, 14C in C window 3.448e+09/yr -> f2_90(stat) = 2.71e-02 = 9.7 x P058; sys floor (1e-3) 1.24e+00 = 4.4e+02 x P058; H line: S 1.339e+03, B 2.945e+09, f2_90 = 5.19e+01 (1.9e+04 x P058); rejection needed to match LZ: C 1.1e-02, H 2.9e-09
+reach KamLAND  delta=350: S(f2=1) C 1.480e+08/yr, 14C in C window 3.515e+09/yr -> f2_90(stat) = 5.13e-04 = 9 x P058; sys floor (1e-3) 2.38e-02 = 4.2e+02 x P058; H line: S 7.552e+04, B 2.977e+09, f2_90 = 9.25e-01 (1.6e+04 x P058); rejection needed to match LZ: C 1.2e-02, H 3.8e-09
+reach KamLAND  delta=366: S(f2=1) C 1.816e+09/yr, 14C in C window 3.520e+09/yr -> f2_90(stat) = 4.18e-05 = 8.7 x P058; sys floor (1e-3) 1.94e-03 = 4e+02 x P058; H line: S 9.442e+05, B 2.953e+09, f2_90 = 7.37e-02 (1.5e+04 x P058); rejection needed to match LZ: C 1.3e-02, H 4.2e-09
+reach KamLAND  delta=380: S(f2=1) C 5.738e+10/yr, 14C in C window 3.524e+09/yr -> f2_90(stat) = 1.32e-06 = 7.8 x P058; sys floor (1e-3) 6.14e-05 = 3.6e+02 x P058; H line: S 3.031e+07, B 2.932e+09, f2_90 = 2.29e-03 (1.3e+04 x P058); rejection needed to match LZ: C 1.6e-02, H 5.5e-09
+reach SNO+     delta=300: S(f2=1) C 2.219e+06/yr, 14C in C window 2.754e+09/yr -> f2_90(stat) = 3.03e-02 = 11 x P058; sys floor (1e-3) 1.24e+00 = 4.4e+02 x P058; H line: S 8.949e+02, B 2.352e+09, f2_90 = 6.94e+01 (2.5e+04 x P058); rejection needed to match LZ: C 8.6e-03, H 1.6e-09
+reach SNO+     delta=350: S(f2=1) C 1.182e+08/yr, 14C in C window 2.807e+09/yr -> f2_90(stat) = 5.74e-04 = 10 x P058; sys floor (1e-3) 2.38e-02 = 4.2e+02 x P058; H line: S 5.047e+04, B 2.378e+09, f2_90 = 1.24e+00 (2.2e+04 x P058); rejection needed to match LZ: C 9.9e-03, H 2.1e-09
+reach SNO+     delta=366: S(f2=1) C 1.450e+09/yr, 14C in C window 2.811e+09/yr -> f2_90(stat) = 4.68e-05 = 9.8 x P058; sys floor (1e-3) 1.94e-03 = 4e+02 x P058; H line: S 6.310e+05, B 2.359e+09, f2_90 = 9.85e-02 (2.1e+04 x P058); rejection needed to match LZ: C 1.1e-02, H 2.4e-09
+reach SNO+     delta=380: S(f2=1) C 4.583e+10/yr, 14C in C window 2.814e+09/yr -> f2_90(stat) = 1.48e-06 = 8.7 x P058; sys floor (1e-3) 6.14e-05 = 3.6e+02 x P058; H line: S 2.026e+07, B 2.342e+09, f2_90 = 3.06e-03 (1.8e+04 x P058); rejection needed to match LZ: C 1.3e-02, H 3.1e-09
+reach JUNO     delta=300: S(f2=1) C 5.689e+07/yr, 14C in C window 7.062e+10/yr -> f2_90(stat) = 5.98e-03 = 2.1 x P058; sys floor (1e-3) 1.24e+00 = 4.4e+02 x P058; H line: S 2.295e+04, B 6.030e+10, f2_90 = 1.37e+01 (4.9e+03 x P058); rejection needed to match LZ: C 2.2e-01, H 4.2e-08
+reach JUNO     delta=350: S(f2=1) C 3.031e+09/yr, 14C in C window 7.198e+10/yr -> f2_90(stat) = 1.13e-04 = 2 x P058; sys floor (1e-3) 2.38e-02 = 4.2e+02 x P058; H line: S 1.294e+06, B 6.096e+10, f2_90 = 2.44e-01 (4.3e+03 x P058); rejection needed to match LZ: C 2.5e-01, H 5.4e-08
+reach JUNO     delta=366: S(f2=1) C 3.718e+10/yr, 14C in C window 7.208e+10/yr -> f2_90(stat) = 9.24e-06 = 1.9 x P058; sys floor (1e-3) 1.94e-03 = 4e+02 x P058; H line: S 1.618e+07, B 6.048e+10, f2_90 = 1.95e-02 (4.1e+03 x P058); rejection needed to match LZ: C 2.7e-01, H 6.1e-08
+reach JUNO     delta=380: S(f2=1) C 1.175e+12/yr, 14C in C window 7.216e+10/yr -> f2_90(stat) = 2.93e-07 = 1.7 x P058; sys floor (1e-3) 6.14e-05 = 3.6e+02 x P058; H line: S 5.195e+08, B 6.005e+10, f2_90 = 6.04e-04 (3.6e+03 x P058); rejection needed to match LZ: C 3.4e-01, H 7.9e-08
+done in 1 s

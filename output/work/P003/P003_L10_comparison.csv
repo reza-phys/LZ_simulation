@@ -1,0 +1,4 @@
+m_chi_GeV,scale_fig_over_wimpydd_A_1_over_mv2,rms_log10_residual,max_abs_log10_residual,fig_peak1_keV,fig_dip_keV,fig_peak2_keV,wd_peak1_keV,wd_dip_keV,wd_peak2_keV,N_lo_per_hi_fig1,N_lo_per_hi_wimpydd,R_hi_fig1_per_tyr,R_lo_fig1_per_tyr,frac_hi_fig1,frac_hi_wimpydd
+50,228.5,0.10903,0.19472,19,109,,16,109,,inf,inf,0,2.0504,0,0
+200,247.68,0.086134,0.20723,118,64,172,19,52,178,0.46675,0.60008,2.771,1.2934,0.2742,0.23333
+1000,247.5,0.086017,0.20839,118,61,205,118,52,196,0.15495,0.19849,1.906,0.29533,0.40119,0.35312

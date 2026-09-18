@@ -1,0 +1,150 @@
+[1] first run: 371 calendar d, live fraction 0.593
+    1 Apr 2024 -> 2 Sep 2026: 884 d  ->  E = 6.76 t yr = 2.38 x 2.84  (live 0.50-0.75: 5.70-8.55; 5.5 t: 7.89)
+    -> 31 Dec 2026: 7.68 t yr (k=2.70);  -> 31 Dec 2027: 10.47 t yr (k=3.69)
+[2] background in new exposure (k=2.38): panel 0.0252 (P>=1 = 0.0249); nb 4.76e-04 (P>=1 = 4.76e-04)
+[3a] Poisson n=1 likelihood interval (-2dlnL=1): [0.30, 2.36] vs Table I [0.3, 2.4] -> L(s) ~ s e^-s
+     s=1.0 plug-in                            mean 2.38: P0=0.092 P1=0.220 P2=0.262 P3=0.208 P>=4=0.217
+     Poisson-Gamma flat prior (Gamma(2,1))    mean 4.76: P0=0.088 P1=0.123 P2=0.130 P3=0.122 P>=4=0.537
+[3b] WimPyDD seasonal rates: 4 deltas x 53 days x 91 energies
+====================
+WARNING
+Only some of the isotopes contained in
+WimPyDD/WimPyC/Sun/densities.tab
+were loaded:
+['1H', '4He', '3He', '12C', '13C', '14N', '15N', '16O', '17O', '18O', '20Ne', '23Na', '24Mg', '27Al', '28Si', '32S', '40Ar', '40Ca', '56Fe', '58Ni']
+the following targets could not be initialized and were ignored:
+['P', 'Cl', 'K', 'Sc', 'Ti', 'V', 'Cr', 'Mn', 'Co']
+====================
+====================
+WARNING
+Only some of the isotopes contained in
+WimPyDD/WimPyC/Earth/densities.tab
+were loaded:
+['16O', '28Si', '27Al', '56Fe', '40Ca', '23Na', '24Mg', '58Ni', '31P', '32S']
+the following targets could not be initialized and were ignored:
+['39K', '48Ti', '59Co']
+====================
+looking for 12C in list of pre-defined targets:
+12C found in predefined carbon element object
+looking for 13C in list of pre-defined targets:
+13C found in predefined carbon element object
+looking for 14N in list of pre-defined targets:
+14N found in predefined nitrogen element object
+looking for 15N in list of pre-defined targets:
+15N found in predefined nitrogen element object
+looking for 16O in list of pre-defined targets:
+16O found in predefined oxygen element object
+looking for 17O in list of pre-defined targets:
+17O found in predefined oxygen element object
+looking for 18O in list of pre-defined targets:
+18O found in predefined oxygen element object
+looking for 1H in list of pre-defined targets:
+1H found in predefined hydrogen element object
+looking for 20Ne in list of pre-defined targets:
+20Ne found in predefined neon element object
+looking for 23Na in list of pre-defined targets:
+23Na found in predefined sodium element object
+looking for 24Mg in list of pre-defined targets:
+24Mg found in predefined magnesium element object
+looking for 27Al in list of pre-defined targets:
+27Al found in predefined aluminium element object
+looking for 28Si in list of pre-defined targets:
+28Si found in predefined silicon element object
+looking for 31P in list of pre-defined targets:
+31P found in predefined phosphorus element object
+looking for 32S in list of pre-defined targets:
+32S found in predefined sulfur element object
+looking for 3He in list of pre-defined targets:
+3He found in predefined helium element object
+looking for 40Ar in list of pre-defined targets:
+40Ar found in predefined argon element object
+looking for 40Ca in list of pre-defined targets:
+40Ca found in predefined calcium element object
+looking for 4He in list of pre-defined targets:
+4He found in predefined helium element object
+looking for 56Fe in list of pre-defined targets:
+56Fe found in predefined iron element object
+looking for 58Ni in list of pre-defined targets:
+58Ni found in predefined nickel element object
+looking for 12C in list of pre-defined targets:
+12C found in predefined carbon element object
+looking for 13C in list of pre-defined targets:
+13C found in predefined carbon element object
+looking for 14N in list of pre-defined targets:
+14N found in predefined nitrogen element object
+looking for 15N in list of pre-defined targets:
+15N found in predefined nitrogen element object
+looking for 16O in list of pre-defined targets:
+16O found in predefined oxygen element object
+looking for 17O in list of pre-defined targets:
+17O found in predefined oxygen element object
+looking for 18O in list of pre-defined targets:
+18O found in predefined oxygen element object
+looking for 1H in list of pre-defined targets:
+1H found in predefined hydrogen element object
+looking for 20Ne in list of pre-defined targets:
+20Ne found in predefined neon element object
+looking for 23Na in list of pre-defined targets:
+23Na found in predefined sodium element object
+looking for 24Mg in list of pre-defined targets:
+24Mg found in predefined magnesium element object
+looking for 27Al in list of pre-defined targets:
+27Al found in predefined aluminium element object
+looking for 28Si in list of pre-defined targets:
+28Si found in predefined silicon element object
+looking for 31P in list of pre-defined targets:
+31P found in predefined phosphorus element object
+looking for 32S in list of pre-defined targets:
+32S found in predefined sulfur element object
+looking for 3He in list of pre-defined targets:
+3He found in predefined helium element object
+looking for 40Ar in list of pre-defined targets:
+40Ar found in predefined argon element object
+looking for 40Ca in list of pre-defined targets:
+40Ca found in predefined calcium element object
+looking for 4He in list of pre-defined targets:
+4He found in predefined helium element object
+looking for 56Fe in list of pre-defined targets:
+56Fe found in predefined iron element object
+looking for 58Ni in list of pre-defined targets:
+58Ni found in predefined nickel element object
+     delta=  300: June/Dec=    2.40  mod.frac=0.418  peak doy=152  nonzero frac of year=1.00  eff survival(peak)=0.917  frac>270keV=0.044
+     delta=  350: June/Dec=   26.47  mod.frac=0.930  peak doy=152  nonzero frac of year=1.00  eff survival(peak)=0.775  frac>270keV=0.195
+     delta=  366: June/Dec=  344.77  mod.frac=0.995  peak doy=152  nonzero frac of year=1.00  eff survival(peak)=0.513  frac>270keV=0.474
+     delta=  380: June/Dec=104186.59  mod.frac=1.000  peak doy=152  nonzero frac of year=0.77  eff survival(peak)=0.131  frac>270keV=0.884
+     delta=  300: N_new/first-event = 2.500 (= 1.050 x k); May-Jul 0.410 (flat 0.312), Nov-Jan 0.127 (flat 0.208), May-Aug 0.519; KL 0.043 nats/event
+     delta=  350: N_new/first-event = 2.723 (= 1.144 x k); May-Jul 0.592 (flat 0.312), Nov-Jan 0.025 (flat 0.208), May-Aug 0.686; KL 0.327 nats/event
+     delta=  366: N_new/first-event = 2.849 (= 1.197 x k); May-Jul 0.708 (flat 0.312), Nov-Jan 0.003 (flat 0.208), May-Aug 0.770; KL 0.585 nats/event
+     delta=  380: N_new/first-event = 2.907 (= 1.222 x k); May-Jul 0.780 (flat 0.312), Nov-Jan 0.001 (flat 0.208), May-Aug 0.818; KL 0.742 nats/event
+     shape check vs P006 rate_vs_doy: {300.0: 'maxdev 0.016, J/D P006 2.3', 350.0: 'maxdev 0.161, J/D P006 18.8', 380.0: 'maxdev 0.588, J/D P006 28681667216462960111548925704871635996246378616312729707011847788210773513394784712030226510807313881252391429865875142555904800184204609413509898225704712466278873988184019132601634164330061121017457869930930018107779934385994335465695895822991816950935946499610488117048392701260909577729150602907985379328.0'}
+     visibility delta=300 N=2: E[lnLR]=0.09; P(LR>10|mod)=0.000, P(LR>10|flat)=0.000; P(all May-Aug|mod)=0.270 vs flat 0.174
+     visibility delta=300 N=3: E[lnLR]=0.13; P(LR>10|mod)=0.000, P(LR>10|flat)=0.000; P(all May-Aug|mod)=0.141 vs flat 0.069
+     visibility delta=300 N=5: E[lnLR]=0.21; P(LR>10|mod)=0.000, P(LR>10|flat)=0.000; P(all May-Aug|mod)=0.037 vs flat 0.013
+     visibility delta=350 N=2: E[lnLR]=0.66; P(LR>10|mod)=0.000, P(LR>10|flat)=0.000; P(all May-Aug|mod)=0.474 vs flat 0.170
+     visibility delta=350 N=3: E[lnLR]=0.99; P(LR>10|mod)=0.001, P(LR>10|flat)=0.000; P(all May-Aug|mod)=0.327 vs flat 0.070
+     visibility delta=350 N=5: E[lnLR]=1.63; P(LR>10|mod)=0.385, P(LR>10|flat)=0.022; P(all May-Aug|mod)=0.152 vs flat 0.012
+     visibility delta=366 N=2: E[lnLR]=1.18; P(LR>10|mod)=0.000, P(LR>10|flat)=0.000; P(all May-Aug|mod)=0.594 vs flat 0.172
+     visibility delta=366 N=3: E[lnLR]=1.75; P(LR>10|mod)=0.388, P(LR>10|flat)=0.026; P(all May-Aug|mod)=0.456 vs flat 0.072
+     visibility delta=366 N=5: E[lnLR]=2.93; P(LR>10|mod)=0.736, P(LR>10|flat)=0.025; P(all May-Aug|mod)=0.274 vs flat 0.012
+     visibility delta=380 N=2: E[lnLR]=1.48; P(LR>10|mod)=0.160, P(LR>10|flat)=0.015; P(all May-Aug|mod)=0.665 vs flat 0.174
+     visibility delta=380 N=3: E[lnLR]=2.23; P(LR>10|mod)=0.584, P(LR>10|flat)=0.031; P(all May-Aug|mod)=0.547 vs flat 0.070
+     visibility delta=380 N=5: E[lnLR]=3.70; P(LR>10|mod)=0.830, P(LR>10|flat)=0.018; P(all May-Aug|mod)=0.365 vs flat 0.012
+[4] P001 check: P(DM|event) now = 0.094 (P001: 0.090); P(U)=0.890, P(K)=0.017
+    P001 check next equal exposure 0/1/2 events: 0.028/0.217/0.797 (P001: 0.028/0.217/0.797)
+    decision table (end 2026-09-02):
+     N=0: P(DM)=0.011/0.010 (b=2e-4/1e-3), P(U)=0.965, BF2(DM:K)=0.0876; Z_comb = 3.20/2.71/1.81 sigma (b=2e-4/1e-3/0.0106); Z_new_only(1e-3) = 0.00
+     N=1: P(DM)=0.062/0.061 (b=2e-4/1e-3), P(U)=0.938, BF2(DM:K)=259; Z_comb = 5.04/4.39/3.23 sigma (b=2e-4/1e-3/0.0106); Z_new_only(1e-3) = 2.82
+     N=2: P(DM)=0.358/0.354 (b=2e-4/1e-3), P(U)=0.642, BF2(DM:K)=1.15e+06; Z_comb = 6.46/5.69/4.33 sigma (b=2e-4/1e-3/0.0106); Z_new_only(1e-3) = 4.54
+     N=3: P(DM)=0.862/0.859 (b=2e-4/1e-3), P(U)=0.138, BF2(DM:K)=6.81e+09; Z_comb = 7.67/6.79/5.27 sigma (b=2e-4/1e-3/0.0106); Z_new_only(1e-3) = 5.87
+     N=4: P(DM)=0.989/0.988 (b=2e-4/1e-3), P(U)=0.011, BF2(DM:K)=5.03e+13; Z_comb = 8.74/7.78/6.12 sigma (b=2e-4/1e-3/0.0106); Z_new_only(1e-3) = 6.99
+    N_new for 5 sigma local: {'b=2e-4|2026-09-02': {'N_new_for_5sigma_combined': 1, 'N_new_for_5sigma_new_only': 2}, 'b=2e-4|2027-12-31': {'N_new_for_5sigma_combined': 2, 'N_new_for_5sigma_new_only': 2}, 'b=1e-3|2026-09-02': {'N_new_for_5sigma_combined': 2, 'N_new_for_5sigma_new_only': 3}, 'b=1e-3|2027-12-31': {'N_new_for_5sigma_combined': 2, 'N_new_for_5sigma_new_only': 3}, 'b=0.0106|2026-09-02': {'N_new_for_5sigma_combined': 3, 'N_new_for_5sigma_new_only': 4}, 'b=0.0106|2027-12-31': {'N_new_for_5sigma_combined': 3, 'N_new_for_5sigma_new_only': 4}}
+    N=0 by 2026-09-02 (k=2.38): UL90 new-only s<0.97; combined Bayes 1.15, PLR 1.08 (s_hat=0.30); fraction of [0.3,2.4] excluded 0.68; P(N=0|s=1)=0.092
+    N=0 by 2026-12-31 (k=2.70): UL90 new-only s<0.85; combined Bayes 1.05, PLR 0.98 (s_hat=0.27); fraction of [0.3,2.4] excluded 0.74; P(N=0|s=1)=0.067
+    N=0 by 2027-12-31 (k=3.69): UL90 new-only s<0.62; combined Bayes 0.83, PLR 0.78 (s_hat=0.21); fraction of [0.3,2.4] excluded 0.85; P(N=0|s=1)=0.025
+[5] mixture check k=1: weights DM/U/K = 0.094/0.890/0.017; P0=0.841 P1=0.108 P>=2=0.051 (P001: 0.84/0.11/0.05)
+    mixture k=2.38 (2026-09-02): P0=0.717 P1=0.185 P2=0.034 P3=0.013 P>=4=0.050
+    mixture k=2.70 (2026-12-31): P0=0.692 P1=0.201 P2=0.038 P3=0.013 P>=4=0.055
+    mixture k=3.69 (2027-12-31): P0=0.624 P1=0.241 P2=0.054 P3=0.014 P>=4=0.067
+    Higgsino: P007's 4-5.2 events/1000 live d -> 2.1-2.7 in 524 live d; our delta=366 seasonal ratio gives 2.85
+    FORECAST (to 2 Sep 2026, k=2.38): N = 2.38 [0.71, 5.71]; P(N=0|s=1) = 0.093; P(N=0|PG) = 0.088; P(N>=1|bkg panel) = 0.0249; mixture P0/P1/P>=2 = 0.72/0.19/0.10
+done; results in output/work/P020

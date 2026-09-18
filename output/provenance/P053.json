@@ -1,0 +1,63 @@
+{
+  "id": "P053",
+  "title": "214Pb in the mixed-flow state: what the unavailable radon tag costs and whether 214Pb-driven MSSI could be elevated around 16 June 2023",
+  "date": "2026-09-11",
+  "agent_tools": [
+    {"tool": "Read", "count": 17, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (lines 1-14); P004.md; P033.md (missing); P029.md; P010.md; P041.md; fulltext.tex l.165-244, 296-320, 708-785, 128-139; lzcommon.py l.18-75; figures P053_fig1/fig2 (twice each)"},
+    {"tool": "Bash", "count": 12, "detail": "grep tex for radon/MSSI/mixed flow; awk/grep ledger rows P014-P050; ls papers/work/provenance + ENVIRONMENT_versions grep; grep lzcommon symbols; python check of P033 details head, radioactivedecay chain data and nest_er_yields; grep dataviz palette.md; run P053 script x5 (with log tee); wc -w on the paper"},
+    {"tool": "Write", "count": 4, "detail": "P053_pb214_mixed_flow.py; work/P053/details.md; provenance/P053.json; papers/P053.md"},
+    {"tool": "Edit", "count": 13, "detail": "figure layout fixes; FV cuts from tex l.137-139 (z_min 9 cm, mean stand-off 10.7 cm); 5.4 t bottom-cut bracket; HE-SB/RFR cross-checks; position-penalty brackets; mixed-flow consistency test"},
+    {"tool": "Skill", "count": 1, "detail": "dataviz (palette values taken from references/palette.md; JS validator skipped per PAPER_GUIDE)"}
+  ],
+  "software": [
+    {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python"},
+    {"name": "numpy", "version": "2.5.3", "functions": "random.default_rng (seed 53) isotropic rays, vectorised ray-cylinder intersection, exp, minimum.reduce"},
+    {"name": "scipy", "version": "1.18.1", "functions": "stats.beta.ppf (Clopper-Pearson), stats.binom, stats.poisson.sf/cdf/isf, integrate.quad (beta spectrum, Klein-Nishina), optimize.brentq (ROI window, 95% limits), special.expn (E2 half-space check)"},
+    {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend, two PNG figures"},
+    {"name": "radioactivedecay", "version": "0.6.1", "functions": "Nuclide.half_life/progeny/branching_fractions/decay_modes for Rn-222, Po-218, Pb-214, Bi-214, Po-214; Inventory.decay Bateman check"},
+    {"name": "nestpy", "version": "2.1.1", "functions": "via lzcommon.nest_er_yields (NEST-LZ ER yields at 96.5 V/cm) to locate the ROI ER window"},
+    {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ dict (live_days, fiducial mass, ROI bounds, g1, g2, event position, Table I, MSSI numbers), nest_er_yields, DRIFT_FIELD_VCM"},
+    {"name": "none: derived by hand", "version": "-", "functions": "likelihood ratios of the tag, k_T scaling, ion-drift and throughput velocities"}
+  ],
+  "scripts_and_commands": [
+    {"path": "output/code/P053_pb214_mixed_flow.py", "purpose": "binomial tag-active fractions; 222Rn chain and transport; ROI ER window, Fermi beta acceptance, 214Pb activity; gamma ray-tracing MC in the TPC; MSSI cross-checks; elevation factors vs ER/alpha detectability; tag likelihood ratios; two figures", "command": ".venv/bin/python output/code/P053_pb214_mixed_flow.py > output/work/P053/P053_run.log 2>&1"}
+  ],
+  "local_inputs": [
+    {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all"},
+    {"file": "output/00_evidence_dossier.md", "parts_used": "sections 2 (radon tag, calibration rows), 4.5, 5 (hypothesis B), 6.8"},
+    {"file": "output/results_ledger.csv", "parts_used": "rows P001-P013 read; P014-P050 scanned by grep for radon/MSSI/RFR"},
+    {"file": "output/papers/P004.md", "parts_used": "k_required = 619, mu_nb = 1.7e-4, sideband limits k < 1.64, f_pos"},
+    {"file": "output/papers/P029.md", "parts_used": "attenuation lengths 1.42 cm (243 keV), 2.9 cm (375 keV); activation geometry factors"},
+    {"file": "output/papers/P010.md", "parts_used": "ER quanta, EC charge suppression (context)"},
+    {"file": "output/papers/P041.md", "parts_used": "monitor-event rates and detector-check logic (context)"},
+    {"file": "output/work/P033/details.md", "parts_used": "first 1500 characters only (paper not in ledger; not cited)"},
+    {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "l.128-139 (FV cuts), l.165-244 (event, backgrounds, MSSI paragraphs, Table I), l.296-320 (Discussion: 57Co, radon tag, mixed flow, MSSI validation), l.708-785 (supplement MSSI section, radon-tag statistics, MSSI counts table), reference list entries LZ:2025xxf and LZ:2026hpq"},
+    {"file": "output/code/common/lzcommon.py", "parts_used": "LZ dict l.21-60, nest_er_yields, DRIFT_FIELD_VCM"},
+    {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+  ],
+  "recalled_knowledge": [
+    {"item": "LZ TPC radius 72.8 cm, drift length 145.6 cm, active LXe mass ~7 t", "presumed_source": "LZ NIM A 953, 163047 (2020); LZ SR1 papers", "reliability": "likely"},
+    {"item": "LXe density 2.9 g/cm3", "presumed_source": "standard; lzcommon uses 2.9 for NEST", "reliability": "likely"},
+    {"item": "214Pb decay scheme: Q_beta = 1019 keV; levels 351.9/295.2/53.2 keV; gamma intensities 35.6/18.4/7.3/1.1 % per decay", "presumed_source": "ENSDF / Nuclear Data Sheets A=214", "reliability": "likely"},
+    {"item": "214Pb ground-state beta branch 9.2 % (alternative 11 %); beta feedings 46/41/2 % to the 352/295/53 keV levels", "presumed_source": "ENSDF; XENON/LZ radon papers", "reliability": "uncertain"},
+    {"item": "LXe gamma attenuation lengths 2.7/2.2/1.5 cm at 352/295/242 keV (+-15 %)", "presumed_source": "NIST XCOM; consistent with P029's 1.42 cm at 243 keV and 2.9 cm at 375 keV", "reliability": "likely"},
+    {"item": "Compton share of the total cross-section in Xe 0.55/0.45/0.35 at 352/295/242 keV", "presumed_source": "NIST XCOM", "reliability": "uncertain"},
+    {"item": "LZ purification throughput 1-4 t/day", "presumed_source": "LZ detector papers", "reliability": "uncertain"},
+    {"item": "positive-ion mobility in LXe 1e-4 to 1e-3 cm2/(V s)", "presumed_source": "Hilt & Schmidt; LUX/XENON radon-daughter drift studies", "reliability": "uncertain"},
+    {"item": "LZ 222Rn activity 1-5 microBq/kg", "presumed_source": "LZ SR1 (2022) and WS2024 background papers", "reliability": "uncertain"},
+    {"item": "false-tag rate of the radon tag 1-10 %", "presumed_source": "none specific (order-of-magnitude assumption)", "reliability": "uncertain"},
+    {"item": "radon-tag principle: 218Po alpha to 214Pb beta (and 214Bi-214Po) spatio-temporal correlation using a flow model; laminar (tag-active) vs mixed flow states in the 2024 run", "presumed_source": "LZ arXiv:2508.19117 (title in the LZ reference list) and arXiv:2410.17036", "reliability": "likely"},
+    {"item": "non-relativistic Fermi function, allowed beta shape; Klein-Nishina formula; Clopper-Pearson intervals; E2 half-space integral", "presumed_source": "textbooks", "reliability": "certain"},
+    {"item": "5.4 t volume radius ~67.3 cm (5.5 cm from the wall) and bottom cut 2-5 cm above the cathode (WS2024 z boundaries)", "presumed_source": "derived from mass; LZ WS2024", "reliability": "uncertain"},
+    {"item": "214Pb share of the 1341 internal beta events 50-90 % (rest 212Pb, 85Kr)", "presumed_source": "LZ background papers (assumption)", "reliability": "uncertain"}
+  ],
+  "datasets": "none",
+  "data_requests": "none",
+  "failed_or_abandoned": [
+    "RFR WS-ROI MSSI estimate (0.19 vs LZ 1e-4): the Compton-scatter-then-escape factor for a 13.75 cm thick dead layer is inadequate; the number is printed but not used.",
+    "Inferring the 214Pb share of MSSI from our absolute wall-MSSI estimate (0.0037 vs LZ 0.0048 all sources -> 0.77): too crude; the 0.3-0.7 bracket is used instead.",
+    "Initial run with a 2 cm FV bottom cut (guess) overshot LZ's HE-SB RFR count by x3-4; replaced by the paper's 9.0 cm cut for the 4.7 t FV and a 2-5 cm bracket for the 5.4 t volume.",
+    "P033 (geometric wall-MSSI MC) named in the assignment has no paper file in output/papers and no ledger row; not cited."
+  ],
+  "wimpydd_generated_files": []
+}

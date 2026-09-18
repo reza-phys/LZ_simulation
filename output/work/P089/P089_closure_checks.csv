@@ -1,0 +1,11 @@
+pair,predicted_rate_ratio,wimpydd_ratio_median,rel_scatter,note
+L3s/O11s,8.803543459839999e-07,8.803543459840001e-07,2.9015725171889164e-16,
+L8s/O10s,4.0,4.0,0.0,
+L20s/O6s,16.0,16.0,0.0,
+L10s_full/L10s,1.0,1.0000007947336775,4.448029166992384e-06,max |deviation| over 10-400 keV: size of the dropped (q^4/4 mchi mN mM^2) O1 term at 1 TeV
+L12s_flip/L12s,>>1 if Sigma-prime/Phi-doubleprime cancel in the derived sign,5400.95467683428,0.45692094714190284,
+L12s/O6s,slowly varying (<v_perp^2> + Phi~/Sigma''),0.06922207172928344,0.38662238219877104,log-log slope -0.580
+L12v_flip/L12v,>>1 if Sigma-prime/Phi-doubleprime cancel in the derived sign,217.52726058742013,0.714647571890823,
+L12v/O6v,slowly varying (<v_perp^2> + Phi~/Sigma''),0.20296360553488457,0.44860252006320434,log-log slope -0.167
+L9s/L10s,1/4 + O5 admixture,1.1123820121900436,0.6638558929630414,log-log slope -1.664
+L9v/L10v,1/4 + O5 admixture,1.430231727597073,0.4004062148914495,log-log slope -0.864

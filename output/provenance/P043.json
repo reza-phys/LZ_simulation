@@ -1,0 +1,55 @@
+{
+ "id": "P043",
+ "title": "Propagating the LZ gain uncertainties: what g1 +- 2% and g2 +- 3% do to the recoil energy, the band position, delta_max and the fitted couplings",
+ "date": "2026-09-10",
+ "agent_tools": [
+  {"tool": "Read", "count": 29, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (3 pages); papers P009, P024, P010, P038, P002, P021, P012, P007; fulltext.tex l.82-123 (detector, gains, ROI) and l.586-695 (NEST supplement, Tables S3-S5, waveform); lzcommon.py l.1-75, 159-218, 255-294; work/P009/results.json; work/P024/results.json (first 1524 lines); work/P038/P038_results.json; work/P021/P021_peaks.csv; work/P012/P012_summary.json; provenance/P038.json (format); P009_energy_reconstruction.py l.36-235; own figures x4"},
+  {"tool": "Bash", "count": 10, "detail": "word-count checks of papers/P043.md x4 + JSON validation x2; grep tex for g1/g2/248/NEST lines + grep lzcommon defs + ls work dirs + ENVIRONMENT_versions; grep versions/P021 results/data_requests/P009 script structure; .venv/bin/python -c inspect npz keys (P012 L10, P038/P021 spectra), lz.v_earth_kms/vmax/delta_max check, uncertainties version; .venv/bin/python output/code/P043_gain_systematics.py (run 1, tee failed); run 2 with log + JSON digest; run 3 after figure edit with log, ls, cat table"},
+  {"tool": "Write", "count": 5, "detail": "output/code/P043_gain_systematics.py; work/P043/details.md; provenance/P043.json; papers/P043.md (x2: initial and tightened rewrite)"},
+  {"tool": "Edit", "count": 14, "detail": "script x2 (Fig.1 panel-4 title/legend/xlim; figsize); papers/P043.md word-budget trims x11; provenance tally x1"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (form/colour/mark guidance for the three PNG figures; Okabe-Ito palette, neutral ink)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python from the simulation root"},
+  {"name": "numpy", "version": "2.5.3", "functions": "default_rng(43) normal draws (1e5), vectorised bisection, searchsorted/bilinear interpolation, trapezoid, percentile, gradient"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats.norm.cdf/pdf/sf, stats.skew, special.erf"},
+  {"name": "uncertainties", "version": "3.2.3", "functions": "ufloat (tagged), wrap (numerical derivatives of the estimators), error_components, covariance-aware totals"},
+  {"name": "nestpy", "version": "2.1.1", "functions": "detectors.LZ_WS2024, NESTcalc.GetYields (NR, Table S5 parameters incl. p(E) break) via lzcommon.nest_nr_yields on a 561 x 5 (E, field) grid"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame/CSV tables"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg PNG figures (barh, hist)"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ dict (S1c, S2c, g1, g2 and errors), NEST_NR_LZ, DRIFT_FIELD_VCM, nest_nr_yields, vmax_kms, v_earth_kms(167), delta_max_kev"},
+  {"name": "none: derived by hand", "version": "-", "functions": "elasticity algebra dlnE = -(1/beta_eff)(dln g1 + dln s); N_q,ev weights 0.948/0.052; S2-axis weight (sigma_S1/sigma_S2)^2"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P043_gain_systematics.py", "purpose": "yield grid; three energy estimators; linear (uncertainties) and MC (1e5) propagation of g1, g2, Nq-scale, field, W; budget closure; band sigma-distance with band-width nuisance; efficiency (naive, correlated, posterior-averaged 1/eps); delta_max and P021 peak; L10 and inelastic coupling acceptance systematics; corpus table; three figures", "command": ".venv/bin/python output/code/P043_gain_systematics.py  (60-90 s; log: output/work/P043/run_log.txt)"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "l.88 g1 = 0.110 +- 0.002, g2 = 34.5 +- 1.1 from monoenergetic peaks; l.15/165/332 event 248 +- 23 +- 23 keV, S1c/S2c, 1.5 sigma; l.114-117 ROI and 96% efficiency; l.591-606 NEST v2.4.5 p(E) break; Table S5 l.654-685; l.691 sparse AmBe calibration near 250 keV"},
+  {"file": "output/work/P009/results.json", "parts_used": "alpha_paper 11.3245, beta_paper 1.11167; estimator values 248.56/247.16/245.82; sigma_quadratic 9.84; g1/g2 systematics; E50 291 for Table S5; W_paper 13.46"},
+  {"file": "output/work/P024/results.json", "parts_used": "baseline sigma-distance 1.5407 and sd 0.0313 dex; variants g1/g2/Table S5/field/drawn width for validation; decomposition dlog10S2c/dE"},
+  {"file": "output/work/P038/P038_results.json", "parts_used": "E50 271.6, sigma_erf 10.93, S1c sd 26.15 at 248 keV, eps at 246/248/262, A_600 per delta, dE50 per 2% g1 = 4.7"},
+  {"file": "output/work/P012/P012_L10_spectra_d10_1.npz", "parts_used": "L10 dR/dE (E 1-330 keV) for m = 200/1000/4000 GeV (acceptance integrals)"},
+  {"file": "output/work/P038/spectra_s_1000_full.npz", "parts_used": "1000 GeV isoscalar O1 inelastic spectra (annual halo) at delta = 300/350/370/380 keV over the full recoil window"},
+  {"file": "output/work/P021/P021_peaks.csv", "parts_used": "peak delta vs E_obs (246 -> 380, 262 -> 385 keV) at 1000 GeV"},
+  {"file": "output/work/P012/P012_summary.json", "parts_used": "d10 = 0.279 at 1000 GeV, 68% 0.15-0.43"},
+  {"file": "output/00_evidence_dossier.md; output/results_ledger.csv; papers P002, P007, P009, P010, P012, P021, P024, P038", "parts_used": "context and prior numbers cited"},
+  {"file": "output/code/P009_energy_reconstruction.py", "parts_used": "definition of the paper-contour variant (Nq from contours, Ne from Table S5) and estimator conventions"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "functions listed under software"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions incl. uncertainties 3.2.3"}
+ ],
+ "recalled_knowledge": [
+  {"item": "W = 13.5 +- 0.2 eV per quantum in LXe (nestpy 13.44, NEST v2 13.7); used only for the keVee conversion", "presumed_source": "NEST / Dahl thesis / Lenardo et al. 2015", "reliability": "likely"},
+  {"item": "Gaussian linear error propagation, elasticity algebra and weighted-mean pull of a 2D Gaussian likelihood", "presumed_source": "standard statistics", "reliability": "certain"},
+  {"item": "Okabe-Ito colour-blind-safe palette (cosmetic)", "presumed_source": "Okabe & Ito 2008", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First script run: output log not captured because tee opened before the script created output/work/P043 (script results unaffected; rerun with mkdir).",
+  "Treating W as an independent nuisance on the NR energy scale rejected as double counting with the Nq-scale (the contour scale is fixed by S1c crossings, not by W).",
+  "Full nestpy GetQuanta MC per nuisance draw judged unnecessary: the 2D Gaussian proxy reproduces P009's E_ML to 0.5 keV and P024's band shifts to 0.01 sigma; the band baseline is anchored to P024's MC (offset -0.052 sigma).",
+  "The posterior-averaged mean of 1/eps is dominated by a heavy tail (skew 57); median and 68% interval quoted instead.",
+  "Symbolic derivatives through nestpy not attempted; uncertainties.wrap numerical derivatives agree with the analytic elasticity to 1%."
+ ],
+ "wimpydd_generated_files": []
+}

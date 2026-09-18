@@ -1,0 +1,62 @@
+{
+ "id": "P047",
+ "title": "Isotope by isotope: which xenon nuclei produce a 248 keV recoil for each interaction, and what isotopically modified xenon could reveal",
+ "date": "2026-09-10",
+ "agent_tools": [
+  {"tool": "Read", "count": 18, "detail": "provenance/PAPER_GUIDE.md; output/00_evidence_dossier.md; results_ledger.csv (3 pages, P001-P040); papers P017, P032, P003, P030, P021; code/P017_nuclear_response.py; code/P032_isovector.py; code/common/lzcommon.py lines 108-217 and 305-385; provenance/P032.json (format); work/P047/figures fig1, fig2, fig3 (x2)"},
+  {"tool": "Bash", "count": 11, "detail": "grep of lzcommon function index + ls provenance/work/data_requests; cat work/P017 isotope-share and node CSVs, P017 run_log active isotopes, environment/ENVIRONMENT_versions.txt, ls work/P032 + grep P032 isotope shares; WimPyDD package.py grep (abundance, nt_kg, isotopes_list) and python inspection of Xe.isotopes/abundance/mass and diff_rate docstring; dataviz palette.md grep + node scripts/validate_palette.js on the 7-slot categorical palette (ALL PASS, contrast WARN -> direct labels); .venv/bin/python output/code/P047_isotopes.py (full, 3 min 28 s, failed at KL=0); --fast re-run (exact binomial added); --fast re-run (window-integrated delta scan, Fig. 3) + rm of superseded CSV; wc -w budget checks on the paper (3x, the last with JSON key validation)"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P047_isotopes.py; output/work/P047/details.md; output/provenance/P047.json; output/papers/P047.md"},
+  {"tool": "Edit", "count": 15, "detail": "P047_isotopes.py (4): guard KL=0 for identical spin-operator ratios; exact binomial 3-sigma block; window-integrated (225-271 keV) isotope shares vs delta replacing point shares; Fig. 3 legend/title layout. P047.md (10): word-budget trims of abstract, results, headline, key numbers, question. P047.json (1): final tool counts"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (form, fixed 7-slot categorical palette for the 7 active isotopes, validator, direct labels)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python run from /Users/reza/LZ_simulation"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "streamed_halo_function (via lzcommon.wd_halo, explicit v_min grid; annual average and day_of_the_year=167); eft_hamiltonian (O1, O4, O6, O10 with (c0,c1)=(2/m_v^2,0); L10-like {(4,'q2'): c0 q^2/m_N^2, 6: -c0}); diff_rate with isotopes_list={0:[i]} and delta (17304 + 2800 calls); Xe.func_w, nuclear_current (active-isotope test); Xe.isotopes, Xe.abundance, Xe.mass"},
+  {"name": "numpy", "version": "2.5.3", "functions": "arrays, interp, trapezoid, union1d, clip, savez/load cache"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf (efficiency), stats.binom.median/sf/cdf (exact 3-sigma separation), stats.norm.sf (p-target)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame tables, pivot, CSV output, read_csv of P017 node table"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; stacked bars, grouped log bars, stacked area; three PNG figures"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "wd(), wd_halo(day_of_year), wd_hamiltonian(), wd_c_from_anand(), delta_max_kev(E, m, A=, v_kms=), E_R_range_keV(), v_earth_kms(), mu_red(), m_nucleus_gev(), dRdE_SI() (Helm per-isotope check), constants M_V_GEV, M_NUCLEON_GEV, VESC_KMS, C_KMS, GEV_TO_CM2"},
+  {"name": "node (dataviz validator)", "version": "system node, scripts/validate_palette.js", "functions": "six-check validation of the 7-colour categorical palette (no chart output)"},
+  {"name": "none: derived by hand", "version": "-", "functions": "composition re-weighting R' = sum_i R_i (a'_i/a_i)(<A>/<A'>); analytic rho for spin operators (independence of f_129 for 136-enriched xenon); Asimov binomial/Poisson KL formulae; delta_ceiling = mu v^2/2 at E* = mu^2 v^2/(2 m_N)"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P047_isotopes.py", "purpose": "per-isotope WimPyDD spectra for O1 elastic, O4, O6, O10, L10-like, O1 inelastic delta = 300/350/366/380 keV (June) and 300/350/366 keV (annual) at 1 TeV; isotope fractions in 225-271 keV, efficiency-weighted 5.4-270 keV and at 248 keV; inelastic kinematics per isotope (delta_max, recoil windows, ceiling); window-share vs delta scan; six compositions with rate ratios; Asimov and exact-binomial 3-sigma event counts for hypothesis pairs; shell-vs-Helm SI shares and +-15 % spin-response variations; three figures; summary JSON", "command": ".venv/bin/python output/code/P047_isotopes.py   (re-runs: --fast, using output/work/P047/P047_isotope_spectra.npz)"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules, deliverables, template, word budgets"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "event parameters; significance pattern; kinematic limits delta <= 387 keV at 1 TeV; open question 1"},
+  {"file": "output/results_ledger.csv", "parts_used": "rows P001-P040 (headlines of P002, P003, P006, P007, P017, P020, P021, P030, P032)"},
+  {"file": "output/papers/P017.md", "parts_used": "isotope shares at 248 keV (L10 70/30, O4 52/48, O6 40/60), M-node isotope spread 251-278 keV, Sigma' nodes 375/292 keV, missing 124Xe/126Xe, +-15 % spin robustness, two-body-current sizes"},
+  {"file": "output/work/P017/P017_M_nodes.csv, P017_isotope_shares_248.csv, run_log.txt", "parts_used": "per-isotope shell-model node positions (read by the script); validation of shares; active-isotope list"},
+  {"file": "output/papers/P032.md", "parts_used": "isovector node 182 keV; 131Xe non-dyad M response (W01^2/(W00 W11) = 0.44); per-isotope diff_rate pattern"},
+  {"file": "output/papers/P003.md", "parts_used": "operators compatible with a lone event (O6, O10, L10-like); WimPyDD c0 = 2/m_v^2 convention; L10 = (q^2/m_N^2)O4 - O6; efficiency model"},
+  {"file": "output/papers/P030.md", "parts_used": "134Xe/136Xe carry the rate near delta_max (257-300 keV recoils); 136Xe ceiling 402 keV at 270 keV"},
+  {"file": "output/papers/P021.md", "parts_used": "likelihood peak at delta = 380 keV (1 TeV), 68 % region 360-385 keV; Higgsino at 365-370 keV"},
+  {"file": "output/code/P017_nuclear_response.py, output/code/P032_isovector.py", "parts_used": "isotopes_list usage, L10 q-dependent Hamiltonian, func_w active-isotope test, efficiency constants, palette/rcParams"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "WimPyDD wrapper, kinematics, Helm SI rate, constants, XE_ISOTOPES"},
+  {"file": "output/provenance/P032.json", "parts_used": "JSON key layout"},
+  {"file": "WimPyDD/package.py (read-only)", "parts_used": "nt_kg = abundance*1000/average_a*N_A (l. 467): meaning of per-isotope diff_rate; diff_rate signature"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Spin-dependent (Sigma', Sigma'') nuclear responses vanish for even-even nuclei; only 129Xe (J=1/2) and 131Xe (J=3/2) contribute", "presumed_source": "Fitzpatrick et al. 2013 / Anand et al. 2014", "reliability": "certain"},
+  {"item": "Inelastic kinematics: delta_max(E_R) = v sqrt(2 m_N E_R) - m_N E_R/mu; absolute ceiling mu v^2/2", "presumed_source": "Tucker-Smith & Weiner 2001; standard", "reliability": "certain"},
+  {"item": "Binomial/Poisson Asimov significance Z^2 = 2 N KL(f1||f2)", "presumed_source": "Cowan et al. 2011 (asymptotic formulae)", "reliability": "certain"},
+  {"item": "Chiral two-body currents reduce 129Xe/131Xe neutron-spin structure factors by ~10-30 % with isotope-dependent q-dependence; absent from one-body WimPyDD responses", "presumed_source": "Menendez, Gazit, Schwenk PRD 86 (2012); Klos et al. PRD 88 (2013)", "reliability": "likely"},
+  {"item": "Two-body (isoscalar) SI currents add a few-30 % smooth in q", "presumed_source": "Hoferichter, Klos, Menendez, Schwenk PRD 94 (2016)", "reliability": "likely"},
+  {"item": "EXO-200 used ~200 kg xenon enriched to 80.6 % 136Xe; KamLAND-Zen ~745 kg at ~91 %; nEXO plans ~5 t at ~90 %", "presumed_source": "EXO-200 JINST 2012; KamLAND-Zen PRL 2023; nEXO pCDR", "reliability": "likely"},
+  {"item": "136Xe-depleted xenon (enrichment tails) has been discussed for future DM TPCs to remove the 136Xe 2nu-beta-beta background", "presumed_source": "XLZD/DARWIN design discussions", "reliability": "uncertain"},
+  {"item": "129Xe enriched to ~80-86 % is commercially available in litre quantities for hyperpolarised MRI; no tonne-scale supply", "presumed_source": "hyperpolarised-xenon MRI literature / vendors", "reliability": "likely (availability) / uncertain (scale)"},
+  {"item": "Natural xenon costs a few thousand USD per kg; enriched 136Xe several times more", "presumed_source": "market knowledge", "reliability": "uncertain"},
+  {"item": "Gas-centrifuge enrichment separates by mass, so 129Xe cannot be removed while retaining 128Xe/130Xe; heavy-isotope enrichment removes odd isotopes to a few %", "presumed_source": "isotope-separation principles", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Point shares of dR/dE at exactly 248 keV as the delta-scan observable: 136Xe vanished at every delta because 248 keV sits on its shell-model M node (251 keV); replaced by 225-271 keV window-integrated shares (extra 2688 diff_rate calls).",
+  "Asimov N_tot for the idealised even-A mixture (2.2 events) is outside the asymptotic regime; exact binomial (4 events) quoted instead.",
+  "Asimov formula raised ZeroDivisionError for pairs of pure spin operators (identical composition response); guarded with N = infinity, which is the physical answer."
+ ],
+ "wimpydd_generated_files": ["none written by WimPyDD itself (diff_rate used, not wimp_dd_rate); our own cache output/work/P047/P047_isotope_spectra.npz"]
+}

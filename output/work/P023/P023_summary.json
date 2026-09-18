@@ -1,0 +1,292 @@
+{
+ "validation": {
+  "H_hfs_MHz": 1418.8416721394199,
+  "Ps_hfs_GHz": 204.38662470310337,
+  "quarkonium_ratio_obs": 0.5460992907801281,
+  "quarkonium_ratio_pred": 0.3697676367506111,
+  "meson_ratio_obs": 0.3196605374823187,
+  "baryon_ratio_obs": 0.30959752321981465,
+  "mc_over_mb": 0.3038277511961723,
+  "coulombic_Jpsi_MeV": 27.89791836707818,
+  "coulombic_Ups_MeV": 10.315747344855964,
+  "A21_formula": 8.60656352197158e-15,
+  "A21_measured": 2.87e-15
+ },
+ "hqet": {
+  "K_B": 0.18893599999999922,
+  "K_D": 0.17957799999999982,
+  "K_meson": 0.1842569999999995,
+  "K_SigmaB": 0.0836,
+  "K_SigmaC": 0.08204199999999988,
+  "K_baryon": 0.08282099999999994,
+  "M_LambdaQCD_meson_GeV": 614.1899999999983,
+  "M_LambdaQCD_baryon_GeV": 276.0699999999998
+ },
+ "hyperfine_1TeV_300keV": {
+  "M_GeV": 1000.0,
+  "delta_keV": 300.0,
+  "coul_mQ_GeV": 500.0,
+  "coul_alpha_eff": 0.036628415014847066,
+  "coul_E_B_MeV": 167.70509831248427,
+  "coul_a0_fm": 0.021549060238616923,
+  "coul_pBohr_GeV": 9.157103753711766,
+  "coul_2S1S_MeV": 125.77882373436319,
+  "coul_alphaD_SU3": 0.0274713112611353,
+  "coul_LambdaD_SU3_eV": 8.544125007870822,
+  "coul_alphaD_SU2": 0.04883788668646275,
+  "coul_LambdaD_SU2_eV": 220.09959371357303,
+  "hl_LambdaD_meson_GeV": 0.42078556284758895,
+  "hl_LambdaD_baryon_GeV": 0.6274140936808025,
+  "hl_delta_at_LambdaQCD_meson_keV": 184.45787462546664,
+  "hl_delta_at_LambdaQCD_baryon_keV": 82.91129039524036,
+  "light_delta_over_M": 3e-07,
+  "light_suppression_vs_DeltaN": 9.610030706243602e-07,
+  "light_dm_q_MeV": 0.36280884265279645
+ },
+ "photon_dipole_1TeV": {
+  "N_unit_roi_300": 22528760.724660195,
+  "N_unit_roi_366": 86646.26939046808,
+  "N_unit_elastic": 1188416328994.105,
+  "N_lo_per_hi_elastic": 356.31866672741353,
+  "mu_N1_roi_muN_300": 0.00021068389986677268,
+  "mu_N1_roi_ecm_300": 2.2154352778088983e-18,
+  "mu_N1_roi_e_over_2m_300": 0.2245445882076548,
+  "mu_N1_roi_muN_366": 0.0033972309005181572,
+  "mu_N1_roi_ecm_366": 3.572339978816488e-17,
+  "mu_N1_roi_e_over_2m_366": 3.6207314089284957,
+  "mu_N1_hi_muN_300": 0.00030070023502786283,
+  "mu_N1_hi_muN_366": 0.0035309842601338615,
+  "N_lo_per_hi_300": 0.0,
+  "june_over_annual_300": 1.418418164147069,
+  "june_over_annual_366": 3.1598806206540972,
+  "Aprime_suppression": {
+   "0.3": 0.12232700416869484,
+   "1.0": 0.002194444433044357,
+   "3.0": 2.9613902635781077e-05
+  },
+  "ratio_to_P012_elastic_hi": 14.2911570280815,
+  "ratio_to_P012_L10_equiv": 7.524424995241882
+ },
+ "Z_axial": {
+  "a_p": 0.6769999999999999,
+  "a_n": -0.592,
+  "c4p": 2.2334753986517783e-05,
+  "c4n": -1.9530538197959422e-05,
+  "N_300": 0.6420175988888718,
+  "N_366": 0.002722701264646522,
+  "delta_N1_keV": 290.22959484466406,
+  "gA_for_N1_300": 0.6240171674664183,
+  "gA_for_N1_366": 9.582305390103393
+ },
+ "epsilon_translation": [
+  {
+   "delta_keV": 300.0,
+   "mu_N1_muN": 0.00021068389986677268,
+   "eps_A_coulombic_massless_Ap": 0.05011251474410104,
+   "eps_B_heavylight_massless_Ap_alphaD0p1": 2.5523844294815806e-05,
+   "eps_B_heavylight_mA1GeV_alphaD0p1": 0.0005448585778064577,
+   "mu_natural_C_EWcharged_muN": 0.002814816,
+   "overshoot_C_events": 178.49963172229425
+  },
+  {
+   "delta_keV": 366.0,
+   "mu_N1_muN": 0.0033972309005181572,
+   "eps_A_coulombic_massless_Ap": 0.7882154351007631,
+   "eps_B_heavylight_massless_Ap_alphaD0p1": 0.0004545568180522559,
+   "eps_B_heavylight_mA1GeV_alphaD0p1": 0.009703443515618275,
+   "mu_natural_C_EWcharged_muN": 0.002814816,
+   "overshoot_C_events": 0.686514778390791
+  }
+ ],
+ "lifetime": [
+  {
+   "delta_keV": 300.0,
+   "case": "N_ROI=1",
+   "mu_muN": 0.00021068389986677268,
+   "mu_ecm": 2.2154352778088983e-18,
+   "Gamma_GeV": 9.934231490413628e-21,
+   "tau_s": 6.625676084105368e-05,
+   "decay_length_m": 49.69257063079026,
+   "P_decay_in_1m": 0.019922601649997262,
+   "P_decay_in_1p46m": 0.028953234348650936,
+   "tau_over_t_universe": 1.521413083916249e-22
+  },
+  {
+   "delta_keV": 300.0,
+   "case": "N=0.105 (90% low)",
+   "mu_muN": 6.826938621829399e-05,
+   "mu_ecm": 7.178830784792325e-19,
+   "Gamma_GeV": 1.0430943064934306e-21,
+   "tau_s": 0.0006310167699147971,
+   "decay_length_m": 473.26257743609784,
+   "P_decay_in_1m": 0.002110761119511362,
+   "P_decay_in_1p46m": 0.003080214571663964,
+   "tau_over_t_universe": 1.4489648418249995e-21
+  },
+  {
+   "delta_keV": 300.0,
+   "case": "N=3.65 (90% high)",
+   "mu_muN": 0.00040251102552627536,
+   "mu_ecm": 4.232583155247478e-18,
+   "Gamma_GeV": 3.6259944940009737e-20,
+   "tau_s": 1.8152537216727038e-05,
+   "decay_length_m": 13.614402912545279,
+   "P_decay_in_1m": 0.07081890497740506,
+   "P_decay_in_1p46m": 0.10168938193642107,
+   "tau_over_t_universe": 4.16825502442808e-23
+  },
+  {
+   "delta_keV": 366.0,
+   "case": "N_ROI=1",
+   "mu_muN": 0.0033972309005181572,
+   "mu_ecm": 3.572339978816488e-17,
+   "Gamma_GeV": 4.690306262020816e-18,
+   "tau_s": 1.40334119613846e-07,
+   "decay_length_m": 0.10525058971038449,
+   "P_decay_in_1m": 0.9999252330349373,
+   "P_decay_in_1p46m": 0.9999990545986065,
+   "tau_over_t_universe": 3.222405728715938e-25
+  },
+  {
+   "delta_keV": 366.0,
+   "case": "N=0.105 (90% low)",
+   "mu_muN": 0.0011008286279438402,
+   "mu_ecm": 1.1575704544632742e-17,
+   "Gamma_GeV": 4.924821575121858e-19,
+   "tau_s": 1.3365154248937708e-06,
+   "decay_length_m": 1.0023865686703282,
+   "P_decay_in_1m": 0.6312436361131732,
+   "P_decay_in_1p46m": 0.766955045365027,
+   "tau_over_t_universe": 3.0689578368723206e-24
+  },
+  {
+   "delta_keV": 366.0,
+   "case": "N=3.65 (90% high)",
+   "mu_muN": 0.006490400522212727,
+   "mu_ecm": 6.824945946563579e-17,
+   "Gamma_GeV": 1.7119617856375978e-17,
+   "tau_s": 3.8447704003793423e-08,
+   "decay_length_m": 0.02883577800284507,
+   "P_decay_in_1m": 0.9999999999999991,
+   "P_decay_in_1p46m": 1.0,
+   "tau_over_t_universe": 8.828508845797091e-26
+  }
+ ],
+ "tau_min_10pct_s": 1.2654962108039865e-05,
+ "t_cross_s": 1.9466666666666665e-06,
+ "mu_prompt_muN": 0.0012126387752338422,
+ "single_site_delta_ceiling_keV": {
+  "N=1": {
+   "P10": 325.89323020758076,
+   "P63": 346.919725582523
+  },
+  "N=3.65": {
+   "P10": 306.196943366514,
+   "P63": 333.2483320852385
+  },
+  "N=0.105": {
+   "P10": 350.47316443397256,
+   "P63": 363.7419362646888
+  }
+ },
+ "cosmology": [
+  {
+   "M_GeV": 300.0,
+   "eta_D": 1.4579038395019024e-12,
+   "eta_D_over_eta_B": 0.01675751539657359,
+   "A_sigma_over_m": 6.640409739385e-07,
+   "A_sigmav_cm3s": 3.992423681377488e-24,
+   "A_Omega_sym_h2": 0.0006612524648408891,
+   "A_alpha_thermal": 0.0036739296967709424,
+   "A_delta_if_thermal_keV": 0.00910947546371148,
+   "B_LambdaD_GeV": 0.2303415580284501,
+   "B_sigma_over_m": 0.00017244413561047744,
+   "B_sigmav_cm3s": 8.29430806526952e-16,
+   "B_sym_fraction": 2.652421374619526e-11,
+   "B_glueball_GeV": 1.2668785691564757,
+   "C_sigma_over_m": 9.149408743781857e-10,
+   "C_sigmav_cm3s": 4.400730385370466e-21,
+   "C_sym_fraction": 4.9991701543760855e-06
+  },
+  {
+   "M_GeV": 1000.0,
+   "eta_D": 4.3737115185057074e-13,
+   "eta_D_over_eta_B": 0.005027254618972078,
+   "A_sigma_over_m": 3.27339198480435e-08,
+   "A_sigmav_cm3s": 1.9680664584674422e-25,
+   "A_Omega_sym_h2": 0.013414181155527649,
+   "A_alpha_thermal": 0.012246432322569807,
+   "A_delta_if_thermal_keV": 3.7487553348606903,
+   "B_LambdaD_GeV": 0.42078556284758895,
+   "B_sigma_over_m": 1.550217456570835e-05,
+   "B_sigmav_cm3s": 2.485438952434837e-16,
+   "B_sym_fraction": 8.851555166320985e-11,
+   "B_glueball_GeV": 2.314320595661739,
+   "C_sigma_over_m": 2.4703403608211014e-11,
+   "C_sigmav_cm3s": 3.9606573468334196e-22,
+   "C_sym_fraction": 5.5546335048623164e-05
+  },
+  {
+   "M_GeV": 4000.0,
+   "eta_D": 1.0934278796264268e-13,
+   "eta_D_over_eta_B": 0.0012568136547430194,
+   "A_sigma_over_m": 1.0229349952513594e-09,
+   "A_sigmav_cm3s": 6.1502076827107556e-27,
+   "A_Omega_sym_h2": 0.42925379697688487,
+   "A_alpha_thermal": 0.04898572929027923,
+   "A_delta_if_thermal_keV": 3838.725462897347,
+   "B_LambdaD_GeV": 0.8418635292983718,
+   "B_sigma_over_m": 9.682129829254993e-07,
+   "B_sigmav_cm3s": 6.209281805765043e-17,
+   "B_sym_fraction": 3.543082869837535e-10,
+   "B_glueball_GeV": 4.630249411141045,
+   "C_sigma_over_m": 3.859906813782971e-13,
+   "C_sigmav_cm3s": 2.4754108417708872e-23,
+   "C_sym_fraction": 0.0008887413607779706
+  }
+ ],
+ "benchmarks": [
+  {
+   "scenario": "A: Coulombic dark atom / diquark (U(1)_D or weakly coupled SU(2)_D), m_Q = 500 GeV",
+   "parameters": "alpha_eff = 0.037; E_B = 168 MeV; a0 = 0.022 fm",
+   "delta_keV": 300.0,
+   "mu_tr_required_muN": 0.00021068389986677268,
+   "portal_parameter": "eps = 0.05 (massless A', millicharged constituents)",
+   "tau_chi2_s": 6.625676084105368e-05,
+   "relic": "asymmetric, eta_D = 4.4e-13; thermal alpha would give delta = 4 keV",
+   "sigma_over_m_cm2_g": 3.27339198480435e-08,
+   "distinguishing": "2S level at 126 MeV (no tower at multiples of delta); delta proportional to M at fixed alpha; no dark glueballs (U(1)); SU(3)_D version confines at 9 eV (dark radiation)"
+  },
+  {
+   "scenario": "B: heavy-light dark hadron (SU(3)_D + U(1)_D), m_Q ~ 1 TeV, one light dark quark",
+   "parameters": "Lambda_D = 0.42 GeV (meson-like) / 0.63 GeV (Sigma_Q-like); B*-B scaled by m_b/m_Q",
+   "delta_keV": 300.0,
+   "mu_tr_required_muN": 0.00021068389986677268,
+   "portal_parameter": "eps = 3e-05 (massless A', alpha_D = 0.1) or 0.0005 (m_A' = 1 GeV)",
+   "tau_chi2_s": 6.625676084105368e-05,
+   "relic": "asymmetric, eta_D = 4.4e-13; symmetric remnant 9e-11",
+   "sigma_over_m_cm2_g": 1.550217456570835e-05,
+   "distinguishing": "dark glueballs ~2 GeV and light-quark excitations ~0.5 GeV (must decay before BBN); delta proportional to 1/M: 300 keV at 1 TeV <-> 184 keV if Lambda_D = Lambda_QCD"
+  },
+  {
+   "scenario": "C: light-constituent dark baryon (technibaryon-like), Lambda_D ~ M/3",
+   "parameters": "delta/M = 3e-7 vs 0.31 (Delta-N): suppression 1e-06; or dm_q = 0.36 MeV explicit breaking",
+   "delta_keV": 300.0,
+   "mu_tr_required_muN": 0.00021068389986677268,
+   "portal_parameter": "EW-charged constituents give mu ~ e/(2 Lambda_D) = 2.8e-03 mu_N -> 2e+02 events: constituents must be EW-neutral; Z-axial (T3 = 1/2) gives N = 0.64 at 300 keV, N = 1 at 290 keV",
+   "tau_chi2_s": NaN,
+   "relic": "asymmetric, eta_D = 4.4e-13",
+   "sigma_over_m_cm2_g": 2.4703403608211014e-11,
+   "distinguishing": "no natural 300 keV scale; splitting tuned at 1e-6; rotational/radial tower at ~Lambda_D"
+  }
+ ],
+ "settings": {
+  "exposure": 2.84,
+  "E_grid": "1-329 keV, 2 keV",
+  "efficiency": "P003 erf (0.96; 5.4/269.9 keV; sig 3.4/8 keV)",
+  "halos": "annual = 12-day mean of Baxter SHM; june16 = day 167",
+  "photon_coefficients": "P012 (Anand normalisation, WimPyDD c0=cp+cn)",
+  "gA_chi": 0.5,
+  "runtime_s": 0.7600016593933105
+ }
+}

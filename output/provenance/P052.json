@@ -1,0 +1,59 @@
+{
+ "id": "P052",
+ "title": "Reproducing LZ's 3.4 sigma local significance from the published summaries: a three-sample two-dimensional toy likelihood",
+ "date": "2026-09-11",
+ "agent_tools": [
+  {"tool": "Read", "count": 28, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (rows 1-14 read, rest summarised via Bash); papers P016, P008, P021, P024, P004, P022, P009, P001; figures FigS1a/b/c PNGs, Fig5 PNG; fulltext.tex l.140-264 (samples, MSSI, Table I, Fig.5 caption), l.436-595 (Fig. S1/S2 captions, Eq. S1, LEE, Tables S1/S2), l.815-911 (Local significance, Tables S6/S7); lzcommon.py l.1-112 and 255-386; work/P016/P016_results.json; work/P004/P004_fig5_digitised.csv; work/P022/P022_fig5_accidentals_digitised.csv; data_requests/DR-001.md; code/P022_accidentals.py l.60-110; own figures fig1, fig2, fig4"},
+  {"tool": "Bash", "count": 27, "detail": "ledger rows 15-47 summary + dir listings + tex grep; lzcommon function list; npz/csv inspection of P003/P012/P021/P038/P009 caches; P009 yield variants + P038 efficiency + PROMPT.md sec.4; dataviz palette grep; smoke run of script (300 toys); grep P004/P022 digitisation code; pixel probe of Fig.5 brown curve; L10 curve digitisation probe; --stage fit (x2); --stage toys x10 (lzlike L10 seeds 1,2; base L10; lzlike O1s_d350; lzlike O4s; lzlike O1v; lzlike O1s; base O1s_d350; lzlike L10_fig1; base O4s); --stage sa; --stage final; SA cell breakdown; version/DR-index/results check; word counts"},
+  {"tool": "Write", "count": 6, "detail": "code/P052_reproduce_significance.py (initial and staged rewrite); work/P052/details.md; provenance/P052.json; papers/P052.md; data_requests/DR-002.md"},
+  {"tool": "Edit", "count": 3, "detail": "script: remove dead assignment in mu_veto; add Fig.1/Helm diagnostic models; exclude 'check' classes from rms"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette and chart rules; JS validator skipped per PAPER_GUIDE)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python"},
+  {"name": "numpy", "version": "2.5.3", "functions": "arrays, random.default_rng (poisson, standard_normal), interp, searchsorted"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats.norm (cdf, isf, sf), stats.poisson, stats.chi2.sf, stats.beta.ppf, special.erf, optimize.brentq"},
+  {"name": "iminuit", "version": "2.32.0", "functions": "Minuit (migrad strategy 0, limits, fixed, minos, merrors) for all profile fits and toys"},
+  {"name": "pandas", "version": "3.0.5", "functions": "read_csv, DataFrame, to_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; scatter, errorbar, step, pcolormesh, colorbar"},
+  {"name": "Pillow", "version": "12.3.0", "functions": "Image.open + colour-mask digitisation of the Fig. 5 L10 curve (colour (165,42,42), P022 tick calibration)"},
+  {"name": "nestpy", "version": "2.1.1", "functions": "via lzcommon.nest_nr_yields (LZ_WS2024 detector, GetYields with Table S5 parameters incl. p(E) break) on a 1 keV grid, cached in P052_yield_cache.npz"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ, LSIG, OSIG, OSIG_DELTAS, nest_nr_yields, dRdE_SI (Helm inelastic diagnostic)"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "not run; spectra taken from caches P003_spectra.npz, P012_L10_spectra_d10_1.npz, P021 spectra_{s,v}_{400,1000,4000}.npz"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P052_reproduce_significance.py", "purpose": "data fits for 59 models in 4 configurations, L10 detail, ingredient variants", "command": ".venv/bin/python output/code/P052_reproduce_significance.py --stage fit"},
+  {"path": "output/code/P052_reproduce_significance.py", "purpose": "semi-analytic single-event calibration (which cells carry p0)", "command": ".venv/bin/python output/code/P052_reproduce_significance.py --stage sa"},
+  {"path": "output/code/P052_reproduce_significance.py", "purpose": "background-only toys (10 runs; 93,559 toys)", "command": ".venv/bin/python output/code/P052_reproduce_significance.py --stage toys --model <L10_1000|L10_1000_fig1|O1s_1000_d350|O4s_1000|O1v_1000|O1s_1000> --config <base|lzlike> --toys <5000|10000> --seed <1..10>"},
+  {"path": "output/code/P052_reproduce_significance.py", "purpose": "merge toys, figures, P052_results.json", "command": ".venv/bin/python output/code/P052_reproduce_significance.py --stage final"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "sample definitions and veto coincidence rates (l.141-147), MSSI paragraphs and lambda_MSSI (l.184-196), Table I (l.210-246), PLR/GoF paragraph (l.248-250), Fig. 5 caption (l.258-264), Fig. S1/S2 captions, Eq. S1 and constraints (l.462-483), LEE/model space (l.485-498), Tables S1/S2 (l.506-589), Local significance + Tables S6/S7 (l.820-909)"},
+  {"file": "inputs/figures_png/Fig5_NR_distance_3panels_no_sig.png", "parts_used": "digitised best-fit L10 curve in all three panels (signal d-PDF); middle-panel data points (1,1,3,4,10,4); visual check of components"},
+  {"file": "inputs/figures_png/FigS1a_science_sample_marked.png; FigS1b_delayed_sample_marked.png; FigS1c_prompt_sample_marked.png", "parts_used": "extent of MSSI, NR and ER contours (S1c shapes of the neutron and ER components; MSSI along the band)"},
+  {"file": "output/work/P016/P016_results.json", "parts_used": "fig5_top_digitised (components, total, data counts), toy_check, b_H anchors"},
+  {"file": "output/work/P004/P004_fig5_digitised.csv", "parts_used": "bottom-panel total, MSSI, accidentals per 0.5 sigma bin"},
+  {"file": "output/work/P022/P022_fig5_accidentals_digitised.csv", "parts_used": "middle/bottom-panel accidentals and totals per bin"},
+  {"file": "output/work/P003/P003_spectra.npz; fig1_digitised_top.csv; fig1_digitised_bottom.csv", "parts_used": "elastic O1/O4/O6/O10/O11 (s,v) spectra at 200/1000/4000 GeV; LZ Fig. 1 digitised spectra (diagnostic)"},
+  {"file": "output/work/P012/P012_L10_spectra_d10_1.npz", "parts_used": "L10 spectra 100-4000 GeV"},
+  {"file": "output/work/P021/spectra_s_*.npz, spectra_v_*.npz", "parts_used": "inelastic O1 (s,v) spectra, 'annual' halo, delta 100-350 keV"},
+  {"file": "output/work/P009/yield_curves.csv, results.json; output/work/P038/P038_mc_efficiency.csv", "parts_used": "paper-contour energy scale Nq = 11.32 E^1.112; NR-band median/width; S1c resolution sd/sqrt(S1c) = 1.11-1.14"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "LZ constants, LSIG/OSIG tables, nest_nr_yields, dRdE_SI"},
+  {"file": "output/papers/P001.md, P004.md, P008.md, P009.md, P016.md, P021.md, P022.md, P024.md; output/00_evidence_dossier.md; output/results_ledger.csv", "parts_used": "prior results cited; ledger for context"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Operator-to-Lagrangian mapping O1<->L1, O4<->L15, O6<->L4, O10<->L2, O11<->L3 for comparing with Table S6", "presumed_source": "Anand, Fitzpatrick, Haxton (2014) as used by P003/P016", "reliability": "likely"},
+  {"item": "Chernoff half-chi-square asymptotics for q0 with a boundary at s=0; Wilks' theorem", "presumed_source": "Chernoff 1954; Cowan et al. 2011", "reliability": "certain"},
+  {"item": "Toy-MC p0 definition (fraction of background-only toys with q0 >= observed) as the Baxter et al. 2021 recommendation cited by LZ", "presumed_source": "Baxter et al., EPJC 81, 907 (2021)", "reliability": "certain"},
+  {"item": "Heavier low-d tail of the signal PDF at fixed S1c arises from the NEST photon-electron anticorrelation (a high-Nph fluctuation selects a low Ne)", "presumed_source": "NEST model structure (Szydagis et al.)", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": [{"id": "DR-002", "status": "filed (pending)"}],
+ "failed_or_abandoned": [
+  "Unbinned single-event term with a continuous S1c background density inside the 250-500 phd panel: the S1c dependence is not published; replaced by stated within-panel shapes (the residual -0.3 sigma lives here; DR-002).",
+  "Inverting the Fig. S1 68/95% MSSI contours into a 2D PDF: contours of a PDF dominated by low S1c cannot be inverted uniquely; Fig. 5 projections used instead.",
+  "First single-run script design exceeded the 10-minute foreground limit for toys; restructured into stages and parallel toy runs (one run capped at 8,559 toys by the in-script 540 s guard)."
+ ],
+ "wimpydd_generated_files": "none (cached spectra only)"
+}

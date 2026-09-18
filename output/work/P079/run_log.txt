@@ -1,0 +1,179 @@
+contour: 583 z-samples, r_c range 56.93-65.05 cm, min true stand-off 7.75 cm
+
+[1] geometry: raw mass at LZ cuts 4.267 t (P070 4.36; paper 4.71) -> kappa_M = 1.104; 5.4 t contour raw 4.914 t (x kappa = 5.42); active 6.93 t (LZ 7.0)
+    stand-off of the mean contour from the true wall: min 7.75, mean 10.89, max 15.87 cm; from reco wall mean 7.30 cm
+    reco-wall offset from the true wall: top 0.01, mid 3.63, bottom 6.22 cm
+    family A: M(s) at z_b=9 [t, calibrated]: s=2: 5.67, s=3: 5.50, s=4: 5.34, s=5: 5.18, s=6: 5.02, s=8: 4.71, s=10: 4.41, s=12: 4.12
+    family B: M(s) at z_b=9 [t, calibrated]: s=2: 6.15, s=3: 5.98, s=4: 5.81, s=5: 5.64, s=6: 5.48, s=8: 5.16, s=10: 4.84, s=12: 4.54
+    family A: M(z_b) at s=8: z_b=0: 5.00, z_b=2: 4.93, z_b=5: 4.84, z_b=7: 4.77, z_b=9: 4.71, z_b=12: 4.61
+    family C (reco margin m): m=1: 5.71, m=2: 5.55, m=3: 5.38, m=4: 5.22, m=6: 4.91
+
+[2] MSSI depth scales versus LZ's 5.4 t annulus (wall 0.03/0.0048 = 6.25; RFR 0.003/0.0001 = 30):
+    wall lambda = 3.0 cm: annulus/FV = 1.34
+    wall lambda = 4.3 cm: annulus/FV = 0.86
+    wall lambda = 4.8 cm: annulus/FV = 0.76
+    wall lambda = 6.0 cm: annulus/FV = 0.60
+    wall lambda = 8.0 cm: annulus/FV = 0.46
+    -> wall lambda reproducing 6.25: 1.23 cm
+    -> radial-only annulus (z 9-132.8): lambda = 1.16 cm; with lambda = 4.3 the radial annulus alone gives 0.76
+    RFR lambda_z = 2.0 cm: annulus/FV = 29.8
+    RFR lambda_z = 2.7 cm: annulus/FV = 11.8
+    RFR lambda_z = 4.0 cm: annulus/FV = 4.7
+    RFR lambda_z = 6.5 cm: annulus/FV = 1.9
+    -> lambda_z reproducing 30: 2.00 cm (P070: 214Pb E2 2.7 cm, detector-gamma 6.5 cm)
+    -> HE SB wall rows (0.5/0.1 = 5.0) give lambda = 1.36 cm; prompt-veto rows (2.2/0.09 = 24) would give 0.75 cm (prompt-veto wall MSSI is dominated by the annulus)
+    wall leakage (whole 3-600 phd ROI): mean reco stand-off 4.7 t 7.30 cm, 5.4 t 5.01 cm -> lambda_leak = 0.50 cm (1e-4 -> 1e-2).
+    This population is low-S2 (sigma_r ~ cm); at S2c ~ 1e4 phd sigma_r ~ 3 mm (P041), so for the high-energy window the leakage is
+    treated as a reconstruction floor d_reco >= 3.0 cm everywhere, not as a background term; the low-E exponential is kept as a diagnostic.
+    LZ cuts, 600 phd, per 220 d: wall 1.68e-04, RFR 3.50e-06, uniform 2.02e-04, total 3.73e-04 (low-E leakage diagnostic 1.0e-04; d_reco mean 7.30, min 6.21 cm)
+    LZ cuts, 1000 phd: wall 2.34e-03, RFR 6.45e-04, uniform 3.58e-04, total 3.34e-03 (P038 added NR-band MSSI 0.0027)
+
+[3] acceptance of the 200 keV-plus window (fraction of the full spectrum, incl. 0.955 plateau):
+    L10     : 600: 0.154, 700: 0.191, 800: 0.218, 1000: 0.292, 1200: 0.374  | ratio 1000/600 = 1.89, 800/600 = 1.41
+    inel300 : 600: 0.161, 700: 0.181, 800: 0.224, 1000: 0.288, 1200: 0.300  | ratio 1000/600 = 1.79, 800/600 = 1.39
+    inel350 : 600: 0.235, 700: 0.308, 800: 0.471, 1000: 0.705, 1200: 0.743  | ratio 1000/600 = 3.00, 800/600 = 2.00
+    inel366 : 600: 0.137, 700: 0.250, 800: 0.505, 1000: 0.866, 1200: 0.917  | ratio 1000/600 = 6.32, 800/600 = 3.69
+
+[4] reference (LZ cuts, 600 phd) in the untouched 524 live days: M = 4.71 t, b = 8.89e-04 (wall 4.0e-04, RFR 8.3e-06, uni 4.8e-04); Z_L10 = 5.73, Z_inel350 = 5.73, Z_inel366 = 5.73
+    scan: 3465 configurations (family A), 6 s
+
+    optima over the scan (family A, untouched exposure):
+    max Z_L10          (d_reco,min>=0.0, P(>=1 bkg)<=None, edges None): edge 1200, s = 9.0, z_b = 14: Z_L10 = 7.542, M = 4.40 t, b = 1.03e-02, P(>=1 bkg) = 0.0102, d_reco,min = 7.21
+    max Z_L10          (d_reco,min>=3.0, P(>=1 bkg)<=None, edges None): edge 1200, s = 9.0, z_b = 14: Z_L10 = 7.542, M = 4.40 t, b = 1.03e-02, P(>=1 bkg) = 0.0102, d_reco,min = 7.21
+    max Z_L10          (d_reco,min>=3.0, P(>=1 bkg)<=0.01, edges None): edge 1200, s = 9.5, z_b = 14: Z_L10 = 7.541, M = 4.33 t, b = 9.29e-03, P(>=1 bkg) = 0.0092, d_reco,min = 7.71
+    max Z_L10          (d_reco,min>=3.0, P(>=1 bkg)<=0.025, edges None): edge 1200, s = 9.0, z_b = 14: Z_L10 = 7.542, M = 4.40 t, b = 1.03e-02, P(>=1 bkg) = 0.0102, d_reco,min = 7.21
+    max Z_L10          (d_reco,min>=3.0, P(>=1 bkg)<=None, edges [600]): edge 600, s = 5.0, z_b = 1: Z_L10 = 5.976, M = 5.46 t, b = 1.59e-03, P(>=1 bkg) = 0.0016, d_reco,min = 3.21
+    max Z_L10          (d_reco,min>=3.0, P(>=1 bkg)<=None, edges [1000]): edge 1000, s = 7.0, z_b = 10: Z_L10 = 6.962, M = 4.83 t, b = 9.13e-03, P(>=1 bkg) = 0.0091, d_reco,min = 5.21
+    max Z_inel350      (d_reco,min>=0.0, P(>=1 bkg)<=None, edges None): edge 1000, s = 6.5, z_b = 10: Z_inel350 = 9.140, M = 4.91 t, b = 1.01e-02, P(>=1 bkg) = 0.0101, d_reco,min = 4.71
+    max Z_inel350      (d_reco,min>=3.0, P(>=1 bkg)<=None, edges None): edge 1000, s = 6.5, z_b = 10: Z_inel350 = 9.140, M = 4.91 t, b = 1.01e-02, P(>=1 bkg) = 0.0101, d_reco,min = 4.71
+    max Z_inel350      (d_reco,min>=3.0, P(>=1 bkg)<=0.01, edges None): edge 1000, s = 7.0, z_b = 10: Z_inel350 = 9.137, M = 4.83 t, b = 9.13e-03, P(>=1 bkg) = 0.0091, d_reco,min = 5.21
+    max Z_inel350      (d_reco,min>=3.0, P(>=1 bkg)<=0.025, edges None): edge 1000, s = 6.5, z_b = 10: Z_inel350 = 9.140, M = 4.91 t, b = 1.01e-02, P(>=1 bkg) = 0.0101, d_reco,min = 4.71
+    max Z_inel350      (d_reco,min>=3.0, P(>=1 bkg)<=None, edges [600]): edge 600, s = 5.0, z_b = 1: Z_inel350 = 5.976, M = 5.46 t, b = 1.59e-03, P(>=1 bkg) = 0.0016, d_reco,min = 3.21
+    max Z_inel350      (d_reco,min>=3.0, P(>=1 bkg)<=None, edges [1000]): edge 1000, s = 6.5, z_b = 10: Z_inel350 = 9.140, M = 4.91 t, b = 1.01e-02, P(>=1 bkg) = 0.0101, d_reco,min = 4.71
+    max Z_inel366      (d_reco,min>=0.0, P(>=1 bkg)<=None, edges None): edge 1000, s = 4.0, z_b = 8: Z_inel366 = 14.162, M = 5.37 t, b = 1.87e-02, P(>=1 bkg) = 0.0185, d_reco,min = 2.21
+    max Z_inel366      (d_reco,min>=3.0, P(>=1 bkg)<=None, edges None): edge 1000, s = 5.0, z_b = 9: Z_inel366 = 14.157, M = 5.18 t, b = 1.44e-02, P(>=1 bkg) = 0.0143, d_reco,min = 3.21
+    max Z_inel366      (d_reco,min>=3.0, P(>=1 bkg)<=0.01, edges None): edge 1000, s = 6.5, z_b = 11: Z_inel366 = 14.105, M = 4.87 t, b = 9.74e-03, P(>=1 bkg) = 0.0097, d_reco,min = 4.71
+    max Z_inel366      (d_reco,min>=3.0, P(>=1 bkg)<=0.025, edges None): edge 1000, s = 5.0, z_b = 9: Z_inel366 = 14.157, M = 5.18 t, b = 1.44e-02, P(>=1 bkg) = 0.0143, d_reco,min = 3.21
+    max Z_inel366      (d_reco,min>=3.0, P(>=1 bkg)<=None, edges [600]): edge 600, s = 5.0, z_b = 1: Z_inel366 = 5.976, M = 5.46 t, b = 1.59e-03, P(>=1 bkg) = 0.0016, d_reco,min = 3.21
+    max Z_inel366      (d_reco,min>=3.0, P(>=1 bkg)<=None, edges [1000]): edge 1000, s = 5.0, z_b = 9: Z_inel366 = 14.157, M = 5.18 t, b = 1.44e-02, P(>=1 bkg) = 0.0143, d_reco,min = 3.21
+    max FoM_M_sqrtb    (d_reco,min>=0.0, P(>=1 bkg)<=None, edges None): edge 600, s = 14.5, z_b = 8: FoM_M_sqrtb = 174.188, M = 3.80 t, b = 4.76e-04, P(>=1 bkg) = 0.0005, d_reco,min = 12.71
+    max FoM_M_sqrtb    (d_reco,min>=3.0, P(>=1 bkg)<=None, edges None): edge 600, s = 14.5, z_b = 8: FoM_M_sqrtb = 174.188, M = 3.80 t, b = 4.76e-04, P(>=1 bkg) = 0.0005, d_reco,min = 12.71
+    max FoM_M_sqrtb    (d_reco,min>=3.0, P(>=1 bkg)<=0.01, edges None): edge 600, s = 14.5, z_b = 8: FoM_M_sqrtb = 174.188, M = 3.80 t, b = 4.76e-04, P(>=1 bkg) = 0.0005, d_reco,min = 12.71
+    max FoM_M_sqrtb    (d_reco,min>=3.0, P(>=1 bkg)<=0.025, edges None): edge 600, s = 14.5, z_b = 8: FoM_M_sqrtb = 174.188, M = 3.80 t, b = 4.76e-04, P(>=1 bkg) = 0.0005, d_reco,min = 12.71
+    max FoM_M_sqrtb    (d_reco,min>=3.0, P(>=1 bkg)<=None, edges [600]): edge 600, s = 14.5, z_b = 8: FoM_M_sqrtb = 174.188, M = 3.80 t, b = 4.76e-04, P(>=1 bkg) = 0.0005, d_reco,min = 12.71
+    max FoM_M_sqrtb    (d_reco,min>=3.0, P(>=1 bkg)<=None, edges [1000]): edge 1000, s = 16.0, z_b = 18: FoM_M_sqrtb = 90.176, M = 3.35 t, b = 1.38e-03, P(>=1 bkg) = 0.0014, d_reco,min = 14.21
+    max reach_MA_L10   (d_reco,min>=0.0, P(>=1 bkg)<=None, edges None): edge 1200, s = 2.0, z_b = 0: reach_MA_L10 = 3.095, M = 6.02 t, b = 2.87e-01, P(>=1 bkg) = 0.2492, d_reco,min = 0.21
+    max reach_MA_L10   (d_reco,min>=3.0, P(>=1 bkg)<=None, edges None): edge 1200, s = 5.0, z_b = 0: reach_MA_L10 = 2.826, M = 5.50 t, b = 2.39e-01, P(>=1 bkg) = 0.2125, d_reco,min = 3.21
+    max reach_MA_L10   (d_reco,min>=3.0, P(>=1 bkg)<=0.01, edges None): edge 1200, s = 9.0, z_b = 15: reach_MA_L10 = 2.246, M = 4.37 t, b = 9.92e-03, P(>=1 bkg) = 0.0099, d_reco,min = 7.21
+    max reach_MA_L10   (d_reco,min>=3.0, P(>=1 bkg)<=0.025, edges None): edge 1200, s = 5.0, z_b = 13: reach_MA_L10 = 2.587, M = 5.03 t, b = 2.53e-02, P(>=1 bkg) = 0.0250, d_reco,min = 3.21
+    max reach_MA_L10   (d_reco,min>=3.0, P(>=1 bkg)<=None, edges [600]): edge 600, s = 5.0, z_b = 0: reach_MA_L10 = 1.167, M = 5.50 t, b = 1.68e-03, P(>=1 bkg) = 0.0017, d_reco,min = 3.21
+    max reach_MA_L10   (d_reco,min>=3.0, P(>=1 bkg)<=None, edges [1000]): edge 1000, s = 5.0, z_b = 0: reach_MA_L10 = 2.209, M = 5.50 t, b = 6.00e-02, P(>=1 bkg) = 0.0582, d_reco,min = 3.21
+
+    Z_L10 vs s (z_b = 9): s=0: 5.916/6.713, s=2: 5.916/6.836, s=4: 5.885/6.916, s=6: 5.823/6.953, s=8: 5.733/6.946, s=10: 5.617/6.897, s=12: 5.479/6.806, s=16: 5.157/6.519  (600/1000 phd)
+    b_total vs s (z_b = 9, 1000 phd): s=0: 4.39e-02, s=2: 2.78e-02, s=4: 1.78e-02, s=6: 1.17e-02, s=8: 7.97e-03, s=12: 4.13e-03
+    Z_L10 vs z_b (s = 8, 1000 phd): z_b=0: 5.901, z_b=2: 6.305, z_b=5: 6.724, z_b=9: 6.946, z_b=15: 6.901
+    FoM M/sqrt(b) vs s (z_b = 9, 600 phd): s=0: 101, s=2: 116, s=4: 132, s=6: 146, s=8: 158, s=10: 167, s=12: 172, s=16: 173
+
+    counterfactual 5.4 t volume (drawn contour, z 2.15-135.75; calibrated M = 5.30 t): b = 1.36e-03 (wall 7.2e-04, RFR 1.1e-04, uni 5.4e-04; whole-ROI wall leakage would be 1e-2 x 2.38); Z_L10 = 5.942 vs 5.733; exclusion reach x1.12; d_reco,min = 4.06 cm
+    counterfactual with LZ table numbers directly: b = 3.70e-03, Z_L10 = 5.476 (Delta Z vs 4.71 t = -0.257)
+    edge 600: Z_L10(s) at z_b = 9 peaks at s = 1.0 (Z = 5.920); within 1 % for s in [0.0, 4.5] cm; Z(8) = 5.733
+    edge 800: Z_L10(s) at z_b = 9 peaks at s = 6.0 (Z = 6.339); within 1 % for s in [2.0, 9.5] cm; Z(8) = 6.318
+    edge 1000: Z_L10(s) at z_b = 9 peaks at s = 6.5 (Z = 6.955); within 1 % for s in [3.5, 10.0] cm; Z(8) = 6.946
+
+[5] soft FV (position-binned likelihood, family A, untouched exposure):
+    600 phd, LZ volume: Z_3D = 5.771 vs hard 5.689 (P070: +0.1-0.2 sigma for the actual event)
+    1000 phd, s_min=8, z_b=9, k=1, lambda=4.3: M = 4.71 t, s = 4.44, b = 7.78e-03: Z_3D = 7.474, Z_hard(same volume) = 6.896
+    1000 phd, s_min=8, z_b=9, k=2, lambda=6: M = 4.71 t, s = 4.44, b = 1.48e-02: Z_3D = 7.105, Z_hard(same volume) = 6.478
+    1000 phd, s_min=8, z_b=9, k=1, lambda=1.23: M = 4.71 t, s = 4.44, b = 7.58e-03: Z_3D = 7.804, Z_hard(same volume) = 6.913
+    1000 phd, s_min=8, z_b=9, k=2, lambda=1.23: M = 4.71 t, s = 4.44, b = 1.43e-02: Z_3D = 7.699, Z_hard(same volume) = 6.498
+    1000 phd, s_min=7, z_b=9, k=1, lambda=4.3: M = 4.86 t, s = 4.58, b = 9.41e-03: Z_3D = 7.543, Z_hard(same volume) = 6.905
+    1000 phd, s_min=7, z_b=9, k=2, lambda=6: M = 4.86 t, s = 4.58, b = 1.71e-02: Z_3D = 7.170, Z_hard(same volume) = 6.503
+    1000 phd, s_min=7, z_b=9, k=1, lambda=1.23: M = 4.86 t, s = 4.58, b = 1.45e-02: Z_3D = 7.852, Z_hard(same volume) = 6.618
+    1000 phd, s_min=7, z_b=9, k=2, lambda=1.23: M = 4.86 t, s = 4.58, b = 2.80e-02: Z_3D = 7.738, Z_hard(same volume) = 6.154
+    1000 phd, s_min=6, z_b=9, k=1, lambda=4.3: M = 5.02 t, s = 4.73, b = 1.15e-02: Z_3D = 7.608, Z_hard(same volume) = 6.903
+    1000 phd, s_min=6, z_b=9, k=2, lambda=6: M = 5.02 t, s = 4.73, b = 1.99e-02: Z_3D = 7.233, Z_hard(same volume) = 6.523
+    1000 phd, s_min=6, z_b=9, k=1, lambda=1.23: M = 5.02 t, s = 4.73, b = 3.01e-02: Z_3D = 7.889, Z_hard(same volume) = 6.223
+    1000 phd, s_min=6, z_b=9, k=2, lambda=1.23: M = 5.02 t, s = 4.73, b = 5.94e-02: Z_3D = 7.766, Z_hard(same volume) = 5.708
+    1000 phd, s_min=6, z_b=5, k=1, lambda=4.3: M = 5.16 t, s = 4.86, b = 1.70e-02: Z_3D = 7.650, Z_hard(same volume) = 6.746
+    1000 phd, s_min=6, z_b=5, k=2, lambda=6: M = 5.16 t, s = 4.86, b = 3.09e-02: Z_3D = 7.266, Z_hard(same volume) = 6.311
+    1000 phd, s_min=6, z_b=5, k=1, lambda=1.23: M = 5.16 t, s = 4.86, b = 3.56e-02: Z_3D = 7.930, Z_hard(same volume) = 6.205
+    1000 phd, s_min=6, z_b=5, k=2, lambda=1.23: M = 5.16 t, s = 4.86, b = 7.02e-02: Z_3D = 7.797, Z_hard(same volume) = 5.675
+    1000 phd, s_min=5, z_b=5, k=1, lambda=4.3: M = 5.32 t, s = 5.01, b = 1.98e-02: Z_3D = 7.713, Z_hard(same volume) = 6.763
+    1000 phd, s_min=5, z_b=5, k=2, lambda=6: M = 5.32 t, s = 5.01, b = 3.46e-02: Z_3D = 7.328, Z_hard(same volume) = 6.347
+    1000 phd, s_min=5, z_b=5, k=1, lambda=1.23: M = 5.32 t, s = 5.01, b = 7.16e-02: Z_3D = 7.958, Z_hard(same volume) = 5.773
+    1000 phd, s_min=5, z_b=5, k=2, lambda=1.23: M = 5.32 t, s = 5.01, b = 1.42e-01: Z_3D = 7.818, Z_hard(same volume) = 5.195
+    1000 phd, s_min=4, z_b=5, k=1, lambda=4.3: M = 5.49 t, s = 5.17, b = 2.33e-02: Z_3D = 7.772, Z_hard(same volume) = 6.768
+    1000 phd, s_min=4, z_b=5, k=2, lambda=6: M = 5.49 t, s = 5.17, b = 3.90e-02: Z_3D = 7.386, Z_hard(same volume) = 6.376
+    1000 phd, s_min=4, z_b=5, k=1, lambda=1.23: M = 5.49 t, s = 5.17, b = 1.54e-01: Z_3D = 7.978, Z_hard(same volume) = 5.233
+    1000 phd, s_min=4, z_b=5, k=2, lambda=1.23: M = 5.49 t, s = 5.17, b = 3.07e-01: Z_3D = 7.832, Z_hard(same volume) = 4.606
+    1000 phd, s_min=3, z_b=5, k=1, lambda=4.3: M = 5.65 t, s = 5.33, b = 2.78e-02: Z_3D = 7.828, Z_hard(same volume) = 6.760
+    1000 phd, s_min=3, z_b=5, k=2, lambda=6: M = 5.65 t, s = 5.33, b = 4.41e-02: Z_3D = 7.442, Z_hard(same volume) = 6.398
+    1000 phd, s_min=3, z_b=5, k=1, lambda=1.23: M = 5.65 t, s = 5.33, b = 3.43e-01: Z_3D = 7.991, Z_hard(same volume) = 4.601
+    1000 phd, s_min=3, z_b=5, k=2, lambda=1.23: M = 5.65 t, s = 5.33, b = 6.85e-01: Z_3D = 7.841, Z_hard(same volume) = 3.933
+    1000 phd, s_min=3, z_b=2, k=1, lambda=4.3: M = 5.77 t, s = 5.48, b = 4.39e-02: Z_3D = 7.881, Z_hard(same volume) = 6.518
+    1000 phd, s_min=3, z_b=2, k=2, lambda=6: M = 5.77 t, s = 5.48, b = 7.61e-02: Z_3D = 7.488, Z_hard(same volume) = 6.062
+    1000 phd, s_min=3, z_b=2, k=1, lambda=1.23: M = 5.77 t, s = 5.48, b = 3.70e-01: Z_3D = 8.044, Z_hard(same volume) = 4.622
+    1000 phd, s_min=3, z_b=2, k=2, lambda=1.23: M = 5.77 t, s = 5.48, b = 7.38e-01: Z_3D = 7.887, Z_hard(same volume) = 3.944
+    s8_zb9_k1_lam4.3: Z_3D = 7.474 equals a hard-cut analysis (LZ-shaped FV, 1000 phd) of M = 5.45 t (actual 4.71 t; LZ 4.71)
+    s6_zb9_k1_lam4.3: Z_3D = 7.608 equals a hard-cut analysis (LZ-shaped FV, 1000 phd) of M = 5.65 t (actual 5.02 t; LZ 4.71)
+    s6_zb5_k1_lam4.3: Z_3D = 7.650 equals a hard-cut analysis (LZ-shaped FV, 1000 phd) of M = 5.71 t (actual 5.16 t; LZ 4.71)
+    s5_zb5_k1_lam4.3: Z_3D = 7.713 equals a hard-cut analysis (LZ-shaped FV, 1000 phd) of M = 5.81 t (actual 5.32 t; LZ 4.71)
+    s3_zb5_k1_lam4.3: Z_3D = 7.828 equals a hard-cut analysis (LZ-shaped FV, 1000 phd) of M = 5.98 t (actual 5.65 t; LZ 4.71)
+    s3_zb2_k1_lam4.3: Z_3D = 7.881 equals a hard-cut analysis (LZ-shaped FV, 1000 phd) of M = 6.06 t (actual 5.77 t; LZ 4.71)
+    s6_zb5_k1_lam1.23: Z_3D = 7.930 equals a hard-cut analysis (LZ-shaped FV, 1000 phd) of M = 6.14 t (actual 5.16 t; LZ 4.71)
+    s6_zb5_k2_lam1.23: Z_3D = 7.797 equals a hard-cut analysis (LZ-shaped FV, 1000 phd) of M = 5.93 t (actual 5.16 t; LZ 4.71)
+    position LR (uniform/wall, lambda 4.3, volume s_min=3, z_b=5) at d = 3, 5, 8, 12, 20, 27 cm: 0.06, 0.10, 0.21, 0.52, 3.36, 17.13
+
+[6] recommendation table (untouched exposure, 524 live days); worst case = k 2, lambda LZ-table 1.2 cm, lambda_z 2.0 cm, uniform high:
+    LZ 2026 (600 phd, s=8, z_b=9)                        M 4.71 t (+0.0 %), d_reco,min 6.2, b 8.9e-04 [worst 1.8e-03], Z_L10 5.73 [worst 5.44; 3D 5.77/5.56], Z_350 5.73, Z_366 5.73; 5sigma live d: L10 399, 350 399, 366 399 (L10 lo68 1608); reach x1.00/1.00; P(>=1 bkg) 0.0009 [worst 0.0018]
+                                                         exact Poisson: N_5sigma = 3 [worst 3]; P(5sigma | L10 best) = 0.426 [worst 0.426; lo68 rate 0.036], median Z 4.94 [worst 4.66]; P(5sigma | inel366) = 0.426 [worst 0.426; lo68 0.036]
+    edge 800 (s=8, z_b=9)                                M 4.71 t (+0.0 %), d_reco,min 6.2, b 3.3e-03 [worst 6.3e-03], Z_L10 6.32 [worst 5.96; 3D 6.60/6.54], Z_350 7.75, Z_366 11.02; 5sigma live d: L10 328, 350 218, 366 108 (L10 lo68 1368); reach x1.41/3.69; P(>=1 bkg) 0.0032 [worst 0.0063]
+                                                         exact Poisson: N_5sigma = 3 [worst 3]; P(5sigma | L10 best) = 0.652 [worst 0.653; lo68 rate 0.082], median Z 5.71 [worst 5.36]; P(5sigma | inel366) = 0.993 [worst 0.993; lo68 0.492]
+    edge 1000 (s=8, z_b=9)                               M 4.71 t (+0.0 %), d_reco,min 6.2, b 8.0e-03 [worst 1.6e-02], Z_L10 6.95 [worst 6.50; 3D 7.47/7.54], Z_350 9.11, Z_366 14.05; 5sigma live d: L10 272, 350 158, 366 66 (L10 lo68 1162); reach x1.89/6.32; P(>=1 bkg) 0.0079 [worst 0.0154]
+                                                         exact Poisson: N_5sigma = 3 [worst 4]; P(5sigma | L10 best) = 0.828 [worst 0.662; lo68 rate 0.157], median Z 6.28 [worst 5.85]; P(5sigma | inel366) = 1.000 [worst 1.000; lo68 0.829]
+    edge 1200 (s=8, z_b=9)                               M 4.71 t (+0.0 %), d_reco,min 6.2, b 1.9e-02 [worst 3.7e-02], Z_L10 7.40 [worst 6.87; 3D 8.28/8.47], Z_350 8.69, Z_366 13.56; 5sigma live d: L10 239, 350 173, 366 71 (L10 lo68 1056); reach x2.42/6.70; P(>=1 bkg) 0.0186 [worst 0.0363]
+                                                         exact Poisson: N_5sigma = 4 [worst 4]; P(5sigma | L10 best) = 0.829 [worst 0.831; lo68 rate 0.101], median Z 7.42 [worst 6.86]; P(5sigma | inel366) = 1.000 [worst 1.000; lo68 0.707]
+    1000 phd, s=7, z_b=9                                 M 4.86 t (+3.3 %), d_reco,min 5.2, b 9.6e-03 [worst 3.0e-02], Z_L10 6.95 [worst 6.16; 3D 7.54/7.58], Z_350 9.13, Z_366 14.10; 5sigma live d: L10 271, 350 157, 366 66 (L10 lo68 1168); reach x1.95/6.53; P(>=1 bkg) 0.0096 [worst 0.0297]
+                                                         exact Poisson: N_5sigma = 3 [worst 4]; P(5sigma | L10 best) = 0.844 [worst 0.688; lo68 rate 0.168], median Z 6.16 [worst 6.25]; P(5sigma | inel366) = 1.000 [worst 1.000; lo68 0.845]
+    1000 phd, s=6, z_b=9                                 M 5.02 t (+6.6 %), d_reco,min 4.2, b 1.2e-02 [worst 6.4e-02], Z_L10 6.95 [worst 5.71; 3D 7.61/7.61], Z_350 9.14, Z_366 14.14; 5sigma live d: L10 271, 350 157, 366 66 (L10 lo68 1179); reach x2.02/6.74; P(>=1 bkg) 0.0117 [worst 0.0616]
+                                                         exact Poisson: N_5sigma = 3 [worst 5]; P(5sigma | L10 best) = 0.859 [worst 0.536; lo68 rate 0.179], median Z 6.95 [worst 5.65]; P(5sigma | inel366) = 1.000 [worst 1.000; lo68 0.860]
+    1000 phd, s=6, z_b=5                                 M 5.16 t (+9.5 %), d_reco,min 4.2, b 1.7e-02 [worst 8.4e-02], Z_L10 6.79 [worst 5.58; 3D 7.65/7.63], Z_350 8.96, Z_366 13.91; 5sigma live d: L10 284, 350 163, 366 68 (L10 lo68 1261); reach x2.07/6.92; P(>=1 bkg) 0.0172 [worst 0.0810]
+                                                         exact Poisson: N_5sigma = 4 [worst 5]; P(5sigma | L10 best) = 0.728 [worst 0.563; lo68 rate 0.065], median Z 6.67 [worst 5.40]; P(5sigma | inel366) = 1.000 [worst 1.000; lo68 0.730]
+    1000 phd, s=5, z_b=5 (d_reco,min 3.2 cm)             M 5.32 t (+12.9 %), d_reco,min 3.2, b 2.0e-02 [worst 1.6e-01], Z_L10 6.81 [worst 5.14; 3D 7.71/7.65], Z_350 8.99, Z_366 13.98; 5sigma live d: L10 283, 350 162, 366 67 (L10 lo68 1264); reach x2.14/7.14; P(>=1 bkg) 0.0200 [worst 0.1492]
+                                                         exact Poisson: N_5sigma = 4 [worst 6]; P(5sigma | L10 best) = 0.750 [worst 0.428; lo68 rate 0.072], median Z 6.55 [worst 4.80]; P(5sigma | inel366) = 1.000 [worst 0.999; lo68 0.752]
+    1000 phd, reco-margin 3 cm, z_b=5                    M 5.55 t (+17.8 %), d_reco,min 3.0, b 2.5e-02 [worst 2.9e-01], Z_L10 6.82 [worst 4.75; 3D 7.80/7.68], Z_350 9.02, Z_366 14.05; 5sigma live d: L10 282, 350 161, 366 66 (L10 lo68 1275); reach x2.23/7.45; P(>=1 bkg) 0.0250 [worst 0.2511]
+                                                         exact Poisson: N_5sigma = 4 [worst 7]; P(5sigma | L10 best) = 0.779 [worst 0.330; lo68 rate 0.081], median Z 6.39 [worst 4.20]; P(5sigma | inel366) = 1.000 [worst 0.999; lo68 0.781]
+    1000 phd, cylinder s=6, z_b=5 (infeasible at bottom) M 5.66 t (+20.1 %), d_reco,min 0.6, b 2.8e-02 [worst 4.3e-01], Z_L10 6.81 [worst 4.45; 3D 7.83/7.68], Z_350 9.01, Z_366 14.07; 5sigma live d: L10 282, 350 161, 366 66 (L10 lo68 1286); reach x2.27/7.59; P(>=1 bkg) 0.0280 [worst 0.3464]
+                                                         exact Poisson: N_5sigma = 4 [worst 8]; P(5sigma | L10 best) = 0.792 [worst 0.234; lo68 rate 0.086], median Z 6.30 [worst 4.39]; P(5sigma | inel366) = 1.000 [worst 0.998; lo68 0.793]
+    600 phd, s=6, z_b=5                                  M 5.16 t (+9.5 %), d_reco,min 4.2, b 1.2e-03 [worst 5.4e-03], Z_L10 5.90 [worst 5.21; 3D 5.99/5.72], Z_350 5.90, Z_366 5.90; 5sigma live d: L10 377, 350 377, 366 377 (L10 lo68 1531); reach x1.09/1.09; P(>=1 bkg) 0.0012 [worst 0.0054]
+                                                         exact Poisson: N_5sigma = 3 [worst 3]; P(5sigma | L10 best) = 0.484 [worst 0.485; lo68 rate 0.045], median Z 4.81 [worst 4.18]; P(5sigma | inel366) = 0.484 [worst 0.485; lo68 0.045]
+    600 phd, reco-margin 3 cm, z_b=5                     M 5.55 t (+17.8 %), d_reco,min 3.0, b 1.7e-03 [worst 2.0e-02], Z_L10 5.99 [worst 4.74; 3D 6.15/5.81], Z_350 5.99, Z_366 5.99; 5sigma live d: L10 365, 350 365, 366 365 (L10 lo68 1497); reach x1.18/1.18; P(>=1 bkg) 0.0017 [worst 0.0196]
+                                                         exact Poisson: N_5sigma = 3 [worst 4]; P(5sigma | L10 best) = 0.533 [worst 0.314; lo68 rate 0.054], median Z 6.02 [worst 4.70]; P(5sigma | inel366) = 0.533 [worst 0.314; lo68 0.054]
+    P(5sigma | L10) optimum, edge 600: s = 9.5, z_b = 7: P5 = 0.669 (M 4.55 t, b 7.6e-04); at s=8,z_b=9: 0.426
+    P(5sigma | L10) optimum, edge 800: s = 5.0, z_b = 1: P5 = 0.747 (M 5.46 t, b 1.1e-02); at s=8,z_b=9: 0.652
+    P(5sigma | L10) optimum, edge 1000: s = 6.0, z_b = 9: P5 = 0.859 (M 5.02 t, b 1.2e-02); at s=8,z_b=9: 0.828
+    P(5sigma | L10) optimum, edge 1200: s = 8.5, z_b = 13: P5 = 0.914 (M 4.51 t, b 1.2e-02); at s=8,z_b=9: 0.829
+
+    joint optimum incl. edge (family A, d_reco,min >= floor): nominal vs worst-case MSSI (k=2, lambda 1.2/2.0, uniform high):
+    L10      P<=None: edge 1200, s 9.0, z_b 14: Z 7.54 (LZ cuts 5.73, x1.32); worst-case Z 7.44, b 1.0e-02 -> 1.2e-02, P(>=1) 0.012
+    L10      P<=0.01: edge 1200, s 9.5, z_b 14: Z 7.54 (LZ cuts 5.73, x1.32); worst-case Z 7.59, b 9.3e-03 -> 8.7e-03, P(>=1) 0.009
+    L10      P<=0.025: edge 1200, s 9.0, z_b 14: Z 7.54 (LZ cuts 5.73, x1.32); worst-case Z 7.44, b 1.0e-02 -> 1.2e-02, P(>=1) 0.012
+    inel350  P<=None: edge 1000, s 6.5, z_b 10: Z 9.14 (LZ cuts 5.73, x1.59); worst-case Z 7.91, b 1.0e-02 -> 4.2e-02, P(>=1) 0.041
+    inel350  P<=0.01: edge 1000, s 7.0, z_b 10: Z 9.14 (LZ cuts 5.73, x1.59); worst-case Z 8.17, b 9.1e-03 -> 2.9e-02, P(>=1) 0.029
+    inel350  P<=0.025: edge 1000, s 6.5, z_b 10: Z 9.14 (LZ cuts 5.73, x1.59); worst-case Z 7.91, b 1.0e-02 -> 4.2e-02, P(>=1) 0.041
+    inel366  P<=None: edge 1000, s 5.0, z_b 9: Z 14.16 (LZ cuts 5.73, x2.47); worst-case Z 11.25, b 1.4e-02 -> 1.4e-01, P(>=1) 0.131
+    inel366  P<=0.01: edge 1000, s 6.5, z_b 11: Z 14.10 (LZ cuts 5.73, x2.46); worst-case Z 12.42, b 9.7e-03 -> 4.1e-02, P(>=1) 0.041
+    inel366  P<=0.025: edge 1000, s 5.0, z_b 9: Z 14.16 (LZ cuts 5.73, x2.47); worst-case Z 11.25, b 1.4e-02 -> 1.4e-01, P(>=1) 0.131
+
+    wall MSSI (NR band, 1000 phd, 524 d) vs s for lambda = 1.23 (LZ table) / 3.3 / 4.3 / 6 cm, k = 1, z_b = 5:
+    s = 2: 8.17e-01 / 3.81e-02 / 2.51e-02 / 1.70e-02   (spread x48.1)
+    s = 3: 3.56e-01 / 2.77e-02 / 1.96e-02 / 1.42e-02   (spread x25.2)
+    s = 4: 1.55e-01 / 2.01e-02 / 1.53e-02 / 1.18e-02   (spread x13.2)
+    s = 5: 6.76e-02 / 1.46e-02 / 1.19e-02 / 9.81e-03   (spread x6.9)
+    s = 6: 2.94e-02 / 1.06e-02 / 9.27e-03 / 8.16e-03   (spread x3.6)
+    s = 7: 1.28e-02 / 7.73e-03 / 7.22e-03 / 6.79e-03   (spread x1.9)
+    s = 8: 5.58e-03 / 5.61e-03 / 5.63e-03 / 5.65e-03   (spread x1.0)
+    RFR MSSI (NR band, 1000 phd, 524 d) vs z_b for lambda_z = 2.0/2.7/6.5 (s = 6): z_b=2: 5.4e-02/2.2e-02/4.7e-03; z_b=5: 1.2e-02/7.2e-03/3.0e-03; z_b=7: 4.4e-03/3.4e-03/2.2e-03; z_b=9: 1.6e-03/1.6e-03/1.6e-03
+    L10: fraction of accepted LZ-ROI events with E_obs > 200 keV = 0.364 (LZ whole-ROI best fit 1.0 event -> 0.36 above 200 keV)
+
+done in 9 s; outputs in output/work/P079

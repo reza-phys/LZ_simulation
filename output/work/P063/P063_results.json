@@ -1,0 +1,625 @@
+{
+ "nuclear": {
+  "BR_SF": 5.45e-07,
+  "T12_U238_y": 4468000000.0,
+  "nu_bar": 2.01,
+  "sigma_nu": 1.08,
+  "P_nu": [
+   0.08103430692490222,
+   0.23734984190718852,
+   0.3565949259216502,
+   0.24117074026017243,
+   0.07328262890270452,
+   0.009951989885746845,
+   0.0005996576452938835,
+   1.5908552341361228e-05
+  ],
+  "P_nu_P013": [
+   0.05000000000000001,
+   0.25000000000000006,
+   0.37000000000000005,
+   0.25000000000000006,
+   0.07000000000000002,
+   0.010000000000000002,
+   0.0,
+   0.0
+  ],
+  "watt": {
+   "a": 0.988,
+   "b": 2.249,
+   "mean": 2.0308369639997155,
+   "f_gt_200keV_recoil": 0.01737784777762942,
+   "f_gt_248keV_recoil": 0.005240755593630797,
+   "f_gt_10MeV": 0.0012868748917504648
+  },
+  "E_n_min_248": 8.19471436705644,
+  "E_n_min_200": 6.608640618593903,
+  "n_gamma_bar": 6.5,
+  "E_gamma_mean": 0.9,
+  "gamma_models": {
+   "Poisson(6.5)": {
+    "P0": 0.0015034391929775724,
+    "P1": 0.009772354754354215,
+    "P2": 0.03176015295165121
+   },
+   "narrow G(6.5,2.5) k>=1": {
+    "P0": 0.0,
+    "P1": 0.014672877463709237,
+    "P2": 0.03231405538123632
+   },
+   "narrow G(6.5,2.5) k>=2": {
+    "P0": 0.0,
+    "P1": 0.0,
+    "P2": 0.03279525615620731
+   }
+  }
+ },
+ "inventory": [
+  {
+   "component": "PTFE (TPC walls, reflectors)",
+   "amount": 1000.0,
+   "unit": "kg",
+   "A_U238_Bq": 0.01,
+   "A_lo": 0.003,
+   "A_hi": 0.1,
+   "N_SF_220d": 0.1035936,
+   "N_SF_lo": 0.03107808,
+   "N_SF_hi": 1.035936,
+   "location": "wall",
+   "p_enter": 0.5,
+   "note": "mass 0.5-1.5 t; U_e 3-100 uBq/kg (recalled, uncertain)"
+  },
+  {
+   "component": "Ti cryostat (ICV+OCV)",
+   "amount": 2200.0,
+   "unit": "kg",
+   "A_U238_Bq": 1.1,
+   "A_lo": 0.22,
+   "A_hi": 3.52,
+   "N_SF_220d": 11.395296,
+   "N_SF_lo": 2.2790592,
+   "N_SF_hi": 36.4649472,
+   "location": "cryostat",
+   "p_enter": 0.35,
+   "note": "U_e < 1.6 mBq/kg assay UL (recalled, uncertain); U_l 0.09"
+  },
+  {
+   "component": "R11410 PMTs (TPC 494 + Skin 131)",
+   "amount": 625.0,
+   "unit": "PMT",
+   "A_U238_Bq": 1.25,
+   "A_lo": 0.625,
+   "A_hi": 1.875,
+   "N_SF_220d": 12.9492,
+   "N_SF_lo": 6.4746,
+   "N_SF_hi": 19.423799999999996,
+   "location": "pmt",
+   "p_enter": 0.4,
+   "note": "U_e 1-3 mBq/PMT (recalled, uncertain)"
+  },
+  {
+   "component": "cables, feedthroughs, PMT bases, misc.",
+   "amount": 1.0,
+   "unit": "lot",
+   "A_U238_Bq": 0.3,
+   "A_lo": 0.1,
+   "A_hi": 0.6,
+   "N_SF_220d": 3.1078079999999995,
+   "N_SF_lo": 1.035936,
+   "N_SF_hi": 6.215615999999999,
+   "location": "pmt",
+   "p_enter": 0.2,
+   "note": "lumped; 0.1-0.6 Bq U_e (recalled, uncertain)"
+  }
+ ],
+ "inventory_total": {
+  "A": 2.66,
+  "A_lo": 0.948,
+  "A_hi": 6.095,
+  "N_SF": 27.555897599999998,
+  "N_SF_lo": 9.82067328,
+  "N_SF_hi": 63.14029919999999
+ },
+ "SF_neutrons_220d": 55.38735417599999,
+ "SF_neutrons_above_8p2MeV_220d": 0.290271586214282,
+ "routeB": {
+  "fit UL 0.118": {
+   "SS_untagged": 0.118,
+   "SS_pre_veto": 1.4750000000000008,
+   "n_enter_LXe": 187.0275770577393,
+   "n_emitted": 374.0551541154786,
+   "SF_over_alpha_n": 0.010954499999999997,
+   "SF_over_alpha_n_range": [
+    0.0018257499999999995,
+    0.07302999999999998
+   ],
+   "N_SF_neutrons": 4.09758718575801,
+   "N_SF": 2.0386005899293584,
+   "N_SF_range": [
+    0.3397667649882264,
+    13.590670599529053
+   ]
+  },
+  "MS cross-check 0.02": {
+   "SS_untagged": 0.02,
+   "SS_pre_veto": 0.2500000000000001,
+   "n_enter_LXe": 31.699589331820217,
+   "n_emitted": 63.399178663640434,
+   "SF_over_alpha_n": 0.010954499999999997,
+   "SF_over_alpha_n_range": [
+    0.0018257499999999995,
+    0.07302999999999998
+   ],
+   "N_SF_neutrons": 0.694506302670849,
+   "N_SF": 0.34552552371684037,
+   "N_SF_range": [
+    0.05758758728614005,
+    2.303503491445602
+   ]
+  },
+  "MS cross-check +1sigma 0.04": {
+   "SS_untagged": 0.04,
+   "SS_pre_veto": 0.5000000000000002,
+   "n_enter_LXe": 63.399178663640434,
+   "n_emitted": 126.79835732728087,
+   "SF_over_alpha_n": 0.010954499999999997,
+   "SF_over_alpha_n_range": [
+    0.0018257499999999995,
+    0.07302999999999998
+   ],
+   "N_SF_neutrons": 1.389012605341698,
+   "N_SF": 0.6910510474336807,
+   "N_SF_range": [
+    0.1151751745722801,
+    4.607006982891204
+   ]
+  }
+ },
+ "routeC": {
+  "<=1 MS": {
+   "N_MS_allowed": 1,
+   "P_MS_per_SF": 0.34394748218296933,
+   "N_SF_max": 2.9074206144879735,
+   "N_SF_max_range": [
+    2.2148695044898092,
+    4.5430716065500665
+   ]
+  },
+  "<=3 MS": {
+   "N_MS_allowed": 3,
+   "P_MS_per_SF": 0.34394748218296933,
+   "N_SF_max": 8.72226184346392,
+   "N_SF_max_range": [
+    6.644608513469428,
+    13.6292148196502
+   ]
+  },
+  "<=5 MS": {
+   "N_MS_allowed": 5,
+   "P_MS_per_SF": 0.34394748218296933,
+   "N_SF_max": 14.537103072439868,
+   "N_SF_max_range": [
+    11.074347522449045,
+    22.715358032750334
+   ]
+  }
+ },
+ "P013_transport": {
+  "p_ss_roi_alpha_n": 0.0078865375,
+  "p_ss_roi_SF": 0.008383856698154467,
+  "p_win_SF": 1.6103472219213926e-06,
+  "p_win_SF_range": [
+   6.256025178687425e-07,
+   2.050586030791989e-06
+  ],
+  "untagged": 0.07999999999999996
+ },
+ "gamma_transport": {
+  "geometry": {
+   "R_TPC": 72.8,
+   "H_TPC": 145.6,
+   "R_SKIN": 79.0,
+   "Z_LXE_LO": -20.0,
+   "Z_LXE_HI": 150.0,
+   "PMT_T": 15.0,
+   "DOME_T": 15.0,
+   "R_ICV": 80.0,
+   "T_TI": 0.8,
+   "R_OCV": 92.0,
+   "R_OD_IN": 95.0,
+   "T_OD_SIDE": 61.0,
+   "T_OD_TOPBOT": 30.0,
+   "Z_ICV_LO": -60.0,
+   "Z_ICV_HI": 170.0,
+   "Z_OD_LO": -80.0,
+   "Z_OD_HI": 190.0
+  },
+  "per_location": {
+   "wall": {
+    "p_gamma_silent": 0.0036166666666666665,
+    "p_gamma_silent_err": 0.0002450709553336505,
+    "p_gamma_silent_Egt1MeV": 0.0068984296995552325,
+    "p_gamma_silent_Elt0p5MeV": 0.0011614941460695038
+   },
+   "cryostat": {
+    "p_gamma_silent": 0.13408333333333333,
+    "p_gamma_silent_err": 0.0013910726859487222,
+    "p_gamma_silent_Egt1MeV": 0.06943685073810825,
+    "p_gamma_silent_Elt0p5MeV": 0.2354493679677733
+   },
+   "pmt": {
+    "p_gamma_silent": 0.14771666666666666,
+    "p_gamma_silent_err": 0.001448542100731833,
+    "p_gamma_silent_Egt1MeV": 0.08673446121574171,
+    "p_gamma_silent_Elt0p5MeV": 0.23141221021520272
+   },
+   "ocv": {
+    "p_gamma_silent": 0.14186666666666667,
+    "p_gamma_silent_err": 0.001424432726594202,
+    "p_gamma_silent_Egt1MeV": 0.07586300996043116,
+    "p_gamma_silent_Elt0p5MeV": 0.2443767031545887
+   }
+  },
+  "variants": {
+   "wall|v_od=0.7": 0.0063,
+   "wall|v_od=1.0": 0.003033333333333333,
+   "wall|pmt_arrays_half_visible": 0.0034333333333333334,
+   "wall|invisible_regions_absorb": 0.0301,
+   "cryostat|v_od=0.7": 0.14353333333333335,
+   "cryostat|v_od=1.0": 0.13423333333333334,
+   "cryostat|pmt_arrays_half_visible": 0.127,
+   "cryostat|invisible_regions_absorb": 0.4587333333333333,
+   "pmt|v_od=0.7": 0.15526666666666666,
+   "pmt|v_od=1.0": 0.14693333333333333,
+   "pmt|pmt_arrays_half_visible": 0.032466666666666665,
+   "pmt|invisible_regions_absorb": 0.6896
+  }
+ },
+ "f_gamma": [
+  {
+   "location": "wall",
+   "model": "Poisson(6.5)",
+   "p_gamma": 0.0036166666666666665,
+   "f_gamma": 0.0015392012488860925
+  },
+  {
+   "location": "wall",
+   "model": "narrow G(6.5,2.5) k>=1",
+   "p_gamma": 0.0036166666666666665,
+   "f_gamma": 5.349247520421148e-05
+  },
+  {
+   "location": "wall",
+   "model": "narrow G(6.5,2.5) k>=2",
+   "p_gamma": 0.0036166666666666665,
+   "f_gamma": 4.319056761923938e-07
+  },
+  {
+   "location": "cryostat",
+   "model": "Poisson(6.5)",
+   "p_gamma": 0.13408333333333333,
+   "f_gamma": 0.0035941119810355493
+  },
+  {
+   "location": "cryostat",
+   "model": "narrow G(6.5,2.5) k>=1",
+   "p_gamma": 0.13408333333333333,
+   "f_gamma": 0.0027332192229353007
+  },
+  {
+   "location": "cryostat",
+   "model": "narrow G(6.5,2.5) k>=2",
+   "p_gamma": 0.13408333333333333,
+   "f_gamma": 0.0007772351795597854
+  },
+  {
+   "location": "pmt",
+   "model": "Poisson(6.5)",
+   "p_gamma": 0.14771666666666666,
+   "f_gamma": 0.003927148587608876
+  },
+  {
+   "location": "pmt",
+   "model": "narrow G(6.5,2.5) k>=1",
+   "p_gamma": 0.14771666666666666,
+   "f_gamma": 0.003126174647084014
+  },
+  {
+   "location": "pmt",
+   "model": "narrow G(6.5,2.5) k>=2",
+   "p_gamma": 0.14771666666666666,
+   "f_gamma": 0.0009730231471438263
+  },
+  {
+   "location": "ocv",
+   "model": "Poisson(6.5)",
+   "p_gamma": 0.14186666666666667,
+   "f_gamma": 0.003780622249355973
+  },
+  {
+   "location": "ocv",
+   "model": "narrow G(6.5,2.5) k>=1",
+   "p_gamma": 0.14186666666666667,
+   "f_gamma": 0.0029541592946492386
+  },
+  {
+   "location": "ocv",
+   "model": "narrow G(6.5,2.5) k>=2",
+   "p_gamma": 0.14186666666666667,
+   "f_gamma": 0.0008855608036225734
+  },
+  {
+   "location": "P013 (p=0.15, Poisson 7)",
+   "model": "Poisson(7)",
+   "p_gamma": 0.15,
+   "f_gamma": 0.0026058405184084983
+  }
+ ],
+ "f_neutrons": {
+  "c": 0.1564852043524697,
+  "lo": 0.13602298233282414,
+  "hi": 0.20357497663329654
+ },
+ "p_n_silent": {
+  "c": 0.1,
+  "lo": 0.05,
+  "hi": 0.2
+ },
+ "u_self": {
+  "c": 0.1,
+  "lo": 0.08,
+  "hi": 0.2
+ },
+ "expected": {
+  "central": 1.470883070406889e-09,
+  "poisson_gamma": 1.8840513244236416e-09,
+  "no_companion_penalty": 3.1854597116749225e-06,
+  "effective_silent_factor": 0.0004617490734590063,
+  "ratio_to_P013": 15.870555356138206,
+  "by_component": [
+   {
+    "component": "PTFE (TPC walls, reflectors)",
+    "location": "wall",
+    "N_SF": 0.1035936,
+    "p_enter": 0.5,
+    "p_gamma": 0.0036166666666666665,
+    "f_gamma_narrow": 5.349247520421148e-05,
+    "f_gamma_poisson": 0.0015392012488860925,
+    "f_n": 0.1564852043524697,
+    "P_lone_per_SF": 1.354726310855767e-12,
+    "P_lone_per_SF_poissonG": 3.898111690677341e-11,
+    "N_lone_220d": 1.4034097555626797e-13,
+    "N_lone_220d_poissonG": 4.038194232393522e-12,
+    "N_lone_no_companion_penalty": 1.6765577429868013e-08
+   },
+   {
+    "component": "Ti cryostat (ICV+OCV)",
+    "location": "cryostat",
+    "N_SF": 11.395296,
+    "p_enter": 0.35,
+    "p_gamma": 0.13408333333333333,
+    "f_gamma_narrow": 0.0027332192229353007,
+    "f_gamma_poisson": 0.0035941119810355493,
+    "f_n": 0.1564852043524697,
+    "P_lone_per_SF": 4.845419447049592e-11,
+    "P_lone_per_SF_poissonG": 6.371600178152203e-11,
+    "N_lone_220d": 5.521498884328643e-10,
+    "N_lone_220d_poissonG": 7.260627002369708e-10,
+    "N_lone_no_companion_penalty": 1.290949462099837e-06
+   },
+   {
+    "component": "R11410 PMTs (TPC 494 + Skin 131)",
+    "location": "pmt",
+    "N_SF": 12.9492,
+    "p_enter": 0.4,
+    "p_gamma": 0.14771666666666666,
+    "f_gamma_narrow": 0.003126174647084014,
+    "f_gamma_poisson": 0.003927148587608876,
+    "f_n": 0.1564852043524697,
+    "P_lone_per_SF": 6.333767178381044e-11,
+    "P_lone_per_SF_poissonG": 7.956575571369255e-11,
+    "N_lone_220d": 8.201721794629181e-10,
+    "N_lone_220d_poissonG": 1.0303128838877474e-09,
+    "N_lone_no_companion_penalty": 1.6765577429868014e-06
+   },
+   {
+    "component": "cables, feedthroughs, PMT bases, misc.",
+    "location": "pmt",
+    "N_SF": 3.1078079999999995,
+    "p_enter": 0.2,
+    "p_gamma": 0.14771666666666666,
+    "f_gamma_narrow": 0.003126174647084014,
+    "f_gamma_poisson": 0.003927148587608876,
+    "f_n": 0.1564852043524697,
+    "P_lone_per_SF": 3.166883589190522e-11,
+    "P_lone_per_SF_poissonG": 3.978287785684627e-11,
+    "N_lone_220d": 9.842066153555016e-11,
+    "N_lone_220d_poissonG": 1.236375460665297e-10,
+    "N_lone_no_companion_penalty": 2.0118692915841615e-07
+   }
+  ],
+  "sensitivity": [
+   {
+    "scenario": "central (route A inventory, narrow gamma mult., p_n=0.1, u=0.1)",
+    "N_lone_220d": 1.470883070406889e-09,
+    "ratio_to_central": 1.0
+   },
+   {
+    "scenario": "gamma multiplicity Poisson(6.5)",
+    "N_lone_220d": 1.8840513244236416e-09,
+    "ratio_to_central": 1.2808980960685463
+   },
+   {
+    "scenario": "gamma multiplicity narrow k>=2",
+    "N_lone_220d": 4.4292630213685583e-10,
+    "ratio_to_central": 0.3011295126364665
+   },
+   {
+    "scenario": "p_n = 0.20",
+    "N_lone_220d": 1.9135035029506165e-09,
+    "ratio_to_central": 1.3009215630045194
+   },
+   {
+    "scenario": "p_n = 0.05",
+    "N_lone_220d": 1.278548363262234e-09,
+    "ratio_to_central": 0.8692386152140228
+   },
+   {
+    "scenario": "self-untagged 0.20",
+    "N_lone_220d": 2.941766140813778e-09,
+    "ratio_to_central": 2.0
+   },
+   {
+    "scenario": "OD visibility 0.7",
+    "N_lone_220d": 1.5929670093899788e-09,
+    "ratio_to_central": 1.0830004379269371
+   },
+   {
+    "scenario": "OD visibility 1.0",
+    "N_lone_220d": 1.464846121430674e-09,
+    "ratio_to_central": 0.9958956975590556
+   },
+   {
+    "scenario": "Ti/PMT-array interactions all silent (over-conservative)",
+    "N_lone_220d": 4.386036435074086e-08,
+    "ratio_to_central": 29.819069396595754
+   },
+   {
+    "scenario": "PMT arrays half visible (Skin light)",
+    "N_lone_220d": 6.638183434649562e-10,
+    "ratio_to_central": 0.4513059921760639
+   },
+   {
+    "scenario": "per-gamma silent floor 0.05 (unmodelled gaps)",
+    "N_lone_220d": 1.4729010821123227e-09,
+    "ratio_to_central": 1.0013719728957622
+   },
+   {
+    "scenario": "per-gamma silent floor 0.15 (P013 value)",
+    "N_lone_220d": 1.5925091609835458e-09,
+    "ratio_to_central": 1.0826891634173283
+   },
+   {
+    "scenario": "p_win at MC maximum",
+    "N_lone_220d": 1.8729949889353907e-09,
+    "ratio_to_central": 1.2733812949640286
+   },
+   {
+    "scenario": "p_win at MC minimum",
+    "N_lone_220d": 5.714222000141871e-10,
+    "ratio_to_central": 0.38848920863309355
+   },
+   {
+    "scenario": "Ti and PMTs at assay upper limits",
+    "N_lone_220d": 3.1941195762261993e-09,
+    "ratio_to_central": 2.171565939189587
+   },
+   {
+    "scenario": "inventory at all lower brackets",
+    "N_lone_220d": 5.242094551675678e-10,
+    "ratio_to_central": 0.3563909774436089
+   },
+   {
+    "scenario": "inventory at all upper brackets",
+    "N_lone_220d": 3.3703129000488667e-09,
+    "ratio_to_central": 2.291353383458646
+   },
+   {
+    "scenario": "route C cap (<=3 MS): N_SF = 8.7",
+    "N_lone_220d": 4.6557827538185736e-10,
+    "ratio_to_central": 0.316529766878794
+   },
+   {
+    "scenario": "route B PTFE-only (fit UL): N_SF = 2.04",
+    "N_lone_220d": 1.0881674545954874e-10,
+    "ratio_to_central": 0.07398055470816377
+   },
+   {
+    "scenario": "STACKED HIGH: upper inventory, Poisson gammas, p_gamma floor 0.15, p_n 0.2, u 0.2, p_win max",
+    "N_lone_220d": 1.5083427247293883e-08,
+    "ratio_to_central": 10.254674590225155
+   },
+   {
+    "scenario": "STACKED LOW: lower inventory, narrow k>=2, p_n 0.05, u 0.08, p_win min",
+    "N_lone_220d": 4.264480463247667e-11,
+    "ratio_to_central": 0.028992654474349126
+   }
+  ]
+ },
+ "bursts": {
+  "per_location": {
+   "wall": {
+    "P_ge1_visible_gamma": 0.9999465075247957,
+    "mean_visible_gammas": 6.476491666666666
+   },
+   "cryostat": {
+    "P_ge1_visible_gamma": 0.9972667807770647,
+    "mean_visible_gammas": 5.628458333333334
+   },
+   "pmt": {
+    "P_ge1_visible_gamma": 0.996873825352916,
+    "mean_visible_gammas": 5.539841666666666
+   },
+   "ocv": {
+    "P_ge1_visible_gamma": 0.9970458407053507,
+    "mean_visible_gammas": 5.577866666666666
+   }
+  },
+  "by_component": [
+   {
+    "component": "PTFE (TPC walls, reflectors)",
+    "N_SF": 0.1035936,
+    "P_ge1_TPC_deposit": 0.620117361495508,
+    "P_ge1_capture": 0.7495552148494806,
+    "P_ge2_captures": 0.35447966798772135,
+    "N_TPC_deposit_events": 0.06424018989982105,
+    "N_MS_events": 0.04278075627817661,
+    "N_TPC_and_ge1_capture": 0.04815156934233181,
+    "N_ge2_captures": 0.03672182493365281,
+    "P_ge1_visible_gamma": 0.9999465075247957
+   },
+   {
+    "component": "Ti cryostat (ICV+OCV)",
+    "N_SF": 11.395296,
+    "P_ge1_TPC_deposit": 0.4820066159313162,
+    "P_ge1_capture": 0.7495552148494806,
+    "P_ge2_captures": 0.35447966798772135,
+    "N_TPC_deposit_events": 5.492608062495664,
+    "N_MS_events": 3.4992518771366994,
+    "N_TPC_and_ge1_capture": 4.1170130163679275,
+    "N_ge2_captures": 4.039400742701809,
+    "P_ge1_visible_gamma": 0.9972667807770647
+   },
+   {
+    "component": "R11410 PMTs (TPC 494 + Skin 131)",
+    "N_SF": 12.9492,
+    "P_ge1_TPC_deposit": 0.5319293595467021,
+    "P_ge1_capture": 0.7495552148494806,
+    "P_ge2_captures": 0.35447966798772135,
+    "N_TPC_deposit_events": 6.888059662642154,
+    "N_MS_events": 4.453844736283706,
+    "N_TPC_and_ge1_capture": 5.1629810403277805,
+    "N_ge2_captures": 4.5902281167066015,
+    "P_ge1_visible_gamma": 0.996873825352916
+   },
+   {
+    "component": "cables, feedthroughs, PMT bases, misc.",
+    "N_SF": 3.1078079999999995,
+    "P_ge1_TPC_deposit": 0.30599073018469136,
+    "P_ge1_capture": 0.7495552148494806,
+    "P_ge2_captures": 0.35447966798772135,
+    "N_TPC_deposit_events": 0.9509604391938251,
+    "N_MS_events": 0.5793323963272928,
+    "N_TPC_and_ge1_capture": 0.712797356313284,
+    "N_ge2_captures": 1.1016547480095842,
+    "P_ge1_visible_gamma": 0.996873825352916
+   }
+  ],
+  "p_dep_watt": 0.8713933333333334,
+  "P_MS_given_enter": {
+   "c": 0.5,
+   "lo": 0.3,
+   "hi": 0.7
+  }
+ }
+}

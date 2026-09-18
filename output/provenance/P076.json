@@ -1,0 +1,65 @@
+{
+ "id": "P076",
+ "title": "Solar capture of inelastic dark matter with delta ~ 300 keV and the neutrino-telescope constraints on the LZ-fitted couplings",
+ "date": "2026-09-15",
+ "agent_tools": [
+  {"tool": "Read", "count": 15, "detail": "provenance/PAPER_GUIDE.md; work/P039/details.md; papers P039, P007, P011, P054, P025, P026, P021; code/P039_ns_heating.py lines 285-410; figures P076_GammaA_vs_delta.png (x2), P076_delta_max_by_isotope.png, P076_composition_and_ratio.png (x2)"},
+  {"tool": "Bash", "count": 21, "detail": "(final two: paper word-count checks + JSON validity) ls work dirs + grep ledger; python: print ledger rows for P007/P011/P021/P025/P026/P039/P054; cat P039/P011/P054 CSVs (too large, persisted); head of small CSVs; python: extract P011 1 TeV annual grid + grep lzcommon API; grep P039 script for Sun/WimPyC usage; head WimPyC Sun densities.tab + grep AGSS09; sed WC_package.py 1435-1560 (wimp_capture docstring); python probe of WD.Sun attributes, halo arrays, lzcommon sources; run P076 script (SyntaxError); run (IndexError in two_step); run (log empty); wc/tail log; run -u (exit 143, memory kill); run -u (ok, 72 s); run (refined classification); run (figure fixes) + grep versions + ls data_requests; python: print capture tables/threshold radii/validation"},
+  {"tool": "Write", "count": 4, "detail": "code/P076_solar_capture.py; work/P076/details.md; provenance/P076.json; papers/P076.md"},
+  {"tool": "Edit", "count": 12, "detail": "script (7): dict-key syntax fix; two_step broadcasting fix; elastic reference via unit-sigma scaling; capture() takes custom streams; coarse-grained halo in two_step; refined classify(); figure label/legend fixes. paper (5): word-budget trims of builds-on line, approach, results, caveats, headline/key numbers/stance"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette/mark guidance; JS validator skipped per PAPER_GUIDE rule 2)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python run from simulation root"},
+  {"name": "numpy", "version": "2.5.3", "functions": "trapezoid, interp, broadcasting, where, gradient, linspace, exp/log"},
+  {"name": "pandas", "version": "3.0.5", "functions": "read_csv, DataFrame, to_csv, filtering of P011/P054 grids"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg): fill_between, plot, axhspan, bar, vlines, scatter, savefig"},
+  {"name": "WimPyDD incl. WimPyC", "version": "2.0.4", "functions": "celestial_body Sun (AGSS09ph profile: r_vec, v_esc, rho_tot, rho_i, T_c), wimp_capture (3 validation points), wimp_capture_geom, streamed_halo_function via lzcommon"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "wd, wd_halo (Sun-frame Baxter SHM, explicit v_min grid), wd_hamiltonian, wd_c_SI_from_sigma_n, mu_red, m_nucleus_gev, helm_F2 (vectorised copy), constants C_KMS, AMU_GEV, M_NUCLEON_GEV, HBARC_GEV_FM, GEV_TO_CM2"},
+  {"name": "hand derivations", "version": "none: derived by hand", "functions": "inelastic recoil window E_+-; Gould capture integrand with capture condition E_R + delta >= m u^2/2; exothermic two-step capture probability; A' -> f fbar width; channel yields for A'A' and Z'Z' final states"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P076_solar_capture.py", "purpose": "delta_max per isotope, threshold radii, Gould inelastic capture for Higgsino/dark photon/Z' vs delta (20 isotopes, v_esc(r) profile), WimPyC validation, two-step correction, chi2 fate, Griest-Seckel and orbit-confined annihilation, elastic SD/SI conversions of recalled IceCube/ANTARES limits, confrontation table, A' decay lengths, 3 figures", "command": ".venv/bin/python output/code/P076_solar_capture.py  (72 s; --no-wimpyc skips the live validation)"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules, deliverables, template, budgets"},
+  {"file": "output/results_ledger.csv", "parts_used": "rows P007, P011, P021, P025, P026, P039, P054"},
+  {"file": "output/work/P039/details.md", "parts_used": "Sun section 6 (profile normalisation, Fe/Ni capture, orbit-confined bracket, IceCube-scale reference), validation numbers"},
+  {"file": "output/work/P039/sun_capture_wimpyc.csv, sun_threshold_radius.csv, delta_max_by_body.csv, chi2_fate.csv", "parts_used": "P039 numbers checked against ours"},
+  {"file": "output/code/P039_ns_heating.py", "parts_used": "lines 285-410: WimPyC Sun profile handling and capture calls (re-implemented independently)"},
+  {"file": "output/work/P011/sigma_p_required.csv", "parts_used": "m=1000 GeV, halo='annual', eff_sigma=8 keV rows: sigma_p_N1_cm2 vs delta"},
+  {"file": "output/work/P011/epsilon_required.csv, chi2_lifetime.csv, couplings.json", "parts_used": "epsilon cross-check (8.7e-7 at 1 GeV), eps floor 5.4e-6, Higgsino c_p/c_n check"},
+  {"file": "output/work/P054/lz_requirement.csv", "parts_used": "m_chi=1000 rows: sigma_n_N1_cm2 and G_N1 vs delta"},
+  {"file": "output/work/P054/chi2_lifetime.csv", "parts_used": "tau(B-L) 1.7e10 s at 300 keV"},
+  {"file": "output/papers/P007.md, P011.md, P021.md, P025.md, P026.md, P039.md, P054.md", "parts_used": "couplings, annihilation cross-sections and Sommerfeld brackets, chi2 lifetimes, viable delta windows"},
+  {"file": "WimPyDD/WimPyC/Celestial_bodies/Sun/densities.tab (+ WC_package.py line 988)", "parts_used": "AGSS09ph profile identification; loaded through lzcommon.wd().Sun"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "wd_halo, wd, helm_F2, mu_red, constants"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "solar age 4.6 Gyr, M_sun = 1.989e33 g, R_sun = 6.9634e10 cm", "presumed_source": "standard constants (WimPyC values)", "reliability": "certain"},
+  {"item": "AGSS09ph standard solar model composition and density profile as shipped with WimPyC (rho_c ~ 150 g/cm3, T_c = 1.4e7 K)", "presumed_source": "Serenelli, Basu, Ferguson, Asplund, ApJL 705, L123 (2009) via WimPyC", "reliability": "likely"},
+  {"item": "local DM density 0.3-0.4 GeV/cm3", "presumed_source": "Baxter et al. 2021; de Salas & Widmark 2021", "reliability": "likely"},
+  {"item": "G_F = 1.1664e-5 GeV^-2, sin^2 theta_W = 0.2312", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "Sommerfeld enhancement of Higgsino WW/ZZ at v ~ 1e-3 c is O(1-3); dark-photon saturation S_sat = 6 alpha_D m/m_A'", "presumed_source": "P025 (Hulthen), Cassel 2010", "reliability": "likely"},
+  {"item": "solar evaporation mass ~ 3-4 GeV for elastic WIMPs", "presumed_source": "Gould 1987; Busoni et al. 2013", "reliability": "likely"},
+  {"item": "IceCube 2016-2022 solar WIMP searches (IC79/86, 3-7 yr): at 1 TeV sigma_SD(W+W-) ~ 1e-41 - 1e-40 cm^2, sigma_SI ~ 1e-43 cm^2; tau tau similar, b bbar ~30x weaker", "presumed_source": "IceCube, EPJC 77, 146 (2017); IceCube PRD 105, 062004 (2022) [low mass]; JCAP 04 (2016) 022", "reliability": "uncertain"},
+  {"item": "ANTARES 11-yr solar WIMP limits: sigma_SD(W+W-, 1 TeV) ~ 1e-40 cm^2 (few e-41 - 3e-40)", "presumed_source": "ANTARES, PLB 759, 69 (2016); PDU 2022", "reliability": "uncertain"},
+  {"item": "Super-K solar WIMP search covers m <= 200 GeV (sigma_SD ~ 1e-39 at 200 GeV, b bbar); no TeV reach", "presumed_source": "Super-K, PRL 114, 141301 (2015)", "reliability": "likely"},
+  {"item": "channel scaling of solar limits at 1 TeV: tau tau ~ W+W- (x1-2), b bbar ~ 20-50x weaker; A'A' -> 4 tau at E_A' = m_chi behaves like tau tau at m_chi/2 with 2 x BR(tau) yield", "presumed_source": "IceCube 2017 channel comparison; Batell, Pospelov, Ritz, Shang 2010 (secluded DM in the Sun)", "reliability": "uncertain"},
+  {"item": "a direct nu nubar line is ~3x more constraining than tau tau per annihilation at TeV energies (absorption in the Sun limits the gain)", "presumed_source": "IceCube/ANTARES channel comparisons; Rott, Siegal-Gaskins, Beacom 2011", "reliability": "uncertain"},
+  {"item": "muon range in the solar core: dE/dx ~ 2 MeV g^-1 cm^2 x 150 g/cm3 -> a 500 GeV muon stops in ~20 m, far below its 3e6 m decay length; pi/K likewise stop -> only tau, c, b give hard neutrinos", "presumed_source": "standard Sun-annihilation neutrino lore (Jungman, Kamionkowski, Griest 1996)", "reliability": "likely"},
+  {"item": "thermalisation of inelastic-only DM in the Sun stalls once v_core < sqrt(2 delta/mu); loop-level elastic Higgsino sigma ~ 1e-49 cm^2 cannot complete it", "presumed_source": "Nussinov, Wang, Yavin 2009; Menon et al. 2010; P007/P039", "reliability": "likely"},
+  {"item": "chi2 lifetimes: Higgsino tau_gamma ~ 0.06 s, tau_nunu 1.2e6 s; dark photon >= 7e16 s; Z' B-L 1.7e10 s (corpus values, not recalled from literature)", "presumed_source": "P014/P026/P011/P054", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First run: dict-key syntax error (C_SD_H_at_1e-40=...) fixed with string keys.",
+  "First two-step implementation built (r x u x E x E') arrays of ~1e8 doubles; the process was killed (exit 143) and produced no output -> replaced by 8-fold coarse-graining of the halo streams and 16-point energy grids (first-step rate agrees with the fine one to 5%).",
+  "Elastic reference recomputed per (model, delta) took 125 s -> replaced by one unit-cross-section run per model with linear scaling.",
+  "Broadcasting error in the exothermic-window upper edge fixed.",
+  "Fig. 1 y-label clipped and Fig. 3 legend over the bars -> suptitle and below-axis legend."
+ ],
+ "wimpydd_generated_files": "none new (validation reused WimPyDD/WimPyC/Response_functions/spin_1_2/{1H_c_1_c_1.npy, 56Fe_c_1_c_1.npy} created by P039)"
+}

@@ -1,0 +1,64 @@
+{
+ "id": "P095",
+ "title": "Migdal electrons and bremsstrahlung photons accompanying a 248 keV xenon recoil: extra quanta, their shift in S1-S2, and the -1.5 sigma band position",
+ "date": "2026-09-16",
+ "agent_tools": [
+  {"tool": "Read", "count": 11, "detail": "output/provenance/PAPER_GUIDE.md; output/papers/P009.md, P024.md, P043.md, P036.md, P056.md, P064.md; output/code/common/lzcommon.py lines 18-75 and 256-295; output/work/P095/figures/P095_fig1_migdal_shift.png (twice)"},
+  {"tool": "Bash", "count": 13, "detail": "grep lzcommon API + ls work dirs + cat ENVIRONMENT_versions; grep results_ledger.csv (P041/P010 rows, header); grep LZ fulltext.tex for Migdal/bremsstrahlung/band/single-scatter; sed P024/details.md l.1-80 + grep detector terms; grep P036_nuclear_excitation.py hybrid method; sed tex l.690-700 + P041/P010 headlines; .venv/bin/python probe of lz.nest_er_yields/nest_nr_yields and P024 results.json; .venv/bin/python output/code/P095_migdal_brems.py (3 runs); .venv/bin/python dump of P095_results.json + wc -l csv; wc -w budget checks on the paper (4 runs) + json.load validity check"},
+  {"tool": "Write", "count": 5, "detail": "output/code/P095_migdal_brems.py; output/work/P095/details.md; output/provenance/P095.json; output/papers/P095.md (written twice: full rewrite to meet word budgets)"},
+  {"tool": "Edit", "count": 15, "detail": "P095_migdal_brems.py x6 (mechanism-table N+O row, brems expression clean-up, figure limits/legend/labels); P095.md x7 (word-budget trims); P095.json x2 (title, tool counts); one failed Edit on details.md (string not found, no change)"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette hex values and mark rules read; JS palette validator skipped per PAPER_GUIDE)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python"},
+  {"name": "numpy", "version": "2.5.3", "functions": "array algebra, geomspace, polyfit (slope fit), interp, gradient"},
+  {"name": "scipy", "version": "1.18.1", "functions": "integrate.quad (Stobbe integrals), optimize.brentq (S1-matching, thresholds), stats.norm"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, groupby, to_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend, bar/plot, savefig"},
+  {"name": "nestpy", "version": "2.1.1", "functions": "NESTcalc.GetYields via lzcommon (NR with LZ Table S5 + p(E) break; beta ER with LZ Table S3)"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ dict (g1, g2, event, ROI), NEST_ER_LZ, W_EV, C_KMS, nest_nr_yields, nest_er_yields"},
+  {"name": "none: derived by hand", "version": "-", "functions": "closure sum rule, oscillator-strength relation dP/dE_e = q^2 (df/dw)/(2w), classical sudden-kick dipole radiation, power-law integrals"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P095_migdal_brems.py", "purpose": "kinematics; Migdal probabilities per subshell (closure sum rule, oscillator-strength route, Stobbe K-shell check); bremsstrahlung with Z_eff(w) screening; energy budget vs Lindhard/NEST; NR+ER hybrid shifts in band sigma; out-of-band fractions; charge-poor mechanism table; figure", "command": ".venv/bin/python output/code/P095_migdal_brems.py"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules, deliverables, template, budgets"},
+  {"file": "output/papers/P009.md", "parts_used": "paper energy scale (S1c = 540 at 248 keV), band position 1.46 sigma"},
+  {"file": "output/papers/P024.md; output/work/P024/details.md sections 2-4; output/work/P024/results.json", "parts_used": "NR-band sigma 0.0313 dex, MC median 4.0152, event 1.54 sigma / P = 5.7 %, variance terms (position 0.0087 dex), AmBe width 0.036, detector model"},
+  {"file": "output/papers/P043.md", "parts_used": "g2 +-3 % -> 0.44 sigma; band 1.54 +- 0.54"},
+  {"file": "output/papers/P036.md; output/code/P036_nuclear_excitation.py", "parts_used": "hybrid NR+ER quanta method, +15.8 sigma at 39.6 keV, cross-recombination argument"},
+  {"file": "output/papers/P056.md", "parts_used": "ER leakage 4e-5 (500-600 phd), 7e-7 at the event"},
+  {"file": "output/papers/P064.md", "parts_used": "Lindhard L(248 keV) = 0.334, band slope 0.286, break physics"},
+  {"file": "output/papers/P041.md, output/papers/P010.md", "parts_used": "headlines: 78 % charge loss excluded, drift time 859 us, diffusion sigma 3.1 mm; r = 0.96 exclusion"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "LZ constants, NEST parameter dicts, nest_nr_yields, nest_er_yields"},
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "l. 93-105 band definition; l. 165 event; l. 690-695 S1/S2 pulse shape and single-scatter classification"},
+  {"file": "output/results_ledger.csv", "parts_used": "header; P010, P013 rows"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Xe subshell binding energies K 34561; L 5453/5107/4786; M 1149/1002/941/689/676; N 213/147/145/69.5/67.5; O 23.4/13.4/12.1 eV", "presumed_source": "X-ray Data Booklet (LBNL) electron binding energies", "reliability": "likely"},
+  {"item": "Slater's rules for effective nuclear charge (0.35 same group, 0.30 for 1s, 0.85 for n-1 s/p, 1.00 otherwise)", "presumed_source": "Slater, Phys. Rev. 36, 57 (1930); textbooks", "reliability": "certain"},
+  {"item": "Hydrogen 1s photoionisation threshold cross-section 6.3e-18 cm^2 and continuum oscillator strength 0.435", "presumed_source": "Bethe & Salpeter (1957)", "reliability": "certain (reproduced numerically)"},
+  {"item": "Stobbe formula sigma = (2^9 pi^2 alpha/3)(I/w)^4 exp(-4 eta acot eta)/(1-exp(-2 pi eta))", "presumed_source": "Bethe & Salpeter; Heitler", "reliability": "likely (validated against the two certain anchors)"},
+  {"item": "Migdal sudden-approximation formalism: amplitude <f|exp(-i m_e v_A . sum r)|i>, dipole limit ∝ q_e^2, q_e = m_e v_A", "presumed_source": "Ibe, Nakano, Shoji, Suzuki, JHEP 03 (2018) 194", "reliability": "certain"},
+  {"item": "Ibe et al. tabulated Xe ionisation probabilities (normalisation) - NOT used, only stated to be of the same order as route A at q_e ~ 1 keV", "presumed_source": "Ibe et al. 2018 Fig. 4 / appendix", "reliability": "uncertain"},
+  {"item": "Migdal dipole rate proportional to the photoabsorption cross-section divided by photon energy", "presumed_source": "Essig, Pradler, Sholapurkar, Yu, PRL 124, 021801 (2020); Baxter, Kahn, Krnjaic PRD 101, 076014 (2020)", "reliability": "likely (rederived here)"},
+  {"item": "Bremsstrahlung form dP/dw = (4 alpha/3 pi)(E_R/m_N)|f(w)|^2/w and Migdal >> bremsstrahlung", "presumed_source": "Kouvaris & Pradler PRL 118, 031803 (2017); Ibe et al. 2018", "reliability": "likely"},
+  {"item": "Classical dipole radiation of a sudden velocity change dI/dw = 2 e^2 |dv|^2/(3 pi c^3)", "presumed_source": "Jackson, Classical Electrodynamics", "reliability": "certain"},
+  {"item": "Firsov/Thomas-Fermi screening length a = 0.8853 a0/(Z1^1/2 + Z2^1/2)^(2/3); nuclear radius 1.2 A^1/3 fm", "presumed_source": "Lindhard/Firsov; nuclear physics texts", "reliability": "likely / certain"},
+  {"item": "Electron CSDA range in LXe ~ 6e-6 (E/keV)^1.7 g/cm^2", "presumed_source": "ESTAR-type scaling (water values x ~1.4 for Xe)", "reliability": "uncertain (x2)"},
+  {"item": "Xe photoelectric mass attenuation ~6000, 1000, 7.5 cm^2/g at 1, 4.1, 29.7 keV; ~20 cm^2/g just above the K edge", "presumed_source": "NIST XCOM / Henke tables", "reliability": "uncertain (x1.5)"},
+  {"item": "Xe K-alpha 29.7 keV, K fluorescence yield ~0.89", "presumed_source": "X-ray Data Booklet", "reliability": "likely"},
+  {"item": "LXe drift speed ~1.5 mm/us at ~100 V/cm", "presumed_source": "LXe TPC literature", "reliability": "uncertain"},
+  {"item": "Physical constants: alpha, Hartree 27.2114 eV, a0, m_e c^2 510.999 keV, amu 931494.10 keV", "presumed_source": "CODATA", "reliability": "certain"},
+  {"item": "Hydrogen oscillator-strength bookkeeping (2p 0.416, 3p 0.079) used only in reasoning about continuum shares", "presumed_source": "Bethe & Salpeter", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Reproducing Ibe et al. (2018) tabulated dp/dE_e normalisation for Xe from memory - not reliably recalled; replaced by two first-principles dipole-limit estimates (closure sum rule; oscillator-strength route) cross-checked with the exact hydrogenic K-shell integral.",
+  "Per-shell photoabsorption cross-sections from recalled XCOM/Henke tables as the primary normalisation - too uncertain (+-50 %); kept only as a consistency check of the K-shell threshold cross-section."
+ ],
+ "wimpydd_generated_files": []
+}

@@ -1,0 +1,45 @@
+\paragraph*{Results -\label{sec:results}}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.95\linewidth]{\plotfolder Fig5_NR_distance_3panels_no_sig.pdf}
+    \caption{
+    Comparison between the data in the \emph{science} sample and the background model corresponding to the post-fit values shown in \autoref{tab:backgrounds} in three S1$c$ ranges.
+    Also shown in the dashed brown is the best fit 1000~GeV/c$^2$ $\mathcal{L}^{s}_{10}$ WIMP interaction. 
+    The comparison is a projection of the deviation in S2$c$ from the NR median at fixed S1$c$, normalized by the NR band width, and binned in 0.5$\sigma$ bins. The data are plotted at the center of each bin.  
+   The total integrated background in the bottom panel is $0.0106\pm0.0008\,(\mathrm{sys})$ counts.
+   The shaded dark and light blue bands depict the systematic and statistical uncertainties, respectively, with the latter calculated as the standard deviation of a Poisson distribution with a mean of the central value in the bin. Note that for very low Poisson mean $\mu$, the coverage of the standard deviation is much greater than 68\%, approaching 1-$\mu$ for $\mu << 1$. 
+}
+    \label{fig:er_projection}
+\end{figure}
+
+
+Driven by the event of interest noted earlier, the p-value to reject the background-only hypothesis is smaller than 1.3$\times10^{-3}$ for a substantial subset of the tested models, corresponding to a local significance greater than 3$\sigma$. 
+\autoref{tab:backgrounds} shows the post-fit values of the nuisance parameters for the $\mathcal{L}^{s}_{10}$ model, a representative high-significance model.
+Figure~\ref{fig:er_projection} shows the \emph{science} sample data and best-fit model in a 1D projection along the median of the NR band, illustrating the increased ER-NR separation with energy and the low background rate near the event of interest. The local significance for all tested models is shown in Tables~\ref{tab:lagrangian_significance}~and~\ref{tab:operator_significance} in the \textcolor{black}{Supplemental Material}.  
+
+As we are evaluating the sensitivity to a large number of models, a look elsewhere effect (LEE) correction~\cite{DM_parameters:BAXTER2021_Conventions} is calculated using datasets produced by toy Monte Carlo simulations.
+The global p-value after the LEE correction is 2.6$\sigma$.
+More detail on the LEE implementation is given in the \textcolor{black}{Supplemental Material}.
+
+We construct 90\% confidence level intervals on all tested models as a function of WIMP mass, with the two example models shown in \autoref{fig:limit_plot}. 
+For $\mathcal{L}_{1}-\mathcal{L}_{20}$, the quantity constrained is the interaction coupling parameter, $d_j$, as a function of WIMP mass.
+For $\mathcal{O}_{1}$ and $\mathcal{O}_{4}$ the coupling strength limits are cast in the dimensionless form $(c^N_i\times m^2_\nu)^2$, where $m_\nu$ is the Higgs vacuum expectation value~\cite{Anand:MathematicaEFT}. 
+%, as in $(c^s_1\times m^2_\nu)^2$ for the $\mathcal{O}_{1}^s$ operator,
+Given the observed local significance, the lower limit is non-zero for some masses.
+The derived upper limits set world-leading constraints on all models tested. 
+Confidence intervals for all models can be found in the \textcolor{black}{Data Release}.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\columnwidth]{\plotfolder Fig6_O1_L10_limit_stacked.pdf}
+    \caption{Two-sided 90\% confidence-level intervals (solid-black) of the dimensionless isoscalar WIMP-nucleon coupling.
+    \textbf{Top:} Inelastic $\mathcal{O}^{s}_1$ for a 1000~GeV/c$^2$ dark matter mass, scanning over mass splitting.
+    \textbf{Bottom:} Elastic $\mathcal{L}^{s}_{10}$, scanning over dark matter mass.
+    The lower limit lifts off from zero because of the presence of the event of interest. The black dashed line is the median sensitivity, and the green and yellow bands contain 68\% and 95\% of expected upper limits given the best-fit background model.
+    Previous limits are shown in violet from LZ~\cite{LZ:SR1_NREFT_2023,LZ:SR1_NREFT_Lagrangian_2024}, red from LUX~\cite{LUX:EFTR4_2021}, and blue from PandaX~\cite{PandaX2:SD_EFT_2019}.
+    }
+    \label{fig:limit_plot}
+\end{figure}

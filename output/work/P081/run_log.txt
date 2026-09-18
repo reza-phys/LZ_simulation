@@ -1,0 +1,82 @@
+[0] P027 likelihood rebuilt: b_H=5.6951e-04, 20 low-E bins, b_M=0.02
+[1] 175 models with non-zero posterior weight (uniform or class prior); weight sums 1.0000 / 1.0000
+    marginal-likelihood check vs P027 B_logu_rho: ratio median 1.0000, range 0.9605-1.0000
+    (vs B_logu without rho: median 0.8286; the table weights follow the column that matches 1.000)
+    companion-free posterior mean s (logu/flat/jeff): 0.998/1.995/1.497 (MLE 1.0)
+    L10s_m1000       f_hi=0.356 N_M=1.164 s_hat=0.417 <s>_logu=0.415 <s>_flat=0.832 w_unif=0.0146
+    O1v_m1000_d350   f_hi=0.989 N_M=0.012 s_hat=0.994 <s>_logu=0.987 <s>_flat=1.973 w_unif=0.0344
+    O4s_m1000_d350   f_hi=0.933 N_M=0.072 s_hat=0.937 <s>_logu=0.931 <s>_flat=1.863 w_unif=0.0325
+    O1s_m1000_d350   f_hi=0.649 N_M=0.540 s_hat=0.648 <s>_logu=0.646 <s>_flat=1.298 w_unif=0.0227
+    O1s_m1000_d300   f_hi=0.195 N_M=4.055 s_hat=0.196 <s>_logu=0.193 <s>_flat=0.392 w_unif=0.0069
+    O6s_m1000        f_hi=0.232 N_M=1.516 s_hat=0.315 <s>_logu=0.312 <s>_flat=0.624 w_unif=0.0110
+[2] extension ratios computed for 175 models (61 from P027 cache, 114 from P008 cache); 0 without cached spectrum (weight 0.0000)
+    L10 (P050 cache to 1498 keV): g_X full 0.9327 vs truncated-400 0.7282 -> elastic truncation factor 1.281
+    P038-grid extension per 200-270 event h(delta) [full / truncated-400]: 250:0.631/0.563, 275:0.710/0.634, 300:0.834/0.745, 310:0.912/0.815, 320:1.019/0.911, 330:1.184/1.061, 340:1.467/1.318, 350:2.037/1.835, 355:2.556/2.306, 360:3.404/3.078, 365:4.957/4.492, 370:8.265/7.508, 375:16.447/14.983, 380:41.553/38.007, 385:128.769/118.365, 390:412.615/381.161
+    P038 extra events 600-1000 phd per ROI event: 300:0.155, 350:1.062, 370:6.839, 380:30.594  (ours are per 200-270 keV event; ROI->200-270 conversion multiplies by 1/f_hi)
+    <g_L2M>_post_uniform=4.084, <g_X>_post_uniform=0.994, <f_hi>=0.338
+    <g_L2M>_post_classes=3.196, <g_X>_post_classes=1.052, <f_hi>=0.428
+[3] first-run window (27 Mar 2023 - 1 Apr 2024) seasonal factor: d300:1.002, d330:1.003, d350:1.003, d366:1.000, d380:0.995
+    release window  1.0 t yr = 131 calendar d from 1 Apr 2024: F(delta)/F_first = d300:1.348, d330:1.637, d350:2.034, d366:2.433, d380:2.601
+    release window  2.8 t yr = 366 calendar d from 1 Apr 2024: F(delta)/F_first = d300:0.998, d330:0.996, d350:0.995, d366:0.998, d380:1.003
+    release window  5.6 t yr = 732 calendar d from 1 Apr 2024: F(delta)/F_first = d300:0.998, d330:0.996, d350:0.995, d366:0.998, d380:1.003
+    release window 10.0 t yr = 1306 calendar d from 1 Apr 2024: F(delta)/F_first = d300:1.025, d330:1.045, d350:1.070, d366:1.097, d380:1.112
+[5] backgrounds per 2.84 t yr: H 5.70e-04 (bracket (0.0003, 0.0035)), 125-200 0.02, 55-125 0.1 (estimate), X 0.0028, panel 0.0106
+[7] P061 hyper-prior reproduced: P(DM) median 0.0153, 68% 0.0016-0.1351; >0.5: 0.024; P(B) median 0.148, P(U) median 0.789   (P061: 0.015, 0.0016-0.137, 0.024)
+[8] predictive counts (baseline DM branch / background / P061 mixture median):
+     1.0 t yr  200-270 keV (600 phd ROI)    <N>_DM=0.210  DM P0/P1/P>=2 = 0.849/0.113/0.038  B P0/P1/P>=2 = 0.9998/2.00e-04/2.0e-08  mix P0/P1/P>=2 = 0.887/0.084/0.029  [P038wt DM P0=0.913]
+     1.0 t yr  55-270 keV (above old edge)  <N>_DM=0.483  DM P0/P1/P>=2 = 0.683/0.211/0.106  B P0/P1/P>=2 = 0.9584/4.07e-02/8.8e-04  mix P0/P1/P>=2 = 0.844/0.120/0.036  [P038wt DM P0=0.748]
+     1.0 t yr  55-420 keV (1000 phd edge)   <N>_DM=3.832  DM P0/P1/P>=2 = 0.597/0.213/0.190  B P0/P1/P>=2 = 0.9575/4.16e-02/9.2e-04  mix P0/P1/P>=2 = 0.841/0.121/0.038  [P038wt DM P0=0.701]
+     1.0 t yr  270-420 keV extension only   <N>_DM=3.349  DM P0/P1/P>=2 = 0.822/0.098/0.080  B P0/P1/P>=2 = 0.9990/9.85e-04/4.9e-07  mix P0/P1/P>=2 = 0.996/0.002/0.001  [P038wt DM P0=0.919]
+     2.8 t yr  200-270 keV (600 phd ROI)    <N>_DM=0.378  DM P0/P1/P>=2 = 0.752/0.169/0.079  B P0/P1/P>=2 = 0.9994/5.61e-04/1.6e-07  mix P0/P1/P>=2 = 0.788/0.110/0.101  [P038wt DM P0=0.832]
+     2.8 t yr  55-270 keV (above old edge)  <N>_DM=1.028  DM P0/P1/P>=2 = 0.499/0.246/0.255  B P0/P1/P>=2 = 0.8879/1.06e-01/6.5e-03  mix P0/P1/P>=2 = 0.689/0.181/0.129  [P038wt DM P0=0.561]
+     2.8 t yr  55-420 keV (1000 phd edge)   <N>_DM=5.506  DM P0/P1/P>=2 = 0.413/0.228/0.359  B P0/P1/P>=2 = 0.8855/1.08e-01/6.8e-03  mix P0/P1/P>=2 = 0.684/0.182/0.133  [P038wt DM P0=0.504]
+     2.8 t yr  270-420 keV extension only   <N>_DM=4.477  DM P0/P1/P>=2 = 0.737/0.144/0.119  B P0/P1/P>=2 = 0.9972/2.75e-03/3.8e-06  mix P0/P1/P>=2 = 0.993/0.005/0.002  [P038wt DM P0=0.850]
+     5.6 t yr  200-270 keV (600 phd ROI)    <N>_DM=0.756  DM P0/P1/P>=2 = 0.621/0.207/0.173  B P0/P1/P>=2 = 0.9989/1.12e-03/6.3e-07  mix P0/P1/P>=2 = 0.712/0.102/0.183  [P038wt DM P0=0.719]
+     5.6 t yr  55-270 keV (above old edge)  <N>_DM=2.057  DM P0/P1/P>=2 = 0.336/0.218/0.446  B P0/P1/P>=2 = 0.7884/1.87e-01/2.4e-02  mix P0/P1/P>=2 = 0.553/0.210/0.237  [P038wt DM P0=0.395]
+     5.6 t yr  55-420 keV (1000 phd edge)   <N>_DM=11.011  DM P0/P1/P>=2 = 0.267/0.186/0.547  B P0/P1/P>=2 = 0.7841/1.91e-01/2.5e-02  mix P0/P1/P>=2 = 0.547/0.210/0.242  [P038wt DM P0=0.340]
+     5.6 t yr  270-420 keV extension only   <N>_DM=8.955  DM P0/P1/P>=2 = 0.625/0.175/0.200  B P0/P1/P>=2 = 0.9945/5.49e-03/1.5e-05  mix P0/P1/P>=2 = 0.989/0.008/0.003  [P038wt DM P0=0.750]
+    10.0 t yr  200-270 keV (600 phd ROI)    <N>_DM=1.406  DM P0/P1/P>=2 = 0.492/0.215/0.293  B P0/P1/P>=2 = 0.9980/2.00e-03/2.0e-06  mix P0/P1/P>=2 = 0.657/0.081/0.257  [P038wt DM P0=0.595]
+    10.0 t yr  55-270 keV (above old edge)  <N>_DM=3.759  DM P0/P1/P>=2 = 0.219/0.167/0.614  B P0/P1/P>=2 = 0.6541/2.78e-01/6.8e-02  mix P0/P1/P>=2 = 0.425/0.230/0.345  [P038wt DM P0=0.268]
+    10.0 t yr  55-420 keV (1000 phd edge)   <N>_DM=21.016  DM P0/P1/P>=2 = 0.171/0.136/0.693  B P0/P1/P>=2 = 0.6477/2.81e-01/7.1e-02  mix P0/P1/P>=2 = 0.419/0.231/0.350  [P038wt DM P0=0.224]
+    10.0 t yr  270-420 keV extension only   <N>_DM=17.257  DM P0/P1/P>=2 = 0.516/0.187/0.298  B P0/P1/P>=2 = 0.9902/9.76e-03/4.8e-05  mix P0/P1/P>=2 = 0.983/0.012/0.005  [P038wt DM P0=0.640]
+    variants at 2.8 t yr (200-270 keV): baseline: <N>=0.378 P0=0.752; flat prior on s: <N>=0.754 P0=0.584; Jeffreys prior on s: <N>=0.566 P0=0.660; class model prior (P027): <N>=0.454 P0=0.714; no astro spread: <N>=0.378 P0=0.752; P038 empty 600-1000 phd side: <N>=0.213 P0=0.832; annual-average window (no se: <N>=0.379 P0=0.752; extension 270-420 keV only, : <N>=0.159 P0=0.736
+    2.8 t yr, 200-270 keV: N at best fit 0.383 vs posterior mean logu/flat/jeff 0.380/0.760/0.571; 55-270: 1.047 vs 1.034
+[9] exposure (t yr) for P(>=1 | DM) = 0.5 / 0.9 / 0.95: 200-270 keV: 9.8/123.3/inf; 55-270 keV: 2.8/26.1/54.8; 55-420 keV (1000 phd): 1.9/19.3/40.8; 200-270 keV, P038 reweighted: 15.5/inf/inf; 200-270 keV, flat prior: 4.0/31.1/57.9; 200-270 keV, plug-in best fit: 6.2/33.8/55.1
+[10] decision table (200-270 keV):
+     1.0 t yr N=0   P(DM/B/Us)=0.849/1.00e+00/0.740 BF_DM:B=0.849 BF_DM:Us=1.15  P(DM|event,N) median 0.014 (68% 0.0015-0.126); at P061 median/68%-edge/0.5: 0.014/0.132/0.488
+     1.0 t yr N=1   P(DM/B/Us)=0.113/2.00e-04/0.193 BF_DM:B=561 BF_DM:Us=0.58  P(DM|event,N) median 0.025 (68% 0.0022-0.235); at P061 median/68%-edge/0.5: 0.021/0.180/0.581
+     1.0 t yr N=2   P(DM/B/Us)=0.026/2.01e-08/0.050 BF_DM:B=1.27e+06 BF_DM:Us=0.51  P(DM|event,N) median 0.022 (68% 0.0019-0.212); at P061 median/68%-edge/0.5: 0.018/0.161/0.548
+     1.0 t yr N>=2  P(DM/B/Us)=0.038/2.01e-08/0.068 BF_DM:B=1.9e+06 BF_DM:Us=0.56  P(DM|event,N) median 0.025 (68% 0.0021-0.229); at P061 median/68%-edge/0.5: 0.020/0.175/0.573
+     1.0 t yr N>=3  P(DM/B/Us)=0.013/1.34e-12/0.018 BF_DM:B=9.43e+09 BF_DM:Us=0.72  P(DM|event,N) median 0.031 (68% 0.0027-0.275); at P061 median/68%-edge/0.5: 0.025/0.213/0.630
+     2.8 t yr N=0   P(DM/B/Us)=0.752/9.99e-01/0.504 BF_DM:B=0.753 BF_DM:Us=1.49  P(DM|event,N) median 0.014 (68% 0.0015-0.123); at P061 median/68%-edge/0.5: 0.014/0.131/0.488
+     2.8 t yr N=1   P(DM/B/Us)=0.169/5.61e-04/0.250 BF_DM:B=300 BF_DM:Us=0.67  P(DM|event,N) median 0.029 (68% 0.0025-0.261); at P061 median/68%-edge/0.5: 0.024/0.202/0.615
+     2.8 t yr N=2   P(DM/B/Us)=0.050/1.58e-07/0.124 BF_DM:B=3.16e+05 BF_DM:Us=0.40  P(DM|event,N) median 0.018 (68% 0.0015-0.175); at P061 median/68%-edge/0.5: 0.014/0.131/0.488
+     2.8 t yr N>=2  P(DM/B/Us)=0.079/1.58e-07/0.246 BF_DM:B=5.04e+05 BF_DM:Us=0.32  P(DM|event,N) median 0.014 (68% 0.0012-0.145); at P061 median/68%-edge/0.5: 0.012/0.108/0.433
+     2.8 t yr N>=3  P(DM/B/Us)=0.030/2.95e-11/0.122 BF_DM:B=1e+09 BF_DM:Us=0.24  P(DM|event,N) median 0.011 (68% 0.0009-0.113); at P061 median/68%-edge/0.5: 0.009/0.083/0.364
+     5.6 t yr N=0   P(DM/B/Us)=0.621/9.99e-01/0.336 BF_DM:B=0.621 BF_DM:Us=1.84  P(DM|event,N) median 0.013 (68% 0.0014-0.111); at P061 median/68%-edge/0.5: 0.013/0.120/0.463
+     5.6 t yr N=1   P(DM/B/Us)=0.207/1.12e-03/0.223 BF_DM:B=184 BF_DM:Us=0.93  P(DM|event,N) median 0.039 (68% 0.0035-0.325); at P061 median/68%-edge/0.5: 0.032/0.257/0.686
+     5.6 t yr N=2   P(DM/B/Us)=0.085/6.30e-07/0.148 BF_DM:B=1.35e+05 BF_DM:Us=0.57  P(DM|event,N) median 0.025 (68% 0.0022-0.232); at P061 median/68%-edge/0.5: 0.020/0.178/0.577
+     5.6 t yr N>=2  P(DM/B/Us)=0.173/6.30e-07/0.440 BF_DM:B=2.74e+05 BF_DM:Us=0.39  P(DM|event,N) median 0.017 (68% 0.0015-0.171); at P061 median/68%-edge/0.5: 0.014/0.129/0.482
+     5.6 t yr N>=3  P(DM/B/Us)=0.088/2.36e-10/0.292 BF_DM:B=3.71e+08 BF_DM:Us=0.30  P(DM|event,N) median 0.013 (68% 0.0011-0.136); at P061 median/68%-edge/0.5: 0.011/0.102/0.416
+    10.0 t yr N=0   P(DM/B/Us)=0.492/9.98e-01/0.221 BF_DM:B=0.493 BF_DM:Us=2.23  P(DM|event,N) median 0.011 (68% 0.0012-0.095); at P061 median/68%-edge/0.5: 0.011/0.104/0.423
+    10.0 t yr N=1   P(DM/B/Us)=0.215/2.00e-03/0.172 BF_DM:B=107 BF_DM:Us=1.25  P(DM|event,N) median 0.052 (68% 0.0046-0.389); at P061 median/68%-edge/0.5: 0.042/0.316/0.744
+    10.0 t yr N=2   P(DM/B/Us)=0.110/2.01e-06/0.134 BF_DM:B=5.5e+04 BF_DM:Us=0.82  P(DM|event,N) median 0.035 (68% 0.0031-0.303); at P061 median/68%-edge/0.5: 0.029/0.237/0.661
+    10.0 t yr N>=2  P(DM/B/Us)=0.293/2.01e-06/0.607 BF_DM:B=1.46e+05 BF_DM:Us=0.48  P(DM|event,N) median 0.021 (68% 0.0018-0.203); at P061 median/68%-edge/0.5: 0.017/0.154/0.534
+    10.0 t yr N>=3  P(DM/B/Us)=0.182/1.34e-09/0.472 BF_DM:B=1.36e+08 BF_DM:Us=0.39  P(DM|event,N) median 0.017 (68% 0.0015-0.169); at P061 median/68%-edge/0.5: 0.014/0.127/0.478
+    two-event energy placements at 2.8 t yr:
+      both 200-270                               P(DM)=0.0272 [P038wt 0.0122] P(B)=1.40e-07 P(Us)=1.10e-01 BF_DM:B=1.94e+05 BF_DM:Us=0.246 P(DM|..)=0.011
+      200-270 + 55-200                           P(DM)=0.0384 [P038wt 0.0332] P(B)=5.90e-05 P(Us)=2.63e-02 BF_DM:B=651 BF_DM:Us=1.46 P(DM|..)=0.061
+      both 55-200                                P(DM)=0.0584 [P038wt 0.0614] P(B)=6.21e-03 P(Us)=3.13e-03 BF_DM:B=9.4 BF_DM:Us=18.7 P(DM|..)=0.153
+      200-270 + 270-420                          P(DM)=0.0184 [P038wt 0.0129] P(B)=1.37e-06 P(Us)=6.11e-04 BF_DM:B=1.34e+04 BF_DM:Us=30 P(DM|..)=0.571
+      both 270-420                               P(DM)=0.0128 [P038wt 0.0074] P(B)=3.37e-06 P(Us)=1.70e-06 BF_DM:B=3.79e+03 BF_DM:Us=7.53e+03 P(DM|..)=0.986
+      55-200 + 270-420                           P(DM)=0.0209 [P038wt 0.0198] P(B)=2.89e-04 P(Us)=1.46e-04 BF_DM:B=72.1 BF_DM:Us=143 P(DM|..)=0.581
+      one 200-270 only (N=1, nothing elsewhere)  P(DM)=0.0922 [P038wt 0.0696] P(B)=4.99e-04 P(Us)=2.22e-01 BF_DM:B=185 BF_DM:Us=0.415 P(DM|..)=0.018
+      nothing anywhere 55-420                    P(DM)=0.4127 [P038wt 0.5041] P(B)=8.85e-01 P(Us)=4.46e-01 BF_DM:B=0.466 BF_DM:Us=0.925 P(DM|..)=0.009
+[11] cross-check P027 (6.76 t yr, 200-270 keV, no season/astro): ours <N>=0.915 P0=0.582 P>=2=0.206  vs P027 0.92/0.58/0.20
+    P069 L10  : 200-270 keV in 6.76 t yr 0.815 vs ours f_hi*k 0.848 (s_hat*k 0.991, <s>k 0.988); >200 keV with 400 keV edge 1.485 vs ours 1.657
+    P069 d300 : 200-270 keV in 6.76 t yr 0.425 vs ours f_hi*k 0.464 (s_hat*k 0.467, <s>k 0.460); >200 keV with 400 keV edge 0.759 vs ours 0.857
+    P069 d350 : 200-270 keV in 6.76 t yr 1.203 vs ours f_hi*k 1.546 (s_hat*k 1.543, <s>k 1.538); >200 keV with 400 keV edge 3.487 vs ours 5.288
+    P020 L10 whole-ROI 6.76 t yr: 2.38 plug-in vs ours s_hat/f_hi*k=2.78 (joint likelihood with the empty 125-200 keV bin pulls L10 down)
+[12] class decomposition at 2.8 t yr: elastic-isoscalar w=0.25 <N_H>=0.21 P0=0.83 <N_X>=0.17; elastic-isovector w=0.17 <N_H>=0.17 P0=0.86 <N_X>=0.19; inelastic-O1 w=0.33 <N_H>=0.57 P0=0.66 <N_X>=8.63; inelastic-O4 w=0.25 <N_H>=0.43 P0=0.72 <N_X>=6.34
+    mixture rate posterior s (200-270 keV per 2.84 t yr): mean 0.385, median 0.189, 68% 0.036-0.694, 90% 0.009-1.438; flat-prior mean 0.767
+done in 66.8 s

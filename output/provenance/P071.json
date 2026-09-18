@@ -1,0 +1,63 @@
+{
+ "id": "P071",
+ "title": "Alternative look-elsewhere treatments for the LZ model scan: Bonferroni, Sidak, Gross-Vitells upcrossings, the Bayesian trials factor and the pre-registration counterfactual",
+ "date": "2026-09-15",
+ "agent_tools": [
+  {"tool": "Read", "count": 24, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (first page; rest via python); papers P008, P045, P027, P001, P016, P021; code/P008_lee_toys.py; fulltext.tex lines 460-505 (LEE supplement) and 818-938 (Local significance, Tables S6/S7); work/P008/results.json; provenance/P008.json; common/lzcommon.py lines 286-313 (stats helpers); P071 figures x3 viewed three times (9 reads)"},
+  {"tool": "Bash", "count": 15, "detail": "python: print ledger ids/titles and rows P018/P032/P051/P020/P035/P040/P060; ls work/P008 + grep tex for LEE/Local significance; python: P008 subspace_neff/GV/models/data_local_Z tables + grep lzcommon defs + ENVIRONMENT_versions; grep P008 details for GV/Nyholt + wd_halo signature; grep dataviz palette.md for hex values; SPECTRA_ONLY=1 run (extra WimPyDD cache, 60 s); full run #1 (piped through grep -v WimPyDD banner); full run #2 (added calibration-size study); log/CSV inspection; diagnostic of silent crash (wc, grep, PNG header sizes, md5); full run #3 (all spaces debiased) - process died silently; full run #4 with exit status captured (exit 0, 247 s); python: print extrapolation/GV/search-space/Bonferroni tables; python: top-6 list, threshold N_eff, calibration replicate table; final run #5 (figure titles); wc -w word counts + JSON validation"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P071_lee_alternatives.py; output/work/P071/details.md; output/provenance/P071.json; output/papers/P071.md"},
+  {"tool": "Edit", "count": 16, "detail": "P071_lee_alternatives.py: return q_cal from make_pair; add calibration-size sub-sample study (twice: LZ-like/corpus, then all spaces); GV thresholds to 3.0; fits on debiased N_eff with chi2; fig-2 debiased markers and cost panel restricted to <= 3.4 sigma; fig-1/fig-3 debiased values and legend placement; JSON additions; release calibration matrices + float32 eigen section; two title shortenings"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette/mark guidance; JS validator skipped per PAPER_GUIDE rule 2)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python"},
+  {"name": "numpy", "version": "2.5.3", "functions": "random.default_rng (poisson, random), searchsorted, corrcoef, linalg.eigvalsh, linalg.lstsq, polyfit, trapezoid, interp, cumsum, where, clip"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats.norm.sf/isf/pdf (via lzcommon and directly), special.expit (via P008)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, groupby/agg, to_csv, read_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg backend): barh, errorbar, plot, legend with bbox_to_anchor; 3 PNG figures"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian, diff_rate, streamed_halo_function via lzcommon.wd_hamiltonian/wd_rate/wd_halo (v0, vesc, day_of_year arguments); 71 new spectra (47 isospin, 24 halo/date); 90 light-mediator spectra derived analytically from P008's cached O1s delta-scan spectra"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ dict, LSIG, OSIG, OSIG_DELTAS, LSIG_MASSES, A_XE_MEAN, AMU_GEV, p_to_sigma, sigma_to_p, wd_halo, wd_hamiltonian, wd_rate"},
+  {"name": "output/code/P008_lee_toys.py", "version": "corpus (P008)", "functions": "imported as a module (main() not run): build_background, total_background, model_list, compute_spectra (loads output/work/P008/spectra_cache.npz), signal_pdfs, run_toys, generate_toys, q0_for_events, Calibrator, global_stats, neff_from_pglobal, sigma_E, E_OBS/E_TRUE/E_WD/DE grids"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P071_lee_alternatives.py", "purpose": "build the extra (corpus) spectra cache only", "command": "SPECTRA_ONLY=1 .venv/bin/python output/code/P071_lee_alternatives.py"},
+  {"path": "output/code/P071_lee_alternatives.py", "purpose": "full analysis: 4 x 50,000 background-only toys (two calibration/evaluation pairs), min-p over 14 search spaces, calibration-size sub-sample extrapolation, Bonferroni/Sidak, eigenvalue estimators, Gross-Vitells 1D/2D in calibrated and asymptotic metrics, threshold dependence and 5-sigma extrapolation, data local Z for all 654 models, Bayesian comparison, 3 figures, results.json", "command": ".venv/bin/python output/code/P071_lee_alternatives.py > output/work/P071/run_raw.log 2>&1; grep -v 'pre-defined|predefined|looking for' output/work/P071/run_raw.log > output/work/P071/run_full.log"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Supplement 'Log-Likelihood Function and the Look Elsewhere Effect' (lines 462-500: toy-MC min-p method, 616 -> 293 degeneracies, model space definition); 'Local significance' (>= 30,000 toys) and Tables S6/S7 (lines 820-909) via lzcommon LSIG/OSIG for the likelihood-weighted model count"},
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "whole file (rules, deliverables, page budget)"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "sections 1-2 (N_eff ~ 14 [calc]), 4 (global 2.6 sigma as weak evidence)"},
+  {"file": "output/results_ledger.csv", "parts_used": "all ids/titles; rows P018, P032, P051, P020, P035, P040, P060 (corpus variants to include in the enlarged space)"},
+  {"file": "output/papers/P008.md", "parts_used": "N_eff = 12.2, threshold dependence, Bonferroni 1.29 sigma, GV underestimate ~2.5, subspace N_eff, background model"},
+  {"file": "output/papers/P045.md", "parts_used": "lift-off probability 25-35% and 1 - 0.9^N_eff framing"},
+  {"file": "output/papers/P027.md", "parts_used": "B_DM = 16.4 (uniform), B_max = 171, B_max/B_DM = 10.3, 298 spectra, class priors halve"},
+  {"file": "output/papers/P001.md", "parts_used": "SBB cap 14.7, N_eff 13.86"},
+  {"file": "output/papers/P016.md", "parts_used": "b_H anchor and joint-likelihood context (cited)"},
+  {"file": "output/papers/P021.md", "parts_used": "continuous delta scan, 3.6 sigma peak at delta = 380 keV, global 2.8-3.0 sigma with N_eff 9-15"},
+  {"file": "output/code/P008_lee_toys.py", "parts_used": "whole script (imported)"},
+  {"file": "output/work/P008/spectra_cache.npz, results.json, subspace_neff.csv, gross_vitells_deltascan.csv, models.csv, data_local_Z.csv, details.md (grep), run_full.log", "parts_used": "spectra cache reused; P008 reference numbers; timing"},
+  {"file": "output/provenance/P008.json", "parts_used": "format template"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "stats helpers (lines 286-313), wd_halo signature (321-339), LSIG/OSIG tables"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Bonferroni p_global <= M p_local and Sidak p_global = 1 - (1 - p_local)^M", "presumed_source": "standard", "reliability": "certain"},
+  {"item": "Gross-Vitells 1D: P(max Z > c) ~ Phi_bar(c) + E[N_up(c0)] exp(-(c^2 - c0^2)/2)", "presumed_source": "Gross & Vitells, EPJC 70, 525 (2010)", "reliability": "certain"},
+  {"item": "Gross-Vitells 2D: E[Euler characteristic of excursion set] = Phi_bar(c) + (N1 + N2 c) exp(-c^2/2) for a Gaussian field in two parameters", "presumed_source": "Vitells & Gross, Astropart. Phys. 35, 230 (2011); Adler-Taylor Gaussian kinematic formula", "reliability": "likely"},
+  {"item": "Nyholt-Cheverud M_eff = 1 + (M - 1)(1 - Var(lambda)/M)", "presumed_source": "Nyholt AJHG 74, 765 (2004); Cheverud Heredity 87, 52 (2001)", "reliability": "likely"},
+  {"item": "Li-Ji M_eff = sum_i [I(lambda_i >= 1) + (lambda_i - floor(lambda_i))]", "presumed_source": "Li & Ji, Heredity 95, 221 (2005)", "reliability": "likely"},
+  {"item": "Galwey M_eff = (sum sqrt(lambda))^2 / sum lambda; Gao et al. 99.5%-variance component count", "presumed_source": "Galwey, Genet. Epidemiol. 33, 559 (2009); Gao, Starmer, Martin, Genet. Epidemiol. 32, 361 (2008)", "reliability": "likely"},
+  {"item": "Sellke-Bayarri-Berger bound B <= -1/(e p ln p)", "presumed_source": "Sellke, Bayarri, Berger, Am. Stat. 55, 62 (2001)", "reliability": "certain"},
+  {"item": "Light-mediator propagator factor on the differential rate: [m_med^2/(m_med^2 + q^2)]^2 with q^2 = 2 m_N E_R", "presumed_source": "standard t-channel propagator", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First full run with float64 eigenvalue intermediates and six 50k x 654 toy matrices resident died silently (pipeline exit status masked by grep); fixed by releasing calibration matrices and using float32, and by capturing python's exit status",
+  "Raw N_eff above 3.4 sigma from 50k-toy calibration (18 at 4 sigma) initially plotted as a rising LEE cost; identified as finite-calibration bias (minimum over noisy per-model thresholds) and replaced by the disjoint-sub-sample extrapolation to N_cal -> infinity; the 5e4-toy cap prevents the direct remedy",
+  "Nyholt-Cheverud and Gao eigenvalue estimators (303-444 of 456): uninformative for near-degenerate, zero-inflated statistics; kept only as a warning",
+  "Gross-Vitells Euler-characteristic fit on the coarse 3 x 8 (m, delta) grids is unreliable at c0 <= 1 (one blob per grid); fit driven by c0 = 1.5-2.0",
+  "The debiasing extrapolation was not computed at local 3.6 sigma (only 2.0-3.4); the corpus value at P021's 3.6 sigma is quoted raw (2.62 sigma, bias ~ +8% in N_eff)"
+ ],
+ "wimpydd_generated_files": ["output/work/P071/extra_spectra_cache.npz (our cache of WD.diff_rate outputs for 161 corpus-variant spectra; WimPyDD wrote no response-function files)"]
+}

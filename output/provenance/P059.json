@@ -1,0 +1,65 @@
+{
+ "id": "P059",
+ "title": "Archival xenon exposures reinterpreted for the extended window: what LUX, XENON1T, PandaX-II and LZ's own first run already said",
+ "date": "2026-09-11",
+ "agent_tools": [
+  {"tool": "Read", "count": 15, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (first 14 rows, rest via pandas); papers P005, P035, P015, P012, P021, P038; work/P015/figS7_curves.json; figures_png/Fig6_O1_L10_limit_stacked.png; three own figures"},
+  {"tool": "Bash", "count": 22, "detail": "pandas print of ledger rows 14-47; grep of fulltext.tex for citations/SR1 (l.20-40, 105-125, 280-300, 362-415, 798-820); ls of work dirs and data_requests; inspection of P007/P012/P015/P035/P038 result files and lzcommon API; PROMPT.md section 4; pymupdf listing of Fig. 6 coloured paths; WimPyDD timing test; script runs: `.venv/bin/python output/code/P059_archival_xenon.py` (full-grid attempt x2 exceeded 600 s and was stopped; reduced-grid runs x3 from cache); result-table prints; version grep of ENVIRONMENT_versions.txt; wc -w"},
+  {"tool": "Write", "count": 4, "detail": "code/P059_archival_xenon.py; work/P059/details.md; provenance/P059.json; papers/P059.md"},
+  {"tool": "Edit", "count": 9, "detail": "script fixes: summary key name, reduced grids + per-item cache, P012 L10 spectra, zero-exposure likelihood terms, figure cosmetics"},
+  {"tool": "ToolSearch", "count": 2, "detail": "Monitor, TaskStop schemas"},
+  {"tool": "Monitor", "count": 1, "detail": "progress watch on run_log.txt (stopped)"},
+  {"tool": "TaskStop", "count": 4, "detail": "stopped the two over-long background runs and their watchers"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter"},
+  {"name": "numpy", "version": "2.5.3", "functions": "trapezoid, interp, polyfit, arrays"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf, optimize.minimize_scalar, optimize.brentq, stats"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame tables, CSV I/O"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg PNG figures"},
+  {"name": "pymupdf", "version": "1.28.2", "functions": "Page.get_drawings vector-path digitisation of Fig. 6 (drawings 235/236/347/348)"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian, streamed_halo_function, diff_rate (via lzcommon.wd_rate); O1 isoscalar inelastic spectra at 1000 GeV, Sun-frame Baxter halo"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ dict, wd_halo, wd_hamiltonian, wd_rate, M_V_GEV, M_NUCLEON_GEV"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P059_archival_xenon.py", "purpose": "archival counts, combined Poisson likelihood, Fig. 6 digitisation and consistency, SR1 look-back, figures", "command": ".venv/bin/python output/code/P059_archival_xenon.py  (from /Users/reza/LZ_simulation; --recompute refills output/work/P059/cache)"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Introduction (l.28-40), Data Analysis ROI paragraph incl. l.116 (same S1c range as SR1 NREFT), Fig. 6 caption (l.286-292), bibliography entries l.352-353, 362, 371, 388-389, 404-412, O1-as-cross-section supplement and Fig. S7 caption (l.798-817)"},
+  {"file": "inputs/arXiv_2609.02823_source/Fig6_O1_L10_limit_stacked.pdf", "parts_used": "vector paths of LZ 2024a (top, violet), LUX 2021 (red), LZ 2024b (bottom, violet), PandaX-II 2019 (blue)"},
+  {"file": "inputs/figures_png/Fig6_O1_L10_limit_stacked.png", "parts_used": "visual identification of the previous-limit curves"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "sections 1-6 (event numbers, background 2e-4/0.0106, open question 5)"},
+  {"file": "output/results_ledger.csv", "parts_used": "all rows P001-P050"},
+  {"file": "output/papers/P005.md, P035.md, P015.md, P012.md, P021.md, P038.md", "parts_used": "headline numbers, XENON1T recast endpoint 231 keV, L10 normalisation, Fig. 6 edge reproduction, acceptance vs edge"},
+  {"file": "output/work/P005/spectra_normalised_LZ1.csv", "parts_used": "L10 1000 GeV and O1s delta = 250/300/350 keV spectra normalised to 1 LZ event"},
+  {"file": "output/work/P012/P012_L10_spectra_d10_1.npz; P012_coupling_table.csv; fig6_bottom_digitised.csv", "parts_used": "L10 spectra for 100-4000 GeV; N(d10=1) in both normalisations; new Fig. 6 bottom edges and x calibration"},
+  {"file": "output/work/P007/lz_intervals_digitised.json", "parts_used": "new Fig. 6 top upper/lower/median edges; y-axis calibration"},
+  {"file": "output/work/P035/Nunit_table.csv", "parts_used": "unit-coupling counts at delta = 100-395 keV (validation and delta = 300/350/366)"},
+  {"file": "output/work/P015/figS7_curves.json", "parts_used": "Fig. S7 previous limits (context)"},
+  {"file": "output/work/P038/P038_results.json", "parts_used": "acceptance vs edge (context)"},
+  {"file": "output/code/common/lzcommon.py; output/code/P005_other_xenon_expectations.py; P007_higgsino_inelastic.py; P012_magnetic_dipole.py", "parts_used": "API, efficiency model, digitisation calibrations"},
+  {"file": "output/data_requests/DR-001.md, index.csv; PROMPT.md section 4", "parts_used": "data-request template and existing numbering"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "software versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "LZ SR1 exposure: 60 live days x 5.5 t fiducial = 0.90 t yr", "presumed_source": "LZ SR1 papers (arXiv:2207.03764, 2312.02030)", "reliability": "likely"},
+  {"item": "SR1 g1 = 0.114 phd/photon (SR3 0.110), so S1c = 600 phd ~ 260 keV in SR1", "presumed_source": "LZ SR1 result paper", "reliability": "likely"},
+  {"item": "SR1 NREFT search reported no NR-band-like events at high S1c (limits only)", "presumed_source": "arXiv:2312.02030", "reliability": "uncertain"},
+  {"item": "LUX 2021 EFT: 311.2 live days, 3.35e4 kg d = 0.092 t yr", "presumed_source": "LUX complete-exposure and EFT papers (arXiv:1608.07648, 2102.06998)", "reliability": "likely (live days certain from the LZ bibliography title)"},
+  {"item": "LUX EFT ROI edge in recoil energy ~100-250 keV", "presumed_source": "arXiv:2102.06998", "reliability": "uncertain"},
+  {"item": "PandaX-II 2019 SD-EFT exposure 54 t d = 0.148 t yr", "presumed_source": "arXiv:1807.01936", "reliability": "likely"},
+  {"item": "PandaX-II ROI edge 50-150 keV", "presumed_source": "arXiv:1807.01936", "reliability": "uncertain"},
+  {"item": "XENON1T 2018: 1.0 t yr, ROI 4.9-40.9 keV", "presumed_source": "arXiv:1805.12562", "reliability": "certain/likely"},
+  {"item": "in-ROI plateau efficiencies 0.85 (XENON1T), 0.8 (LUX, PandaX-II)", "presumed_source": "the respective papers", "reliability": "likely/uncertain"},
+  {"item": "Poisson zero-event 90% UL 2.303; asymptotic PLR n=0 one-sided 90% UL 1.35 events; two-sided 90% Delta(-2lnL) = 2.706", "presumed_source": "Cowan et al. 2011; standard statistics", "reliability": "certain"},
+  {"item": "Anand et al. L10 reduction 4(q^2/m_M^2)O4 - 4(m_N^2/m_M^2)O6 (via P005/P012)", "presumed_source": "Anand, Fitzpatrick, Haxton PRC 89, 065501", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Full-grid WimPyDD run (0.5 keV steps, 8 delta values, 5 L10 masses) exceeded the 600 s foreground limit twice (about 0.3 s per O1 call, about 1 s per q-dependent L10 call); replaced by reduced grids (0.5/2 keV, delta = 0-250 keV own, 300/350 from P035), per-item caching and P012's L10 spectra (identical shape to an own 200 GeV spectrum, constant ratio to 4 significant figures).",
+  "Own delta = 350 keV spectrum cross-check against P005 dropped for time (P005 normalisation re-verified by integration instead, 0.9996-1.0003).",
+  "First likelihood implementation returned NaN for archival sets with zero acceptance (0 x log 0); fixed by dropping zero-exposure terms."
+ ],
+ "wimpydd_generated_files": ["output/work/P059/cache/O1s_1000GeV_delta{0,50,100,150,200,250}_Eunit.npy", "output/work/P059/cache/O1s_1000GeV_delta366_Efull.npy", "output/work/P059/cache/L10_200GeV_EL10.npy (shape check only)"]
+}

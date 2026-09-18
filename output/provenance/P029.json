@@ -1,0 +1,56 @@
+{
+ "id": "P029",
+ "title": "Activation products eight days after AmBe: activities on 16 June 2023 and which decays could produce an MSSI-like topology",
+ "date": "2026-09-08",
+ "agent_tools": [
+  {"tool": "Read", "count": 13, "detail": "output/provenance/PAPER_GUIDE.md; output/00_evidence_dossier.md; output/results_ledger.csv; output/papers/P004.md; output/papers/P010.md; output/papers/P013.md; inputs/LZ_arXiv_2609.02823_fulltext.tex lines 148-159 (Fig. 4 caption), 208-337 (Table I, Results, Discussion), 710-735 (supplement MSSI incl. activation isotopes and the 12 keV + 471 phd decomposition); output/provenance/P013.json (format); output/code/common/lzcommon.py lines 1-125; own figures P029_fig1 and P029_fig2"},
+  {"tool": "Bash", "count": 15, "detail": "grep -n of the tex for 125Xe/125I/127Xe/133Xe/83mKr/AmBe/activation lines; grep for Discussion/supplement MSSI lines; lzcommon API listing + ls output dirs + grep of P010/P004 details + ENVIRONMENT_versions; radioactivedecay/periodictable probe (half-lives, modes, progeny, abundances, Inventory.decay); nestpy ER-yield probe (S1c/log10S2c vs E_ee); script run 1 (failed: work dir absent for the redirect); mkdir + run 2; run 3 (intermediate set); run 4 (Cs removal variants); run 5 (time-resolved topology A); run 6 final (figure cosmetics) + table print; paper word counts x4 (awk | wc -w) + JSON checks"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P029_activation.py; output/work/P029/details.md; output/provenance/P029.json; output/papers/P029.md"},
+  {"tool": "Edit", "count": 25, "detail": "output/code/P029_activation.py x13: intermediate capture set (make_intermediate) and its activities block; run-integrated topology-A expectation with F_DEAD; 137Cs removed/retained variants; coincidence loop and S1-only rate over three sets; 133Xe decays for three sets; print fixes; time-resolved topology A at the event; Fig. 1 y-range/label; Fig. 2 title. output/papers/P029.md x8: Abstract x2, Results x3, Headline/Key-numbers x2 (word budget 1129 -> 885 whole, 688 -> 514 body; compact exponent notation). output/provenance/P029.json x2 and output/work/P029/details.md x2: tool counts"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "interp (log-log attenuation table), linspace, trapezoid, exp/log arithmetic"},
+  {"name": "scipy", "version": "1.18.1", "functions": "integrate.quad (Klein-Nishina and beta-spectrum fractions), stats.norm.cdf (ROI acceptance), optimize.brentq (ROI edge energy)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, to_csv, read_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg): activity-vs-time and transmission-vs-energy figures"},
+  {"name": "radioactivedecay", "version": "0.6.1", "functions": "Nuclide.half_life/decay_modes/branching_fractions/progeny (ICRP-107); Inventory(num).decay(t,'d').activities('Bq')/numbers() for Bateman decay of the activation mixture"},
+  {"name": "periodictable", "version": "2.1.0", "functions": "Xe[A].abundance for the nine stable isotopes"},
+  {"name": "nestpy", "version": "2.1.1", "functions": "via lzcommon.nest_er_yields: NEST-LZ (Table S3) beta ER mean yields for S1c/S2c of 12 keV, activation lines, ROI edge and 125I acceptance"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ dict (g1, g2, ROI bounds, Table I expectations, MSSI decomposition, event position, I125 effective half-life, charge-dead fraction), NEST_ER_LZ, nest_er_yields"},
+  {"name": "none: derived by hand", "version": "-", "functions": "Bateman chain with purification removal (exact one-step updates), saturation factor for a constant irradiation, hemisphere-averaged slab transmission, effective source layer for RFR MSSI, random-coincidence rate"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P029_activation.py", "purpose": "decay data; recalled emission scheme; production ratios (thermal/fast/Table-I-anchored intermediate); 125I ROI acceptance with NEST-LZ yields; Table-I normalisation; Bateman activities and decays in FV/RFR/wall on 16 June; gamma attenuation, transmission and Klein-Nishina; correlated topologies A/B (per decay, over the run, at the event); random coincidences; activation lines in S1c/S2c; 127Xe RFR-MSSI estimate; two figures; CSV/JSON tables", "command": "mkdir -p output/work/P029/figures && .venv/bin/python output/code/P029_activation.py > output/work/P029/run_log.txt 2>&1"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "background paragraphs l. 168-171 (125Xe/127Xe from neutron capture during NR calibrations, 83mKr injections resumed after ~13 half-lives, 125I daughter with 3.6 +- 0.2 d effective half-life); Fig. 2 caption l. 104 (tritium/14C cut above S1c = 500 phd to avoid 133Xe activation); Fig. 4 caption l. 155 (features above 25 keVee from 125I and 133Xe); Table I l. 224-242 (125I 8.9 +- 2.7; 127Xe + 125Xe 1.5 +- 0.3; 1710 observed); MSSI paragraphs l. 184-196 (RFR 13.75 cm, dead volume 0.3 %); Discussion l. 300-303 (57Co removed 25 min before, AmBe 8 June, one of three NR calibrations, mixed flow); supplement MSSI l. 710-735 (124Xe/127Xe/133Xe/125I simulated and subdominant; <~1.5 MeV gammas do not penetrate without > 100 keV; 12 +- 2 keV / 69 +- 17 phd / 471 phd / 77 +- 7 keV / 204 +65-38 keV decomposition; 20 cm and 60 cm remarks)"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "Section 2 (calibration proximity row), 4.5, 5B/5G, 6.8 (the question this paper answers)"},
+  {"file": "output/results_ledger.csv", "parts_used": "P004 neighbourhood MSSI 1.7e-4 and attenuation lengths; P010 125I timing, f = 0.2, k = 0.50 width, 125I normalisation unknown; P013 conclusions"},
+  {"file": "output/papers/P004.md", "parts_used": "wall-MSSI topology suppression, attenuation lengths, 12 keV + 471 phd decomposition usage"},
+  {"file": "output/papers/P010.md", "parts_used": "125I Bateman timing (40 % of peak at +8 d), charge suppression f = 0.20, sigma(Ne) calibration, 125I normalisation caveat"},
+  {"file": "output/papers/P013.md", "parts_used": "AmBe activation leaves no neutron emitter; format"},
+  {"file": "output/work/P010/details.md", "parts_used": "grep for the 125I Bateman section, NEST alpha, half-lives list"},
+  {"file": "output/work/P004/details.md", "parts_used": "grep for the recalled attenuation-length table and Compton topology section"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "LZ constants, NEST_ER_LZ, nest_er_yields"},
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "rules, deliverables, templates"},
+  {"file": "output/provenance/P013.json", "parts_used": "JSON format template"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Emission schemes: 125Xe EC gammas 188.4 (54%), 243.4 (30%), 55.0 (6.8%), K/L capture ~80/17%; 125I EC to 35.5 keV level (gamma 6.7%, IC 93%), K/L/M 80/17/3% -> 67.3/40.4/36.5 keV; 127Xe EC gammas 202.9 (68.7%), 172.1 (25.7%), 375.0 (17.3%), 145.3 (4.3%), 57.6 (1.2%), K/L 83/14% (I K binding 33.2 keV, L ~4.9 keV); 129mXe IT 236.1 = 196.6 + 39.6 (gamma 4.6/7.5%); 131mXe IT 163.9 (gamma 1.95%); 133Xe beta- endpoint 346 keV + 81.0 keV (gamma 38%); 133mXe IT 233.2 (gamma 10%); 135Xe beta- 915 keV + 249.8 (90%), 608.2 (2.9%); 135mXe IT 526.6 (81%); 137Xe Q 4.17 MeV, 455.5 keV (31%); 137Cs 514 keV beta, 661.7 keV (85%); 83mKr 32.1 + 9.4 keV (154 ns)", "presumed_source": "ENSDF / Table of Isotopes", "reliability": "likely"},
+  {"item": "Thermal (n,gamma) cross-sections: 124Xe 165 b, 126Xe 3.5 b, 128Xe 8 b (-> 129mXe 0.48 b), 129Xe 21 b, 130Xe 26 b (-> 131mXe 0.45 b), 131Xe 85 b, 132Xe 0.45 b (-> 133Xe 0.40, 133mXe 0.05), 134Xe 0.265 b (-> 135Xe 0.26, 135mXe 0.003), 136Xe 0.26 b; natural Xe ~24 b", "presumed_source": "Mughabghab Atlas of Neutron Resonances", "reliability": "uncertain (+-30 %; isomer partials x2); AmBe neutrons are fast so thermal values are only indicative"},
+  {"item": "Fast (~1 MeV) capture cross-sections 124/126/128/130/132/134/136Xe ~ 50/40/30/25/15/8/1.5 mb with isomer shares 40/50/10/10 %", "presumed_source": "ENDF/B systematics (level-density scaling, N = 82 closure for 136Xe)", "reliability": "uncertain (x2-3)"},
+  {"item": "Xenon mass-attenuation table (iodine proxy x1.04, K-edge 34.56 keV): 8.0 cm2/g @30 keV, 20 @40, 3.4 @80, 1.15 @122, 0.36 @200, 0.165 @300, 0.108 @400, 0.069 @662, 0.053 @1000 keV; rho(LXe) = 2.9 g/cm3; Compton part = Klein-Nishina x 0.2477 cm2/g per barn", "presumed_source": "NIST XCOM (recalled); checked against LZ's '< 4 mm at 122 keV' and P004's table", "reliability": "likely (+-30 %); the assignment's longer lengths (0.07/0.25/1.3/2.3/3.5/5.5 cm at 40/80/164/203/250/375 keV) carried as a bracket"},
+  {"item": "NEST exciton-to-ion ratio alpha = 0.067366 + 0.039693 rho; Klein-Nishina formula and electron mass; allowed beta-spectrum shape p W (Q-T)^2", "presumed_source": "NEST v2 papers; textbooks", "reliability": "likely / certain / certain"},
+  {"item": "LZ geometry and operations: 10 t total xenon, 7 t active, TPC radius 72.8 cm, FV bottom ~2 cm above the cathode, FV height ~130 cm; AmBe deployment ~1 d; WS data resumed ~1 d after; 137Cs (chemically active daughter) removed by the getter on the same 3.6 d time scale as 125I", "presumed_source": "LZ instrument/SR papers; own assumptions", "reliability": "likely (masses, radius) / uncertain (durations, Cs removal; bracketed)"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Normalising the inventory primarily on 127Xe + 125Xe = 1.5 was abandoned (the single-scatter ROI acceptance of 127Xe needs gamma-escape geometry, x3 uncertain); kept as a cross-check that fixes the Table-I-anchored intermediate capture set (implied 127Xe/125Xe production ratio 0.22 between thermal 0.02 and fast 0.75).",
+  "Keeping 137Cs in the xenon for the whole 220 d made it the leading correlated channel (x6); demoted to an upper bracket because Cs, like I, is removed by purification.",
+  "First script run failed only because output/work/P029 did not exist for the shell redirect."
+ ],
+ "wimpydd_generated_files": []
+}

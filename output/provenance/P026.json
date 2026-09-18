@@ -1,0 +1,63 @@
+{
+ "id": "P026",
+ "title": "Cosmological constraints on the excited state: BBN, CMB and the chi2 -> chi1 transition for delta ~ 300 keV",
+ "date": "2026-09-08",
+ "agent_tools": [
+  {"tool": "Read", "count": 14, "detail": "provenance/PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv; papers/P007.md; papers/P014.md; papers/P002.md; papers/P011.md; work/P014/details.md; work/P011/details.md (lines 100-125); provenance/P014.json (format); code/common/lzcommon.py (lines 105-125); work/P026/figures/P026_fig1_tau_f2_map.png (x3); work/P026/figures/P026_fig2_f2_evolution.png"},
+  {"tool": "Bash", "count": 10, "detail": "ls output/{papers,work,data_requests} + head ENVIRONMENT_versions.txt; cat work/P011/{chi2_lifetime.csv,relic_lifetime.json,couplings.json,exothermic.csv,mA_window.csv,summary.json} + grep P011 details; grep lzcommon API + ls work/P014 + cat chi2_decays.csv + ls provenance; .venv/bin/python output/code/P026_excited_state_cosmology.py (x6: first run NaN z(t) at high z, second/third fixing the t(z) map, fourth clean, fifth/sixth figure-label iterations); wc -w budget checks on papers/P026.md + json.load validation (x3)"},
+  {"tool": "Write", "count": 4, "detail": "code/P026_excited_state_cosmology.py; work/P026/details.md; provenance/P026.json; papers/P026.md"},
+  {"tool": "Edit", "count": 17, "detail": "script (9): z-grid extension; z_of_t radiation-era branch; log-variable t(z) integral + monotonicity assert + T_of_t via H_early inversion; T_inj row; errstate for f2_cmb; IntegrationWarning filter in D-factor; figure labels (x3). papers/P026.md (5): Abstract 88->80, Results 253->218, Headline 61->50, Key numbers 124->108 words. provenance/P026.json (2) and work/P026/details.md (1): tool-count corrections"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "logspace, meshgrid, trapezoid, interp, exp/sqrt/log"},
+  {"name": "scipy", "version": "1.18.1", "functions": "integrate.quad (Fermi-Dirac integrals, K moments, t(z), NFW line-of-sight), integrate.solve_ivp (LSODA Boltzmann equation for f2), optimize.brentq (T_*, T(t))"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot Agg, contourf exclusion maps, log axes, annotate"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "RHO0_GEV_CM3 (0.3 GeV/cm3 for the NFW normalisation), GEV_TO_CM2"},
+  {"name": "none: derived by hand", "version": "-", "functions": "heavy-target cross-section sigma(chi2 f -> chi1 f) = (c_V^2 + c_A^2)(E+delta)^2/(2 pi); Majorana decomposition of the Z/A' current; thermal K moments 24T^5 + 12 delta T^4 + 2 delta^2 T^3; detailed balance; energy-per-baryon criterion from the Slatyer-Wu rate bound"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P026_excited_state_cosmology.py", "purpose": "bath thermodynamics, chi2<->chi1 transition rates and Boltzmann freeze-out of f2 for Higgsino and dark photon (LZ-fit couplings), chi2 lifetimes, energy-injection scan vs BBN/FIRAS/CMB anisotropies, Galactic line flux and EGB, tau-f2 exclusion maps, CSV/JSON outputs and two figures", "command": ".venv/bin/python output/code/P026_excited_state_cosmology.py"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules and deliverable formats"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "event summary; open question 10 (relic/indirect constraints on inelastic models)"},
+  {"file": "output/results_ledger.csv", "parts_used": "rows P002, P007, P011, P014 (headline numbers)"},
+  {"file": "output/papers/P007.md", "parts_used": "Higgsino fit points delta(N=1) = 310/342/366/375/376 keV at 300-4000 GeV; sigma_n = 7.40e-39 cm2; chi2 lifetime ~1e6 s"},
+  {"file": "output/papers/P014.md and output/work/P014/details.md section 8", "parts_used": "Gamma(chi2 -> chi1 nu nubar) = G_F^2 delta^5/(20 pi^3), tau = 4.6e5 s at 366 keV; dipole estimate mu_12 = (alpha_2/2pi) e/(2 mu), tau_gamma ~ 0.06 s; e+e- closed"},
+  {"file": "output/papers/P011.md and output/work/P011/details.md sections 3.6-3.7; work/P011/chi2_lifetime.csv, exothermic.csv, mA_window.csv, relic_lifetime.json, couplings.json", "parts_used": "sigma_p(N=1) at delta = 250-380 keV (1 TeV, annual halo); exothermic counts N_exo(f2=1) = 251-2.6e6; G_eff and width formula for chi2 -> chi1 nu nubar; thermal alpha_D = 0.0245; m_A' window 0.09-5 GeV lower bounds; statement that chi2 -> chi1 gamma vanishes on shell"},
+  {"file": "output/papers/P002.md", "parts_used": "kinematic delta_max and m_min values (context)"},
+  {"file": "output/provenance/P014.json", "parts_used": "format template"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "RHO0_GEV_CM3, GEV_TO_CM2, HBARC constant block"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "G_F, sin^2 theta_W = 0.2312, alpha, alpha_2 = 0.0338, m_e, m_mu, m_p, M_Pl", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "Planck 2018: H0 = 67.4, Omega_c h^2 = 0.120, Omega_b h^2 = 0.0224, T0 = 2.7255 K, Omega_gamma h^2 = 2.47e-5; t_U = 13.8 Gyr; t_rec = 3.8e5 yr", "presumed_source": "Planck 2018 / PDG", "reliability": "certain"},
+  {"item": "Z couplings g_V = T3 - 2Q s_W^2, g_A = T3; the Higgsino neutral Dirac state is vector-like with g_V = 1, so L = -sqrt2 G_F [psi-bar gamma psi][f-bar gamma (g_V - g_A gamma5) f]", "presumed_source": "SM; consistent with P007 c_n = -G_F/sqrt2 (sigma_n = 7.408e-39 cm2 reproduced)", "reliability": "certain"},
+  {"item": "sigma(chi2 f -> chi1 f) = (c_V^2 + c_A^2)(E+delta)^2/(2 pi) for a heavy target and massless projectile", "presumed_source": "derived here; reproduces the total CEvNS cross-section G_F^2 Q_W^2 E^2/(4 pi)", "reliability": "certain"},
+  {"item": "Detailed balance Gamma_up = Gamma_down exp(-delta/T) for a heavy two-level system in a thermal (MB) bath", "presumed_source": "statistical mechanics", "reliability": "certain"},
+  {"item": "Neutrino decoupling at 1-2 MeV; T_nu/T_gamma -> (4/11)^(1/3) after e+e- annihilation; g_* = 10.75 -> 3.36", "presumed_source": "standard cosmology", "reliability": "certain"},
+  {"item": "Gamma(chi2 -> chi1 nu nubar) = G_F^2 delta^5/(20 pi^3) (Higgsino); dark photon Gamma = 3 G_eff^2 delta^5/(120 pi^3), G_eff = g_D eps tan(theta_W) g/(4 cos(theta_W) m_Z^2)", "presumed_source": "corpus P014 and P011 (derived there)", "reliability": "corpus (likely)"},
+  {"item": "Gamma(chi2 -> chi1 gamma) = mu_12^2 delta^3/pi with mu_12 ~ kappa (alpha_2/2pi) e/(2 mu), kappa = 0.1-3", "presumed_source": "P014 estimate; heavy-neutrino transition-moment width", "reliability": "uncertain (order of magnitude)"},
+  {"item": "Dark-photon chi2 -> chi1 gamma vanishes for an on-shell photon under kinetic mixing", "presumed_source": "corpus P011; Holdom 1986", "reliability": "likely"},
+  {"item": "Photodissociation thresholds D 2.224, 7Be 1.587, 7Li 2.467, 3He 5.49, 4He 19.81 MeV", "presumed_source": "nuclear binding energies (Kawasaki-Kohri-Moroi 2005)", "reliability": "certain"},
+  {"item": "COBE/FIRAS |mu| < 9e-5, |y| < 1.5e-5; mu ~ 1.4 Delta rho/rho for z = 5e4-2e6; y = Delta rho/(4 rho) for z < 5e4; thermalisation above z = 2e6; PIXIE-class sensitivity ~1e-8", "presumed_source": "Fixsen et al. 1996; Chluba & Sunyaev 2012; Kogut et al. 2011", "reliability": "certain (FIRAS), likely (windows), uncertain (PIXIE)"},
+  {"item": "Planck decaying-DM bound f_eff Gamma <~ 1e-25 s^-1 for tau >> t_U, re-expressed as <~ 0.2 eV of deposited EM energy per baryon between recombination and today", "presumed_source": "Slatyer & Wu PRD 95, 023010 (2017); Poulin, Serpico, Lesgourgues JCAP 2016", "reliability": "uncertain (factor ~3; tau-shape of the bound not reproduced)"},
+  {"item": "f_eff for 300 keV photons ~ 0.5 x (1 - exp(-tau_Compton per Hubble time)); Klein-Nishina cross-section", "presumed_source": "Slatyer 2016 deposition efficiencies (order of magnitude); QED", "reliability": "uncertain (f_eff), certain (KN)"},
+  {"item": "INTEGRAL/SPI narrow-line 3 sigma sensitivity ~3e-5 ph cm^-2 s^-1 at 300 keV (deep GC exposure ~1e-5)", "presumed_source": "SPI instrument papers (Roques et al. 2003; Vedrenne et al. 2003)", "reliability": "uncertain (factor 3)"},
+  {"item": "Cosmic gamma-ray background at 300 keV: E^2 dN/dE ~ 2 keV cm^-2 s^-1 sr^-1", "presumed_source": "HEAO-1 / SMM / COMPTEL compilations", "reliability": "uncertain (factor 2)"},
+  {"item": "Galactic NFW r_s = 20 kpc, R_sun = 8.2 kpc, rho_sun = 0.3 GeV/cm^3", "presumed_source": "standard; Baxter et al. 2021 via lzcommon", "reliability": "likely"},
+  {"item": "H ionisation energy 13.6 eV; Planck tau_reio = 0.054 +- 0.007", "presumed_source": "atomic physics; Planck 2018", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First t(z) table (linear-z quad to infinity) lost accuracy above z ~ 5e6 and gave a 12.6 Gyr age; replaced by a log-variable integral to z = 1e6 plus the analytic radiation-era t = 1/(2H), with T(t) at t < 1e4 s from inverting H_early(T).",
+  "Fermi-Dirac statistics with Pauli blocking for the bath not implemented (MB keeps detailed balance exact; 3% effect on the rates).",
+  "Hadronic channels between 1 and 150 MeV and the A' propagator at E >~ m_A' neglected (irrelevant for T_* <= 27 MeV, m_A' >= 0.3 GeV).",
+  "A Slatyer-Wu principal-component CMB likelihood was not attempted (no CLASS/HyRec offline); a single energy-per-baryon criterion is used and flagged.",
+  "Two figure-label iterations to remove collisions (Higgsino annotation; dark-photon marker labels)."
+ ],
+ "wimpydd_generated_files": "none"
+}

@@ -1,0 +1,68 @@
+{
+ "id": "P050",
+ "title": "How quickly would a 60-tonne xenon detector confirm or exclude the LZ high-energy hint?",
+ "date": "2026-09-10",
+ "agent_tools": [
+  {"tool": "Read", "count": 22, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (lines 1-14, 15-28, 29-39); papers P020, P034, P038, P021, P012, P005, P035, P004, P022, P010, P015; P046.md (does not exist yet); common/lzcommon.py; own figures fig1/fig2 (x2)/fig3 (22 calls incl. the failed P046 read)"},
+  {"tool": "Bash", "count": 19, "detail": "ls papers/work/data_requests dirs + grep ledger for P045/P046; cat P038 acceptance/MSSI/extension CSVs + npz shapes + P034 derived_numbers + P020 exposure_scenarios + ENVIRONMENT_versions + P012 summary (output truncated to file); python re-print of the same tables (selected columns); grep P038 details (MSSI), P019.md, tex (geometry), plan (P045/P046/P057); grep P012 script (L10 hamiltonian), P038 script (halo/efficiency), WimPyDD streamed_halo_function signature, P016_results.json keys; WimPyDD import path + signature; WimPyDD timing + normalisation test (16653 vs P038 16464; L10 3.32 vs P012 3.34); .venv/bin/python output/code/P050_next_generation.py (x4: first full run crashed on out-of-window bins, three successful runs incl. ext600 window and figure revision); find WimPyDD -newer (no generated files) + ls work/P050; grep tex l.67/160-165 + head provenance/P038.json; wc -w budget checks x5 (two with in-place python trims of papers/P050.md)"},
+  {"tool": "Write", "count": 5, "detail": "output/code/P050_next_generation.py; work/P050/details.md; provenance/P050.json; papers/P050.md (x2: initial and compact rewrite)"},
+  {"tool": "Edit", "count": 20, "detail": "script x9: active-bin mask for s and b (fix spurious Z), Z_asimov/brentq bounds, ext600 window, SCEN list, shape-table exposure columns, Fig.1 window list, Fig.3 colours, years60 grid, timeline panel rewrite (60 t axis 2032-2033.5, x0.30 dashed curves, milestones per rate); papers/P050.md x11 word-budget trims; provenance tally x1 (this entry)"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (fixed categorical order Okabe-Ito, 2 px lines, legend, no dual axis for the PNG figures)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python from the simulation root"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian (O1 isoscalar; L10 with q-dependent c4 and constant c6), streamed_halo_function via lz.wd_halo (explicit v_min grid to 844 km/s, 12 days of the year), diff_rate via lz.wd_rate with delta; 10 inelastic deltas x 267 energies + L10 x 500 energies"},
+  {"name": "numpy", "version": "2.5.3", "functions": "trapezoid, cumsum, digitize, searchsorted, default_rng(50) for toys, savez/load cache"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf, stats.norm.pdf/isf, stats.poisson.sf, optimize.brentq"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame/CSV tables, read_csv of P038 MSSI table"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg PNG figures (3)"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ dict (exposure), M_V_GEV, M_NUCLEON_GEV, wd, wd_halo, wd_hamiltonian, wd_c_from_anand, wd_rate"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P050_next_generation.py", "purpose": "WimPyDD spectra (L10, inelastic O1 at 300-382 keV) normalised to LZ's one event; efficiency windows E50 = 270/300/400/600 keV with resolution; binned NR-band background model with per-tonne-constant and surface (1/R) parts; Asimov discovery exposures and calendar timelines; zero-event CLs exclusion of the LZ lower edge; L10 vs inelastic-366 shape discrimination (support counting, KL, toys); Fisher information on delta; three figures", "command": ".venv/bin/python output/code/P050_next_generation.py"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules and deliverable formats"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "sections 1-2 (event, backgrounds, efficiency), 5-6 (hypotheses, open question 6)"},
+  {"file": "output/results_ledger.csv", "parts_used": "rows P001-P040 (headline numbers of P005, P012, P016, P019, P020, P021, P022, P034, P035, P038)"},
+  {"file": "output/papers/P020.md", "parts_used": "untouched exposure 6.76 t yr, live fraction 0.593, decision table"},
+  {"file": "output/papers/P034.md", "parts_used": "modulation exposures, 60 t 0.3-5.7 yr, timing gain <= 1.36, LZ 2.79 t yr/yr"},
+  {"file": "output/papers/P038.md", "parts_used": "acceptances A_600/A_1000, E50 per S1c edge, erf widths, MSSI added by extension (0.0027 NR band at 1000 phd), empty 600-1000 phd region"},
+  {"file": "output/work/P038/P038_mssi_vs_edge.csv", "parts_used": "MSSI_mid vs S1c edge (interpolated for extension bins)"},
+  {"file": "output/work/P038/P038_acceptance_vs_delta.csv", "parts_used": "S_full_unit and A_600 for validation of the spectra"},
+  {"file": "output/work/P038/details.md", "parts_used": "MSSI interpolation inputs (grep)"},
+  {"file": "output/papers/P021.md", "parts_used": "efficiency erf model, resolution, b_H, FC lower limit 0.105, delta likelihood shape"},
+  {"file": "output/papers/P012.md", "parts_used": "L10 normalisation N(d10=1) = 3.34 (ours), Fig. 6 lower edge 0.38 events"},
+  {"file": "output/code/P012_magnetic_dipole.py", "parts_used": "L10 WimPyDD Hamiltonian construction (l.128-136)"},
+  {"file": "output/code/P038_efficiency_edge.py", "parts_used": "annual-halo definition (12 days), efficiency form (grep)"},
+  {"file": "output/work/P016/P016_results.json", "parts_used": "baseline_settings b_H = 5.695e-4, b_M = 0.02"},
+  {"file": "output/papers/P005.md; output/papers/P035.md", "parts_used": "XENONnT 3.1 and PandaX-4T 1.54 t yr, counts at LZ-like ROI"},
+  {"file": "output/papers/P004.md; output/papers/P022.md; output/papers/P010.md; output/papers/P019.md (grep); output/papers/P015.md", "parts_used": "MSSI 1.7e-4 and accidentals 1.5e-4 in the neighbourhood, ER-leakage ceiling, atm-nu 6.5e-5 above 200 keV, W/Xe rate ratios 82/222/699"},
+  {"file": "output/work/P034/derived_numbers.json; output/work/P020/exposure_scenarios.csv", "parts_used": "LZ exposure milestones (12.9, 16.1 t yr) for the timeline"},
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "l.67 (efficiency 50 % at 5.4/269.9 keV), l.77 (7 t active), l.160-165 (salting, event), l.767 (MSSI table caption)"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "LZ constants, WimPyDD wrappers, coupling convention"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "XLZD-class next-generation xenon detector: 40-60 t fiducial, data from about 2032", "presumed_source": "XLZD design book / community white papers", "reliability": "uncertain"},
+  {"item": "XENONnT fiducial ~4 t, PandaX-4T fiducial ~2.7 t; 60 % live fraction assumed for both", "presumed_source": "XENONnT/PandaX-4T publications", "reliability": "likely (masses) / assumption (live fraction)"},
+  {"item": "LZ TPC radius 72.8 cm, drift length 145.6 cm", "presumed_source": "LZ detector papers (also P004/P022)", "reliability": "likely"},
+  {"item": "LXe density 2.86 t/m^3", "presumed_source": "standard", "reliability": "likely"},
+  {"item": "Asimov discovery significance Z = sqrt(2[(s+b)ln(1+s/b)-s])", "presumed_source": "Cowan, Cranmer, Gross, Vitells 2011", "reliability": "certain"},
+  {"item": "Zero-event Poisson/CLs limits: expected count 2.303 (90 %), 2.996 (95 %)", "presumed_source": "standard statistics; Read 2002", "reliability": "certain"},
+  {"item": "Cramer-Rao bound sigma = 1/sqrt(N I) for the per-event Fisher information", "presumed_source": "standard statistics", "reliability": "certain"},
+  {"item": "Surface backgrounds scale as surface/volume: 2/R (wall), 1/H (cathode) for a cylinder", "presumed_source": "geometry", "reliability": "certain"},
+  {"item": "Okabe-Ito colour palette", "presumed_source": "Okabe & Ito 2008", "reliability": "certain (cosmetic)"},
+  {"item": "XENONnT 3.1 t yr and PandaX-4T 1.54 t yr published exposures", "presumed_source": "PRL 135, 221003 (2025); PRL 134, 011805 (2025), via P005", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First run: exposure_for_Z solved over all observed-energy bins including those beyond the ROI edge, where the smeared signal tail is non-zero but the acceptance-weighted background vanishes, producing spurious Z at tiny exposures (brentq sign error); fixed by restricting signal and background to bins with acceptance > 1 %.",
+  "Gaussian (KL-based) estimate of the events needed for 3 sigma shape separation is unreliable (N ~ 1 for the L10-true direction because the LLR distribution is dominated by a single out-of-support event); replaced by toy Monte Carlo.",
+  "Initial timeline figure plotted the 60 t detector on a 2024-2040 axis, where Z rises past 12 within weeks; replaced by a 2032-2033.5 axis with best-fit and x0.30 curves.",
+  "P046 (tungsten delta-meter) and P045 (lower-edge coverage) were to be cited but do not exist yet in the corpus; the tungsten comparison uses P015's W/Xe ratios and the lower-edge bracket 0.105/0.38 comes from P021/P012.",
+  "P(0 | s+b) exclusion variant computed but not used (invalid when low-energy bins carry background); CLs adopted."
+ ],
+ "wimpydd_generated_files": "none (diff_rate only; checked with find -newer)"
+}

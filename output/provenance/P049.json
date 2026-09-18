@@ -1,0 +1,66 @@
+{
+ "id": "P049",
+ "title": "Muon-induced high-energy neutrons at 4850 ft: an independent estimate of untagged single scatters above 8 MeV and the meaning of the 41-minute-earlier muon",
+ "date": "2026-09-10",
+ "agent_tools": [
+  {"tool": "Read", "count": 13, "detail": "output/provenance/PAPER_GUIDE.md; output/00_evidence_dossier.md; output/results_ledger.csv (rows 1-13, rest via pandas); output/papers/P013.md; output/papers/P004.md; output/papers/P022.md; inputs/LZ_arXiv_2609.02823_fulltext.tex lines 80-89 (OD description), 140-179 (samples, neutron constraint), 296-327 (Discussion), 785-800 (supplement Neutrons); output/work/P013/P013_results.json (recalled, kinematics, MC mono table); own figures P049_fig1-3"},
+  {"tool": "Bash", "count": 8, "detail": "pandas print of ledger rows 14-39 + grep -n of tex for muon/neutron/OD lines + ls work/P013 and provenance; python extraction of P013 combined muon rows and grep of P013 details.md for the muon channel; sed/grep of lzcommon.py LZ dict + ENVIRONMENT_versions + P013 ledger_row/provenance format; grep of P013 script for the mono MC definition; script run 1; script run 2 (after removal-probability fix) + ls; script run 3 (figure label) + wc -w checks + JSON key check; final wc -w recount after trims"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P049_muon_neutrons.py; output/work/P049/details.md; output/provenance/P049.json; output/papers/P049.md"},
+  {"tool": "Edit", "count": 10, "detail": "output/code/P049_muon_neutrons.py x2: n-p removal probability 8.2/E instead of 1-8.2/E; Fig.1 threshold label position. output/papers/P049.md x6: Results trims (x4), HEADLINE trim, KEY NUMBERS bullet removed. output/provenance/P049.json x2 and output/work/P049/details.md x1: tool counts"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "geomspace, trapezoid, interp, where, clip"},
+  {"name": "scipy", "version": "1.18.1", "functions": "integrate.quad (cylinder side integral, spectrum fractions)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame.to_csv, read_csv (ledger)"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg): loglog, semilogy, barh"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ dict (live_days, muon_neutron_UL90)"},
+  {"name": "none: derived by hand", "version": "-", "functions": "muon rate through a cylinder for cos^n zenith distribution; exponential waiting-time statistics; n-p isotropic-CM removal probability 8.2/E; Poisson 90% UL decomposition 2.303 x 0.6023/1200 x 0.2 x 2"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P049_muon_neutrons.py", "purpose": "muon rates through tank/GdLS/TPC and gap probabilities; neutron production spectrum, escape current, tank entry, water attenuation, P013 SS probabilities, combined expectation, sensitivity scan, crude untagged fraction, delayed-emitter check; three figures; CSV/JSON tables", "command": ".venv/bin/python output/code/P049_muon_neutrons.py > output/work/P049/run_stdout.txt 2>&1"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "l. 83 OD description (17 t GdLS, 229 t water, PMTs in water, detects muons); l. 141-147 sample definitions, prompt/delayed windows (600 us), random-coincidence fractions; l. 174-178 neutron constraint 92+-4%; l. 296-303 Discussion (57Co, AmBe, OD muon 41 min, TPC muon 127 min); l. 787-798 supplement Neutrons (MUSUN 2.1e9 muons = 1200 yr, factor-2 validation, 50 MeV-1 GeV rock neutrons, 80.0+-4.0% tagging, UL 4.6e-4)"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "Section 2 (muon handle), 5D neutron prior, 6.7 open question"},
+  {"file": "output/results_ledger.csv", "parts_used": "P013 muon-channel numbers; overview of P001-P040 headlines"},
+  {"file": "output/papers/P013.md", "parts_used": "E_n,min 8.20 MeV, muon channel 0.6-1.6e-5, F(200-270|SS) 2.2-3.5e-2, companions 24-40, UL consistency note"},
+  {"file": "output/work/P013/P013_results.json", "parts_used": "MC/mono table: P(SS in ROI) and P(SS 200-270 keV) per neutron entering the LXe at 8.5-200 MeV (thr 3 keV, 4.74 t FV); combined muon rows"},
+  {"file": "output/work/P013/details.md", "parts_used": "muon-channel derivation (sec 3.3, table of expected counts, UL consistency)"},
+  {"file": "output/papers/P004.md", "parts_used": "format and BKG stance conventions"},
+  {"file": "output/papers/P022.md", "parts_used": "format; accidentals conclusion"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "LZ dict"},
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "rules, deliverables, templates"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "muon flux at the SURF 4850 ft level 5.3e-9 cm^-2 s^-1 (Majorana Demonstrator 5.31+-0.17e-9); Mei-Hime flat formula 3.8e-9 at 4.3 km w.e.", "presumed_source": "Abgrall et al. 2017; Mei & Hime 2006", "reliability": "likely"},
+  {"item": "mean muon energy ~320 GeV at 4.3 km w.e. from <E> = eps(1-e^{-bh})/(gamma-2), eps=693 GeV, b=0.4/km w.e., gamma=3.77", "presumed_source": "Mei & Hime 2006", "reliability": "likely"},
+  {"item": "muon-induced neutron yield in rock 3.5e-4 n/(mu g cm^-2) at ~300 GeV (Mei-Hime 4.14e-6 E^0.74 -> 3.0e-4; range 2.5-5e-4)", "presumed_source": "Mei & Hime 2006; Wang et al. 2001; Araujo et al. 2005", "reliability": "likely (x1.5)"},
+  {"item": "muon-induced neutron production spectrum: evaporation Maxwellian T~1.2 MeV plus hard cascade tail ~E^-1 to ~50 MeV then ~E^-2 to GeV, hard fraction 0.2-0.4, f(>10 MeV)~0.15-0.25, f(>100 MeV)~0.02-0.04", "presumed_source": "Wang et al. 2001; Mei & Hime 2006; Kudryavtsev et al. 2003", "reliability": "uncertain (x2 on f(>8.2 MeV))"},
+  {"item": "muon zenith distribution I ~ cos^n theta with n ~ 3.5 (2.5-4.5) at 4.3 km w.e.", "presumed_source": "standard deep-underground phenomenology", "reliability": "likely"},
+  {"item": "Homestake rock density 2.7 g/cm^3 (2.6-2.9)", "presumed_source": "SURF site literature", "reliability": "likely"},
+  {"item": "n-Si/O cross sections: lambda_tot 7-8 cm, lambda_nonel 14 cm (14 MeV) to ~35 cm (100 MeV) in rock -> escape depth above 8.2 MeV 20/30/40 cm", "presumed_source": "ENDF systematics; nuclear interaction length ~100 g/cm^2", "reliability": "uncertain (x1.5)"},
+  {"item": "LZ water tank 7.6 m diameter x 5.9 m height", "presumed_source": "LZ TDR / instrument paper", "reliability": "likely"},
+  {"item": "GdLS acrylic-vessel envelope ~1.9 m outer radius, ~3.9 m tall (61 cm thick side tanks)", "presumed_source": "LZ OD paper (Haselschwardt et al.)", "reliability": "uncertain"},
+  {"item": "LZ active TPC 72.8 cm radius x 145.6 cm height", "presumed_source": "LZ instrument paper (as P013)", "reliability": "likely"},
+  {"item": "nuclear interaction length of water 83 g/cm^2; effective attenuation length for >100 MeV neutrons incl. cascade regeneration ~1.0 m (0.8-1.2), 0.7 m for 50-100 MeV", "presumed_source": "PDG; shielding practice", "reliability": "uncertain"},
+  {"item": "n-p total cross section 1.15 b (8 MeV), 0.94 (10), 0.69 (15), 0.48 (20), 0.38 (25), 0.30 (30), 0.17 (50), 0.075 (100), 0.043 (200), 0.034 b (1 GeV); isotropic CM scattering below ~50 MeV", "presumed_source": "ENDF/B n-H", "reliability": "likely (+-10%)"},
+  {"item": "n-16O nonelastic 0.5 b (8-30 MeV), 0.4 (50), 0.3 b (>=100 MeV)", "presumed_source": "ENDF/B", "reliability": "likely (+-30%)"},
+  {"item": "LAB scintillator C18H30 rho 0.86: n_H 6.3e22, n_C 3.8e22 cm^-3; sigma_C nonel 0.22 b, el 0.28 b at 100 MeV", "presumed_source": "composition; ENDF systematics", "reliability": "likely"},
+  {"item": "n-Xe total cross section 3.9/3.6/2.8/2.6 b at 50/100/300/1000 MeV (Skin crossing)", "presumed_source": "P013's recalled table", "reliability": "likely (+-30%)"},
+  {"item": "neutron capture time ~30 us in 0.1% Gd-loaded LS, ~200 us in water", "presumed_source": "Gd-LS detector literature", "reliability": "likely"},
+  {"item": "Cherenkov yield ~200 photons/cm for a muon in water; muons crossing metres of water are visible to OD PMTs", "presumed_source": "textbook", "reliability": "likely"},
+  {"item": "beta-delayed neutron emitters 9Li 178 ms (51%), 8He 119 ms (16%), 17N 4.17 s (95%), 16N 7.13 s (beta-gamma); beta-n energies <= 2 MeV; 9Li yield in water ~1.9e-7 /(mu g cm^-2)", "presumed_source": "ENSDF; Super-K spallation studies", "reliability": "likely"},
+  {"item": "137Xe 3.82 min, beta- only", "presumed_source": "ENSDF", "reliability": "certain"},
+  {"item": "MUSUN generates muons on a surface enclosing the cavern with several metres of rock (implied 1050 m^2 here)", "presumed_source": "Kudryavtsev 2009", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First implementation of the hydrogen removal term used the per-collision survival probability (1-8.2/E) instead of the removal probability 8.2/E; fixed. The >50 MeV component dominates, so the final expectation changed by <4%.",
+  "Mei-Hime analytic rock-neutron spectrum not used because its coefficients could not be recalled reliably; replaced by a two-component parametrisation with scanned hard fraction and knee.",
+  "Cavern shape, top/bottom OD tanks and cryostat steel not modelled separately; absorbed in the 2-3 m path-length range."
+ ],
+ "wimpydd_generated_files": []
+}

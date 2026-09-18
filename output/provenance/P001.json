@@ -1,0 +1,47 @@
+{
+ "id": "P001",
+ "title": "How much evidence is one event? A Bayesian and frequentist reassessment of the LZ 248 keV recoil",
+ "date": "2026-09-03",
+ "agent_tools": [
+  {"tool": "Read", "count": 7, "detail": "output/provenance/PAPER_GUIDE.md (full); output/00_evidence_dossier.md (full); inputs/LZ_arXiv_2609.02823_fulltext.tex lines 250-294 (Results, Fig. 5 caption), 460-504 (LEE supplement), 820-911 (Tables S6-S7); output/work/P001/figures/P001_fig1_posterior_vs_prior.png and P001_fig2_bayes_factor_vs_b.png (visual check)"},
+  {"tool": "Bash", "count": 7, "detail": "ls output dirs + cat results_ledger.csv + head environment/ENVIRONMENT_versions.txt; grep -n LEE/significance/caption lines in fulltext.tex + wc -l; cat dossier_numbers.json + grep lzcommon API + cat data_requests/index.csv + head tool_inventory.md + grep plan for P001; sed lzcommon.py lines 15-62 and 286-312 + grep P000_dossier_checks.py + grep dossier_numbers.json; mkdir -p output/work/P001/figures; .venv/bin/python output/code/P001_bayes_single_event.py (run twice: tail and head of output) + ls; grep k=2 rows of P001_table5_future_events.csv; wc -w on the P001.md body"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P001_bayes_single_event.py; output/work/P001/details.md; output/provenance/P001.json; output/papers/P001.md"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette/mark guidance for the matplotlib figures; read references/palette.md via grep, no validator run)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "logspace, array, mean, sum, isfinite"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats.poisson.pmf/sf, stats.norm.isf/sf, stats.gamma.pdf, integrate.quad, optimize.brentq"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend, pyplot.subplots/plot/imshow/savefig, colors.LinearSegmentedColormap"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ dict (bkg_highS1_panel, local_sig_max, global_sig, n_models, n_distinct), LSIG, OSIG, sigma_to_p, p_to_sigma, poisson_p_at_least"},
+  {"name": "python stdlib", "version": "3.12.13", "functions": "json, csv, math, os, sys"},
+  {"name": "closed-form algebra", "version": "none: derived by hand", "functions": "B10 = 1 + E_pi[s e^-s]/b; LR_max = e^(b-1)/b; small-b posterior limit; uniform/log-uniform/Gamma expectations"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P001_bayes_single_event.py", "purpose": "Poisson-in-a-box p-values and likelihood ratios; Bayes factors for 7 priors x 3 backgrounds; 2- and 3-hypothesis posteriors; LEE/Occam mixture factors and Sellke-Bayarri-Berger caps; future-event projections; two figures; CSV/JSON tables", "command": "cd /Users/reza/LZ_simulation && .venv/bin/python output/code/P001_bayes_single_event.py"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "abstract (3.4 sigma local, 2.6 sigma global); Results paragraph and Fig. 5 caption (0.0106 +/- 0.0008 counts in S1c > 500 phd panel; best-fit L10s signal); supplement 'Log-Likelihood Function and the Look Elsewhere Effect' (likelihood form, toy-MC LEE, 616 models / 293 distinct spectra); Tables S6-S7 (local significances, via lz.LSIG/lz.OSIG)"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "Sec. 2-4: b ~ 2e-4 within +/-2 sigma of NR median at S1c > 500 phd; N_eff ~ 14; ~900 low-energy events per high-energy event for SI-like spectra; list of partially validated backgrounds"},
+  {"file": "output/work/dossier/dossier_numbers.json", "parts_used": "p_local, p_global, effective_independent_trials, LR_s1_vs_b_in_box (cross-checked and corrected)"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "LZ dict, LSIG, OSIG, statistics helpers"},
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "rules, deliverables, template"},
+  {"file": "output/01_landscape_and_plan.md", "parts_used": "P001 assignment row and STAT category description (grep only)"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Sellke-Bayarri-Berger bound B10 <= -1/(e p ln p) for p < 1/e (point null, any prior on the alternative)", "presumed_source": "Sellke, Bayarri & Berger, Am. Stat. 55, 62 (2001)", "reliability": "certain"},
+  {"item": "Kass-Raftery Bayes-factor scale: 1-3 bare mention, 3-20 positive, 20-150 strong, >150 very strong", "presumed_source": "Kass & Raftery, J. Am. Stat. Assoc. 90, 773 (1995)", "reliability": "certain"},
+  {"item": "Asymptotic one-sided discovery significance Z = sqrt(q0), q0 = 2 ln LR_max (Wilks); breaks down for tiny expected counts", "presumed_source": "Cowan, Cranmer, Gross & Vitells, Eur. Phys. J. C 71, 1554 (2011)", "reliability": "certain"},
+  {"item": "Trials-factor framework for the look-elsewhere effect (context only)", "presumed_source": "Gross & Vitells, Eur. Phys. J. C 70, 525 (2010)", "reliability": "certain"},
+  {"item": "p-values overstate evidence against a point null relative to Bayes factors (context only)", "presumed_source": "Berger & Sellke, J. Am. Stat. Assoc. 82, 112 (1987)", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Poisson model with P(exactly 1 | mu_U) = L_U for the unknown-background hypothesis cannot represent L_U = 0.5 (max of mu e^-mu is 0.368); L_U is therefore treated as a given likelihood in the posterior tables and P(>=1 | mu_U) = L_U is used only for the forward projection.",
+  "No attempt to reconstruct the 2D signal/background PDFs to obtain the true density ratio at the event (left to P052 in the corpus plan); the paper's 3.4 sigma was instead inverted to an effective single-event background b_eff = 3.4e-4 (exact Poisson) to 1.1e-3 (asymptotic LR).",
+  "The dataviz skill's node.js palette validator was not run (simulation restricts execution to .venv python); the pre-validated reference palette values were used instead."
+ ],
+ "wimpydd_generated_files": []
+}

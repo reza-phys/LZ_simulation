@@ -1,0 +1,58 @@
+{
+ "id": "P018",
+ "title": "The high-velocity tail: escape velocity, non-Maxwellian tails and the reach of inelastic dark matter at LZ",
+ "date": "2026-09-05",
+ "agent_tools": [
+  {"tool": "Read", "count": 16, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv; papers/P002.md, P006.md, P007.md; code/common/lzcommon.py; code/P007_higgsino_inelastic.py (lines 20-250, two reads); WimPyDD/package.py (lines 5351-5485 diff_rate; 6139-6164 v_earth_sun; 6165-6545 streamed_halo_function; 6542-6590 streamed_halo_function_maxwellian); work/P018/figures/*.png (3)"},
+  {"tool": "Bash", "count": 17, "detail": "ls output/*, cat environment/ENVIRONMENT_versions.txt; grep -n def/sigma_n/efficiency in P007 script; python -c WimPyDD path + grep defs (twice); grep versions; python timing test of WD.diff_rate(sum_over_streams=False) and wd_halo delta_eta normalisation; grep P007 details for delta(N=1) halo; grep dataviz palette; .venv/bin/python output/code/P018_halo_tail.py (run 1, 367 s); same (run 2, 432 s, log to work/P018/run_log.txt); cat validation.json/part1_deltamax.json/eta_tail_ratios_june.csv/run_meta.json; python table dump of rate_ratios_isoscalar.csv and higgsino_window_shift.csv; python crossing computation -> astro_dominance_extra.json; wc -w of paper body (4 times while trimming to 543 words incl. table)"},
+  {"tool": "Write", "count": 4, "detail": "code/P018_halo_tail.py; work/P018/details.md; provenance/P018.json; papers/P018.md"},
+  {"tool": "Edit", "count": 19, "detail": "P018_halo_tail.py x6: extend delta grid to 100-440 keV; add tiers; score N=0 as -inf in spreads; first_crossing handles inf/already-above; figure annotations. papers/P018.md x13: word-count trims. provenance/P018.json and details.md: final tool counts"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette and chart guidance before plotting)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "polynomial.legendre.leggauss, cumsum, trapezoid, cross, linalg.norm, interp, array algebra"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf, special.erfc (efficiency, analytic Maxwellian norm)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, pivot, to_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg backend), semilogy, axvspan"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "diff_rate(target=Xe, sum_over_streams=False, delta=...) per-stream kernels; eft_hamiltonian via lz.wd_hamiltonian; streamed_halo_function via lz.wd_halo (validation only); v_earth_sun (Earth orbital velocity vector)"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ, V0_KMS, VESC_KMS, V_SUN_PEC, XE_ISOTOPES, A_XE_MEAN, M_V_GEV, C_KMS, m_nucleus_gev, mu_red, vmin_kms, E_R_range_keV, delta_max_kev, v_earth_kms, eta0, wd, wd_halo, wd_hamiltonian"},
+  {"name": "analytic derivation", "version": "none: derived by hand", "functions": "d(delta_max)/d(v_max) = sqrt(2 m_N E_R)/c; cap geometry cos(theta_min) = (v^2 + v_obs^2 - v_esc^2)/(2 v v_obs); SHM++ dispersions sigma_r^2 = 3 v0^2/(2(3-2beta)), sigma_t^2 = 3 v0^2 (1-beta)/(2(3-2beta)); WimPyDD half-bin tail bias estimate"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P018_halo_tail.py", "purpose": "Parts 1-4: delta_max scans; numerical Earth-frame halo functions for 15 halo variants (June 16 and 12-day annual mean) with validation against lz.eta0 and WimPyDD; O1 isoscalar and Higgsino in-ROI counts via WimPyDD per-stream kernels; rate ratios, coupling shifts, Higgsino delta(N=1) shifts; spread-vs-delta tiers and threshold crossings; three figures", "command": ".venv/bin/python output/code/P018_halo_tail.py  (cwd = simulation root; 432 s; stdout saved to output/work/P018/run_log.txt)"},
+  {"path": "(inline python, not saved as script)", "purpose": "post-processing of spread_vs_delta.csv: delta at which the Gaia-tier spread exceeds 0.7 dex, 1.0 dex and log10(3.65/0.105) = 1.54 dex -> astro_dominance_extra.json; v_min,min = sqrt(2 delta/mu) table", "command": ".venv/bin/python - <<EOF ... EOF"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules, deliverable formats"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "sections 1-3 (event date/energy, kinematics, timing), section 6 open question 1"},
+  {"file": "output/results_ledger.csv", "parts_used": "rows P001-P010 (headline results, P002/P006/P007 numbers)"},
+  {"file": "output/papers/P002.md", "parts_used": "delta_max values, rate fall-off toward delta_max, WimPyDD v_min grid issue"},
+  {"file": "output/papers/P006.md", "parts_used": "v_E(16 June) = 266 km/s, v_max = 810 km/s, delta_max June/mean/Dec"},
+  {"file": "output/papers/P007.md", "parts_used": "Higgsino sigma_n = 7.4e-39 cm^2, delta(N=1) = 366 keV window 358-380 at 1 TeV, v_esc 528/560 shifts -11/+9 keV"},
+  {"file": "output/work/P007/details.md", "parts_used": "halo definitions (annual = mean of 12 day-of-year halos), delta(N=1) table, N_unit isoscalar values"},
+  {"file": "output/code/P007_higgsino_inelastic.py", "parts_used": "efficiency(E) erf model (sig_hi 11.5, sig_lo 2.5), per-stream kernel technique, Higgsino coupling derivation (c_p, c_n)"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "whole file (constants, kinematics, eta0, WimPyDD wrappers)"},
+  {"file": "WimPyDD/package.py", "parts_used": "read-only: diff_rate (delta_eta usage), streamed_halo_function and _maxwellian (delta_eta convention, eta0_ave_bin), v_earth_sun (orbital velocity vector, phase convention)"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Baxter-2021 SHM parameters v0=238, v_esc=544, v_sun,pec=(11.1,12.2,7.3) km/s, rho0=0.3 GeV/cm^3", "presumed_source": "Baxter et al. EPJC 81, 907 (2021) (encoded in lzcommon)", "reliability": "certain"},
+  {"item": "Gaia-era escape speed estimates 520-580 km/s (Piffl+2014 533; Deason+2019 528+-25; Koppelman & Helmi 2021 ~500)", "presumed_source": "RAVE/Gaia literature", "reliability": "likely"},
+  {"item": "Circular speed range 220-250 km/s (Eilers+2019 229, McMillan 2017 233, Reid+2014 240)", "presumed_source": "Galactic-dynamics literature", "reliability": "likely"},
+  {"item": "Local DM density range 0.3-0.5 GeV/cm^3", "presumed_source": "Gaia-era local density determinations", "reliability": "likely"},
+  {"item": "Smoothly truncated tail f ~ [exp(-v^2/v0^2) - exp(-v_esc^2/v0^2)]^k with k ~ 1.5-3.5 from simulations", "presumed_source": "Lisanti, Strigari, Wacker, Wechsler PRD 83, 023519 (2011)", "reliability": "certain (form) / likely (k range)"},
+  {"item": "SHM++: v0=233, v_esc=528, Sausage fraction 0.2, beta=0.9, sigma_r^2 = 3v0^2/(2(3-2beta)), sigma_t^2 = 3v0^2(1-beta)/(2(3-2beta))", "presumed_source": "Evans, O'Hare, McCabe PRD 99, 023012 (2019)", "reliability": "likely"},
+  {"item": "Gaia Sausage is radially anisotropic (major axis toward Galactic centre), perpendicular to solar motion", "presumed_source": "Belokurov et al. 2018; Evans et al. 2019", "reliability": "certain"},
+  {"item": "G_F = 1.166e-5 GeV^-2, sin^2 theta_W = 0.231; Higgsino Z couplings c_p = (G_F/sqrt2)(1-4 s_W^2), c_n = -G_F/sqrt2", "presumed_source": "PDG; P007", "reliability": "certain"},
+  {"item": "Shell-model vs Helm nuclear-response uncertainty x3-6 at 200-250 keV (used as the 'nuclear-physics' scale, 0.7 dex)", "presumed_source": "PAPER_GUIDE / P003", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Run 1 used a delta grid starting at 250 keV and dropped zero-rate variants from the spread, so the x10 crossing was never bracketed and N=0 was mis-scored; fixed by extending to 100-440 keV and scoring N=0 as -inf.",
+  "The assignment's isotropic 'broader radial Maxwellian' approximation for the Sausage gives the wrong sign of the tail effect (x1.7-2.3 enhancement vs the anisotropic 0.80 suppression); the anisotropic Gaussian was computed directly and the isotropic version kept only as a comparison.",
+  "The <1% agreement target with WimPyDD is met at delta=300 keV (0.75%) but not within ~30 km/s of v_max (2-6%); the difference is WimPyDD's bin-averaged eta (eta0_ave_bin), not this construction, which matches the analytic eta to 3e-5."
+ ],
+ "wimpydd_generated_files": []
+}

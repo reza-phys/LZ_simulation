@@ -1,0 +1,160 @@
+====================================================================================================
+PART A1: Drell-Yan cross-sections by tau-scaling of the P014 13 TeV anchors
+NOTE: 100 TeV values with clipped_100TeV=True (m < 460 GeV) use the 13 TeV fit frozen at 60 GeV and are lower bounds; not used for any reach statement.
+   m_GeV  sigma_H_cn_13TeV_fb  ratio_14_13  sigma_H_cn_100TeV_fb  ratio_100_13  pairs_HLLHC_3ab  pairs_FCChh_30ab  slope_100
+0    300                201.4        1.145                 275.7         1.369        1.038e+06         1.241e+07     -1.578
+1    500                22.99        1.209                 241.9         10.52        1.251e+05         1.089e+07     -1.693
+2    800                2.244        1.271                  93.2         41.53        1.283e+04         4.194e+06     -2.366
+3   1000               0.6656        1.301                 53.04          79.7             3897         2.387e+06     -2.685
+4   1100               0.3875        1.314                  40.8         105.3             2292         1.836e+06     -2.822
+5   1500              0.06093        1.358                 15.87         260.5            372.5         7.143e+05     -3.266
+6   2000             0.009685        1.401                 5.846         603.7            61.04         2.631e+05     -3.678
+7   3000            0.0005929        1.462                  1.17          1973            3.901         5.264e+04     -4.258
+check vs P014 13 TeV anchors: sig_H_cn(300,500,1000) = 201.4, 23.0, 0.666 fb (P014: 201, 23, 0.67)
+100 TeV, 1 TeV: chi+-chi0 53.0 fb; chi+chi- + chi+-chi0 ~ 70.7 fb (assignment recalled 30 fb, band /3..x3)
+====================================================================================================
+PART A2: mu+mu- -> chi chi at tree level (s-channel gamma + Z)
+    m_GeV  sqrt_s_TeV  doublet_chipm_fb  doublet_chi1chi2_fb  doublet_total_fb  tripletY1_total_fb  ratio_triplet_over_doublet_total  betagamma_chargino
+0     300          10             1.196               0.4956             1.692                7.82                             4.623               16.64
+1     500          10             1.196               0.4956             1.692                7.82                             4.623                9.95
+2     800          10             1.196               0.4955             1.691               7.819                             4.623               6.169
+3    1000          10             1.195               0.4953             1.691               7.816                             4.623               4.899
+4    1100          10             1.195               0.4951              1.69               7.814                             4.623               4.434
+5    1500          10             1.192                0.494             1.686               7.796                             4.623                3.18
+6    2000          10             1.184               0.4905             1.675               7.741                             4.623               2.291
+7    3000          10             1.129               0.4678             1.597               7.383                             4.623               1.333
+8    4000          10            0.9474               0.3925              1.34               6.194                             4.623                0.75
+9    4500          10            0.7326               0.3035             1.036               4.789                             4.623              0.4843
+10   1100           3             11.47                4.758             16.23               75.01                             4.622              0.9271
+11   1100          14            0.6101               0.2528            0.8629               3.989                             4.623               6.285
+12   1100          30            0.1329              0.05506             0.188              0.8689                             4.623                13.6
+chargino coupling factor at 10 TeV: photon 1, interference 0.0569, Z^2 0.1438; |chi|->1.4066; sigma_point = 0.996 fb
+1.1 TeV at 10 TeV: chi+chi- 1.195 fb, chi1chi2 0.495 fb -> 16902 pairs in 10 ab^-1; beta gamma = 4.43
+check: mu+mu- -> e+e- (massless) / sigma_point at 10 TeV = 1.1290 (analytic 1 + 2 v^2 Re chi + (v^2+a^2)^2 |chi|^2 = 1.1290)
+====================================================================================================
+PART B: toy Drell-Yan kinematics, tracklet survival, expected tracklets and reach
+c tau: Higgsino 1.1 TeV 0.705 cm; Y=1 triplet Q=1 state (Delta m 511 MeV, kappa^2=2) 0.107 cm
+wino calibration (660 GeV, 13 TeV): a=2.51, median betagamma_T=0.53, P(r_T>12 cm)=0.077, produced 2466 events, eps_kin = 5/(N n_ch P) = 0.0197
+           machine  m_GeV  a_lum  bgT_p16  bgT_p50  bgT_p84  bgT_p99  frac_bgT_gt_2  frac_bgT_gt_3
+0    HL-LHC 14 TeV    300   1.89    0.282    0.613     1.19     2.96         0.0378        0.00954
+1    HL-LHC 14 TeV    500   2.25    0.259    0.557     1.05     2.44          0.021        0.00414
+2    HL-LHC 14 TeV   1000   2.75    0.238    0.502    0.918     1.97        0.00932         0.0013
+3    HL-LHC 14 TeV   1100   2.82    0.235    0.495    0.903     1.92         0.0082        0.00103
+4    HL-LHC 14 TeV   1500   3.04    0.226    0.477    0.863     1.79        0.00575        0.00061
+5    HL-LHC 14 TeV   2000   3.25    0.219    0.462    0.828     1.67        0.00353       0.000155
+6   FCC-hh 100 TeV    300  0.789    0.422        1      2.4     7.12          0.213          0.109
+7   FCC-hh 100 TeV    500  0.846    0.409    0.968     2.27     6.79          0.196          0.096
+8   FCC-hh 100 TeV   1000   1.34     0.33    0.741     1.54     4.53         0.0902         0.0336
+9   FCC-hh 100 TeV   1100   1.41    0.322    0.721     1.48     4.32         0.0816         0.0286
+10  FCC-hh 100 TeV   1500   1.63    0.302    0.663     1.32     3.57         0.0573         0.0176
+11  FCC-hh 100 TeV   2000   1.84    0.285    0.621     1.21     3.09         0.0411         0.0112
+           machine  m_GeV  ctau_cm  P_rT_gt_5cm  P_rT_gt_10cm  P_rT_gt_12cm  P_rT_gt_30cm  P_rT_gt_5cm_tripletY1  betagamma  acceptance_theta_gt_10deg
+0    HL-LHC 14 TeV    300    0.953       0.0104       0.00124      0.000651      1.29e-05               1.29e-06        NaN                        NaN
+1    HL-LHC 14 TeV    500    0.811      0.00401      0.000324      0.000153      1.44e-06               2.95e-07        NaN                        NaN
+2    HL-LHC 14 TeV   1000    0.712      0.00129      5.86e-05      2.28e-05      5.79e-08                2.4e-08        NaN                        NaN
+3    HL-LHC 14 TeV   1100    0.705      0.00114      4.72e-05      1.77e-05      3.16e-08               1.35e-08        NaN                        NaN
+4    HL-LHC 14 TeV   1500    0.684     0.000755      2.39e-05      7.99e-06      3.48e-09               1.63e-09        NaN                        NaN
+5    HL-LHC 14 TeV   2000    0.664     0.000471       9.4e-06      2.55e-06      1.35e-10               7.81e-11        NaN                        NaN
+6   FCC-hh 100 TeV    300    0.953        0.054        0.0135       0.00863      0.000377               4.67e-05        NaN                        NaN
+7   FCC-hh 100 TeV    500    0.811       0.0365       0.00783       0.00475       0.00014               3.75e-05        NaN                        NaN
+8   FCC-hh 100 TeV   1000    0.712       0.0114       0.00165      0.000904      1.55e-05               8.25e-06        NaN                        NaN
+9   FCC-hh 100 TeV   1100    0.705      0.00994       0.00138       0.00075      1.24e-05               6.99e-06        NaN                        NaN
+10  FCC-hh 100 TeV   1500    0.684      0.00617      0.000699      0.000358      4.29e-06               2.85e-06        NaN                        NaN
+11  FCC-hh 100 TeV   2000    0.664      0.00401      0.000383      0.000188      1.87e-06               1.49e-06        NaN                        NaN
+12      MuC 10 TeV    300    0.953        0.631         0.412          0.35        0.0876                 0.0304       16.6                      0.889
+13      MuC 10 TeV    500    0.811        0.418         0.191         0.142        0.0111                0.00376       9.95                      0.889
+14      MuC 10 TeV   1000    0.712        0.152        0.0288        0.0151      5.89e-05               2.18e-05        4.9                      0.889
+15      MuC 10 TeV   1100    0.705        0.125        0.0199       0.00977      2.08e-05               7.67e-06       4.43                      0.889
+16      MuC 10 TeV   1500    0.684       0.0555       0.00429       0.00158      2.66e-07               1.04e-07       3.18                      0.889
+17      MuC 10 TeV   2000    0.664       0.0185      0.000525      0.000131      6.28e-10               3.02e-10       2.29                      0.889
+18      MuC 10 TeV   3000    0.651       0.0013      3.04e-06       2.8e-07      1.78e-16               1.05e-16       1.33                      0.889
+19      MuC 10 TeV   4000    0.641     1.04e-05      2.34e-10      3.36e-12      1.21e-28                1.2e-28       0.75                      0.889
+           machine  r_min_cm  bkg_events bkg_case  reach_95CL_GeV  reach_5sigma_GeV  S_at_1100  S_at_300  S_at_500
+0    HL-LHC 14 TeV        12          30  central             300               250    0.00108     14.74    0.3874
+1    HL-LHC 14 TeV        12          10      low             325               275    0.00108     14.74    0.3874
+2    HL-LHC 14 TeV        12         100     high             275               NaN    0.00108     14.74    0.3874
+3    HL-LHC 14 TeV         5          30  central             475               425    0.05581     233.8     10.62
+4    HL-LHC 14 TeV         5          10      low             525               450    0.05581     233.8     10.62
+5    HL-LHC 14 TeV         5         100     high             450               375    0.05581     233.8     10.62
+6   FCC-hh 100 TeV        10         100  central            1300              1100      54.96      3561      1874
+7   FCC-hh 100 TeV        10          10      low            1600              1400      54.96      3561      1874
+8   FCC-hh 100 TeV        10        1000     high            1050               875      54.96      3561      1874
+9   FCC-hh 100 TeV         5         100  central            2050              1700      396.3 1.452e+04      8730
+10  FCC-hh 100 TeV         5          10      low            2500              2150      396.3 1.452e+04      8730
+11  FCC-hh 100 TeV         5        1000     high            1600              1350      396.3 1.452e+04      8730
+12      MuC 10 TeV        10           3  central            2100              1900      237.6      4928      2288
+13      MuC 10 TeV        10           1      low            2150              2050      237.6      4928      2288
+14      MuC 10 TeV        10          30     high            1850              1650      237.6      4928      2288
+15      MuC 10 TeV         5           3  central            3350              3150       1490      7544      5002
+16      MuC 10 TeV         5           1      low            3400              3250       1490      7544      5002
+17      MuC 10 TeV         5          30     high            3050              2800       1490      7544      5002
+reach under cross-section rescaling:
+           machine  r_min_cm  xsec_factor       case  bkg_events  reach_95CL_GeV  reach_5sigma_GeV  S_at_1100
+0    HL-LHC 14 TeV        12          0.5   xsec_low          30             275               NaN  0.0005402
+1    HL-LHC 14 TeV        12            2  xsec_high          30             325               300   0.002161
+2    HL-LHC 14 TeV         5          0.5   xsec_low          30             425               375     0.0279
+3    HL-LHC 14 TeV         5            2  xsec_high          30             550               475     0.1116
+4   FCC-hh 100 TeV        10       0.3333   xsec_low         100            1050               875      18.32
+5   FCC-hh 100 TeV        10            3  xsec_high         100            1600              1350      164.9
+6   FCC-hh 100 TeV         5       0.3333   xsec_low         100            1650              1350      132.1
+7   FCC-hh 100 TeV         5            3  xsec_high         100            2500              2100       1189
+8       MuC 10 TeV        10          0.9   xsec_low           3            2100              1900      213.9
+9       MuC 10 TeV        10          1.1  xsec_high           3            2150              1900      261.4
+10      MuC 10 TeV         5          0.9   xsec_low           3            3350              3100       1341
+11      MuC 10 TeV         5          1.1  xsec_high           3            3400              3150       1639
+====================================================================================================
+PART C: mono-photon at 10 TeV MuC
+   m_GeV  sigma_gamma_signal_fb  sigma_gamma_bkg_fb  S_10ab    B_10ab  S_over_sqrtB  frac_of_pair_xsec
+0    500                 0.1632                3862    1632 3.862e+07        0.2627             0.0965
+1   1000                 0.1424                3844    1424 3.844e+07        0.2297            0.08421
+2   1100                 0.1393                3838    1393 3.838e+07        0.2249            0.08244
+3   1500                 0.1289                3811    1289 3.811e+07        0.2087            0.07641
+4   2000                 0.1175                3762    1175 3.762e+07        0.1916            0.07019
+====================================================================================================
+PART D: delta-blindness of colliders
+   gamma                     case  E_lab_min_keV  E_lab_max_keV  E_lab_mean_keV  decay_length_gamma_channel_m  decay_length_nunu_channel_m  P_decay_within_10m_gamma  P_decay_within_10m_nunu
+0    1.5                     slow            140            958             549                      1.98e+07                     1.53e+14                  5.05e-07                 6.52e-14
+1      3  typical hadron collider           62.8       2.13e+03         1.1e+03                      5.01e+07                     3.88e+14                     2e-07                 2.58e-14
+2   4.55      MuC 10 TeV, 1.1 TeV           40.7       3.29e+03        1.67e+03                      7.86e+07                     6.09e+14                  1.27e-07                 1.64e-14
+3     30             extreme tail            6.1        2.2e+04         1.1e+04                      5.31e+08                     4.11e+15                  1.88e-08                 2.43e-15
+chi2 produced: MuC 10 ab^-1 4951; FCC-hh 30 ab^-1 8.16e+05; in-detector (10 m) photon decays: MuC 6.27e-04, FCC-hh 1.63e-01
+e+e- channel closed: delta = 366.0 keV < 2 m_e = 1022 keV
+                         case          hierarchy  sigma_Dm_MeV  delta_bound_GeV  ratio_to_LZ_delta
+0        one-loop theory only   wino-only tanb=2            10              104           2.85e+05
+1        one-loop theory only      M2=2M1 tanb=2            10             25.3           6.92e+04
+2        one-loop theory only   bino-only tanb=2            10             11.3           3.09e+04
+3        one-loop theory only     M2=-2M1 tanb=2            10              4.7           1.29e+04
+4        one-loop theory only  bino-only tanb=10            10             16.8           4.59e+04
+5   two-loop + MuC c tau (1%)   wino-only tanb=2          4.24             44.2           1.21e+05
+6   two-loop + MuC c tau (1%)      M2=2M1 tanb=2          4.24             10.7           2.93e+04
+7   two-loop + MuC c tau (1%)   bino-only tanb=2          4.24             4.79           1.31e+04
+8   two-loop + MuC c tau (1%)     M2=-2M1 tanb=2          4.24                2           5.45e+03
+9   two-loop + MuC c tau (1%)  bino-only tanb=10          4.24             7.13           1.95e+04
+10               aspirational   wino-only tanb=2          1.41             14.7           4.02e+04
+11               aspirational      M2=2M1 tanb=2          1.41             3.58           9.78e+03
+12               aspirational   bino-only tanb=2          1.41              1.6           4.37e+03
+13               aspirational     M2=-2M1 tanb=2          1.41            0.665           1.82e+03
+14               aspirational  bino-only tanb=10          1.41             2.38           6.49e+03
+MuC 1.1 TeV: expected tracklets (r>5 cm, 50% eff) = 1490 -> sigma(ctau)/ctau ~ 0.026, sigma(Delta m)/Delta m ~ 0.0086 -> 2.95 MeV
+   m_GeV     W_doublet  W_tripletY1
+0    300  2.574672e-05     0.000103
+1    500  9.268817e-06     0.000037
+2   1100  1.915045e-06     0.000008
+3   2000  5.793011e-07     0.000002
+FCC-ee sensitivity |W|<3e-05: doublet reach m < 278 GeV; Y=1 triplet 556 GeV
+FCC-ee sensitivity |W|<1e-05: doublet reach m < 481 GeV; Y=1 triplet 963 GeV
+====================================================================================================
+PART E: identification and timeline
+mass error 5% -> delta shift 0.65 keV (vs halo systematic ~10-17 keV)
+mass error 20% -> delta shift 2.60 keV (vs halo systematic ~10-17 keV)
+N_DD = 1: statistical sigma(delta) = 6.2 keV
+N_DD = 4: statistical sigma(delta) = 3.1 keV
+N_DD = 10: statistical sigma(delta) = 2.0 keV
+N_DD = 30: statistical sigma(delta) = 1.1 keV
+10 TeV, 1.1 TeV: sigma total doublet 1.690 fb vs Y=1 triplet 7.814 fb (ratio 4.62); charged-only ratio 4.88
+sigma_prod to 20% discriminates doublet from Y=1 triplet at 7.7 sigma (log-ratio / 0.2)
+                                        facility                                        years                                                                                                      doublet_reach                                                   tripletY1_reach                                                                                       verdict
+0                       HL-LHC (14 TeV, 3 ab^-1)                 2030-2041 (recalled, likely)                                  disappearing tracks: 300 GeV (12 cm), 475 GeV (5 cm); monojet ~200 GeV (recalled)                     c tau 0.1 cm: no tracklets; monojet-like only                                       below or at the LZ floor (259 GeV); cannot test the fit
+1  FCC-ee / CEPC / ILC (Z pole, WW, 250-500 GeV)              2045-2065 (recalled, uncertain)                                         W parameter: m < 278 GeV; direct pair production < sqrt(s)/2 = 125-250 GeV                                                    W: m < 556 GeV                                                               no sensitivity to the LZ region
+2                     FCC-hh (100 TeV, 30 ab^-1)                     2070s (recalled, likely)                      disappearing tracks: 1300 GeV (10 cm), 2050 GeV (5 cm) at 95% CL; monojet ~0.9 TeV (recalled)                   monojet/soft pions; 4x production; no tracklets  exclusion of the thermal Higgsino plausible, 5 sigma marginal; measures m only if discovered
+3               Muon collider (10 TeV, 10 ab^-1)  2050s at the earliest (recalled, uncertain)  16902 pairs; 1490 tracklets r>5 cm at 1.1 TeV; 5 sigma to ~3150 GeV; m, sigma_prod (multiplet), c tau (Delta m+-)  78135 pairs, mono-photon/soft pions; no tracklets (c tau 0.1 cm)               full coverage of every P007 fit point; measures m, Y, Delta m+-; blind to delta

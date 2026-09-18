@@ -1,0 +1,57 @@
+{
+ "id": "P045",
+ "title": "What a lower limit that lifts off zero means for one event: coverage, flip-flopping and the Baxter et al. conventions",
+ "date": "2026-09-10",
+ "agent_tools": [
+  {"tool": "Read", "count": 24, "detail": "provenance/PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (rows 1-14; rows 14-40 via a pandas print); papers/P001, P007, P008, P011, P012, P016, P017, P021; inputs/LZ_arXiv_2609.02823_fulltext.tex lines 244-293 (PLR paragraph, Results, Fig. 6 caption), 483-504 (LEE supplement, raster scan, no-threshold statement), 808-827 (Fig. S7 caption, local-significance section); code/common/lzcommon.py lines 1-125 and 288-312; data_requests/DR-001.md; inputs/figures_png/Fig6_O1_L10_limit_stacked.png (visual check of the lower curve); work/P045/figures/*.png (twice)"},
+  {"tool": "Bash", "count": 13, "detail": "grep -n of statistics keywords in fulltext.tex; ls of P012/data_requests/work + cat P012/fig6_bottom_digitised.csv + head of ENVIRONMENT_versions.txt; grep of function defs in lzcommon.py; pandas print of ledger rows P014-P040; grep of axis-calibration notes in P012/P017/P016 details; python print of P016.json structure + cat data_requests/index.csv; grep of dataviz palette.md; `.venv/bin/python output/code/P045_lower_limit.py` (first run, crashed at the b=3 one-sided UL); second run `... | tee output/work/P045/P045_run.log` (648 s, moved to background by the harness timeout); two file-existence wait loops (run_in_background); pandas summary of coverage/raster CSVs; python splice of the figure block into P045_figures.py + ast syntax check; `.venv/bin/python output/code/P045_figures.py` (twice)"},
+  {"tool": "Write", "count": 5, "detail": "output/code/P045_lower_limit.py; output/code/P045_figures.py; output/work/P045/details.md; output/provenance/P045.json; output/papers/P045.md"},
+  {"tool": "Edit", "count": 3, "detail": "P045_lower_limit.py: guard central_interval/upper_limit_1s for n << b; P045_figures.py: shorten Fig. 1 title (the figure block itself was moved by a scripted splice)"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette and mark rules for the PNG figures)"},
+  {"tool": "ToolSearch", "count": 1, "detail": "Monitor schema (not used; Bash wait loops used instead)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python, run from the simulation root"},
+  {"name": "numpy", "version": "2.5.3", "functions": "random.default_rng(45045).poisson (toys and 2e5-experiment MC), quantile(method='inverted_cdf'), argsort, cumprod, linspace/arange, where"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats.poisson.pmf/sf/cdf, stats.norm.cdf/isf, stats.chi2.ppf, optimize.brentq"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, read_csv, to_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend, pyplot subplots/plot/text/legend, log axes"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "imported for the LZ constants (lz.LZ); no physics functions or WimPyDD used"},
+  {"name": "none: derived by hand", "version": "-", "functions": "FC lower edge for n=1: mu_lo = -ln(CL) - b; t~_mu(1) = 2[(mu+b) - 1 - ln(mu+b)]; single-event unbinned likelihood reduces to e^{-s}(s+beta); dt~/dbeta = 2[1 - 1/(mu+beta)]; lift-off <=> p_local < 0.10 via the 1/2 delta + 1/2 chi2_1 null of t~_0; Gaussian-regime PCL mapping mu_hat/sigma = 1.645(rho-1)"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P045_lower_limit.py", "purpose": "exact FC, toy-calibrated t~_mu, naive Delta chi^2, Cowan boundary-aware asymptotic t~_mu, classical central, 68.27% intervals for n=1 and b in {0,5.7e-4,1e-3,1e-2}; smeared-calibration edge mu_lo(f); one-event unbinned likelihood vs beta; exact coverage curves for constructions and 3-sigma-threshold reporting policies at b=5.7e-4,1,3; 12-bin raster-scan toy (family-wise lift-off, MC under s=0,1,2.4); Gaussian-regime power-constraint check of the digitised Fig. 6 bottom; writes CSV/JSON and calls P045_figures", "command": ".venv/bin/python output/code/P045_lower_limit.py 2>&1 | tee output/work/P045/P045_run.log   (648 s)"},
+  {"path": "output/code/P045_figures.py", "purpose": "three PNG figures from the saved tables (intervals by construction; coverage; lift-off probability vs M)", "command": ".venv/bin/python output/code/P045_figures.py"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "line 248 (PLR, two-sided test statistic, Cowan/Baxter); lines 268-282 (Results: local p < 1.3e-3, LEE 2.6 sigma, two-sided 90% intervals, 'lower limit is non-zero for some masses', Data Release); lines 287-292 (Fig. 6 caption: 'lower limit lifts off from zero'); lines 485-500 (LEE toys, 616 -> 293 models, raster scan, 'no additional threshold requirement ... to report a lower limit'); lines 813-823 (Fig. S7 caption; >= 30,000 toys per model for p0)"},
+  {"file": "inputs/figures_png/Fig6_O1_L10_limit_stacked.png", "parts_used": "visual check: bottom-panel lower curve at d10 ~ 0.17 at 1000 GeV on a log axis, ~3.6x below the upper curve; top-panel lower/upper separation ~1.2-1.3 dex"},
+  {"file": "output/work/P012/fig6_bottom_digitised.csv", "parts_used": "d10 lower/median/upper for 10-4000 GeV (1000 GeV: 0.17118/0.41652/0.61414); N(d10=1) = 12.9 events at 1000 GeV taken from P012.md"},
+  {"file": "output/papers/P012.md, P017.md", "parts_used": "Fig. 6 bottom implied event counts 0.38/2.23/4.85 (P012) and 0.31/1.8/3.9 (P017); DR-001"},
+  {"file": "output/papers/P007.md, P011.md", "parts_used": "top-panel digitised intervals: upper edges 2.6e-4 (300 keV), 2.25e-2 (350 keV) = 3.2-3.8 events; converted intervals 1.5e-42-3.0e-41 and 1.1e-40-1.8e-39 cm^2"},
+  {"file": "output/papers/P001.md, P016.md, P008.md, P021.md", "parts_used": "b_eff = 3.4e-4-1.1e-3 (P001); b_H = 5.7e-4 (P016); N_eff = 12.2 at 3.4 sigma, 4.8 at 2 sigma and the NR-band background model 2.92 events (P008); the quoted single-event interval [0.105, 3.65] (P021)"},
+  {"file": "output/00_evidence_dossier.md; output/results_ledger.csv; output/provenance/PAPER_GUIDE.md; output/data_requests/DR-001.md; output/provenance/P016.json", "parts_used": "context, corpus results, deliverable format, DR-001 scope"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "LZ constants dict; statistics helper signatures (own implementations used)"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Feldman-Cousins 90% CL table entry for n=1, b=0: [0.11, 4.36]; 68.27%: [0.37, 2.75]", "presumed_source": "Feldman & Cousins, PRD 57, 3873 (1998), Tables II and IV", "reliability": "certain (90%) / likely (68%); both reproduced numerically"},
+  {"item": "Asymptotic cdf of t~_mu under mu'=mu with the mu>=0 boundary (two-branch formula), and the 1/2 delta(0) + 1/2 chi2_1 null distribution of t~_0", "presumed_source": "Cowan, Cranmer, Gross, Vitells, EPJC 71, 1554 (2011)", "reliability": "certain"},
+  {"item": "chi2_1 90% quantile 2.706; 68.27% <-> Delta chi2 = 1", "presumed_source": "standard", "reliability": "certain"},
+  {"item": "Baxter et al. (2021) recommend a 90% CL two-sided PLR construction with t~_mu", "presumed_source": "Baxter et al., EPJC 81, 907 (2021)", "reliability": "certain"},
+  {"item": "Baxter et al. recommend reporting a lower limit / two-sided interval only above a 3 sigma significance threshold, otherwise an upper limit", "presumed_source": "Baxter et al. (2021), Sec. on reporting", "reliability": "likely"},
+  {"item": "Baxter et al. recommend power-constrained limits; PCL with M_min = 0.16 (-1 sigma band)", "presumed_source": "Baxter et al. (2021); Cowan, Cranmer, Gross, Vitells arXiv:1105.3166", "reliability": "likely"},
+  {"item": "Flip-flopping (switching between a one-sided UL and a two-sided interval on a data-dependent threshold) under-covers; the unified construction avoids it", "presumed_source": "Feldman & Cousins (1998), Sec. II", "reliability": "certain"},
+  {"item": "Gaussian-regime two-sided 90% upper edge mu_hat + 1.645 sigma; -1 sigma sensitivity band at 0.645 sigma", "presumed_source": "standard", "reliability": "certain"},
+  {"item": "Neutron NR-band background shape ~ exp(-E/50 keV) and atmospheric-nu CEvNS shape ~ exp(-E/28.6 keV) used for the 12-bin toy", "presumed_source": "assumption anchored to P008/P019 numbers", "reliability": "uncertain (affects only the negligible high-energy bins)"}
+ ],
+ "datasets": "none",
+ "data_requests": [{"id": "DR-001", "status": "pending (filed by P012; would settle which construction and CL the Fig. 6 lower edges correspond to)"}],
+ "failed_or_abandoned": [
+  "First run crashed: one-sided UL / central interval for n << b (b=3, n=0) has no positive root; guarded to return 0",
+  "pgrep-based wait for the background run failed in the sandbox; replaced by a file-existence loop",
+  "Figures were first drawn inside the main script (650 s per rerun); moved to P045_figures.py reading the saved tables",
+  "No 90% two-sided construction applied to s_hat = 1.0 reproduces the digitised 0.31-0.38 lower edge; reported as a result with the smeared-calibration mechanism as the only candidate"
+ ],
+ "wimpydd_generated_files": []
+}

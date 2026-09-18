@@ -1,0 +1,117 @@
+{
+ "TPC_radius_cm": {
+  "value": 72.8,
+  "presumed_source": "LZ design papers (NIM A 953, 163047)",
+  "reliability": "likely"
+ },
+ "drift_length_cm": {
+  "value": 145.6,
+  "presumed_source": "LZ design papers; P022 Fig.3 axis",
+  "reliability": "likely"
+ },
+ "RFR_depth_cm": {
+  "value": 13.75,
+  "presumed_source": "paper (MSSI paragraph), via P022/P042",
+  "reliability": "certain"
+ },
+ "n_LXe_175nm": {
+  "value": 1.69,
+  "presumed_source": "Solovov et al. 2004 / Hitachi et al. 2005 refractive index of LXe at 175-178 nm",
+  "reliability": "likely"
+ },
+ "n_group_variant": {
+  "value": 1.9,
+  "presumed_source": "group index estimated from LXe dispersion (Grace et al. 2017)",
+  "reliability": "uncertain"
+ },
+ "Rayleigh_length_cm": {
+  "value": 35.0,
+  "presumed_source": "Ishida 1997 / Seidel 2002: 29-40 cm at 175 nm",
+  "reliability": "uncertain"
+ },
+ "PTFE_reflectance_LXe": {
+  "value": 0.97,
+  "presumed_source": "Neves et al. 2017 / Kravitz et al. 2020 (>= 0.95 immersed)",
+  "reliability": "likely"
+ },
+ "array_plane_reflectance": {
+  "value": 0.5,
+  "presumed_source": "assumed: PTFE reflector + PMT window mix",
+  "reliability": "uncertain"
+ },
+ "PMT_detection_prob_per_hit": {
+  "value": 0.25,
+  "presumed_source": "QE ~0.30 at 175 nm (R11410) x photocathode coverage ~0.8",
+  "reliability": "uncertain"
+ },
+ "grid_transparency": {
+  "value": 0.9,
+  "presumed_source": "woven-mesh optical transparency, assumed",
+  "reliability": "uncertain"
+ },
+ "PMT_TTS_sigma_ns": {
+  "value": 1.5,
+  "presumed_source": "assignment baseline; R11410 datasheet TTS ~ 9 ns FWHM (sigma 3.8) as variant",
+  "reliability": "uncertain"
+ },
+ "digitiser_sample_ns": {
+  "value": 10.0,
+  "presumed_source": "LZ DAQ 100 MS/s",
+  "reliability": "likely"
+ },
+ "tau_singlet_ns": {
+  "value": [
+   2.2,
+   4.3
+  ],
+  "presumed_source": "Hitachi et al. PRB 27, 5279 (1983); paper quotes 2-4 ns",
+  "reliability": "certain (range)"
+ },
+ "tau_triplet_ns": {
+  "value": [
+   21.0,
+   27.0
+  ],
+  "presumed_source": "Hitachi 1983 (22/27 ns); paper quotes 21-28 ns",
+  "reliability": "certain (range)"
+ },
+ "tau_recombination_zero_field_ns": {
+  "value": 45.0,
+  "presumed_source": "Kubota et al. PRB 20, 3486 (1979): 45 ns slow component for electrons at 0 V/cm",
+  "reliability": "likely"
+ },
+ "Is_It_ER_zero_field": {
+  "value": 0.05,
+  "presumed_source": "Hitachi 1983 electrons (recombination dominated)",
+  "reliability": "likely"
+ },
+ "Is_It_ER_drift_field": {
+  "value": [
+   0.4,
+   0.6
+  ],
+  "presumed_source": "assignment bracket; LUX PRD 97, 112002 (2018) at 180 V/cm",
+  "reliability": "uncertain"
+ },
+ "Is_It_NR": {
+  "value": [
+   1.0,
+   3.0
+  ],
+  "presumed_source": "Hitachi fission fragments 1.6; Akimov 2002 / Dawson 2005 / Kwong 2010 Xe recoils ~1.5",
+  "reliability": "uncertain"
+ },
+ "empirical_dtau_eff_ns": {
+  "value": [
+   1.0,
+   4.0
+  ],
+  "presumed_source": "LUX 2018 / XMASS 2018: ER-NR effective decay-time difference of a few ns",
+  "reliability": "uncertain"
+ },
+ "Nph_150keV_NR": {
+  "value": 2700,
+  "presumed_source": "P009 contour scale Nq = 11.32 E^1.112 minus ~10% electrons",
+  "reliability": "likely"
+ }
+}

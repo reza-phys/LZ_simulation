@@ -1,0 +1,54 @@
+{
+ "id": "P032",
+ "title": "Why the isovector O1 gets 1.3 sigma at delta = 0 while the isoscalar gets none: isospin, the M-response node and what isospin violation can buy",
+ "date": "2026-09-09",
+ "agent_tools": [
+  {"tool": "Read", "count": 28, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (2 pages); papers P003, P011, P017, P021, P007, P016; work/P016/P016_results.json; fulltext.tex lines 44-61, 462-501, 798-909; code/common/lzcommon.py lines 74-111, 300-372; code/P016_joint_constraint.py lines 96-120, 120-270, 268-288; code/P003_nreft_shapes.py lines 28-117; code/P017_nuclear_response.py lines 25-134; work/P032/figures fig1 (1x), fig2 (1x), fig3 (3x), fig4 (2x)"},
+  {"tool": "Bash", "count": 15, "detail": "grep of fulltext.tex for isospin/LEE/Table markers + ls work dirs; grep of lzcommon function index; wc/grep of P016/P003/P017/P021 scripts + ENVIRONMENT_versions.txt; python print of P021.json layout + grep WimPyDD package.py for func_w/diff_rate; WimPyDD diff_rate signature + nuclear_current + Xe isotopes/W_M(0); grep of dataviz palette.md; run P032_isovector.py (full, 68 s); run --fast (3x during fixes); diagnostic python on 128/129/131Xe h_p/h_n sign changes and dyad ratio; sed/pandas prints of run_log tables and node_vs_r CSV (2x); final run --fast with validation lines; wc -w of the paper"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P032_isovector.py; output/work/P032/details.md; output/provenance/P032.json; output/papers/P032.md"},
+  {"tool": "Edit", "count": 12, "detail": "P032_isovector.py: exact dyad-based node finder (2 iterations), minima-based node definition, neutron-only/Higgsino key points, inelastic extra couplings, significant-minimum filter (2 iterations), Fig. 3 tweaks (2), F_n sign tracking, normalisation validation block, other-target table"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette and chart rules for the four PNG figures)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python, run from /Users/reza/LZ_simulation"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "streamed_halo_function (via lzcommon.wd_halo, explicit v_min grid), eft_hamiltonian (O1 with (c0,c1) = (1,0), (0,1), (1,1), (0.3,1.7)), diff_rate (natural Xe and per-isotope via isotopes_list, delta = 0 and 300 keV), Xe.func_w (M response W^{tt'} per isotope), nuclear_current"},
+  {"name": "numpy", "version": "2.5.3", "functions": "arrays, interp, trapezoid, union1d, savez/load cache"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf (efficiency), integrate.trapezoid/cumulative_trapezoid (percentiles), optimize.minimize_scalar (N_lo minimum; profile likelihood), optimize.brentq (implied N_lo), stats.norm (bin shape)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame tables, pivot, CSV output"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend, four PNG figures"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "wd(), wd_halo(), wd_hamiltonian(), wd_rate(), dRdE_SI() (Helm, validation), LSIG/OSIG tables, XE_ISOTOPES, A_XE_MEAN, M_NUCLEON_GEV, LZ['exposure_tyr']"},
+  {"name": "none: derived by hand", "version": "-", "functions": "quadratic-form decomposition of the rate in (c0, c1); dyad relations W_pp, W_nn, W_pn; (Z + rN)^2/A^2 suppressions for other targets"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P032_isovector.py", "purpose": "WimPyDD O1 basis spectra (c0,c1) for m = 400/1000/4000 GeV, elastic and delta = 300 keV, plus per-isotope rates at 20/248 keV; exact reconstruction of any f_n/f_p; window rates, N_lo(r), effective-A ratios, node positions (rate and response), per-isotope M-response nodes and proton/neutron form factors, isotope shares; P016 few-bin likelihood local Z vs r and implied N_lo from LZ's tables; delta = 300 keV percentiles; sigma_p for one event; other-target suppressions; four figures; summary JSON", "command": ".venv/bin/python output/code/P032_isovector.py   (then --fast for re-runs using output/work/P032/P032_basis_spectra.npz)"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Theory paragraph incl. WimPyDD/DMFormFactor-v6 statement (l. 44-60); likelihood and LEE section incl. L1/L5 scalar-constant degeneracy and isoscalar/isovector-degenerate Lagrangians (l. 462-500); 'Interpretation of O1 as a cross-section' with the factor 3.2 (l. 800-808); Tables S6 (L1s/L1v/L5s/L5v rows) and S7 (O1s/O1v delta = 0) (l. 825-909)"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "event parameters, significance pattern, Table S6/S7 summary"},
+  {"file": "output/results_ledger.csv", "parts_used": "rows P001-P030 (headlines of P002, P003, P007, P011, P016, P017, P021)"},
+  {"file": "output/papers/P003.md, P011.md, P017.md, P021.md, P007.md, P016.md", "parts_used": "N_lo 2752/477; proton node 284-291 keV and factor ~4; M node 266.9 keV and isotope spread; O1v flat Z and 0.2-0.6 sigma offset; Higgsino c1/c0 = -1.17; few-bin likelihood method and b_H anchor"},
+  {"file": "output/work/P016/P016_results.json", "parts_used": "fig5_top_digitised (sigma_bin_low, total, data_counts), baseline_settings (b_H = 5.695e-4, b_M, n_M, sig_theta, window_hi_sigma)"},
+  {"file": "output/code/P016_joint_constraint.py, P003_nreft_shapes.py, P017_nuclear_response.py", "parts_used": "FewBin likelihood structure; efficiency model (0.96, erf at 5.4/269.9 keV, sigma 3.4/8 keV); per-isotope func_w access pattern"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "WimPyDD wrapper, Helm dR/dE, LSIG/OSIG, isotope abundances, constants"},
+  {"file": "WimPyDD/package.py (read-only)", "parts_used": "diff_rate signature (isotopes_list), func_w shape (8,2,2), nuclear_current index map"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "(hbar c)^2 = 0.3894e-27 GeV^2 cm^2", "presumed_source": "PDG constants", "reliability": "certain"},
+  {"item": "sin^2 theta_W = 0.2312 (reproduces LZ's factor 3.2 as 3.23)", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "Xenophobic isospin-violating DM f_n/f_p ~ -0.7 = -Z/N for xenon", "presumed_source": "Feng, Kumar, Marfatia, Sanford, PLB 703 (2011) 124", "reliability": "certain"},
+  {"item": "Two-body (meson-exchange) currents contribute few-30 % of the one-body SI response and are predominantly isoscalar; absent from WimPyDD/DMFormFactor one-body responses", "presumed_source": "Hoferichter, Klos, Menendez, Schwenk PRD 94 (2016) 063505", "reliability": "likely"},
+  {"item": "Xenon neutron-skin thickness ~0.15 fm (used only in the discussion)", "presumed_source": "nuclear-structure literature (antiprotonic atoms / DFT)", "reliability": "uncertain"},
+  {"item": "M-response multipole selection: M_J with even J <= 2 J_nuc, so J = 0 and J = 1/2 isotopes have a single (dyad) M_0 term and 131Xe (J = 3/2) has M_0 + M_2", "presumed_source": "Fitzpatrick et al. 2013 / Anand et al. 2014", "reliability": "certain"},
+  {"item": "Wilks asymptotics Z = sqrt(q0) for the one-sided discovery statistic", "presumed_source": "Cowan, Cranmer, Gross, Vitells EPJC 71 (2011) 1554", "reliability": "certain"},
+  {"item": "L1 and L5 map onto O1 (LZ itself states they differ by a scalar constant); O1 at delta = 0 is the same spectrum", "presumed_source": "Anand et al. 2014 operator reductions; P003", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Per-isotope node search via signed sqrt(W) amplitudes with sign flips at near-zero minima: double detections at shallow minima and the non-dyad 131Xe response gave spurious/missing nodes; replaced.",
+  "Per-isotope node search via common zeros of Z W_pp + rN W_pn and Z W_pn + rN W_nn: exact for dyad isotopes but degenerate at r = 0 and invalid for 131Xe (W01^2/(W00 W11) = 0.44); replaced by minima of the exact quadratic form with depth bookkeeping.",
+  "Minimum filter x0.3 at +-12 keV rejected the genuine isoscalar node at 267 keV; loosened to x0.6 at +-15 keV."
+ ],
+ "wimpydd_generated_files": ["output/work/P032/P032_basis_spectra.npz (our own cache of WimPyDD diff_rate outputs; WimPyDD wrote no files of its own)"]
+}

@@ -1,0 +1,67 @@
+{
+ "id": "P068",
+ "title": "A joint astrophysical uncertainty band on everything inferred from the LZ event: rho0, v0, v_esc, v_sun, the tail shape and the halo frame",
+ "date": "2026-09-12",
+ "agent_tools": [
+  {"tool": "Read", "count": 19, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (first page; remaining rows via grep); papers P018, P021, P043, P035, P034, P012, P003, P007, P030; P055.md (does not exist); code/P018_halo_tail.py; common/lzcommon.py lines 108-212 and 310-400; work/P068/figures x3"},
+  {"tool": "Bash", "count": 22, "detail": "grep ledger rows P002/P016/P018/P020/P021/P028/P030/P034/P035/P043 + ls work dirs/papers/data_requests; grep lzcommon API; grep P012 L10 syntax, P034 a1 definition, P002 percentile, P021 kappa (P021_peaks.csv, P021_results.json); cat P043 corpus_numbers_with_systematics.csv, P018 higgsino_window_shift/rate_spread_summary/validation.json/run_log/run_meta, ENVIRONMENT_versions.txt, P012_coupling_table.csv; grep P018 run_log timings + sed P012 lines 120-140 + awk P018 window; $TMPDIR/t_eta.py (eta timing, Lisanti k=2 check); grep dataviz palette.md; first full run (exceeded 600 s, moved to background, stopped); cat run_log/ls kernel_cache (x2); pkill attempt (blocked by sandbox) + $TMPDIR/t_l10.py (L10 Hamiltonian validation vs P012); $TMPDIR/t_k.py (kernel-row timing); run with `timeout` (command not found on macOS); .venv/bin/python output/code/P068_astro_band.py (full run, 567 s); run_log + printed tables; results JSON summary; re-run from cache (2 s) + prints; bands/sensitivities/Spearman prints + ls; derived probabilities + rm -rf work/P068/halo_cache; wc -w papers/P068.md"},
+  {"tool": "Write", "count": 5, "detail": "output/code/P068_astro_band.py; output/work/P068/details.md; output/provenance/P068.json; output/papers/P068.md (written twice: first draft 1062 words, rewritten to budget)"},
+  {"tool": "Edit", "count": 21, "detail": "P068_astro_band.py x12: Lisanti function cleanup; NSAMP/HCACHE; sets B,C to 200; halo library cache + stack(); kernels-first order; Higgsino dE 3 then 4; phase sign; quantiles incl. infinities; band(); zero-rate fractions; RESULTS key. papers/P068.md x6: word-budget trims. provenance/P068.json x3: tool counts"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette and chart rules; JS validator skipped per PAPER_GUIDE)"},
+  {"tool": "ToolSearch", "count": 1, "detail": "select:TaskStop,Monitor"},
+  {"tool": "TaskStop", "count": 1, "detail": "stopped the first (over-budget) background run bnwsb5kts"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python, run from the simulation root"},
+  {"name": "numpy", "version": "2.5.3", "functions": "polynomial.legendre.leggauss, trapezoid, percentile (inverted_cdf), cumsum, linalg.norm, savez_compressed/load"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats.qmc.LatinHypercube, stats.norm.ppf/cdf, stats.spearmanr, stats.rankdata, special.erf/erfc"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, to_csv, corr(method='spearman')"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; subplots, scatter, hist, barh"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian (incl. (4,'q2') q-dependent coefficient built as a closure), diff_rate(..., sum_over_streams=False) per-stream kernels, v_earth_sun, streamed_halo_function via lz.wd_halo (validation only)"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ, V0_KMS, VESC_KMS, V_SUN_PEC, eta0, delta_max_kev, E_R_range_keV, XE_ISOTOPES, M_V_GEV, M_NUCLEON_GEV, wd, wd_halo, wd_hamiltonian, wd_c_from_anand"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P068_astro_band.py", "purpose": "joint prior (LHS, Gaussian copula), 1D isotropic Earth-frame eta construction (P018 method), cached WimPyDD kernels (O1 iso, Higgsino, L10), per-sample outputs (kappa, d10, delta_H, delta_max, a1, percentile), marginals, Spearman, first-order variance indices, detector comparison, figures", "command": ".venv/bin/python output/code/P068_astro_band.py"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules, halo-labelling note, WimPyDD pitfalls, deliverable structure"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "event summary, timing, kinematics section"},
+  {"file": "output/results_ledger.csv", "parts_used": "rows P002, P016, P018, P020, P021, P028, P030, P034, P035, P043"},
+  {"file": "output/papers/P018.md + output/code/P018_halo_tail.py + work/P018/{higgsino_window_shift,rate_spread_summary}.csv, validation.json, run_log.txt", "parts_used": "eta construction, Earth-velocity convention, efficiency, kernel convention, reference counts for validation, single-parameter shifts"},
+  {"file": "output/papers/P012.md + output/code/P012_magnetic_dipole.py + work/P012/P012_coupling_table.csv", "parts_used": "L10 = 4[(q^2/m_N^2)O4 - O6] WimPyDD implementation, N_unit_wd = 3.3295 and N_unit_lz = 12.842 (sig_hi 11.5 row) -> F_LZ = 3.857, d10 = 0.279"},
+  {"file": "output/papers/P007.md", "parts_used": "Higgsino couplings, N(1 TeV) table 790/11.1/0.49/0.098, delta(N=1) = 366"},
+  {"file": "output/papers/P021.md + work/P021/P021_peaks.csv, P021_results.json", "parts_used": "kappa definition, kappa_hat 7.4e-5/3.9e-3/2.19, S_tot_unit"},
+  {"file": "output/papers/P043.md + work/P043/corpus_numbers_with_systematics.csv", "parts_used": "detector 1-sigma budget for E, delta_max, d10, kappa"},
+  {"file": "output/papers/P034.md + work/P034/details.md", "parts_used": "a1 definition, a1 = 0.428/1.179/1.521/1.656, phase 151.9"},
+  {"file": "output/papers/P035.md", "parts_used": "Sun-frame vs annual factors 1.08/1.7/10"},
+  {"file": "output/papers/P002 (ledger row) + work/P002/details.md", "parts_used": "efficiency-weighted percentile definition, 99.5/98.1"},
+  {"file": "output/papers/P003.md, P030.md", "parts_used": "coupling convention; streams context"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "constants, kinematics, WimPyDD wrapper"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Gaia-era local dark-matter density range 0.3-0.5 GeV cm^-3", "presumed_source": "de Salas & Widmark review; Gaia-based determinations", "reliability": "likely"},
+  {"item": "escape speed 500-600 km/s with central Gaia/RAVE values 528-580 (Piffl 2014 533; Deason 2019 528; Monari 2018 580)", "presumed_source": "Piffl et al. 2014, Deason et al. 2019, Monari et al. 2018", "reliability": "likely"},
+  {"item": "circular speed 220-250 km/s", "presumed_source": "Reid/Gaia-era determinations", "reliability": "likely"},
+  {"item": "solar peculiar V component uncertainty of order 5 km/s (systematic)", "presumed_source": "Schoenrich, Binney & Dehnen 2010", "reliability": "likely"},
+  {"item": "Lisanti et al. tail form f ~ [exp((v_esc^2 - v^2)/(k v0^2)) - 1]^k, k ~ 1.5-3.5 preferred", "presumed_source": "Lisanti, Strigari, Wacker, Wechsler PRD 83, 023519 (2011)", "reliability": "likely"},
+  {"item": "v_esc and v0 positively correlated in Galactic mass models (deeper potential -> both larger); magnitude +0.5 is an assumption", "presumed_source": "general Galactic dynamics", "reliability": "likely (sign) / uncertain (magnitude)"},
+  {"item": "G_F = 1.166e-5 GeV^-2, sin^2 theta_W = 0.231", "presumed_source": "PDG (as P007)", "reliability": "certain"},
+  {"item": "Anand et al. L10 reduction to 4[(q^2/m_N^2) O4 - O6] with m_M = m_N", "presumed_source": "Anand, Fitzpatrick, Haxton PRC 89, 065501 (via P012/P003)", "reliability": "likely"},
+  {"item": "Latin hypercube sampling", "presumed_source": "McKay, Beckman, Conover, Technometrics 21, 239 (1979)", "reliability": "certain"},
+  {"item": "Gaussian copula / normal-score rank-correlation induction (Iman-Conover)", "presumed_source": "Iman & Conover 1982", "reliability": "certain"},
+  {"item": "binned conditional-mean estimator of first-order Sobol indices, floor ~(n_bins-1)/N", "presumed_source": "Plischke 2010 / Saltelli et al. 2008", "reliability": "certain"},
+  {"item": "Fourier fundamental amplitude a1 = |2 <p e^{-i w t}>|, phase t1 = -arg/w", "presumed_source": "standard", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none (d10 inherits P012's DR-001 normalisation factor)",
+ "failed_or_abandoned": [
+  "First full run used P018's two-dimensional angular cap integral for every eta (0.09 s/evaluation on a loaded machine) and exceeded the 600 s foreground budget before any kernel was built; stopped (TaskStop) and replaced by the isotropic one-dimensional integral plus per-kernel/per-set caching (567 s total, 2 s re-run)",
+  "pkill blocked by the sandbox; `timeout` not available on macOS",
+  "Modulation phase initially day 213 (sign of arg); corrected to t1 = -arg(c)/omega = 151.8 d (P034 151.9)",
+  "Quantiles first over finite samples only, hiding kappa = infinity for 2.5/13/26 % of halos at delta = 350/366/380 keV; both versions now reported",
+  "P055.md (streams) requested by the assignment does not exist (papers end at P053); P030 used instead",
+  "60 MB halo-library cache deleted after the run (regenerable in ~60 s)"
+ ],
+ "wimpydd_generated_files": "none (WD.diff_rate only; own kernel cache output/work/P068/kernel_cache/*.npz, 45 files)"
+}

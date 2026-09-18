@@ -1,0 +1,9 @@
+candidate,required,existing_bound,verdict
+"halo millicharged, 100 GeV-10 TeV",eps = 1.7e-08 (1 TeV),none relevant at eps~1e-7 (recalled: LZ/XENON1T MCP-DM limits eps <~ 1e-9-1e-8 for elastic; uncertain),N_lo = 2.3e+05 (Helm) / 7.7e+05 (shell): excluded by the empty low-energy ROI
+relativistic millicharged (CR / SN),Phi eps^2 = 1.1e-06 cm^-2 s^-1,recalled: Plestid et al. 2020 / ArgoNeuT / SENSEI (uncertain),"N_lo = 96410/321932, 4435 ERs per NR: excluded"
+"pointlike SIMP, one scatter per traversal","sigma_Xe ~ 7.8e-25 cm^2, m ~ 1.0e+15 GeV","recalled: MJD/CRESST/EDELWEISS surface, XENON1T/DEAP multiscatter (uncertain)",N_lo = 676: excluded; 26 % of traversals multi-scatter
+opaque heavy composite (flat spectrum),"sigma_Xe ~ 7.8e-25 cm^2 (R~4 fm), m ~ 1.1e+17 GeV","recalled: DEAP-3600 / MJD multiscatter, MICA, rocky planets (uncertain)","N_lo = 1.43 but 1.6 HE-SB events per window event (0 observed, p = 0.193)"
+nuclearites / Q-balls (sigma >= 1e-16 cm^2),none: dE/dx = sigma rho v^2,"recalled: MACRO, SLIM, MICA, Ohya (uncertain)",2.8e+09 keV/cm continuous track: not a point-like 248 keV NR
+CHAMP (charge e) / monopole at 700 km/s,none,recalled: MACRO/Parker (monopoles); CHAMP stopping (uncertain),7.4e+04 / 1.9e+03 keV/cm electronic track; CHAMP needs m > 6e+10 GeV to reach 1478 m
+superheavy / Planck-scale DM (p ~ 1),"F = 2.2e-13 cm^-2 s^-1 sr^-1, m <= 3.9e+18 GeV","Parker 1e-15, MACRO 1.4e-16 cm^-2 s^-1 sr^-1 (recalled, monopoles)",flux ceiling: m <= 3.9e+18 GeV x p; Planck mass gives 0.32 traversals per run
+inelastic composite (dark nucleus),"delta <= 405 keV (m -> inf), R_D < 0.80 fm, m <= 4e+18 GeV",P042: tau(chi2->chi1 gamma) > 0.43 us; P030/P007 window,viable only as the IDM window of P007/P021 with a composite UV completion (P023)

@@ -1,0 +1,610 @@
+{
+ "D_factors": {
+  "cone_5": {
+   "NFW": 2.3537065790758123e+21,
+   "Einasto": 3.062190230406904e+21,
+   "Burkert": 9.159323736969478e+20
+  },
+  "cone_10": {
+   "NFW": 7.480072221033968e+21,
+   "Einasto": 9.336908470122476e+21,
+   "Burkert": 3.611428877200839e+21
+  },
+  "cone_16": {
+   "NFW": 1.5587815423680254e+22,
+   "Einasto": 1.871229506471429e+22,
+   "Burkert": 8.802793185771026e+21
+  },
+  "cone_30": {
+   "NFW": 3.928544225761298e+22,
+   "Einasto": 4.438555574749783e+22,
+   "Burkert": 2.731989180895558e+22
+  },
+  "box_10": {
+   "NFW": 9.01996996193031e+21,
+   "Einasto": 1.1147465129707851e+22,
+   "Burkert": 4.544012336808702e+21
+  },
+  "box_30": {
+   "NFW": 4.545663863919741e+22,
+   "Einasto": 5.079970178237841e+22,
+   "Burkert": 3.2688946935429377e+22
+  },
+  "box_47.5": {
+   "NFW": 8.039659155230857e+22,
+   "Einasto": 8.629293519369704e+22,
+   "Burkert": 6.4507180487853354e+22
+  },
+  "all_sky": {
+   "NFW": 2.0270216151472443e+23,
+   "Einasto": 2.0551840114654852e+23,
+   "Burkert": 1.780757022371879e+23
+  },
+  "anticentre_cone_30": {
+   "NFW": 6.808790432814724e+21,
+   "Einasto": 6.568328389199175e+21,
+   "Burkert": 6.11217786385213e+21
+  },
+  "anticentre_cone_10": {
+   "NFW": 7.618960931724376e+20,
+   "Einasto": 7.348965623261489e+20,
+   "Burkert": 6.823806589973426e+20
+  },
+  "high_lat_|b|>30": {
+   "NFW": 8.83232769012544e+22,
+   "Einasto": 8.685186600938859e+22,
+   "Burkert": 8.193265315089358e+22
+  }
+ },
+ "validation": {
+  "NFW_cone_5": {
+   "quad": 2.3547426902346965e+21,
+   "healpix": 2.3537065790758123e+21,
+   "ratio": 0.9995599896484737
+  },
+  "NFW_cone_10": {
+   "quad": 7.430205723544514e+21,
+   "healpix": 7.480072221033968e+21,
+   "ratio": 1.0067113212399272
+  },
+  "NFW_cone_16": {
+   "quad": 1.5607997353920528e+22,
+   "healpix": 1.5587815423680254e+22,
+   "ratio": 0.9987069494065999
+  },
+  "NFW_cone_30": {
+   "quad": 3.927844333749011e+22,
+   "healpix": 3.928544225761298e+22,
+   "ratio": 1.0001781873090727
+  },
+  "P026_D10_quoted": 7.41e+21,
+  "P026_ratio_quad": 1.0027268182921072,
+  "NFW_cone_10_rmax_150": 7.423537186889219e+21,
+  "NFW_cone_10_rmax_400": 7.432677491240907e+21,
+  "los_psi_0.5": {
+   "quad": 1.5277750916634183e+23,
+   "vec": 1.5277182672070176e+23
+  },
+  "los_psi_2": {
+   "quad": 1.1097486435854561e+23,
+   "vec": 1.1097326628515855e+23
+  },
+  "los_psi_10": {
+   "quad": 6.304460460257297e+22,
+   "vec": 6.304411616393769e+22
+  },
+  "los_psi_45": {
+   "quad": 2.39022489409013e+22,
+   "vec": 2.3902267456371766e+22
+  },
+  "los_psi_90": {
+   "quad": 1.244100999687414e+22,
+   "vec": 1.2440977633557734e+22
+  },
+  "los_psi_180": {
+   "quad": 7.893921834128504e+21,
+   "vec": 7.89389095265632e+21
+  }
+ },
+ "contrast_GC_over_anticentre": {
+  "NFW": 18.61571524967701,
+  "Einasto": 25.181656296584652,
+  "Burkert": 5.467887740940863
+ },
+ "fraction_allsky_in_cone10": {
+  "NFW": 0.03690178814640124,
+  "Einasto": 0.045431009671317114,
+  "Burkert": 0.020280301196794366
+ },
+ "fraction_allsky_in_box30": {
+  "NFW": 0.2242533493452432,
+  "Einasto": 0.24717836212707195,
+  "Burkert": 0.18356769915689755
+ },
+ "flux_at_1em22": {
+  "cone_5": {
+   "NFW": 1.873020183239153e-05,
+   "Einasto": 2.436813559284844e-05,
+   "Burkert": 7.2887582405881175e-06
+  },
+  "cone_10": {
+   "NFW": 5.952452343309643e-05,
+   "Einasto": 7.430075681082892e-05,
+   "Burkert": 2.8738837871566353e-05
+  },
+  "cone_16": {
+   "NFW": 0.00012404389383413998,
+   "Einasto": 0.00014890771280716785,
+   "Burkert": 7.005040242655559e-05
+  },
+  "cone_30": {
+   "NFW": 0.00031262361634251673,
+   "Einasto": 0.00035320902995475835,
+   "Burkert": 0.00021740479130655317
+  },
+  "box_10": {
+   "NFW": 7.17786402990812e-05,
+   "Einasto": 8.870870891687706e-05,
+   "Burkert": 3.616010124368297e-05
+  },
+  "box_30": {
+   "NFW": 0.0003617324367885158,
+   "Einasto": 0.00040425118231298454,
+   "Burkert": 0.0002601303744621125
+  },
+  "box_47.5": {
+   "NFW": 0.0006397757476645014,
+   "Einasto": 0.0006866973594992733,
+   "Burkert": 0.0005133318319781462
+  },
+  "all_sky": {
+   "NFW": 0.0016130525490240073,
+   "Einasto": 0.0016354634719408128,
+   "Burkert": 0.0014170814127804471
+  },
+  "anticentre_cone_30": {
+   "NFW": 5.418263269296345e-05,
+   "Einasto": 5.226909654959377e-05,
+   "Burkert": 4.863916600444641e-05
+  },
+  "anticentre_cone_10": {
+   "NFW": 6.062976467539836e-06,
+   "Einasto": 5.8481210277723874e-06,
+   "Burkert": 5.430212747486605e-06
+  },
+  "high_lat_|b|>30": {
+   "NFW": 0.000702854305445443,
+   "Einasto": 0.0006911451896074581,
+   "Burkert": 0.0006519993374799234
+  }
+ },
+ "f2_over_tau_bounds": [
+  {
+   "instrument": "SPI 1 Ms point-like (instrument paper)",
+   "ROI": "cone_5",
+   "sens_case": "optimistic",
+   "S_ph_cm2_s": 2e-05,
+   "f2_over_tau_max_NFW": 1.067794152939266e-22,
+   "f2_over_tau_max_Einasto": 8.207439557201744e-23,
+   "f2_over_tau_max_Burkert": 2.743951622462681e-22,
+   "tau_min_f2_0p42_NFW": 3.9333423848022207e+21,
+   "tau_min_f2_1p2em3_NFW": 1.1238121099434916e+19
+  },
+  {
+   "instrument": "SPI 1 Ms point-like (instrument paper)",
+   "ROI": "cone_5",
+   "sens_case": "conservative",
+   "S_ph_cm2_s": 5e-05,
+   "f2_over_tau_max_NFW": 2.669485382348165e-22,
+   "f2_over_tau_max_Einasto": 2.0518598893004357e-22,
+   "f2_over_tau_max_Burkert": 6.859879056156702e-22,
+   "tau_min_f2_0p42_NFW": 1.5733369539208882e+21,
+   "tau_min_f2_1p2em3_NFW": 4.495248439773967e+18
+  },
+  {
+   "instrument": "SPI full mission, inner 10 deg",
+   "ROI": "cone_10",
+   "sens_case": "optimistic",
+   "S_ph_cm2_s": 3e-06,
+   "f2_over_tau_max_NFW": 5.039939552597846e-24,
+   "f2_over_tau_max_Einasto": 4.037643933611679e-24,
+   "f2_over_tau_max_Burkert": 1.0438835465118587e-23,
+   "tau_min_f2_0p42_NFW": 8.333433280633498e+22,
+   "tau_min_f2_1p2em3_NFW": 2.3809809373238565e+20
+  },
+  {
+   "instrument": "SPI full mission, inner 10 deg",
+   "ROI": "cone_10",
+   "sens_case": "conservative",
+   "S_ph_cm2_s": 3e-05,
+   "f2_over_tau_max_NFW": 5.039939552597846e-23,
+   "f2_over_tau_max_Einasto": 4.037643933611679e-23,
+   "f2_over_tau_max_Burkert": 1.0438835465118587e-22,
+   "tau_min_f2_0p42_NFW": 8.3334332806335e+21,
+   "tau_min_f2_1p2em3_NFW": 2.3809809373238567e+19
+  },
+  {
+   "instrument": "SPI full mission, |l|,|b|<30 deg",
+   "ROI": "box_30",
+   "sens_case": "optimistic",
+   "S_ph_cm2_s": 1e-05,
+   "f2_over_tau_max_NFW": 2.764474230948337e-24,
+   "f2_over_tau_max_Einasto": 2.473709524554383e-24,
+   "f2_over_tau_max_Burkert": 3.844226196451535e-24,
+   "tau_min_f2_0p42_NFW": 1.5192762345117657e+23,
+   "tau_min_f2_1p2em3_NFW": 4.3407892414621876e+20
+  },
+  {
+   "instrument": "SPI full mission, |l|,|b|<30 deg",
+   "ROI": "box_30",
+   "sens_case": "conservative",
+   "S_ph_cm2_s": 0.0001,
+   "f2_over_tau_max_NFW": 2.764474230948337e-23,
+   "f2_over_tau_max_Einasto": 2.4737095245543827e-23,
+   "f2_over_tau_max_Burkert": 3.8442261964515347e-23,
+   "tau_min_f2_0p42_NFW": 1.5192762345117658e+22,
+   "tau_min_f2_1p2em3_NFW": 4.3407892414621884e+19
+  },
+  {
+   "instrument": "SPI 16 yr DM-line search |l|,|b|<47.5",
+   "ROI": "box_47.5",
+   "sens_case": "optimistic",
+   "S_ph_cm2_s": 1e-05,
+   "f2_over_tau_max_NFW": 1.5630476829584367e-24,
+   "f2_over_tau_max_Einasto": 1.456245587909616e-24,
+   "f2_over_tau_max_Burkert": 1.948057645571009e-24,
+   "tau_min_f2_0p42_NFW": 2.6870581401909047e+23,
+   "tau_min_f2_1p2em3_NFW": 7.677308971974014e+20
+  },
+  {
+   "instrument": "SPI 16 yr DM-line search |l|,|b|<47.5",
+   "ROI": "box_47.5",
+   "sens_case": "conservative",
+   "S_ph_cm2_s": 0.0001,
+   "f2_over_tau_max_NFW": 1.5630476829584365e-23,
+   "f2_over_tau_max_Einasto": 1.4562455879096157e-23,
+   "f2_over_tau_max_Burkert": 1.9480576455710088e-23,
+   "tau_min_f2_0p42_NFW": 2.687058140190905e+22,
+   "tau_min_f2_1p2em3_NFW": 7.677308971974014e+19
+  },
+  {
+   "instrument": "COSI 2 yr survey, inner 10 deg",
+   "ROI": "cone_10",
+   "sens_case": "optimistic",
+   "S_ph_cm2_s": 3e-06,
+   "f2_over_tau_max_NFW": 5.039939552597846e-24,
+   "f2_over_tau_max_Einasto": 4.037643933611679e-24,
+   "f2_over_tau_max_Burkert": 1.0438835465118587e-23,
+   "tau_min_f2_0p42_NFW": 8.333433280633498e+22,
+   "tau_min_f2_1p2em3_NFW": 2.3809809373238565e+20
+  },
+  {
+   "instrument": "COSI 2 yr survey, inner 10 deg",
+   "ROI": "cone_10",
+   "sens_case": "conservative",
+   "S_ph_cm2_s": 3e-05,
+   "f2_over_tau_max_NFW": 5.039939552597846e-23,
+   "f2_over_tau_max_Einasto": 4.037643933611679e-23,
+   "f2_over_tau_max_Burkert": 1.0438835465118587e-22,
+   "tau_min_f2_0p42_NFW": 8.3334332806335e+21,
+   "tau_min_f2_1p2em3_NFW": 2.3809809373238567e+19
+  },
+  {
+   "instrument": "e-ASTROGAM/AMEGO concept, inner 10 deg",
+   "ROI": "cone_10",
+   "sens_case": "optimistic",
+   "S_ph_cm2_s": 1e-06,
+   "f2_over_tau_max_NFW": 1.6799798508659487e-24,
+   "f2_over_tau_max_Einasto": 1.3458813112038928e-24,
+   "f2_over_tau_max_Burkert": 3.4796118217061956e-24,
+   "tau_min_f2_0p42_NFW": 2.5000299841900498e+23,
+   "tau_min_f2_1p2em3_NFW": 7.142942811971571e+20
+  },
+  {
+   "instrument": "e-ASTROGAM/AMEGO concept, inner 10 deg",
+   "ROI": "cone_10",
+   "sens_case": "conservative",
+   "S_ph_cm2_s": 5e-06,
+   "f2_over_tau_max_NFW": 8.399899254329744e-24,
+   "f2_over_tau_max_Einasto": 6.729406556019465e-24,
+   "f2_over_tau_max_Burkert": 1.7398059108530982e-23,
+   "tau_min_f2_0p42_NFW": 5.000059968380099e+22,
+   "tau_min_f2_1p2em3_NFW": 1.4285885623943139e+20
+  }
+ ],
+ "cxb": [
+  {
+   "E0_keV": 300.0,
+   "criterion": "100%_Gruber",
+   "E_max_ratio_keV": 300.0,
+   "z_at_Emax": 0.0,
+   "f2_over_tau_max": 3.255008422633564e-20,
+   "tau_min_f2_0p42": 1.2903192418168496e+19,
+   "decay_dIdE_at_E0_for_1em22": 4.603309935589089e-07,
+   "cxb_dIdE_at_E0": 0.00014983812585988717,
+   "cxb_E2dNdE_at_E0": 13.485431327389845
+  },
+  {
+   "E0_keV": 300.0,
+   "criterion": "10%_Gruber",
+   "E_max_ratio_keV": 300.0,
+   "z_at_Emax": 0.0,
+   "f2_over_tau_max": 3.2550084226335646e-21,
+   "tau_min_f2_0p42": 1.2903192418168493e+20,
+   "decay_dIdE_at_E0_for_1em22": 4.603309935589089e-07,
+   "cxb_dIdE_at_E0": 0.00014983812585988717,
+   "cxb_E2dNdE_at_E0": 13.485431327389845
+  },
+  {
+   "E0_keV": 300.0,
+   "criterion": "100%_half-Gruber",
+   "E_max_ratio_keV": 300.0,
+   "z_at_Emax": 0.0,
+   "f2_over_tau_max": 1.627504211316782e-20,
+   "tau_min_f2_0p42": 2.5806384836336992e+19,
+   "decay_dIdE_at_E0_for_1em22": 4.603309935589089e-07,
+   "cxb_dIdE_at_E0": 0.00014983812585988717,
+   "cxb_E2dNdE_at_E0": 13.485431327389845
+  },
+  {
+   "E0_keV": 300.0,
+   "criterion": "10%_half-Gruber",
+   "E_max_ratio_keV": 300.0,
+   "z_at_Emax": 0.0,
+   "f2_over_tau_max": 1.6275042113167823e-21,
+   "tau_min_f2_0p42": 2.5806384836336986e+20,
+   "decay_dIdE_at_E0_for_1em22": 4.603309935589089e-07,
+   "cxb_dIdE_at_E0": 0.00014983812585988717,
+   "cxb_E2dNdE_at_E0": 13.485431327389845
+  },
+  {
+   "E0_keV": 350.0,
+   "criterion": "100%_Gruber",
+   "E_max_ratio_keV": 350.0,
+   "z_at_Emax": 0.0,
+   "f2_over_tau_max": 2.5769703897268268e-20,
+   "tau_min_f2_0p42": 1.629820822444616e+19,
+   "decay_dIdE_at_E0_for_1em22": 3.9456942295138125e-07,
+   "cxb_dIdE_at_E0": 0.00010167937181048569,
+   "cxb_E2dNdE_at_E0": 12.455723046784497
+  },
+  {
+   "E0_keV": 350.0,
+   "criterion": "10%_Gruber",
+   "E_max_ratio_keV": 350.0,
+   "z_at_Emax": 0.0,
+   "f2_over_tau_max": 2.576970389726827e-21,
+   "tau_min_f2_0p42": 1.629820822444616e+20,
+   "decay_dIdE_at_E0_for_1em22": 3.9456942295138125e-07,
+   "cxb_dIdE_at_E0": 0.00010167937181048569,
+   "cxb_E2dNdE_at_E0": 12.455723046784497
+  },
+  {
+   "E0_keV": 350.0,
+   "criterion": "100%_half-Gruber",
+   "E_max_ratio_keV": 350.0,
+   "z_at_Emax": 0.0,
+   "f2_over_tau_max": 1.2884851948634134e-20,
+   "tau_min_f2_0p42": 3.259641644889232e+19,
+   "decay_dIdE_at_E0_for_1em22": 3.9456942295138125e-07,
+   "cxb_dIdE_at_E0": 0.00010167937181048569,
+   "cxb_E2dNdE_at_E0": 12.455723046784497
+  },
+  {
+   "E0_keV": 350.0,
+   "criterion": "10%_half-Gruber",
+   "E_max_ratio_keV": 350.0,
+   "z_at_Emax": 0.0,
+   "f2_over_tau_max": 1.2884851948634136e-21,
+   "tau_min_f2_0p42": 3.259641644889232e+20,
+   "decay_dIdE_at_E0_for_1em22": 3.9456942295138125e-07,
+   "cxb_dIdE_at_E0": 0.00010167937181048569,
+   "cxb_E2dNdE_at_E0": 12.455723046784497
+  },
+  {
+   "E0_keV": 380.0,
+   "criterion": "100%_Gruber",
+   "E_max_ratio_keV": 380.0,
+   "z_at_Emax": 0.0,
+   "f2_over_tau_max": 2.2757482588624874e-20,
+   "tau_min_f2_0p42": 1.8455468365817106e+19,
+   "decay_dIdE_at_E0_for_1em22": 3.6341920530671495e-07,
+   "cxb_dIdE_at_E0": 8.270506225658686e-05,
+   "cxb_E2dNdE_at_E0": 11.942610989851143
+  },
+  {
+   "E0_keV": 380.0,
+   "criterion": "10%_Gruber",
+   "E_max_ratio_keV": 380.0,
+   "z_at_Emax": 0.0,
+   "f2_over_tau_max": 2.2757482588624874e-21,
+   "tau_min_f2_0p42": 1.845546836581711e+20,
+   "decay_dIdE_at_E0_for_1em22": 3.6341920530671495e-07,
+   "cxb_dIdE_at_E0": 8.270506225658686e-05,
+   "cxb_E2dNdE_at_E0": 11.942610989851143
+  },
+  {
+   "E0_keV": 380.0,
+   "criterion": "100%_half-Gruber",
+   "E_max_ratio_keV": 380.0,
+   "z_at_Emax": 0.0,
+   "f2_over_tau_max": 1.1378741294312437e-20,
+   "tau_min_f2_0p42": 3.691093673163421e+19,
+   "decay_dIdE_at_E0_for_1em22": 3.6341920530671495e-07,
+   "cxb_dIdE_at_E0": 8.270506225658686e-05,
+   "cxb_E2dNdE_at_E0": 11.942610989851143
+  },
+  {
+   "E0_keV": 380.0,
+   "criterion": "10%_half-Gruber",
+   "E_max_ratio_keV": 380.0,
+   "z_at_Emax": 0.0,
+   "f2_over_tau_max": 1.1378741294312437e-21,
+   "tau_min_f2_0p42": 3.691093673163422e+20,
+   "decay_dIdE_at_E0_for_1em22": 3.6341920530671495e-07,
+   "cxb_dIdE_at_E0": 8.270506225658686e-05,
+   "cxb_E2dNdE_at_E0": 11.942610989851143
+  }
+ ],
+ "decay_photon_fraction_in_top_half_energy": 0.5890234034652286,
+ "generic_tau_excluded": {
+  "SPI_lo": 8.333389731031628e+22,
+  "SPI_hi": 8.332997774378032e+21,
+  "COSI_lo": 8.333389731031628e+22,
+  "eASTROGAM_lo": 2.500025629237451e+23
+ },
+ "BR_gamma_limit_delta300": {
+  "SPI_lo": 0.0003023963731558708,
+  "SPI_hi": 0.0030239637315587083,
+  "eASTROGAM": 0.00010079879105195694
+ },
+ "BR_gamma_limit_delta350": {
+  "SPI_lo": 0.004398492700449029,
+  "SPI_hi": 0.04398492700449029
+ },
+ "physical_curve_peak": {
+  "tau": 4.365158322401665e+17,
+  "f2": 0.15487116500022746,
+  "f2_over_tau": 3.5478934224548113e-19,
+  "Phi10": 0.2111866651630401
+ },
+ "doppler": {
+  "300": {
+   "sigma_los_kms": 168.2914139223983,
+   "sigma_E_keV": 0.16840791964392746,
+   "FWHM_keV": 0.3965669691775204,
+   "sigma_E_innerhalo_250kms_keV": 0.25017307139861406,
+   "FWHM_innerhalo_keV": 0.5891075485294563,
+   "dipole_amplitude_keV": 0.2507259234201103,
+   "dipole_peak_to_peak_keV": 0.5014518468402206,
+   "earth_orbit_annual_amplitude_keV": 0.029820630110714796,
+   "recoil_shift_eV": 0.045,
+   "SPI_FWHM_keV": 2.0,
+   "COSI_FWHM_keV_1pct": 3.0,
+   "v_sun_kms": 250.55246955478208
+  },
+  "350": {
+   "sigma_los_kms": 168.2914139223983,
+   "sigma_E_keV": 0.1964759062512487,
+   "FWHM_keV": 0.46266146404044045,
+   "sigma_E_innerhalo_250kms_keV": 0.29186858329838306,
+   "FWHM_innerhalo_keV": 0.6872921399510324,
+   "dipole_amplitude_keV": 0.29251357732346195,
+   "dipole_peak_to_peak_keV": 0.5850271546469239,
+   "earth_orbit_annual_amplitude_keV": 0.03479073512916726,
+   "recoil_shift_eV": 0.06125,
+   "SPI_FWHM_keV": 2.0,
+   "COSI_FWHM_keV_1pct": 3.5,
+   "v_sun_kms": 250.55246955478208
+  },
+  "380": {
+   "sigma_los_kms": 168.2914139223983,
+   "sigma_E_keV": 0.21331669821564145,
+   "FWHM_keV": 0.5023181609581925,
+   "sigma_E_innerhalo_250kms_keV": 0.31688589043824444,
+   "FWHM_innerhalo_keV": 0.7462028948039781,
+   "dipole_amplitude_keV": 0.317586169665473,
+   "dipole_peak_to_peak_keV": 0.635172339330946,
+   "earth_orbit_annual_amplitude_keV": 0.03777279814023874,
+   "recoil_shift_eV": 0.0722,
+   "SPI_FWHM_keV": 2.0,
+   "COSI_FWHM_keV_1pct": 3.8000000000000003,
+   "v_sun_kms": 250.55246955478208
+  }
+ },
+ "constants": {
+  "R_SUN": 8.2,
+  "R_S": 20.0,
+  "ALPHA_EIN": 0.17,
+  "R_C_BUR": 9.0,
+  "R_MAX": 250.0,
+  "RHO_SUN": 0.3,
+  "M_CHI": 1000.0,
+  "T_U": 4.3549488e+17,
+  "RHO_DM_0": 1.264416e-06,
+  "NSIDE": 128
+ },
+ "recalled_knowledge": [
+  {
+   "item": "NFW r_s = 20 kpc; R_sun = 8.2 kpc; rho_sun = 0.3 GeV/cm^3 (lzcommon)",
+   "presumed_source": "standard Milky-Way fits; Baxter et al. 2021 via lzcommon",
+   "reliability": "likely"
+  },
+  {
+   "item": "Einasto alpha = 0.17 with r_s = 20 kpc; Burkert core r_c = 9 kpc",
+   "presumed_source": "Aquarius/Via Lactea fits; Nesti & Salucci 2013",
+   "reliability": "likely (Einasto) / uncertain (Burkert core radius)"
+  },
+  {
+   "item": "Planck 2018: H0 = 67.4, Omega_m = 0.315, Omega_c h^2 = 0.120; rho_crit = 1.054e-5 h^2 GeV/cm^3; t_U = 13.8 Gyr",
+   "presumed_source": "Planck 2018 / PDG",
+   "reliability": "certain"
+  },
+  {
+   "item": "INTEGRAL/SPI narrow-line 3 sigma sensitivity ~3e-5 ph cm^-2 s^-1 at 300 keV for 1 Ms (point source); energy resolution ~2 keV FWHM at 300 keV; effective area ~ 100 cm^2 at 300 keV",
+   "presumed_source": "Roques et al. 2003, Vedrenne et al. 2003 (SPI instrument papers)",
+   "reliability": "uncertain (factor 2-3)"
+  },
+  {
+   "item": "SPI full-mission (>= 15 yr, > 100 Ms inner-Galaxy exposure) diffuse narrow-line detection threshold in the inner Galaxy ~(1-3)e-5 ph cm^-2 s^-1, anchored on 60Fe 1173/1332 keV (~3e-5 each, ~5 sigma), 26Al 1809 (3e-4 inner Galaxy), 511 keV bulge (1e-3, >50 sigma)",
+   "presumed_source": "Wang et al. 2007/2020; Diehl et al. 2006; Siegert et al. 2016; Knoedlseder et al. 2005",
+   "reliability": "uncertain (factor 3; 60Fe/26Al fluxes likely, threshold transfer to 300 keV uncertain)"
+  },
+  {
+   "item": "SPI line searches: Teegarden & Watanabe 2006 (first year, 20 keV-8 MeV, diffuse-line 3 sigma limits ~1e-4); Calore et al. 2023 (16 yr, decaying-DM lines in |l|,|b| < 47.5 deg, flux limits ~1e-5-1e-4 per energy bin)",
+   "presumed_source": "ApJ 646, 965 (2006); MNRAS 520, 4167 (2023)",
+   "reliability": "uncertain (existence likely; numbers factor 3)"
+  },
+  {
+   "item": "COMPTEL band 0.75-30 MeV; no sensitivity at 300 keV",
+   "presumed_source": "Schoenfelder et al. 1993",
+   "reliability": "certain"
+  },
+  {
+   "item": "COSI (NASA SMEX, 0.2-5 MeV, launch ~2027): 2-yr all-sky 3 sigma narrow-line sensitivity ~1e-5 ph cm^-2 s^-1 near 511 keV; Ge energy resolution ~1% FWHM; angular resolution ~4 deg",
+   "presumed_source": "Tomsick et al. 2019/2023 (COSI mission papers)",
+   "reliability": "uncertain (factor 3)"
+  },
+  {
+   "item": "e-ASTROGAM / AMEGO(-X) concepts: narrow-line 3 sigma sensitivity ~ (1-5)e-6 ph cm^-2 s^-1 at 0.3-1 MeV for a few-year survey",
+   "presumed_source": "De Angelis et al. 2017; McEnery et al. 2019",
+   "reliability": "uncertain (concept-level projections)"
+  },
+  {
+   "item": "CXB/CGB above 60 keV (HEAO-1 A4 + SMM): E dN/dE = 0.0259(E/60)^-5.5 + 0.504(E/60)^-1.58 + 0.0288(E/60)^-1.05 keV cm^-2 s^-1 sr^-1 keV^-1; COMPTEL 1-10 MeV lies a factor 2-3 below the SMM extrapolation",
+   "presumed_source": "Gruber et al. 1999, ApJ 520, 124; Weidenspointner et al. 2000",
+   "reliability": "uncertain (factor 2 at 300 keV)"
+  },
+  {
+   "item": "Decaying-DM isotropic intensity: dI/dE = c Gamma n0 / (4 pi E H(z)), 1+z = E0/E",
+   "presumed_source": "standard (e.g. Essig et al. 2013); derived here",
+   "reliability": "certain"
+  },
+  {
+   "item": "Positronium continuum (3-photon) below 511 keV with f_Ps ~ 1 in the bulge; no known astrophysical narrow line between 300 and 380 keV in the diffuse sky (nearest: 7Be 478, e+e- 511; 44Ti 68/78; 57Co 122/136)",
+   "presumed_source": "Siegert et al. 2016; nuclear line catalogues",
+   "reliability": "likely"
+  },
+  {
+   "item": "No strong SPI instrumental background line recalled in 300-380 keV (lines at 198, 439, 584, 882 keV etc. lie outside)",
+   "presumed_source": "Weidenspointner et al. 2003 SPI background line catalogue",
+   "reliability": "uncertain"
+  },
+  {
+   "item": "Sun-frame speed 250.6 km/s (lzcommon V0 + peculiar); 1-D halo dispersion v0/sqrt(2); inner-halo dispersion up to ~250 km/s",
+   "presumed_source": "lzcommon; Jeans arguments",
+   "reliability": "likely"
+  },
+  {
+   "item": "Dark-photon chi2 -> chi1 gamma vanishes for pure kinetic mixing (on-shell photon: mixing insertion ~ eps q^2 -> 0); tau_nunubar = 2.6e18 s (m_A'/GeV)^-4 at 300 keV; Higgsino tau_gamma ~ 0.06 s, tau_nunubar 1.2e6 s; photon-M1 tau = 66 us",
+   "presumed_source": "corpus P011, P014, P023, P026",
+   "reliability": "corpus (likely)"
+  },
+  {
+   "item": "Exothermic bound: f2(today) <= 1.2e-3 (300 keV), 5.5e-5 (350), 3.8e-7 (380 keV) for any model at the LZ-fit cross-section; tau_tot <= 7.2e16, 4.8e16, 3.1e16 s with f2_fo = 0.42-0.50",
+   "presumed_source": "corpus P011 sec. 3.7, P026 sec. 5.5",
+   "reliability": "corpus (computed there)"
+  }
+ ],
+ "runtime_s": 139.33932399749756
+}

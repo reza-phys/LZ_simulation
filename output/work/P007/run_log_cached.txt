@@ -1,0 +1,161 @@
+Part A: c_p=6.266e-07 c_n=-8.245e-06 GeV^-2; sigma_n(1 TeV)=7.403e-39 cm^2; (c_eq^s m_v^2)^2=0.0777; sigma_SI,eq=2.303e-39 cm^2; vector factor=3.214
+====================
+WARNING
+Only some of the isotopes contained in
+WimPyDD/WimPyC/Sun/densities.tab
+were loaded:
+['1H', '4He', '3He', '12C', '13C', '14N', '15N', '16O', '17O', '18O', '20Ne', '23Na', '24Mg', '27Al', '28Si', '32S', '40Ar', '40Ca', '56Fe', '58Ni']
+the following targets could not be initialized and were ignored:
+['P', 'Cl', 'K', 'Sc', 'Ti', 'V', 'Cr', 'Mn', 'Co']
+====================
+====================
+WARNING
+Only some of the isotopes contained in
+WimPyDD/WimPyC/Earth/densities.tab
+were loaded:
+['16O', '28Si', '27Al', '56Fe', '40Ca', '23Na', '24Mg', '58Ni', '31P', '32S']
+the following targets could not be initialized and were ignored:
+['39K', '48Ti', '59Co']
+====================
+looking for 12C in list of pre-defined targets:
+12C found in predefined carbon element object
+looking for 13C in list of pre-defined targets:
+13C found in predefined carbon element object
+looking for 14N in list of pre-defined targets:
+14N found in predefined nitrogen element object
+looking for 15N in list of pre-defined targets:
+15N found in predefined nitrogen element object
+looking for 16O in list of pre-defined targets:
+16O found in predefined oxygen element object
+looking for 17O in list of pre-defined targets:
+17O found in predefined oxygen element object
+looking for 18O in list of pre-defined targets:
+18O found in predefined oxygen element object
+looking for 1H in list of pre-defined targets:
+1H found in predefined hydrogen element object
+looking for 20Ne in list of pre-defined targets:
+20Ne found in predefined neon element object
+looking for 23Na in list of pre-defined targets:
+23Na found in predefined sodium element object
+looking for 24Mg in list of pre-defined targets:
+24Mg found in predefined magnesium element object
+looking for 27Al in list of pre-defined targets:
+27Al found in predefined aluminium element object
+looking for 28Si in list of pre-defined targets:
+28Si found in predefined silicon element object
+looking for 31P in list of pre-defined targets:
+31P found in predefined phosphorus element object
+looking for 32S in list of pre-defined targets:
+32S found in predefined sulfur element object
+looking for 3He in list of pre-defined targets:
+3He found in predefined helium element object
+looking for 40Ar in list of pre-defined targets:
+40Ar found in predefined argon element object
+looking for 40Ca in list of pre-defined targets:
+40Ca found in predefined calcium element object
+looking for 4He in list of pre-defined targets:
+4He found in predefined helium element object
+looking for 56Fe in list of pre-defined targets:
+56Fe found in predefined iron element object
+looking for 58Ni in list of pre-defined targets:
+58Ni found in predefined nickel element object
+looking for 12C in list of pre-defined targets:
+12C found in predefined carbon element object
+looking for 13C in list of pre-defined targets:
+13C found in predefined carbon element object
+looking for 14N in list of pre-defined targets:
+14N found in predefined nitrogen element object
+looking for 15N in list of pre-defined targets:
+15N found in predefined nitrogen element object
+looking for 16O in list of pre-defined targets:
+16O found in predefined oxygen element object
+looking for 17O in list of pre-defined targets:
+17O found in predefined oxygen element object
+looking for 18O in list of pre-defined targets:
+18O found in predefined oxygen element object
+looking for 1H in list of pre-defined targets:
+1H found in predefined hydrogen element object
+looking for 20Ne in list of pre-defined targets:
+20Ne found in predefined neon element object
+looking for 23Na in list of pre-defined targets:
+23Na found in predefined sodium element object
+looking for 24Mg in list of pre-defined targets:
+24Mg found in predefined magnesium element object
+looking for 27Al in list of pre-defined targets:
+27Al found in predefined aluminium element object
+looking for 28Si in list of pre-defined targets:
+28Si found in predefined silicon element object
+looking for 31P in list of pre-defined targets:
+31P found in predefined phosphorus element object
+looking for 32S in list of pre-defined targets:
+32S found in predefined sulfur element object
+looking for 3He in list of pre-defined targets:
+3He found in predefined helium element object
+looking for 40Ar in list of pre-defined targets:
+40Ar found in predefined argon element object
+looking for 40Ca in list of pre-defined targets:
+40Ca found in predefined calcium element object
+looking for 4He in list of pre-defined targets:
+4He found in predefined helium element object
+looking for 56Fe in list of pre-defined targets:
+56Fe found in predefined iron element object
+looking for 58Ni in list of pre-defined targets:
+58Ni found in predefined nickel element object
+Part B: WimPyDD/Helm ratios [1.0, 0.99, 0.986, 0.992, 1.014] ; n/p ratio [2.052, 2.035, 2.0]
+Part C: Fig.6 upper/lower at 300 keV = 0.00026 / 1.28e-05 ; at 350 keV = 0.0225 / 0.00138
+Part D: using cached N_events_grid.csv (pass --recompute to redo the WimPyDD loop)
+Part D: implied N at Fig.6 edges (annual halo):
+ delta_keV   halo   edge  c1s_mv2_sq  N_events_at_edge        N_unit
+     250.0 annual  upper    0.000039          4.034241 104131.109204
+     250.0 annual median    0.000017          1.811621 104131.109204
+     250.0 annual  lower    0.000003          0.300685 104131.109204
+     300.0 annual  upper    0.000260          3.494117  13462.296701
+     300.0 annual median    0.000132          1.777424  13462.296701
+     300.0 annual  lower    0.000013          0.172911  13462.296701
+     350.0 annual  upper    0.022467          5.821236    259.097860
+     350.0 annual median    0.010263          2.659233    259.097860
+     350.0 annual  lower    0.001384          0.358488    259.097860
+Part E: delta(N=1) [keV], annual halo, sigma_eff=11.5:
+ m_GeV  N_delta300  N_delta350   delta_N3   delta_N1  delta_N0.3  delta_max_248keV_june
+ 300.0   23.168818    0.000000 307.534752 310.227997  310.866694             315.793954
+ 500.0  438.501843    0.138530 337.417579 342.351876  347.113286             356.263187
+1000.0  790.466789   11.124194 359.057208 365.782531  372.976325             386.615113
+2000.0  643.755294   21.261254 366.892355 374.916598  383.434575             401.791076
+4000.0  401.095093   18.065046 367.528246 376.430170  385.650138             409.379057
+ m_GeV  delta_keV   N_annual    N_june16    N_dec16  N_sunframe  june_over_dec  june_over_annual  N_next_1000_livedays  N_next_1000_june_only_rate
+ 300.0      300.0  23.168818   73.210346   0.024834    4.872766    2948.045832          3.159865            105.312808                  332.774298
+ 300.0      350.0   0.000000    0.000000   0.000000    0.000000            inf               NaN              0.000000                    0.000000
+ 300.0      310.0   1.536927    6.350507   0.000000    0.011924            inf          4.131950              6.986033                   28.865940
+ 500.0      300.0 438.501843  764.658123 168.415174  370.348880       4.540316          1.743797           1993.190194                 3475.718739
+ 500.0      350.0   0.138530    0.498363   0.000000    0.011997            inf          3.597499              0.629684                    2.265287
+ 500.0      340.0   1.794442    6.080173   0.007848    0.320752     774.740717          3.388337              8.156553                   27.637151
+1000.0      300.0 790.466789 1154.390962 463.808922  727.088531       2.488937          1.460391           3593.030858                 5247.231646
+1000.0      350.0  11.124194   27.410466   1.155049    6.126472      23.731002          2.464041             50.564517                  124.593028
+1000.0      365.0   1.141086    3.236657   0.070451    0.459964      45.941713          2.836470              5.186756                   14.712075
+2000.0      300.0 643.755294  892.629677 416.177508  602.525843       2.144829          1.386598           2926.160428                 4057.407622
+2000.0      350.0  21.261254   43.533557   5.093743   15.536313       8.546476          2.047554             96.642063                  197.879805
+2000.0      375.0   0.988416    2.549694   0.119492    0.493375      21.337858          2.579575              4.492801                   11.589519
+4000.0      300.0 401.095093  544.794580 268.805076  377.737040       2.026727          1.358268           1823.159513                 2476.339001
+4000.0      350.0  18.065046   34.346749   5.596795   14.184967       6.136861          1.901282             82.113847                  156.121586
+4000.0      377.5   0.871656    2.141268   0.129650    0.475435      16.515795          2.456553              3.962072                    9.733038
+Part E: Higgsino/upper-edge ratios {250: (2005.59, 1631.01), 300: (299.37, 226.23), 350: (3.46, 1.91)}
+Part F: sympy leading-order splitting = epsilon
+ mu_GeV  tanb         hierarchy  delta_target_keV       M1_TeV       M2_TeV  leading_order_delta_keV  tree_charged_neutral_MeV
+ 1000.0  10.0 bino_only(M2=1e9)             300.0  6540.091263          inf               293.712617                  0.178445
+ 1000.0  10.0 bino_only(M2=1e9)             350.0  5588.750234          inf               343.709638                  0.208403
+ 1000.0  10.0 bino_only(M2=1e9)             370.0  5281.445063          inf               363.708662                  0.220387
+ 1000.0  10.0 bino_only(M2=1e9)             385.0  5072.277483          inf               378.707065                  0.229375
+ 1000.0  10.0            M2=2M1             300.0 17060.826613 34121.653227               300.000805                  0.142217
+ 1000.0  10.0            M2=2M1             350.0 14623.712078 29247.424155               349.997434                  0.165920
+ 1000.0  10.0            M2=2M1             370.0 13833.236985 27666.473969               369.997399                  0.175402
+ 1000.0  10.0            M2=2M1             385.0 13294.242614 26588.485228               384.998368                  0.182513
+ 1000.0  10.0 wino_only(M1=1e9)             300.0          inf 21453.044608               298.079312                  0.120074
+ 1000.0  10.0 wino_only(M1=1e9)             350.0          inf 18371.451430               348.078583                  0.140019
+ 1000.0  10.0 wino_only(M1=1e9)             370.0          inf 17373.162143               368.079727                  0.147999
+ 1000.0  10.0 wino_only(M1=1e9)             385.0          inf 16693.147387               383.073883                  0.153984
+ 1000.0  10.0           M2=-2M1             300.0  4254.247110 -8508.494220              -300.040651                  0.270631
+ 1000.0  10.0           M2=-2M1             350.0  3646.452398 -7292.904795              -350.051758                  0.315739
+ 1000.0  10.0           M2=-2M1             370.0  3449.314233 -6898.628467              -370.058216                  0.333783
+ 1000.0  10.0           M2=-2M1             385.0  3314.906489 -6629.812977              -385.062769                  0.347316
+Part G: {'thermal_omega_h2': {300.0: 0.0089, 500.0: 0.0248, 1000.0: 0.0992, 2000.0: 0.3967, 4000.0: 1.5868}, 'thermal_fraction_of_DM': {300.0: 0.0744, 500.0: 0.2066, 1000.0: 0.8264, 2000.0: 1.0, 4000.0: 1.0}, 'N1_events_rescaled_thermal_fraction': {300.0: 0.0, 500.0: 0.0286, 1000.0: 9.1935, 2000.0: 21.2613, 4000.0: 18.065}, 'chi2_lifetime_s_delta300': 1976760.7075084774, 'chi2_lifetime_s_delta350': 914576.7395481593, 'chi2_lifetime_s_delta375': 647744.9486363773}
+total time 10 s

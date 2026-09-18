@@ -1,0 +1,221 @@
+{
+ "n_papers_tallied": 99,
+ "n_ledger_rows": 99,
+ "added_from_pages_not_in_ledger": [],
+ "P091_present_at_finalisation": true,
+ "stance": {
+  "neutral (tool/projection/constraint)": 81,
+  "stat. reassessment: weakens": 8,
+  "supports DM (by elimination)": 5,
+  "stat. reassessment: neutral": 3,
+  "stat. reassessment: strengthens": 2
+ },
+ "stance_coarse": {
+  "neutral": 81,
+  "statistical reassessment": 13,
+  "supports DM": 5,
+  "favours background/artefact": 0
+ },
+ "confidence": {
+  "medium": 69,
+  "high": 29,
+  "low": 1
+ },
+ "result_type": {
+  "computed": 85,
+  "estimated": 14
+ },
+ "category": {
+  "STAT": 12,
+  "BKG": 14,
+  "RESP": 6,
+  "IDM": 11,
+  "EFT": 7,
+  "MODEL": 6,
+  "NUC": 6,
+  "HALO": 7,
+  "XEXP": 8,
+  "COMP": 11,
+  "EXO": 4,
+  "PROJ": 7
+ },
+ "dr_provisional_ids": [
+  [
+   "P012",
+   "DR-001"
+  ],
+  [
+   "P045",
+   "DR-001"
+  ],
+  [
+   "P052",
+   "DR-002"
+  ],
+  [
+   "P068",
+   "DR-001"
+  ],
+  [
+   "P093",
+   "DR-003"
+  ],
+  [
+   "P099",
+   "DR-003"
+  ]
+ ],
+ "dr_inherits_ids": [
+  [
+   "P025",
+   "DR-001"
+  ],
+  [
+   "P044",
+   "DR-001"
+  ],
+  [
+   "P068",
+   "DR-001"
+  ]
+ ],
+ "n_recalled_uncertain_papers": 67,
+ "recalled_items_total_declared": 1152.0,
+ "recalled_items_median_per_paper": 10.0,
+ "recalled_items_max": [
+  "P083",
+  49.0
+ ],
+ "supports_DM_all_by_elimination": true,
+ "supports_DM_ids": [
+  "P004",
+  "P006",
+  "P033",
+  "P073",
+  "P093"
+ ],
+ "stat_reassessment_ids": [
+  [
+   "P001",
+   "stat. reassessment: weakens"
+  ],
+  [
+   "P008",
+   "stat. reassessment: neutral"
+  ],
+  [
+   "P016",
+   "stat. reassessment: weakens"
+  ],
+  [
+   "P027",
+   "stat. reassessment: weakens"
+  ],
+  [
+   "P038",
+   "stat. reassessment: weakens"
+  ],
+  [
+   "P045",
+   "stat. reassessment: weakens"
+  ],
+  [
+   "P052",
+   "stat. reassessment: neutral"
+  ],
+  [
+   "P061",
+   "stat. reassessment: weakens"
+  ],
+  [
+   "P070",
+   "stat. reassessment: strengthens"
+  ],
+  [
+   "P071",
+   "stat. reassessment: weakens"
+  ],
+  [
+   "P083",
+   "stat. reassessment: weakens"
+  ],
+  [
+   "P090",
+   "stat. reassessment: strengthens"
+  ],
+  [
+   "P091",
+   "stat. reassessment: neutral"
+  ]
+ ],
+ "halo_frame": {
+  "papers_mentioning_any_frame": 39,
+  "Sun-frame_only": [
+   "P011",
+   "P035",
+   "P037",
+   "P059",
+   "P065",
+   "P067",
+   "P074",
+   "P076",
+   "P089"
+  ],
+  "annual_only": [
+   "P002",
+   "P005",
+   "P006",
+   "P015",
+   "P017",
+   "P027",
+   "P050",
+   "P087"
+  ],
+  "both_Sun_and_annual": [
+   "P007",
+   "P021",
+   "P051",
+   "P057",
+   "P062",
+   "P068",
+   "P075",
+   "P078",
+   "P082",
+   "P085"
+  ],
+  "June_date_only": [
+   "P014",
+   "P018",
+   "P029",
+   "P030",
+   "P042",
+   "P047",
+   "P053",
+   "P055",
+   "P060",
+   "P072",
+   "P092",
+   "P097"
+  ]
+ },
+ "bias": {
+  "fraction_neutral": 0.8181818181818182,
+  "supports_minus_favours": 5,
+  "weakens_minus_strengthens": 6,
+  "coupling_fits_from_one_event_(IDM+EFT+MODEL papers)": 24,
+  "background_eliminations_(BKG+EXO)": 18,
+  "corpus_vs_LZ_neighbourhood_background_ratio": 2.6857142857142855,
+  "P061_weight_on_unknown_U": 0.789,
+  "P061_L_acc_artefact_share": 0.6451612903225807,
+  "P_DM_central_P061_P083_P091": [
+   0.015,
+   0.012,
+   0.25
+  ],
+  "P_DM_P091_over_P061": 16.666666666666668,
+  "P091_artefact_class_posterior": 0.64,
+  "P091_inelastic_DM_posterior": 0.23,
+  "P_DM_if_U_dropped_(P001, b=1e-3, pi_DM=0.01)": 0.51,
+  "N_eff_corpus_vs_LZ": 1.345323741007194
+ }
+}

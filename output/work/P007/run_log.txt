@@ -1,0 +1,133 @@
+Part A: c_p=6.266e-07 c_n=-8.245e-06 GeV^-2; sigma_n(1 TeV)=7.403e-39 cm^2; (c_eq^s m_v^2)^2=0.0777; sigma_SI,eq=2.303e-39 cm^2; vector factor=3.214
+====================
+WARNING
+Only some of the isotopes contained in
+WimPyDD/WimPyC/Sun/densities.tab
+were loaded:
+['1H', '4He', '3He', '12C', '13C', '14N', '15N', '16O', '17O', '18O', '20Ne', '23Na', '24Mg', '27Al', '28Si', '32S', '40Ar', '40Ca', '56Fe', '58Ni']
+the following targets could not be initialized and were ignored:
+['P', 'Cl', 'K', 'Sc', 'Ti', 'V', 'Cr', 'Mn', 'Co']
+====================
+====================
+WARNING
+Only some of the isotopes contained in
+WimPyDD/WimPyC/Earth/densities.tab
+were loaded:
+['16O', '28Si', '27Al', '56Fe', '40Ca', '23Na', '24Mg', '58Ni', '31P', '32S']
+the following targets could not be initialized and were ignored:
+['39K', '48Ti', '59Co']
+====================
+looking for 12C in list of pre-defined targets:
+12C found in predefined carbon element object
+looking for 13C in list of pre-defined targets:
+13C found in predefined carbon element object
+looking for 14N in list of pre-defined targets:
+14N found in predefined nitrogen element object
+looking for 15N in list of pre-defined targets:
+15N found in predefined nitrogen element object
+looking for 16O in list of pre-defined targets:
+16O found in predefined oxygen element object
+looking for 17O in list of pre-defined targets:
+17O found in predefined oxygen element object
+looking for 18O in list of pre-defined targets:
+18O found in predefined oxygen element object
+looking for 1H in list of pre-defined targets:
+1H found in predefined hydrogen element object
+looking for 20Ne in list of pre-defined targets:
+20Ne found in predefined neon element object
+looking for 23Na in list of pre-defined targets:
+23Na found in predefined sodium element object
+looking for 24Mg in list of pre-defined targets:
+24Mg found in predefined magnesium element object
+looking for 27Al in list of pre-defined targets:
+27Al found in predefined aluminium element object
+looking for 28Si in list of pre-defined targets:
+28Si found in predefined silicon element object
+looking for 31P in list of pre-defined targets:
+31P found in predefined phosphorus element object
+looking for 32S in list of pre-defined targets:
+32S found in predefined sulfur element object
+looking for 3He in list of pre-defined targets:
+3He found in predefined helium element object
+looking for 40Ar in list of pre-defined targets:
+40Ar found in predefined argon element object
+looking for 40Ca in list of pre-defined targets:
+40Ca found in predefined calcium element object
+looking for 4He in list of pre-defined targets:
+4He found in predefined helium element object
+looking for 56Fe in list of pre-defined targets:
+56Fe found in predefined iron element object
+looking for 58Ni in list of pre-defined targets:
+58Ni found in predefined nickel element object
+looking for 12C in list of pre-defined targets:
+12C found in predefined carbon element object
+looking for 13C in list of pre-defined targets:
+13C found in predefined carbon element object
+looking for 14N in list of pre-defined targets:
+14N found in predefined nitrogen element object
+looking for 15N in list of pre-defined targets:
+15N found in predefined nitrogen element object
+looking for 16O in list of pre-defined targets:
+16O found in predefined oxygen element object
+looking for 17O in list of pre-defined targets:
+17O found in predefined oxygen element object
+looking for 18O in list of pre-defined targets:
+18O found in predefined oxygen element object
+looking for 1H in list of pre-defined targets:
+1H found in predefined hydrogen element object
+looking for 20Ne in list of pre-defined targets:
+20Ne found in predefined neon element object
+looking for 23Na in list of pre-defined targets:
+23Na found in predefined sodium element object
+looking for 24Mg in list of pre-defined targets:
+24Mg found in predefined magnesium element object
+looking for 27Al in list of pre-defined targets:
+27Al found in predefined aluminium element object
+looking for 28Si in list of pre-defined targets:
+28Si found in predefined silicon element object
+looking for 31P in list of pre-defined targets:
+31P found in predefined phosphorus element object
+looking for 32S in list of pre-defined targets:
+32S found in predefined sulfur element object
+looking for 3He in list of pre-defined targets:
+3He found in predefined helium element object
+looking for 40Ar in list of pre-defined targets:
+40Ar found in predefined argon element object
+looking for 40Ca in list of pre-defined targets:
+40Ca found in predefined calcium element object
+looking for 4He in list of pre-defined targets:
+4He found in predefined helium element object
+looking for 56Fe in list of pre-defined targets:
+56Fe found in predefined iron element object
+looking for 58Ni in list of pre-defined targets:
+58Ni found in predefined nickel element object
+Part B: WimPyDD/Helm ratios [1.0, 0.99, 0.986, 0.992, 1.014] ; n/p ratio [2.052, 2.035, 2.0]
+Part C: Fig.6 upper/lower at 300 keV = 0.00026 / 1.28e-05 ; at 350 keV = 0.0225 / 0.00138
+  mass 300 done, t=43s
+  mass 500 done, t=107s
+  mass 1000 done, t=198s
+  mass 2000 done, t=293s
+  mass 4000 done, t=399s
+Part D: implied N at Fig.6 edges (annual halo):
+ delta_keV   halo   edge  c1s_mv2_sq  N_events_at_edge        N_unit
+     250.0 annual  upper    0.000039          4.034241 104131.109204
+     250.0 annual median    0.000017          1.811621 104131.109204
+     250.0 annual  lower    0.000003          0.300685 104131.109204
+     300.0 annual  upper    0.000260          3.494117  13462.296701
+     300.0 annual median    0.000132          1.777424  13462.296701
+     300.0 annual  lower    0.000013          0.172911  13462.296701
+     350.0 annual  upper    0.022467          5.821236    259.097860
+     350.0 annual median    0.010263          2.659233    259.097860
+     350.0 annual  lower    0.001384          0.358488    259.097860
+Part E: delta(N=1) [keV], annual halo, sigma_eff=11.5:
+ m_GeV  N_delta300  N_delta350   delta_N3   delta_N1  delta_N0.3  delta_max_248keV_june
+ 300.0   23.168818    0.000000 307.534752        NaN         NaN             315.793954
+ 500.0  438.501843    0.138530 337.417579 342.351876  347.113286             356.263187
+1000.0  790.466789   11.124194 359.057208 365.782531  372.976325             386.615113
+2000.0  643.755294   21.261254 366.892355 374.916598  383.434575             401.791076
+4000.0  401.095093   18.065046 367.528246 376.430170  385.650138             409.379057
+Traceback (most recent call last):
+  File "/Users/reza/LZ_simulation/output/code/P007_higgsino_inelastic.py", line 266, in <module>
+    for d in [300.0, 350.0, round(d1 / 2.5) * 2.5]:
+                            ^^^^^^^^^^^^^^^
+ValueError: cannot convert float NaN to integer

@@ -1,0 +1,67 @@
+{
+  "id": "P085",
+  "title": "Earth's velocity on 16 June 2023 21:22:39 UTC and gravitational focusing: the exact kinematic inputs for the LZ event",
+  "date": "2026-09-16",
+  "agent_tools": [
+    {"tool": "Read", "count": 12, "detail": "provenance/PAPER_GUIDE.md; papers/P055.md; work/P055/details.md; papers/P006.md; papers/P018.md; papers/P034.md; papers/P068.md; papers/P007.md; code/common/lzcommon.py lines 108-217 and 310-380; work/P085/figures/P085_fig1_vE_run.png, P085_fig2_focusing.png, P085_fig3_higgsino_rates.png"},
+    {"tool": "Bash", "count": 16, "detail": "grep lzcommon API + ls papers/work + grep environment versions; grep results_ledger.csv rows P006/P007/P018/P034/P055/P068/P002/P030 + grep fulltext.tex for event time/SURF; astropy offline test (failed on iers auto_max_age config); astropy offline test with iers overrides (succeeded); wimprates.halo source + WimPyDD v_earth_sun grep; ledger rows P035/P002/P030 + ls work dirs; sed WimPyDD/package.py 6139-6165 + grep P007 script couplings; sed P007 script 30-50,150-200; WimPyDD wd_halo/wd_rate timing test; grep dataviz palette.md hex values; run 1 of output/code/P085_earth_velocity.py (bug found); run 2 (corrected) + table prints; run 3 (final: figure axis, inf handling) + grep log values; wc word-budget checks of the paper (x3) + JSON key check"},
+    {"tool": "Write", "count": 4, "detail": "output/code/P085_earth_velocity.py; output/work/P085/details.md; output/provenance/P085.json; output/papers/P085.md"},
+    {"tool": "Edit", "count": 23, "detail": "P085_earth_velocity.py (10): heliocentric-velocity double-counting fix; one-year mask; exact_edge bisection function and its use (4 edits); 36-date year grid; Earth-focusing exact edge; final-table keys; inf handling in eta-ratio means; figure-2 y-axis limit. P085.md (12): trimming to the word budgets. P085.json (1): this tool-count update"},
+    {"tool": "Skill", "count": 1, "detail": "dataviz (palette read from references/palette.md; JavaScript validator skipped per PAPER_GUIDE)"}
+  ],
+  "software": [
+    {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python)"},
+    {"name": "astropy", "version": "8.0.1", "functions": "time.Time (utc/tdb/ut1, sidereal_time), coordinates.get_body_barycentric_posvel (earth, sun, earth-moon-barycenter; solar_system_ephemeris='builtin'), get_body, EarthLocation.get_gcrs_posvel, SkyCoord ICRS->Galactic and ->AltAz, GeocentricTrueEcliptic, CartesianRepresentation, utils.iers.conf (auto_download=False, auto_max_age=1e9, iers_degraded_accuracy='ignore')"},
+    {"name": "astropy-iers-data", "version": "0.2026.9.14.0.56.43", "functions": "bundled IERS-B table for UT1-UTC and polar motion (no download)"},
+    {"name": "numpy", "version": "2.5.3", "functions": "polynomial.legendre.leggauss, linalg.lstsq, trapezoid, cumsum, interp, cross, tensordot"},
+    {"name": "scipy", "version": "1.18.1", "functions": "special.erf, special.erfc, integrate.solve_ivp (DOP853) for backward Kepler-orbit validation"},
+    {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, pivot, to_csv"},
+    {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg), three PNG figures"},
+    {"name": "WimPyDD", "version": "2.0.4", "functions": "diff_rate(sum_over_streams=False) per-stream kernels for Xe; streamed_halo_function via lz.wd_halo (Sun frame, day_of_the_year=167.891, 24-day annual mean); eft_hamiltonian via lz.wd_hamiltonian; v_earth_sun for comparison"},
+    {"name": "wimprates", "version": "0.5.0", "functions": "v_earth, earth_velocity, j2000_from_ymd (comparison only)"},
+    {"name": "numericalunits", "version": "1.28", "functions": "unit stripping for wimprates output"},
+    {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "V0_KMS, VESC_KMS, V_SUN_PEC, LZ (exposure, efficiency points), C_KMS, A_XE_MEAN, AMU_GEV, M_NUCLEON_GEV, eta0, delta_max_kev, E_R_range_keV, vmin_kms, mu_red, m_nucleus_gev, v_earth_kms, wd, wd_halo, wd_hamiltonian"}
+  ],
+  "scripts_and_commands": [
+    {"path": "output/code/P085_earth_velocity.py", "purpose": "Parts A-G: astropy Earth velocity and rotation at the event time, solar-motion variants, comparison with wimprates/WimPyDD/lzcommon/P055, hourly annual scan, kinematics table, Liouville solar/Earth gravitational focusing (validated by backward orbit integration), WimPyDD Higgsino rates and delta(N=1), fraction-of-year duty cycles, three figures, final kinematic-input table", "command": "cd /Users/reza/LZ_simulation && .venv/bin/python output/code/P085_earth_velocity.py  (96 s; run three times, final run produced all outputs)"}
+  ],
+  "local_inputs": [
+    {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "rules, deliverables, template, word budgets, P035 Sun-frame labelling, P002 v_min-grid patch"},
+    {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "line 165 (event time 21:22:39 UTC 16 June 2023, 248 keV); line 300 (57Co deployment context, not used)"},
+    {"file": "output/papers/P055.md and output/work/P055/details.md", "parts_used": "from-scratch Earth velocity 265.96 km/s, wimprates 265.98, WimPyDD 265.92, apex/wind directions, date LR 1.455/2.451/2.857/3.101, SHM June counts 1154/27.48/2.813/0.3126, rate-validation offsets"},
+    {"file": "output/papers/P006.md", "parts_used": "v_E = 266, delta_max 387.3/375.9/363.8 keV, 144 days at 380 keV, LR 1.41-2.55"},
+    {"file": "output/papers/P018.md", "parts_used": "0.82 keV per km/s slope, Higgsino delta(N=1) = 365.7 keV annual, v_esc range"},
+    {"file": "output/papers/P034.md", "parts_used": "modulation amplitudes a1 and phase context"},
+    {"file": "output/papers/P068.md", "parts_used": "astro band context; frame carries <= 4 % of variance"},
+    {"file": "output/papers/P007.md and output/code/P007_higgsino_inelastic.py", "parts_used": "Higgsino Z couplings (G_F, sin^2 theta_W, c_p, c_n, WimPyDD c0/c1), efficiency model (plateau 0.96, 50 % at 5.4/269.9 keV, sigma 2.5/11.5 keV), annual event counts 790/11.1/.../0.098, delta(N=1) = 366 keV"},
+    {"file": "output/code/common/lzcommon.py", "parts_used": "constants, kinematics, eta0, wd_halo/wd_hamiltonian wrappers"},
+    {"file": "output/results_ledger.csv", "parts_used": "header and rows of the papers built on (checked for numbers to cite)"},
+    {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "astropy 8.0.1, astropy-iers-data, wimprates 0.5.0, WimPyDD 2.0.4 versions"},
+    {"file": "WimPyDD/package.py (lines 6139-6200)", "parts_used": "v_earth_sun implementation (ue = 29.79 km/s, day-80 ecliptic-longitude approximation)"},
+    {"file": ".venv wimprates/halo.py", "parts_used": "earth_velocity implementation (e1/e2 vectors, circular orbit) for the comparison"}
+  ],
+  "recalled_knowledge": [
+    {"item": "GM_sun = 1.32712440018e11 km^3/s^2, GM_earth = 3.986004418e5 km^3/s^2, 1 AU = 1.495978707e8 km, R_earth = 6371 km", "presumed_source": "IAU 2012/2015 nominal constants", "reliability": "certain"},
+    {"item": "J2000 equatorial->Galactic rotation matrix (rows -0.0549,-0.8734,-0.4838 / 0.4941,-0.4448,0.7470 / -0.8677,-0.1981,0.4560)", "presumed_source": "Hipparcos catalogue / astropy Galactic frame definition", "reliability": "certain (reproduced by astropy to 3e-6)"},
+    {"item": "SURF (Lead, SD) coordinates 44.352 N, 103.751 W; Davis campus 4850 ft below a ~1600 m surface", "presumed_source": "SURF/LZ detector papers", "reliability": "likely (coordinates); uncertain (elevation; irrelevant at 1e-5)"},
+    {"item": "Schoenrich, Binney & Dehnen 2010 solar peculiar velocity (11.1, 12.24, 7.25) km/s with uncertainties ~(1.2, 2.0, 0.6) km/s incl. systematics", "presumed_source": "MNRAS 403, 1829 (2010)", "reliability": "likely (values); uncertain (errors)"},
+    {"item": "Baxter et al. 2021 recommended v0 = 238 +- 1.5 km/s", "presumed_source": "EPJC 81, 907 (2021)", "reliability": "uncertain (error)"},
+    {"item": "Asymptotic-velocity mapping v_inf = [u^2 v + u (GM/r) rhat - u (v.rhat) v]/[u^2 + GM/r - u (v.rhat)] for hyperbolic Kepler orbits", "presumed_source": "Alenazi & Gondolo PRD 74, 083518 (2006); Lee, Lisanti, Peter, Safdi PRL 112, 011301 (2014)", "reliability": "likely; verified numerically to 4e-4 km/s by backward orbit integration"},
+    {"item": "Solar gravitational focusing of the DM density at Earth peaks around 1 March (Earth downstream of the Sun)", "presumed_source": "Lee, Lisanti, Peter, Safdi 2014", "reliability": "likely; reproduced here (max at ~5 March, +1.95 %)"},
+    {"item": "ERFA epv00 built-in ephemeris accuracy ~5 km / ~1 mm/s over 1900-2100", "presumed_source": "SOFA/ERFA documentation of epv00", "reliability": "likely"},
+    {"item": "G_F = 1.166e-5 GeV^-2, sin^2 theta_W = 0.231", "presumed_source": "PDG (via P007)", "reliability": "certain"},
+    {"item": "Earth mean density 5.51 g/cm^3", "presumed_source": "standard geophysics", "reliability": "certain"},
+    {"item": "Earth mean orbital speed 29.79 km/s, perihelion early January / aphelion early July", "presumed_source": "standard celestial mechanics", "reliability": "certain"},
+    {"item": "Higgsino loop-level elastic cross-section ~1e-48 cm^2", "presumed_source": "Hill & Solon 2014 (via P007)", "reliability": "likely (order of magnitude only, used for the shadowing estimate)"}
+  ],
+  "datasets": "none",
+  "data_requests": "none",
+  "failed_or_abandoned": [
+    "First lab-frame distribution added the solar velocity twice (observer velocity already contained v_sun before the Galactic shift): eta(0) 0.58x analytic and a spurious 1058 km/s edge; fixed by using w + v_orb as the heliocentric velocity.",
+    "One-year averaging mask initially covered June 2023-April 2024 (scan ends 1 April 2024), giving 249.8 km/s; fixed to 365.25 d from 27 March 2023 (252.11 km/s).",
+    "The 2 km/s speed grid cannot resolve the 1.1 km/s focusing shift of the hard edge; replaced by direction-scanned bisection (exact_edge).",
+    "astropy Time.ut1 raised a configuration error until iers.conf.auto_max_age was set explicitly (default None rejected by the config validator in this environment); offline overrides then worked with the bundled IERS-B table.",
+    "eta ratio at 790 km/s is infinite/undefined on dates when the unfocused edge is below 790 km/s; reported over the 23 finite dates and as the ratio of annual means."
+  ],
+  "wimpydd_generated_files": "none (diff_rate and streamed_halo_function only; no response-function files written)"
+}

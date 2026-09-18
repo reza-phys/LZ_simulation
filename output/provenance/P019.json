@@ -1,0 +1,65 @@
+{
+ "id": "P019",
+ "title": "Atmospheric-neutrino processes at 248 keV: the CEνNS tail, loss of coherence, and exotic neutrino interactions",
+ "date": "2026-09-05",
+ "agent_tools": [
+  {"tool": "Read", "count": 12, "detail": "provenance/PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv; papers/P004.md; papers/P010.md; fulltext.tex l.170-250 (backgrounds, Table I) and l.253-325 (Fig.5 caption, Discussion); figures_png/Fig5_NR_distance_3panels_no_sig.png; code/common/lzcommon.py (l.1-75, 110-300, 300-390); code/P004_wall_mssi.py l.70-125; work/P004/P004_fig5_digitised.csv; four P019 figure PNGs"},
+  {"tool": "Bash", "count": 8, "detail": "ls output/papers work data_requests code; grep atmospheric/CEvNS/Table I in fulltext.tex + grep lzcommon API + cat ENVIRONMENT_versions.txt; grep Fig.5 caption / list PNGs / P010 files; WimPyDD weak-charge O1 test vs Helm (2 runs, second with tail filter); grep P004 digitisation and P009 efficiency + package versions; .venv/bin/python output/code/P019_atm_nu.py (run 1); .venv/bin/python output/code/P019_atm_nu.py (run 2, after fixes); python one-liner printing fig5_panel_comparison.csv and cevns_tail_summary.csv; wc -w on paper body"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P019_atm_nu.py; output/work/P019/details.md; output/provenance/P019.json; output/papers/P019.md"},
+  {"tool": "Edit", "count": 9, "detail": "P019_atm_nu.py: per-panel label step + Total-curve validation in Fig.5 digitisation (3 edits); OD-untagged factor and range for the knock-out channel; emin_func in spectrum_generic; near-threshold HNL masses with bisection for E_nu,min (2 edits); figure line; panel comparison CSV"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python"},
+  {"name": "numpy", "version": "2.5.3", "functions": "arrays, trapezoid, interp, geomspace"},
+  {"name": "scipy", "version": "1.18.1", "functions": "integrate.quad (flux and cross-section integrals), stats.norm (efficiency roll-off, S1 resolution)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame.to_csv for result tables"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend, pyplot figures"},
+  {"name": "Pillow", "version": "12.3.0", "functions": "Image.open for pixel-colour digitisation of Fig. 5"},
+  {"name": "nestpy", "version": "2.1.1", "functions": "via lzcommon.nest_nr_yields / nest_er_yields (LZ-tuned NR and ER mean yields)"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian, streamed_halo_function, diff_rate via lzcommon.wd_hamiltonian/wd_halo/wd_rate: O1 rate with weak-charge couplings (c_p=-(1-4 s2w), c_n=1) for a 1e6 GeV WIMP to extract the shell-model weak form factor"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ constants (exposure, Table I backgrounds, g1, g2), helm_F2, XE_ISOTOPES, m_nucleus_gev, GEV_TO_CM2, HBARC_GEV_FM, nest_nr_yields, nest_er_yields, wd_* wrappers"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P019_atm_nu.py", "purpose": "flux-shape family, CEvNS spectra (Helm and WimPyDD weak FF) normalised to 0.11 ROI events, tail fractions and window counts, Fig.5 green-curve digitisation and panel comparison, coherence loss (F^2, nodes), Llewellyn-Smith NC elastic vs coherent, knock-out lone-NR estimate, NC excitation rates and (S1c, log S2c) location, exotic spectra N_lo (magnetic moment, Z', scalar, dipole HNL), solar end points, figures", "command": ".venv/bin/python output/code/P019_atm_nu.py"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "l.174-178 (neutrino/neutron backgrounds, Billard formalism, Baxter normalisation, 92% veto tagging); Table I l.210-246 (atm nu 0.11+-0.02, 8B+hep 0.057, detector NRs [0,0.118], total 1713); Fig.5 caption l.255-266 (0.0106 bottom-panel total); Discussion l.296-325 (l.313-314 coherence statement, l.322 neutron energy)"},
+  {"file": "inputs/figures_png/Fig5_NR_distance_3panels_no_sig.png", "parts_used": "green 'Neutrino + Detector NRs' and blue 'Background Model Total' histograms digitised in all three panels"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "sections 2, 5 (hypotheses A, H), 6"},
+  {"file": "output/results_ledger.csv", "parts_used": "P001-P010 rows"},
+  {"file": "output/papers/P004.md", "parts_used": "Fig.5 digitisation validation (0.01053), neighbourhood definition"},
+  {"file": "output/papers/P010.md", "parts_used": "ER-band context for the excitation channel"},
+  {"file": "output/work/P004/P004_fig5_digitised.csv and output/code/P004_wall_mssi.py", "parts_used": "bottom-panel frame rows/columns and tick calibration (reused, extended to the upper panels)"},
+  {"file": "output/work/P009/details.md", "parts_used": "efficiency roll-off sigma_E=11.8 keV, plateau 0.955; S1c(250 keV)=543.8 phd paper scale; 5% S1 resolution"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "constants, helm_F2, isotopes, nest yields, WimPyDD wrappers"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Total atmospheric neutrino flux above ~10 MeV, all flavours, ~10.5 cm^-2 s^-1 (used only as a sanity check; normalisation fixed to LZ's 0.11 events)", "presumed_source": "Billard, Strigari, Figueroa-Feliciano PRD 89, 023524 (2014) Table I", "reliability": "likely"},
+  {"item": "Atmospheric flux shape: E dPhi/dE roughly flat 10-100 MeV, falling ~E^-2..-3 above; Honda-type E^2 dPhi/dE rising to ~1 GeV then steepening to E^-2.7", "presumed_source": "Battistoni et al. 2005 (FLUKA), Honda et al. 2011/2015", "reliability": "uncertain (bracketed by 8 shapes)"},
+  {"item": "G_F = 1.1664e-5 GeV^-2, alpha = 1/137.036, m_N = 0.938 GeV, mu_p = 2.793, mu_n = -1.913, g_A = 1.267", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "sin^2 theta_W = 0.23867 at low momentum transfer", "presumed_source": "PDG (MSbar, q~0)", "reliability": "likely"},
+  {"item": "CEvNS cross-section dsigma/dE_R = G_F^2 m_N/(4 pi) Q_W^2 (1 - m_N E_R/2E^2) F^2, Q_W = N - (1-4 s2w) Z", "presumed_source": "Freedman 1974; Billard et al. 2014", "reliability": "certain"},
+  {"item": "Llewellyn-Smith NC elastic cross-section with A, B, C structure and NC form factors F1,2^NC = +-1/2(F^p - F^n) - 2 s2w F^{p,n}, F_A^NC = +-g_A/2 G_D; dipole M_A = 1.03 GeV, M_V = 0.84 GeV", "presumed_source": "Llewellyn Smith 1972; Ahrens et al. 1987; MiniBooNE NCE 2010", "reliability": "likely"},
+  {"item": "Fermi-gas Pauli suppression factor 1.5x - 0.5x^3 (x = q/2k_F) and k_F ~ 260 MeV/c for a heavy nucleus", "presumed_source": "Bodek-Ritchie / relativistic Fermi gas; Moniz et al. 1971 (k_F(Pb) = 265 MeV/c)", "reliability": "likely (form) / uncertain (Xe value)"},
+  {"item": "Neutron total cross-section on Xe at ~30 MeV ~ 2.7 b -> lambda ~ 27 cm in LXe", "presumed_source": "ENDF systematics (sigma_tot ~ 2 pi (R+lambda)^2)", "reliability": "uncertain"},
+  {"item": "Ground-state spectroscopic fraction for valence-neutron removal 0.1-0.5; excited daughters emit >= 0.5 MeV gammas", "presumed_source": "(e,e'p) systematics, Xe level schemes", "reliability": "uncertain"},
+  {"item": "129Xe first excited state 39.58 keV (3/2+), 131Xe 80.19 keV (1/2+); decays dominantly by conversion electrons/gammas", "presumed_source": "ENSDF", "reliability": "likely"},
+  {"item": "Allowed NC inelastic cross-section sigma ~ (G_F^2 E^2/pi)(g_A^2/4) B(sigma), B(sigma) ~ 0.05-0.2 for low-lying M1 transitions", "presumed_source": "Donnelly-Peccei 1979-type estimates", "reliability": "uncertain (factor ~3)"},
+  {"item": "Vogel-Engel coherent magnetic-moment formula dsigma/dE_R = pi alpha^2 mu^2/m_e^2 Z^2 F^2 (1/E_R - 1/E_nu + E_R/4E_nu^2)", "presumed_source": "Vogel & Engel PRD 39, 3378 (1989)", "reliability": "certain"},
+  {"item": "Scalar-mediator CEvNS spectrum dsigma/dE_R ~ Q_s^2 m_N^2 E_R/(E_nu^2 (q^2+m^2)^2); vector mediator modifies Q_W by g^2 Q'/(sqrt2 G_F (q^2+m^2))", "presumed_source": "Cerdeno, Fairbairn, Jubb, Machado, Vincent, Boehm JHEP 2016", "reliability": "likely"},
+  {"item": "Dipole-portal Lagrangian d nu_L sigma^{mu nu} N_4 F_{mu nu} and coherent up-scattering phenomenology (cross-section derived here by trace algebra, checked against the m4->0 limit)", "presumed_source": "Magill, Plestid, Pospelov, Tsai PRD 98, 115015 (2018)", "reliability": "likely (Lagrangian) / derived (formula)"},
+  {"item": "Solar hep end point 18.8 MeV; 8B end point ~16.3 MeV", "presumed_source": "standard solar model literature", "reliability": "certain"},
+  {"item": "2->2 kinematics in the CM frame (t range, threshold)", "presumed_source": "textbook", "reliability": "certain"},
+  {"item": "Xe isotopic abundances and Helm parametrisation (via lzcommon)", "presumed_source": "Lewin & Smith 1996; IUPAC", "reliability": "certain"},
+  {"item": "LZ 2024 low-energy tolerance N_lo <~ 3-5 (used qualitatively)", "presumed_source": "P003", "reliability": "corpus (P003) / uncertain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Reusing P004's green RGB (124,174,0) returned no pixels for the 'Neutrino + Detector NRs' curve; replaced by sampling the legend swatch colour.",
+  "First bottom-panel tick calibration (193 px/decade) ignored that labels are every two decades; fixed (96.5 px/decade) and validated against the caption total (0.01082 vs 0.0106).",
+  "Step-function kinematic kernel for the dipole-portal spectrum caused quad round-off warnings; replaced by bisection for E_nu,min(E_R, m4) and integration over the allowed range only."
+ ],
+ "wimpydd_generated_files": "none (WD.diff_rate via lzcommon.wd_rate only)"
+}

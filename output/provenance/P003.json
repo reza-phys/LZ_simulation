@@ -1,0 +1,57 @@
+{
+  "id": "P003",
+  "title": "Which NREFT operators can produce a lone high-energy recoil? Spectral shape ratios in xenon and a reproduction of the LZ signal spectra",
+  "date": "2026-09-03",
+  "agent_tools": [
+    {"tool": "Read", "count": 10, "detail": "output/provenance/PAPER_GUIDE.md; output/00_evidence_dossier.md; output/code/common/lzcommon.py; inputs/LZ_arXiv_2609.02823_fulltext.tex lines 33-117 (Theory, Fig.1 caption, Data Analysis), 486-505 (LEE/degeneracies), 818-911 (Tables S6, S7); figures P003_fig1_overlay.png, P003_L10_overlay.png, P003_Nlo_bar.png, P003_operator_spectra.png"},
+    {"tool": "Bash", "count": 14, "detail": "ls of inputs/output dirs + head results_ledger.csv + grep -n of the tex for Theory/ROI/Lagrangian/Table S6; cat tool_inventory.md, ENVIRONMENT_versions.txt, inspect.signature/getsource of WimPyDD.diff_rate, eft_hamiltonian, streamed_halo_function; pymupdf inspection of Fig1_combined_recoils.pdf (text spans, drawings); sed/grep of the persisted inspection output; timing of lz.wd_rate for O1/O6 and find for WimPyDD-generated files; halo-variant test (day_of_year 153/335/80, full_year_sampling) vs digitised curve and tick-residual check; pandas inspection of digitised CSV near 100 keV; test of q-dependent Hamiltonian {(4,'q2'),6} + file-generation check; .venv/bin/python output/code/P003_fig1_digitise.py (run 4 times while fixing calibration); ast syntax check; .venv/bin/python output/code/P003_nreft_shapes.py (one aborted SyntaxError run, one over-long 1 keV-grid run stopped, final 3 keV-grid run 315 s, output tee'd to output/work/P003/P003_nreft_shapes.log); per-operator timing test; cat of P003_L10_comparison.csv, fig1_O1_ratio_curve.csv and pandas summaries of P003_operator_table.csv; ps (not permitted in sandbox); until-loop wait on the log (stopped)"},
+    {"tool": "Write", "count": 5, "detail": "output/code/P003_fig1_digitise.py; output/code/P003_nreft_shapes.py; output/work/P003/details.md; output/provenance/P003.json; output/papers/P003.md"},
+    {"tool": "Edit", "count": 17, "detail": "P003_fig1_digitise.py (5): exclude y-axis mantissa from x labels; skip legend handles; edge-anchored y calibration; panel split at y=340; extended normalisation test. P003_nreft_shapes.py (3): fix quoting in OP_INFO; 3 keV grid; log interpolation. P003.md (8): trimming the body to <= 550 words. P003.json (1): this count"},
+    {"tool": "ToolSearch", "count": 2, "detail": "loaded Monitor and TaskStop schemas"},
+    {"tool": "TaskStop", "count": 2, "detail": "stopped the over-long 1 keV-grid scan and its wait loop"}
+  ],
+  "software": [
+    {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python interpreter"},
+    {"name": "numpy", "version": "2.5.3", "functions": "arrays, interp, polyfit, union1d, savez, searchsorted"},
+    {"name": "scipy", "version": "1.18.1", "functions": "special.erf, integrate.trapezoid, signal.argrelextrema"},
+    {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, to_csv, read_csv"},
+    {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg backend): subplots, plot, bar, axvspan, savefig"},
+    {"name": "pymupdf", "version": "1.28.2", "functions": "open, Page.get_text('dict'), Page.get_drawings() for vector digitisation of Fig1_combined_recoils.pdf"},
+    {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian (integer keys 1,3-15; q-dependent Wilson coefficient via reserved argument q with key (4,'q2')), streamed_halo_function (via lzcommon.wd_halo), diff_rate (via lzcommon.wd_rate), Xe target with 9 isotopes"},
+    {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ dict (E_50pct_low_keV, E_50pct_high_keV, eff_plateau), M_V_GEV, M_NUCLEON_GEV, GEV_TO_CM2, mu_red, dRdE_SI, wd, wd_halo, wd_hamiltonian, wd_rate, LSIG/OSIG (read for Sec. 7)"},
+    {"name": "hand derivation", "version": "none: derived by hand", "functions": "NR reduction of the tensor-tensor Lagrangian L10 to 4(m_N^2/m_M^2)[(q^2/m_N^2)O4 - O6] and its squared amplitude q^4 Sigma'"}
+  ],
+  "scripts_and_commands": [
+    {"path": "output/code/P003_fig1_digitise.py", "purpose": "Digitise Fig. 1 vector curves (O1s delta=0/200/300 at 1000 GeV; L10s at 50/200/1000 GeV), calibrate axes, compare O1s with WimPyDD for c0=1/m_v^2 and 2/m_v^2, locate M-response minima, write CSV/JSON and overlay figure", "command": ".venv/bin/python output/code/P003_fig1_digitise.py"},
+    {"path": "output/code/P003_nreft_shapes.py", "purpose": "Operator scan O1,O3-O15 x {s,v} x {200,1000,4000} GeV: spectra, R_lo (5.4-55 keV), R_hi (200-270 keV), N_lo, efficiency-model robustness, classification vs N_max; inelastic O1 reference; (q^2/m_N^2)O4-O6 vs digitised L10s; figures and summary JSON", "command": ".venv/bin/python -u output/code/P003_nreft_shapes.py 2>&1 | tee output/work/P003/P003_nreft_shapes.log"}
+  ],
+  "local_inputs": [
+    {"file": "inputs/arXiv_2609.02823_source/Fig1_combined_recoils.pdf", "parts_used": "all vector paths and text spans (both panels)"},
+    {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Theory paragraph and Fig. 1 caption (lines 35-74: unit coupling c_i^s = d_i^s = 1/m_v^2, m_v = 246.2 GeV, WimPyDD + DMFormfactor-v6 density matrices, Baxter-2021 SHM); Data Analysis paragraph (lines 110-117: 2024 ROI S1c 3-80 phd = 5.4-55 keV, WS ROI, 96% efficiency 14-250 keV); supplement LEE section (lines 490-498: degenerate Lagrangian pairs, s/v-indistinguishable models, 293 distinct spectra); Tables S6 and S7 (lines 825-909)"},
+    {"file": "output/00_evidence_dossier.md", "parts_used": "Sections 1-2 (event parameters, significance pattern, ~900 low-energy events per high-energy event for SI), Section 5 (explanation J)"},
+    {"file": "output/code/common/lzcommon.py", "parts_used": "WimPyDD wrapper, constants, LSIG/OSIG tables, dRdE_SI"},
+    {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all"},
+    {"file": "output/provenance/tool_inventory.md and environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+  ],
+  "recalled_knowledge": [
+    {"item": "NREFT operator definitions O1-O15 and their leading nuclear responses (M, Sigma', Sigma'', Delta, Phi'') and q/v scalings", "presumed_source": "Fitzpatrick et al. 2013 (JCAP 02, 004), Table 1; Anand et al. 2014", "reliability": "certain"},
+    {"item": "Anand et al. isospin convention c^0 = (c_p + c_n)/2, c^1 = (c_p - c_n)/2", "presumed_source": "Anand, Fitzpatrick, Haxton, PRC 89 (2014) 065501, Eq. 21 region", "reliability": "likely"},
+    {"item": "LZ 2024 WIMP search (220 live days, ROI 5.4-55 keV) saw no excess and its high-mass limit corresponds to roughly 3-5 signal events in the ROI", "presumed_source": "LZ Collaboration 2024 WS result (ref. LZ:SR3_WS2024)", "reliability": "uncertain"},
+    {"item": "Leading-order NR reductions: L1, L5 -> O1; L2 -> O10; L3 -> O11; L4 -> O6; L15 -> O4; L19 -> 4 O4", "presumed_source": "Anand et al. 2014, Table 1", "reliability": "likely"},
+    {"item": "Tensor-tensor magnetic Lagrangian L10 reduces to 4 (m_N^2/m_M^2)[(q^2/m_N^2) O4 - O6], whose squared amplitude is q^4 Sigma' (transverse spin only)", "presumed_source": "hand derivation from sigma^{ij} q_j -> 2 (q x S)^i; consistent with Anand et al. 2014", "reliability": "likely"},
+    {"item": "Sigma' form factor of 129Xe/131Xe has a node near 50-60 keV; M form factor minima near 100 and 265 keV", "presumed_source": "observed directly in the WimPyDD output and Fig. 1 (not recalled)", "reliability": "certain"},
+    {"item": "Xe isovector charge fraction (Z-N)/A ~ -0.18", "presumed_source": "arithmetic on Z=54, A~131", "reliability": "certain"},
+    {"item": "arXiv number 2410.17036 for the LZ 2024 WS paper", "presumed_source": "memory", "reliability": "likely"}
+  ],
+  "datasets": "none",
+  "data_requests": "none",
+  "failed_or_abandoned": [
+    "Tick-label-centre y calibration of Fig. 1 (biased by 0.053 dex, 13%); replaced by panel-edge-anchored calibration confirmed by the exact 0.5 upper limit of the bottom panel",
+    "x calibration that accidentally included the y-axis mantissa '10' label (1.559 instead of 1.502 pt/keV); fixed",
+    "Legend handles overwrote the curve extraction in the first digitisation pass; fixed with a minimum path length",
+    "Operator scan on a 1 keV grid (300 points x 84 spectra, ~17 min at 20-50 ms per WimPyDD call) exceeded the 10-minute tool limit and was stopped; re-run on a 3 keV grid plus reference energies with log-linear interpolation (315 s)",
+    "One aborted run due to a string-quoting SyntaxError in the operator-information table",
+    "Full Lagrangian -> operator mapping for L6-L9, L11-L14, L16-L20 not attempted (subleading terms matter, cf. L15 vs L19 in Table S6)"
+  ],
+  "wimpydd_generated_files": []
+}

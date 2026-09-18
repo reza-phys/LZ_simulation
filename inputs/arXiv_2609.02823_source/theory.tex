@@ -1,0 +1,42 @@
+\paragraph{Theory --\label{sec:theory}}
+Effective field theories, such as those developed by Fan et al.~\cite{Fan_2010} and Fitzpatrick et al.~\cite{Fitzpatrick:EFT}, provide a more general framework for DM scattering than the usual SI and SD treatment.
+We use the non-relativistic effective field theory (NREFT) developed in Ref.~\cite{Fitzpatrick:EFT}, in which the WIMP-nucleon interaction is treated as a four-particle contact interaction
+\begin{equation}
+    \mathcal{L}_\text{int} = \mathcal{O}\chi\bar{\chi}\bar{N}N,
+\end{equation}
+where $\chi$ and $N$ are non-relativistic fields for the WIMP and target nucleon, respectively.
+Enforcing momentum conservation and Galilean invariance \cite{Fitzpatrick:EFT}  reduces the operators to a basis of four Hermitian quantities
+\begin{equation}
+i \frac{\vec{q}}{m_N}, \quad \vec{v}^\perp \equiv \vec{v} + \frac{\vec{q}}{2\mu}, \quad \vec{S}_{\chi}, \quad \vec{S}_{N},
+\label{eq:basis}
+\end{equation}
+where $\vec{q}$ is the momentum transferred from the WIMP to the nucleon, $m_N$ is the nucleon mass, $\mu$ is the reduced mass of the WIMP-nucleon system, $\vec{v}$ is the relative velocity between the WIMP and the nucleon, $\vec{v}^\perp$ is the component of the relative velocity  perpendicular to the momentum transfer, $\vec{S}_{\chi}$ is the spin of the WIMP, and $\vec{S}_{N}$ is the spin of the relevant nucleon. 
+Linear combinations of these Hermitian quantities up to 2$^{\rm nd}$-order in $\vec{q}$ give a total of fifteen independent and dimensionless NREFT operators, denoted as $\mathcal{O}_i$. The operators can be mapped onto fully relativistic covariant Lagrangians, the nonrelativistic reductions of which we denote $\mathcal{L}_i$, allowing for more complex interactions to be studied~\cite{PandaX:2023_dm_luminescence,LZ:SR1_NREFT_Lagrangian_2024,Anand:MathematicaEFT}.
+Equation~\ref{eq:basis} can also be modified to describe inelastic scatters where the WIMP transitions into a more massive state during the interaction, another mechanism that can lead to a suppression of the low energy component of the recoil spectrum~\cite{Barello_2014}. 
+Inelastic models arise outside of NREFT, and they can generate interaction rates with significant annual modulation peaking around June 2~\cite{smith_2021:inelasticDM,Tucker-Smith:inelasticDM,Bramante2016:inelasticDM,Graham:Higgsino_2025,Han_1997}.
+
+
+
+Here, we perform a search for high-energy nuclear recoils arising from $\mathcal{L}_{1}-\mathcal{L}_{20}$~\cite{Anand:MathematicaEFT}, and for inelastic interactions from $\mathcal{O}_1$ and $\mathcal{O}_4$
+%~\cite{Fitzpatrick:EFT} 
+with superscripts ($s$) and ($v$) referring to the isoscalar and isovector basis, respectively.
+The inelastic operators are selected because they are extensions of SI and SD models.
+We use two interactions as illustrative examples, shown in~\autoref{fig:signal_recoil_spectra}. 
+The first is the inelastic spin-independent scatter, $\mathcal{O}^{s}_{1}$, which resembles a  Higgsino model~\cite{Graham:Higgsino_2025}.
+The second is $\mathcal{L}^{s}_{10}$, which describes a magnetic moment interaction, chosen as it results in a broad and double-peaked spectrum in our region of interest (ROI). 
+Predicted xenon nuclear recoil spectra for all dark matter models are calculated with WimPyDD~\cite{wimpydd:Jeong_2022} using one-body nuclear density matrices developed for DMFormfactor-v6~\cite{Anand:MathematicaEFT}, with modifications as described in Ref.~\cite{LZ:SR1_NREFT_2023}, and the Standard Halo Model with parameters recommended in Ref.~\cite{DM_parameters:BAXTER2021_Conventions}. 
+Results for all of the probed interactions are in the \textcolor{black}{Data Release}.
+
+\begin{figure}
+    \includegraphics[width=0.95\columnwidth]{\plotfolder Fig1_combined_recoils.pdf}
+    \caption{Nuclear recoil energy spectra for the two interactions chosen as examples in this Letter.
+    \textbf{Top:} Interactions via the inelastic $\mathcal{O}^{s}_{1}$ with splitting between WIMP energy levels ($\delta$) of 0~keV (equivalent to a purely elastic spin-independent interaction), 200~keV, and 300~keV for an impinging WIMP of mass 1000~GeV/c$^2$. 
+    \textbf{Bottom:} Elastic interactions of a 50, 200, and 1000~GeV/c$^2$ WIMP via $\mathcal{L}^{s}_{10}$.
+    The shaded gray regions, $<$5.4~keV and $>$269.9~keV, indicate where the detection efficiency is below 50\% after all data analysis criteria.
+    %The coupling strength of each interaction is assumed to be unity. 
+    The coupling strength of each interaction is assumed to be unity 
+    %(as in Eq.~21 of Ref.~\cite{Anand:MathematicaEFT}).
+    (\emph{i.e.}, $c_i^s = 1/m_\nu^2$ as in Eq. 21 and $d_i^s = 1/m_\nu^2$ as in Eq. 68 of Ref.~\cite{Anand:MathematicaEFT}, where $m_\nu = 246.2$~GeV/c$^2$ is the Higgs vacuum expectation value.). 
+    }
+    \label{fig:signal_recoil_spectra}
+\end{figure}

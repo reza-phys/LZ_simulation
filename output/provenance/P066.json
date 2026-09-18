@@ -1,0 +1,69 @@
+{
+ "id": "P066",
+ "title": "A 300-380 keV line from the sky: what INTEGRAL/SPI, COMPTEL and future MeV telescopes say about a long-lived excited dark-matter state",
+ "date": "2026-09-12",
+ "agent_tools": [
+  {"tool": "Read", "count": 18, "detail": "provenance/PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (rows 1-13 direct, rows 13-52 compact via pandas in Bash); papers/P026.md; papers/P011.md; papers/P014.md; papers/P042.md; papers/P023.md; provenance/P026.json (format); work/P026/details.md lines 1-20 and 155-184 (D-factor, SPI, EGB, exothermic); work/P066/figures/*.png (x7 across two iterations)"},
+  {"tool": "Bash", "count": 15, "detail": "ls output/{papers,work,data_requests} + P058/P065 presence; pandas print of ledger rows P013-P053 + ls late work dirs; grep lzcommon constants + head ENVIRONMENT_versions + ls work/P026; ls work/P058-P060 + grep P058/P026 details; cat P058 run_log + P011 exothermic.csv; grep P026 D_factor routine; grep dataviz palette.md; .venv/bin/python output/code/P066_gamma_line.py (x4: SyntaxError on a dict key '1e-22', then three full runs of ~140-160 s with figure-label iterations); python JSON field check + wc -l run_log; wc -w + per-section word counts on papers/P066.md (x3) and json.load check"},
+  {"tool": "Write", "count": 4, "detail": "code/P066_gamma_line.py; work/P066/details.md; provenance/P066.json; papers/P066.md"},
+  {"tool": "Edit", "count": 16, "detail": "script (9): two invalid identifiers renamed; Fig.1 BR_gamma label stagger + hatch alpha + text positions (x4); Fig.2 sensitivity label sides + x-range (x2); Fig.4 dedicated healpy figure and colour range. papers/P066.md (7): Results 265 -> 218 words and Key numbers 114 -> 109 words to meet the budget"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette and chart rules; JS validator skipped per PAPER_GUIDE rule 2)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "trapezoid (log-variable line-of-sight integrals), linspace/logspace, linalg.norm, exp/sqrt, boolean pixel masks"},
+  {"name": "scipy", "version": "1.18.1", "functions": "integrate.quad (reference line-of-sight and cone D-factors), optimize.brentq (tau_gamma excluded for the generic photon-only chi2)"},
+  {"name": "healpy", "version": "1.20.0", "functions": "nside2npix, nside2pixarea, pix2ang (nside=128 D-map), mollview, graticule"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame tables and CSV output; ledger inspection"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot Agg; fill_between, barh, LinearSegmentedColormap (dataviz sequential blue)"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "RHO0_GEV_CM3 (0.3), V0_KMS (238), V_SUN_PEC, V_EARTH_ORBIT, C_KMS"},
+  {"name": "none: derived by hand", "version": "-", "functions": "Phi = f2 D/(4 pi m tau); dI/dE = c Gamma n0/(4 pi E H(z)) for redshifted line decays; Doppler width/dipole; on-shell vanishing of the A'-gamma mixing insertion (BR_gamma = 0 for pure kinetic mixing)"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P066_gamma_line.py", "purpose": "NFW/Einasto/Burkert D-factors on a HEALPix grid with scipy validation; line fluxes per region; recalled sensitivity brackets -> f2/tau_gamma bounds; redshifted decay continuum vs Gruber-1999 CXB; corpus-model mapping (Higgsino, dark photon +/- dipole at the exothermic boundary, MiDM, generic long-lived chi2); Doppler width and dipole; four figures; CSV/JSON outputs", "command": ".venv/bin/python output/code/P066_gamma_line.py"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules and deliverable formats"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "event summary; explanation I (inelastic DM); open question 10"},
+  {"file": "output/results_ledger.csv", "parts_used": "all rows P001-P053 (headlines) for corpus context; P011, P014, P023, P026, P042 numbers"},
+  {"file": "output/papers/P026.md and output/work/P026/details.md sections 5.4-5.5", "parts_used": "f2 = 0.42-0.50 after freeze-out; D(10 deg, NFW) = 7.41e21 GeV cm^-2 sr; SPI f2/tau < 5.1e-23 s^-1; EGB tau > 5.7e19 s; Planck windows in (tau, f2); exothermic tau_tot <= 7.2/4.8/3.1e16 s; dark-photon tau_nunubar = 2.6e18 s (m_A'/GeV)^-4; Higgsino tau_nunubar 1.2e6 s, tau_gamma ~0.1 s"},
+  {"file": "output/papers/P011.md; output/work/P011/exothermic.csv", "parts_used": "chi2 -> chi1 gamma vanishes at one loop for pure kinetic mixing; exothermic counts 858 per unit f2 at 300 keV -> f2 <= 1.2e-3; tau(chi2) = 60 Gyr at eps = 1e-6"},
+  {"file": "output/papers/P014.md", "parts_used": "Higgsino tau(chi2 -> chi1 nu nubar) ~5e5-1.2e6 s, tau_gamma ~0.06 s"},
+  {"file": "output/papers/P042.md", "parts_used": "prompt de-excitation photon in LZ: tau_gamma > 0.43 us; photon-M1 tau = 66 us; Higgsino/dark photon/L10 escape"},
+  {"file": "output/papers/P023.md", "parts_used": "photon-M1 composite tau = 66 us at 300 keV"},
+  {"file": "output/work/P058/run_log.txt, P058_exo_kinematics.csv", "parts_used": "confirmed no P058 paper/details exist yet; exothermic kinematics not used numerically"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "RHO0_GEV_CM3, V0_KMS, V_SUN_PEC, V_EARTH_ORBIT, C_KMS"},
+  {"file": "output/code/P026_excited_state_cosmology.py", "parts_used": "D_factor routine signature (cone, r_s = 20 kpc, R0 = 8.2 kpc, s to 100 kpc) to compare like with like"},
+  {"file": "output/provenance/P026.json", "parts_used": "format template"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions (healpy 1.20.0 from the assignment)"}
+ ],
+ "recalled_knowledge": [
+  {"item": "NFW r_s = 20 kpc; R_sun = 8.2 kpc; rho_sun = 0.3 GeV/cm^3 (lzcommon)", "presumed_source": "standard Milky-Way fits; Baxter et al. 2021 via lzcommon", "reliability": "likely"},
+  {"item": "Einasto alpha = 0.17 with r_s = 20 kpc; Burkert core r_c = 9 kpc", "presumed_source": "Aquarius/Via Lactea fits; Nesti & Salucci 2013", "reliability": "likely (Einasto) / uncertain (Burkert core radius)"},
+  {"item": "Planck 2018: H0 = 67.4, Omega_m = 0.315, Omega_c h^2 = 0.120; rho_crit = 1.054e-5 h^2 GeV/cm^3; t_U = 13.8 Gyr; kpc = 3.0857e21 cm", "presumed_source": "Planck 2018 / PDG", "reliability": "certain"},
+  {"item": "INTEGRAL/SPI narrow-line 3 sigma sensitivity ~3e-5 ph cm^-2 s^-1 at 300 keV for 1 Ms (point source); energy resolution ~2 keV FWHM at 300 keV", "presumed_source": "Roques et al. 2003; Vedrenne et al. 2003", "reliability": "uncertain (factor 2-3)"},
+  {"item": "SPI full-mission inner-Galaxy diffuse narrow-line threshold ~(0.3-3)e-5 ph cm^-2 s^-1 (10 deg) and (1-10)e-5 (30-47.5 deg boxes), anchored on 60Fe 1173/1332 keV (~3e-5 each, ~5 sigma), 26Al 1809 keV (3e-4 inner Galaxy), 511 keV bulge (1e-3, > 50 sigma)", "presumed_source": "Wang et al. 2007/2020; Diehl et al. 2006; Siegert et al. 2016; Knoedlseder et al. 2005", "reliability": "uncertain (factor 3)"},
+  {"item": "SPI line searches: Teegarden & Watanabe 2006 (first year, 20 keV-8 MeV, diffuse-line limits ~1e-4); Calore et al. 2023 (16 yr, DM decay lines, |l|,|b| < 47.5 deg, per-bin flux limits ~1e-5-1e-4)", "presumed_source": "ApJ 646, 965; MNRAS 520, 4167", "reliability": "uncertain (existence likely; numbers factor 3)"},
+  {"item": "COMPTEL band 0.75-30 MeV, no sensitivity at 300 keV", "presumed_source": "Schoenfelder et al. 1993", "reliability": "certain"},
+  {"item": "COSI (NASA SMEX, 0.2-5 MeV, launch ~2027): 2-yr 3 sigma narrow-line sensitivity ~1e-5 ph cm^-2 s^-1 near 511 keV; Ge resolution ~1% FWHM; ~4 deg angular resolution", "presumed_source": "Tomsick et al. 2019/2023", "reliability": "uncertain (factor 3)"},
+  {"item": "e-ASTROGAM / AMEGO(-X) concept narrow-line sensitivity ~(1-5)e-6 ph cm^-2 s^-1 at 0.3-1 MeV", "presumed_source": "De Angelis et al. 2017; McEnery et al. 2019", "reliability": "uncertain (concept projections)"},
+  {"item": "CXB/CGB > 60 keV: E dN/dE = 0.0259(E/60)^-5.5 + 0.504(E/60)^-1.58 + 0.0288(E/60)^-1.05 keV cm^-2 s^-1 sr^-1 keV^-1 (13.5 keV cm^-2 s^-1 sr^-1 in E^2 dN/dE at 300 keV); COMPTEL 1-10 MeV a factor 2-3 below the SMM extrapolation", "presumed_source": "Gruber et al. 1999; Weidenspointner et al. 2000", "reliability": "uncertain (factor 2 at 300 keV)"},
+  {"item": "Decaying-DM isotropic intensity dI/dE = c Gamma n0/(4 pi E H(z)), 1+z = E0/E", "presumed_source": "standard (Essig et al. 2013); re-derived in details.md 3.3", "reliability": "certain"},
+  {"item": "Positronium three-photon continuum below 511 keV with f_Ps ~ 1 in the bulge; no known astrophysical narrow line between 300 and 380 keV in the diffuse sky (nearest 7Be 478, e+e- 511; 44Ti 68/78; 57Co 122/136 keV)", "presumed_source": "Siegert et al. 2016; nuclear gamma-line catalogues", "reliability": "likely"},
+  {"item": "No strong SPI instrumental background line in 300-380 keV (known lines at 198, 439, 584, 882 keV etc.)", "presumed_source": "Weidenspointner et al. 2003 SPI background line list", "reliability": "uncertain"},
+  {"item": "Sun-frame speed 250.6 km/s (lzcommon); isotropic 1-D dispersion v0/sqrt(2) = 168 km/s; inner-halo dispersion up to ~250 km/s; GC gravitational redshift ~1e-6", "presumed_source": "lzcommon; Jeans arguments", "reliability": "likely"},
+  {"item": "Dark-photon chi2 -> chi1 gamma vanishes for pure kinetic mixing (on-shell photon: mixing insertion ~ eps q^2 -> 0; Pi_{A'gamma}(0) = 0); tau_nunubar = 2.6e18 s (m_A'/GeV)^-4; Higgsino tau_gamma ~0.06 s, tau_nunubar 1.2e6 s; photon-M1 tau = 66 us; 511 keV bulge flux ~1e-3 ph cm^-2 s^-1", "presumed_source": "corpus P011/P014/P023/P026 (likely); Siegert et al. 2016 (511 flux, likely)", "reliability": "likely"},
+  {"item": "Exothermic bound f2(today) <= 1.2e-3 / 5.5e-5 / 3.8e-7 and tau_tot <= 7.2 / 4.8 / 3.1e16 s at delta = 300 / 350 / 380 keV for models at the LZ-fit cross-section", "presumed_source": "corpus P011 sec. 3.7, P026 sec. 5.5 (computed there)", "reliability": "corpus (likely)"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Dictionary keys containing '1e-22' raised a SyntaxError on the first run; renamed to '1em22'.",
+  "healpy mollview into an existing matplotlib figure produced a figure-reuse warning and a flat colour range (21-23.2); replaced by a dedicated figure and a 21.85-23.2 range that shows the cusp.",
+  "Fig. 1 BR_gamma labels and the 'SPI excluded' text collided with each other and with the legend; staggered/moved (two iterations). Fig. 2 sensitivity labels overlapped on the 10-degree row; e-ASTROGAM label moved to the left side.",
+  "No modelling of the SPI coded-mask response to extended emission or of its instrumental background: the sensitivity is a recalled factor-3 bracket, so all gamma-ray bounds are 'estimated'.",
+  "The P058 exothermic paper was not yet written (only partial work files); the exothermic bound is taken from P011/P026 instead.",
+  "No data request: SPI/COSI line-sensitivity curves are instrument-team products rather than tabulated public data that could be recast here."
+ ],
+ "wimpydd_generated_files": "none"
+}

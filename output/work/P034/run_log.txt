@@ -1,0 +1,122 @@
+[1] kernels: 5 deltas x 171 energies x 1801 streams
+    kernels done in 12.8 s
+    rate curves done in 13.5 s
+    interpolation check (delta=380, 73-day grid vs 36-day spline): max dev 9.400e-05 of peak
+    delta=  300: peak doy 152 (fund. 151.9), mod.frac 0.419, June/Dec 2.36, duty(10%) 1.00, zero 0.00, peak/mean 1.45, a1 0.428 a2 0.023 a3 0.000, P1 1.00, KL 0.047 nats, N_unit 1.237e+13
+    delta=  330: peak doy 152 (fund. 151.9), mod.frac 0.700, June/Dec 5.29, duty(10%) 1.00, zero 0.00, peak/mean 1.86, a1 0.764 a2 0.094 a3 0.002, P1 0.99, KL 0.153 nats, N_unit 1.833e+12
+    delta=  350: peak doy 152 (fund. 151.9), mod.frac 0.932, June/Dec 24.6, duty(10%) 0.69, zero 0.00, peak/mean 2.50, a1 1.179 a2 0.294 a3 0.025, P1 0.94, KL 0.391 nats, N_unit 2.386e+11
+    delta=  366: peak doy 152 (fund. 151.9), mod.frac 0.995, June/Dec 305, duty(10%) 0.50, zero 0.00, peak/mean 3.39, a1 1.521 a2 0.684 a3 0.171, P1 0.82, KL 0.717 nats, N_unit 1.95e+10
+    delta=  380: peak doy 152 (fund. 151.9), mod.frac 1.000, June/Dec 4.78e+04, duty(10%) 0.41, zero 0.15, peak/mean 4.22, a1 1.656 a2 0.962 a3 0.420, P1 0.71, KL 0.903 nats, N_unit 6.716e+08
+[3] tests vs time-flat alternative
+    delta=  300: cos a1=0.428 N3/N5 exact 96.9/269.2 (asym 98.1/272.4); LLR N3/N5 96.5/268.3 (Gauss N3 99.0; dead frac 0.00); window May-Aug f 0.337->0.441 N3/N5 194/539; optimal N3/N5 122/335
+    delta=  330: cos a1=0.764 N3/N5 exact 29.6/82.4 (asym 30.9/85.7); LLR N3/N5 29.4/81.8 (Gauss N3 31.8; dead frac 0.00); window May-Aug f 0.337->0.526 N3/N5 60/170; optimal N3/N5 39/106
+    delta=  350: cos a1=1.179 N3/N5 exact 11.7/32.4 (asym 12.9/36.0); LLR N3/N5 11.5/32.0 (Gauss N3 14.0; dead frac 0.00); window May-Aug f 0.337->0.640 N3/N5 26/68; optimal N3/N5 17/43
+    delta=  366: cos a1=1.521 N3/N5 exact 6.5/17.7 (asym 7.8/21.6); LLR N3/N5 6.5/17.6 (Gauss N3 8.7; dead frac 0.00); window May-Aug f 0.337->0.749 N3/N5 14/37; optimal N3/N5 10/22
+    delta=  380: cos a1=1.656 N3/N5 exact 5.3/14.1 (asym 6.6/18.2); LLR N3/N5 5.3/14.1 (Gauss N3 10.6; dead frac 0.09); window May-Aug f 0.337->0.807 N3/N5 12/28; optimal N3/N5 6/19
+    tests done in 16.8 s
+    [E] delta=300 cosine  3sigma: N=96.9 E=275.1 t yr = 98.5 LZ-yr -> year 2121.7; 60 t: 5.73 yr
+    [E] delta=300 cosine  5sigma: N=269.2 E=764.4 t yr = 273.7 LZ-yr -> year 2296.9; 60 t: 15.93 yr
+    [E] delta=300 LLR     3sigma: N=96.5 E=274.2 t yr = 98.2 LZ-yr -> year 2121.4; 60 t: 5.71 yr
+    [E] delta=300 LLR     5sigma: N=268.3 E=762.1 t yr = 272.9 LZ-yr -> year 2296.1; 60 t: 15.88 yr
+    [E] delta=330 cosine  3sigma: N=29.6 E=84.1 t yr = 30.1 LZ-yr -> year 2053.3; 60 t: 1.75 yr
+    [E] delta=330 cosine  5sigma: N=82.4 E=234.1 t yr = 83.8 LZ-yr -> year 2107.0; 60 t: 4.88 yr
+    [E] delta=330 LLR     3sigma: N=29.4 E=83.5 t yr = 29.9 LZ-yr -> year 2053.1; 60 t: 1.74 yr
+    [E] delta=330 LLR     5sigma: N=81.8 E=232.4 t yr = 83.2 LZ-yr -> year 2106.4; 60 t: 4.84 yr
+    [E] delta=350 cosine  3sigma: N=11.7 E=33.1 t yr = 11.9 LZ-yr -> year 2035.1; 60 t: 0.69 yr
+    [E] delta=350 cosine  5sigma: N=32.4 E=92.0 t yr = 32.9 LZ-yr -> year 2056.2; 60 t: 1.92 yr
+    [E] delta=350 LLR     3sigma: N=11.5 E=32.8 t yr = 11.7 LZ-yr -> year 2035.0; 60 t: 0.68 yr
+    [E] delta=350 LLR     5sigma: N=32.0 E=90.9 t yr = 32.5 LZ-yr -> year 2055.8; 60 t: 1.89 yr
+    [E] delta=366 cosine  3sigma: N=6.5 E=18.6 t yr = 6.7 LZ-yr -> year 2029.9; 60 t: 0.39 yr
+    [E] delta=366 cosine  5sigma: N=17.7 E=50.4 t yr = 18.0 LZ-yr -> year 2041.3; 60 t: 1.05 yr
+    [E] delta=366 LLR     3sigma: N=6.5 E=18.6 t yr = 6.6 LZ-yr -> year 2029.9; 60 t: 0.39 yr
+    [E] delta=366 LLR     5sigma: N=17.6 E=50.1 t yr = 17.9 LZ-yr -> year 2041.2; 60 t: 1.04 yr
+    [E] delta=380 cosine  3sigma: N=5.3 E=15.0 t yr = 5.4 LZ-yr -> year 2028.6; 60 t: 0.31 yr
+    [E] delta=380 cosine  5sigma: N=14.1 E=40.1 t yr = 14.4 LZ-yr -> year 2037.6; 60 t: 0.84 yr
+    [E] delta=380 LLR     3sigma: N=5.3 E=15.0 t yr = 5.4 LZ-yr -> year 2028.6; 60 t: 0.31 yr
+    [E] delta=380 LLR     5sigma: N=14.1 E=40.1 t yr = 14.4 LZ-yr -> year 2037.6; 60 t: 0.84 yr
+[5] discovery vs background-only
+    b0=0.0106 delta=300: 5sigma exposure count-only 10.65 t yr, with time 10.65 t yr (gain x1.00); 3sigma 4.97 / 4.97
+    b0=0.0106 delta=330: 5sigma exposure count-only 10.65 t yr, with time 9.94 t yr (gain x1.07); 3sigma 4.97 / 4.97
+    b0=0.0106 delta=350: 5sigma exposure count-only 10.65 t yr, with time 9.94 t yr (gain x1.07); 3sigma 4.97 / 4.26
+    b0=0.0106 delta=366: 5sigma exposure count-only 10.65 t yr, with time 8.52 t yr (gain x1.25); 3sigma 4.97 / 4.26
+    b0=0.0106 delta=380: 5sigma exposure count-only 10.65 t yr, with time 7.81 t yr (gain x1.36); 3sigma 4.97 / 3.55
+    b0=0.0002 delta=300: 5sigma exposure count-only 4.97 t yr, with time 4.97 t yr (gain x1.00); 3sigma 2.13 / 2.13
+    b0=0.0002 delta=330: 5sigma exposure count-only 4.97 t yr, with time 4.97 t yr (gain x1.00); 3sigma 2.13 / 2.13
+    b0=0.0002 delta=350: 5sigma exposure count-only 4.97 t yr, with time 4.97 t yr (gain x1.00); 3sigma 2.13 / 2.13
+    b0=0.0002 delta=366: 5sigma exposure count-only 4.97 t yr, with time 4.97 t yr (gain x1.00); 3sigma 2.13 / 2.13
+    b0=0.0002 delta=380: 5sigma exposure count-only 4.97 t yr, with time 4.97 t yr (gain x1.00); 3sigma 2.13 / 2.13
+    done in 78.4 s
+[6] degradations
+    halo std      delta=300: mod.frac 0.419 a1 0.428 duty 1.00 N3 llr 96.5 cos 96.9; rate/std = 1 (log10 +0.00)
+    halo std      delta=330: mod.frac 0.700 a1 0.764 duty 1.00 N3 llr 29.4 cos 29.6; rate/std = 1 (log10 +0.00)
+    halo std      delta=350: mod.frac 0.932 a1 1.179 duty 0.69 N3 llr 11.5 cos 11.7; rate/std = 1 (log10 +0.00)
+    halo std      delta=366: mod.frac 0.995 a1 1.521 duty 0.50 N3 llr 6.5 cos 6.5; rate/std = 1 (log10 +0.00)
+    halo std      delta=380: mod.frac 1.000 a1 1.656 duty 0.41 N3 llr 5.3 cos 5.3; rate/std = 1 (log10 +0.00)
+    halo vesc528  delta=300: mod.frac 0.501 a1 0.520 duty 1.00 N3 llr 65.2 cos 65.5; rate/std = 0.723 (log10 -0.14)
+    halo vesc528  delta=330: mod.frac 0.853 a1 1.002 duty 0.84 N3 llr 16.5 cos 16.7; rate/std = 0.455 (log10 -0.34)
+    halo vesc528  delta=350: mod.frac 0.993 a1 1.474 duty 0.53 N3 llr 7.0 cos 7.0; rate/std = 0.222 (log10 -0.65)
+    halo vesc528  delta=366: mod.frac 1.000 a1 1.682 duty 0.40 N3 llr 5.1 cos 5.1; rate/std = 0.0637 (log10 -1.20)
+    halo vesc528  delta=380: mod.frac 1.000 a1 1.773 duty 0.34 N3 llr 4.5 cos 4.5; rate/std = 0.0304 (log10 -1.52)
+    halo vesc560  delta=300: mod.frac 0.361 a1 0.367 duty 1.00 N3 llr 131.9 cos 132.2; rate/std = 1.27 (log10 +0.10)
+    halo vesc560  delta=330: mod.frac 0.571 a1 0.601 duty 1.00 N3 llr 48.3 cos 48.5; rate/std = 1.72 (log10 +0.24)
+    halo vesc560  delta=350: mod.frac 0.794 a1 0.905 duty 1.00 N3 llr 20.6 cos 20.7; rate/std = 2.7 (log10 +0.43)
+    halo vesc560  delta=366: mod.frac 0.954 a1 1.253 duty 0.65 N3 llr 10.1 cos 10.2; rate/std = 5.32 (log10 +0.73)
+    halo vesc560  delta=380: mod.frac 0.993 a1 1.525 duty 0.49 N3 llr 6.5 cos 6.5; rate/std = 15.6 (log10 +1.19)
+    halo v0_220   delta=300: mod.frac 0.525 a1 0.547 duty 1.00 N3 llr 58.8 cos 59.0; rate/std = 0.309 (log10 -0.51)
+    halo v0_220   delta=330: mod.frac 0.872 a1 1.039 duty 0.80 N3 llr 15.2 cos 15.4; rate/std = 0.173 (log10 -0.76)
+    halo v0_220   delta=350: mod.frac 0.995 a1 1.503 duty 0.51 N3 llr 6.7 cos 6.7; rate/std = 0.0734 (log10 -1.13)
+    halo v0_220   delta=366: mod.frac 1.000 a1 1.689 duty 0.39 N3 llr 5.0 cos 5.0; rate/std = 0.0172 (log10 -1.76)
+    halo v0_220   delta=380: mod.frac 1.000 a1 1.804 duty 0.32 N3 llr 4.2 cos 4.2; rate/std = 0.00752 (log10 -2.12)
+    halo v0_250   delta=300: mod.frac 0.365 a1 0.371 duty 1.00 N3 llr 129.4 cos 129.7; rate/std = 1.86 (log10 +0.27)
+    halo v0_250   delta=330: mod.frac 0.596 a1 0.631 duty 1.00 N3 llr 43.7 cos 44.0; rate/std = 2.45 (log10 +0.39)
+    halo v0_250   delta=350: mod.frac 0.831 a1 0.965 duty 0.90 N3 llr 17.9 cos 18.0; rate/std = 3.54 (log10 +0.55)
+    halo v0_250   delta=366: mod.frac 0.972 a1 1.328 duty 0.61 N3 llr 8.8 cos 8.9; rate/std = 6.14 (log10 +0.79)
+    halo v0_250   delta=380: mod.frac 0.995 a1 1.573 duty 0.46 N3 llr 6.0 cos 6.0; rate/std = 14.5 (log10 +1.16)
+    P018 comparison (annual, log10 N/N_SHM): vesc528 d300: -0.14 vs -0.14; vesc528 d350: -0.65 vs -0.66; vesc528 d380: -1.52 vs -1.65; vesc560 d300: +0.10 vs +0.10; vesc560 d350: +0.43 vs +0.43; vesc560 d380: +1.19 vs +1.24; v0_220 d300: -0.51 vs -0.51; v0_220 d350: -1.13 vs -1.14; v0_220 d380: -2.12 vs -2.27; v0_250 d300: +0.27 vs +0.27; v0_250 d350: +0.55 vs +0.55; v0_250 d380: +1.16 vs +1.21
+    eff nominal  delta=300: mod.frac 0.419 a1 0.428 duty 1.00 N3 llr 96.5 cos 96.9 N_unit 1.237e+13
+    eff nominal  delta=330: mod.frac 0.700 a1 0.764 duty 1.00 N3 llr 29.4 cos 29.6 N_unit 1.833e+12
+    eff nominal  delta=350: mod.frac 0.932 a1 1.179 duty 0.69 N3 llr 11.5 cos 11.7 N_unit 2.386e+11
+    eff nominal  delta=366: mod.frac 0.995 a1 1.521 duty 0.50 N3 llr 6.5 cos 6.5 N_unit 1.95e+10
+    eff nominal  delta=380: mod.frac 1.000 a1 1.656 duty 0.41 N3 llr 5.3 cos 5.3 N_unit 6.716e+08
+    eff sharp5   delta=300: mod.frac 0.419 a1 0.428 duty 1.00 N3 llr 96.5 cos 96.8 N_unit 1.237e+13
+    eff sharp5   delta=330: mod.frac 0.700 a1 0.764 duty 1.00 N3 llr 29.4 cos 29.6 N_unit 1.831e+12
+    eff sharp5   delta=350: mod.frac 0.933 a1 1.183 duty 0.69 N3 llr 11.5 cos 11.6 N_unit 2.374e+11
+    eff sharp5   delta=366: mod.frac 0.997 a1 1.539 duty 0.49 N3 llr 6.4 cos 6.4 N_unit 1.897e+10
+    eff sharp5   delta=380: mod.frac 1.000 a1 1.720 duty 0.37 N3 llr 4.8 cos 4.8 N_unit 5.204e+08
+    eff edge250  delta=300: mod.frac 0.419 a1 0.429 duty 1.00 N3 llr 96.2 cos 96.5 N_unit 1.224e+13
+    eff edge250  delta=330: mod.frac 0.703 a1 0.768 duty 1.00 N3 llr 29.0 cos 29.3 N_unit 1.797e+12
+    eff edge250  delta=350: mod.frac 0.937 a1 1.193 duty 0.68 N3 llr 11.2 cos 11.4 N_unit 2.283e+11
+    eff edge250  delta=366: mod.frac 0.998 a1 1.552 duty 0.48 N3 llr 6.3 cos 6.3 N_unit 1.733e+10
+    eff edge250  delta=380: mod.frac 1.000 a1 1.748 duty 0.35 N3 llr 4.6 cos 4.6 N_unit 4.044e+08
+    eff edge290  delta=300: mod.frac 0.418 a1 0.428 duty 1.00 N3 llr 96.9 cos 97.2 N_unit 1.248e+13
+    eff edge290  delta=330: mod.frac 0.696 a1 0.758 duty 1.00 N3 llr 29.8 cos 30.0 N_unit 1.869e+12
+    eff edge290  delta=350: mod.frac 0.920 a1 1.155 duty 0.71 N3 llr 12.1 cos 12.2 N_unit 2.517e+11
+    eff edge290  delta=366: mod.frac 0.982 a1 1.442 duty 0.53 N3 llr 7.3 cos 7.3 N_unit 2.359e+10
+    eff edge290  delta=380: mod.frac 1.000 a1 1.540 duty 0.50 N3 llr 6.4 cos 6.4 N_unit 1.57e+09
+    eff none     delta=300: mod.frac 0.411 a1 0.420 duty 1.00 N3 llr 100.6 cos 100.9 N_unit 1.413e+13
+    eff none     delta=330: mod.frac 0.653 a1 0.703 duty 1.00 N3 llr 35.0 cos 35.2 N_unit 2.45e+12
+    eff none     delta=350: mod.frac 0.828 a1 0.969 duty 0.92 N3 llr 17.8 cos 17.9 N_unit 4.716e+11
+    eff none     delta=366: mod.frac 0.937 a1 1.188 duty 0.69 N3 llr 11.3 cos 11.5 N_unit 9.586e+10
+    eff none     delta=380: mod.frac 0.999 a1 1.469 duty 0.54 N3 llr 7.1 cos 7.1 N_unit 1.884e+10
+    gap gap_on_peak  delta=300: N3 llr 100.2 cos 100.5; naive-cosine null bias -0.089 sigma x sqrt(N)
+    gap gap_december delta=300: N3 llr 105.9 cos 106.2; naive-cosine null bias +0.087 sigma x sqrt(N)
+    gap gap_march    delta=300: N3 llr 91.0 cos 91.2; naive-cosine null bias -0.014 sigma x sqrt(N)
+    gap random(12) delta=300: mean N3 llr 97.1 (range 91.0-105.9) cos 97.4; max |bias| 0.087 sqrt(N)
+    gap gap_on_peak  delta=330: N3 llr 29.8 cos 30.0; naive-cosine null bias -0.089 sigma x sqrt(N)
+    gap gap_december delta=330: N3 llr 32.6 cos 32.9; naive-cosine null bias +0.087 sigma x sqrt(N)
+    gap gap_march    delta=330: N3 llr 27.7 cos 27.8; naive-cosine null bias -0.014 sigma x sqrt(N)
+    gap random(12) delta=330: mean N3 llr 29.6 (range 27.6-32.6) cos 29.8; max |bias| 0.087 sqrt(N)
+    gap gap_on_peak  delta=350: N3 llr 11.3 cos 11.4; naive-cosine null bias -0.089 sigma x sqrt(N)
+    gap gap_december delta=350: N3 llr 12.8 cos 12.9; naive-cosine null bias +0.087 sigma x sqrt(N)
+    gap gap_march    delta=350: N3 llr 10.9 cos 11.0; naive-cosine null bias -0.014 sigma x sqrt(N)
+    gap random(12) delta=350: mean N3 llr 11.6 (range 10.7-12.8) cos 11.7; max |bias| 0.087 sqrt(N)
+    gap gap_on_peak  delta=366: N3 llr 6.2 cos 6.2; naive-cosine null bias -0.089 sigma x sqrt(N)
+    gap gap_december delta=366: N3 llr 7.0 cos 7.1; naive-cosine null bias +0.087 sigma x sqrt(N)
+    gap gap_march    delta=366: N3 llr 6.5 cos 6.5; naive-cosine null bias -0.014 sigma x sqrt(N)
+    gap random(12) delta=366: mean N3 llr 6.6 (range 6.0-7.0) cos 6.6; max |bias| 0.087 sqrt(N)
+    gap gap_on_peak  delta=380: N3 llr 5.0 cos 5.0; naive-cosine null bias -0.089 sigma x sqrt(N)
+    gap gap_december delta=380: N3 llr 5.6 cos 5.6; naive-cosine null bias +0.087 sigma x sqrt(N)
+    gap gap_march    delta=380: N3 llr 5.4 cos 5.4; naive-cosine null bias -0.014 sigma x sqrt(N)
+    gap random(12) delta=380: mean N3 llr 5.3 (range 4.8-5.6) cos 5.3; max |bias| 0.087 sqrt(N)
+    done in 96.3 s
+[done] 97.2 s; results in output/work/P034

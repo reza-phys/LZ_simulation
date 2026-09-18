@@ -1,0 +1,107 @@
+=== P084 run 2026-09-16 16:37:04
+alpha_2 = 0.03378, g = 0.6516, c_W = 0.8768, alpha(0) = 0.007297, alpha(mZ) = 0.007811
+
+--- 1. Solver validation ---
+Coulomb alpha=0.01 v=0.1: numerical S = 1.3433, exact 1.3468, ratio 0.9974
+Coulomb alpha=0.03 v=0.05: numerical S = 3.8317, exact 3.8589, ratio 0.9929
+Coulomb alpha=0.03 v=0.02: numerical S = 9.4763, exact 9.4255, ratio 1.0054
+Yukawa alpha=0.03, m=2 TeV, v=0.001: numerical S = 5.9701, Hulthen 6.1257, ratio 0.975
+Yukawa alpha=0.05, m=2 TeV, v=0.001: numerical S = 41.7221, Hulthen 46.9372, ratio 0.889
+Yukawa alpha=0.03, m=2 TeV, v=0.01: numerical S = 5.5907, Hulthen 5.8112, ratio 0.962
+(5,2) 1 TeV v=1e-3 S_tot = 136.86181; with {'r0_over_m': 0.005}: 139.04012 (ratio 1.01592)
+(5,2) 1 TeV v=1e-3 S_tot = 136.86181; with {'r0_over_m': 0.08}: 135.24810 (ratio 0.98821)
+(5,2) 1 TeV v=1e-3 S_tot = 136.86181; with {'rmax_over_mW': 18.0}: 136.86229 (ratio 1.00000)
+(5,2) 1 TeV v=1e-3 S_tot = 136.86181; with {'rmax_over_mW': 8.0}: 136.82300 (ratio 0.99972)
+(5,2) 1 TeV v=1e-3 S_tot = 136.86181; with {'rtol': 1e-08}: 136.86181 (ratio 1.00000)
+wino channels Q=[0 1], thresholds 2 dm = [0.         0.33450841] GeV, V_off = 1.4142 alpha_2 (Hisano: sqrt2 = 1.4142)
+wino Z-Yukawa strength charged = 0.7688 alpha_2 (Hisano: c_W^2 = 0.7688)
+wino annihilation vector a_WW/g^2 (state-normalised) = [1.41421356 1.        ]  (Hisano Gamma ~ [[2,sqrt2],[sqrt2,1]] -> sqrt2 : 1)
+doublet m=1000: S_tot Dirac 1.66265 | Majorana delta=0 1.66265 | Majorana delta=366 keV 1.65940 (v=1e-3); v=1e-6: Dirac 1.66265, Maj(366 keV) 1.65864
+doublet m=3000: S_tot Dirac 5.82147 | Majorana delta=0 5.82147 | Majorana delta=366 keV 5.82357 (v=1e-3); v=1e-6: Dirac 5.82305, Maj(366 keV) 5.73261
+
+--- 2. Tree-level cross-sections of the neutral Majorana state (delta -> 0) ---
+(2,1/2): Q = [0. 1.], g_Z/(g/c_W) = [-0.5     0.2688], Delta m(Q) [GeV] = [0.    0.358]
+   a_WW/g^2 = [0.5 0.5], a_ZZ/g^2 = [0.65  0.188], a_gg/e^2 = [0. 2.], W_off/alpha2 = [0.5], alpha_Z(neutral) = 0.0110
+   m = 1.0 TeV: <sv>_WW = 5.215e-27, ZZ = 4.407e-27, total = 9.622e-27 cm^3/s; gg, Zg tree = 0.0e+00, 0.0e+00
+   m = 1.1 TeV: <sv>_WW = 4.312e-27, ZZ = 3.645e-27, total = 7.958e-27 cm^3/s; gg, Zg tree = 0.0e+00, 0.0e+00
+(3,1): Q = [0. 1. 2.], g_Z/(g/c_W) = [-1.     -0.2312  0.5376], Delta m(Q) [GeV] = [0.     0.5488 1.432 ]
+   a_WW/g^2 = [1. 2. 1.], a_ZZ/g^2 = [2.601 0.139 0.752], a_gg/e^2 = [0. 2. 8.], W_off/alpha2 = [1. 1.], alpha_Z(neutral) = 0.0439
+   m = 1.0 TeV: <sv>_WW = 2.086e-26, ZZ = 7.052e-26, total = 9.138e-26 cm^3/s; gg, Zg tree = 0.0e+00, 0.0e+00
+   m = 2.0 TeV: <sv>_WW = 5.228e-27, ZZ = 1.769e-26, total = 2.291e-26 cm^3/s; gg, Zg tree = 0.0e+00, 0.0e+00
+(4,3/2): Q = [0. 1. 2. 3.], g_Z/(g/c_W) = [-1.5    -0.7312  0.0376  0.8064], Delta m(Q) [GeV] = [0.     0.7395 1.8135 3.2221]
+   a_WW/g^2 = [1.5 3.5 3.5 1.5], a_ZZ/g^2 = [5.853e+00 1.391e+00 4.000e-03 1.692e+00], a_gg/e^2 = [ 0.  2.  8. 18.], W_off/alpha2 = [1.5 2.  1.5], alpha_Z(neutral) = 0.0989
+   m = 1.0 TeV: <sv>_WW = 4.693e-26, ZZ = 3.570e-25, total = 4.039e-25 cm^3/s; gg, Zg tree = 0.0e+00, 0.0e+00
+   m = 2.4 TeV: <sv>_WW = 8.170e-27, ZZ = 6.219e-26, total = 7.036e-26 cm^3/s; gg, Zg tree = 0.0e+00, 0.0e+00
+(5,2): Q = [0. 1. 2. 3. 4.], g_Z/(g/c_W) = [-2.     -1.2312 -0.4624  0.3064  1.0752], Delta m(Q) [GeV] = [0.     0.9303 2.195  3.7943 5.7281]
+   a_WW/g^2 = [2. 5. 6. 5. 2.], a_ZZ/g^2 = [10.406  3.943  0.556  0.244  3.007], a_gg/e^2 = [ 0.  2.  8. 18. 32.], W_off/alpha2 = [2. 3. 3. 2.], alpha_Z(neutral) = 0.1758
+   m = 1.0 TeV: <sv>_WW = 8.344e-26, ZZ = 1.128e-24, total = 1.212e-24 cm^3/s; gg, Zg tree = 0.0e+00, 0.0e+00
+   m = 4.5 TeV: <sv>_WW = 4.133e-27, ZZ = 5.594e-26, total = 6.007e-26 cm^3/s; gg, Zg tree = 0.0e+00, 0.0e+00
+   formula check (2,1/2): WW pi a2^2 (n-1)^2/(8 m^2) = 5.232e-27 (code 5.215e-27, beta factor); ZZ pi a2^2 Y^4/(c_W^4 m^2) = 4.426e-27 (code 4.407e-27)
+   formula check (3,1): WW pi a2^2 (n-1)^2/(8 m^2) = 2.093e-26 (code 2.086e-26, beta factor); ZZ pi a2^2 Y^4/(c_W^4 m^2) = 7.081e-26 (code 7.052e-26)
+   formula check (4,3/2): WW pi a2^2 (n-1)^2/(8 m^2) = 4.709e-26 (code 4.693e-26, beta factor); ZZ pi a2^2 Y^4/(c_W^4 m^2) = 3.585e-25 (code 3.570e-25)
+   formula check (5,2): WW pi a2^2 (n-1)^2/(8 m^2) = 8.371e-26 (code 8.344e-26, beta factor); ZZ pi a2^2 Y^4/(c_W^4 m^2) = 1.133e-24 (code 1.128e-24)
+
+--- 3. Sommerfeld factors at benchmarks ---
+(2,1/2) m=1.0 TeV: S_tot(MW 1e-3) = 1.663 [v=3e-4: 1.663, 2e-3: 1.663], S_WW = 1.825, S_ZZ = 1.470; S(dwarf 3e-5) = 1.663; S(CMB 1e-6) = 1.663; <sv>_MW = 1.600e-26; line(gg+Zg/2) = 1.194e-28 cm^3/s  [1286 fev]
+(2,1/2) m=1.1 TeV: S_tot(MW 1e-3) = 1.755 [v=3e-4: 1.755, 2e-3: 1.755], S_WW = 1.941, S_ZZ = 1.536; S(dwarf 3e-5) = 1.755; S(CMB 1e-6) = 1.755; <sv>_MW = 1.397e-26; line(gg+Zg/2) = 1.220e-28 cm^3/s  [1286 fev]
+(2,1/2) m=2.0 TeV: S_tot(MW 1e-3) = 2.963 [v=3e-4: 2.963, 2e-3: 2.962], S_WW = 3.460, S_ZZ = 2.375; S(dwarf 3e-5) = 2.963; S(CMB 1e-6) = 2.963; <sv>_MW = 7.147e-27; line(gg+Zg/2) = 1.583e-28 cm^3/s  [1346 fev]
+(3,1) m=1.0 TeV: S_tot(MW 1e-3) = 5.104 [v=3e-4: 5.104, 2e-3: 5.103], S_WW = 9.570, S_ZZ = 3.784; S(dwarf 3e-5) = 5.104; S(CMB 1e-6) = 5.104; <sv>_MW = 4.664e-25; line(gg+Zg/2) = 2.438e-27 cm^3/s  [1442 fev]
+(3,1) m=2.0 TeV: S_tot(MW 1e-3) = 101.511 [v=3e-4: 101.765, 2e-3: 100.685], S_WW = 250.310, S_ZZ = 57.537; S(dwarf 3e-5) = 101.790; S(CMB 1e-6) = 101.790; <sv>_MW = 2.326e-24; line(gg+Zg/2) = 6.398e-26 cm^3/s  [1610 fev]
+(4,3/2) m=1.0 TeV: S_tot(MW 1e-3) = 87.960 [v=3e-4: 88.021, 2e-3: 87.759], S_WW = 294.584, S_ZZ = 60.821; S(dwarf 3e-5) = 88.027; S(CMB 1e-6) = 88.027; <sv>_MW = 3.553e-23; line(gg+Zg/2) = 3.087e-25 cm^3/s  [1658 fev]
+(4,3/2) m=2.0 TeV: S_tot(MW 1e-3) = 130.483 [v=3e-4: 130.472, 2e-3: 130.519], S_WW = 889.441, S_ZZ = 30.797; S(dwarf 3e-5) = 130.470; S(CMB 1e-6) = 130.470; <sv>_MW = 1.322e-23; line(gg+Zg/2) = 2.643e-24 cm^3/s  [1922 fev]
+(4,3/2) m=2.4 TeV: S_tot(MW 1e-3) = 569.480 [v=3e-4: 574.659, 2e-3: 552.969], S_WW = 4902.172, S_ZZ = 0.401; S(dwarf 3e-5) = 575.170; S(CMB 1e-6) = 575.176; <sv>_MW = 4.007e-23; line(gg+Zg/2) = 4.073e-23 cm^3/s  [1994 fev]
+(5,2) m=1.0 TeV: S_tot(MW 1e-3) = 136.862 [v=3e-4: 136.885, 2e-3: 136.785], S_WW = 1074.966, S_ZZ = 67.553; S(dwarf 3e-5) = 136.888; S(CMB 1e-6) = 136.888; <sv>_MW = 1.658e-22; line(gg+Zg/2) = 6.267e-24 cm^3/s  [1874 fev]
+(5,2) m=2.0 TeV: S_tot(MW 1e-3) = 204.662 [v=3e-4: 205.405, 2e-3: 202.253], S_WW = 2682.545, S_ZZ = 21.592; S(dwarf 3e-5) = 205.478; S(CMB 1e-6) = 205.479; <sv>_MW = 6.219e-23; line(gg+Zg/2) = 1.381e-22 cm^3/s  [2222 fev]
+(5,2) m=4.5 TeV: S_tot(MW 1e-3) = 530.630 [v=3e-4: 532.202, 2e-3: 525.547], S_WW = 5537.752, S_ZZ = 160.695; S(dwarf 3e-5) = 532.357; S(CMB 1e-6) = 532.358; <sv>_MW = 3.188e-23; line(gg+Zg/2) = 2.572e-24 cm^3/s  [2750 fev]
+(benchmarks took 2.3 s)
+
+--- 3b. S(v) curves ---
+(2,1/2) 1 TeV: S_tot at v = 1e-6 / 1e-4 / 1e-3 / 1e-2 / 0.1 / 0.3 : 1.663 / 1.663 / 1.663 / 1.663 / 1.504 / 1.205; v_thr(charged) = 0.054
+(3,1) 1 TeV: S_tot at v = 1e-6 / 1e-4 / 1e-3 / 1e-2 / 0.1 / 0.3 : 5.104 / 5.104 / 5.104 / 5.076 / 3.520 / 1.657; v_thr(charged) = 0.066
+(4,3/2) 1 TeV: S_tot at v = 1e-6 / 1e-4 / 1e-3 / 1e-2 / 0.1 / 0.3 : 88.027 / 88.026 / 87.948 / 81.003 / 13.786 / 2.578; v_thr(charged) = 0.077
+(5,2) 1 TeV: S_tot at v = 1e-6 / 1e-4 / 1e-3 / 1e-2 / 0.1 / 0.3 : 136.888 / 136.887 / 136.857 / 133.993 / 45.055 / 4.191; v_thr(charged) = 0.086
+
+--- 4. Mass scan 0.5-12 TeV ---
+  (2,1/2) scanned (2 s elapsed)
+  (3,1) scanned (5 s elapsed)
+  (4,3/2) scanned (8 s elapsed)
+  (5,2) scanned (12 s elapsed)
+  (3,0) scanned (14 s elapsed)
+  (5,0) scanned (17 s elapsed)
+(2,1/2): saturated-S local maxima (grid spacing 6.6 %): m = 6.99 TeV (S_sat = 8053, S_MW = 3242)
+     S_MW at 1/2/3 TeV: 1.66 / 2.97 / 5.84; S_sat: 1.66 / 2.97 / 5.84
+(3,1): saturated-S local maxima (grid spacing 6.6 %): m = 2.53 TeV (S_sat = 11070, S_MW = 8591); m = 5.70 TeV (S_sat = 4151, S_MW = 3018); m = 10.48 TeV (S_sat = 83886, S_MW = 7670)
+     S_MW at 1/2/3 TeV: 5.12 / 109.62 / 215.80; S_sat: 5.12 / 109.98 / 216.87
+(4,3/2): saturated-S local maxima (grid spacing 6.6 %): m = 1.29 TeV (S_sat = 9298, S_MW = 8639); m = 2.37 TeV (S_sat = 1966, S_MW = 1922); m = 4.66 TeV (S_sat = 147479, S_MW = 15274); m = 7.48 TeV (S_sat = 61519, S_MW = 31392); m = 9.16 TeV (S_sat = 12900, S_MW = 7861)
+     S_MW at 1/2/3 TeV: 93.77 / 138.85 / 14.95; S_sat: 93.86 / 138.83 / 14.95
+(5,2): saturated-S local maxima (grid spacing 6.6 %): m = 0.75 TeV (S_sat = 170597, S_MW = 106934); m = 1.29 TeV (S_sat = 2513, S_MW = 2515); m = 2.07 TeV (S_sat = 95195, S_MW = 29222); m = 3.10 TeV (S_sat = 5732, S_MW = 5312); m = 4.98 TeV (S_sat = 5150398, S_MW = 121209); m = 6.53 TeV (S_sat = 2466, S_MW = 1988); m = 8.56 TeV (S_sat = 2370, S_MW = 2642); m = 10.48 TeV (S_sat = 9898, S_MW = 7273)
+     S_MW at 1/2/3 TeV: 140.05 / 14448.99 / 3891.09; S_sat: 140.08 / 46996.71 / 4146.43
+(3,0): saturated-S local maxima (grid spacing 6.6 %): m = 2.37 TeV (S_sat = 11654, S_MW = 9921); m = 9.16 TeV (S_sat = 21745, S_MW = 8192)
+     S_MW at 1/2/3 TeV: 3.37 / 69.97 / 55.16; S_sat: 3.37 / 69.87 / 55.42
+(5,0): saturated-S local maxima (grid spacing 6.6 %): m = 0.80 TeV (S_sat = 403555, S_MW = 282486); m = 1.81 TeV (S_sat = 88, S_MW = 86); m = 3.10 TeV (S_sat = 27089, S_MW = 26192); m = 6.10 TeV (S_sat = 7680, S_MW = 5354); m = 8.00 TeV (S_sat = 51, S_MW = 51)
+     S_MW at 1/2/3 TeV: 69.86 / 31.68 / 13053.99; S_sat: 69.91 / 31.72 / 13492.48
+wino 3 TeV: <sv>_tree = 9.33e-27, MW-enhanced = 5.24e-25, line(gg+Zg/2) = 3.18e-26 cm^3/s
+
+--- 5. Limits and verdicts ---
+(2,1/2) 1.0 TeV (delta=366 keV): <sv>_MW = 1.60e-26 (S_MW 1.66, S_dw 1.66, S_CMB 1.66); ratios Fermi 0.16 [0.08-0.32], HESS 0.80 [0.4-3.2], AMS 0.53 [0.16-1.6], Planck 0.016 [0.01-0.016], line 0.60 [0.3-1.2] -> allowed, marginal (<x2 headroom); thermal f=0.80: worst x0.51 -> marginal (f=0.80); delta(N=1) -> 364 keV; evasion needs f <= 1.000 (<= 1.000 at the loose band edge) -> delta(N=1) = 366 keV
+(2,1/2) 1.1 TeV (delta=367 keV): <sv>_MW = 1.40e-26 (S_MW 1.76, S_dw 1.76, S_CMB 1.76); ratios Fermi 0.13 [0.063-0.25], HESS 0.67 [0.33-2.7], AMS 0.42 [0.13-1.3], Planck 0.013 [0.0079-0.013], line 0.55 [0.28-1.1] -> allowed, marginal (<x2 headroom); thermal f=1.00: worst x0.67 -> marginal (f=1.00); delta(N=1) -> 367 keV; evasion needs f <= 1.000 (<= 1.000 at the loose band edge) -> delta(N=1) = 367 keV
+(2,1/2) 2.0 TeV (delta=375 keV): <sv>_MW = 7.15e-27 (S_MW 2.96, S_dw 2.96, S_CMB 2.96); ratios Fermi 0.04 [0.018-0.071], HESS 0.25 [0.13-1], AMS 0.12 [0.036-0.36], Planck 0.004 [0.0022-0.0036], line 0.40 [0.2-0.79] -> allowed; thermal f=1.00: worst x0.4 -> allowed (f=1.00); delta(N=1) -> 375 keV; evasion needs f <= 1.000 (<= 1.000 at the loose band edge) -> delta(N=1) = 375 keV
+(3,1) 1.0 TeV (delta=374 keV): <sv>_MW = 4.66e-25 (S_MW 5.10, S_dw 5.10, S_CMB 5.10); ratios Fermi 4.66 [2.3-9.3], HESS 23.32 [12-93], AMS 15.55 [4.7-47], Planck 0.466 [0.29-0.47], line 12.19 [6.1-24] -> EXCLUDED (beyond band); thermal f=0.25: worst x1.5 -> excluded (f=0.25); delta(N=1) -> 365 keV; evasion needs f <= 0.207 (<= 0.293 at the loose band edge) -> delta(N=1) = 364 keV
+(3,1) 2.0 TeV (delta=385 keV): <sv>_MW = 2.33e-24 (S_MW 101.51, S_dw 101.79, S_CMB 101.79); ratios Fermi 11.66 [5.8-23], HESS 82.23 [41-3.3e+02], AMS 38.77 [12-1.2e+02], Planck 1.166 [0.73-1.2], line 159.96 [80-3.2e+02] -> EXCLUDED (beyond band); thermal f=1.00: worst x1.6e+02 -> excluded (f=1.00); delta(N=1) -> 385 keV; evasion needs f <= 0.079 (<= 0.112 at the loose band edge) -> delta(N=1) = 369 keV
+(4,3/2) 1.0 TeV (delta=379 keV): <sv>_MW = 3.55e-23 (S_MW 87.96, S_dw 88.03, S_CMB 88.03); ratios Fermi 355.58 [1.8e+02-7.1e+02], HESS 1776.53 [8.9e+02-7.1e+03], AMS 1184.35 [3.6e+02-3.6e+03], Planck 35.558 [22-36], line 1543.63 [7.7e+02-3.1e+03] -> EXCLUDED (beyond band); thermal f=0.17: worst x54 -> excluded (f=0.17); delta(N=1) -> 368 keV; evasion needs f <= 0.024 (<= 0.034 at the loose band edge) -> delta(N=1) = 356 keV
+(4,3/2) 2.0 TeV (delta=391 keV): <sv>_MW = 1.32e-23 (S_MW 130.48, S_dw 130.47, S_CMB 130.47); ratios Fermi 66.08 [33-1.3e+02], HESS 467.29 [2.3e+02-1.9e+03], AMS 220.28 [66-6.6e+02], Planck 6.608 [4.1-6.6], line 6608.27 [3.3e+03-1.3e+04] -> EXCLUDED (beyond band); thermal f=0.69: worst x3.2e+03 -> excluded (f=0.69); delta(N=1) -> 389 keV; evasion needs f <= 0.012 (<= 0.017 at the loose band edge) -> delta(N=1) = 363 keV
+(4,3/2) 2.4 TeV (delta=392 keV): <sv>_MW = 4.01e-23 (S_MW 569.48, S_dw 575.17, S_CMB 575.18); ratios Fermi 168.63 [84-3.4e+02], HESS 1293.29 [6.5e+02-5.2e+03], AMS 556.54 [1.7e+02-1.7e+03], Planck 16.863 [11-17], line 84861.68 [4.2e+04-1.7e+05] -> EXCLUDED (beyond band); thermal f=1.00: worst x8.5e+04 -> excluded (f=1.00); delta(N=1) -> 392 keV; evasion needs f <= 0.003 (<= 0.005 at the loose band edge) -> delta(N=1) = 357 keV
+(5,2) 1.0 TeV (delta=383 keV): <sv>_MW = 1.66e-22 (S_MW 136.86, S_dw 136.89, S_CMB 136.89); ratios Fermi 1658.74 [8.3e+02-3.3e+03], HESS 8292.12 [4.1e+03-3.3e+04], AMS 5528.08 [1.7e+03-1.7e+04], Planck 165.874 [1e+02-1.7e+02], line 31334.43 [1.6e+04-6.3e+04] -> EXCLUDED (beyond band); thermal f=0.05: worst x76 -> excluded (f=0.05); delta(N=1) -> 364 keV; evasion needs f <= 0.006 (<= 0.008 at the loose band edge) -> delta(N=1) = 351 keV
+(5,2) 2.0 TeV (delta=393 keV): <sv>_MW = 6.22e-23 (S_MW 204.66, S_dw 205.48, S_CMB 205.48); ratios Fermi 312.20 [1.6e+02-6.2e+02], HESS 2198.80 [1.1e+03-8.8e+03], AMS 1036.52 [3.1e+02-3.1e+03], Planck 31.220 [20-31], line 345153.73 [1.7e+05-6.9e+05] -> EXCLUDED (beyond band); thermal f=0.20: worst x1.3e+04 -> excluded (f=0.20); delta(N=1) -> 383 keV; evasion needs f <= 0.002 (<= 0.002 at the loose band edge) -> delta(N=1) = 353 keV
+(5,2) 4.5 TeV (delta=398 keV): <sv>_MW = 3.19e-23 (S_MW 530.63, S_dw 532.36, S_CMB 532.36); ratios Fermi 71.07 [36-1.4e+02], HESS 751.35 [3.8e+02-3e+03], AMS 236.13 [71-7.1e+02], Planck 7.107 [4.4-7.1], line 2857.75 [1.4e+03-5.7e+03] -> EXCLUDED (beyond band); thermal f=1.00: worst x2.9e+03 -> excluded (f=1.00); delta(N=1) -> 398 keV; evasion needs f <= 0.019 (<= 0.026 at the loose band edge) -> delta(N=1) = 373 keV
+(3,1) S_MW along mass band: 1.4 TeV: 12.7, 1.7 TeV: 30.5, 2.0 TeV: 104.2, 2.3 TeV: 1114.1, 2.6 TeV: 3387.4
+(2,1/2) S_MW along mass band: 1.0 TeV: 1.7, 1.1 TeV: 1.8, 1.2 TeV: 1.9, 1.5 TeV: 2.2, 2.0 TeV: 3.0, 3.0 TeV: 5.8, 5.0 TeV: 40.0
+
+--- 5b. Exclusion masses (full local density, anchor limits) ---
+(2,1/2): Fermi_dSph: ratio(1 TeV) 0.16, largest excluded grid mass 6.986371459534427 TeV, 1/48 grid points excluded, 2 band crossings; HESS_GC: ratio(1 TeV) 0.80, largest excluded grid mass 7.47511484894418 TeV, 13/48 grid points excluded, 3 band crossings; Planck_CMB: ratio(1 TeV) 0.02, largest excluded grid mass None TeV, 0/48 grid points excluded, 0 band crossings
+(3,1): Fermi_dSph: ratio(1 TeV) 4.67, largest excluded grid mass 10.482113376039699 TeV, 36/48 grid points excluded, 5 band crossings; HESS_GC: ratio(1 TeV) 23.36, largest excluded grid mass 12.000000000000007 TeV, 44/48 grid points excluded, 2 band crossings; Planck_CMB: ratio(1 TeV) 0.47, largest excluded grid mass 10.482113376039699 TeV, 11/48 grid points excluded, 7 band crossings
+(4,3/2): Fermi_dSph: ratio(1 TeV) 370.18, largest excluded grid mass 12.000000000000007 TeV, 46/48 grid points excluded, 4 band crossings; HESS_GC: ratio(1 TeV) 1855.43, largest excluded grid mass 12.000000000000007 TeV, 48/48 grid points excluded, 0 band crossings; Planck_CMB: ratio(1 TeV) 37.02, largest excluded grid mass 9.156225069012507 TeV, 32/48 grid points excluded, 7 band crossings
+(5,2): Fermi_dSph: ratio(1 TeV) 1714.83, largest excluded grid mass 12.000000000000007 TeV, 48/48 grid points excluded, 0 band crossings; HESS_GC: ratio(1 TeV) 8553.89, largest excluded grid mass 12.000000000000007 TeV, 48/48 grid points excluded, 0 band crossings; Planck_CMB: ratio(1 TeV) 171.48, largest excluded grid mass 11.21540728250546 TeV, 44/48 grid points excluded, 3 band crossings
+
+wrote ['P084_S_vs_v.csv', 'run_log.txt', 'P084_sommerfeld_benchmarks.csv', 'P084_results.json', 'figures', 'P084_mass_scan.csv', 'P084_verdict_table.csv', 'P084_tree_xsec.csv']
+=== done 16:37:31

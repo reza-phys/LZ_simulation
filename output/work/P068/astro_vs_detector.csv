@@ -1,0 +1,28 @@
+output,prior,astro_half68,astro_half95,detector_1sigma,ratio_astro68_over_det,detector_note
+log10kappa_300,A_joint,0.6404,1.203,0.004,160.1,"kappa x/÷ 1.00 (g1), 1.01 (yield scale): <1 %"
+log10kappa_300,A_annual,0.6297,1.183,0.004,157.4,"kappa x/÷ 1.00 (g1), 1.01 (yield scale): <1 %"
+log10kappa_300,C_annual_gaia,0.4656,0.8447,0.004,116.4,"kappa x/÷ 1.00 (g1), 1.01 (yield scale): <1 %"
+log10kappa_350,A_joint,1.869,3.783,0.006321,295.7,kappa x/÷ 1.01
+log10kappa_350,A_annual,1.944,3.782,0.006321,307.5,kappa x/÷ 1.01
+log10kappa_350,C_annual_gaia,1.164,2.16,0.006321,184.1,kappa x/÷ 1.01
+log10kappa_366,A_joint,2.343,4.344,0.02938,79.73,interpolated between P043 370 keV (x1.03/1.06) and 350
+log10kappa_366,A_annual,2.433,4.323,0.02938,82.79,interpolated between P043 370 keV (x1.03/1.06) and 350
+log10kappa_366,C_annual_gaia,1.755,3.086,0.02938,59.73,interpolated between P043 370 keV (x1.03/1.06) and 350
+log10kappa_380,A_joint,2.471,5.175,0.1274,19.41,"kappa x/÷ 1.14 (g1) and 1.30 (yield scale), in quadrature"
+log10kappa_380,A_annual,2.44,5.528,0.1274,19.16,"kappa x/÷ 1.14 (g1) and 1.30 (yield scale), in quadrature"
+log10kappa_380,C_annual_gaia,2.345,5.078,0.1274,18.41,"kappa x/÷ 1.14 (g1) and 1.30 (yield scale), in quadrature"
+deltaH_N1,A_joint,27.96,46.41,0,inf,rate-set: unaffected by the energy scale (P043)
+deltaH_N1,A_annual,25.64,45.25,0,inf,rate-set: unaffected by the energy scale (P043)
+deltaH_N1,C_annual_gaia,19.27,32.79,0,inf,rate-set: unaffected by the energy scale (P043)
+deltamax_june,A_joint,31.49,49.01,2.97,10.6,delta_max 386.6 +- 2.1 (stat) +- 2.1 (sys) keV
+deltamax_june,A_annual,31.49,49.01,2.97,10.6,delta_max 386.6 +- 2.1 (stat) +- 2.1 (sys) keV
+deltamax_june,C_annual_gaia,19.56,30.37,2.97,6.588,delta_max 386.6 +- 2.1 (stat) +- 2.1 (sys) keV
+log10d10,A_joint,0.03791,0.05501,0.006894,5.499,"d10 +- 1.6 % (g1 0.6 %, yield scale 1.5 %)"
+log10d10,A_annual,0.03846,0.05458,0.006894,5.579,"d10 +- 1.6 % (g1 0.6 %, yield scale 1.5 %)"
+log10d10,C_annual_gaia,0.03675,0.05357,0.006894,5.332,"d10 +- 1.6 % (g1 0.6 %, yield scale 1.5 %)"
+pct248_300,A_joint,0.1828,0.4073,0.5601,0.3264,E_obs +- 9.6 keV (sys) through the Baxter June spectrum
+pct248_300,A_annual,0.1792,0.3806,0.5601,0.3199,E_obs +- 9.6 keV (sys) through the Baxter June spectrum
+pct248_300,C_annual_gaia,0.107,0.2067,0.5601,0.191,E_obs +- 9.6 keV (sys) through the Baxter June spectrum
+pct248_350,A_joint,13.56,49.56,1.929,7.028,E_obs +- 9.6 keV (sys)
+pct248_350,A_annual,10.89,49.43,1.929,5.645,E_obs +- 9.6 keV (sys)
+pct248_350,C_annual_gaia,2.925,7.874,1.929,1.517,E_obs +- 9.6 keV (sys)

@@ -1,0 +1,58 @@
+nuclei per tonne 4.584e+27; in 4.71 t 2.159e+28; Q_W(131) = 74.55
+E_R,max(60 MeV) = 58.8 keV (nat Xe), 62.3 (124Xe); E_R,max(50) = 40.8; E_R,max(100) = 163.1 keV
+E_nu,min: 200 keV 110.7, 225 117.5, 248 123.3, 271 128.9 MeV (nat Xe); 248 keV on 124Xe 119.8 MeV
+DSNB central (<E> 9/11/13 MeV, 30 cm-2 s-1)             total flux 3.000e+01  above 17.3 MeV 5.616e+00  above 30 MeV 5.219e-01  above 110 MeV 4.307e-09
+DSNB hard (<E> 12/15/18 MeV, 30 cm-2 s-1)               total flux 3.000e+01  above 17.3 MeV 1.170e+01  above 30 MeV 2.569e+00  above 110 MeV 7.403e-06
+DSNB very hard (<E> 12/15/25 MeV, 30 cm-2 s-1)          total flux 3.000e+01  above 17.3 MeV 1.613e+01  above 30 MeV 6.301e+00  above 110 MeV 1.354e-03
+DSNB SK-limit-saturating (<E> 12/15/18)                 total flux 4.659e+01  above 17.3 MeV 1.620e+01  above 30 MeV 3.280e+00  above 110 MeV 8.752e-06
+DSNB SK-limit-saturating very hard (12/15/25)           total flux 3.890e+01  above 17.3 MeV 1.620e+01  above 30 MeV 5.386e+00  above 110 MeV 1.077e-03
+Galactic SN 10 kpc (<E> 12/15/18)                       total fluence 9.708e+11  above 17.3 MeV 3.619e+11  above 30 MeV 7.699e+10  above 110 MeV 2.148e+05
+Galactic SN 10 kpc hard (<E> 15/18/25)                  total fluence 7.361e+11  above 17.3 MeV 4.064e+11  above 30 MeV 1.498e+11  above 110 MeV 2.830e+07
+Galactic SN 1 kpc (<E> 12/15/18)                        total fluence 9.708e+13  above 17.3 MeV 3.619e+13  above 30 MeV 7.699e+12  above 110 MeV 2.148e+07
+Betelgeuse-like SN 0.2 kpc (<E> 12/15/18)               total fluence 2.427e+15  above 17.3 MeV 9.048e+14  above 30 MeV 1.925e+14  above 110 MeV 5.370e+08
+SN 2023ixf, M101 6.4 Mpc, 19 May 2023 (<E> 12/15/18)    total fluence 2.370e+06  above 17.3 MeV 8.836e+05  above 30 MeV 1.880e+05  above 110 MeV 5.244e-01
+[coh] DSNB central (<E> 9/11/13 MeV, 30 cm-2 s-1)             N_all 4.165e-02  ROI 3.554e-03  >50 8.19e-08  >100 1.28e-11  200-270 4.21e-15  225-271 2.71e-16
+[coh] DSNB hard (<E> 12/15/18 MeV, 30 cm-2 s-1)               N_all 7.748e-02  ROI 1.469e-02  >50 4.07e-06  >100 5.20e-09  200-270 1.25e-11  225-271 1.25e-12
+[coh] DSNB very hard (<E> 12/15/25 MeV, 30 cm-2 s-1)          N_all 1.197e-01  ROI 3.710e-02  >50 6.18e-05  >100 4.10e-07  200-270 3.79e-09  225-271 5.21e-10
+[coh] DSNB SK-limit-saturating (<E> 12/15/18)                 N_all 1.086e-01  ROI 1.897e-02  >50 4.87e-06  >100 6.17e-09  200-270 1.47e-11  225-271 1.48e-12
+[coh] DSNB SK-limit-saturating very hard (12/15/25)           N_all 1.192e-01  ROI 3.194e-02  >50 4.93e-05  >100 3.26e-07  200-270 3.01e-09  225-271 4.14e-10
+[coh] Galactic SN 10 kpc (<E> 12/15/18)                       N_all 1.266e+02  ROI 2.325e+01  >50 6.25e-03  >100 7.95e-06  200-270 1.90e-08  225-271 1.91e-09
+[coh] Galactic SN 10 kpc hard (<E> 15/18/25)                  N_all 1.546e+02  ROI 4.610e+01  >50 6.94e-02  >100 4.52e-04  200-270 4.17e-06  225-271 5.72e-07
+[coh] Galactic SN 1 kpc (<E> 12/15/18)                        N_all 1.266e+04  ROI 2.325e+03  >50 6.25e-01  >100 7.95e-04  200-270 1.90e-06  225-271 1.91e-07
+[coh] Betelgeuse-like SN 0.2 kpc (<E> 12/15/18)               N_all 3.166e+05  ROI 5.813e+04  >50 1.56e+01  >100 1.99e-02  200-270 4.76e-05  225-271 4.77e-06
+[coh] SN 2023ixf, M101 6.4 Mpc, 19 May 2023 (<E> 12/15/18)    N_all 3.091e-04  ROI 5.677e-05  >50 1.53e-08  >100 1.94e-11  200-270 4.64e-14  225-271 4.66e-15
+Galactic SN 10 kpc: 26.9 CEvNS recoils per tonne (all E_R), 23.3 in the ROI with efficiency
+sigma_NCE(n, Pauli) at 20/30/50/100/200 MeV: 7.05e-43, 2.27e-42, 9.54e-42, 5.95e-41, 2.85e-40 cm^2
+Fermi-recoil channel thresholds E_nu,thr(E_res): 100 keV: 18.6 MeV, 150 keV: 23.5 MeV, 200 keV: 28.3 MeV, 225 keV: 30.6 MeV, 248 keV: 32.7 MeV, 271 keV: 34.8 MeV, 279 keV: 35.6 MeV
+[inc] DSNB central (<E> 9/11/13 MeV, 30 cm-2 s-1)             n knock-outs 2.870e-04; lone-NR 225-271 keV 1.775e-07 [7.9e-09, 5.2e-07]
+[inc] DSNB hard (<E> 12/15/18 MeV, 30 cm-2 s-1)               n knock-outs 7.498e-04; lone-NR 225-271 keV 1.282e-06 [5.7e-08, 3.7e-06]
+[inc] DSNB very hard (<E> 12/15/25 MeV, 30 cm-2 s-1)          n knock-outs 1.694e-03; lone-NR 225-271 keV 4.934e-06 [2.2e-07, 1.4e-05]
+[inc] DSNB SK-limit-saturating (<E> 12/15/18)                 n knock-outs 1.008e-03; lone-NR 225-271 keV 1.602e-06 [7.1e-08, 4.7e-06]
+[inc] DSNB SK-limit-saturating very hard (12/15/25)           n knock-outs 1.523e-03; lone-NR 225-271 keV 4.064e-06 [1.8e-07, 1.2e-05]
+[inc] Galactic SN 10 kpc (<E> 12/15/18)                       n knock-outs 1.206e+00; lone-NR 225-271 keV 2.004e-03 [8.9e-05, 5.8e-03]
+[inc] Galactic SN 10 kpc hard (<E> 15/18/25)                  n knock-outs 2.109e+00; lone-NR 225-271 keV 5.908e-03 [2.6e-04, 1.7e-02]
+[inc] Galactic SN 1 kpc (<E> 12/15/18)                        n knock-outs 1.206e+02; lone-NR 225-271 keV 2.004e-01 [8.9e-03, 5.8e-01]
+[inc] Betelgeuse-like SN 0.2 kpc (<E> 12/15/18)               n knock-outs 3.014e+03; lone-NR 225-271 keV 5.009e+00 [2.2e-01, 1.5e+01]
+[inc] SN 2023ixf, M101 6.4 Mpc, 19 May 2023 (<E> 12/15/18)    n knock-outs 2.943e-06; lone-NR 225-271 keV 4.892e-09 [2.2e-10, 1.4e-08]
+Validation: atmospheric lone-NR with gate 1.77e-04 vs P019 1.73e-04; knock-outs 4.178e-02 vs P019 4.121e-02
+IceCube diffuse: sigma_tot(100 TeV) = 4.14e-34 cm^2; interactions in FV over 220 d (1 TeV-10 PeV) = 1.38e-06; with E_had < 300 keV: 1.2e-18
+E_nu =   125 MeV: sigma(200-270, eff) = 1.44e-41 cm^2, F_req = 3.22e+12 cm^-2, N_lo(5.4-200) = 2367, N_lo(5.4-55) = 2294, E(10 kpc) = 7.7e+54 erg
+E_nu =   130 MeV: sigma(200-270, eff) = 2.05e-41 cm^2, F_req = 2.26e+12 cm^-2, N_lo(5.4-200) = 1671, N_lo(5.4-55) = 1618, E(10 kpc) = 5.6e+54 erg
+E_nu =   140 MeV: sigma(200-270, eff) = 3.09e-41 cm^2, F_req = 1.50e+12 cm^-2, N_lo(5.4-200) = 1123, N_lo(5.4-55) = 1085, E(10 kpc) = 4.0e+54 erg
+E_nu =   150 MeV: sigma(200-270, eff) = 3.93e-41 cm^2, F_req = 1.18e+12 cm^-2, N_lo(5.4-200) = 893, N_lo(5.4-55) = 861, E(10 kpc) = 3.4e+54 erg
+E_nu =   175 MeV: sigma(200-270, eff) = 5.43e-41 cm^2, F_req = 8.52e+11 cm^-2, N_lo(5.4-200) = 657, N_lo(5.4-55) = 632, E(10 kpc) = 2.9e+54 erg
+E_nu =   200 MeV: sigma(200-270, eff) = 6.41e-41 cm^2, F_req = 7.23e+11 cm^-2, N_lo(5.4-200) = 564, N_lo(5.4-55) = 541, E(10 kpc) = 2.8e+54 erg
+E_nu =   250 MeV: sigma(200-270, eff) = 7.56e-41 cm^2, F_req = 6.13e+11 cm^-2, N_lo(5.4-200) = 485, N_lo(5.4-55) = 464, E(10 kpc) = 2.9e+54 erg
+E_nu =   300 MeV: sigma(200-270, eff) = 8.18e-41 cm^2, F_req = 5.66e+11 cm^-2, N_lo(5.4-200) = 451, N_lo(5.4-55) = 431, E(10 kpc) = 3.3e+54 erg
+E_nu =   500 MeV: sigma(200-270, eff) = 9.09e-41 cm^2, F_req = 5.10e+11 cm^-2, N_lo(5.4-200) = 410, N_lo(5.4-55) = 392, E(10 kpc) = 4.9e+54 erg
+E_nu =  1000 MeV: sigma(200-270, eff) = 9.47e-41 cm^2, F_req = 4.89e+11 cm^-2, N_lo(5.4-200) = 395, N_lo(5.4-55) = 377, E(10 kpc) = 9.4e+54 erg
+E_nu =  3000 MeV: sigma(200-270, eff) = 9.58e-41 cm^2, F_req = 4.83e+11 cm^-2, N_lo(5.4-200) = 391, N_lo(5.4-55) = 373, E(10 kpc) = 2.8e+55 erg
+Spectrum-averaged F_req: atmospheric-like E^-2.5 above 110 MeV 9.03e+11 cm^-2 (N_lo 696); flat in log E 130 MeV-1 GeV 5.95e+11 (N_lo 472)
+reference fluence galactic_SN_10kpc_all_flavour                    9.71e+11 cm^-2 -> events if all at 150 MeV: 8.2e-01, at 300 MeV: 1.7e+00
+reference fluence galactic_SN_10kpc_above_110MeV                   2.83e+07 cm^-2 -> events if all at 150 MeV: 2.4e-05, at 300 MeV: 5.0e-05
+reference fluence SN2023ixf_all_flavour                            2.37e+06 cm^-2 -> events if all at 150 MeV: 2.0e-06, at 300 MeV: 4.2e-06
+reference fluence magnetar_giant_flare_all_energy_into_200MeV_nu   5.22e+03 cm^-2 -> events if all at 150 MeV: 4.4e-09, at 300 MeV: 9.2e-09
+reference fluence GRB_neutrino_number_fluence_TeV_PeV              1.00e-08 cm^-2 -> events if all at 150 MeV: 8.5e-21, at 300 MeV: 1.8e-20
+reference fluence solar_flare_model_fluence_upper                  1.00e+04 cm^-2 -> events if all at 150 MeV: 8.5e-09, at 300 MeV: 1.8e-08
+reference fluence solar_flare_SK_limit_like                        1.00e+07 cm^-2 -> events if all at 150 MeV: 8.5e-06, at 300 MeV: 1.8e-05
+Super-K IBD events for F_req (nu_e-bar = 1/6): 150 MeV: 6.2e+05, 300 MeV: 1.2e+06

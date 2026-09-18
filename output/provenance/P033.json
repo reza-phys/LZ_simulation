@@ -1,0 +1,58 @@
+{
+ "id": "P033",
+ "title": "Geometric probability of a wall-MSSI topology with a 12 keV Compton scatter 27 cm inside the TPC: a photon-transport Monte Carlo",
+ "date": "2026-09-09",
+ "agent_tools": [
+  {"tool": "Read", "count": 17, "detail": "output/provenance/PAPER_GUIDE.md; output/00_evidence_dossier.md; output/results_ledger.csv (two pages); output/papers/P004.md, P022.md, P029.md, P024.md; output/work/P004/details.md lines 99-125; inputs/LZ_arXiv_2609.02823_fulltext.tex lines 130-141, 184-197, 222-245, 518-581, 710-784; inputs/figures_png/FigS5a_LE_MSSI_rz.png; inputs/figures_png/FigS6_mssi_HE_wall_and_rfr_sidebands_s1logs2.png; output/code/common/lzcommon.py lines 1-75; output/provenance/P004.json; output/work/P033/figures/P033_rz_map_and_depth.png; output/work/P033/figures/P033_kn_and_fpos.png"},
+  {"tool": "Bash", "count": 22, "detail": "grep topology/Compton lines in work/P004/details.md; grep MSSI/FV/RFR passages in fulltext.tex; grep LZ dict and defs in lzcommon.py + ENVIRONMENT_versions.txt + ls work/provenance + grep Fig.3; grep package versions + detector-ER lines + ls work, data_requests; mkdir -p output/work/P033/figures; .venv/bin/python output/code/P033_mssi_geometry_mc.py --quick (first version; killed, memory); rerun quick unbuffered to log (exit 143); .venv/bin/python ... --stage grid --source wall --quick (timing test); --stage grid --source wall (full; finished in background); --stage grid --source bottom (timed out, discarded); --stage grid --source top; --stage validation; tail of wall log + ls runs; --stage grid --source bottom --scale 0.25; --stage grid --source cathode --scale 0.3; --stage bulk --scale 0.5; --stage variants --scale 0.6; --stage summary; inline python printing summary/kn/attenuation/runs tables; --stage post (syntax error, then rerun); inline python printing depth profiles and analog/weighted depth ratios; --stage grid --source wall --lines 2615,1764; --stage grid --source top --lines 2615,1764; --stage grid --source bottom --scale 0.25 --lines 2615,1764; --stage grid --source cathode --scale 0.3 --lines 2615,1764; --stage variants --scale 0.6 --lines 2615; --stage summary and --stage post + inline python printing all final numbers; wc -w on the paper"},
+  {"tool": "Write", "count": 5, "detail": "output/code/P033_mssi_geometry_mc.py (twice: first single-shot version, then chunked/staged rewrite); output/work/P033/details.md; output/provenance/P033.json; output/papers/P033.md"},
+  {"tool": "Edit", "count": 21, "detail": "output/papers/P033.md: nine trims to meet the word budgets; output/provenance/P033.json: this count. P033_mssi_geometry_mc.py: fixed an invalid dict key (k_req_over_allowed_1p64); reduced photon counts per stage; added --scale option and applied it; added stage_post (derived numbers) and its dispatch; fixed two invalid dict keys in stage_post (x0p06 names); corrected the pair-production table; added --lines subset option (argparse, SEL_LINES in stage_grid and stage_variants, early return in variants)"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (read before writing the figure code; Okabe-Ito fixed categorical order, one axis per panel, legends, recessive grid)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python, argparse, json, math, glob"},
+  {"name": "numpy", "version": "2.5.3", "functions": "random.default_rng (uniform sampling, Kahn rejection), vectorised ray-marching (hypot, sqrt, exp, log, where, interp, trapezoid), histogram/histogram2d, polyfit, savez_compressed"},
+  {"name": "scipy", "version": "1.18.1", "functions": "none directly (imported by lzcommon)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame.to_csv/read_csv/to_string for run tables"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg): pcolormesh, step, plot, axhspan, colorbar"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "lz.LZ constants (ev_r_from_true_wall_cm, ev_z_above_cathode_cm, bkg_expected, MSSI decomposition numbers)"},
+  {"name": "none: derived by hand", "version": "-", "functions": "Klein-Nishina total and differential cross-sections, Compton kinematics, beta spectrum with non-relativistic Fermi function, survival-biasing/forced-collision weights, k_required = -ln(0.9)/N"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P033_mssi_geometry_mc.py", "purpose": "weighted photon-transport MC in the LZ TPC geometry (Compton/photo/pair, KN exact, forced FV collision uniform in depth, forced 8-16 keV deposit, dead-region splitting), sources wall/bottom/top/cathode/bulk 214Pb, classification into MSSI-like classes, validation against analog transport, variants, summary/normalisation, post-processing and figures", "command": "cd /Users/reza/LZ_simulation && .venv/bin/python output/code/P033_mssi_geometry_mc.py --stage validation; ... --stage grid --source wall; ... --stage grid --source top; ... --stage grid --source bottom --scale 0.25; ... --stage grid --source cathode --scale 0.3; ... --stage bulk --scale 0.5; ... --stage variants --scale 0.6; ... --stage grid --source {wall,top} --lines 2615,1764; ... --stage grid --source bottom --scale 0.25 --lines 2615,1764; ... --stage grid --source cathode --scale 0.3 --lines 2615,1764; ... --stage variants --scale 0.6 --lines 2615; ... --stage summary; ... --stage post"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "FV paragraph l.132-139 (stand-off 8.0/6.0 cm, max 18.2 cm near the bottom, mean 10.7 cm, 12.8 cm below gate, 9.0 cm above cathode); event position l.166; MSSI paragraphs l.184-196 (RFR 13.75 cm, dead layer up to 3 mm scalloped, 0.3% of active volume, 94+-2% veto, 214Pb and detector gammas); Table I l.222-245 (detector ERs 8.5, internal betas 1341, MSSI 4.9e-3); prompt-sample table l.518-548 (detector ERs 62.2, lambda_MSSI 0.94); supplement MSSI section l.710-735 (topology list, 12+-2 keV / 69+-17 phd / 471 phd / 77+-7 keV / 204 keV decomposition, '20 cm' and '60 cm' statements); Fig. S5/S6 captions l.745-763; MSSI count table l.765-783 (wall 0.0048, RFR 0.0001 in 4.7 t science)"},
+  {"file": "inputs/figures_png/FigS5a_LE_MSSI_rz.png", "parts_used": "r^2-z projection: reconstructed wall at 72.8 cm, drift axis 0-1049 us, FV contours, event star at r~46 cm, z~26 cm"},
+  {"file": "inputs/figures_png/FigS6_mssi_HE_wall_and_rfr_sidebands_s1logs2.png", "parts_used": "visual read of wall/RFR MSSI contours in the HE SB (qualitative)"},
+  {"file": "output/papers/P004.md and output/work/P004/details.md sec. 3.4", "parts_used": "k_required 619 / k_allowed 1.64, f_nb 0.035, Compton-kinematics table (theta 6.4 deg at 1 MeV, KN fractions, path 54-75 cm), toy f_pos 1e-4-0.12 (central 0.003-0.05), attenuation lengths"},
+  {"file": "output/papers/P022.md", "parts_used": "drift geometry T_max 1049 us, drift length 145.6 cm, radius 72.8 cm"},
+  {"file": "output/papers/P029.md", "parts_used": "two attenuation brackets (lambda 2.9 cm at 375 keV; longer bracket), P(20 cm) values"},
+  {"file": "output/papers/P024.md", "parts_used": "NR PDF inside MSSI contours (81%/100%), event 1.5 sigma"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "sections 2, 4.3, 5 (B), 6.9"},
+  {"file": "output/results_ledger.csv", "parts_used": "P001-P030 rows (context; P004/P022/P029/P024 entries)"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "lz.LZ constants"},
+  {"file": "output/provenance/PAPER_GUIDE.md; output/provenance/P004.json; environment/ENVIRONMENT_versions.txt", "parts_used": "rules and template; JSON format; package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "LZ TPC active radius 72.8 cm and drift length 145.6 cm (z = 0 cathode)", "presumed_source": "LZ detector papers; consistent with Fig. 3/S5a axes and P022", "reliability": "likely"},
+  {"item": "LXe density 2.86 g/cm3", "presumed_source": "standard LXe property (NEST uses 2.9)", "reliability": "likely"},
+  {"item": "Xe photoelectric mass attenuation coefficients 26/9.7/1.45/0.21/0.068/0.0165/0.0028/0.00068/0.00032 cm2/g at 34.6(K)/50/100/200/300/500/1000/2000/3000 keV; pair production 0.0015/0.0040/0.0072 cm2/g at 1.5/2.0/2.615 MeV", "presumed_source": "NIST XCOM", "reliability": "likely (+-30%) for photoelectric; uncertain for pair"},
+  {"item": "Klein-Nishina total and differential cross-sections; Kahn's rejection algorithm for Compton sampling; electron mass 510.999 keV; r_e^2 = 7.94e-26 cm2", "presumed_source": "Klein & Nishina 1929; Kahn 1954; PDG", "reliability": "certain"},
+  {"item": "214Pb decay: beta to 352 keV level (endpoint 672 keV) ~42.5%, to 295 keV level (729 keV) ~40%, ground state ~9%; gamma intensities 352 keV 35.6%, 295 keV 18.4%", "presumed_source": "ENSDF / Table of Isotopes", "reliability": "likely (branch fractions), uncertain (ground-state fraction 0.09 used in the 214Pb budget)"},
+  {"item": "Allowed beta shape with non-relativistic Fermi function F = 2 pi eta/(1 - exp(-2 pi eta)), eta = alpha Z E/p", "presumed_source": "standard nuclear physics", "reliability": "likely (approximation)"},
+  {"item": "Per-decay gamma intensities used as line weights: 609 keV 45.5%, 1120 keV 14.9%, 1764 keV 15.3% (214Bi), 1461 keV 10.7% (40K), 2615 keV 35.6% (208Tl per 232Th), 1173/1332 keV ~100% (60Co, scaled 0.3), 352 keV 35.6%; equal U/Th/K activities", "presumed_source": "Table of Isotopes; assumption on LZ material mix", "reliability": "uncertain (results also given per line)"},
+  {"item": "Internal-beta ROI background (1341) is ~75% 214Pb", "presumed_source": "LZ background papers (214Pb dominant, 212Pb and 85Kr subdominant)", "reliability": "uncertain"},
+  {"item": "Survival biasing, forced collision and expected-value splitting are unbiased weighted estimators", "presumed_source": "Lux & Koblinger 1991", "reliability": "certain (and verified against analog transport)"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First single-shot transport of 2e5 photons per run exhausted memory (exit 143) because branch populations grow at every split; replaced by 2e4-photon chunks with per-run accumulators.",
+  "First full-statistics bottom-source run exceeded the 10-minute foreground limit (photons entering through the 13.75 cm RFR split heavily); bottom and cathode sources were rerun at 0.25 and 0.3 of nominal statistics (140-440 weighted position-class records per line).",
+  "Initial pair-production table was ~2x too large (lambda(2615 keV) = 7.7 cm < lambda(2 MeV)); corrected, and the 1764/2615 keV grid runs and 2615 keV variants repeated. Runs at <= 1461 keV (including the validation and the 1461 keV variants) kept the old table (mu differs by <= 3%).",
+  "Normalising the RFR-MSSI class through the detector-ER rate over-predicts LZ's RFR expectation by ~100 in the simplified FV (73-81% of those histories sit in the bottom corner d<18 cm, z<20 cm that LZ's real contour excludes); RFR numbers are therefore normalised to LZ's 1e-4 instead.",
+  "No per-material radioassay weighting of the detector-gamma lines (not available in the paper)."
+ ],
+ "wimpydd_generated_files": []
+}

@@ -1,0 +1,54 @@
+{
+  "id": "P002",
+  "title": "Kinematic map of inelastic dark matter consistent with a 248 keV xenon recoil",
+  "date": "2026-09-03",
+  "agent_tools": [
+    {"tool": "Read", "count": 10, "detail": "output/provenance/PAPER_GUIDE.md; output/00_evidence_dossier.md; output/code/common/lzcommon.py; inputs/LZ_arXiv_2609.02823_fulltext.tex lines 40-75 (theory, Fig. 1 caption), 452-499 (efficiency, likelihood, LEE grid), 800-819 (O1 as cross-section), 876-912 (Table S7); inputs/figures_png/Fig1_combined_recoils.png; output/work/P002/figures/fig1..fig4 PNGs"},
+    {"tool": "Bash", "count": 22, "detail": "grep -n of fulltext.tex for inelastic/LEE/Table S7 + ls output/ + head results_ledger.csv; cat environment/ENVIRONMENT_versions.txt + dossier_numbers.json + inspect.getsource(WD.diff_rate) + sed process_log.md; grep plan for P002/P003 + sed Fig. 6 caption + WimPyDD halo/rate probe; grep of WimPyDD streamed_halo_function source; WimPyDD halo tail comparison June/avg/Dec vs lzcommon eta0; extended v_min grid verification + timing of wd_rate; .venv/bin/python output/code/P002_inelastic_kinematics.py --no-wimpydd; full script run in background (stalled); pandas print of kinematics CSVs; 4x progress checks (tail run_log, npz key count); pkill + foreground run (timed out, moved to background); 2x cache count; foreground rerun from cache (exit 0); pandas print of spectra_summary/degeneracy; rerun from cache after adding Part 5 + find WimPyDD -newer (no generated files); wc -w on the paper body"},
+    {"tool": "Write", "count": 6, "detail": "output/code/P002_inelastic_kinematics.py; output/work/P002/details.md (twice: kinematics half, then complete); output/provenance/P002.json; output/papers/P002.md (twice: first draft 695 words, tightened to 541)"},
+    {"tool": "Edit", "count": 7, "detail": "output/code/P002_inelastic_kinematics.py: added Part 5 (band fraction 216-280 keV, percentile of 248 keV); output/papers/P002.md: 5 word-count trims; output/provenance/P002.json: tool-count corrections"},
+    {"tool": "ToolSearch", "count": 2, "detail": "loaded Monitor and TaskStop schemas"},
+    {"tool": "Monitor", "count": 1, "detail": "watched the background run's output for completion (stopped afterwards)"},
+    {"tool": "TaskStop", "count": 3, "detail": "stopped duplicate/stalled background runs bzcevciz4, b20jo2i7u and monitor b8uzg8lld"}
+  ],
+  "software": [
+    {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python"},
+    {"name": "numpy", "version": "2.5.3", "functions": "logspace, trapezoid, interp, cumsum, savez/load (spectrum cache)"},
+    {"name": "scipy", "version": "1.18.1", "functions": "special.erf via lzcommon.eta0 (validation only)"},
+    {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg), 4 PNG figures"},
+    {"name": "pandas", "version": "3.0.5", "functions": "read_csv for printing result tables (not used in the script)"},
+    {"name": "WimPyDD", "version": "2.0.4", "functions": "streamed_halo_function (explicit vmin grid 0-830 km/s, day_of_the_year 167/336, average), eft_hamiltonian (O1 isoscalar c0=1/m_v^2), diff_rate (target Xe, delta in keV), via lzcommon wrappers"},
+    {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ, OSIG, OSIG_DELTAS, LSIG, LSIG_MASSES, XE_ISOTOPES, A_XE_MEAN, M_V_GEV, C_KMS, V0_KMS, VESC_KMS, v_earth_kms, vmax_kms, eta0, mu_red, m_nucleus_gev, vmin_kms, E_R_range_keV, delta_max_kev, m_chi_min_gev, wd_halo, wd_hamiltonian, wd_rate"},
+    {"name": "none: derived by hand", "version": "", "functions": "Eqs. 1-4 of details.md (v_min, delta_max, delta_abs = mu v^2/2, E_+-)"}
+  ],
+  "scripts_and_commands": [
+    {"path": "output/code/P002_inelastic_kinematics.py", "purpose": "Parts 1-5: kinematic map, WimPyDD inelastic spectra (June/Dec/avg), in-ROI rate vs delta with efficiency model, mass degeneracy (KS), band fractions; writes CSV/JSON tables and 4 figures; caches spectra in output/work/P002/spectra_cache.npz", "command": ".venv/bin/python output/code/P002_inelastic_kinematics.py   (kinematics only: --no-wimpydd); full run ~10 min without cache, seconds with cache"}
+  ],
+  "local_inputs": [
+    {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Theory paragraph and Fig. 1 caption (lines 49-73: unit coupling c=1/m_v^2, m_v=246.2 GeV, WimPyDD, Baxter SHM); Fig. S2 caption (efficiency 50% at 5.4 and 269.9 keV); LEE section lines 485-498 (inelastic grid 400/1000/4000 GeV x 0-350 keV, mass degeneracy statement); Table S7 lines 880-909 (dash at 400 GeV, 350 keV); Table S6 via lzcommon.LSIG; Fig. 6 caption lines 280-293"},
+    {"file": "inputs/figures_png/Fig1_combined_recoils.png", "parts_used": "top panel: onset/dip/peak positions and approximate levels of the delta = 0, 200, 300 keV curves (read by eye)"},
+    {"file": "output/00_evidence_dossier.md", "parts_used": "Sections 2-3, 6 (delta_max values 341/387/409 keV, 2.5x June/Dec claim, 'spectra peak' claim, open question 1)"},
+    {"file": "output/work/dossier/dossier_numbers.json", "parts_used": "cross-check of v_E, v_max and delta_max(248 keV)"},
+    {"file": "output/code/common/lzcommon.py", "parts_used": "constants, kinematics, halo, WimPyDD wrapper (see software)"},
+    {"file": "output/01_landscape_and_plan.md", "parts_used": "P002 and P003 entries (lines 43-44)"},
+    {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all"},
+    {"file": "output/provenance/process_log.md", "parts_used": "steps 034-037 (WimPyDD usage notes, normalisation flag)"},
+    {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"},
+    {"file": "WimPyDD source (site-packages, streamed_halo_function and diff_rate docstrings/source)", "parts_used": "vmin grid construction (default 0 to v_esc+|v_sun|), explicit vmin argument, delta argument of diff_rate"}
+  ],
+  "recalled_knowledge": [
+    {"item": "Standard Halo Model parameters v0=238, v_esc=544 km/s, v_sun,pec=(11.1,12.2,7.3) km/s, rho0=0.3 GeV/cm3 (Baxter et al. 2021), used via lzcommon", "presumed_source": "Baxter et al., EPJC 81, 907 (2021)", "reliability": "certain"},
+    {"item": "Inelastic scattering kinematics: v_min = (m_N E/mu + delta)/sqrt(2 m_N E); E_+- formula; delta_abs = mu v^2/2", "presumed_source": "Tucker-Smith & Weiner 2001; derived", "reliability": "certain"},
+    {"item": "Natural xenon isotopic abundances and A*amu masses (via lzcommon)", "presumed_source": "standard tables", "reliability": "certain"},
+    {"item": "The dips at ~100 and ~265 keV in the O1 xenon spectrum are zeros of the M (SI) nuclear form factor and are independent of m_chi and delta", "presumed_source": "Helm/shell-model form factor literature (Lewin & Smith 1996; Anand et al. 2014)", "reliability": "likely; confirmed numerically here"},
+    {"item": "Earth orbital speed projection ~15 km/s with peak on ~2 June (via lzcommon.v_earth_kms)", "presumed_source": "standard annual-modulation literature", "reliability": "certain (to ~1 km/s)"}
+  ],
+  "datasets": "none",
+  "data_requests": "none",
+  "failed_or_abandoned": [
+    "WimPyDD default v_min grid (0 to v_esc+|v_sun| = 794.6 km/s) truncates the June tail 795-810 km/s and yields a negative rate at (1000 GeV, delta=380 keV); replaced by an explicit grid linspace(0, 830, 2000) passed to streamed_halo_function",
+    "Background execution of the full script stalled (process suspension) and pkill was blocked by the sandbox ('Cannot get process list'); two racing processes were stopped with TaskStop and the script re-run in the foreground from the spectrum cache; no numerical consequences",
+    "Absolute couplings not derived: WimPyDD c0 normalisation relative to Anand et al. left to P003; only shapes and rate ratios are used"
+  ],
+  "wimpydd_generated_files": []
+}

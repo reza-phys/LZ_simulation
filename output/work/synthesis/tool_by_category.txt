@@ -1,0 +1,21 @@
+papers per category {'STAT': 10, 'IDM': 11, 'EFT': 7, 'BKG': 14, 'XEXP': 8, 'HALO': 7, 'RESP': 6, 'COMP': 11, 'NUC': 6, 'EXO': 4, 'PROJ': 6, 'MODEL': 5}
+matplotlib         total  95 | BKG:14, IDM:11, COMP:11, STAT:10, XEXP:8, EFT:7, HALO:7, RESP:6, NUC:6, PROJ:6, MODEL:5, EXO:4
+numpy              total  95 | BKG:14, IDM:11, COMP:11, STAT:10, XEXP:8, EFT:7, HALO:7, RESP:6, NUC:6, PROJ:6, MODEL:5, EXO:4
+lzcommon           total  95 | BKG:14, IDM:11, COMP:11, STAT:10, XEXP:8, EFT:7, HALO:7, RESP:6, NUC:6, PROJ:6, MODEL:5, EXO:4
+scipy              total  90 | BKG:13, STAT:10, IDM:10, COMP:9, XEXP:8, EFT:7, HALO:7, NUC:6, PROJ:6, RESP:5, MODEL:5, EXO:4
+pandas             total  83 | IDM:11, BKG:10, COMP:10, STAT:9, EFT:7, HALO:7, RESP:6, NUC:5, MODEL:5, PROJ:5, EXO:4, XEXP:4
+WimPyDD            total  61 | IDM:10, XEXP:8, EFT:7, HALO:7, STAT:7, PROJ:6, MODEL:5, NUC:4, COMP:4, EXO:3
+hand derivation    total  49 | COMP:10, IDM:8, BKG:8, EFT:4, MODEL:4, NUC:4, RESP:3, HALO:2, XEXP:2, EXO:2, PROJ:1, STAT:1
+nestpy             total  19 | BKG:6, RESP:5, NUC:3, EXO:2, STAT:2, XEXP:1
+PyMuPDF            total   7 | EFT:2, XEXP:2, IDM:1, NUC:1, BKG:1
+Pillow             total   7 | BKG:4, STAT:2, EXO:1
+wimprates          total   4 | HALO:3, IDM:1
+radioactivedecay   total   4 | BKG:4
+astropy            total   4 | IDM:2, PROJ:1, HALO:1
+numericalunits     total   3 | HALO:3
+periodictable      total   3 | BKG:3
+sympy              total   1 | IDM:1
+directdm           total   1 | EFT:1
+uncertainties      total   1 | RESP:1
+iminuit            total   1 | STAT:1
+healpy             total   1 | COMP:1

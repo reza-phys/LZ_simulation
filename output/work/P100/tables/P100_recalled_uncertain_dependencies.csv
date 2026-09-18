@@ -1,0 +1,11 @@
+paper,recalled,headline_at_risk,robust
+P076,IceCube/ANTARES W+W- and channel factors (x3 each way),Higgsino excluded at every delta by >=15-770x; dark photon/Z' verdicts at delta 290-370 keV,Higgsino exclusion survives x3 (margin >=15x when stalled); dark-photon/Z' boundaries move by ~20-30 keV
+P084,"Fermi dSph, H.E.S.S., Planck, line anchors (x2-10)",Doublet 'allowed' at 0.16-0.8 of limits (H.E.S.S. bracket 0.4-3.2 could flip it); triplet excluded x4.7 [2.3-9.3],Y>=3/2 exclusions (x36-8300) survive any bracket
+P054,dijet/dilepton Z' ceilings (uncertain),thermal U(1)_B reaches delta<=343/319/277 keV; B-L 298/231 keV,contact-limit count 0.1-0.3 events and m_Z'<~m_chi requirement are coupling-independent
+P082/P059,"archival ROI edges, SR1 zero high-S1c events (uncertain)","kappa_hat x0.76, Z -0.06..-0.11 sigma",region shrinks only 2-3%; joint region itself is LZ-driven
+P069/P088/P099,"untouched XENONnT/PandaX-4T exposures (+-50%), XLZD start",2.3-5.2 hidden events; 5-sigma dates Apr 2027 / 2033,'verdict on disk' qualitatively; dates +-1 yr
+P003/P016/P058,2024 low-energy tolerance N_max ~3-5 events (uncertain),"compatible/excluded operator boundary (O13s, O3v, O8v at N_lo 5-10)",operator ordering and O1/O4/O11 exclusion (N_lo 28-2750)
+P005/P015/P028/P035,"other experiments' ROI edges, DAMA rate/exposure, PICO/CRESST exposures",0-0.23 expected events elsewhere; NaI 7e3-4e4 below sensitivity,kinematic blindness of light targets (exact)
+P083,"45-anomaly compilation (28 certain, 15 likely, 2 uncertain)",r = 0.062 (95% < 0.23) and P(DM)=0.012,only the sign: unpredicted ~3 sigma hints rarely survive; confidence self-rated low
+P024/P041/P056/P098,"extraction efficiency 0.80, position residual 2%, D_T/D_L (uncertain)",band 1.2-1.7 sigma; ER leakage at the event 7e-7; sigma_E 10.2-12.4 keV,floor 0.023 dex and 11 vs 23 keV conclusion
+P073/P042/P077,Skin/OD geometry and light yields (uncertain),veto factor 0.46 (0.10-0.79); PSD separation 1.4-8 sigma,direction of the veto penalty; RFR-vs-event 6-8 sigma

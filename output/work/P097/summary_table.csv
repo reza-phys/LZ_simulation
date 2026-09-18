@@ -1,0 +1,34 @@
+quantity,SHM,SHM_plus_DD_f0p1,SHM_plus_DD_f0p3,unit,note
+"inelastic O1 ROI events (unit coupling, 16 June), delta = 300",1.922e+04,1.73e+04,1.345e+04,events/2.84 t yr,exactly (1 - f): DD contributes 0
+"date LR(16 June), delta = 300",1.43,1.43,1.43,,unchanged
+"inelastic O1 ROI events (unit coupling, 16 June), delta = 366",66.02,59.42,46.21,events/2.84 t yr,exactly (1 - f): DD contributes 0
+"date LR(16 June), delta = 366",3.204,3.204,3.204,,unchanged
+"inelastic O1 ROI events (unit coupling, 16 June), delta = 380",2.479,2.231,1.735,events/2.84 t yr,exactly (1 - f): DD contributes 0
+"date LR(16 June), delta = 380",3.934,3.934,3.934,,unchanged
+"inelastic a1 (first harmonic), delta = 300",0.4301,0.4301,0.4301,,unchanged
+"inelastic a1 (first harmonic), delta = 380",1.688,1.688,1.688,,unchanged
+"N_lo (5.4-55 per 200-270 keV, annual), O1, fid disk",2787,3257,4600,,
+"N_lo (5.4-55 per 200-270 keV, annual), O1, hot disk",2787,3241,4492,,
+"N_lo (5.4-55 per 200-270 keV, annual), L10, fid disk",0.2054,0.2287,0.2954,,
+"N_lo (5.4-55 per 200-270 keV, annual), L10, hot disk",0.2054,0.2357,0.3198,,
+"N_lo (5.4-55 per 200-270 keV, annual), O6, fid disk",0.4425,0.4731,0.5606,,
+"N_lo (5.4-55 per 200-270 keV, annual), O6, hot disk",0.4425,0.4995,0.6577,,
+"elastic 200-270 keV rate (fid disk, 16 June) / SHM",1,0.9,0.7,,(1 - f) + tail
+"elastic dR/dE(248) LR(16 June), O1, fid",1.041,1.041,1.041,,
+"low-energy (5.4-55 keV) O1 modulation a1, fid disk",0.02497,0.01292,0.01201,fraction,peak day in note column of CSV
+"low-energy O1 peak day, fid disk",335.2,348.6,109.6,doy,
+"exothermic ROI rate / SHM (annual), |delta| = 278, fid",1,0.947,0.8409,,f = 0.2: 0.89
+"exothermic TOTAL rate (all E, no eff.) / SHM, |delta| = 278, fid",1,0.9492,0.8477,,f = 0.2: 0.90; pure DD/SHM 0.49
+"exothermic 272-670 keV rate / SHM, |delta| = 278, fid",1,0.9815,0.9444,,f = 0.2: 0.96
+"exothermic companions 125-200 per 200-270 keV, |delta| = 278, fid",6.453,5.228,3.62,,pure DD: 1.22
+"exothermic ROI rate / SHM (annual), |delta| = 300, fid",1,0.933,0.799,,f = 0.2: 0.87
+"exothermic TOTAL rate (all E, no eff.) / SHM, |delta| = 300, fid",1,0.9412,0.8235,,f = 0.2: 0.88; pure DD/SHM 0.41
+"exothermic 272-670 keV rate / SHM, |delta| = 300, fid",1,1.023,1.069,,f = 0.2: 1.05
+"exothermic companions 125-200 per 200-270 keV, |delta| = 300, fid",6.014,5.054,3.564,,pure DD: 0.66
+"exothermic ROI rate / SHM (annual), |delta| = 366, fid",1,0.9044,0.7133,,f = 0.2: 0.81
+"exothermic TOTAL rate (all E, no eff.) / SHM, |delta| = 366, fid",1,0.9463,0.8388,,f = 0.2: 0.89; pure DD/SHM 0.46
+"exothermic 272-670 keV rate / SHM, |delta| = 366, fid",1,1.146,1.439,,f = 0.2: 1.29
+"exothermic companions 125-200 per 200-270 keV, |delta| = 366, fid",4.642,4.516,4.192,,pure DD: 0.07
+"Higgsino delta(N=1), annual mean",365.6,365,363.5,keV,
+P021 kappa-hat(380) = (c1 m_v^2)^2,2.19,2.433,3.129,,x 1/(1 - f)
+P007 Higgsino excess over LZ 90% edge at 300 keV (events),226,203.4,158.2,,x (1 - f)

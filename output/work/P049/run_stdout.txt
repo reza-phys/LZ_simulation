@@ -1,0 +1,90 @@
+=== 1. Muon rates and the 41 / 127 min gaps ===
+water tank (R 3.8 m, H 5.9 m): rate 14.00/h (top 8.66, sides 5.34); mean interval 4.3 min; P(gap>=41 min) = 7.02e-05; P(gap>=127 min) = 1.36e-13; rate range 11.16-15.36/h
+GdLS envelope (R 1.9 m, H 3.9 m): rate 3.93/h (top 2.16, sides 1.77); mean interval 15.3 min; P(gap>=41 min) = 6.82e-02; P(gap>=127 min) = 2.44e-04; rate range 3.11-4.36/h
+TPC active (R 0.728 m, H 1.456 m): rate 0.57/h (top 0.32, sides 0.25); mean interval 105.2 min; P(gap>=41 min) = 6.77e-01; P(gap>=127 min) = 2.99e-01; rate range 0.45-0.63/h
+GdLS envelope geometry range: 3.11-4.74/h -> P(gap>=41) 0.039-0.119
+MUSUN: 2.1e9 muons / 1200 yr = 0.0555 mu/s -> generation area 1046 m^2 at phi=5.3e-09
+P(a tank-crossing muon within 1 ms before the event) = 3.9e-06; within 600 us = 2.3e-06
+90% UL from 0 events in 1200 yr scaled to 220 d: 1.156e-03; x(1-0.8) = 2.312e-04; x2 (yield uncertainty) = 4.623e-04 (paper: 4.6e-04)
+
+=== 2. Production spectrum fractions ===
+f(E > 1 MeV) = 0.7511
+f(E > 8.2 MeV) = 0.1734
+f(E > 10 MeV) = 0.1595
+f(E > 20 MeV) = 0.1164
+f(E > 30 MeV) = 0.0916
+f(E > 50 MeV) = 0.0603
+f(E > 100 MeV) = 0.0296
+f(E > 300 MeV) = 0.0092
+f(E > 1000 MeV) = 0.0020
+f(>8.2) and f(>100) over (f_hard, knee) corners: (0.2,30.0): 0.107/0.0132; (0.2,100.0): 0.127/0.0347; (0.4,30.0): 0.210/0.0264; (0.4,100.0): 0.251/0.0694
+
+Production per unit wall area per cm depth: phi*Y*rho = 5.009e-12 n cm^-3 s^-1  -> within 2 m: 1.002e-09 n cm^-2 s^-1 = 0.865 n m^-2 d^-1
+For ~700 m^2 of cavern rock surface: 606 n/day produced within 2 m, of which >8.2 MeV: 105/day
+
+=== 3. Entry into the tank, geometry ===
+Tank top area 45.4 m^2, side 140.9 m^2, effective receiving area 115.8 m^2
+TPC/tank geometric fraction: isotropic 0.0431, downward 0.0367; adopted f_geo = 0.0399
+  entering tank, 8.2-30 MeV: 89.6 in 220 d
+  entering tank, 30-100 MeV: 125.6 in 220 d
+  entering tank, 100-3000 MeV: 116.5 in 220 d
+Neutrons > 8.2 MeV entering the water tank in 220 d: 334.3  (flux at the wall 1.52e-11 cm^-2 s^-1; >100 MeV: 5.30e-12)
+
+=== 4. Attenuation in water (path 2.5 m) ===
+  E =    10 MeV: lambda_rem =   14.6 cm, survival S = 3.87e-08
+  E =    15 MeV: lambda_rem =   23.8 cm, survival S = 2.80e-05
+  E =    20 MeV: lambda_rem =   33.5 cm, survival S = 5.72e-04
+  E =    30 MeV: lambda_rem =   45.1 cm, survival S = 3.90e-03
+  E =    50 MeV: lambda_rem =   70.0 cm, survival S = 2.81e-02
+  E =   100 MeV: lambda_rem =  100.0 cm, survival S = 8.21e-02
+  E =   200 MeV: lambda_rem =  100.0 cm, survival S = 8.21e-02
+  E =   500 MeV: lambda_rem =  100.0 cm, survival S = 8.21e-02
+  E =  1000 MeV: lambda_rem =  100.0 cm, survival S = 8.21e-02
+  simple 'each H collision halves' picture: lambda_tot(10 MeV) = 8.9 cm -> 28 collisions in 2.5 m; 2^-N = 3.1e-09
+
+=== 5. P013 mono-energetic SS probabilities per neutron entering the LXe (thr 3 keV, 4.74 t FV) ===
+     8.5 MeV: P(SS in ROI) = 4.61e-03; P(SS 200-270 keV) = 2.50e-04 +- 2.9e-05; F = 0.054
+    10.0 MeV: P(SS in ROI) = 4.41e-03; P(SS 200-270 keV) = 2.63e-04 +- 3.0e-05; F = 0.060
+    15.0 MeV: P(SS in ROI) = 5.13e-03; P(SS 200-270 keV) = 2.17e-04 +- 2.7e-05; F = 0.042
+    50.0 MeV: P(SS in ROI) = 6.51e-03; P(SS 200-270 keV) = 1.17e-04 +- 2.0e-05; F = 0.018
+   100.0 MeV: P(SS in ROI) = 7.17e-03; P(SS 200-270 keV) = 1.03e-04 +- 1.9e-05; F = 0.014
+   200.0 MeV: P(SS in ROI) = 9.03e-03; P(SS 200-270 keV) = 1.53e-04 +- 2.3e-05; F = 0.017
+
+=== 6. Combined expectation, 220 live days ===
+neutrons > 8.2 MeV entering tank 334.3; aimed at TPC 13.35; reaching LXe above 8.2 MeV 0.490 (bands {'8.2-30': 0.0021408854010837876, '30-100': 0.10299083231947548, '100-3000': 0.38168082356734306})
+untagged SS of any energy: 7.99e-04  (LZ 90% UL 4.6e-4; ratio 1.74)
+untagged SS in 200-270 keV: 1.33e-05  (P013 from LZ UL: 0.6-1.6e-5)
+F(200-270 | SS) effective = 0.017
+
+=== 7. Sensitivity (one-at-a-time, low/high) ===
+  phi_mu      : N_win 1.10e-05 .. 1.38e-05 (span x1.25); N_any 6.63e-04 .. 8.29e-04
+  Y_n         : N_win 9.50e-06 .. 1.90e-05 (span x2.00); N_any 5.71e-04 .. 1.14e-03
+  f_hard      : N_win 8.86e-06 .. 1.77e-05 (span x2.00); N_any 5.33e-04 .. 1.07e-03
+  E_knee      : N_win 9.03e-06 .. 2.18e-05 (span x2.41); N_any 5.40e-04 .. 1.32e-03
+  lam_esc     : N_win 9.76e-06 .. 1.99e-05 (span x2.04); N_any 5.87e-04 .. 1.20e-03
+  L_path      : N_win 2.33e-05 .. 7.71e-06 (span x3.02); N_any 1.39e-03 .. 4.65e-04
+  lam_att_hi  : N_win 8.27e-06 .. 1.89e-05 (span x2.28); N_any 4.93e-04 .. 1.14e-03
+  lam_att_mid : N_win 1.21e-05 .. 1.54e-05 (span x1.27); N_any 7.26e-04 .. 9.27e-04
+  f_untag     : N_win 2.66e-06 .. 1.60e-05 (span x6.00); N_any 1.60e-04 .. 9.59e-04
+  f_geo       : N_win 1.22e-05 .. 2.15e-05 (span x1.76); N_any 7.35e-04 .. 1.30e-03
+all-low corner: N_win 1.43e-07, N_any 8.51e-06;  all-high corner: N_win 1.90e-04, N_any 1.15e-02
+log-quadrature 1-sigma factor on N_win: x/ 4.04 -> 68% range 3.29e-06 .. 5.37e-05
+dominant uncertainties (span): f_untag x6.00, L_path x3.02, E_knee x2.41, lam_att_hi x2.28, lam_esc x2.04
+
+=== 8. Crude untagged fraction for a neutron that scatters once in the FV ===
+  E=   50 MeV: P(no prompt GdLS light in) 0.31 x out 0.31 x P(no Skin tag) 0.54-0.73 x P(delayed miss) 0.3 = 0.016-0.021 (LZ: 0.20 +- 0.04)
+  E=  100 MeV: P(no prompt GdLS light in) 0.45 x out 0.45 x P(no Skin tag) 0.56-0.75 x P(delayed miss) 0.3 = 0.034-0.046 (LZ: 0.20 +- 0.04)
+  E=  300 MeV: P(no prompt GdLS light in) 0.51 x out 0.51 x P(no Skin tag) 0.64-0.80 x P(delayed miss) 0.3 = 0.051-0.063 (LZ: 0.20 +- 0.04)
+  E= 1000 MeV: P(no prompt GdLS light in) 0.53 x out 0.53 x P(no Skin tag) 0.66-0.81 x P(delayed miss) 0.3 = 0.055-0.068 (LZ: 0.20 +- 0.04)
+
+=== 9. Delayed neutron emitters (why 41 min cannot matter) ===
+  9Li: T1/2 = 0.178 s -> 41 min = 13820 half-lives, survival 2^-13820 = 0.0e+00
+  8He: T1/2 = 0.119 s -> 41 min = 20672 half-lives, survival 2^-20672 = 0.0e+00
+  17N: T1/2 = 4.17 s -> 41 min = 590 half-lives, survival 2^-590 = 2.6e-178
+  16N: T1/2 = 7.13 s -> 41 min = 345 half-lives, survival 2^-345 = 1.4e-104
+  137Xe: T1/2 = 229.0 s -> 41 min = 11 half-lives, survival 2^-11 = 5.8e-04
+  9Li produced in the water in 220 d: 7.0 (rate 3.89e-03 mu/s x 500 g/cm^2 x 1.9e-07); beta-n branch 0.51 -> 3.6 neutrons of E_n <= 1 MeV -> E_R <= 30 keV
+  beta-delayed neutrons E_n <= 2 MeV give E_R,max = 61 keV << 248 keV: kinematically irrelevant irrespective of timing
+  neutron capture time in GdLS ~30 us, in water ~200 us; the 600 us delayed window covers > 95% of Gd captures; a neutron from a muon 41 min earlier would have been captured 41 min earlier.
+
+saved: output/work/P049

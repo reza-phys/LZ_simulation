@@ -1,0 +1,127 @@
+\paragraph{Data Analysis --}
+The 220~live days of data used in this analysis were collected between 27~March 2023 and 1~April 2024.
+The detector conditions and a search through these data for WIMPs producing signals with S$1c$ in the range  $3-80$ phd ($>50$\% acceptance for nuclear recoils of 5.4 to 55 keV)  are described in Ref.~\cite{LZ:SR3_WS2024}, which this analysis takes as a starting point. 
+Events are selected as signal candidates if they are classified as single scatters (SS), pass the data and analysis selections, and are within a signal region of interest (ROI) and a fiducial volume (FV). The  analysis selections are unchanged from Ref.~\cite{LZ:SR3_WS2024} with the exception of the  ROI, the FV, and the handling of sidebands.
+Here, the WIMP search ROI (WS~ROI) is defined by S1$c$ in the range $3-600$~phd, S2 greater than $645$~phd, and S2$c$ in the range $10^{2.75} - 10^{4.15}$~phd.
+The maximum S2$c$ is chosen to keep essentially all of the signal distribution while eliminating the vast majority of ER backgrounds.
+The S1$c$ range is the same as used in the previous NREFT search with LZ~\cite{LZ:SR1_NREFT_2023}.
+The NR signal efficiency averages 96\% between 14~keV and  250~keV (shown in \autoref{fig:efficiency} in the \textcolor{black}{Supplemental Material}).
+
+
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.95\linewidth]{\plotfolder Fig3_roi_events_in_fv.pdf}
+    \caption{
+    Data in the WS~ROI for the three analysis samples; \emph{science} (black), \emph{prompt veto} (orange crosses), and \emph{delayed veto} (blue circles).
+    The event of interest is shown by the brown star near coordinate $(45.9^2\, \mathrm{cm}^2, 26.4\,\mathrm{cm})$.
+    The gray points indicate data in the WS~ROI but outside the FV, with large populations of events at the cathode ($z=0$) and wall, as well as a population from interactions in the gas that reconstruct to a drift time of $\sim56$~$\mu$s.
+    The dashed line shows the reconstructed wall, averaged over azimuth, indicating the active volume.
+    The solid lines indicate the FV at the smallest and largest radial extents. The points in the \emph{delayed veto} sample come primarily from random coincidences of background pulses in the veto detectors with ER backgrounds in the TPC. 
+    }
+    \label{fig:roi_fv}
+\end{figure}
+
+The LXe mass contained within the FV used in this analysis is $4.71\pm0.08$~tonnes, 14.5\% smaller than in Ref.~\cite{LZ:SR3_WS2024}. 
+Shown in~\autoref{fig:roi_fv}, the FV boundaries are chosen to limit backgrounds originating from the walls of the TPC due to detector radioactivity and plate-out of radon daughters, and from multiple-scintillation single-ionization (MSSI) events, discussed in more detail below.
+As represented by the dashed line in~\autoref{fig:roi_fv}, the average reconstructed position of radioactive decays on the wall of the TPC is pushed inward due to electrostatic field effects, leading to a discrepancy between the true and reconstructed locations of the wall~\cite{LZ:SR1Backgrounds_2022, LZ:SR3_WS2024}. 
+Events that occur on the wall can be further misreconstructed radially inwards due to finite position resolution. 
+The radial boundary of the FV is a depth- and azimuth-dependent contour defined such that the wall backgrounds have an expected total count of less than $(1.0 \pm 0.5)\times10^{-4}$ events inside the FV.
+The FV definition also enforces a minimum stand-off of 8.0 (6.0)~cm from the true (reconstructed) wall to the contour to reduce the MSSI contribution. 
+The maximum distance of the FV contour to the true (reconstructed) TPC wall is 18.2 (10.4)~cm near the bottom of the TPC, and the mean distance is 10.7 (7.2)~cm.
+The upper FV boundary is placed 12.8~cm below the gate electrode, and the lower boundary is placed 9.0~cm above the cathode.
+
+
+The data are divided into three samples according to the presence of veto signals. 
+Events that have no signal in either veto system are classified as \emph{science} events, shown in~\autoref{fig:finaldataset-S1-logS2}.
+Events with a signal of size $> 2.5$~phd in the Skin within $\pm 0.25$~$\mu$s of the TPC S1, or $> 4.5$~phd in the OD within $\pm 0.3$~$\mu$s, are classified as \emph{prompt veto}. 
+Events with Skin or OD signals above 300 or 200 keV, respectively, that are within $600$~$\mu$s of the TPC S1 but not in the \emph{prompt veto} window are classified  as \emph{delayed veto}.
+Simulations indicate that to a good approximation the signal and background components have the same \{S1$c$,~log$_{10}$(S2$c$)\} shape in each sample but have different rates.
+The partition allows $\gamma$-rays and neutrons to be constrained more effectively as the rates of these backgrounds in the different samples are related by tagging efficiencies: the prompt window tags both $\gamma$-rays and neutrons, while the delayed window tags neutrons. 
+Random coincidence with Skin and OD backgrounds cause 0.01\% (2.86\%) of unrelated TPC signals to be vetoed by prompt (delayed) pulses. More details on each sample can be found in the \textcolor{black}{Supplemental Material}.
+
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.95\linewidth]{\plotfolder Fig4_science_sample_wbands.pdf}
+    \caption{
+    Black points show the WIMP search data from the full \emph{science} sample which pass all data selections and are not tagged by the veto detectors  in \{S1c, log$_{10}$(S2c)\} space.
+    The dashed gray line indicates the WS~ROI, and the red and blue lines represent the NR and ER bands as in~\autoref{fig:calibrations}. The event of interest appears at (540.1~phd, $10^{3.98}$~phd). 
+    The event below log$_{10}$(S2$c)=3$ is consistent with accidental background, as described in Ref.~\cite{LZ:SR3_WS2024}. The spectral features in the ER band above 25 keV$_\mathrm{ee}$ come predominantly from $^{125}$I and $^{133}$Xe decays and appear slightly below the beta-decay ER band due to increased recombination form Auger cascades, as described in Ref.~\cite{LZ:2025hud}.
+    }
+    \label{fig:finaldataset-S1-logS2}
+\end{figure}
+
+
+%\prlsubhead{Bias Mitigation}
+An attempt to mitigate possible analyzer bias by injecting the dataset with artificial signal-like events, a process known as ``salting", was unsuccessful. Drawn from a distribution consisting of a sum of a WIMP SI-like exponential and a flat NR spectrum out to 250~$\pm$~25~keV, the salt events followed a NR model defined before the AmBe calibration was conducted and did not adequately cover the signal region at high energies.  
+Despite the lack of coverage, the analysis selections and likelihood models were finalized before four salt events were revealed (in addition to the seven salt events previously removed as part of the analysis in Ref.~\cite{LZ:SR3_WS2024}). Three of the salt events fell in the WS~ROI with one just above, but all four fall outside the 90\% containment region for the calibrated NR band. The salt can be seen in the \textcolor{black}{Supplemental Material}. 
+Bias mitigation in the region above 55~keV therefore relies primarily on the use of unchanged analysis selections from Ref.~\cite{LZ:SR3_WS2024}.
+Ultimately, we consider the analysis described here to be a non-blind analysis.
+
+
+After all selections are applied and salt is removed, one event in the \emph{science} sample stands out in the NR band, consistent with a $248\pm23\,\mathrm{(stat)}\pm23\,\mathrm{(sys)}$~keV elastic nuclear recoil (S1$c = 540.1$~phd, S2$c = 9268$~phd) and clearly visible in~\autoref{fig:finaldataset-S1-logS2}. The event was recorded at 21:22:39 UTC, 16 June 2023. The location of the event in \{S1$c$, log$_{10}$(S2$c$)\} is 1.5$\sigma$ below the median of the modeled NR band at that S1$c$, and it is 6.7$\sigma$ below the median of the modeled ER band.
+The reconstructed position of the event is 26.4~cm above the cathode and 26.9 (23.4)~cm radially inward from the true (reconstructed) position of the TPC wall, illustrated in~\autoref{fig:roi_fv}. The S1 partitioning between the two PMT arrays is consistent with the reconstructed $z$ position of the vertex, and the S2 pulse shape is consistent with a point-like interaction at the reconstructed depth. Analysis of the S1 pulse shape does not allow for conclusive ER-NR discrimination, with more detail in the \textcolor{black}{Supplemental Material}.
+
+
+
+
+
+%\prlsubhead{Background Model}
+All of the backgrounds described in Ref.~\cite{LZ:SR3_WS2024} are present in this analysis, with several additional ones considered. The dominant ER components are: $\beta$-decays of $^{214}$Pb and $^{212}$Pb in radon decay chains; long-lived radioisotopes $^{85}$Kr, $^{136}$Xe, and $^{124}$Xe; electron scattering from solar neutrinos; $\gamma$-rays from detector materials; residual tritium and $^{14}$C from calibration; and ${}^{125}$Xe and ${}^{127}$Xe produced by neutron capture during NR calibrations.  
+The larger WS ROI introduces two additional ER sources not discussed in Ref.~\cite{LZ:SR3_WS2024}. First, WIMP search data-taking is periodically interrupted by injections of $^{83\mathrm{m}}$Kr ($t_{1/2}=1.83$\,hr), resuming approximately 13 half-lives after the conclusion of the injection. 
+The residual rate of $^{83\mathrm{m}}$Kr in the \emph{science} sample is constrained using the observed decay rates in the intermediate period following the injection. Second, ${}^{125}$I is a daughter of ${}^{125}$Xe that decays via electron capture plus electron or $\gamma$-ray emission. 
+The decay of  ${}^{125}$I has a half-life of 59.4 d, but it is efficiently removed by the purification system with an effective half-life in LZ of $t_{1/2}^{\mathrm{eff}} = 3.6 \pm 0.2$~d~\cite{LZ:2024wvs}. 
+The rate of ${}^{125}$I is derived from measured ${}^{125}$Xe rates following neutron calibrations.
+
+
+Neutrons and neutrinos are sources of NR background. 
+Cosmic-ray-induced atmospheric neutrinos can produce NR in the WS ROI via coherent elastic neutrino--nucleus scattering (CE$\nu$NS).  
+As in Ref.~\cite{LZ:SR3_WS2024}, the atmospheric neutrino recoil spectrum used in the background model is calculated using the formalism of Ref.~\cite{Billard:2013qya}, and flux normalizations and uncertainties follow the standard values recommended in Ref.~\cite{DM_parameters:BAXTER2021_Conventions}.
+The shape of the neutron background is derived by simulation of ($\alpha$,n) activity in detector materials, as described in Ref.~\cite{LZ:SR3_WS2024}. 
+The neutron rate is constrained in the analysis solely by the veto detectors, which have a total tagging efficiency for ($\alpha$,n) neutrons scattering in the TPC of 92$\pm$4\%. 
+
+
+Isolated S1 events, predominantly from interactions in charge-insensitive regions or pile-up of photoelectron backgrounds, and isolated S2 events, typically from spurious electron emission from the electrodes, can be coincidentally paired, causing ``accidental'' events which do not follow the typical ER band.
+We use the same framework to model accidental backgrounds as described in Ref.~\cite{LZ:SR3_WS2024}, drawing random pairs from isolated S1 and S2 pulse populations.
+The normalization is constrained using ``unphysical drift time'' events where the drift time is greater than that of interactions near the cathode.
+
+
+The final background in the model is from MSSI events, or events in which a standard ER process deposits energy in two or more locations, with all but one being in a ``charge-dead'' region where no ionization is collected.
+The S1s merge together in time while the S2 of all but one of the deposits is lost, creating an event that is more NR-like.
+There are two main regions of zero charge collection that contribute to MSSI: the 13.75 cm deep layer of LXe in the reverse field region (RFR) below the cathode, where the charge is drifted towards the bottom shield grid; and LXe within a few mm of the TPC wall where inhomogeneous fields can drive ionization electrons into the wall where they are absorbed.
+The dominant contributors to these topologies are $^{214}$Pb decays in the LXe and $\gamma$-rays originating from detector components (other contributors are discussed in the \textcolor{black}{Supplemental Material}).
+The leading ER background from $^{214}$Pb is a $\beta$ decay to the ground state of $^{214}$Bi with no associated $\gamma$-ray emission.
+The MSSI background comes from excited-state decays, where the $\beta$ particle deposits a small amount of energy in the TPC and an associated $\gamma$-ray interacts in a charge-dead region.
+For $\gamma$-rays from detector components, MSSI are caused by double scatters where one of the interactions is in a charge-dead region.
+For these two sources, wall MSSI have a high probability of being promptly vetoed in the Skin or OD as the outgoing $\gamma$-ray can deposit energy in those locations. 
+
+Simulations of the detector radioactivity and $^{214}$Pb events are used to derive the MSSI model.  The rate of detector radioactivity in the simulation is normalized by radioassay results and validated by data as in Ref.~\cite{LZ:SR1Backgrounds_2022}. The $^{214}$Pb MSSI rate is constrained in the same way as the SS $^{214}$Pb component. The final model combines both sources of MSSI together. 
+A \emph{prompt veto} tagging efficiency of $94\pm2$\% for MSSI in the WS ROI is derived from the same simulation, again applied to both sources. An additional uncertainty arises from the modeling of the geometry of the charge-dead regions along the wall. 
+The simulation models the charge-dead regions as a scalloped pattern extending up to 3~mm from the physical wall due to field-shaping rings in the TPC wall, based on analysis of wall populations and electrostatic modeling of the electric field~\cite{dey2025a}. 
+The charge-dead volume in the model comprises 0.3\% of the total active volume. To reflect the uncertainty associated with the geometry of the charge loss regions, we include a 100\% uncertainty on the modeled MSSI rate. As the wall MSSI rate is proportional to the volume of the charge dead region in this regime, the uncertainty encompasses a charge dead region covering up to $0.6$\% of the active volume. 
+
+ 
+
+%\prlsubhead{Statistical Inference} 
+Probability density functions in \{S1$c$,~log$_{10}$(S2$c$)\} space for each of the background components and signal models are created using the BACCARAT package based on GEANT4~\cite{LZ:simulations_2021, GEANT4:2002zbu, ALLISON2016, Allison:2006ve}, with the tuned NEST v2.4.5~\cite{NEST:paper_2023} model providing the detector response. 
+Exceptions are $^{83\text{m}}$Kr, which is taken directly from calibration data, and the accidentals model as noted above. 
+The expected numbers of events in the WS~ROI for each background are given in~\autoref{tab:backgrounds} for the \emph{science} sample.
+
+Simultaneous fits of the \emph{science}, \emph{prompt veto}, and \emph{delayed veto} samples 
+are performed in the  \{S1$c$, $\log_{10}(\mathrm{S}2c)$\} plane using an unbinned, extended maximum likelihood. 
+The normalization of each background model component is included as a nuisance parameter in the fit; uncertainties on the normalization are included as Gaussian constraint terms except for neutrons from detector materials, which
+are constrained solely by the efficiencies associated with the \emph{prompt veto} and \emph{delayed veto} samples.
+The MSSI, $^{127}$Xe, and $\gamma$-rays from detector materials are additionally constrained by the veto sidebands.
+
+
+\input{table_science_sample}
+
+
+Following the recommendations in Refs.~\cite{Cowan_2011:Asymptotic,DM_parameters:BAXTER2021_Conventions}, the analysis uses a Profile Likelihood Ratio (PLR), using a two-sided test statistic to assess the compatibility between the data and a variety of signal hypotheses, where we scan over mass or mass splitting for a particular Lagrangian or operator.
+The full model was  validated using Goodness of Fit (GoF) tests performed in \{S$1c$,~log$_{10}$(S2$c$)\} space and in one-dimensional projections of each axis. 
+The tests were performed for each of the three data samples, with none returning a p-value below 0.05.
+More details on the fit and expectations for the \emph{prompt veto} and \emph{delayed veto} samples are given in the \textcolor{black}{Supplemental Material}. 
+

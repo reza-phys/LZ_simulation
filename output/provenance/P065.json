@@ -1,0 +1,66 @@
+{
+ "id": "P065",
+ "title": "Magnetic inelastic dark matter (MiDM) at LZ: the transition-dipole scattering spectrum, the de-excitation photon and the surviving parameter space",
+ "date": "2026-09-12",
+ "agent_tools": [
+  {"tool": "Read", "count": 17, "detail": "provenance/PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (page 1); papers P023, P042, P012, P044, P026, P011, P002, P021; code/P023_composite_idm.py; common/lzcommon.py lines 305-400; code/P046_multi_target.py lines 36-45; work/P065/figures (3 PNG)"},
+  {"tool": "Bash", "count": 19, "detail": "grep ledger rows P014/P021/P023/P026/P035/P042/P044/P046; grep lzcommon defs + ls papers/work; head P042/P023 CSVs + grep P042 summary; python: WimPyDD targets/signatures; grep P046 details; grep P023 log + awk P042 tables; python: lz.LZ dict + WimPyDD isotopes; python: timing test of one MiDM spectrum (found 180W NameError); sed 180W_func_w.py + grep P046 script; run P065_midm.py --budget 540 (chunk 1, moved to background by the harness after 600 s); grep interim output; run --budget 400 (chunk 2); run --budget 450 (chunk 3, analysis); run --budget 450 (validation additions); python: print result tables; wc -w paper (x3); python json validation + ls. One additional call containing `sleep 45` was blocked by the harness and never executed."},
+  {"tool": "Write", "count": 4, "detail": "code/P065_midm.py; work/P065/details.md; provenance/P065.json; papers/P065.md"},
+  {"tool": "Edit", "count": 20, "detail": "code/P065_midm.py x11: plan trimming (3), E_EXT step, O1 loop, repopulation log, decomposition validation, June-scaled ceilings, thermal band, summary keys, figure tweak; papers/P065.md x9: word-budget trimming of Abstract, Results, Headline, Key numbers; work/P065/details.md x1 and provenance/P065.json x1: final tool tallies (counted within the 20)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python)"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian (q- and mchi-dependent coefficient closures), diff_rate (with delta), streamed_halo_function; targets Xe, W, I; runtime np patch of 18xW response modules"},
+  {"name": "numpy", "version": "2.5.3", "functions": "arrays, trapezoid, interp, Dirac-matrix spinor check, npz cache"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf (efficiency), optimize.brentq (window edges)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "result tables, CSV I/O, P042 tables"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg figures"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "wd, wd_halo (Sun frame / day_of_year), wd_rate, wd_hamiltonian, wd_c_from_anand, E_R_range_keV, vmin_kms, v_earth_kms, LZ dict, constants (M_NUCLEON_GEV, HBARC_GEV_FM, GEV_TO_CM2, V0_KMS, V_SUN_PEC, VESC_KMS, C_KMS, M_V_GEV)"},
+  {"name": "annihilation cross-section derivation", "version": "none: derived by hand", "functions": "sigma v(chi1 chi2 -> f fbar) = alpha mu^2 sum N_c Q_f^2; tensors checked numerically"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P065_midm.py", "purpose": "MiDM NREFT spectra (WimPyDD) in Xe/W/I, charge-spin decomposition, mu(N=1), tau(delta) and P(clean) from P042, low-energy constraints, relic density, target ratios, figures", "command": ".venv/bin/python output/code/P065_midm.py --budget 540 ; then --budget 400 ; --budget 450 ; --budget 450 (cache fills across runs; analysis runs when complete)"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "sections 1-6 (event, kinematics, open question 10)"},
+  {"file": "output/results_ledger.csv", "parts_used": "rows P001-P012 (page 1) and grep of P014, P021, P023, P026, P035, P042, P044, P046"},
+  {"file": "output/papers/P023.md", "parts_used": "photon-M1 moment 2.1e-4 mu_N, tau 66 us, ceiling 326 keV"},
+  {"file": "output/code/P023_composite_idm.py", "parts_used": "photon-dipole NREFT coefficient implementation, efficiency model, halo construction, lifetime formula"},
+  {"file": "output/papers/P042.md", "parts_used": "P(clean) thresholds, tau90, topology shares"},
+  {"file": "output/work/P042/P042_topology_vs_tau_d{250,300,350,380}_wind.csv", "parts_used": "tau_s, P_clean, P_tpc, P_delayed, P_prompt (interpolated)"},
+  {"file": "output/work/P042/P042_photonM1_delta_scan.csv; P042_summary.json", "parts_used": "inspection of N=1 rows and sensitive time 1.68 us"},
+  {"file": "output/work/P023/P023_transition_rates.csv; P023_spectra_cache.npz", "parts_used": "N_lo/hi at delta 200-250; magnitude check of the delta=300 spectrum"},
+  {"file": "output/papers/P012.md", "parts_used": "elastic photon dipole N_lo 376 (charge 18000, spin 32), mu 2.1e-5 mu_N"},
+  {"file": "output/papers/P044.md; P026.md; P011.md; P002.md; P021.md", "parts_used": "context: anapole/EDM N_lo; excited-state cosmology f2; dark-photon relic and lifetime; O1 percentile 99.5th; likelihood peak 380 keV"},
+  {"file": "output/work/P046/details.md; output/code/P046_multi_target.py", "parts_used": "O1 W/Xe and I/Xe ratios, tungsten spin-response caveat, runtime np patch for 18xW files"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "WimPyDD wrapper section 8, kinematics, constants"},
+  {"file": "WimPyDD/Targets/Nuclear_response_functions/180W_func_w.py", "parts_used": "read only, to diagnose the NameError"}
+ ],
+ "recalled_knowledge": [
+  {"item": "fine-structure constant 1/137.036", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "nucleon g-factors 5.5857, -3.8261", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "hbar = 6.5821e-25 GeV s", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "Omega_DM h^2 = 0.120", "presumed_source": "Planck 2018", "reliability": "certain"},
+  {"item": "thermal <sigma v> = 2.2e-26 cm^3/s (self-conjugate, m >> 10 GeV)", "presumed_source": "Steigman, Dasgupta, Beacom 2012", "reliability": "certain"},
+  {"item": "Dirac-like two-species thermal target 4.4e-26 cm^3/s", "presumed_source": "Boltzmann bookkeeping with n1 = n2", "reliability": "likely"},
+  {"item": "photon-dipole NREFT coefficients c1, c5 (1/q^2), c4, c6 (1/q^2), Anand normalisation", "presumed_source": "Fitzpatrick et al. 2012 / Anand et al. 2014 via P012, P023", "reliability": "likely"},
+  {"item": "Gamma(chi2 -> chi1 gamma) = mu^2 delta^3/pi", "presumed_source": "Chang, Weiner, Yavin 2010", "reliability": "likely"},
+  {"item": "millicharge annihilation sigma v_rel = pi alpha^2 eps^2 N_c Q_f^2/m^2", "presumed_source": "standard QED threshold formula", "reliability": "likely"},
+  {"item": "sum N_c Q_f^2 = 8 for SM fermions at sqrt(s) = 2 TeV (W+W- omitted)", "presumed_source": "SM charges", "reliability": "certain"},
+  {"item": "MiDM literature moment ~1e-3 mu_N at ~100 GeV", "presumed_source": "Chang, Weiner, Yavin 2010 (DAMA fits)", "reliability": "uncertain"},
+  {"item": "LZ 2024 exposure 4.2 t yr, 5.4-55 keV, tolerance 3-5 events", "presumed_source": "LZ PRL 135, 011802 via P003/P012", "reliability": "certain (exposure) / uncertain (tolerance)"},
+  {"item": "XENONnT 3.1 t yr, PandaX-4T 1.54 t yr, ROI edges <= 60-70 keV", "presumed_source": "2025 results via P005", "reliability": "certain (exposures) / uncertain (edges)"},
+  {"item": "local DM density 0.3 GeV/cm^3", "presumed_source": "standard", "reliability": "certain"},
+  {"item": "SPI line sensitivity ~1e-5 ph/cm^2/s; GC line-of-sight ~2.5e22 cm with ~x10 over-density", "presumed_source": "INTEGRAL/SPI literature (order of magnitude)", "reliability": "uncertain"},
+  {"item": "loop-level elastic amplitude ratio ~ (mu q)^2/(16 pi^2); chi1 chi1 -> gamma gamma and chi1 chi1 -> chi2 chi2 sigma ~ mu^4 m^2/(4 pi)", "presumed_source": "dimensional analysis (order of magnitude)", "reliability": "uncertain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Initial 71-spectrum plan (delta to 390 keV, June at four delta values, 10 keV extended grid) exceeded the foreground time limit at 70-100 s per xenon spectrum; trimmed to 60 spectra, 20 keV extended grid, delta = 390 dropped (beyond the Sun-frame ceiling for 248 keV).",
+  "June-16 P(clean) ceilings from a linear interpolation of P(clean) between delta = 300 and 350 keV moved the ceiling the wrong way (306 keV); replaced by scaling the Sun-frame mu(delta) with the interpolated June/Sun rate ratio.",
+  "Tungsten rates failed with NameError 'np' inside WimPyDD's 180W_func_w.py; fixed at runtime by injecting numpy into the 18xW modules (as P015/P046), no file edited."
+ ],
+ "wimpydd_generated_files": "none (WD.diff_rate used through lz.wd_rate; Hamiltonians P065_midm, P065_midm_charge, P065_midm_spin, P065_O1_contact are in-memory; all outputs under output/work/P065/)"
+}

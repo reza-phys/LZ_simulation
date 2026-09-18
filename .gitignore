@@ -1,0 +1,10 @@
+# Recreated by environment/setup.sh
+.venv/
+.cache/
+environment/downloads/
+WimPyDD/
+
+# OS / Python junk
+.DS_Store
+__pycache__/
+*.pyc

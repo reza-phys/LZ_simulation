@@ -1,0 +1,8 @@
+stratum,n,n_resolved,F1,F2,F3,F5,F10,median_yr
+all new physics,35,25,0.171,0.400,0.457,0.571,0.664,4.000
+"new physics, independent comparable test available",24,20,0.250,0.458,0.542,0.708,0.800,3.000
+"new physics, no comparable independent test",11,5,0.000,0.273,0.273,0.273,0.364,inf
+direct detection (all),10,8,0.200,0.400,0.640,0.760,1.000,3.000
+"few-event (n <= 5), all",9,5,0.333,0.444,0.583,0.583,0.583,3.000
+expected process,8,5,0.375,0.375,0.792,0.792,0.792,3.000
+"new physics, in window",18,13,0.111,0.333,0.333,0.556,0.611,4.000

@@ -1,0 +1,52 @@
+{
+ "id": "P020",
+ "title": "What LZ's data since April 2024 should show: falsifiable predictions for the untouched exposure",
+ "date": "2026-09-05",
+ "agent_tools": [
+  {"tool": "Read", "count": 17, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv; papers P001, P002, P004, P006, P007, P010; fulltext.tex lines 108-137 (Data Analysis, FV), 208-267 (Table I, PLR, Fig. 5 caption), 330-335 (Conclusion); lzcommon.py lines 1-125, 285-373; P006_event_date.py lines 84-133; P001 details.md lines 60-71, 130-151; three P020 PNG figures"},
+  {"tool": "Bash", "count": 8, "detail": "grep tex for live days/fiducial mass/0.0106/Conclusion and Table I lines; ls output/work/P00*/ + cat ENVIRONMENT_versions.txt; grep lzcommon function list; head P006 rate CSVs + cat P001 table5 + grep P006 script/details + grep versions; .venv/bin/python output/code/P020_future_lz.py (run 1, 5.4 min); python inline: print JSON/CSV results; python inline: recompute delta=380 seasonal shape on P006 energy grid for comparison; .venv/bin/python output/code/P020_future_lz.py > run_log.txt (runs 2 and 3, after figure fixes) + inline print of decision_table/seasonal_visibility CSVs; grep dataviz palette hex values"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P020_future_lz.py; output/work/P020/details.md; output/provenance/P020.json; output/papers/P020.md"},
+  {"tool": "Edit", "count": 2, "detail": "P020_future_lz.py: delta=380 legend label (December rate zero); seasonal-PDF figure normalisation (per window, not per year)"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (chart palette/form guidance before plotting)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "datetime (calendar arithmetic), csv, json, math"},
+  {"name": "numpy", "version": "2.5.3", "functions": "trapezoid, interp, random.default_rng (toy MC, seed 20260905), array algebra"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats.poisson.pmf/sf, stats.nbinom.pmf, stats.norm.cdf/isf, integrate.quad, special.gammainc, optimize.brentq, interpolate.CubicSpline"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; bar, plot, axvspan; three PNG figures"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "streamed_halo_function (via lz.wd_halo with explicit v_min grid, day_of_the_year), eft_hamiltonian (O1 isoscalar, via lz.wd_hamiltonian), diff_rate (via lz.wd_rate) for inelastic O1 at m = 1000 GeV, delta = 300/350/366/380 keV on 54 days of the year"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ dict (live_days, fiducial_mass_t, exposure_tyr, bkg_highS1_panel, E_50pct_low/high_keV, eff_plateau), wd_halo, wd_hamiltonian, wd_rate"},
+  {"name": "none: derived by hand", "version": "-", "functions": "Poisson-Gamma = negative binomial identity; L(s) ~ s e^-s interval check; classical N=0 upper limit 2.303/k"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P020_future_lz.py", "purpose": "exposure scenarios, background scaling, L10 plug-in and Poisson-Gamma predictives, WimPyDD seasonal PDFs for inelastic O1 (1000 GeV) at delta = 300/350/366/380 keV, seasonal-visibility toy MC, P001-framework decision table, combined-sample local significances, N=0 upper limits, corpus-prior mixture predictive, three figures", "command": ".venv/bin/python output/code/P020_future_lz.py  (cwd = /Users/reza/LZ_simulation; ~5.5 min; log in output/work/P020/run_log.txt)"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Data Analysis paragraph (220 live days, 27 March 2023 - 1 April 2024; ROI; 96% efficiency), FV paragraph (4.71 +- 0.08 t, 14.5% smaller), Table I (L10s 1000 GeV best fit 1.0 +1.4 -0.7; backgrounds), Fig. 5 caption (0.0106 +- 0.0008 in the S1c > 500 phd panel), Conclusion (data taking continued since 1 April 2024 with the same field)"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "Sec. 2 (2e-4 within +-2 sigma of NR median; 0.0106 panel), Sec. 6 item 6 (post-April-2024 projection question)"},
+  {"file": "output/results_ledger.csv", "parts_used": "headline numbers of P001-P010"},
+  {"file": "output/papers/P001.md + output/work/P001/details.md (Sec. 2.5, 3.6) + P001_table5_future_events.csv", "parts_used": "three-hypothesis framework (pi_DM = 0.01, pi_U = 0.1, L_U = 0.1, mu_U = -ln 0.9, flat prior s in [0,10]); posterior predictive 0.84/0.11/0.05; equal-exposure updates 0.028/0.217/0.797 (used as checks)"},
+  {"file": "output/papers/P002.md", "parts_used": "June/Dec ratios 2.4 (delta = 300) and 28 (350); inelastic onset energies; 13% of rate above 270 keV at delta = 300"},
+  {"file": "output/papers/P006.md + output/code/P006_event_date.py + output/work/P006/rate_vs_doy_O1_d{300,350,380}_m1000.csv + details.md", "parts_used": "efficiency parametrisation (Fig. S2), modulation fractions 41/90/100%, day-grid method; stored seasonal tables used for a shape comparison"},
+  {"file": "output/papers/P007.md", "parts_used": "Higgsino delta(N=1) = 366 keV at 1 TeV; 4-5.2 events per 1000 live days; June/Dec = 46"},
+  {"file": "output/papers/P004.md, output/papers/P010.md", "parts_used": "background hypotheses at the 1e-3 - 1e-2 level (wall MSSI, ER leakage), cited as context"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "LZ dict, wd_halo, wd_hamiltonian, wd_rate"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Poisson rate with Gamma(alpha, rate beta) prior gives a negative-binomial predictive NB(alpha, p = beta/(beta + k))", "presumed_source": "standard Bayesian statistics", "reliability": "certain"},
+  {"item": "Jeffreys prior for a Poisson mean is s^(-1/2), giving a Gamma(1.5, 1) posterior after one count", "presumed_source": "standard Bayesian statistics", "reliability": "certain"},
+  {"item": "One-sided 90% CL profile-likelihood threshold -2 dlnL = 2.706 (Wilks)", "presumed_source": "Cowan et al. 2011 / standard", "reliability": "certain"},
+  {"item": "Bayes factor > 10 = 'strong' evidence (Jeffreys / Kass-Raftery scale)", "presumed_source": "Kass & Raftery 1995", "reliability": "certain"},
+  {"item": "Gregorian calendar: 2024 is a leap year; 27 Mar 2023 - 1 Apr 2024 = 371 days; 1 Apr 2024 - 2 Sep 2026 = 884 days", "presumed_source": "calendar arithmetic (verified with Python datetime)", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First seasonal-PDF figure normalised the time density per year instead of per window (flat reference misplaced); corrected in the second run. Toy LR results unaffected.",
+  "delta = 380 keV June/December ratio is numerically ~1e5 because the December in-ROI rate is zero; reported as 'December rate = 0' instead of a ratio.",
+  "P006's stored rate_vs_doy tables at delta = 350/380 keV are flatter than our WimPyDD recomputation (which is energy-grid independent); attributed, without certainty, to P006 having run before lz.wd_halo received the explicit v_min grid. Not pursued further.",
+  "No 2D (S1c, log S2c) likelihood and no L10-specific time PDF (P006 found LR ~ 0.98 for dipole-like elastic spectra); the elastic best fit is treated as time-flat."
+ ],
+ "wimpydd_generated_files": "none (WD.diff_rate via lz.wd_rate; no response-function files written)"
+}

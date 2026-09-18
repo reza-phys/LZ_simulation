@@ -1,0 +1,59 @@
+{
+ "id": "P057",
+ "title": "Operator interference and the degeneracy among L2, L4, L9-L12 and L16: what a second event (and a tenth) would distinguish",
+ "date": "2026-09-11",
+ "agent_tools": [
+  {"tool": "Read", "count": 17, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; papers P003, P027, P050, P031, P012, P021, P047, P044; fulltext.tex lines 483-502 (LEE) and 825-909 (Tables S6/S7); lzcommon.py lines 305-400; WimPyDD/package.py lines 880-935 and 1186-1265; P044_anapole_edm.py lines 60-135; P057_analysis_stdout.txt; four P057 figures"},
+  {"tool": "Bash", "count": 14, "detail": "ls papers/work/data_requests; grep tex for LEE/degenerate/Table S6; grep lzcommon function list; python inspect P003_spectra.npz + summary; python compact ledger print; grep P012/P044/P050 scripts for eft_hamiltonian usage; grep P050/P044 details for separation method; python inspect P050 cache + sed P050 script; python WimPyDD timing + coeff_squared_list test; grep P038/P016/P034/P020 + versions + work listings; sed WimPyDD diff_rate docstring; P057 compute run (chunk 1, moved to background by the harness after 600 s); ls cache/log progress checks (x2); grep compute times; P057 compute chunk 2 (530 s budget); P057 analysis runs (x3: ZeroDivisionError fix, admixture-grid fix, final); python summary extraction (scan rows, pairwise stats, lookup bands, accepted rates); stat of WimPyDD response-function file timestamps"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P057_operator_degeneracy.py; output/work/P057/details.md; output/provenance/P057.json; output/papers/P057.md"},
+  {"tool": "Edit", "count": 12, "detail": "P057 script: time budget + Budget exception; RHO16/RHO46 lists; interference section trimmed to RHO lists; node/limit checks; figure rho values; main try/except; shape_metrics empty guard; pdf_obs zero guard; 400 GeV empty-spectrum skip; rho grid 1e-6.5-1e1.5; ratio mask"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette/mark rules applied to matplotlib PNGs; JS validator skipped per guide)"},
+  {"tool": "ToolSearch", "count": 1, "detail": "select:Monitor"},
+  {"tool": "Monitor", "count": 1, "detail": "watched output/work/P057/cache count and run log until the background compute process exited"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python, run from /Users/reza/LZ_simulation"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian (closure coefficient functions f() and f(q), no default arguments; coeff_squared_list for interference bookkeeping), diff_rate via lz.wd_rate, streamed_halo_function via lz.wd_halo (Sun-frame Baxter-2021 SHM, explicit v_min grid), Xe target with shell-model response functions"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "wd, wd_halo, wd_rate, wd_c_SI_from_sigma_n (inverted), M_V_GEV, M_NUCLEON_GEV, A_XE_MEAN, m_nucleus_gev"},
+  {"name": "numpy", "version": "2.5.3", "functions": "arrays, trapezoid, polyfit, searchsorted, random.default_rng(57), savez/load"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf, stats.norm.pdf, cluster.hierarchy.linkage/fcluster/dendrogram"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, to_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; pyplot subplots/imshow/colorbar; PNG output"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P057_operator_degeneracy.py", "purpose": "WimPyDD spectra (cached per model in output/work/P057/cache/), observed-energy pdfs for two efficiency edges, KL/Hellinger/N_3sigma (Gaussian + toys), clustering, O1+O6 and O4+O6 interference scans, second-event lookup, figures", "command": ".venv/bin/python output/code/P057_operator_degeneracy.py compute   (repeat until 'compute stage complete'; 530 s budget per call)  then  .venv/bin/python output/code/P057_operator_degeneracy.py all"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "lines 485-498 (LEE: degenerate pairs L1/L5, L2/L8, L3/L17, L4/L20, L11/L14; isoscalar/isovector-degenerate Lagrangians; mass degeneracy >= 400 GeV; 616 -> 293), lines 825-909 (Tables S6, S7)"},
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "sections 1-6 (event parameters, degeneracy statement in 4.7)"},
+  {"file": "output/results_ledger.csv", "parts_used": "id/title/headline of P001-P050"},
+  {"file": "output/papers/P003.md, P012.md, P021.md, P027.md, P031.md, P044.md, P047.md, P050.md", "parts_used": "N_lo values, L10 reduction and convention, resolution model, b_H, model posterior, L16 candidate, L10-vs-366 separation method and numbers, isotope conclusions"},
+  {"file": "output/papers/P006.md / P034.md / P038.md / P016.md (via ledger and grep)", "parts_used": "date likelihood ratios; 1000 phd edge E50 = 423.2 keV; fitted low-energy tolerance 1.6-2.2 events"},
+  {"file": "output/work/P050/P050_spectra_cache.npz", "parts_used": "12-day annual-average inelastic O1s spectra (delta = 300/350/366/380 keV, 1 TeV) and L10 spectrum, re-gridded"},
+  {"file": "output/work/P003/P003_spectra.npz, P003_summary.json, P003_operator_table.csv", "parts_used": "inspected for grid/convention and N_lo cross-check (not used numerically)"},
+  {"file": "output/code/P003_nreft_shapes.py, P012_magnetic_dipole.py, P044_anapole_edm.py, P050_next_generation.py", "parts_used": "Hamiltonian-building conventions (closures, q-dependent coefficients), efficiency model, KL/toy criterion"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "WimPyDD wrapper section (lines 305-400)"},
+  {"file": "WimPyDD/package.py", "parts_used": "symmetric/non_symmetric_interference, eft_hamiltonian.__init__ (argument handling, coeff_squared_list), diff_rate docstring (read-only)"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "NREFT response coefficient functions R_M, R_Sigma', R_Sigma'', R_Delta, R_DeltaSigma' (which operators share a response and which interfere)", "presumed_source": "Fitzpatrick et al. JCAP 2013 eq. 40; Anand et al. PRC 2014", "reliability": "certain (verified numerically with WimPyDD)"},
+  {"item": "Anand Lagrangian -> operator identities: L1/L5 -> O1, L2/L8 -> O10, L4/L20 -> O6, L3/L17 -> O11, L11/L14 -> O9; L10 -> 4[(q^2/m_N^2) O4 - O6]", "presumed_source": "Anand, Fitzpatrick, Haxton 2014 Table 1", "reliability": "likely"},
+  {"item": "LZ 2024 SI limit at 1 TeV of a few x 1e-47 cm^2", "presumed_source": "LZ Collaboration PRL 135, 011802 (2025)", "reliability": "likely"},
+  {"item": "2024 low-energy search tolerates ~3-5 signal events", "presumed_source": "P003/P012 convention", "reliability": "uncertain (P016's fitted 1.6-2.2 also used)"},
+  {"item": "hbar^2 c^2 = 0.389e-27 cm^2 GeV^2; m_n = 0.931 GeV in WimPyDD's SI mapping", "presumed_source": "PDG; WimPyDD test script", "reliability": "certain"},
+  {"item": "KL divergence, Hellinger distance, Gaussian asymptotics of the summed log-likelihood ratio", "presumed_source": "Kullback-Leibler 1951; standard statistics", "reliability": "certain"},
+  {"item": "Okabe-Ito colour-blind-safe palette", "presumed_source": "Okabe & Ito 2008", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First analysis run crashed (ZeroDivisionError) on the empty Sun-frame inelastic delta = 340 keV spectrum at 400 GeV; guarded and reported as kinematically forbidden",
+  "Admixture scan initially started at rho = 1e-4, above the O1 limit (~1e-5); extended to 1e-6.5",
+  "Direct WimPyDD rho -> 0 check at rho = 0.01 is not a clean limit (O4 already contributes H = 0.21); the limit was taken from the analytic scan (N_lo -> 0.4298 vs pure O6 0.4286)",
+  "O4+O6 scan trimmed from eight to four rho values (both signs) to fit the foreground time budget; cross term is rho-independent to 1e-16",
+  "First compute run exceeded the 600 s foreground limit and was moved to the background by the harness (it completed); the script was then given a 530 s budget with per-spectrum caching and re-run in the foreground"
+ ],
+ "wimpydd_generated_files": "none (WD.diff_rate used; WimPyDD/WimPyC/Response_functions/spin_1_2/*.npy timestamps predate this run)"
+}

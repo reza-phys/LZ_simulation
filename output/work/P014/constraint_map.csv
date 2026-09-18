@@ -1,0 +1,13 @@
+model,m_GeV,LEP,disappearing_track,soft_lepton,monojet,LZ_compatible_mass,overall
+Higgsino (doublet),300,allowed,unprobed (c tau 0.71 cm; P(r>12 cm)=5e-08 at beta gamma=1),not applicable (Delta m = 0.36 GeV),unprobed,yes,allowed / unprobed by all colliders
+Higgsino (doublet),500,allowed,unprobed (c tau 0.71 cm; P(r>12 cm)=5e-08 at beta gamma=1),not applicable (Delta m = 0.36 GeV),unprobed,yes,allowed / unprobed by all colliders
+Higgsino (doublet),1000,allowed,unprobed (c tau 0.71 cm; P(r>12 cm)=5e-08 at beta gamma=1),not applicable (Delta m = 0.36 GeV),unprobed,yes,allowed / unprobed by all colliders
+Higgsino (doublet),1100,allowed,unprobed (c tau 0.71 cm; P(r>12 cm)=5e-08 at beta gamma=1),not applicable (Delta m = 0.36 GeV),unprobed,yes,allowed / unprobed by all colliders
+Higgsino (doublet),2000,allowed,unprobed (c tau 0.71 cm; P(r>12 cm)=5e-08 at beta gamma=1),not applicable (Delta m = 0.36 GeV),unprobed,yes,allowed / unprobed by all colliders
+Higgsino (doublet),4000,allowed,unprobed (c tau 0.71 cm; P(r>12 cm)=5e-08 at beta gamma=1),not applicable (Delta m = 0.36 GeV),unprobed,yes,allowed / unprobed by all colliders
+wino (triplet),300,allowed,"excluded (ATLAS wino DT <660 GeV, tau 0.2 ns)",not applicable,unprobed,"n/a: neutral triplet (Y=0) has no Z coupling, no O(100 keV) inelastic partner",excluded
+wino (triplet),500,allowed,"excluded (ATLAS wino DT <660 GeV, tau 0.2 ns)",not applicable,unprobed,"n/a: neutral triplet (Y=0) has no Z coupling, no O(100 keV) inelastic partner",excluded
+wino (triplet),660,allowed,"excluded (ATLAS wino DT <660 GeV, tau 0.2 ns)",not applicable,unprobed,"n/a: neutral triplet (Y=0) has no Z coupling, no O(100 keV) inelastic partner",excluded
+wino (triplet),1000,allowed,allowed (beyond 660 GeV),not applicable,unprobed,"n/a: neutral triplet (Y=0) has no Z coupling, no O(100 keV) inelastic partner",allowed / unprobed
+wino (triplet),2000,allowed,allowed (beyond 660 GeV),not applicable,unprobed,"n/a: neutral triplet (Y=0) has no Z coupling, no O(100 keV) inelastic partner",allowed / unprobed
+wino (triplet),2900,allowed,allowed (beyond 660 GeV),not applicable,unprobed,"n/a: neutral triplet (Y=0) has no Z coupling, no O(100 keV) inelastic partner",allowed / unprobed

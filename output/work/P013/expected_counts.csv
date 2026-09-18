@@ -1,0 +1,24 @@
+scenario,N_200_270,P_ge1,note
+alpha_n (f_C=2.5e-3) | fit UL 0.118,5.984882465847654e-06,5.984864556496383e-06,science-sample total NR SS x spectral fraction
+alpha_n (f_C=2.5e-3) | MS cross-check 0.02,1.0143868586182465e-06,1.0143863441447465e-06,0.02+-0.02 SS neutrons
+alpha_n (f_C=2.5e-3) | <=3 low-E NR events,0.00015777353493577194,0.0001577610893461756,empty 5.4-55 keV NR band (recalled tolerance)
+alpha_n (f_C=1e-2) | fit UL 0.118,2.4016842319507958e-05,2.401655391748303e-05,science-sample total NR SS x spectral fraction
+alpha_n (f_C=1e-2) | MS cross-check 0.02,4.07065124059457e-06,4.070642955489312e-06,0.02+-0.02 SS neutrons
+alpha_n (f_C=1e-2) | <=3 low-E NR events,0.0006338011431307839,0.000633600333612927,empty 5.4-55 keV NR band (recalled tolerance)
+alpha_n (f_C=5e-4) | fit UL 0.118,1.1959498600554962e-06,1.1959491449387016e-06,science-sample total NR SS x spectral fraction
+alpha_n (f_C=5e-4) | MS cross-check 0.02,2.0270336611110107e-07,2.0270334555316794e-07,0.02+-0.02 SS neutrons
+alpha_n (f_C=5e-4) | <=3 low-E NR events,3.151880865207057e-05,3.1518311939593424e-05,empty 5.4-55 keV NR band (recalled tolerance)
+alpha_n iso-angles (f_C=2.5e-3) | fit UL 0.118,0.00012371833878712106,0.00012371068598904245,science-sample total NR SS x spectral fraction
+alpha_n iso-angles (f_C=2.5e-3) | MS cross-check 0.02,2.0969209963918826e-05,2.0968990111613905e-05,0.02+-0.02 SS neutrons
+alpha_n iso-angles (f_C=2.5e-3) | <=3 low-E NR events,0.0032699326078074417,0.0032645922006873107,empty 5.4-55 keV NR band (recalled tolerance)
+"fission 238U | 1% of (a,n) x silent factor (central)",9.268437991589418e-11,9.268441569787456e-11,"SS-prob ratio SF/(a,n) 1.06; silent 3.8e-04"
+"fission 238U | 1% of (a,n), no multiplicity penalty",2.409434713100956e-07,2.409434423089607e-07,upper bound ignoring companions
+fission 238U | silent factor at its maximum,3.2837022780847204e-10,3.283702199041727e-10,
+muon_E-1 | UL 4.6e-4 SS of any energy,5.936676640021436e-07,5.936674878359582e-07,all single deposits incl. nonelastic
+"muon_E-1 | UL 4.6e-4, elastic-only denominator",9.94018244354718e-06,9.940133040120536e-06,conservative
+muon_E-1 | <=3 low-E NR events,0.07595269382391591,0.07313994827288728,
+muon_E-2 | UL 4.6e-4 SS of any energy,9.428844836274894e-07,9.428840390679483e-07,all single deposits incl. nonelastic
+"muon_E-2 | UL 4.6e-4, elastic-only denominator",1.5909047482564253e-05,1.5908920934393223e-05,conservative
+muon_E-2 | <=3 low-E NR events,0.1278549564398399,0.12001899453336184,
+ALL SOURCES central (0.118 normalisation),6.578642814229713e-06,6.57862117503516e-06,sum of central scenarios
+"ALL SOURCES generous (iso angles, f_C=1e-2, max silent, elastic denom.)",0.0005048138659622593,0.0005046864688807995,stacked conservative choices

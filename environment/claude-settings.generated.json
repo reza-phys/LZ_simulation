@@ -1,0 +1,113 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash",
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep",
+      "TodoWrite"
+    ],
+    "deny": [
+      "WebFetch",
+      "WebFetch(domain:*)",
+      "WebSearch",
+      "mcp__*",
+      "Read(~/.claude/projects/**/*.jsonl)",
+      "Read(~/.claude/history.jsonl)",
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "Bash(pip *)",
+      "Bash(pip3 *)",
+      "Bash(uv *)",
+      "Bash(brew *)",
+      "Bash(tlmgr *)",
+      "Bash(conda *)",
+      "Edit(//Users/reza/LZ_simulation/PROMPT.md)",
+      "Edit(//Users/reza/LZ_simulation/README.md)",
+      "Edit(//Users/reza/LZ_simulation/run.sh)",
+      "Edit(//Users/reza/LZ_simulation/inputs/**)",
+      "Edit(//Users/reza/LZ_simulation/environment/**)",
+      "Edit(//Users/reza/LZ_simulation/.venv/**)",
+      "Edit(//Users/reza/LZ_simulation/sim_logs/**)"
+    ]
+  },
+  "disableClaudeAiConnectors": true,
+  "sandbox": {
+    "enabled": true,
+    "failIfUnavailable": true,
+    "allowUnsandboxedCommands": false,
+    "autoAllowBashIfSandboxed": true,
+    "excludedCommands": [],
+    "network": {
+      "allowedDomains": [],
+      "strictAllowlist": true
+    },
+    "filesystem": {
+      "denyRead": [
+        "~/.claude/projects/**/*.jsonl",
+        "~/.claude/history.jsonl"
+      ],
+      "denyWrite": [
+        "/Users/reza/LZ_simulation/PROMPT.md",
+        "/Users/reza/LZ_simulation/README.md",
+        "/Users/reza/LZ_simulation/run.sh",
+        "/Users/reza/LZ_simulation/inputs",
+        "/Users/reza/LZ_simulation/environment",
+        "/Users/reza/LZ_simulation/.venv",
+        "/Users/reza/LZ_simulation/sim_logs"
+      ]
+    }
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/Users/reza/LZ_simulation/.venv/bin/python\" -I -S \"/Users/reza/LZ_simulation/environment/hooks/log_tool_call.py\"",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/Users/reza/LZ_simulation/.venv/bin/python\" -I -S \"/Users/reza/LZ_simulation/environment/hooks/log_tool_call.py\"",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/Users/reza/LZ_simulation/.venv/bin/python\" -I -S \"/Users/reza/LZ_simulation/environment/hooks/log_tool_call.py\"",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "PermissionDenied": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/Users/reza/LZ_simulation/.venv/bin/python\" -I -S \"/Users/reza/LZ_simulation/environment/hooks/log_tool_call.py\"",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

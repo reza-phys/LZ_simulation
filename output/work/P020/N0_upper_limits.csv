@@ -1,0 +1,4 @@
+end,k,UL90_new_only,UL90_combined_bayes,UL90_combined_PLR,s_hat_combined,frac_of_TableI_interval_excluded_new_only,best_fit_excluded_new_only,P_N0_given_s1,P_N0_PoissonGamma
+2026-09-02,2.38,0.9674,1.151,1.079,0.2956,0.6822,True,0.09249,0.08752
+2026-12-31,2.703,0.8518,1.05,0.9846,0.2698,0.7373,True,0.06695,0.07292
+2027-12-31,3.686,0.6247,0.8299,0.778,0.2132,0.8454,True,0.02505,0.04554

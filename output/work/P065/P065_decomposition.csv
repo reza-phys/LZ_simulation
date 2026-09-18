@@ -1,0 +1,4 @@
+delta_keV,frac_charge_248,frac_spin_248,frac_charge_hi,frac_spin_hi,N_lo_per_hi_full,N_lo_per_hi_charge,N_lo_per_hi_spin,vmin248_kms,vperp2_max_over_vmax2
+0,0.009338,0.901,0.01841,0.8916,385.9,340.4,28.68,338.7,0.8183
+200,0.007734,0.9024,0.01448,0.8954,0.2228,0.1563,0.01891,582,0.4634
+300,0.00566,0.9042,0.009314,0.9005,0,0,0,703.7,0.2156

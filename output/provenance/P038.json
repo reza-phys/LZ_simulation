@@ -1,0 +1,55 @@
+{
+ "id": "P038",
+ "title": "The efficiency edge: how the S1c < 600 phd boundary shapes inference at 250-270 keV and what an extended ROI would have shown",
+ "date": "2026-09-09",
+ "agent_tools": [
+  {"tool": "Read", "count": 30, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (2 pages); papers P009, P024, P021, P002, P016, P020; fulltext.tex l.108-130, 148-158, 310-322, 450-460, 718-787; lzcommon.py l.1-75, 255-373; P009_energy_reconstruction.py l.150-225, 290-301; P021_full_likelihood.py l.1-55, 56-235; FigS2, Fig4, FigS4 PNGs (one failed path); own figures x5"},
+  {"tool": "Bash", "count": 17, "detail": "grep tex for ROI/salt/sideband/raster lines; ls work dirs + ENVIRONMENT_versions; grep lzcommon defs; inspect P021 scan CSV/peaks/spectra npz + P009 results.json + P002 rate CSV; grep P009 script; ls figures_png + plan grep; WimPyDD kernel timing test; grep P009 constants; grep dataviz palette; .venv/bin/python output/code/P038_efficiency_edge.py (x4: two bug fixes, one figure/g1 revision); results digest; wc -w checks x3"},
+  {"tool": "Write", "count": 5, "detail": "output/code/P038_efficiency_edge.py; work/P038/details.md; provenance/P038.json; papers/P038.md (x2: initial and trimmed rewrite)"},
+  {"tool": "Edit", "count": 16, "detail": "script: P021-cache index fix, inf-round fix, g1-sensitivity block, Fig.1 legend, Fig.3 x-range; details.md tool tally; papers/P038.md word-budget trims x9; provenance tally"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette/mark guidance for the three PNG figures)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python from the simulation root"},
+  {"name": "nestpy", "version": "2.1.1", "functions": "detectors.LZ_WS2024, NESTcalc.GetYields (NR, Table S5 params with p(E) break), GetQuanta (LZ width vector), get_s2Fano, get_sPEres"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian (O1 isoscalar), streamed_halo_function (via lz.wd_halo, explicit v grid), diff_rate(sum_over_streams=False) per-stream kernels, Xe target; 3417 kernel calls"},
+  {"name": "numpy", "version": "2.5.3", "functions": "default_rng(38) binomial/normal, cumsum, interp, savez/load"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats.norm.pdf/cdf, special.erf, optimize.brentq, optimize.curve_fit"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame/CSV tables"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg PNG figures"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ dict, NEST_NR_LZ, nest_nr_params_vector, DRIFT_FIELD_VCM, wd, wd_halo, wd_hamiltonian, wd_c_from_anand, E_R_range_keV, delta_max_kev, vmax_kms, v_earth_kms, M_V_GEV, M_NUCLEON_GEV"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P038_efficiency_edge.py", "purpose": "NEST MC efficiency per S1c edge; WimPyDD O1 inelastic spectra over the full kinematic window; acceptance, coupling and single-event Z per edge; MSSI interpolation for an extended ROI; E=262 keV scenario; three figures", "command": ".venv/bin/python output/code/P038_efficiency_edge.py"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Data Analysis paragraph l.110-117 (ROI, S2c ceiling rationale, S1c range inherited); Fig.4 caption l.152-156; salting l.160-161; MSSI validation l.316-318, 721-731; raster scan l.500; Fig.S2 caption l.454-458; Table 'MSSI comparison' l.765-783"},
+  {"file": "inputs/figures_png/FigS2_efficiency_werror.png", "parts_used": "roll-off shape, 269.9 keV, plateau 0.955 (via P009 inset readings)"},
+  {"file": "inputs/figures_png/Fig4_science_sample_wbands.png", "parts_used": "ER-band position at S1c 600-800 phd (visual), NR band to 800 phd"},
+  {"file": "inputs/figures_png/FigS4_mssi_sidebands_s1logs2.png", "parts_used": "4.7 t science panel empty in 600-800 phd below 10^4.15 and in the HE SB; 5.4 t HE SB: ~2-3 of 18 events near the NR median, ~8 above 10^4.15 (visual readings)"},
+  {"file": "output/work/P009/results.json", "parts_used": "alpha_paper, beta_paper, width_parameters, ext_eff, pos_res; efficiency erf sigma 11.8; P(S1c>600)=0.7% at 246 keV; delta_max"},
+  {"file": "output/code/P009_energy_reconstruction.py", "parts_used": "quanta/detect MC model, Fig. S2 inset readings"},
+  {"file": "output/work/P021/P021_scan_baseline.csv", "parts_used": "Z, S_tot, kappa_hat at 1000 GeV O1s for comparison"},
+  {"file": "output/work/P021/spectra_s_1000.npz", "parts_used": "delta=300 keV spectrum cross-check"},
+  {"file": "output/code/P021_full_likelihood.py", "parts_used": "efficiency/resolution/likelihood definitions, q0_single formula, grids"},
+  {"file": "output/work/P002/rate_vs_delta.csv", "parts_used": "inspection only"},
+  {"file": "output/00_evidence_dossier.md; output/results_ledger.csv; papers P002, P009, P016, P020, P021, P024", "parts_used": "context, prior numbers cited"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "functions listed under software"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Asymptotic profile-likelihood q0 and the companion-free single-event form q0 = 2[ln(f/b) - 1 + b/f]", "presumed_source": "Cowan, Cranmer, Gross, Vitells (2011); P021 derivation", "reliability": "certain"},
+  {"item": "Poisson probability of zero counts e^-mu", "presumed_source": "standard", "reliability": "certain"},
+  {"item": "214Pb gamma lines 242, 295, 352 keV (interpretation of the steep RFR-MSSI S1c rise only)", "presumed_source": "nuclear data tables", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First run: boolean-index mismatch when comparing the 267-point spectrum grid with P021's 113-point cache (fixed by comparing on P021's grid).",
+  "Second run: OverflowError rounding an infinite edge value (NR-band MSSI never reaches 0.1 events below 1700 phd); fixed.",
+  "Seeding nestpy's internal generator was not attempted through NESTcalc; run-to-run scatter of E50 is 0.2 keV and is quoted.",
+  "A 2D (S1c, log S2c) likelihood per edge was judged unnecessary: the S1c cut acts on the S1c marginal and the S2c ceiling is irrelevant below ~1200 phd.",
+  "400/4000 GeV, O1 isovector and O4 spectra not rerun (mechanism operator- and mass-independent for a given recoil window; P021 covers the peaks)."
+ ],
+ "wimpydd_generated_files": ["output/work/P038/spectra_s_1000_full.npz (kernels x halos cache written by the script; no WimPyDD response-function files were written because diff_rate, not wimp_dd_rate, was used)"]
+}

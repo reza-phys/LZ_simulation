@@ -1,0 +1,147 @@
+{
+ "geometry": {
+  "n_Xe_cm3": 1.3292118359642168e+22,
+  "N_T_FV": 2.1588233611694695e+28,
+  "R_FV_cm": 64.6213751963284,
+  "H_FV_cm": 123.8,
+  "S_FV_cm2": 76504.36829058905,
+  "Lbar_FV_cm": 84.91739582061335,
+  "R_TPC_cm": 72.8,
+  "H_TPC_cm": 145.6,
+  "S_TPC_cm2": 99899.63045520797,
+  "Lbar_TPC_cm": 97.06666666666666,
+  "live_s": 19008000.0,
+  "M_TPC_t": 7.030269993901169
+ },
+ "F2_check": {
+  "F2_30_over_248_helm": 1249.3264777740926,
+  "F2_30_over_248_shell": 6809.43062194734,
+  "F2_248_helm": 0.00016337974009870973,
+  "F2_248_shell": 2.9112393004355904e-05
+ },
+ "unit_check_contact_vs_lzcommon": [
+  1.0000000000000002,
+  1.0000000000000007,
+  1.0000000000000002,
+  1.0000000000000004
+ ],
+ "mcp_m_min_GeV": {
+  "E248": 74.94391086163631,
+  "E200": 63.34605278913392
+ },
+ "mcp_equivalent_sigma_SI_1TeV_cm2": 4.545345877329527e-42,
+ "mcp_lowE_events_at_eps1_1TeV": 229320.34070371155,
+ "N_lo_O1_helm_1TeV_check": 820.0247542855234,
+ "N_lo_relativistic_MCP": {
+  "helm": 96410.26391363655,
+  "shell": 321932.42198086367
+ },
+ "mcp_relativistic": {
+  "sigma_win_per_eps2_cm2": 2.2279613527156418e-30,
+  "sigma_lo_per_eps2_cm2": 2.147880616730039e-25,
+  "N_lo": 96405.64968113144,
+  "Phi_eps2_one_event_cm2s": 1.093802255493094e-06,
+  "NR_over_ER_same_energy": 0.0002254654989715363,
+  "ER_per_NR": 4435.268387232249,
+  "track_keV_per_eps2_1p3m": 351866.6666666666,
+  "eps_for_track_1keV": 0.0016858189702949396,
+  "overburden_loss_GeV_per_eps2": 1000.2325000000001
+ },
+ "simp_sigma_for_lambda": {
+  "sigma_lambda_eq_Lbar_TPC_cm2": 7.750606429655013e-25,
+  "sigma_lambda_eq_146cm_cm2": 5.167070953103341e-25,
+  "Lbar_TPC_cm": 97.06666666666666
+ },
+ "chord_MC": {
+  "mean_cm": 96.98445104306627,
+  "analytic_4V_over_S": 97.06666666666666,
+  "median_cm": 103.08610180835595,
+  "p10": 24.21936931506699,
+  "p90": 154.60918912101965
+ },
+ "simp_P1": {
+  "sigma_at_max_P1_cm2": 6.812920690579595e-25,
+  "P1_max": 0.3109018148295652,
+  "P1_at_sigma_lambda_TPC": 0.30972662016265656,
+  "Pmulti_at_sigma_lambda_TPC": 0.27037166946227065
+ },
+ "heavy_kinematics": {
+  "Emax_700kms_keV": 1334.5020178722407,
+  "Emax_vmax_keV": 1719.3659366851732,
+  "vmax_kms": 794.5524695547821,
+  "vmin_248_heavy_kms": 301.76180097499804
+ },
+ "HESB_energy_map": {
+  "E_at_S1c_600": 291.743817488932,
+  "E_at_S1c_800": 375.3911484944532,
+  "E_at_S1c_1700": 731.8299284022768,
+  "S1c_at_248": 497.7547910477417
+ },
+ "HESB_p0_given_one_window_event": {
+  "flat (opaque composite)": 0.19275401792977542,
+  "contact x Helm": 0.8403021708665439,
+  "contact x shell": 0.6162768511755823
+ },
+ "P0_mid_and_hesb_given_one_window_event": {
+  "flat (opaque composite)": 0.008110295433469512,
+  "contact x Helm": 1.8783033894819705e-12,
+  "contact x shell": 1.1997349477786327e-35
+ },
+ "simp_sigma_MS_lt_1_flat_cm2": 1.22935641763001e-25,
+ "shm_mean_speed_kms": 354.0939890249264,
+ "simp_overburden_min_mass_GeV": {
+  "coherent": 3661.77277509301,
+  "geometric": 1156635.2404820577
+ },
+ "continuous_tracks": {
+  "nuclearite_M<1.5ng (sigma=pi(1e-8cm)^2)": {
+   "sigma_cm2": 3.141592653589793e-16,
+   "dEdx_keV_per_cm": 2786643670.8808336,
+   "E_over_chord_keV": 270490212320.16623,
+   "lambda_cm": 2.394726540731464e-07
+  },
+  "nuclear-size composite R=4 fm": {
+   "sigma_cm2": 5.026548245743669e-25,
+   "dEdx_keV_per_cm": 4.458629873409334,
+   "E_over_chord_keV": 432.78433971226605,
+   "lambda_cm": 149.67040879571647
+  },
+  "R = 1e-10 cm composite": {
+   "sigma_cm2": 3.141592653589793e-20,
+   "dEdx_keV_per_cm": 278664.3670880834,
+   "E_over_chord_keV": 27049021.23201663,
+   "lambda_cm": 0.0023947265407314637
+  },
+  "CHAMP (charge e)": {
+   "dEdx_keV_per_cm": 73623.09031408558,
+   "E_over_chord_keV": 7146347.96648724,
+   "overburden_loss_GeV": 51742.23478088021,
+   "m_min_survive_30pct_GeV": 63270206079.90798
+  },
+  "Dirac monopole (Z_eff = beta/2alpha)": {
+   "Z_eff": 0.15998601155603456,
+   "dEdx_keV_per_cm": 1884.4215672554096,
+   "E_over_chord_keV": 182914.52012825842,
+   "dEdx_keV_per_cm_AK_estimate": 12033.268783316733
+  }
+ },
+ "flux_ceiling": {
+  "F_one_event_FV_cm2_s_sr": 2.1889078086291773e-13,
+  "F_one_event_TPC_cm2_s_sr": 1.676292578685737e-13,
+  "F_90UL_FV": 9.543638045623213e-13,
+  "Phi_4pi_FV_cm2_s": 2.7506626763899024e-12,
+  "m_for_one_FV_traversal_GeV": 3.861912898999914e+18,
+  "m_Planck_GeV": 1.22e+19,
+  "traversals_Planck_mass": 0.31655023762294376,
+  "Parker_bound_recalled": 1e-15,
+  "MACRO_recalled": 1.4e-16,
+  "ratio_to_Parker": 218.89078086291772,
+  "ratio_to_MACRO": 1563.5055775922694
+ },
+ "inelastic": {
+  "q_248_MeV": 246.38151463763305,
+  "R_for_qR_eq_1_fm": 0.8009001027947236,
+  "delta_max_heavy_limit_keV": 404.9952161370885,
+  "mass_ceiling_p1_GeV": 3.861912898999914e+18
+ }
+}

@@ -1,0 +1,62 @@
+{
+ "id": "P099",
+ "title": "Decisive tests and a falsifiable forecast for LZ's next release: what the community should expect to see, and what would kill each interpretation",
+ "date": "2026-09-16",
+ "agent_tools": [
+  {"tool": "Read", "count": 31, "detail": "PAPER_GUIDE.md; results_ledger.csv (direct read refused for size; read in full via a persisted pandas dump in 4 chunks, 2 oversize attempts); data_requests/index.csv; papers P081, P088, P079, P069, P082, P093, P034, P050, P057, P038, P061, P083, P086, P072, P076, P052; provenance/P088.json (format template); persisted dumps of P081 tables (predictive_counts, decision_table, energy_placement, Pge1_vs_exposure), P088 tables (null_branch, LZ_sideband, settled, timeline head), P069 hidden_events, dataviz palette.md excerpts; figures/P099_fig1_forecast.png (twice)"},
+  {"tool": "Bash", "count": 17, "detail": "ls papers/data_requests + head ENVIRONMENT_versions.txt; python pandas dump of all 88 ledger rows (id/date/category/title/headline/key numbers/stance/confidence/dependence); head of P089/P092/P096/P097 + ls work/P081, P088, P069 + ls code; cat P081 tables; cat P088/P069 tables; python digest of P081/P088 results.json + grep lzcommon defs (partially failed on zsh quoting); python pandas prints of P081 tables; python pandas prints of P088/P069 tables; grep P088 details headings + dataviz palette hexes + cat small P069/P088 csvs; run .venv/bin/python output/code/P099_decisive_tests.py (4 runs, ~1.5 s each; first tee failed because the work dir did not yet exist); word-budget checks with wc -w and a python section counter (5 runs, one also validating the provenance JSON)"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P099_decisive_tests.py; output/work/P099/details.md; output/papers/P099.md; output/provenance/P099.json"},
+  {"tool": "Edit", "count": 16, "detail": "P099_decisive_tests.py (4): legend position, right-panel title (twice), vertical-line label placement; P099.md (11): successive compressions of Results, headline and key numbers to meet the word budgets; P099.json (1): tool counts"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (form/colour guidance; default categorical palette slots used; JS validator skipped per PAPER_GUIDE)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python run from the simulation root"},
+  {"name": "numpy", "version": "2.5.3", "functions": "exp, logspace, arange, isnan"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats.gamma (median, ppf), stats.nbinom (pmf, sf), stats.poisson (pmf, sf), stats.norm (sf, isf), optimize.brentq"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, to_csv, to_markdown, read_csv (ledger dump)"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend, pyplot subplots, plot, barh, axvline, savefig"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "imported; lz.LZ constants dict (exposure 2.84 t.yr); no numerical routine called"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "not called; all spectra enter through P069/P050/P038/P081/P088 result tables"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P099_decisive_tests.py", "purpose": "Gamma match to P081's band-rate posterior; Poisson/Gamma-Poisson P(0)/P(1)/P(>=2) per window and exposure; P061/P081 mixture posterior P(DM|N) and Bayes factors; null-branch dates; reanalysis-on-disk counts and exact-Poisson Z; P079 5-sigma check; sideband P(0); exothermic companions; test x interpretation, kill-condition and pre-registered-prediction tables; one summary figure; results JSON", "command": ".venv/bin/python output/code/P099_decisive_tests.py > output/work/P099/run_log.txt 2>&1   (runtime ~1.5 s)"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules, template, budgets, final-report format"},
+  {"file": "output/results_ledger.csv", "parts_used": "all 88 rows: id, date, category, title, headline_result, key_numbers, stance, confidence, data_dependence"},
+  {"file": "output/papers/P081.md + output/work/P081/{P081_predictive_counts,P081_decision_table,P081_energy_placement,P081_Pge1_vs_exposure,P081_bestfit_vs_posterior_mean,P081_variants}.csv + P081_results.json", "parts_used": "band-rate posterior (mean 0.385, median 0.19, 68% 0.036-0.69), DM/B/U predictive probabilities per window and exposure, decision table, energy-placement posteriors, exposure for P(>=1)=0.5/0.9, hypothesis weights (0.015/0.148/0.789), background components (5.7e-4, 0.0028, 0.12)"},
+  {"file": "output/papers/P088.md + output/work/P088/{P088_null_branch,P088_LZ_sideband,P088_settled,P088_timeline_table,P088_AvsB_shape_modulation,P088_cawo4,P088_isotope_pair}.csv + P088_results.json + details.md headings", "parts_used": "best-fit rates per t.yr (200-270 and 200-400 keV), exposure ledger and accrual, unexamined 17.9 t.yr expectations and P(0), null-branch dates, sideband expectations, P(BF>100), A-vs-B dates, CaWO4 and 136Xe numbers"},
+  {"file": "output/papers/P069.md + output/work/P069/{P069_hidden_events,P069_exposure_ledger}.csv", "parts_used": "per-experiment hidden events, exposure ledger (LZ untouched 6.76; XENONnT 3.1+3.0; PandaX-4T 1.54+2.5), Z_comb and P(DM) scenarios"},
+  {"file": "output/papers/P079.md", "parts_used": "untouched 524 live days, 2.38 band-anchored L10 events, b 8.9e-4/8.0e-3, 1000 phd signal gains, P(5 sigma) 0.43/0.83/1.00"},
+  {"file": "output/papers/P038.md", "parts_used": "E50 vs edge, acceptances, extra 600-1000 phd events per ROI event, extension MSSI 0.0028"},
+  {"file": "output/papers/P034.md, P050.md, P057.md, P046 (ledger), P047 (ledger), P067 (ledger), P062 (ledger)", "parts_used": "modulation exposures; 60 t and zero-event exclusion exposures; elastic-vs-inelastic 2-7 events and second-event LRs; CaWO4, isotope and directional requirements; mass degeneracy"},
+  {"file": "output/papers/P061.md, P083.md, P001 (ledger)", "parts_used": "prior weights and ranges, value-of-information ranking, base rate, free-rate-unknown cap 0.09"},
+  {"file": "output/papers/P082.md, P076.md, P072.md, P086.md, P058/P054/P025/P075 (ledger)", "parts_used": "surviving inelastic region and Higgsino window; solar-capture exclusion; exothermic B<=2 and companion ratios; model viability"},
+  {"file": "output/papers/P093.md, P052.md, P041 (ledger)", "parts_used": "topology odds, DR-003 handle sensitivities, corpus-revised neighbourhood background 9.4e-4; DR-002 residual; artefact predictions"},
+  {"file": "output/data_requests/index.csv", "parts_used": "DR-001, DR-002, DR-003 descriptions and status"},
+  {"file": "output/papers/P089.md, P092.md, P096.md, P097.md", "parts_used": "headers and headlines only (checked for relevance to decisive tests; none added)"},
+  {"file": "output/provenance/P088.json", "parts_used": "format template"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "import; LZ dict; function list inspected"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Gamma-Poisson (negative-binomial) predictive: for s ~ Gamma(a, theta) the count in k units has P(N) = nbinom(a, p = 1/(1 + k theta)); Exponential(1) = Gamma(1,1) gives P(N|k) = k^N/(1+k)^(N+1)", "presumed_source": "standard Bayesian statistics (Gelman et al.)", "reliability": "certain"},
+  {"item": "Exact-Poisson counting significance Z = Phi^-1(1 - P(>=N | b)); 5 sigma one-sided threshold 2.87e-7", "presumed_source": "Cowan et al. 2011 / standard", "reliability": "certain"},
+  {"item": "Conversion of decimal years to calendar months (2027.60 = Aug 2027, 2030.84 = Nov 2030)", "presumed_source": "arithmetic", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": [
+  {"id": "DR-001", "status": "pending (discussed; requested by P012/P045)"},
+  {"id": "DR-002", "status": "pending (discussed; requested by P052)"},
+  {"id": "DR-003", "status": "pending (discussed; requested by P093; artefact kill condition depends on it)"}
+ ],
+ "failed_or_abandoned": [
+  "Direct Read of results_ledger.csv refused (268 KB > 256 KB limit); replaced by a pandas dump of the key columns for all 88 rows, read in four chunks.",
+  "Reproducing P081's 55-270 keV and 270-420 keV DM probabilities from band ratios with a single Gamma failed (those windows are dominated by the delta >= 366 keV tail of P081's 298-spectrum mixture); P081's values are quoted directly for those windows.",
+  "The single-Gamma match to P081's posterior gives E(P>=1 = 0.9) = 261 t.yr against P081's 123 t.yr (heavier low-rate tail); both quoted as a bracket.",
+  "P088's LZ-1000 phd null-branch date (2027.69, L10) is reproduced only to 0.9 yr (ours 2028.55) because P088 dates on-disk exposure by accrual and marginalises with toys; flagged rather than pursued.",
+  "First tee of the run log failed because the work directory is created by the script; re-run.",
+  "Dataviz JS palette validator not run (PAPER_GUIDE rule)."
+ ],
+ "wimpydd_generated_files": []
+}

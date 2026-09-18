@@ -1,0 +1,90 @@
+[1] Nph=4910 Ne=268.6 Nq=5179 (+-90 from g1,g2); W_NEST=13.44 eV
+    E_ee(W): {13.7: 70.95, 13.5: 69.91, 13.44: 69.6}  W needed for 64.3/67.3 keV: {64.3: 12.42, 67.3: 13.0}
+    alpha=0.182: Ni=4379, r_req=0.939 (alpha 0.06-0.2: 0.945-0.938); beta mean at 69.6 keV: Ne=1226, r=0.720, delta r=0.219
+[2] sigma_p(Nq=5179) = 0.0682; raw sigma_Ne(beta, 69.6 keV) = 300 e -> deficit 958 e = 3.19 sigma (linear, raw width)
+    nestpy default fluct @64.3 keV: std(Ne)=129, skew=0.47 -> skewnorm a=2.10; Fano(Nq)=1.01
+    Fig4 digitised @540: ER median 4.791, 10-90 half-width 0.121 dex -> event is 6.82 half-widths = 8.7 Gaussian sigma below (paper: 6.7)
+    NR @540: median 4.016, half-width 0.029 -> 1.69 half-widths = 2.2 Gaussian sigma (paper: 1.5)
+    Fig4 black points in ROI per S1c bin [150, 200, 250, 300, 350, 400, 450, 500, 600] [1, 4, 3, 2, 0, 1, 0, 1]
+    width calibration: k = 0.50; MC half-widths (cal) at 300/400/540: [np.float64(0.088), np.float64(0.103), np.float64(0.125)] vs digitised [np.float64(0.09), np.float64(0.102), np.float64(0.121)]; raw k=1: [np.float64(0.166), np.float64(0.199), np.float64(0.231)]
+    MC ER median at 540: 4.773 (digitised 4.791); energies contributing at S1c=540: [np.float64(81.1), np.float64(100.5)] keV
+    calibrated sigma_Ne(beta, 69.6 keV) = 150 e -> deficit = 6.38 sigma (linear Ne, fixed E)
+[3] fixed-energy line tail probabilities (calibrated width, selected):
+    line      tail   f  Ne_mean  sigma_Ne  z_event  P_Ne_le_event      P_V      P_G  S1c_if_Ne_event
+Xe124_KK nest_skew   0 1.12e+03       135     6.29       5.12e-19 1.97e-18  1.8e-13              497
+Xe124_KK nest_skew 0.2      895       135     4.64       1.95e-10  3.9e-10 9.52e-07              497
+Xe124_KK nest_skew 0.4      671       135     2.98       8.71e-05 8.95e-05  0.00755              497
+Xe124_KK     gauss   0 1.12e+03       135     6.29        1.6e-10 1.84e-10 4.85e-08              497
+Xe124_KK     gauss 0.2      895       135     4.64       1.77e-06  1.5e-06 0.000102              497
+Xe124_KK     gauss 0.4      671       135     2.98        0.00143 0.000831   0.0156              497
+  I125_K nest_skew   0 1.18e+03       144     6.34       2.62e-19  1.6e-18 7.36e-14              521
+  I125_K nest_skew 0.2      943       143      4.7       1.06e-10 3.47e-10 5.41e-07              521
+  I125_K nest_skew 0.4      707       143     3.06       5.56e-05 9.56e-05   0.0063              521
+  I125_K     gauss   0 1.18e+03       144     6.34       1.18e-10 2.21e-10 3.77e-08              521
+  I125_K     gauss 0.2      943       143      4.7       1.31e-06 1.83e-06 8.77e-05              521
+  I125_K     gauss 0.4      707       143     3.06        0.00111  0.00107   0.0154              521
+    energy pulls (Nq_event vs line, S1-resolution / incl. g1,g2): [('Xe124_KK', 1.61, 1.51), ('I125_K', 0.68, 0.64)]
+    continuum ER: ROI acceptance integral 19.4 keV -> 85 events/keV
+      cal_nest_skew    N_V=1.56e-15  N_G=1.75e-10  N(250<S1c<500, ROI)=0.00  [Fig.5 model ~2.5, data 23 total mostly EC/Kr]
+      cal_gauss        N_V=2.10e-07  N_G=4.48e-05  N(250<S1c<500, ROI)=0.02  [Fig.5 model ~2.5, data 23 total mostly EC/Kr]
+      cal_exp_tail     N_V=3.05e-03  N_G=2.84e-02  N(250<S1c<500, ROI)=0.47  [Fig.5 model ~2.5, data 23 total mostly EC/Kr]
+      cal_neg_skew     N_V=6.78e-04  N_G=1.50e-02  N(250<S1c<500, ROI)=0.52  [Fig.5 model ~2.5, data 23 total mostly EC/Kr]
+      raw_nest_skew    N_V=2.71e-02  N_G=4.43e-01  N(250<S1c<500, ROI)=8.95  [Fig.5 model ~2.5, data 23 total mostly EC/Kr]
+      raw_gauss        N_V=4.51e-01  N_G=2.99e+00  N(250<S1c<500, ROI)=28.69  [Fig.5 model ~2.5, data 23 total mostly EC/Kr]
+      raw_exp_tail     N_V=9.45e-01  N_G=4.44e+00  N(250<S1c<500, ROI)=38.32  [Fig.5 model ~2.5, data 23 total mostly EC/Kr]
+      raw_neg_skew     N_V=1.63e+00  N_G=7.29e+00  N(250<S1c<500, ROI)=57.80  [Fig.5 model ~2.5, data 23 total mostly EC/Kr]
+[4] 124Xe: N=2.052e+25 atoms, decays in 220 d x 4.71 t = 779 (KK 564, KL 156, KM/KN 44, LL/LM/MM 16)
+    mode  E_keV   f  decays  Ne_mean  sigma_Ne  S1c_mean  S1c_min_in_ROI  P_in_ROI  N_in_ROI
+      KK   64.3   0     564 1.12e+03       135       403             481  2.94e-13  1.66e-10
+      KK   64.3 0.1     564 1.01e+03       135       416             481  1.56e-09  8.79e-07
+      KK   64.3 0.2     564      895       135       428             481  1.54e-06  0.000866
+      KK   64.3 0.3     564      783       135       440             481  0.000295     0.166
+      KL   36.7   0     156      658      63.6       228             255  1.35e-07   2.1e-05
+      KL   36.7 0.1     156      592      63.6       235             255   0.00016    0.0249
+      KL   36.7 0.2     156      527      63.5       242             255    0.0167       2.6
+      KL   36.7 0.3     156      461      63.4       250             255     0.213      33.2
+   KM_KN   33.2   0    43.6      606      55.8       205             227  2.55e-06  0.000111
+   KM_KN   33.2 0.1    43.6      545      55.7       212             227   0.00152    0.0664
+   KM_KN   33.2 0.2    43.6      485      55.6       218             227    0.0704      3.07
+   KM_KN   33.2 0.3    43.6      424      55.5       225             227     0.427      18.6
+LL_LM_MM    9.8   0    15.6      243      15.7      53.5            35.2         1      15.6
+LL_LM_MM    9.8 0.1    15.6      219      15.7      56.1            35.2         1      15.6
+LL_LM_MM    9.8 0.2    15.6      194      15.6      58.8            35.2         1      15.6
+LL_LM_MM    9.8 0.3    15.6      170      15.5      61.5            35.2         1      15.6
+    124Xe ROI count vs common f (all modes, cal width): N(f=0,0.1,0.2,0.3) = [15.6, 15.7, 21.3, 67.6]; LZ 21.0+-6.3 -> f_best=0.20, 1-sigma (0.0, 0.22)
+    if all 21 ROI 124Xe events were KK-line leakage: P(Ne<409)=0.037 -> f = 0.44 (cal) / 0.25 (raw); they would sit at S1c > 481 phd where Fig.4 shows 0 events
+    125I: T1/2=59.4 d, eff 3.6 d -> 6.1% of 125I atoms decay in the LXe; rate at +8 d = 0.40 of peak (peak 2.1 d); 27% of 125I decays occur after day 8; 125Xe left after 8 d: 3.8e-04
+    125I decays implied by 8.9 ROI events via L-capture leakage (cal): [(0.0, 0.0, 4211583660), (0.1, 0.0, 2287651), (0.2, 0.004, 12022), (0.3, 0.09, 496)]
+[5] Fig5 bottom: ER plateau sum 0.0089 (EC/IC 0.0022); +floor -> 0.0102 vs paper 0.0106; plateau at +1..+2.5: 7.0e-04/bin
+    flat extrapolation to +-1 sigma_NR of the event: mu=2.8e-03 (x18 the modelled floor 1.6e-04); P(>=1)=0.28%
+    ROI edge is 6.8 Gaussian sigma below the ER median at S1c=540, the event 8.7; P(>= event | beyond edge): {'gauss': '2.2e-07', 'exp_1sigma': '1.4e-01', 'exp_0p5sigma': '2.1e-02', 'flat': '3.4e-01'}
+    125I K-line (f, N) scan, Gaussian tail:
+N_I125_K    100      1000     10000
+f                                  
+0.10     2.80e-06 2.80e-05 2.80e-04
+0.20     1.83e-04 1.83e-03 1.83e-02
+0.25     1.15e-03 1.15e-02 1.15e-01
+0.30     6.15e-03 6.15e-02 6.15e-01
+0.40     1.07e-01 1.07e+00 1.07e+01
+    P(0 in gap G):
+N_I125_K  100    1000   10000
+f                            
+0.10      1.000  0.997  0.975
+0.20      0.991  0.916  0.416
+0.25      0.960  0.666  0.017
+0.30      0.852  0.201  0.000
+0.40      0.214  0.000  0.000
+     tail     line   f  rho_G_over_V  muV_best  L_ratio_best_over_floor  muV_pred  muG_pred  P_0_in_G_pred
+nest_skew Xe124_KK 0.2      2.44e+03   0.00041                    0.942   2.2e-07  0.000537          0.999
+nest_skew Xe124_KK 0.3           430   0.00232                     5.33  0.000242     0.104          0.901
+nest_skew Xe124_KK 0.4          84.4    0.0117                     26.9    0.0505      4.26         0.0141
+nest_skew   I125_K 0.2      1.56e+03  0.000641                     1.47  1.73e-07  0.000271              1
+nest_skew   I125_K 0.3           306   0.00325                     7.48  0.000207    0.0634          0.939
+nest_skew   I125_K 0.4          65.9    0.0149                     34.4    0.0478      3.15         0.0428
+    gauss Xe124_KK 0.2            68    0.0145                     33.3  0.000845    0.0575          0.944
+    gauss Xe124_KK 0.3          35.4    0.0275                     63.2    0.0278     0.985          0.373
+    gauss Xe124_KK 0.4          18.8    0.0505                      116     0.469      8.82       0.000148
+    gauss   I125_K 0.2          48.1    0.0204                     46.9  0.000913    0.0439          0.957
+    gauss   I125_K 0.3          26.1    0.0369                       85    0.0307     0.802          0.449
+    gauss   I125_K 0.4          14.4    0.0649                      149     0.535       7.7       0.000453
+saved output/work/P010/P010_results.json

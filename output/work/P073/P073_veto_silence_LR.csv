@@ -1,0 +1,13 @@
+hypothesis,P_science,LR_vs_DM
+DM / atmospheric nu / accidental (uncorrelated with vetoes),0.9713028600000001,1.0
+"wall MSSI, paper lambda_MSSI = 0.94",0.05827817160000005,0.060000000000000046
+"wall MSSI, MSSI-table WS ROI 4.7 t wall (0.949)",0.049179891645569566,0.050632911392405
+"wall MSSI, event topology 12+77 keV (this work, ordering A, central)",0.02260324121766802,0.023271053909661107
+"wall MSSI, event topology, equal A/B mix",0.016131222975490037,0.01660781990849902
+"wall MSSI, event topology, least-tagged variant",0.03859076125496095,0.03973092517709764
+"wall MSSI, event topology, most-tagged variant",0.005059891469527067,0.005209385947372858
+"RFR MSSI, MSSI-table WS ROI 4.7 t (0.999)",0.0009703325274726025,0.0009990009990010762
+"RFR MSSI, event topology 12+204 keV (this work)",0.00822490946508757,0.008467914389840847
+"214Pb RFR MSSI, gamma contained (HE-SB 5.4 t, 0.195)",0.7821352617977528,0.8052434456928839
+detector-ER single scatter (lambda_PG = 0.88),0.11655634320000001,0.12
+"neutron single scatter (lambda_PN = 0.05, lambda_DN = 0.87)",0.11995590321,0.1235

@@ -1,0 +1,58 @@
+{
+  "id": "P017",
+  "title": "Xenon nuclear response at q ≈ 250 MeV: how form-factor nodes and isotope mixtures shape the inferred couplings",
+  "date": "2026-09-05",
+  "agent_tools": [
+    {"tool": "Read", "count": 14, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv; papers/P002.md; papers/P003.md; fulltext.tex lines 280-295; lzcommon.py lines 105-135, 215-260, 305-385; work/P007/lz_intervals_digitised.csv; code/P007_higgsino_inelastic.py lines 110-140; figures P017_fig1..fig5 (fig3, fig5 twice)"},
+    {"tool": "Bash", "count": 10, "detail": "grep process_log step 036 + sed WimPyDD/test_WimPyDD_installation.py 1-45 + grep fulltext.tex WimPyDD paragraph; ls output/papers,work + grep lzcommon defs + head P007 csv + ENVIRONMENT_versions; grep P003 script L10 + cat P007 json/details + ls figures; WimPyDD API probe (nuclear_current keys, Xe.isotopes/mass/abundance, func_w(q) shape, W_M(0), diff_rate signature) x2; WimPyDD O1 unit-coupling rates + isotopes_list test; diff_rate docstring probe; PyMuPDF inventory of Fig6_O1_L10_limit_stacked.pdf (words, drawings); grep WimPyDD/package.py isotopes_list; grep dataviz palette.md; cat P003_L10_comparison.csv + grep P003 details scale + P003_summary.json; .venv/bin/python output/code/P017_nuclear_response.py (x3 incl. final); wc -w on paper body"},
+    {"tool": "Write", "count": 4, "detail": "output/code/P017_nuclear_response.py; output/work/P017/details.md; output/provenance/P017.json; output/papers/P017.md"},
+    {"tool": "Edit", "count": 5, "detail": "P017_nuclear_response.py: Fig. 6 bottom axis-label dump + P003 scale + linear/squared axis check + robustness block; summary JSON merge; Fig. 3 x-range; Fig. 5 y-range; Fig. 5 title"},
+    {"tool": "Skill", "count": 1, "detail": "dataviz (palette and mark rules for the matplotlib figures)"}
+  ],
+  "software": [
+    {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python, run from simulation root"},
+    {"name": "numpy", "version": "2.5.3", "functions": "arrays, interp, polyfit, savez, errstate"},
+    {"name": "scipy", "version": "1.18.1", "functions": "integrate.trapezoid (2pF Fourier-Bessel transform, window/ROI integrals), optimize.brentq (rms-matched 2pF radius), special.erf (efficiency model)"},
+    {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, to_csv, read_csv (P007 intervals)"},
+    {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend, semilogy, scatter, bar, axvspan"},
+    {"name": "pymupdf", "version": "1.28.2", "functions": "open, Page.get_drawings, Page.get_text('words') - digitisation of LZ Fig. 6 bottom panel (L10^s two-sided interval)"},
+    {"name": "WimPyDD", "version": "2.0.4", "functions": "Xe target (mass, isotopes, abundance, func_w per-isotope nuclear response functions W_X^{tau tau'}(q)), nuclear_current index dict, eft_hamiltonian (incl. q-dependent Wilson coefficient for (q^2/m_N^2)O4 - O6), diff_rate with isotopes_list={0:[i]} per isotope, streamed_halo_function via lzcommon.wd_halo"},
+    {"name": "common/lzcommon.py", "version": "corpus (post step 052)", "functions": "wd, wd_halo (explicit v_min grid), wd_hamiltonian, wd_c_from_anand, helm_F2, dRdE_SI (Helm validation), mu_red, m_nucleus_gev, constants (HBARC_GEV_FM, M_NUCLEON_GEV, M_V_GEV, GEV_TO_CM2, A_XE_MEAN)"}
+  ],
+  "scripts_and_commands": [
+    {"path": "output/code/P017_nuclear_response.py", "purpose": "M/Sigma'/Sigma''/Delta/Phi'' responses per isotope vs Helm and 2pF; node positions and isotope spread; shell/Helm ratios; spin responses and L10 kernel; per-isotope WimPyDD rates and response re-weighting for O1 (elastic, delta=300 keV), O4, O6, L10; window/smeared/full-ROI rate ratios; propagation to P007's O1 intervals; digitisation of Fig. 6 bottom (L10) and consistency check; robustness of node positions; five figures", "command": ".venv/bin/python output/code/P017_nuclear_response.py"}
+  ],
+  "local_inputs": [
+    {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Theory paragraph (lines 57-60: WimPyDD with DMFormFactor-v6 density matrices, modifications as in LZ 2023, Baxter SHM); Fig. 1 caption (unit coupling definition); Fig. 6 caption (lines 284-294)"},
+    {"file": "inputs/arXiv_2609.02823_source/Fig6_O1_L10_limit_stacked.pdf", "parts_used": "bottom panel vector paths: drawings 349 (upper), 350 (lower), 346 (median); tick-label positions; y-axis label tokens 'd^s_10 (dimensionless)'"},
+    {"file": "output/00_evidence_dossier.md", "parts_used": "event energy and resolution, efficiency edge, d10 ~ 0.1-0.5, open question list"},
+    {"file": "output/results_ledger.csv", "parts_used": "P001-P010 headline results (P002 node at 266 keV, P003 normalisation and L10 reduction, P007 intervals, P009 energy)"},
+    {"file": "output/papers/P002.md", "parts_used": "M-response node at 266 keV; delta_max; spectral position of 248 keV"},
+    {"file": "output/papers/P003.md", "parts_used": "WimPyDD c0 = 2/m_v^2 convention; L10 -> (q^2/m_N^2)O4 - O6; M minima 102/265 keV; efficiency model"},
+    {"file": "output/provenance/process_log.md", "parts_used": "step 036 (WimPyDD SI x3-6 below Helm at 200-250 keV)"},
+    {"file": "output/work/P007/lz_intervals_digitised.csv", "parts_used": "LZ two-sided 90% intervals on (c1^s m_v^2)^2 for inelastic O1^s at 1000 GeV, delta = 0-350 keV"},
+    {"file": "output/code/P007_higgsino_inelastic.py", "parts_used": "digitisation method (lines 110-140) reused for Fig. 6 bottom"},
+    {"file": "output/work/P003/P003_L10_comparison.csv and P003_summary.json", "parts_used": "scale 247.5 between LZ's L10^s curve and (q^2/m_N^2)O4 - O6 at A = 1/m_v^2"},
+    {"file": "output/code/common/lzcommon.py", "parts_used": "sections 2, 5, 8 (constants, Helm/SI, WimPyDD wrapper, wd_c_from_anand)"},
+    {"file": "WimPyDD/test_WimPyDD_installation.py", "parts_used": "lines 1-40: func_w / nuclear_current usage pattern"},
+    {"file": "WimPyDD/package.py", "parts_used": "grep for isotopes_list handling (dict {element: [isotope indices]}) - read only"},
+    {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+  ],
+  "recalled_knowledge": [
+    {"item": "Two-parameter Fermi charge-density parameters for 132Xe: c = 5.42 fm, a = 0.57 fm", "presumed_source": "De Vries, De Jager, De Vries nuclear charge-density compilation (1987)", "reliability": "likely"},
+    {"item": "Rms charge radius of 132Xe ~ 4.79 fm", "presumed_source": "Angeli & Marinova, At. Data Nucl. Data Tables 99 (2013)", "reliability": "likely"},
+    {"item": "Spin expectation values <S_n>, <S_p> = 0.329, 0.010 (129Xe) and -0.272, -0.009 (131Xe)", "presumed_source": "Menendez, Gazit, Schwenk, PRD 86, 103511 (2012), GCN5082 interaction", "reliability": "likely"},
+    {"item": "Leading-order reduction of the L10 magnetic-tensor Lagrangian to (q^2/m_N^2) O4 - O6 (pure transverse-spin Sigma' response)", "presumed_source": "Anand, Fitzpatrick, Haxton 2014 (via corpus P003)", "reliability": "likely"},
+    {"item": "Two-body-current / chiral corrections: few-% to 10-30 % on the SI response at q ~ 200-250 MeV; 10-30 % reduction of neutron SD structure factors plus induced proton-like term", "presumed_source": "Hoferichter, Klos, Menendez, Schwenk PRD 94, 063505 (2016) and PRL 119, 181803 (2017); Klos et al. PRD 88, 083516 (2013)", "reliability": "uncertain (SI size) / likely (SD)"},
+    {"item": "Elastic electron-scattering charge form-factor data on xenon isotopes are sparse (no published diffraction-minimum measurement for 129-136Xe known to us)", "presumed_source": "general knowledge of the electron-scattering literature", "reliability": "uncertain"},
+    {"item": "Diffraction-minimum reading: the LZ Fig. 1 O1 inelastic dip at ~266 keV (P002/P003) equals the shipped WimPyDD node to <= 1 keV", "presumed_source": "corpus P002/P003 digitisation", "reliability": "certain (corpus)"}
+  ],
+  "datasets": "none",
+  "data_requests": "none",
+  "failed_or_abandoned": [
+    "WD.diff_rate(isotopes_list=[name]) raised AttributeError; the argument is a dict {element_index: [isotope indices]} (found by grepping WimPyDD/package.py).",
+    "Response re-weighting (rate x F2_alt/F2_shell) shows a numerical spike at the 129Xe Sigma' node (375 keV) for the thin-shell proxy; outside the ROI, so Fig. 3 was restricted to 350 keV; window results unaffected.",
+    "First interpretation of the Fig. 6 bottom axis as (d10 m_v^2)^2 rejected: label tokens read 'd^s_10 (dimensionless)' and the squared reading would imply 2.0-7.1 events at the interval edges versus 0.31-3.9 for the linear reading (one-event PLR interval ~0.1-3.7)."
+  ],
+  "wimpydd_generated_files": "none (WD.diff_rate used; no response-function files written; Hamiltonians named P017_O1s, P017_O4s, P017_O6s, P017_L10like are in-memory objects)"
+}

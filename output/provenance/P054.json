@@ -1,0 +1,68 @@
+{
+ "id": "P054",
+ "title": "Pseudo-Dirac dark matter with a heavy Z': coupling relations, relic density and the LZ event without a dark photon",
+ "date": "2026-09-11",
+ "agent_tools": [
+  {"tool": "Read", "count": 14, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (rows 1-14 inline, rows 15-47 via pandas print); papers P011, P025, P026, P037, P007, P021, P031, P014; lzcommon.py lines 300-410; P011 script lines 96-145; dataviz palette.md (grep); figure PNG"},
+  {"tool": "Bash", "count": 11, "detail": "ls output dirs; pandas prints of ledger, P011 sigma_p_required.csv, P007 N_events_grid.csv, P021 scans; grep P011 details/script, lzcommon defs; timing test script in $TMPDIR; run P054 script x3 (two aborted slow runs, final run 111-142 s); tail run_log"},
+  {"tool": "Write", "count": 4, "detail": "code/P054_zprime_idm.py; work/P054/details.md; provenance/P054.json; papers/P054.md"},
+  {"tool": "Edit", "count": 22, "detail": "9 script fixes (validation window 1-330 keV; vectorised thermal average with log u-grid; semi-analytic relic + calibration; fast root-finding; benchmark constraint root; added B12/B13); 12 word-budget trims of papers/P054.md; 1 update of this JSON"},
+  {"tool": "Bash", "count": 6, "detail": "word-count checks of papers/P054.md (wc -w plus per-section python counts), JSON validity check, ls of work/P054"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette/mark rules; JS validator skipped per guide)"},
+  {"tool": "ToolSearch", "count": 1, "detail": "TaskStop"},
+  {"tool": "TaskStop", "count": 2, "detail": "stopped two slow background runs of the script before rewriting the relic evaluator"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter"},
+  {"name": "numpy", "version": "2.5.3", "functions": "arrays, geomspace, trapezoid, interp, log-interpolation"},
+  {"name": "scipy", "version": "1.18.1", "functions": "integrate.solve_ivp (Radau), optimize.brentq, special.kve/erf/erfc"},
+  {"name": "pandas", "version": "3.0.5", "functions": "read_csv, DataFrame, to_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend, pcolormesh, contour, TwoSlopeNorm, LinearSegmentedColormap"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian, diff_rate, streamed_halo_function (via lzcommon wd_hamiltonian/wd_rate/wd_halo) for the two-point validation of the reused isoscalar grid"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ, M_V_GEV, M_NUCLEON_GEV, wd_halo, wd_hamiltonian, wd_rate, E_R_range_keV"},
+  {"name": "none: derived by hand", "version": "-", "functions": "Majorana current decomposition; s-channel vector-vector cross-section and threshold limit; Gondolo-Gelmini change of variables; splitting delta = y_S v_S/sqrt2 with m_Z' = 2 g_chi v_S; chi2 width from P011's formula with G_nu = G"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P054_zprime_idm.py", "purpose": "LZ coupling G(delta) from P011's isoscalar grid + WimPyDD validation; relic density (Gondolo-Gelmini average, Boltzmann ODE, calibrated semi-analytic); contact-limit tension; thermal maximum map with recalled collider ceilings; splitting Yukawa; chi2 lifetime; Sommerfeld/CMB; benchmarks; figure", "command": ".venv/bin/python output/code/P054_zprime_idm.py"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "sections 1-6"},
+  {"file": "output/results_ledger.csv", "parts_used": "all rows P001-P050 (headlines, key numbers)"},
+  {"file": "output/papers/P011.md, P025.md, P026.md, P037.md, P007.md, P021.md, P031.md, P014.md", "parts_used": "full text"},
+  {"file": "output/work/P011/sigma_p_required.csv", "parts_used": "N_iso_unit (annual halo, eff_sigma 11.5) for m = 300/1000/3000 GeV"},
+  {"file": "output/work/P011/details.md and output/code/P011_dark_photon_idm.py", "parts_used": "sections 3.6-3.7 (relic, width formula); lines 100-142 (halo, efficiency, unit couplings)"},
+  {"file": "output/work/P021/P021_scan_baseline.csv", "parts_used": "kappa_hat at 1000 GeV, delta >= 290 keV"},
+  {"file": "output/work/P007/N_events_grid.csv", "parts_used": "structure only (Higgsino grid columns)"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "WimPyDD wrapper, constants"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "PDG constants (alpha, sin^2 theta_W, m_Z, g, quark/lepton masses, hbar, M_Pl)", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "Omega_DM h^2 = 0.120", "presumed_source": "Planck 2018", "reliability": "certain"},
+  {"item": "g_* = 86.25 at T ~ 20-50 GeV", "presumed_source": "standard thermodynamics tables", "reliability": "likely"},
+  {"item": "Omega h^2 = 2.755e8 Y_inf m/GeV; Kolb-Turner x_f iteration and Omega h^2 = 1.07e9 GeV^-1/(sqrt g* M_Pl J)", "presumed_source": "Kolb & Turner", "reliability": "certain"},
+  {"item": "Gondolo-Gelmini thermal average formula", "presumed_source": "Gondolo & Gelmini 1991", "reliability": "certain"},
+  {"item": "Dirac vector-vector s-channel annihilation cross-section (derived, matches textbook e+e- -> mu+mu- structure)", "presumed_source": "Peskin-Schroeder / Z' portal literature", "reliability": "certain"},
+  {"item": "Z' -> f fbar partial width", "presumed_source": "textbook", "reliability": "certain"},
+  {"item": "chi chibar -> Z'Z' s-wave cross-section g^4/(16 pi m^2)(1-r^2)^{3/2}/(1-r^2/2)^2", "presumed_source": "secluded/dark-photon DM literature", "reliability": "likely"},
+  {"item": "Planck p_ann < 3.5e-28 cm^3 s^-1 GeV^-1, f_eff = 0.35", "presumed_source": "Planck 2018 / Slatyer 2016 (as used by P025)", "reliability": "likely"},
+  {"item": "Hulthen saturated Sommerfeld factor S0 = 2 pi^2/(eps'(1-cos(2 pi/sqrt eps')))", "presumed_source": "Cassel 2010 / Slatyer 2010", "reliability": "likely"},
+  {"item": "LHC dijet ceilings on a leptophobic Z': g_q <= 0.05 (<0.5 TeV), 0.1 (0.5-1.5), 0.2 (1.5-3), 0.3 (3-5 TeV)", "presumed_source": "ATLAS/CMS dijet and ISR-assisted dijet searches (139 fb^-1)", "reliability": "uncertain"},
+  {"item": "B-L dilepton bound m_Z'/g' >~ 20 TeV (m_Z' >~ 4-5 TeV at g' = 0.2)", "presumed_source": "ATLAS/CMS dilepton 139 fb^-1 recasts", "reliability": "uncertain"},
+  {"item": "LEP-II contact-interaction bound m_Z'/g' >~ 7 TeV for B-L", "presumed_source": "LEP EWWG", "reliability": "likely"},
+  {"item": "Electroweak precision allows Z-Z' mass mixing sin theta <~ 1e-3", "presumed_source": "Langacker 2009", "reliability": "likely"},
+  {"item": "quark-loop Z'-photon/Z kinetic mixing eps ~ e g_q/(6 pi^2) ln(Lambda/m_q) ~ 1e-3", "presumed_source": "Holdom-type estimate", "reliability": "uncertain"},
+  {"item": "B-L charges; vector-like chi is anomaly-free; U(1)_B needs extra anomaly-cancelling fermions", "presumed_source": "standard", "reliability": "certain"},
+  {"item": "electron Yukawa y_e = 2.9e-6", "presumed_source": "PDG", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "WimPyDD validation integrating only 200-330 keV gave 0.19 of P011's grid at delta = 300 keV: the Xe inelastic window starts near 91 keV (P015); fixed by counting the whole ROI (ratio 1.000).",
+  "Quad-based thermal average and Radau ODE inside every root-finding step (200-250 s per block, two runs stopped): replaced by a vectorised trapezoid average on a log u-grid (a linear grid gave 0.66 of the threshold value at x = 1000) and a calibrated semi-analytic freeze-out (ODE retained for validation and benchmarks; agreement 0.97-1.02).",
+  "Benchmark auto-mode that rescaled g_N after fixing g_chi left Omega h^2 = 0.13-0.18; replaced by a root-find along the LZ constraint g_chi g_N = G m_Z'^2.",
+  "Benchmark B12 (B-L, m_Z' = 1 TeV) converged on the collider-excluded second root (g' = 2.2); the physical branch is B5."
+ ],
+ "wimpydd_generated_files": "none"
+}

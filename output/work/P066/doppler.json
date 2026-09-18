@@ -1,0 +1,44 @@
+{
+ "300": {
+  "sigma_los_kms": 168.2914139223983,
+  "sigma_E_keV": 0.16840791964392746,
+  "FWHM_keV": 0.3965669691775204,
+  "sigma_E_innerhalo_250kms_keV": 0.25017307139861406,
+  "FWHM_innerhalo_keV": 0.5891075485294563,
+  "dipole_amplitude_keV": 0.2507259234201103,
+  "dipole_peak_to_peak_keV": 0.5014518468402206,
+  "earth_orbit_annual_amplitude_keV": 0.029820630110714796,
+  "recoil_shift_eV": 0.045,
+  "SPI_FWHM_keV": 2.0,
+  "COSI_FWHM_keV_1pct": 3.0,
+  "v_sun_kms": 250.55246955478208
+ },
+ "350": {
+  "sigma_los_kms": 168.2914139223983,
+  "sigma_E_keV": 0.1964759062512487,
+  "FWHM_keV": 0.46266146404044045,
+  "sigma_E_innerhalo_250kms_keV": 0.29186858329838306,
+  "FWHM_innerhalo_keV": 0.6872921399510324,
+  "dipole_amplitude_keV": 0.29251357732346195,
+  "dipole_peak_to_peak_keV": 0.5850271546469239,
+  "earth_orbit_annual_amplitude_keV": 0.03479073512916726,
+  "recoil_shift_eV": 0.06125,
+  "SPI_FWHM_keV": 2.0,
+  "COSI_FWHM_keV_1pct": 3.5,
+  "v_sun_kms": 250.55246955478208
+ },
+ "380": {
+  "sigma_los_kms": 168.2914139223983,
+  "sigma_E_keV": 0.21331669821564145,
+  "FWHM_keV": 0.5023181609581925,
+  "sigma_E_innerhalo_250kms_keV": 0.31688589043824444,
+  "FWHM_innerhalo_keV": 0.7462028948039781,
+  "dipole_amplitude_keV": 0.317586169665473,
+  "dipole_peak_to_peak_keV": 0.635172339330946,
+  "earth_orbit_annual_amplitude_keV": 0.03777279814023874,
+  "recoil_shift_eV": 0.0722,
+  "SPI_FWHM_keV": 2.0,
+  "COSI_FWHM_keV_1pct": 3.8000000000000003,
+  "v_sun_kms": 250.55246955478208
+ }
+}

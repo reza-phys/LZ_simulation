@@ -1,0 +1,77 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash",
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep",
+      "TodoWrite"
+    ],
+    "deny": [
+      "WebFetch",
+      "WebFetch(domain:*)",
+      "WebSearch",
+      "mcp__*",
+      "Read(~/.claude/projects/**/*.jsonl)",
+      "Read(~/.claude/history.jsonl)",
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "Bash(pip *)",
+      "Bash(pip3 *)",
+      "Bash(uv *)",
+      "Bash(brew *)",
+      "Bash(tlmgr *)",
+      "Bash(conda *)",
+      "Edit(/@ROOT@/PROMPT.md)",
+      "Edit(/@ROOT@/README.md)",
+      "Edit(/@ROOT@/run.sh)",
+      "Edit(/@ROOT@/inputs/**)",
+      "Edit(/@ROOT@/environment/**)",
+      "Edit(/@ROOT@/.venv/**)",
+      "Edit(/@ROOT@/sim_logs/**)"
+    ]
+  },
+  "disableClaudeAiConnectors": true,
+  "sandbox": {
+    "enabled": true,
+    "failIfUnavailable": true,
+    "allowUnsandboxedCommands": false,
+    "autoAllowBashIfSandboxed": true,
+    "excludedCommands": [],
+    "network": {
+      "allowedDomains": [],
+      "strictAllowlist": true
+    },
+    "filesystem": {
+      "denyRead": [
+        "~/.claude/projects/**/*.jsonl",
+        "~/.claude/history.jsonl"
+      ],
+      "denyWrite": [
+        "@ROOT@/PROMPT.md",
+        "@ROOT@/README.md",
+        "@ROOT@/run.sh",
+        "@ROOT@/inputs",
+        "@ROOT@/environment",
+        "@ROOT@/.venv",
+        "@ROOT@/sim_logs"
+      ]
+    }
+  },
+  "hooks": {
+    "PreToolUse": [
+      { "matcher": "*", "hooks": [ { "type": "command", "command": "\"@ROOT@/.venv/bin/python\" -I -S \"@ROOT@/environment/hooks/log_tool_call.py\"", "timeout": 30 } ] }
+    ],
+    "PostToolUse": [
+      { "matcher": "*", "hooks": [ { "type": "command", "command": "\"@ROOT@/.venv/bin/python\" -I -S \"@ROOT@/environment/hooks/log_tool_call.py\"", "timeout": 30 } ] }
+    ],
+    "PostToolUseFailure": [
+      { "matcher": "*", "hooks": [ { "type": "command", "command": "\"@ROOT@/.venv/bin/python\" -I -S \"@ROOT@/environment/hooks/log_tool_call.py\"", "timeout": 30 } ] }
+    ],
+    "PermissionDenied": [
+      { "matcher": "*", "hooks": [ { "type": "command", "command": "\"@ROOT@/.venv/bin/python\" -I -S \"@ROOT@/environment/hooks/log_tool_call.py\"", "timeout": 30 } ] }
+    ]
+  }
+}

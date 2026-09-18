@@ -1,0 +1,52 @@
+{
+  "id": "P005",
+  "title": "Would XENONnT and PandaX-4T have seen it? Expected high-energy counts in their published regions of interest",
+  "date": "2026-09-03",
+  "agent_tools": [
+    {"tool": "Read", "count": 19, "detail": "output/provenance/PAPER_GUIDE.md; output/00_evidence_dossier.md; output/results_ledger.csv; output/code/common/lzcommon.py; inputs/LZ_arXiv_2609.02823_fulltext.tex lines 20-100, 200-310, 450-464, 800-912 (4 reads); inputs/figures_png/Fig1_combined_recoils.png; inputs/figures_png/FigS2_efficiency_werror.png; WimPyDD/package.py lines 930-1005, 1055-1075, 5351-5485 (3 reads); output/work/dossier/dossier_numbers.json; own figures (L10_validation_vs_Fig1.png x2, spectra_with_ROIs.png x2, expected_counts.png)"},
+    {"tool": "Bash", "count": 17, "detail": "ls output/work, output/papers, output/data_requests + grep -n XENONnT/PandaX citations in fulltext.tex; grep table/figure labels + cat environment/ENVIRONMENT_versions.txt + cat data_requests/index.csv; ls inputs/figures_png inputs/arXiv_2609.02823_source + grep package versions + ls output/code, output/work/dossier; grep wd_/WimPyDD in P000_dossier_checks.py + ls WimPyDD; grep function defs in WimPyDD/package.py; find WimPyDD -type f > before-snapshot; .venv/bin/python scratchpad/test_l10.py; snapshot diff + .venv/bin/python scratchpad/digit_test.py; .venv/bin/python scratchpad/digit_test2.py; .venv/bin/python scratchpad/digit_test3.py; sed -n streamed_halo_function docstring | grep; .venv/bin/python output/code/P005_other_xenon_expectations.py (run 1, tee log); sed log tail + snapshot diff + ls output/work/P005; .venv/bin/python output/code/P005_other_xenon_expectations.py (run 2) + grep log (+ a diff via stdin refused by sandbox); snapshot diff via file + python -c summary.json/digitised-csv inspection + wc -l tables; awk|wc -w paper body + python -c JSON key check; awk|wc -w paper body (recount)"},
+    {"tool": "Write", "count": 8, "detail": "scratchpad: test_l10.py, digit_test.py, digit_test2.py, digit_test3.py (temporary, outside output/); output/code/P005_other_xenon_expectations.py; output/work/P005/details.md; output/provenance/P005.json; output/papers/P005.md"},
+    {"tool": "Edit", "count": 6, "detail": "output/code/P005_other_xenon_expectations.py x3 (legend-row mask in digitisation; figure title/legend; digitised-point selection); output/papers/P005.md x2 (tighten Abstract and Results to the word limits); output/provenance/P005.json x1 (this tool tally)"}
+  ],
+  "software": [
+    {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python interpreter"},
+    {"name": "numpy", "version": "2.5.3", "functions": "trapezoid, interp, searchsorted, cumsum, clip, nonzero, median, savetxt, loadtxt"},
+    {"name": "scipy", "version": "1.18.1", "functions": "special.erf, stats.poisson.pmf/sf, optimize.brentq"},
+    {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg backend), image.imread (PNG digitisation of LZ Fig. 1)"},
+    {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian (constant and q-dependent Wilson coefficients, keys 1, (4,'q2'), 6, 4, 6), streamed_halo_function (via lzcommon.wd_halo), diff_rate (via lzcommon.wd_rate) for natural Xe, inelastic delta"},
+    {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ dict (exposure, best fit, efficiency points), M_NUCLEON_GEV, wd(), wd_halo(), wd_hamiltonian(), wd_rate()"},
+    {"name": "Poisson algebra", "version": "none: derived by hand", "functions": "P(0)=exp(-N); P(1)=mu exp(-mu); mu(90%, >=1) = ln 10"}
+  ],
+  "scripts_and_commands": [
+    {"path": "output/code/P005_other_xenon_expectations.py", "purpose": "WimPyDD spectra (O1 inelastic delta=250/300/350 keV, L10 dipole-dipole, O4, O6, O1 elastic, sign check), LZ-efficiency normalisation to 1.0 event, expected counts in XENONnT/PandaX-4T for ROI edges 55/70/100/150/270 keV, Poisson probabilities, xenon-world combination, required exposures, colour digitisation of LZ Fig. 1 (bottom) for validation, figures and tables", "command": ".venv/bin/python output/code/P005_other_xenon_expectations.py"}
+  ],
+  "local_inputs": [
+    {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Introduction (refs XenonnT:WIMP-SI-2025, PandaX4T:WIMP-2025 and bibliography lines 346-347); Theory paragraph (WimPyDD, SHM Baxter 2021, L10 = magnetic moment interaction); Fig. 1 caption; Table I (L10s 1000 GeV best fit 1.0 +1.4 -0.7); Fig. 6 caption; Fig. S2 caption (50% at 5.4 and 269.9 keV); SM sentence on s/v-indistinguishable models; SM 'Interpretation of O1 as a cross-section'; Fig. S7 caption; Table S7"},
+    {"file": "inputs/figures_png/Fig1_combined_recoils.png", "parts_used": "bottom panel, brown 1000 GeV L10 curve colour-digitised (1445 points, 3.5-349.5 keV); gray-band edges and tick labels for calibration"},
+    {"file": "inputs/figures_png/FigS2_efficiency_werror.png", "parts_used": "shape of the low- and high-energy efficiency roll-offs (sigma 2.5 and 12 keV)"},
+    {"file": "output/00_evidence_dossier.md", "parts_used": "Sections 1, 2 (handles), 6 item 5 (open question on other experiments)"},
+    {"file": "output/work/dossier/dossier_numbers.json", "parts_used": "kinematic cross-checks (inelastic delta=300 onset 90.4 keV in June; v_earth values)"},
+    {"file": "output/code/common/lzcommon.py", "parts_used": "LZ constants, WimPyDD wrappers, nucleon mass"},
+    {"file": "output/results_ledger.csv", "parts_used": "checked: empty at time of writing (no earlier P-numbers to build on)"},
+    {"file": "WimPyDD/package.py", "parts_used": "read-only: eft_hamiltonian docstring (q-dependent coefficients), diff_rate implementation, streamed_halo_function defaults"}
+  ],
+  "recalled_knowledge": [
+    {"item": "XENONnT 2025 WIMP-search exposure 3.1 t yr", "presumed_source": "Aprile et al., PRL 135, 221003 (2025), arXiv:2502.18005 (title cited in LZ bibliography)", "reliability": "certain"},
+    {"item": "PandaX-4T 2025 WIMP-search exposure 1.54 t yr", "presumed_source": "Bo et al., PRL 134, 011805 (2025), arXiv:2408.00664 (title cited in LZ bibliography)", "reliability": "certain"},
+    {"item": "XENONnT WIMP-search NR ROI: cS1 up to ~100 PE, roughly 3-60 keV", "presumed_source": "XENONnT WIMP-search papers 2023/2025", "reliability": "uncertain"},
+    {"item": "PandaX-4T WIMP-search NR ROI upper edge ~100-120 keV", "presumed_source": "PandaX-4T WIMP-search papers 2021/2025", "reliability": "uncertain"},
+    {"item": "In-ROI NR acceptance ~0.9 for both experiments; 50% threshold ~5 keV", "presumed_source": "typical LXe TPC efficiency curves", "reliability": "assumption (stated); results scale linearly"},
+    {"item": "Anand-Fitzpatrick-Haxton Table 1 entry 10: L10 = chi-bar i sigma^{mu nu} q_nu/m_M chi N-bar i sigma_{mu alpha} q^alpha/m_M N -> 4 (q^2/m_M^2) O4 - 4 (m_N^2/m_M^2) O6", "presumed_source": "Phys. Rev. C 89, 065501 (2014), arXiv:1308.6288", "reliability": "likely (validated: reproduces LZ Fig. 1 double-peak shape and the isoscalar/isovector degeneracy LZ reports)"},
+    {"item": "NREFT nuclear response structure: R_Sigma'' proportional to (c4 + (q^2/m_N^2) c6)^2, R_Sigma' proportional to c4^2 for spin-1/2 DM", "presumed_source": "Fitzpatrick et al., JCAP 02 (2013) 004", "reliability": "likely"},
+    {"item": "Drift fields: XENONnT ~23 V/cm, PandaX-4T ~90 V/cm (LZ 97 V/cm from paper) -> cS1-to-keV mapping of ROI edges differs between experiments", "presumed_source": "XENONnT SR0 and PandaX-4T commissioning papers", "reliability": "likely (used qualitatively only)"},
+    {"item": "XENONnT and PandaX-4T adopt the Baxter et al. (2021) SHM conventions", "presumed_source": "their 2025 WIMP-search papers", "reliability": "likely (only affects the statement that dR/dE per t yr is identical; LZ's own halo is used throughout)"}
+  ],
+  "datasets": "none",
+  "data_requests": "none",
+  "failed_or_abandoned": [
+    "L10 reduction recalled as (q^2/2 m_chi m_M) O1 + 2 (m_N/m_M) O5 - 2 (m_N/m_M)[(q^2/m_N^2) O4 - O6] (DM dipole x nucleon vector current): WimPyDD spectrum is dominated by the coherent O5 term, peaks at 20 keV and has no 200 keV peak, contradicting LZ Fig. 1 and the s/v degeneracy; abandoned in favour of the dipole-dipole entry 10.",
+    "First digitisation pass of LZ Fig. 1 included the brown legend line sample (225-250 keV), giving a spurious 227 keV peak and a 9.4 high/low-peak ratio; fixed by masking rows with y > 0.047 /t/yr/keV.",
+    "P003 digitised L10 spectrum: not available in output/work/P003/ at time of writing; own colour digitisation used instead."
+  ],
+  "wimpydd_generated_files": []
+}

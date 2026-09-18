@@ -1,0 +1,67 @@
+{
+ "id": "P028",
+ "title": "Iodine as the second target: what DAMA/LIBRA's modulation data and COSINE/ANAIS already say about an inelastic 300-390 keV splitting",
+ "date": "2026-09-08",
+ "agent_tools": [
+  {"tool": "Read", "count": 22, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv; papers P015, P006, P002, P007; lzcommon.py (l.1-60, 60-235, 300-372); P015_target_complementarity.py (l.20-210); WimPyDD/test_WimPyDD_installation.py (l.30-90); WimPyDD/package.py (diff_rate l.5351-5485, element l.359-474, target l.514-613); data_requests/DR-001.md; figures fig1 (x2), fig2 (x3), fig3"},
+  {"tool": "Bash", "count": 16, "detail": "ls output/work/P015 data_requests code WimPyDD (+find DAMA); grep lzcommon wd_ helpers; grep P015 script for WimPyDD/normalisation; cat DAMA_LIBRA_2019 tables + P015 CSVs + ENVIRONMENT_versions + ls papers (failed on a glob); re-run of that listing; grep package.py quenching/diff_rate; python -c print P015_summary keys/normalisation; python -c timing test of wd_halo/diff_rate kernel, DAMA target quenching check, Na window; grep dataviz palette.md; .venv/bin/python output/code/P028_iodine_dama.py (run 1); re-run + per-bin print (snippet key error); python per-bin print; final run + find WimPyDD new files + ls outputs; wc -w paper checks x3 (+ json.load validation)"},
+  {"tool": "Write", "count": 5, "detail": "output/code/P028_iodine_dama.py; output/work/P028/details.md; output/provenance/P028.json; output/papers/P028.md (x2: first draft over budget, rewritten)"},
+  {"tool": "Edit", "count": 19, "detail": "5 figure-layout fixes in P028_iodine_dama.py (legend position, S_m label offsets, DAMA band floor, Fig. 2 y-range x2); 14 word-budget trims in papers/P028.md; this JSON count update"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette and chart rules)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "linspace, arange, interp, trapezoid, digitize, mean, hypot-style harmonics, loadtxt"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf, special.erfc (LZ efficiency model)"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot step/plot/fill_between, Agg backend, PNG output"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian (via lz.wd_hamiltonian); streamed_halo_function with day_of_the_year and explicit vmin grid (via lz.wd_halo); diff_rate with sum_over_streams=False (per-stream kernels) on WD.I and WD.Xe; diff_rate on WD.DAMA_LIBRA_2019.target (quenched E_ee, Na+I per kg NaI) for validation; bundled DAMA_LIBRA_2019 quenching/resolution/modulation_amplitudes tables"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ constants, wd, wd_halo, wd_hamiltonian, E_R_range_keV, mu_red, m_nucleus_gev, v_earth_kms, M_V_GEV, C_KMS, VESC_KMS, A_XE_MEAN, M_NUCLEON_GEV, GEV_TO_CM2"},
+  {"name": "none: derived by hand", "version": "-", "functions": "cosine-amplitude estimator variance sigma_Sm = sqrt(2B/(exposure dE)); required-exposure formulae; spike limit A1 -> 2 S0"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P028_iodine_dama.py", "purpose": "kinematics (I, Na, Xe); LZ one-event normalisation (reproduces P015); iodine per-stream kernels; 73-day halo scan; NaI E_ee spectra with Q_I = 0.06/0.09/0.12 and DAMA resolution; S0, S_m, phase, harmonics per 1-keVee bin; comparison with DAMA/COSINE/ANAIS Poisson sensitivities and the bundled DAMA table; required exposures; 3 figures; CSV/JSON tables", "command": ".venv/bin/python output/code/P028_iodine_dama.py"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "sections 1-3 (event, timing, inelastic kinematics)"},
+  {"file": "output/results_ledger.csv", "parts_used": "P002, P003, P005, P006, P007, P015, P020 rows"},
+  {"file": "output/papers/P015.md", "parts_used": "iodine kinematics, I/Xe ratios, DAMA/COSINE/ANAIS counts, NaI exposure for 3 events"},
+  {"file": "output/papers/P006.md", "parts_used": "modulation fractions and phase for inelastic DM"},
+  {"file": "output/papers/P002.md", "parts_used": "delta_max, windows, form-factor node"},
+  {"file": "output/papers/P007.md", "parts_used": "Higgsino delta(N=1) = 366 keV"},
+  {"file": "output/work/P015/P015_summary.json", "parts_used": "lz_normalisation (N_LZ_unit_coupling per delta) for cross-check; nai_dama_context"},
+  {"file": "output/work/P015/rates_table.csv; existing_exposures_counts.csv; details.md", "parts_used": "iodine window rates, exposures and recalled-input list"},
+  {"file": "output/code/P015_target_complementarity.py", "parts_used": "hamiltonian/halo/efficiency/normalisation conventions"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "constants, kinematics, WimPyDD wrapper"},
+  {"file": "WimPyDD/test_WimPyDD_installation.py", "parts_used": "lines 30-90: DAMA target quenching semantics"},
+  {"file": "WimPyDD/package.py", "parts_used": "diff_rate (quenching handling, nt_kg weighting), element and target classes"},
+  {"file": "WimPyDD/Experiments/DAMA_LIBRA_2019/ (data.tab, exposure.tab, iodine_quenching.tab, sodium_quenching.tab, resolution.py, modulation_amplitudes.tab, target.tab)", "parts_used": "Q_I = 0.09, Q_Na = 0.3, resolution parameters, bundled DAMA S_m table"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"},
+  {"file": "output/data_requests/DR-001.md", "parts_used": "existing DR numbering (no new request filed)"}
+ ],
+ "recalled_knowledge": [
+  {"item": "iodine quenching factor in NaI(Tl) Q_I ~ 0.09 (range 0.06-0.12)", "presumed_source": "DAMA/LIBRA 2008/2010 apparatus papers; Bernabei et al. 1996", "reliability": "likely"},
+  {"item": "sodium quenching Q_Na ~ 0.25-0.3", "presumed_source": "DAMA apparatus papers", "reliability": "likely (irrelevant: Na is kinematically blind)"},
+  {"item": "atomic masses I 126.904 u, Na 22.990 u", "presumed_source": "standard tables", "reliability": "certain"},
+  {"item": "DAMA modulation phase t0 = 152.5 d (2 June)", "presumed_source": "Freese, Frieman, Gould 1988; DAMA papers", "reliability": "certain"},
+  {"item": "DAMA/LIBRA single-hit rate ~ 1 cpd/kg/keV at 10-60 keVee", "presumed_source": "Bernabei et al. 2008 (EPJC 56, 333) spectra", "reliability": "likely"},
+  {"item": "DAMA/LIBRA exposure 2.46 t yr (phase1 1.33 + phase2 1.13 to 2018); later updates ~2.9 t yr", "presumed_source": "Bernabei et al. 2018, 2021", "reliability": "likely / uncertain"},
+  {"item": "DAMA S_m consistent with zero above ~6 keVee at the 1e-3 cpd/kg/keV level, per-0.5-keV-bin errors ~0.002-0.003 at 6-20 keVee; positive 0.01-0.02 at 2-6 keVee", "presumed_source": "Bernabei et al. 2018 (NPAE 19, 307), 2020", "reliability": "likely / uncertain"},
+  {"item": "COSINE-100 exposure ~0.2 t yr, background ~3 cpd/kg/keV, null S_m at ~0.005 cpd/kg/keV", "presumed_source": "Adhikari et al. 2019, 2021", "reliability": "uncertain"},
+  {"item": "ANAIS-112 exposure ~0.3 t yr (3 yr) to ~0.6 t yr (2025), background ~3 cpd/kg/keV, null S_m at ~0.005", "presumed_source": "Amare et al. 2021, 2025", "reliability": "uncertain"},
+  {"item": "DAMA high-energy single-hit spectrum dominated by 40K (3.2 keV, 1461 keV) and 210Pb (46.5 keV)", "presumed_source": "DAMA background papers", "reliability": "likely"},
+  {"item": "variance of the cosine-amplitude estimator sigma_Sm^2 = 2B/(exposure dE) for uniform sampling", "presumed_source": "standard least-squares/Fourier statistics", "reliability": "certain"},
+  {"item": "bibliographic details of references", "presumed_source": "memory", "reliability": "likely"}
+ ],
+ "datasets": [
+  {"name": "WimPyDD/Experiments/DAMA_LIBRA_2019/modulation_amplitudes.tab", "description": "bundled digitisation of DAMA/LIBRA-phase2 S_m vs energy (header: Fig. 11 of Nucl. Phys. At. Energy 19 (2018) 307); columns 3-4 interpreted by us as lower/upper edges of the 1-sigma band", "status": "local file, used for Fig. 1 and the 8-16 keVee comparison"}
+ ],
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First compound shell command listing the DAMA folder aborted on a non-matching glob; re-issued.",
+  "A results-printing snippet keyed the CSV by '300.0' rather than '300' (formatting) and failed; fixed. No physics impact.",
+  "WimPyDD's wimp_dd_rate on the DAMA experiment object was not used (writes response-function files; bins end at 16 keVee); diff_rate with the DAMA target served for validation only.",
+  "No data request filed: a HEPData-style DAMA S_m table would refine the comparison by < x2 against a 4-5 order-of-magnitude discrepancy."
+ ],
+ "wimpydd_generated_files": "none"
+}

@@ -1,0 +1,167 @@
+Matplotlib is building the font cache; this may take a moment.
+python 3.12.13 | macOS-26.6.2-arm64-arm-64bit | root=/Users/reza/LZ_simulation
+interpreter: /Users/reza/LZ_simulation/.venv/bin/python
+OK    numpy             2.5.3        arrays, linear algebra
+OK    scipy             1.18.1       integration, special functions, optimisation, statistics
+OK    sympy             1.14.0       symbolic algebra (kinematics, operator matching)
+OK    mpmath            1.3.0        arbitrary-precision numerics
+OK    pandas            3.0.5        tables, CSV/JSON ledgers
+OK    matplotlib        3.11.2       plots (Agg backend, files only)
+OK    seaborn           0.13.2       statistical plots
+OK    tabulate          0.10.0       Markdown/LaTeX tables
+OK    uncertainties     3.2.3        error propagation
+OK    iminuit           2.32.0       likelihood minimisation, profile likelihoods
+OK    emcee             3.1.6        MCMC sampling
+OK    corner            2.3.0        posterior corner plots
+OK    dynesty           3.1.0        nested sampling, Bayesian evidence
+OK    lmfit             1.3.4        curve fitting
+OK    statsmodels       0.15.0       statistical tests
+OK    sklearn           1.9.1        machine learning utilities
+OK    numba             0.67.0       fast toy Monte Carlo loops
+OK    joblib            1.6.0        parallel loops
+OK    tqdm              4.70.1       progress bars
+OK    astropy           8.0.1        units, constants, time/coordinates (Earth velocity, modulation)
+OK    particle          1.0.1        offline PDG particle data
+OK    hepunits          2.4.6        HEP unit conventions
+OK    periodictable     2.1.0        isotope masses and abundances
+OK    radioactivedecay  0.6.1        offline ICRP-107 decay data (half-lives, chains)
+OK    pyhf              0.7.6        HistFactory likelihoods (e.g. HEPData-published)
+OK    uproot            5.7.6        read ROOT files without ROOT
+OK    awkward           2.13.0       jagged arrays for event data
+OK    h5py              3.16.0       HDF5 files
+OK    yaml              6.0.3        HEPData YAML tables
+OK    openpyxl          3.1.5        Excel files
+OK    pymupdf           1.28.2       PDF text/vector extraction (digitising figures)
+OK    pdfplumber        0.11.10      PDF tables and text
+OK    PIL               12.3.0       images
+OK    cv2               5.0.0.93     image analysis (digitising plots)
+OK    camb              2.0.4        CMB/matter power spectra
+OK    healpy            1.20.0       HEALPix sky maps
+OK    wimprates         0.5.0        standard WIMP recoil rates in xenon
+OK    directdm          2.2.2        relativistic-to-NR EFT matching and running
+OK    nestpy            2.1.1        NEST liquid-xenon response (incl. LZ_WS2024 detector)
+
+-- sample calculations --
+OK    nestpy: NEST default NR yields at 248 keV, 97 V/cm: 4331 photons, 409 electrons
+OK    wimprates: SI rate, m=1000 GeV, sigma=1e-45 cm2, E=250 keV: 7.354e-05 (wimprates default units)
+OK    radioactivedecay: Pb-214 half-life 26.8 min
+OK    astropy offline config: allow_internet=False, iers auto_download=False
+====================
+WARNING
+Only some of the isotopes contained in
+WimPyDD/WimPyC/Sun/densities.tab
+were loaded:
+['1H', '4He', '3He', '12C', '13C', '14N', '15N', '16O', '17O', '18O', '20Ne', '23Na', '24Mg', '27Al', '28Si', '32S', '40Ar', '40Ca', '56Fe', '58Ni']
+the following targets could not be initialized and were ignored:
+['P', 'Cl', 'K', 'Sc', 'Ti', 'V', 'Cr', 'Mn', 'Co']
+====================
+====================
+WARNING
+Only some of the isotopes contained in
+WimPyDD/WimPyC/Earth/densities.tab
+were loaded:
+['16O', '28Si', '27Al', '56Fe', '40Ca', '23Na', '24Mg', '58Ni', '31P', '32S']
+the following targets could not be initialized and were ignored:
+['39K', '48Ti', '59Co']
+====================
+looking for 12C in list of pre-defined targets:
+12C found in predefined carbon element object
+looking for 13C in list of pre-defined targets:
+13C found in predefined carbon element object
+looking for 14N in list of pre-defined targets:
+14N found in predefined nitrogen element object
+looking for 15N in list of pre-defined targets:
+15N found in predefined nitrogen element object
+looking for 16O in list of pre-defined targets:
+16O found in predefined oxygen element object
+looking for 17O in list of pre-defined targets:
+17O found in predefined oxygen element object
+looking for 18O in list of pre-defined targets:
+18O found in predefined oxygen element object
+looking for 1H in list of pre-defined targets:
+1H found in predefined hydrogen element object
+looking for 20Ne in list of pre-defined targets:
+20Ne found in predefined neon element object
+looking for 23Na in list of pre-defined targets:
+23Na found in predefined sodium element object
+looking for 24Mg in list of pre-defined targets:
+24Mg found in predefined magnesium element object
+looking for 27Al in list of pre-defined targets:
+27Al found in predefined aluminium element object
+looking for 28Si in list of pre-defined targets:
+28Si found in predefined silicon element object
+looking for 31P in list of pre-defined targets:
+31P found in predefined phosphorus element object
+looking for 32S in list of pre-defined targets:
+32S found in predefined sulfur element object
+looking for 3He in list of pre-defined targets:
+3He found in predefined helium element object
+looking for 40Ar in list of pre-defined targets:
+40Ar found in predefined argon element object
+looking for 40Ca in list of pre-defined targets:
+40Ca found in predefined calcium element object
+looking for 4He in list of pre-defined targets:
+4He found in predefined helium element object
+looking for 56Fe in list of pre-defined targets:
+56Fe found in predefined iron element object
+looking for 58Ni in list of pre-defined targets:
+58Ni found in predefined nickel element object
+looking for 12C in list of pre-defined targets:
+12C found in predefined carbon element object
+looking for 13C in list of pre-defined targets:
+13C found in predefined carbon element object
+looking for 14N in list of pre-defined targets:
+14N found in predefined nitrogen element object
+looking for 15N in list of pre-defined targets:
+15N found in predefined nitrogen element object
+looking for 16O in list of pre-defined targets:
+16O found in predefined oxygen element object
+looking for 17O in list of pre-defined targets:
+17O found in predefined oxygen element object
+looking for 18O in list of pre-defined targets:
+18O found in predefined oxygen element object
+looking for 1H in list of pre-defined targets:
+1H found in predefined hydrogen element object
+looking for 20Ne in list of pre-defined targets:
+20Ne found in predefined neon element object
+looking for 23Na in list of pre-defined targets:
+23Na found in predefined sodium element object
+looking for 24Mg in list of pre-defined targets:
+24Mg found in predefined magnesium element object
+looking for 27Al in list of pre-defined targets:
+27Al found in predefined aluminium element object
+looking for 28Si in list of pre-defined targets:
+28Si found in predefined silicon element object
+looking for 31P in list of pre-defined targets:
+31P found in predefined phosphorus element object
+looking for 32S in list of pre-defined targets:
+32S found in predefined sulfur element object
+looking for 3He in list of pre-defined targets:
+3He found in predefined helium element object
+looking for 40Ar in list of pre-defined targets:
+40Ar found in predefined argon element object
+looking for 40Ca in list of pre-defined targets:
+40Ca found in predefined calcium element object
+looking for 4He in list of pre-defined targets:
+4He found in predefined helium element object
+looking for 56Fe in list of pre-defined targets:
+56Fe found in predefined iron element object
+looking for 58Ni in list of pre-defined targets:
+58Ni found in predefined nickel element object
+OK    WimPyDD: WimPyDD imported; xenon isotopes ['124Xe', '126Xe', '128Xe', '129Xe', '130Xe', '131Xe', '132Xe', '134Xe', '136Xe']
+
+-- LaTeX (optional) --
+OK    pdflatex: pdfTeX 3.141592653-2.6-1.40.29 (TeX Live 2026)
+OK    revtex4-2.cls
+OK    siunitx.sty
+OK    mhchem.sty
+OK    cleveref.sty
+OK    physics.sty
+OK    tikz-feynman.sty
+OK    feynmp.sty
+OK    booktabs.sty
+OK    natbib.sty
+OK    amsmath.sty
+OK    hyperref.sty
+
+All checks passed.

@@ -1,0 +1,64 @@
+{
+ "id": "P011",
+ "title": "Dark-photon-mediated pseudo-Dirac dark matter: fitting the LZ event",
+ "date": "2026-09-04",
+ "agent_tools": [
+  {"tool": "Read", "count": 21, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv; papers/P002.md, P003.md, P007.md; work/P007/N_events_grid.csv (lines 1-664) and lz_intervals_digitised.csv; code/common/lzcommon.py; code/P003_nreft_shapes.py; code/P007_higgsino_inelastic.py lines 150-230; fulltext.tex lines 44-70 (Theory), 282-295 (Fig. 6 caption), 798-819 (O1 as cross-section, Fig. S7); output figures P011_fig1-4 (twice for fig1/3/4)"},
+  {"tool": "Bash", "count": 24, "detail": "grep tex for inelastic/Fig.6/S7 passages; grep P007 N_events_grid for 1000 GeV rows; ls work/P007, code, ENVIRONMENT_versions; grep P007 script structure; grep P007 details + cat comparison/relic JSON; sed P007 lines 85-100 + WimPyDD source lookup (failed glob); WimPyDD timing/q-dependent-WC/exothermic probe ($TMPDIR/t_wd.py); grep dataviz palette; run script (SyntaxError); mkdir + run (TypeError); run (exceeded 600 s, auto-backgrounded); progress checks x4 (cat log, ls, date); grep/sed 366->365; rm exothermic.csv + rerun from cache; verification/summary python snippet; N_lo inspection snippet; rerun after edits; final number-extraction snippet"},
+  {"tool": "Write", "count": 4, "detail": "code/P011_dark_photon_idm.py; work/P011/details.md; provenance/P011.json; papers/P011.md"},
+  {"tool": "Edit", "count": 12, "detail": "script fixes: invalid keyword names, single-energy kernel indexing, N_lo per 200-270 keV event, S_factor interpolation, m_A window block, figure label/shading fixes, redundant expression"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette and chart rules)"},
+  {"tool": "ToolSearch", "count": 1, "detail": "TaskStop schema"},
+  {"tool": "TaskStop", "count": 1, "detail": "attempted stop of auto-backgrounded run (task had already finished)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python, run from simulation root"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian (constant and q-dependent Wilson coefficients {(1,'q2'): lambda q, A: ...}), streamed_halo_function (via lz.wd_halo with explicit vmin grid), diff_rate(sum_over_streams=False) per-stream kernels, Xe target; delta>0 endothermic and delta<0 exothermic"},
+  {"name": "numpy", "version": "2.5.3", "functions": "arrays, trapezoid, interp, logspace"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf, special.erfc (efficiency model)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, to_csv, pivot"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg), fill_between, axhspan/axvspan"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ constants (exposure, efficiency edges), M_V_GEV, GEV_TO_CM2, A_XE_MEAN, m_nucleus_gev, E_R_range_keV, delta_max_kev, vmax_kms, v_earth_kms, wd, wd_halo, wd_hamiltonian, wd_rate"},
+  {"name": "none: derived by hand", "version": "", "functions": "Majorana decomposition of the vector current; heavy-mediator O1 coupling and sigma_p; three-body NR width Gamma = N_nu G_eff^2 delta^5/(120 pi^3); A'-Z mixing coupling"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P011_dark_photon_idm.py", "purpose": "WimPyDD event grid (proton-only, isoscalar, Higgsino O1; 300/1000/3000 GeV; delta 200..415 keV; June/annual/Sun halos), sigma_p(N=1) and bands, LZ interval conversion, light mediators, epsilon translation, relic alpha_D, chi2 lifetime and exothermic constraint, m_A window, figures", "command": ".venv/bin/python output/code/P011_dark_photon_idm.py   (first full run ~8 min; later runs use cached CSVs; --recompute to redo)"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Theory paragraph (lines 44-60), Fig. 1 caption, Fig. 6 caption (287-293), supplement 'Interpretation of O1 as a cross-section' and Fig. S7 caption (800-818)"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "sections 1-6 (event numbers, explanation I, open question 10)"},
+  {"file": "output/results_ledger.csv", "parts_used": "rows P001-P010"},
+  {"file": "output/papers/P002.md", "parts_used": "delta_max values, spectral node, kinematics"},
+  {"file": "output/papers/P003.md", "parts_used": "WimPyDD c0 = c_p + c_n convention; N_lo definition (per 200-270 keV event) and N_lo = 7.6 at delta = 200 keV; q-dependent WC syntax (via code/P003_nreft_shapes.py)"},
+  {"file": "output/papers/P007.md and output/work/P007/{details.md, N_events_grid.csv, lz_intervals_digitised.csv, comparison_with_LZ_intervals.json, relic_and_lifetime.json}", "parts_used": "Higgsino couplings and sigma_n; N(delta) at 1 TeV for validation; digitised Fig. 6/S7 edges; efficiency model (sigma_hi = 11.5 keV); Sun-frame halo finding"},
+  {"file": "output/code/P007_higgsino_inelastic.py", "parts_used": "kernel method, halo definitions, efficiency function (lines 85-100, 150-230)"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "constants, kinematics, WimPyDD wrapper"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Kinetic mixing (eps/2cos theta_W) F'B; A' couples to the EM current with eps e for m_A' << m_Z", "presumed_source": "Holdom 1986; standard dark-photon literature", "reliability": "certain"},
+  {"item": "Pseudo-Dirac decomposition: chibar gamma^mu chi = i chi1bar gamma^mu chi2 (purely off-diagonal, same strength)", "presumed_source": "Tucker-Smith & Weiner 2001; Majorana algebra", "reliability": "certain"},
+  {"item": "sigma_p = 16 pi alpha alpha_D eps^2 mu_p^2 / m_A'^4 and c_p = 4 pi sqrt(alpha alpha_D) eps / m_A'^2 with sigma = c^2 mu^2/pi", "presumed_source": "standard dark-photon DM formula; NREFT normalisation of Anand et al./WimPyDD test script", "reliability": "certain"},
+  {"item": "alpha = 1/137.036, G_F = 1.1664e-5 GeV^-2, sin^2 theta_W = 0.2312, m_Z = 91.1876 GeV", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "q -> 0 conversion proton-only vs isoscalar per-nucleon cross-section: (A/Z)^2 = 5.92 for Xe", "presumed_source": "coherent SI amplitude", "reliability": "certain"},
+  {"item": "Thermal relic <sigma v> = 2.2e-26 cm^3/s for m >> 10 GeV", "presumed_source": "Steigman, Dasgupta, Beacom 2012", "reliability": "certain"},
+  {"item": "<sigma v>(chi chibar -> A'A') ~ pi alpha_D^2/m_chi^2 for m_A' << m_chi", "presumed_source": "secluded-WIMP literature (Pospelov, Ritz, Voloshin 2008 and later)", "reliability": "likely"},
+  {"item": "BaBar dark-photon limits eps <~ 1e-3 for 0.02-10 GeV (visible 2014; invisible 2017); NA64 and LHCb reach 1e-4-1e-3 in sub-GeV / dimuon windows", "presumed_source": "BaBar PRL 113, 201801 (2014); BaBar PRL 119, 131804 (2017); NA64 and LHCb papers 2018-2020", "reliability": "likely (BaBar), uncertain (NA64/LHCb details)"},
+  {"item": "A' coupling to the Z current (neutrinos) via hypercharge mixing: g_nu = eps tan(theta_W) (m_A'^2/m_Z^2) g/(4 cos theta_W) for m_A' << m_Z", "presumed_source": "dark-photon mixing formalism (e.g. Batell-Pospelov-Ritz 2009)", "reliability": "likely"},
+  {"item": "chi2 -> chi1 gamma vanishes at one loop for an on-shell photon (transverse vacuum polarisation); chi2 -> chi1 e+e- closed for delta < 2 m_e = 1.022 MeV", "presumed_source": "gauge invariance; Batell-Pospelov-Ritz 2009; Finkbeiner-Weiner 2007", "reliability": "likely"},
+  {"item": "Three-body width Gamma = N_nu G_eff^2 delta^5/(120 pi^3) in the NR heavy-fermion limit", "presumed_source": "derived in details.md section 3.7 (checked against the muon-decay structure)", "reliability": "certain algebra; leading-order approximation"},
+  {"item": "Age of the universe 13.8 Gyr; freeze-out T_f ~ m/25; H ~ T^2/M_Pl in radiation domination", "presumed_source": "standard cosmology", "reliability": "certain"},
+  {"item": "2024 LZ low-energy tolerance N_max ~ 3 low-energy signal events (inherited from P003)", "presumed_source": "P003 (recalled, uncertain)", "reliability": "uncertain"},
+  {"item": "Bibliographic details of references 2-7 in details.md", "presumed_source": "memory", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First full run exceeded the 600 s foreground limit (463 s for the 3-hamiltonian grid plus light mediators); it was auto-backgrounded by the harness; caches were kept and the rest re-run from cache (6-12 s)",
+  "delta = 366 keV (P007 best fit) not on the 5 keV grid: 365 keV used; first version crashed on the missing row",
+  "Low-energy companion ratio initially normalised per ROI event; replaced by P003's per-200-270-keV-event definition",
+  "Interpolating P007's Higgsino grid was replaced by recomputing the Higgsino hamiltonian on the same kernels (1-6 % agreement)",
+  "WimPyDD source lookup via glob failed (package path); syntax verified empirically instead"
+ ],
+ "wimpydd_generated_files": "none (diff_rate kernels only; no response-function files written)"
+}

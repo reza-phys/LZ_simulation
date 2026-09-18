@@ -1,0 +1,65 @@
+{
+ "id": "P051",
+ "title": "Inelastic dark matter with a light mediator: how a propagator lighter than the momentum transfer reshapes the 250 keV recoil spectrum and the LZ fit",
+ "date": "2026-09-11",
+ "agent_tools": [
+  {"tool": "Read", "count": 20, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (lines 1-14, then compact listing via Bash); papers P011, P025, P026, P021, P002, P038, P003; code/P003_nreft_shapes.py; code/P011_dark_photon_idm.py; lzcommon.py lines 300-400; P038_efficiency_edge.py lines 40-120 and 180-310; WimPyDD/package.py lines 1195-1275; four P051 figures"},
+  {"tool": "Bash", "count": 18, "detail": "(1) pandas listing of ledger ids/titles + ls of work dirs; (2) grep lzcommon API and P038 conventions; (3) json/head/grep of P038 results, P021 script and peaks, data_requests; (4) grep WimPyDD package for q-dependent WC handling; (5) timing test of contact vs closure-built q-dependent kernels (0.359 vs analytic 0.357); (6) cat ENVIRONMENT_versions + kinematic windows; (7) `.venv/bin/python output/code/P051_light_mediator.py --stage kernels` (408 s, 5174+184+264 kernel calls); (8) pandas inspection of factorisation_validation.csv; (9) `--stage exact` (1170 calls, 204 s); (10) `--stage analysis`; (11) grep run_log + json summary; (12) re-run `--stage analysis` after figure label fix + grep June peaks + wc; (13) ls WimPyDD_models (not present); (14) find for WimPyDD-generated files (none); (15-18) four word-budget checks of papers/P051.md (wc -w + python section counts)"},
+  {"tool": "Write", "count": 4, "detail": "code/P051_light_mediator.py; work/P051/details.md; provenance/P051.json; papers/P051.md"},
+  {"tool": "Edit", "count": 9, "detail": "script (3): add exact-spectra stage; add exact-vs-factorised comparison; move Planck label in Fig. 3. paper (6): trims of Results/Caveats/Conclusion, headline and key numbers to meet word budgets"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette/mark guidance; JavaScript validator not run per PAPER_GUIDE)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python, run from the simulation root"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "diff_rate (sum_over_streams=False per-v_min kernels), eft_hamiltonian with q-dependent Wilson coefficients {(1,'q2'): f(q)} built as closures, streamed_halo_function via lzcommon.wd_halo with explicit v_min grid"},
+  {"name": "numpy", "version": "2.5.3", "functions": "arrays, cumsum, interp, savez/load caches"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf, special.erfc, stats.norm.pdf"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame tables, CSV output"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend, pyplot figures"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "wd, wd_halo(day_of_year, vmin), wd_hamiltonian, wd_c_from_anand, E_R_range_keV, m_nucleus_gev, LZ dict, M_V_GEV, M_NUCLEON_GEV, A_XE_MEAN, GEV_TO_CM2"},
+  {"name": "hand derivation", "version": "none: derived by hand", "functions": "propagator factor m^4/(m^2+q^2)^2; eps^2 alpha_D translation; chi2 survival / exothermic floor algebra (P011 formulae)"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P051_light_mediator.py", "purpose": "WimPyDD contact kernels (17 delta x 2 isospin), factorisation validation, exact light-mediator spectra, exothermic kernels; observables, Z(delta), couplings, (m_A', eps) plane, figures", "command": ".venv/bin/python output/code/P051_light_mediator.py --stage kernels ; --stage exact ; --stage analysis   (or --stage all)"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules, deliverables, halo-labelling and WimPyDD pitfalls"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "event numbers, ROI/efficiency, significance table pattern, open question 10"},
+  {"file": "output/results_ledger.csv", "parts_used": "ids/titles of P001-P050; headline rows of P002, P003, P011, P021, P025, P026, P038"},
+  {"file": "output/papers/P011.md", "parts_used": "dark-photon formulae, light-mediator S values, eps floors, m_A' windows"},
+  {"file": "output/papers/P025.md", "parts_used": "Planck bound m_A' >= 9.2 GeV for thermal alpha_D = 0.035; Sommerfeld valleys"},
+  {"file": "output/papers/P026.md", "parts_used": "exothermic floor m_A' >= 2.45/0.92/0.55/0.25 GeV; tau < 7e16 s"},
+  {"file": "output/papers/P021.md", "parts_used": "likelihood construction, q0 form, b_H, resolution, contact Z(delta) values"},
+  {"file": "output/papers/P002.md", "parts_used": "kinematic windows, 99.5th percentile at delta = 300 keV, node at 266 keV"},
+  {"file": "output/papers/P038.md", "parts_used": "600/1000 phd edges, acceptance, 600-1000 phd predictions, Z values"},
+  {"file": "output/papers/P003.md", "parts_used": "WimPyDD coupling convention c0 = 2/m_v^2; q-dependent WC usage"},
+  {"file": "output/code/P003_nreft_shapes.py", "parts_used": "q-dependent Wilson-coefficient syntax (4,'q2')"},
+  {"file": "output/code/P011_dark_photon_idm.py", "parts_used": "kernel/halo machinery, light-mediator hamiltonian, eps and chi2-lifetime formulae, exothermic criterion"},
+  {"file": "output/code/P038_efficiency_edge.py", "parts_used": "efficiency erf model, q0_single, smearing matrix, 600-1000 phd definition"},
+  {"file": "output/work/P038/P038_results.json", "parts_used": "'edges' block: E50 and sigma_erf for 600 and 1000 phd"},
+  {"file": "output/work/P021/P021_peaks.csv", "parts_used": "conventions check (peak 380 keV, Z 3.59 with P021 efficiency)"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "WimPyDD wrapper section (lines 309-387), constants"},
+  {"file": "WimPyDD/package.py", "parts_used": "eft_hamiltonian q-dependence handling (lines 1195-1294), read-only"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "t-channel light-mediator propagator: c(q) = c0 m^2/(m^2+q^2), rate factor m^4/(m^2+q^2)^2, q^2 = 2 m_A E_R", "presumed_source": "standard field theory", "reliability": "certain"},
+  {"item": "alpha = 1/137.036, sin^2 theta_W = 0.2312, m_Z = 91.1876 GeV, hbar = 6.582e-25 GeV s, t_U = 13.8 Gyr", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "dark photon: sigma_p = 16 pi alpha alpha_D eps^2 mu_p^2/m_A'^4; off-diagonal vector current for pseudo-Dirac chi", "presumed_source": "Holdom 1986; Tucker-Smith & Weiner 2001; Batell-Pospelov-Ritz 2009 (also P011)", "reliability": "certain"},
+  {"item": "chi2 -> chi1 nu nubar width Gamma = 3 G_eff^2 delta^5/(120 pi^3), G_eff = g_D eps tan(theta_W) g/(4 cos(theta_W) m_Z^2), m_A'-independent", "presumed_source": "P011 leading-order derivation", "reliability": "likely"},
+  {"item": "A' with m_A' < 2 m_chi decays visibly (e+e-, mu+mu-, hadrons); tau_A' ~ 1/(alpha eps^2 m_A')", "presumed_source": "dark-photon phenomenology", "reliability": "certain"},
+  {"item": "BaBar visible/invisible A' searches: eps <~ 1e-3 for 0.02-10 GeV", "presumed_source": "Lees et al. PRL 113, 201801 (2014); PRL 119, 131804 (2017)", "reliability": "likely"},
+  {"item": "NA48/2 pi0 -> gamma A': eps <~ (0.5-1)e-3 for 10-70 MeV", "presumed_source": "Batley et al. PLB 746, 178 (2015)", "reliability": "likely"},
+  {"item": "beam dumps E137/E141/E774/Orsay/NuCal/CHARM exclude roughly eps 1e-8..1e-5 for m_A' <~ 0.1 GeV, narrowing to ~(1-3)e-6 near 0.3-0.4 GeV", "presumed_source": "Bjorken-Essig-Schuster-Toro 2009 recasts; Andreas-Niebuhr-Ringwald 2012", "reliability": "uncertain (x3 in eps)"},
+  {"item": "LHCb prompt/displaced A' -> mu mu limits (eps^2 ~ 1e-7..1e-6 in 0.21-70 GeV; displaced eps ~ 1e-5..1e-4 near 0.21-0.35 GeV); FASER eps ~ 3e-5..1e-4 for 17-70 MeV", "presumed_source": "LHCb PRL 124, 041801 (2020); FASER PLB 848 (2024)", "reliability": "uncertain"},
+  {"item": "asymmetric pseudo-Dirac relic oscillates into the symmetric state because the Majorana splitting violates the dark U(1)", "presumed_source": "Tucker-Smith & Weiner; Tulin-Yu-Zurek 2012 oscillation studies", "reliability": "likely"},
+  {"item": "xenon M-response node near 266 keV (isoscalar) and 284-291 keV (proton-only)", "presumed_source": "corpus P002/P003/P011 (numerical), not independently recalled", "reliability": "certain (computed in corpus)"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Full WimPyDD q-dependent-coefficient grid for all seven mediators (~27,000 kernel calls, ~40 min) abandoned; replaced by the validated propagator factorisation (contact kernel x m^4/(m^2+q^2)^2 at mean A) plus exact WimPyDD spectra for m_med = 0.05 and 0.1 GeV at delta = 300 and 380 keV (|dZ| <= 0.007, rate <= 6 %)",
+  "Isotope-resolved kernels to make the factorisation exact not pursued (diff_rate sums isotopes internally); residual isotope-mix effect quantified instead (max 23 % at a kinematic edge with negligible rate, rms 3 %)"
+ ],
+ "wimpydd_generated_files": "none (diff_rate path; the WimPyDD_models writer in eft_hamiltonian is inside a commented-out block; verified with find after the runs)"
+}

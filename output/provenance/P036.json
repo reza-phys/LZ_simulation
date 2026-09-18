@@ -1,0 +1,62 @@
+{
+ "id": "P036",
+ "title": "Could the LZ event be a nuclear excitation? Dark-matter-induced 129Xe(39.6 keV) and 131Xe(80.2 keV) transitions and where they land in S1-S2",
+ "date": "2026-09-09",
+ "agent_tools": [
+  {"tool": "Read", "count": 18, "detail": "output/provenance/PAPER_GUIDE.md; output/00_evidence_dossier.md; output/results_ledger.csv (two pages); output/papers/P013.md, P019.md, P017.md, P009.md, P024.md; inputs/LZ_arXiv_2609.02823_fulltext.tex lines 35-70 (Theory), 684-697 (Waveform Analysis), 820-911 (Tables S6-S7); output/code/common/lzcommon.py (full); output/provenance/P013.json (format); own figures P036_fig1 (x2), fig2, fig3"},
+  {"tool": "Bash", "count": 17, "detail": "grep tex for inelastic/Theory/S7/excitation lines; grep lzcommon function list; cat ENVIRONMENT_versions + ls work/ and data_requests/; grep P013 details/script for the hybrid-locus method; locate WimPyDD and diff_rate signature (first attempt failed on site-packages path); grep P017 script for isotopes_list + head P009 yield_curves + P024 results keys; P017 ACT bookkeeping; P024 baseline band numbers; script run 1; sed run_log head; script run 2 + log tail + ls outputs + WimPyDD new-file check; script run 3 + normalisation-check grep; python print of kinematics/check values from P036_results.json; word counts of P036.md x4"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P036_nuclear_excitation.py; output/work/P036/details.md; output/provenance/P036.json; output/papers/P036.md"},
+  {"tool": "Edit", "count": 10, "detail": "script x4: analytic minimum-mass condition mu v_max^2/2 >= E* (replacing a bisection that returned inf); q->0 analytic SD normalisation check; convention-free O4/O1 ratio check; Fig. 1 label position. details.md x1: isotope typo. P036.md x5: Abstract/Results/Conclusion trims to the word budget. P036.json x1: tool counts"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (chart conventions: fixed Okabe-Ito categorical order, thin marks, direct labels + legend, single axis)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "arange, interp, trapezoid, cumsum, polyfit, log10"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf via lzcommon.eta0 (analytic q->0 check)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, to_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg): plot, fill_between, annotate, savefig"},
+  {"name": "nestpy", "version": "2.1.1", "functions": "via lzcommon: NESTcalc.GetYields NR (Table S5 with p(E) break) and beta ER (Table S3 and NEST default)"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "Xe target (isotope indices), eft_hamiltonian (O4 isoscalar unit coupling; O4 and O1 neutron-only), streamed_halo_function (Baxter SHM, annual mean and 16 June, explicit v_min grid via lzcommon), diff_rate with delta = E* and isotopes_list per isotope"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ dict, NEST_NR_LZ, NEST_ER_LZ, nest_nr_yields, nest_er_yields, wd, wd_halo, wd_hamiltonian, wd_rate, wd_c_from_anand, vmin_kms, E_R_range_keV, m_chi_min_gev, v_earth_kms, vmax_kms, mu_red, m_nucleus_gev, eta0, XE_ISOTOPES, constants"},
+  {"name": "none: derived by hand", "version": "-", "functions": "sigma_n^SD = 3 c_4^2 mu_n^2/(16 pi) from spin traces; O4/O1 q->0 ratio (J+1)/(4J) <S_n>^2/N^2; threshold condition mu v_max^2/2 >= E* and E_R,threshold = E* mu/m_N; quanta-addition hybrid model"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P036_nuclear_excitation.py", "purpose": "NEST-LZ hybrid loci and two-equation solve; WimPyDD O4 elastic and threshold-shifted spectra for 129Xe/131Xe at 1 TeV, kinematic factors, hybrid counts for two coupling normalisations, q->0 normalisation checks; threshold kinematics; containment numbers; three figures; CSV/JSON tables", "command": ".venv/bin/python output/code/P036_nuclear_excitation.py  (log: output/work/P036/run_log.txt; ~17 s)"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Theory paragraph l.35-60 (NREFT basis, O1/O4 inelastic models, WimPyDD + DMFormFactor-v6 density matrices with LZ-2023 modifications, Baxter SHM); Waveform Analysis l.687-695 (singlet/triplet, PSD inconclusive at 550 phd, S2 single-site template); Table S7 l.880-909 (O4 s/v local significances incl. 2.7 sigma elastic at 1 TeV)"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "event handles (S1c, S2c, quanta, band position, PSD inconclusive), hypotheses list"},
+  {"file": "output/results_ledger.csv", "parts_used": "P003 (O4 N_lo = 28, coupling convention), P009/P024 (band median/width), P010 (ER width, recombination 0.94), P013 (hybrid loci), P017 (spin responses, <S_n> check), P019 (NC excitation loci)"},
+  {"file": "output/papers/P013.md", "parts_used": "(n,n'gamma) hybrid loci (745 phd, 4.54; +15/+22 sigma) reproduced"},
+  {"file": "output/papers/P019.md", "parts_used": "NC-excitation loci at log S2c 4.5-4.8 (consistency)"},
+  {"file": "output/papers/P017.md", "parts_used": "Sigma'/Sigma'' node positions, isotope shares, WimPyDD density-matrix consistency with Menendez spins"},
+  {"file": "output/papers/P009.md", "parts_used": "paper energy scale (+8% S1/keV), 200-270 keV efficiency 0.93, sigma 0.033 dex"},
+  {"file": "output/papers/P024.md", "parts_used": "NR band sigma 0.0313 dex and median 4.015 at 540 phd"},
+  {"file": "output/work/P024/results.json", "parts_used": "baseline band numbers (p50 4.0152, sd 0.0313, event 1.54 sigma)"},
+  {"file": "output/work/P013/details.md; output/code/P013_neutron_origins.py", "parts_used": "hybrid-locus method (quanta addition), table of loci"},
+  {"file": "output/code/P017_nuclear_response.py; output/work/P017/P017_spin_responses.csv; output/work/P017/details.md", "parts_used": "WimPyDD isotope bookkeeping (isotopes_list={0:[idx]}), q->0 spin-response checks"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "constants, NEST wrappers, kinematics, WimPyDD wrappers, coupling convention"},
+  {"file": "WimPyDD/package.py", "parts_used": "diff_rate signature (isotopes_list, delta) — read-only"},
+  {"file": "output/provenance/PAPER_GUIDE.md; output/provenance/P013.json; environment/ENVIRONMENT_versions.txt", "parts_used": "rules, JSON format, package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "129Xe first excited state 3/2+ at 39.58 keV, T1/2 = 0.97 ns, M1; 131Xe first excited state 1/2+ at 80.19 keV, T1/2 = 0.48 ns, M1+E2", "presumed_source": "ENSDF", "reliability": "certain (energies), likely (half-lives)"},
+  {"item": "internal-conversion coefficients alpha ~ 12 (39.6 keV) and ~ 1.6 (80.2 keV) in Xe", "presumed_source": "BrIcc-type tables", "reliability": "uncertain"},
+  {"item": "inelastic/elastic SD structure-factor ratio R = S_inel/S_el for 129Xe and 131Xe: order 0.1 at low q, approaching ~1 near q ~ 200-250 MeV; bracketed 0.01-1", "presumed_source": "Baudis, Kessler, Klos, Lang, Menendez, Reichard, Schwenk, PRD 88, 115014 (2013)", "reliability": "uncertain"},
+  {"item": "<S_n> = 0.329 (129Xe), -0.272 (131Xe) one-body; two-body currents quench the SD response by 10-30% in amplitude", "presumed_source": "Menendez, Gazit, Schwenk 2012; Klos et al. 2013", "reliability": "likely"},
+  {"item": "LZ 2024 SD-neutron limit ~2e-42 cm^2 at 40 GeV, scaling ~m_chi at high mass -> ~4e-41 cm^2 at 1 TeV", "presumed_source": "LZ WS2024 result (PRL 135, 011802)", "reliability": "uncertain (x2)"},
+  {"item": "sigma_n^SD = 3 c_4^2 mu_n^2/(16 pi) for a spin-1/2 WIMP, consistent with sigma = c_1^2 mu^2/pi for O1", "presumed_source": "Fitzpatrick et al. 2012 / derived from spin traces", "reliability": "likely (derived)"},
+  {"item": "photon attenuation in Xe: mu/rho ~ 20 cm^2/g at 39.6 keV (above the 34.56 keV K edge), 3.5 at 80.2 keV, 8 at 29.7 keV; LXe density 2.9 g/cm^3", "presumed_source": "NIST XCOM", "reliability": "uncertain (x1.5)"},
+  {"item": "CSDA range of a 40 keV electron in LXe ~ 10-30 um", "presumed_source": "NIST ESTAR scaled", "reliability": "uncertain"},
+  {"item": "XENON100 (PRD 96, 022008, 2017) and XENON1T (PRD 103, 063028, 2021) searched for 129Xe inelastic WIMP scattering with null results; McCabe JCAP 05 (2016) 033 prospects paper", "presumed_source": "literature", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Minimum WIMP mass for any excitation via lz.m_chi_min_gev at a fixed E_R = 0.5 keV returned infinity (that recoil is below the threshold recoil E* mu/m_N); replaced by the analytic condition mu v_max^2/2 >= E*.",
+  "A first attempt to read the WimPyDD source under .venv/site-packages failed (the package lives at the simulation root, WimPyDD/package.py).",
+  "The 'paper energy scale' variant scales all NR quanta by 1.077, which is a crude proxy for P009's finding (+8% S1/keV); P024's proper rescaling was cited instead for the pure-NR band position. Hybrid conclusions are unchanged (+15.2/+22.1 sigma vs +15.8/+22.8 sigma).",
+  "An absolute q->0 check of the neutron-only O4 normalisation against the textbook SD formula gave WimPyDD/analytic = 0.50-0.52; a convention-free O4/O1 ratio test showed this is a nuclear-structure normalisation of the shipped density matrices (|<S_n>|_eff = 0.247/0.198), so the factor is reported as a x2 uncertainty on the SD-limit-normalised absolute rates rather than corrected."
+ ],
+ "wimpydd_generated_files": []
+}

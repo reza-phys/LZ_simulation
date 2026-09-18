@@ -1,0 +1,65 @@
+{
+ "id": "P055",
+ "title": "Known substructures and the June event: Sagittarius, the Gaia Sausage, S1/S2 and the Helmi streams as sources of a 248 keV recoil",
+ "date": "2026-09-11",
+ "agent_tools": [
+  {"tool": "Read", "count": 17, "detail": "provenance/PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (lines 1-14, attempted 15-47); papers P030, P018, P006, P034, P002, P007; code/P030_streams.py; common/lzcommon.py (lines 108-217, 310-400); two background-task output files; figures P055_fig1, P055_fig2"},
+  {"tool": "Bash", "count": 10, "detail": "python summary of ledger P014-P050 + grep of lzcommon API + ls work dirs + cat P030 known_substructures.csv; python inspection of wimprates earth_velocity/v_earth/j2000 and grep P006_event_date.py + P006_summary.json; python print of WimPyDD.v_earth_sun source + P030 run_meta + sed P006 lines 30-70; grep dataviz palette.md; `.venv/bin/python output/code/P055_gaia_substructures.py` (run 1, moved to background after 600 s, stopped); `time .venv/bin/python output/code/P055_gaia_substructures.py` (run 2, 416 s foreground); `time .venv/bin/python output/code/P055_gaia_substructures.py` (run 3 after edits, 723 s, completed in background); ls/tail of outputs; `.venv/bin/python output/code/P055_postprocess.py` (53 s) + python print of validation JSONs/CSVs; python print of final tables; wc -w"},
+  {"tool": "Write", "count": 5, "detail": "code/P055_gaia_substructures.py; code/P055_postprocess.py; work/P055/details.md; provenance/P055.json; papers/P055.md"},
+  {"tool": "Edit", "count": 12, "detail": "P055_gaia_substructures.py: angular grid 128x96 -> 96x64; closed-form isotropic speed density + windowed numerical grid; SHM check restricted to 16 June; 12-day sampling; first-harmonic fitted rate phases; elastic 248 keV time series and date LR"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette reference read; JavaScript validator skipped per PAPER_GUIDE rule 2)"},
+  {"tool": "ToolSearch", "count": 1, "detail": "select:TaskStop"},
+  {"tool": "TaskStop", "count": 1, "detail": "stopped the first (over-long, 128x96 grid) run"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter .venv/bin/python"},
+  {"name": "numpy", "version": "2.5.3", "functions": "polynomial.legendre.leggauss, linalg.lstsq, trapezoid, cumsum, interp, array algebra"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf, special.erfc (efficiency, analytic stream eta)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, to_csv, Timestamp/Timedelta (J2000 conversion)"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg), three PNG figures"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "diff_rate(sum_over_streams=False) per-stream O1 kernels (elastic and inelastic, 1 TeV), eft_hamiltonian (via lz.wd_hamiltonian), streamed_halo_function (via lz.wd_halo, validation), v_earth_sun (validation)"},
+  {"name": "wimprates", "version": "0.5.0", "functions": "earth_velocity, j2000 (validation of the from-scratch Earth-velocity vector)"},
+  {"name": "numericalunits", "version": "1.28", "functions": "km, s unit stripping for wimprates output"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ, V0_KMS, VESC_KMS, V_SUN_PEC, XE_ISOTOPES, A_XE_MEAN, m_nucleus_gev, mu_red, eta0, vmin_kms, E_R_range_keV, delta_max_kev, wd, wd_halo, wd_hamiltonian, C_KMS"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P055_gaia_substructures.py", "purpose": "Earth-velocity vector (J2000 ecliptic->Galactic) + validation; substructure catalogue; numerical/analytic Earth-frame speed distributions and WimPyDD delta_eta arrays through the year; v_lab phases/amplitudes and delta_max; WimPyDD kernels and composite rates at delta = 250-380 keV; June/Dec, phase, date LR; Sausage; directional signature; figures", "command": ".venv/bin/python output/code/P055_gaia_substructures.py   (416-723 s)"},
+  {"path": "output/code/P055_postprocess.py", "purpose": "first-harmonic fits of saved rate series; elastic 248 keV time dependence and date LR (isotropic streams analytic, S1/shards on a reduced 48x32 angular grid)", "command": ".venv/bin/python output/code/P055_postprocess.py   (53 s)"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules, deliverables, halo-labelling and WimPyDD pitfalls"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "event date/energy, timing argument, kinematic handles"},
+  {"file": "output/results_ledger.csv", "parts_used": "P001-P050 headlines (P006, P018, P030, P034 in particular)"},
+  {"file": "output/papers/P030.md + output/code/P030_streams.py + output/work/P030/known_substructures.csv, details.md (substructure table)", "parts_used": "eta construction, kernel/N_roi machinery, efficiency model, recalled substructure table and boosts to dispute (S1 1.09/1.05/1.67)"},
+  {"file": "output/papers/P018.md", "parts_used": "Sausage eta -> 0.80 above 650 km/s; delta_max slope 0.82 keV per km/s"},
+  {"file": "output/papers/P006.md + output/code/P006_event_date.py (lines 30-70) + output/work/P006/P006_summary.json", "parts_used": "date-LR definition, run window 27 Mar 2023 - 1 Apr 2024 (371 d), Earth-velocity model comparison, LR 1.41/2.08/2.55"},
+  {"file": "output/papers/P034.md", "parts_used": "a1 = 0.43/1.18/1.66 at delta = 300/350/380 keV for cross-check"},
+  {"file": "output/papers/P002.md, output/papers/P007.md", "parts_used": "delta_max 387 keV; Higgsino coupling and SHM counts 1155/27.5/0.31"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "constants, kinematics, eta0, wd_halo, wd_hamiltonian"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"},
+  {"file": ".venv wimprates/halo.py and WimPyDD v_earth_sun (read-only inspection)", "parts_used": "validation targets for the Earth-velocity vector"}
+ ],
+ "recalled_knowledge": [
+  {"item": "J2000 equatorial -> Galactic rotation matrix (Hipparcos definition)", "presumed_source": "ESA 1997 Hipparcos catalogue / astropy", "reliability": "certain"},
+  {"item": "J2000 obliquity of the ecliptic 23.4393 deg", "presumed_source": "IAU / Astronomical Almanac", "reliability": "certain"},
+  {"item": "Earth mean orbital speed 29.79 km/s, circular-orbit approximation", "presumed_source": "Lewin & Smith 1996", "reliability": "certain"},
+  {"item": "March equinox 2023: 20 March 21:24 UTC", "presumed_source": "astronomical almanac", "reliability": "likely (+-1 h)"},
+  {"item": "Galactic-frame Earth-velocity unit vectors e1 = (0.9931, 0.1170, -0.0103), e2 = (-0.0670, 0.4927, -0.8676)", "presumed_source": "Lee, Lisanti, Safdi 2013; McCabe 2014", "reliability": "likely"},
+  {"item": "SHM++ Sausage: beta = 0.9, eta = 0.2, sigma_r = v0 sqrt(3/(2(3-2beta))), sigma_phi = sigma_z = sigma_r sqrt(1-beta)", "presumed_source": "Evans, O'Hare, McCabe 2019; Necib, Lisanti, Belokurov 2019", "reliability": "likely"},
+  {"item": "Sagittarius local debris velocity (0, 0, +-300) km/s, dispersion 20-40 km/s, local density fraction <~ 1-5 %", "presumed_source": "Freese et al. 2004; Purcell, Zentner, Wang 2012", "reliability": "speed likely; vertical sense and fraction uncertain"},
+  {"item": "S1 stream (v_r, v_phi, v_z) = (-30, -297, -73) km/s, dispersions (83, 27, 59), f up to 10 % claimed", "presumed_source": "Myeong et al. 2018; O'Hare et al. 2018", "reliability": "velocities likely; sign of U and fraction uncertain"},
+  {"item": "S2 stream (6, 164, -250) km/s, small dispersion, f ~ 1 %", "presumed_source": "O'Hare et al. 2020", "reliability": "uncertain"},
+  {"item": "Helmi streams v_phi ~ +150, v_z ~ +-250 km/s (two clumps), f <~ 1 %", "presumed_source": "Helmi et al. 1999; Koppelman et al. 2019", "reliability": "velocities likely; fraction uncertain"},
+  {"item": "Retrograde shards v_phi ~ -(250-300) km/s, f ~ 1 %", "presumed_source": "O'Hare et al. 2020", "reliability": "uncertain"},
+  {"item": "G_F = 1.166e-5 GeV^-2, sin^2 theta_W = 0.231 (Higgsino coupling, for absolute counts only)", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "Solar apex near Cygnus (l ~ 88 deg) and the directional 'WIMP wind'", "presumed_source": "directional-detection literature (Spergel 1988; Mayet et al. 2016)", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First run with a 128x96 angular grid, 6-day sampling and numerical integration for every component: ~2.5 min per component, exceeded 10 min; stopped. Replaced by the exact closed-form speed density for isotropic untruncated streams, a windowed 96x64 grid for anisotropic/truncated components and 12-day sampling (33 days incl. 16 June and 2 Dec).",
+  "12-day-grid argmax as the rate peak day (157 for all curves) replaced by first-harmonic least-squares fits (peak 152.5-153.7).",
+  "Two-lobe (+-250 km/s) Sausage variant of P030 not rerun; SHM++ anisotropic form used instead (reproduces P018's 0.80)."
+ ],
+ "wimpydd_generated_files": "none (WD.diff_rate only; no response-function files written)"
+}

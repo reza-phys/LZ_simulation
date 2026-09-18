@@ -1,0 +1,110 @@
+=== 1. 238U spontaneous-fission data ===
+radioactivedecay: 238U T1/2 = 4.468e+09 y, SF branching = 5.45e-07, modes ['α', 'SF']
+radioactivedecay: 232Th modes ['α'] (no SF branch tabulated; recalled SF/alpha ~1e-11, negligible)
+radioactivedecay: Cm-244 T1/2 = 18.1 y, SF branching = 1.37e-06
+radioactivedecay: Cf-252 T1/2 = 2.645 y, SF branching = 0.0309
+P(nu) Terrell(2.01, 1.08): [8.1034e-02 2.3735e-01 3.5659e-01 2.4117e-01 7.3283e-02 9.9520e-03
+ 5.9966e-04 1.5909e-05]  mean 2.021
+P(nu) P013 recall       : [0.05 0.25 0.37 0.25 0.07 0.01 0.   0.  ]  mean 2.07
+Watt: mean 2.031 MeV; f(E_n > 6.61) = 1.738e-02; f(E_n > 8.19) = 5.241e-03; f(>10 MeV) = 1.287e-03
+gamma multiplicity Poisson(6.5): P(0)=1.50e-03 P(1)=9.77e-03 P(2)=3.18e-02 mean=6.50
+gamma multiplicity narrow G(6.5,2.5) k>=1: P(0)=0.00e+00 P(1)=1.47e-02 P(2)=3.23e-02 mean=6.56
+gamma multiplicity narrow G(6.5,2.5) k>=2: P(0)=0.00e+00 P(1)=0.00e+00 P(2)=3.28e-02 mean=6.64
+
+=== 2. 238U inventory and SF rate ===
+                             component  A_U238_Bq  A_lo  A_hi  N_SF_220d  N_SF_lo   N_SF_hi  p_enter
+          PTFE (TPC walls, reflectors)       0.01 0.003 0.100   0.103594 0.031078  1.035936     0.50
+                 Ti cryostat (ICV+OCV)       1.10 0.220 3.520  11.395296 2.279059 36.464947     0.35
+      R11410 PMTs (TPC 494 + Skin 131)       1.25 0.625 1.875  12.949200 6.474600 19.423800     0.40
+cables, feedthroughs, PMT bases, misc.       0.30 0.100 0.600   3.107808 1.035936  6.215616     0.20
+TOTAL 238U(early) activity 2.66 Bq (0.95-6.09); SF in 220 d: 27.6 (9.8-63.1)
+SF neutrons emitted in 220 d: 55.4; above 8.19 MeV: 0.290 (range 0.103-0.665)
+
+--- route B: (alpha,n)-budget back-calculation ---
+P013 MC (thr 3 keV, FV 63x131): p_ss_roi(alpha,n) = 0.0079, p_ss_roi(SF) = 0.0084, p_win(SF, 200-270) = 1.610e-06 (range 6.26e-07-2.05e-06)
+fit UL 0.118: pre-veto SS 1.48 -> 187 (alpha,n) neutrons entering LXe -> 374 emitted; SF/(alpha,n) neutron ratio 1.10e-02 (1.8e-03-7.3e-02) -> SF neutrons 4.10, fissions 2.04 (0.340-13.59)  [PTFE-like (alpha,n) emitters only]
+MS cross-check 0.02: pre-veto SS 0.25 -> 32 (alpha,n) neutrons entering LXe -> 63 emitted; SF/(alpha,n) neutron ratio 1.10e-02 (1.8e-03-7.3e-02) -> SF neutrons 0.69, fissions 0.35 (0.058-2.30)  [PTFE-like (alpha,n) emitters only]
+MS cross-check +1sigma 0.04: pre-veto SS 0.50 -> 63 (alpha,n) neutrons entering LXe -> 127 emitted; SF/(alpha,n) neutron ratio 1.10e-02 (1.8e-03-7.3e-02) -> SF neutrons 1.39, fissions 0.69 (0.115-4.61)  [PTFE-like (alpha,n) emitters only]
+Route B bounds only the SF in (alpha,n)-producing (fluorine-bearing) components; Ti and PMT glass have negligible (alpha,n) yield
+Radioassay route A total (27.6 SF) vs route-B PTFE share (2.04): route A / (alpha,n) neutrons = 0.15 (LZ: "up to two orders of magnitude lower")
+route C <=1 MS NR multiple scatters (any veto tag) -> P(MS per SF) = 0.344 -> N_SF <= 2.9 (2.2-4.5)
+route C <=3 MS NR multiple scatters (any veto tag) -> P(MS per SF) = 0.344 -> N_SF <= 8.7 (6.6-13.6)
+route C <=5 MS NR multiple scatters (any veto tag) -> P(MS per SF) = 0.344 -> N_SF <= 14.5 (11.1-22.7)
+
+=== 3. Prompt-gamma transport (simplified LZ geometry) ===
+wall     : <p_gamma silent> = 0.0036 +- 0.0002 (E>1 MeV 0.0069; E<0.5 MeV 0.0012)
+cryostat : <p_gamma silent> = 0.1341 +- 0.0014 (E>1 MeV 0.0694; E<0.5 MeV 0.2354)
+pmt      : <p_gamma silent> = 0.1477 +- 0.0014 (E>1 MeV 0.0867; E<0.5 MeV 0.2314)
+ocv      : <p_gamma silent> = 0.1419 +- 0.0014 (E>1 MeV 0.0759; E<0.5 MeV 0.2444)
+  variant ('wall', 'v_od=0.7'): <p_gamma silent> = 0.0063
+  variant ('wall', 'v_od=1.0'): <p_gamma silent> = 0.0030
+  variant ('wall', 'pmt_arrays_half_visible'): <p_gamma silent> = 0.0034
+  variant ('wall', 'invisible_regions_absorb'): <p_gamma silent> = 0.0301
+  variant ('cryostat', 'v_od=0.7'): <p_gamma silent> = 0.1435
+  variant ('cryostat', 'v_od=1.0'): <p_gamma silent> = 0.1342
+  variant ('cryostat', 'pmt_arrays_half_visible'): <p_gamma silent> = 0.1270
+  variant ('cryostat', 'invisible_regions_absorb'): <p_gamma silent> = 0.4587
+  variant ('pmt', 'v_od=0.7'): <p_gamma silent> = 0.1553
+  variant ('pmt', 'v_od=1.0'): <p_gamma silent> = 0.1469
+  variant ('pmt', 'pmt_arrays_half_visible'): <p_gamma silent> = 0.0325
+  variant ('pmt', 'invisible_regions_absorb'): <p_gamma silent> = 0.6896
+
+f_gamma (all prompt gammas silent):
+                location                  model  p_gamma      f_gamma
+                    wall           Poisson(6.5) 0.003617 1.539201e-03
+                    wall narrow G(6.5,2.5) k>=1 0.003617 5.349248e-05
+                    wall narrow G(6.5,2.5) k>=2 0.003617 4.319057e-07
+                cryostat           Poisson(6.5) 0.134083 3.594112e-03
+                cryostat narrow G(6.5,2.5) k>=1 0.134083 2.733219e-03
+                cryostat narrow G(6.5,2.5) k>=2 0.134083 7.772352e-04
+                     pmt           Poisson(6.5) 0.147717 3.927149e-03
+                     pmt narrow G(6.5,2.5) k>=1 0.147717 3.126175e-03
+                     pmt narrow G(6.5,2.5) k>=2 0.147717 9.730231e-04
+                     ocv           Poisson(6.5) 0.141867 3.780622e-03
+                     ocv narrow G(6.5,2.5) k>=1 0.141867 2.954159e-03
+                     ocv narrow G(6.5,2.5) k>=2 0.141867 8.855608e-04
+P013 (p=0.15, Poisson 7)             Poisson(7) 0.150000 2.605841e-03
+
+=== 4. Lone-recoil probability per fission and expected counts ===
+f_n (other neutrons silent, per emitted neutron): central 0.156, p_n=0.05: 0.136, p_n=0.20: 0.204; with P013 P(nu) and p_n=0.07: 0.148 (P013: 0.148)
+P(nu=1) = 0.237; P(nu=0) = 0.081; share of emitted neutrons that are "lone" (nu=1): 0.118
+                             component      N_SF  p_gamma  f_gamma_narrow  f_gamma_poisson  P_lone_per_SF  N_lone_220d  N_lone_220d_poissonG  N_lone_no_companion_penalty
+          PTFE (TPC walls, reflectors)  0.103594 0.003617        0.000053         0.001539   1.354726e-12 1.403410e-13          4.038194e-12                 1.676558e-08
+                 Ti cryostat (ICV+OCV) 11.395296 0.134083        0.002733         0.003594   4.845419e-11 5.521499e-10          7.260627e-10                 1.290949e-06
+      R11410 PMTs (TPC 494 + Skin 131) 12.949200 0.147717        0.003126         0.003927   6.333767e-11 8.201722e-10          1.030313e-09                 1.676558e-06
+cables, feedthroughs, PMT bases, misc.  3.107808 0.147717        0.003126         0.003927   3.166884e-11 9.842066e-11          1.236375e-10                 2.011869e-07
+TOTAL expected lone 200-270 keV SF recoils in 220 d: 1.47e-09 (narrow gamma multiplicity), 1.88e-09 (Poisson); no-companion bound 3.19e-06; effective silent-companion factor 4.62e-04 (P013: 3.8e-4)
+P013 estimate 9.3e-11 -> ratio this/P013 = 15.87 (narrow) / 20.33 (Poisson)
+
+Sensitivity:
+                                                                                    scenario  N_lone_220d  ratio_to_central
+                             central (route A inventory, narrow gamma mult., p_n=0.1, u=0.1) 1.470883e-09          1.000000
+                                                             gamma multiplicity Poisson(6.5) 1.884051e-09          1.280898
+                                                              gamma multiplicity narrow k>=2 4.429263e-10          0.301130
+                                                                                  p_n = 0.20 1.913504e-09          1.300922
+                                                                                  p_n = 0.05 1.278548e-09          0.869239
+                                                                          self-untagged 0.20 2.941766e-09          2.000000
+                                                                           OD visibility 0.7 1.592967e-09          1.083000
+                                                                           OD visibility 1.0 1.464846e-09          0.995896
+                                    Ti/PMT-array interactions all silent (over-conservative) 4.386036e-08         29.819069
+                                                        PMT arrays half visible (Skin light) 6.638183e-10          0.451306
+                                               per-gamma silent floor 0.05 (unmodelled gaps) 1.472901e-09          1.001372
+                                                    per-gamma silent floor 0.15 (P013 value) 1.592509e-09          1.082689
+                                                                         p_win at MC maximum 1.872995e-09          1.273381
+                                                                         p_win at MC minimum 5.714222e-10          0.388489
+                                                           Ti and PMTs at assay upper limits 3.194120e-09          2.171566
+                                                             inventory at all lower brackets 5.242095e-10          0.356391
+                                                             inventory at all upper brackets 3.370313e-09          2.291353
+                                                            route C cap (<=3 MS): N_SF = 8.7 4.655783e-10          0.316530
+                                                     route B PTFE-only (fit UL): N_SF = 2.04 1.088167e-10          0.073981
+STACKED HIGH: upper inventory, Poisson gammas, p_gamma floor 0.15, p_n 0.2, u 0.2, p_win max 1.508343e-08         10.254675
+                      STACKED LOW: lower inventory, narrow k>=2, p_n 0.05, u 0.08, p_win min 4.264480e-11          0.028993
+
+=== 5. What SF bursts look like in LZ ===
+                             component      N_SF  P_ge1_TPC_deposit  P_ge1_capture  P_ge2_captures  N_TPC_deposit_events  N_MS_events  N_ge2_captures  P_ge1_visible_gamma
+          PTFE (TPC walls, reflectors)  0.103594           0.620117       0.749555         0.35448              0.064240     0.042781        0.036722             0.999947
+                 Ti cryostat (ICV+OCV) 11.395296           0.482007       0.749555         0.35448              5.492608     3.499252        4.039401             0.997267
+      R11410 PMTs (TPC 494 + Skin 131) 12.949200           0.531929       0.749555         0.35448              6.888060     4.453845        4.590228             0.996874
+cables, feedthroughs, PMT bases, misc.  3.107808           0.305991       0.749555         0.35448              0.950960     0.579332        1.101655             0.996874
+TOTAL (route A): SF with >=1 TPC deposit 13.4; TPC multiple scatters 8.6; >=2 OD/Skin captures 9.8 in 220 d; per-fission P(>=1 visible prompt gamma) >= 0.9969
+(alpha,n) at the fit UL: 187 neutrons entering LXe -> ~94 MS events (pre-veto); at the MS cross-check 0.02: 16 MS events

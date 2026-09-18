@@ -1,0 +1,128 @@
+[
+ {
+  "item": "hbar = 6.582e-25 GeV s",
+  "value": "6.582119569e-25",
+  "presumed_source": "PDG",
+  "reliability": "certain"
+ },
+ {
+  "item": "alpha = 1/137.036",
+  "value": "0.007297352573756914",
+  "presumed_source": "PDG",
+  "reliability": "certain"
+ },
+ {
+  "item": "m_e = 510.999 keV",
+  "value": "510.999",
+  "presumed_source": "PDG",
+  "reliability": "certain"
+ },
+ {
+  "item": "SURF Davis campus latitude 44.352 N, longitude 103.751 W",
+  "value": "44.352",
+  "presumed_source": "geography",
+  "reliability": "likely"
+ },
+ {
+  "item": "GMST = 18.697374558 + 24.06570982441908 D hours",
+  "value": "formula",
+  "presumed_source": "USNO approximate sidereal time",
+  "reliability": "certain"
+ },
+ {
+  "item": "LZ active radius 72.8 cm",
+  "value": "72.8",
+  "presumed_source": "LZ instrument paper",
+  "reliability": "likely"
+ },
+ {
+  "item": "LZ drift length (cathode-gate) 145.6 cm",
+  "value": "145.6",
+  "presumed_source": "LZ instrument paper",
+  "reliability": "likely"
+ },
+ {
+  "item": "PTFE wall + field cage radial thickness ~3 cm",
+  "value": "3.0",
+  "presumed_source": "LZ TDR (order of magnitude)",
+  "reliability": "uncertain"
+ },
+ {
+  "item": "side Skin LXe thickness 4-8 cm (6 cm used)",
+  "value": "6.0",
+  "presumed_source": "LZ instrument paper",
+  "reliability": "uncertain"
+ },
+ {
+  "item": "bottom Skin/dome LXe ~25 cm below the bottom array",
+  "value": "25.0",
+  "presumed_source": "LZ instrument paper",
+  "reliability": "uncertain"
+ },
+ {
+  "item": "cryostat vessel walls: Ti, ~0.8 cm each, ~7 cm vacuum gap",
+  "value": "0.8",
+  "presumed_source": "LZ instrument paper",
+  "reliability": "uncertain"
+ },
+ {
+  "item": "OD GdLS acrylic tanks ~61 cm thick (side), ~60 cm top/bottom",
+  "value": "61.0",
+  "presumed_source": "LZ OD papers",
+  "reliability": "likely"
+ },
+ {
+  "item": "water tank radius 3.8 m",
+  "value": "380.0",
+  "presumed_source": "LZ instrument paper",
+  "reliability": "likely"
+ },
+ {
+  "item": "mass attenuation coefficients Xe/H2O/LAB/PTFE/Ti 10-400 keV",
+  "value": "tables in script",
+  "presumed_source": "NIST XCOM (from memory) + P004/P029 anchors",
+  "reliability": "likely (+-20%)"
+ },
+ {
+  "item": "densities LXe 2.86, PTFE 2.2, Ti 4.51, GdLS 0.86 g/cm3; PMT-array structure 1.5 g/cm3 steel-like",
+  "value": "see script",
+  "presumed_source": "handbook",
+  "reliability": "likely (structure uncertain)"
+ },
+ {
+  "item": "Skin prompt threshold 2.5 phd ~ 5 keV deposited (Skin light yield ~0.5 phd/keV)",
+  "value": "5.0",
+  "presumed_source": "LZ Skin performance (order of magnitude)",
+  "reliability": "uncertain"
+ },
+ {
+  "item": "OD prompt threshold 4.5 phd ~ 30 keV deposited (OD light yield ~0.15 phd/keV)",
+  "value": "30.0",
+  "presumed_source": "LZ OD performance (order of magnitude)",
+  "reliability": "uncertain"
+ },
+ {
+  "item": "Skin energy resolution ~10% at 300 keV",
+  "value": "0.1",
+  "presumed_source": "LZ Skin calibrations",
+  "reliability": "uncertain"
+ },
+ {
+  "item": "two S1 pulses merge if separated by < 0.15 us",
+  "value": "0.15",
+  "presumed_source": "LZ S1 pulse widths ~100-200 ns",
+  "reliability": "uncertain"
+ },
+ {
+  "item": "MiDM width Gamma(chi2 -> chi1 gamma) = mu_tr^2 delta^3 / pi",
+  "value": "formula",
+  "presumed_source": "Chang, Weiner, Yavin 2010 (as used by P023/P014)",
+  "reliability": "likely"
+ },
+ {
+  "item": "loop-induced transition dipole from a tensor contact operator: mu ~ e C m_f log/(16 pi^2), m_f = m_N (nucleon loop) or m_q (quark loop)",
+  "value": "estimate",
+  "presumed_source": "dimensional analysis / Schwinger-type estimate",
+  "reliability": "uncertain (x10)"
+ }
+]

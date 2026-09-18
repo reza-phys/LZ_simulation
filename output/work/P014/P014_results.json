@@ -1,0 +1,667 @@
+{
+ "asymptotic_splitting_MeV": {
+  "higgsino": 356.3407581086362,
+  "wino": 161.05999816231395
+ },
+ "radiative_splitting_MeV": {
+  "100": {
+   "higgsino": 257.99522972021396,
+   "wino": 147.2031801138303
+  },
+  "300": {
+   "higgsino": 313.5468608131525,
+   "wino": 158.24198867345763
+  },
+  "500": {
+   "higgsino": 328.8572334217796,
+   "wino": 159.85756623219334
+  },
+  "1000": {
+   "higgsino": 341.796705643111,
+   "wino": 160.70899612208248
+  },
+  "2000": {
+   "higgsino": 348.8400200815468,
+   "wino": 160.96347076194814
+  },
+  "4000": {
+   "higgsino": 352.52842840207165,
+   "wino": 161.0344406145385
+  }
+ },
+ "tree_over_delta_range": [
+  0.0959035740426722,
+  2.1286475569102006
+ ],
+ "fit_points": [
+  {
+   "mu_GeV": 300,
+   "delta_keV": 310,
+   "delta_lo_keV": 307,
+   "delta_hi_keV": 311,
+   "dm_rad_MeV": 313.5468608131525,
+   "tree_lo_MeV": 0.029730107953228384,
+   "tree_hi_MeV": 0.6598807426421621,
+   "dm_pm_MeV": 313.89166623845017,
+   "dm_pm_lo_MeV": 313.57659092110566,
+   "dm_pm_hi_MeV": 314.2067415557946
+  },
+  {
+   "mu_GeV": 500,
+   "delta_keV": 342,
+   "delta_lo_keV": 336,
+   "delta_hi_keV": 351,
+   "dm_rad_MeV": 328.8572334217796,
+   "tree_lo_MeV": 0.032799022322593886,
+   "tree_hi_MeV": 0.7279974644632885,
+   "dm_pm_MeV": 329.2376316651725,
+   "dm_pm_lo_MeV": 328.8900324441022,
+   "dm_pm_hi_MeV": 329.58523088624287
+  },
+  {
+   "mu_GeV": 1000,
+   "delta_keV": 366,
+   "delta_lo_keV": 358,
+   "delta_hi_keV": 380,
+   "dm_rad_MeV": 341.796705643111,
+   "tree_lo_MeV": 0.03510070809961802,
+   "tree_hi_MeV": 0.7790850058291333,
+   "dm_pm_MeV": 342.2037985000754,
+   "dm_pm_lo_MeV": 341.8318063512106,
+   "dm_pm_hi_MeV": 342.57579064894014
+  },
+  {
+   "mu_GeV": 2000,
+   "delta_keV": 375,
+   "delta_lo_keV": 365,
+   "delta_hi_keV": 391,
+   "dm_rad_MeV": 348.8400200815468,
+   "tree_lo_MeV": 0.03596384026600208,
+   "tree_hi_MeV": 0.7982428338413252,
+   "dm_pm_MeV": 349.25712341860043,
+   "dm_pm_lo_MeV": 348.8759839218128,
+   "dm_pm_hi_MeV": 349.6382629153881
+  },
+  {
+   "mu_GeV": 4000,
+   "delta_keV": 376,
+   "delta_lo_keV": 366,
+   "delta_hi_keV": 394,
+   "dm_rad_MeV": 352.52842840207165,
+   "tree_lo_MeV": 0.03605974384004474,
+   "tree_hi_MeV": 0.8003714813982354,
+   "dm_pm_MeV": 352.9466440146908,
+   "dm_pm_lo_MeV": 352.5644881459117,
+   "dm_pm_hi_MeV": 353.32879988346986
+  }
+ ],
+ "lifetimes": [
+  {
+   "model": "wino",
+   "M_GeV": 200.0,
+   "dm_MeV": 155.76288873556396,
+   "Gamma_pi_GeV": 2.337012770039548e-15,
+   "Gamma_e_GeV": 5.3639007849508603e-17,
+   "Gamma_mu_GeV": 4.4062186482628256e-18,
+   "Gamma_tot_GeV": 2.3950579965373194e-15,
+   "BR_pi": 0.9757645841638528,
+   "BR_e": 0.02239570312161867,
+   "BR_mu": 0.0018397127145284846,
+   "tau_s": 2.7482006738526336e-10,
+   "tau_ns": 0.2748200673852634,
+   "ctau_cm": 8.238898350915374,
+   "delta_keV": NaN,
+   "ctau_cm_dm_minus10MeV": NaN,
+   "ctau_cm_dm_plus10MeV": NaN
+  },
+  {
+   "model": "wino",
+   "M_GeV": 500.0,
+   "dm_MeV": 159.85756623219334,
+   "Gamma_pi_GeV": 2.774228864824952e-15,
+   "Gamma_e_GeV": 6.107000240539867e-17,
+   "Gamma_mu_GeV": 5.8842404511854645e-18,
+   "Gamma_tot_GeV": 2.8411831076815362e-15,
+   "BR_pi": 0.9764343795105764,
+   "BR_e": 0.021494567611741518,
+   "BR_mu": 0.0020710528776820463,
+   "tau_s": 2.3166757475800737e-10,
+   "tau_ns": 0.23166757475800737,
+   "ctau_cm": 6.945219167560179,
+   "delta_keV": NaN,
+   "ctau_cm_dm_minus10MeV": NaN,
+   "ctau_cm_dm_plus10MeV": NaN
+  },
+  {
+   "model": "wino",
+   "M_GeV": 660.0,
+   "dm_MeV": 160.31912437848095,
+   "Gamma_pi_GeV": 2.824008090609558e-15,
+   "Gamma_e_GeV": 6.195676621147723e-17,
+   "Gamma_mu_GeV": 6.071242115363727e-18,
+   "Gamma_tot_GeV": 2.8920360989363984e-15,
+   "BR_pi": 0.9764774691602711,
+   "BR_e": 0.021423234044091983,
+   "BR_mu": 0.0020992967956370056,
+   "tau_s": 2.2759397790438e-10,
+   "tau_ns": 0.22759397790438002,
+   "ctau_cm": 6.823095806195178,
+   "delta_keV": NaN,
+   "ctau_cm_dm_minus10MeV": NaN,
+   "ctau_cm_dm_plus10MeV": NaN
+  },
+  {
+   "model": "wino",
+   "M_GeV": 1000.0,
+   "dm_MeV": 160.70899612208248,
+   "Gamma_pi_GeV": 2.8661575589480004e-15,
+   "Gamma_e_GeV": 6.271380181345484e-17,
+   "Gamma_mu_GeV": 6.232601397498901e-18,
+   "Gamma_tot_GeV": 2.9351039621589545e-15,
+   "BR_pi": 0.9765097236418707,
+   "BR_e": 0.021366807657240486,
+   "BR_mu": 0.002123468700888683,
+   "tau_s": 2.2425440750515868e-10,
+   "tau_ns": 0.22425440750515868,
+   "ctau_cm": 6.722978004330517,
+   "delta_keV": NaN,
+   "ctau_cm_dm_minus10MeV": NaN,
+   "ctau_cm_dm_plus10MeV": NaN
+  },
+  {
+   "model": "wino",
+   "M_GeV": 2000.0,
+   "dm_MeV": 160.96347076194814,
+   "Gamma_pi_GeV": 2.893721495474173e-15,
+   "Gamma_e_GeV": 6.321190763951797e-17,
+   "Gamma_mu_GeV": 6.339623623699155e-18,
+   "Gamma_tot_GeV": 2.9632730267373904e-15,
+   "BR_pi": 0.9765288143766507,
+   "BR_e": 0.021331786531028924,
+   "BR_mu": 0.0021393990923202844,
+   "tau_s": 2.2212263063883095e-10,
+   "tau_ns": 0.22212263063883095,
+   "ctau_cm": 6.659068941664124,
+   "delta_keV": NaN,
+   "ctau_cm_dm_minus10MeV": NaN,
+   "ctau_cm_dm_plus10MeV": NaN
+  },
+  {
+   "model": "wino",
+   "M_GeV": 2900.0,
+   "dm_MeV": 161.0124796034069,
+   "Gamma_pi_GeV": 2.8990348609703916e-15,
+   "Gamma_e_GeV": 6.330819942218638e-17,
+   "Gamma_mu_GeV": 6.360390305423012e-18,
+   "Gamma_tot_GeV": 2.968703450698001e-15,
+   "BR_pi": 0.9765323175976943,
+   "BR_e": 0.02132520154793547,
+   "BR_mu": 0.002142480854370132,
+   "tau_s": 2.2171631856500917e-10,
+   "tau_ns": 0.22171631856500917,
+   "ctau_cm": 6.646888012131513,
+   "delta_keV": NaN,
+   "ctau_cm_dm_minus10MeV": NaN,
+   "ctau_cm_dm_plus10MeV": NaN
+  },
+  {
+   "model": "higgsino",
+   "M_GeV": 300.0,
+   "dm_MeV": 313.89166623845017,
+   "Gamma_pi_GeV": 1.9292591837624616e-14,
+   "Gamma_e_GeV": 8.913480467950908e-16,
+   "Gamma_mu_GeV": 5.186723326965196e-16,
+   "Gamma_tot_GeV": 2.0702612217116227e-14,
+   "BR_pi": 0.9318916683216502,
+   "BR_e": 0.04305485884810971,
+   "BR_mu": 0.025053472830240172,
+   "tau_s": 3.179357238096814e-11,
+   "tau_ns": 0.03179357238096814,
+   "ctau_cm": 0.9531473212691352,
+   "delta_keV": 310.0,
+   "ctau_cm_dm_minus10MeV": 1.0640179459782408,
+   "ctau_cm_dm_plus10MeV": 0.8570534788312739
+  },
+  {
+   "model": "higgsino",
+   "M_GeV": 500.0,
+   "dm_MeV": 329.2376316651725,
+   "Gamma_pi_GeV": 2.251116216459098e-14,
+   "Gamma_e_GeV": 1.1316086509274702e-15,
+   "Gamma_mu_GeV": 6.918753528547318e-16,
+   "Gamma_tot_GeV": 2.4334646168373183e-14,
+   "BR_pi": 0.9250663440443972,
+   "BR_e": 0.04650195622725672,
+   "BR_mu": 0.028431699728345996,
+   "tau_s": 2.7048266715932388e-11,
+   "tau_ns": 0.027048266715932388,
+   "ctau_cm": 0.8108866363408959,
+   "delta_keV": 342.0,
+   "ctau_cm_dm_minus10MeV": 0.9001035331002044,
+   "ctau_cm_dm_plus10MeV": 0.7329409262165474
+  },
+  {
+   "model": "higgsino",
+   "M_GeV": 1000.0,
+   "dm_MeV": 342.2037985000754,
+   "Gamma_pi_GeV": 2.5481923917522106e-14,
+   "Gamma_e_GeV": 1.3726930430054146e-15,
+   "Gamma_mu_GeV": 8.705506997670809e-16,
+   "Gamma_tot_GeV": 2.77251676602946e-14,
+   "BR_pi": 0.9190899845851949,
+   "BR_e": 0.04951072108289745,
+   "BR_mu": 0.03139929433190777,
+   "tau_s": 2.3740523702679967e-11,
+   "tau_ns": 0.023740523702679966,
+   "ctau_cm": 0.7117229955033688,
+   "delta_keV": 366.0,
+   "ctau_cm_dm_minus10MeV": 0.7866763363994154,
+   "ctau_cm_dm_plus10MeV": 0.6458465769714431
+  },
+  {
+   "model": "higgsino",
+   "M_GeV": 2000.0,
+   "dm_MeV": 349.25712341860043,
+   "Gamma_pi_GeV": 2.719813377762814e-14,
+   "Gamma_e_GeV": 1.5201129541792843e-15,
+   "Gamma_mu_GeV": 9.817257737256852e-16,
+   "Gamma_tot_GeV": 2.969997250553311e-14,
+   "BR_pi": 0.9157629278128497,
+   "BR_e": 0.051182301730955705,
+   "BR_mu": 0.03305477045619451,
+   "tau_s": 2.2161973378169805e-11,
+   "tau_ns": 0.022161973378169806,
+   "ctau_cm": 0.6643992473172089,
+   "delta_keV": 375.0,
+   "ctau_cm_dm_minus10MeV": 0.7327988105733771,
+   "ctau_cm_dm_plus10MeV": 0.604102515669108
+  },
+  {
+   "model": "higgsino",
+   "M_GeV": 4000.0,
+   "dm_MeV": 352.9466440146908,
+   "Gamma_pi_GeV": 2.8124644456250555e-14,
+   "Gamma_e_GeV": 1.6021193915018795e-15,
+   "Gamma_mu_GeV": 1.0441128105472527e-15,
+   "Gamma_tot_GeV": 3.0770876658299684e-14,
+   "BR_pi": 0.9140020535835018,
+   "BR_e": 0.05206609513576362,
+   "BR_mu": 0.03393185128073461,
+   "tau_s": 2.1390680782650503e-11,
+   "tau_ns": 0.021390680782650502,
+   "ctau_cm": 0.6412764770124157,
+   "delta_keV": 376.0,
+   "ctau_cm_dm_minus10MeV": 0.7065354225300776,
+   "ctau_cm_dm_plus10MeV": 0.5836617501505716
+  }
+ ],
+ "dm_scan_1TeV": {
+  "delta_keV": [
+   100,
+   200,
+   300,
+   366,
+   400
+  ],
+  "dm_pm_MeV": [
+   342.00957039880205,
+   342.22243515449304,
+   342.4352999101841,
+   342.57579064894014,
+   342.6481646658751
+  ]
+ },
+ "wino_165MeV": {
+  "Gamma_pi_GeV": 3.3373338796383055e-15,
+  "Gamma_e_GeV": 7.154561742237584e-17,
+  "Gamma_mu_GeV": 8.226291267918515e-18,
+  "Gamma_tot_GeV": 3.4171057883285998e-15,
+  "BR_pi": 0.9766551246488295,
+  "BR_e": 0.020937489751340348,
+  "BR_mu": 0.0024073855998301475,
+  "tau_s": 1.9262207282202656e-10,
+  "tau_ns": 0.19262207282202656,
+  "ctau_cm": 5.774664467637034
+ },
+ "production": [
+  {
+   "m_GeV": 300,
+   "sigma_wino_C1N2_fb": 402.79886163328246,
+   "sigma_higgsino_chargedneutral_fb": 201.39943081664123,
+   "sigma_higgsino_total_fb": 322.239089306626,
+   "sigma_alt_fb": 20.30888037122219,
+   "extrapolated": false,
+   "N_higgsino_Run2_140": 28195.92031432977,
+   "N_higgsino_total_Run2_140": 45113.47250292764,
+   "N_wino_C1N2_Run2_140": 56391.84062865954,
+   "N_alt_Run2_140": 2843.243251971107,
+   "N_higgsino_Run3_300": 60419.82924499237,
+   "N_higgsino_total_Run3_300": 96671.7267919878,
+   "N_wino_C1N2_Run3_300": 120839.65848998474,
+   "N_alt_Run3_300": 6092.664111366657,
+   "N_higgsino_HL_LHC_3000": 604198.2924499237,
+   "N_higgsino_total_HL_LHC_3000": 966717.267919878,
+   "N_wino_C1N2_HL_LHC_3000": 1208396.5848998474,
+   "N_alt_HL_LHC_3000": 60926.64111366657
+  },
+  {
+   "m_GeV": 500,
+   "sigma_wino_C1N2_fb": 45.98179808155301,
+   "sigma_higgsino_chargedneutral_fb": 22.990899040776505,
+   "sigma_higgsino_total_fb": 36.78543846524241,
+   "sigma_alt_fb": 2.1498352863560095,
+   "extrapolated": false,
+   "N_higgsino_Run2_140": 3218.7258657087104,
+   "N_higgsino_total_Run2_140": 5149.961385133937,
+   "N_wino_C1N2_Run2_140": 6437.451731417421,
+   "N_alt_Run2_140": 300.9769400898413,
+   "N_higgsino_Run3_300": 6897.269712232951,
+   "N_higgsino_total_Run3_300": 11035.631539572722,
+   "N_wino_C1N2_Run3_300": 13794.539424465902,
+   "N_alt_Run3_300": 644.9505859068029,
+   "N_higgsino_HL_LHC_3000": 68972.69712232951,
+   "N_higgsino_total_HL_LHC_3000": 110356.31539572722,
+   "N_wino_C1N2_HL_LHC_3000": 137945.39424465902,
+   "N_alt_HL_LHC_3000": 6449.505859068028
+  },
+  {
+   "m_GeV": 660,
+   "sigma_wino_C1N2_fb": 12.085988590774274,
+   "sigma_higgsino_chargedneutral_fb": 6.042994295387137,
+   "sigma_higgsino_total_fb": 9.66879087261942,
+   "sigma_alt_fb": 0.6343718079437974,
+   "extrapolated": false,
+   "N_higgsino_Run2_140": 846.0192013541993,
+   "N_higgsino_total_Run2_140": 1353.6307221667187,
+   "N_wino_C1N2_Run2_140": 1692.0384027083985,
+   "N_alt_Run2_140": 88.81205311213164,
+   "N_higgsino_Run3_300": 1812.8982886161411,
+   "N_higgsino_total_Run3_300": 2900.637261785826,
+   "N_wino_C1N2_Run3_300": 3625.7965772322823,
+   "N_alt_Run3_300": 190.31154238313923,
+   "N_higgsino_HL_LHC_3000": 18128.98288616141,
+   "N_higgsino_total_HL_LHC_3000": 29006.37261785826,
+   "N_wino_C1N2_HL_LHC_3000": 36257.96577232282,
+   "N_alt_HL_LHC_3000": 1903.1154238313923
+  },
+  {
+   "m_GeV": 1000,
+   "sigma_wino_C1N2_fb": 1.3311591891293244,
+   "sigma_higgsino_chargedneutral_fb": 0.6655795945646622,
+   "sigma_higgsino_total_fb": 1.0649273513034594,
+   "sigma_alt_fb": 0.10210137949195501,
+   "extrapolated": false,
+   "N_higgsino_Run2_140": 93.1811432390527,
+   "N_higgsino_total_Run2_140": 149.08982918248432,
+   "N_wino_C1N2_Run2_140": 186.3622864781054,
+   "N_alt_Run2_140": 14.294193128873701,
+   "N_higgsino_Run3_300": 199.67387836939866,
+   "N_higgsino_total_Run3_300": 319.4782053910378,
+   "N_wino_C1N2_Run3_300": 399.34775673879733,
+   "N_alt_Run3_300": 30.630413847586503,
+   "N_higgsino_HL_LHC_3000": 1996.7387836939865,
+   "N_higgsino_total_HL_LHC_3000": 3194.782053910378,
+   "N_wino_C1N2_HL_LHC_3000": 3993.477567387973,
+   "N_alt_HL_LHC_3000": 306.30413847586505
+  },
+  {
+   "m_GeV": 1100,
+   "sigma_wino_C1N2_fb": 0.7750624596383802,
+   "sigma_higgsino_chargedneutral_fb": 0.3875312298191901,
+   "sigma_higgsino_total_fb": 0.6200499677107042,
+   "sigma_alt_fb": 0.06715263827736827,
+   "extrapolated": true,
+   "N_higgsino_Run2_140": 54.25437217468661,
+   "N_higgsino_total_Run2_140": 86.80699547949858,
+   "N_wino_C1N2_Run2_140": 108.50874434937322,
+   "N_alt_Run2_140": 9.401369358831557,
+   "N_higgsino_Run3_300": 116.25936894575702,
+   "N_higgsino_total_Run3_300": 186.01499031321126,
+   "N_wino_C1N2_Run3_300": 232.51873789151404,
+   "N_alt_Run3_300": 20.14579148321048,
+   "N_higgsino_HL_LHC_3000": 1162.5936894575702,
+   "N_higgsino_total_HL_LHC_3000": 1860.1499031321125,
+   "N_wino_C1N2_HL_LHC_3000": 2325.1873789151405,
+   "N_alt_HL_LHC_3000": 201.4579148321048
+  },
+  {
+   "m_GeV": 2000,
+   "sigma_wino_C1N2_fb": 0.019369709479927763,
+   "sigma_higgsino_chargedneutral_fb": 0.009684854739963882,
+   "sigma_higgsino_total_fb": 0.015495767583942211,
+   "sigma_alt_fb": 0.004849065302965662,
+   "extrapolated": true,
+   "N_higgsino_Run2_140": 1.3558796635949435,
+   "N_higgsino_total_Run2_140": 2.1694074617519097,
+   "N_wino_C1N2_Run2_140": 2.711759327189887,
+   "N_alt_Run2_140": 0.6788691424151927,
+   "N_higgsino_Run3_300": 2.9054564219891645,
+   "N_higgsino_total_Run3_300": 4.648730275182663,
+   "N_wino_C1N2_Run3_300": 5.810912843978329,
+   "N_alt_Run3_300": 1.4547195908896986,
+   "N_higgsino_HL_LHC_3000": 29.054564219891645,
+   "N_higgsino_total_HL_LHC_3000": 46.48730275182663,
+   "N_wino_C1N2_HL_LHC_3000": 58.10912843978329,
+   "N_alt_HL_LHC_3000": 14.547195908896985
+  },
+  {
+   "m_GeV": 2900,
+   "sigma_wino_C1N2_fb": 0.001511262947948358,
+   "sigma_higgsino_chargedneutral_fb": 0.000755631473974179,
+   "sigma_higgsino_total_fb": 0.0012090103583586866,
+   "sigma_alt_fb": 0.0009468033563136004,
+   "extrapolated": true,
+   "N_higgsino_Run2_140": 0.10578840635638506,
+   "N_higgsino_total_Run2_140": 0.16926145017021613,
+   "N_wino_C1N2_Run2_140": 0.21157681271277012,
+   "N_alt_Run2_140": 0.13255246988390407,
+   "N_higgsino_Run3_300": 0.2266894421922537,
+   "N_higgsino_total_Run3_300": 0.362703107507606,
+   "N_wino_C1N2_Run3_300": 0.4533788843845074,
+   "N_alt_Run3_300": 0.28404100689408013,
+   "N_higgsino_HL_LHC_3000": 2.266894421922537,
+   "N_higgsino_total_HL_LHC_3000": 3.6270310750760597,
+   "N_wino_C1N2_HL_LHC_3000": 4.533788843845074,
+   "N_alt_HL_LHC_3000": 2.8404100689408014
+  }
+ ],
+ "survival": [
+  {
+   "r_min_cm": 12.0,
+   "betagamma": 0.5,
+   "P_higgsino": 2.2654921836211063e-15,
+   "P_wino": 0.029674567923408595,
+   "ratio_H_over_W": 7.634457187273777e-14
+  },
+  {
+   "r_min_cm": 12.0,
+   "betagamma": 1.0,
+   "P_higgsino": 4.759718671960672e-08,
+   "P_wino": 0.1722630776556851,
+   "ratio_H_over_W": 2.763052150661253e-07
+  },
+  {
+   "r_min_cm": 12.0,
+   "betagamma": 2.0,
+   "P_higgsino": 0.00021816779487267757,
+   "P_wino": 0.4150458741581286,
+   "ratio_H_over_W": 0.0005256474246737306
+  },
+  {
+   "r_min_cm": 12.0,
+   "betagamma": 3.0,
+   "P_higgsino": 0.0036240464991408056,
+   "P_wino": 0.5564131696537767,
+   "ratio_H_over_W": 0.0065132291915301664
+  },
+  {
+   "r_min_cm": 30.0,
+   "betagamma": 0.5,
+   "P_higgsino": 2.4429041106614636e-37,
+   "P_wino": 0.00015169141772501094,
+   "ratio_H_over_W": 1.6104431926992772e-33
+  },
+  {
+   "r_min_cm": 30.0,
+   "betagamma": 1.0,
+   "P_higgsino": 4.942574340019039e-19,
+   "P_wino": 0.012316306984035878,
+   "ratio_H_over_W": 4.0130327592723156e-17
+  },
+  {
+   "r_min_cm": 30.0,
+   "betagamma": 2.0,
+   "P_higgsino": 7.030344472370496e-10,
+   "P_wino": 0.11097885827506011,
+   "ratio_H_over_W": 6.334850242328003e-09
+  },
+  {
+   "r_min_cm": 30.0,
+   "betagamma": 3.0,
+   "P_higgsino": 7.906502332335973e-07,
+   "P_wino": 0.23093699039204685,
+   "ratio_H_over_W": 3.4236621508376e-06
+  }
+ ],
+ "betagamma_needed_for_P_1e3_at_r12cm": 2.440806238646795,
+ "toy_calibration": {
+  "N_prod_wino660_136fb": 2465.5416725179516,
+  "eps_tot": 0.0020279519327262943,
+  "eps_kin": 0.01177241205906997
+ },
+ "kinematic_floors_GeV": {
+  "300": 259.4912706374133,
+  "350": 453.23678890115144,
+  "366": 595.520682016298,
+  "380": 821.0537499451926
+ },
+ "chi2": [
+  {
+   "mu_GeV": 300,
+   "delta_keV": 310,
+   "ee_channel_open": false,
+   "tau_nunu_s": 1047950.0886851883,
+   "mu12_GeV_inv": 2.810124414810102e-06,
+   "tau_gamma_s": 0.00878978335401059
+  },
+  {
+   "mu_GeV": 500,
+   "delta_keV": 342,
+   "ee_channel_open": false,
+   "tau_nunu_s": 641236.9468763451,
+   "mu12_GeV_inv": 1.6860746488860612e-06,
+   "tau_gamma_s": 0.01818370736278051
+  },
+  {
+   "mu_GeV": 1000,
+   "delta_keV": 366,
+   "ee_channel_open": false,
+   "tau_nunu_s": 456818.4553183681,
+   "mu12_GeV_inv": 8.430373244430306e-07,
+   "tau_gamma_s": 0.05934409166644626
+  },
+  {
+   "mu_GeV": 2000,
+   "delta_keV": 375,
+   "ee_channel_open": false,
+   "tau_nunu_s": 404569.11856906017,
+   "mu12_GeV_inv": 4.215186622215153e-07,
+   "tau_gamma_s": 0.22069217313655423
+  },
+  {
+   "mu_GeV": 4000,
+   "delta_keV": 376,
+   "ee_channel_open": false,
+   "tau_nunu_s": 399217.75060532894,
+   "mu12_GeV_inv": 2.1075933111075766e-07,
+   "tau_gamma_s": 0.875744041071401
+  }
+ ],
+ "recalled": [
+  {
+   "item": "alpha_em(m_Z)=1/127.95, sin^2 theta_W=0.2312, m_Z=91.1876, m_W=80.377 GeV, G_F=1.1664e-5 GeV^-2",
+   "presumed_source": "PDG",
+   "reliability": "certain"
+  },
+  {
+   "item": "f_pi = 130.2 MeV (130 MeV convention), |V_ud| = 0.974, m_pi+- = 139.57, m_mu = 105.66 MeV",
+   "presumed_source": "PDG",
+   "reliability": "certain"
+  },
+  {
+   "item": "One-loop EW mass splitting of a heavy SU(2) multiplet: Delta M = alpha_2 M/(4 pi) {(Q^2-Q'^2) s_W^2 f(m_Z/M) + (Q-Q')(Q+Q'-2Y)[f(m_W/M)-f(m_Z/M)]}, f(r)->2 pi r for r->0",
+   "presumed_source": "Thomas & Wells PRL 81 (1998) 34; Cirelli, Fornengo, Strumia NPB 753 (2006) 178",
+   "reliability": "likely (asymptotes reproduced here: alpha m_Z/2 and alpha_2 m_W (1-c_W)/2)"
+  },
+  {
+   "item": "Two-loop wino splitting 164-165 MeV at TeV masses",
+   "presumed_source": "Ibe, Matsumoto, Sato PLB 721 (2013) 252",
+   "reliability": "likely"
+  },
+  {
+   "item": "Chargino decay widths: Gamma(chi+- -> chi0 pi+-) = kappa^2 G_F^2 f_pi^2 |V_ud|^2 Delta^3 (1-m_pi^2/Delta^2)^1/2 / pi, Gamma(chi+- -> chi0 l nu) = kappa^2 G_F^2 Delta^5/(15 pi^3) x phase space; kappa^2 = 1 (doublet, summed over chi1,chi2), 2 (triplet)",
+   "presumed_source": "Chen, Drees, Gunion PRD 55 (1997) 330; derived here from the W-exchange four-fermion operator",
+   "reliability": "likely (prefactor derived; reproduces the standard wino c tau ~ 6 cm)"
+  },
+  {
+   "item": "P007 fit points: delta(N=1) = 310/342/366/375/376 keV at mu = 300/500/1000/2000/4000 GeV; 90% bands",
+   "presumed_source": "corpus P007",
+   "reliability": "corpus"
+  },
+  {
+   "item": "13 TeV NLO+NLL pure-wino chi1+- chi2^0 cross-section: 12 pb (100 GeV), 1.8 (200), 0.39 (300), 0.12 (400), 0.046 (500), 0.020 (600), 0.0046 (800), 0.0013 pb (1000 GeV)",
+   "presumed_source": "LHC SUSY Cross Section Working Group tables (as reproduced in ATLAS/CMS electroweakino papers)",
+   "reliability": "likely (factor ~1.5)"
+  },
+  {
+   "item": "Higgsino chi+-chi0 channels = 1/2 of the wino chi1+-chi2^0 cross-section at equal mass (W coupling g/2 per Majorana state vs g); chi+chi- and chi1chi2 add ~+50%",
+   "presumed_source": "SU(2) Wigner-Eckart; derived here",
+   "reliability": "likely (channel fractions uncertain)"
+  },
+  {
+   "item": "Alternative (assignment) parametrisation: sigma(chi+chi- + chi+-chi0) ~ 20 fb (300 GeV), 1 fb (600), 0.1 fb (1 TeV)",
+   "presumed_source": "assignment; order-of-magnitude",
+   "reliability": "uncertain"
+  },
+  {
+   "item": "ATLAS pixel-tracklet disappearing-track search (136 fb^-1, 2022): tracklet needs 4 pixel hits, i.e. decay radius >~ 12 cm; excludes pure wino to ~660 GeV and Higgsino-cross-section charginos to ~210 GeV, both for tau = 0.2 ns",
+   "presumed_source": "ATLAS, EPJC 82 (2022) 606, arXiv:2201.02472",
+   "reliability": "likely (masses); the Higgsino limit being quoted at tau=0.2 ns: likely"
+  },
+  {
+   "item": "CMS disappearing-track (Run 2): wino ~ 880 GeV at tau = 3 ns, ~ 470 GeV at tau = 0.2 ns",
+   "presumed_source": "CMS, arXiv:2004.05153",
+   "reliability": "uncertain"
+  },
+  {
+   "item": "LEP2 chargino bound 92-103.5 GeV (92 GeV for Delta m ~ 0.1-3 GeV; 103.5 GeV for large Delta m)",
+   "presumed_source": "LEP SUSY WG combinations",
+   "reliability": "certain"
+  },
+  {
+   "item": "Soft-lepton compressed searches exclude Higgsinos to ~ 210-250 GeV for Delta m ~ 5-30 GeV only; monojet-type limits on degenerate electroweakinos <~ 100-150 GeV",
+   "presumed_source": "ATLAS arXiv:1911.12606 and 2021 update; CMS soft-lepton searches; monojet interpretations",
+   "reliability": "likely (soft-lepton), uncertain (monojet)"
+  },
+  {
+   "item": "Prospects: HL-LHC disappearing tracks wino ~ 0.9-1.1 TeV, Higgsino <~ 200-300 GeV only with short tracklets; FCC-hh 100 TeV 30 ab^-1 disappearing tracks: wino discovery ~3 TeV, Higgsino ~1 TeV; 10 TeV muon collider: thermal Higgsino and wino covered",
+   "presumed_source": "CERN YR 1812.07831; Fukuda-Nagata-Otono-Shirai PLB 781 (2018) 306; Mahbubani-Schwaller-Zurita JHEP 06 (2017) 119; Saito et al. EPJC 79 (2019) 469; Capdevilla et al. JHEP 06 (2021) 133; Han et al. 1805.00015",
+   "reliability": "uncertain (numbers), likely (qualitative)"
+  },
+  {
+   "item": "Thermal masses: Higgsino ~1.1 TeV, wino ~2.7-3.0 TeV",
+   "presumed_source": "standard results (Cirelli et al.; Hisano et al. with Sommerfeld)",
+   "reliability": "certain/likely"
+  },
+  {
+   "item": "Magnetic-dipole transition decay Gamma(chi2 -> chi1 gamma) = mu_12^2 delta^3 / pi",
+   "presumed_source": "inelastic-DM literature (e.g. Weiner & Yavin 2012)",
+   "reliability": "likely"
+  },
+  {
+   "item": "Heavy-Dirac-Higgsino loop magnetic moment ~ (alpha_2/2pi) e/(2 mu) x O(1)",
+   "presumed_source": "order-of-magnitude estimate (Schwinger-like coefficient for M >> m_W)",
+   "reliability": "uncertain"
+  }
+ ]
+}

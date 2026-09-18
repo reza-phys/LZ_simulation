@@ -1,0 +1,48 @@
+{
+ "id": "P009",
+ "title": "248 or 265 keV? Reconstructing the recoil energy of the LZ event with the tuned NEST model",
+ "date": "2026-09-04",
+ "agent_tools": [
+  {"tool": "Read", "count": 11, "detail": "provenance/PAPER_GUIDE.md; output/00_evidence_dossier.md; output/code/common/lzcommon.py; inputs/LZ_arXiv_2609.02823_fulltext.tex lines 84-123 and 590-690; inputs/figures_png/Fig2_Calibrations.png, Fig4_science_sample_wbands.png, FigS2_efficiency_werror.png; own figures P009_fig_digitisation_check.png, P009_band_and_event.png, P009_likelihood_vs_E.png, P009_efficiency.png"},
+  {"tool": "Bash", "count": 13, "detail": "grep -n of fulltext.tex for g1/g2/S1c/S2c/248/269.9/Table S3-S5 + ls of corpus dirs + head of ENVIRONMENT_versions.txt; sed of dossier_numbers.json + ledger head; nestpy API probe (LZ_WS2024 getters, NESTcalc dir, docstrings) x2; nestpy GetQuanta width test at 250 keV x2; PNG pixel-geometry probe; pixel-colour probe along rows; .venv/bin/python output/code/P009_digitise_bands.py x4 (iterations); .venv/bin/python output/code/P009_energy_reconstruction.py (39 s); results.json summary x1; likelihood_scan.csv / yield_curves.csv extraction x2; wc -w of P009.md body"},
+  {"tool": "Write", "count": 5, "detail": "output/code/P009_digitise_bands.py; output/code/P009_energy_reconstruction.py; output/work/P009/details.md; output/provenance/P009.json; output/papers/P009.md"},
+  {"tool": "Edit", "count": 6, "detail": "output/code/P009_digitise_bands.py (calibration reuse for Fig. 4, contour colour mask, row offsets, crossing matching, label assignment, tolerance)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python interpreter"},
+  {"name": "numpy", "version": "2.5.3", "functions": "random.default_rng (binomial, normal, uniform), polyfit, interp, percentile, cov, gradient, digitize"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats.multivariate_normal.logpdf, stats.gaussian_kde, stats.norm.cdf, optimize.curve_fit"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, to_csv, read_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend, pyplot, image.imread (PNG digitisation)"},
+  {"name": "nestpy", "version": "2.1.1", "functions": "detectors.LZ_WS2024 (nr_er_width_parameters, get_s2Fano, get_sPEres), NESTcalc.GetYields (NR, LZ-tuned parameter vector with p(E) break), NESTcalc.GetQuanta (fluctuations), NESTcalc.WorkFunction (13.44 eV), NESTcalc.CalculateG2 (extraction efficiency 0.726)"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ, NEST_NR_LZ, NEST_NR_DEFAULT, NEST_ER_LZ, DRIFT_FIELD_VCM, nest_nr_params_vector, nest_nr_yields, nest_er_yields, combined_energy_keV, delta_max_kev, m_chi_min_gev, v_earth_kms, vmax_kms"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P009_digitise_bands.py", "purpose": "Digitise Figs. 2 and 4 PNGs: axis calibration from frame and ROI box, NR-band median and 10/90 % lines at chosen S1c, event marker, crossings of the grey constant-energy contours with the NR median; writes output/work/P009/digitised_fig.json and figures/P009_fig_digitisation_check.png", "command": "cd /Users/reza/LZ_simulation && .venv/bin/python output/code/P009_digitise_bands.py"},
+  {"path": "output/code/P009_energy_reconstruction.py", "purpose": "Mean-yield curves for five NEST variants; E_S1/E_S2/E_comb estimators with g1,g2 propagation; NEST-fluctuation Monte-Carlo 2D likelihood in (S1c, log10 S2c) on E = 180-320 keV (20000 samples/keV-step); NR band at fixed S1c for a flat spectrum; efficiency roll-off fit and MC E50; delta_max; ER-equivalent energy; writes yield_curves.csv, estimators_1D.csv, likelihood_scan.csv, results.json and three figures", "command": "cd /Users/reza/LZ_simulation && .venv/bin/python output/code/P009_energy_reconstruction.py"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "detector paragraph (g1, g2; l. 88); Data Analysis paragraph (ROI, efficiency; l. 110-117); Results (event S1c/S2c, 248+-23+-23 keV, 1.5 sigma; l. 165); Fig. 2 and Fig. 4 captions (bands = flat spectrum, 10-90 % percentiles at fixed S1c); Supplement 'Details of the Detector Response modeling' with Tables S3-S5 and the p(E) equation (l. 591-685); Fig. S2 caption (50 % at 269.9 keV; l. 453-459)"},
+  {"file": "inputs/figures_png/Fig2_Calibrations.png", "parts_used": "NR band median and 10/90 % lines at S1c = 400-700 phd; ROI box for axis calibration; contour colours"},
+  {"file": "inputs/figures_png/Fig4_science_sample_wbands.png", "parts_used": "event marker position; crossings of the 150/200/250/300 keV_nr contours with the NR median; contour labels (E_nr, E_ee)"},
+  {"file": "inputs/figures_png/FigS2_efficiency_werror.png", "parts_used": "high-energy roll-off inset read by eye at 250-300 keV in 5 keV steps; plateau 0.955"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "Section 2 consistency checks (i) and (ii); open question 4"},
+  {"file": "output/work/dossier/dossier_numbers.json", "parts_used": "nest_nr_band_centre and event quanta for cross-validation"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "constants and nestpy wrappers listed under software"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Liquid-xenon work function W = 13.7 eV (older NEST v2 default, LUX Doke-plot analyses) and 13.5 eV (other literature); nestpy 2.1.1 itself returns 13.44 eV", "presumed_source": "Akerib et al. (LUX) PRD 95, 012008 (2017); NEST documentation", "reliability": "likely"},
+  {"item": "Functional form of the NEST v2 NR yield model (Nq = alpha E^beta; Qy with the [epsilon + E^p]^-1 factor and field power law; Nph = Nq - Ne) used only to interpret the parameter variants; the numbers come from nestpy", "presumed_source": "Szydagis et al., NEST review (2024)", "reliability": "likely"},
+  {"item": "10-90 % percentile range of a Gaussian = +-1.2816 sigma", "presumed_source": "standard statistics", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Direct use of nestpy NESTcalc.GetS1/GetS2 (17/16 positional arguments incl. positions, drift time and PMT vectors; would impose the detector object's g1 = 0.1122 and g2 = 34.02) - replaced by an explicit binomial/Fano detector model with the paper's g1 = 0.110 and g2 = 34.5",
+  "Contour-crossing digitisation from Fig. 2 - AmBe calibration points create spurious crossings at 454, 483, 513 phd; Fig. 4 used (identical band and contours), Fig. 2 retained only for the band lines",
+  "Initial contour colour mask (dark slate grey of the labels) found no contour pixels; the rendered contour colour is (150,166,166)",
+  "Forcing the MC band width onto the drawn 10-90 % percentiles - abandoned; the NEST-2.1.1 band (sigma = 0.033 dex) is 1.5x wider than the drawn one (0.022 dex) and both are reported"
+ ],
+ "wimpydd_generated_files": []
+}

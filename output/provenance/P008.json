@@ -1,0 +1,57 @@
+{
+ "id": "P008",
+ "title": "An independent look-elsewhere estimate for 616 models tested on one event",
+ "date": "2026-09-04",
+ "agent_tools": [
+  {"tool": "Read", "count": 12, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; fulltext.tex lines 150-300 (Table I, Fig.5, Results), 455-505 (LEE section), 687-785 (waveform/accidentals/MSSI), 785-912 (neutrons, local significance Tables S6/S7); common/lzcommon.py; P000_dossier_checks.py; 4 P008 figures"},
+  {"tool": "Bash", "count": 19, "detail": "ls output dirs + cat results_ledger.csv; grep lzcommon defs; grep tex section markers; grep plan for P008/P001 + ls environment versions/data_requests; WimPyDD signature inspection; WimPyDD timing/operator test (14 ops x s/v, inelastic); py_compile; mkdir + test run N_TOYS=4000 (x3 attempts: log-dir missing, SyntaxError, success, ~17 min spectrum cache); log checks x3; wait loops x3; full run N_TOYS=300000 N_TOYS_VAR=100000 (300 s); result printing x3 (background/models/degeneracy; all tables; data local Z pivot); wc -w / per-section word counts x3 + JSON validation"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P008_lee_toys.py; output/work/P008/details.md; output/provenance/P008.json; output/papers/P008.md"},
+  {"tool": "Edit", "count": 6, "detail": "P008_lee_toys.py: fixed dotted keyword names in asymptotic-check dict; P008.md: four word-count trims; P008.json: tool counts"},
+  {"tool": "Monitor", "count": 3, "detail": "tail -f of run_test.log for progress/tracebacks"},
+  {"tool": "ToolSearch", "count": 1, "detail": "load Monitor schema"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python"},
+  {"name": "numpy", "version": "2.5.3", "functions": "random.default_rng (poisson, random), searchsorted, cumsum, interp, trapezoid, linalg.eigvalsh, corrcoef, log1p"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats.norm.pdf/sf/isf, special.expit"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg backend), 4 PNG figures"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame.to_csv, pivot_table, read_csv"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian, diff_rate (via lzcommon.wd_rate), streamed_halo_function (via lzcommon.wd_halo); operators O1,O3-O15 isoscalar/isovector, inelastic delta; natural Xe target"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ dict (Table I expectations, efficiency points, event energy), LSIG, OSIG, LSIG_MASSES, OSIG_DELTAS, helm_F2, A_XE_MEAN, AMU_GEV, p_to_sigma, sigma_to_p, wd_halo, wd_hamiltonian, wd_rate"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P008_lee_toys.py", "purpose": "1D likelihood, WimPyDD spectra (cached), 300k background-only toys, calibrated local p, min-p over model subspaces, N_eff, Bonferroni, Gross-Vitells, data local Z, robustness variants, figures", "command": "N_TOYS=300000 N_TOYS_VAR=100000 .venv/bin/python output/code/P008_lee_toys.py > output/work/P008/run_full.log 2>&1"},
+  {"path": "output/code/P008_lee_toys.py", "purpose": "test run that built the WimPyDD spectrum cache (output/work/P008/spectra_cache.npz)", "command": "N_TOYS=4000 N_TOYS_VAR=2000 .venv/bin/python output/code/P008_lee_toys.py > output/work/P008/run_test.log 2>&1"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Results paragraph (local >3 sigma subset, LEE 2.6 sigma); Table I background expectations; Fig. 5 caption (0.0106 background at S1c>500 phd); Fig. S2 caption (efficiency 50% points 5.4/269.9 keV); Supplement 'Log-Likelihood Function and the Look Elsewhere Effect' (toy-MC min-p method, 616 -> 293, degeneracy pairs); 'Accidental backgrounds', 'MSSI' (12 keV + 471 phd decomposition), 'Neutrons' (0.02+-0.02 SS cross-check); 'Local significance' (>=30,000 toys, one-sided Z) and Tables S6, S7"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "Sections 1-2 (N_eff ~ 14 [calc], background ~2e-4 within +-2 sigma of NR median, degeneracy of high-mass models), section 4 point 7"},
+  {"file": "output/01_landscape_and_plan.md", "parts_used": "P008 and P001 rows"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "whole file read; functions listed under software"},
+  {"file": "output/code/P000_dossier_checks.py", "parts_used": "script style and WimPyDD/lzcommon usage pattern"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"},
+  {"file": "output/papers/P001.md", "parts_used": "not yet present at time of writing (checked); cited as same-day companion without numbers"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Atmospheric-neutrino flux shape: dPhi/dE roughly linear in E below ~100 MeV, flat to ~300 MeV, ~E^-3 above (Battistoni et al. 2005 as used by Billard et al. 2014)", "presumed_source": "Billard, Strigari, Figueroa-Feliciano PRD 89 023524 (2014); Battistoni et al. Astropart. Phys. 23, 526 (2005)", "reliability": "uncertain"},
+  {"item": "CEvNS differential cross-section dsigma/dE_R = (G_F^2 M/4pi) Q_w^2 (1 - M E_R/(2 E_nu^2)) F^2(E_R)", "presumed_source": "Freedman 1974; standard", "reliability": "certain"},
+  {"item": "Low-energy weak mixing angle sin^2(theta_W) ~ 0.238 (only enters Q_w normalisation, irrelevant for shape)", "presumed_source": "PDG", "reliability": "likely"},
+  {"item": "(alpha,n) neutron-induced Xe recoil spectrum approximately exponential with ~25-60 keV scale", "presumed_source": "general knowledge of few-MeV neutron elastic recoils on Xe", "reliability": "uncertain"},
+  {"item": "Wilks/Chernoff: q0 ~ 1/2 delta(0) + 1/2 chi^2_1 under H0 for a one-sided signal strength", "presumed_source": "Cowan, Cranmer, Gross, Vitells EPJC 71 1554 (2011)", "reliability": "certain"},
+  {"item": "Gross-Vitells upcrossing formula P(max Z > z) ~ P(Z>z) + <N_up(z0)> exp(-(z^2-z0^2)/2)", "presumed_source": "Gross & Vitells EPJC 70 525 (2010)", "reliability": "certain"},
+  {"item": "Nyholt/Cheverud effective number of tests M_eff = 1 + (M-1)(1 - Var(lambda)/M)", "presumed_source": "Nyholt AJHG 74 765 (2004); Cheverud Heredity 87 52 (2001)", "reliability": "likely"},
+  {"item": "Bonferroni bound p_global <= N p_local", "presumed_source": "standard", "reliability": "certain"},
+  {"item": "Anand-Fitzpatrick-Haxton relativistic Lagrangians L1-L20 reduce to combinations of NR operators O1, O3-O15 (specific pairings not used quantitatively)", "presumed_source": "Anand, Fitzpatrick, Haxton PRC 89 065501 (2014)", "reliability": "uncertain"},
+  {"item": "Energy resolution scales as sqrt(E) for a quanta-counting estimator", "presumed_source": "standard detector physics", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Nyholt/Cheverud eigenvalue M_eff (302 of 456) is uninformative for zero-inflated q0 distributions; abandoned as a method, reported for completeness",
+  "Gross-Vitells with asymptotic Z on the delta scan reproduces the asymptotic-metric toys (3.9-5.2 vs 3.7) but underestimates the calibrated trials factor (9.3) by ~2.5; kept only as a comparison",
+  "First test run with 2000 calibration toys floored local p at 2.5e-4 and gave NaN for robustness variants; superseded by the 300k-toy run",
+  "Two aborted launches: log directory missing before script created it; SyntaxError from dotted dict keyword names (fixed)",
+  "One-to-one mapping of L1-L20 to NR operators not attempted (low-confidence recall); the operator basis O1,O3-O15 x s/v was used instead"
+ ],
+ "wimpydd_generated_files": ["output/work/P008/spectra_cache.npz (our own cache of WD.diff_rate outputs; WimPyDD wrote no response-function files)"]
+}

@@ -1,0 +1,43 @@
+Gamma fit to P081 posterior: a=0.551, theta=0.699; 68% [0.021,0.755] vs P081 (0.036, 0.69)
+2.8 t.yr band: DM P0/P1/P>=2 = [0.749 0.168 0.082] (P081 0.752/0.169/0.079)
+10 t.yr band: DM P0/P1/P>=2 = [0.505 0.198 0.298] (P081 0.492/0.215/0.293)
+E(P>=1 = 0.5/0.9) = 10.2 261.0 t.yr (P081 9.8/123)
+P(DM|N=0,1,2; 2.8 t.yr) = [0.0149 0.025  0.0161] (P081 0.0143/0.0290/0.0176)
+BF DM:B (N=1) = 300.0 (P081 300); DM:U_steady = 0.67 (P081 0.67)
+Null branch k for P(DM)<1e-3: 2.9 expected events
+  model  k_needed  mu_on_disk_present  date_present_600phd  mu_LZ_untouched_600  date_LZ_600phd  mu_LZ_1000  date_LZ_1000phd
+0   L10       2.9                2.17              2027.60                 0.82         2032.88        1.77          2028.55
+1  d300       2.9                1.13              2030.84                 0.43         2040.79        0.90          2033.12
+2  d350       2.9                3.19              2026.71                 1.20         2030.13        4.45          2026.71
+3  d366       2.9                4.90              2026.71                 1.85         2028.08       14.87          2026.71
+4  d380       2.9                4.98              2026.71                 1.88         2028.03      100.01          2026.71
+                       model  mu_unexamined_17p9  P0_unexamined  mu_XENONnT_PandaX_10p1  Pge1_XP  mu_LZ_untouched  Pge1_LZ
+0                        L10               2.166          0.115                   1.227    0.707            0.818    0.559
+1                       d300               1.128          0.324                   0.639    0.472            0.426    0.347
+2                       d350               3.186          0.041                   1.805    0.836            1.203    0.700
+3                       d366               4.905          0.007                   2.778    0.938            1.852    0.843
+4                       d380               4.976          0.007                   2.819    0.940            1.879    0.847
+5  posterior_unexamined_17.9               2.427          0.395                     NaN      NaN              NaN      NaN
+6          posterior_XP_10.1               1.375          0.502                     NaN      NaN              NaN      NaN
+7          posterior_LZ_6.76               0.916          0.583                     NaN      NaN              NaN      NaN
+Two new events in 17.9 t.yr: Z = 4.36 (P088 4.3); with LZ's event 5.58 (P088 5.5)
+  model  mu_600  n_5sigma_600  P5sigma_600  mu_1000  n_5sigma_1000  P5sigma_1000
+0   L10    2.38           3.0        0.425    4.498              3         0.826
+1  d350     NaN           NaN          NaN    7.140              3         0.973
+2  d366     NaN           NaN          NaN   14.994              3         1.000
+  model   mu_SR3  P0_SR3  mu_untouched  P0_untouched  P0_SR3_plus_untouched
+0   L10   0.2815  0.7547        0.6700        0.5117                 0.3861
+1  d300   0.1550  0.8564        0.3689        0.6915                 0.5922
+2  d350   1.0620  0.3458        2.5279        0.0798                 0.0276
+3  d366   3.8100  0.0221        9.0689        0.0001                 0.0000
+4  d380  30.6000  0.0000       72.8366        0.0000                 0.0000
+   id                                                   dataset outcome  P_DM_posterior  P_background                                      cross_reference
+0  F1  LZ next release, 2.8 t.yr new, 200-270 keV, 600 phd edge     N=0          0.7492        0.9994                                  P081: 0.75 / 0.9994
+1  F2                                                      same    N>=1          0.2508        0.0006                                  P081: 0.25 / 5.6e-4
+2  F3                                                      same    N>=2          0.0824        0.0000                                  P081: 0.08 / 1.6e-7
+3  F4                                          same, 55-270 keV    N>=1          0.5000        0.1121  P081: 0.50 (DM); background dominated by 55-125 keV
+4  F5                     same, 1000 phd edge, 270-420 keV only    N>=1          0.2600        0.0028                  P081 median: 0.26 (DM) / 0.0028 (B)
+5  F6                  LZ full untouched 6.76 t.yr, 200-270 keV    N>=1          0.4171        0.0014                   P020 plug-in (band-anchored): 0.91
+6  F7      XENONnT+PandaX-4T 10.1 t.yr reanalysed above 200 keV    N>=1          0.4981        0.0020              P069 best fit: 0.71 (L10) - 0.94 (d366)
+figure written
+done

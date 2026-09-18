@@ -1,0 +1,53 @@
+Part A: q(248 keV) = 0.246 GeV; sigma_p(c_p=1/m_v^2, 1 TeV) = 2.964e-38 cm^2; Higgsino sigma_n = 7.408e-39, equivalent proton-only sigma_p(q->0) = 1.366e-38 cm^2; (A/Z)^2 = 5.920
+validation: p-only/isoscalar at 3,5 keV = [0.1705 0.1716]  (Z/A)^2 = 0.1689 ; kernel/wd_rate = 1.0
+Part C: cached grid loaded (use --recompute to redo the WimPyDD loop)
+validation: Higgsino N (this work vs P007), 1000 GeV annual: {300: [799.198, 790.467], 350: [11.425, 11.124], 370: [0.52, 0.492], 380: [0.103, 0.098]}
+Part D m=300: sigma_p(N=1, annual) = {250.0: '2.41e-42', 300.0: '2.22e-40'} ; Higgsino delta(N=1) annual = 311.2 ; N_lo/event = {250.0: '0', 300.0: '0', 350.0: 'nan'}
+Part D m=1000: sigma_p(N=1, annual) = {250.0: '1.20e-42', 300.0: '8.59e-42', 350.0: '2.99e-40', 365.0: '2.29e-39', 380.0: '5.60e-38'} ; Higgsino delta(N=1) annual = 366.1 ; N_lo/event = {250.0: '0.00015', 300.0: '0', 350.0: '0', 365.0: '0', 380.0: '0'}
+Part D m=3000: sigma_p(N=1, annual) = {250.0: '2.36e-42', 300.0: '1.40e-41', 350.0: '2.00e-40'} ; Higgsino delta(N=1) annual = 376.6 ; N_lo/event = {250.0: '0.00071', 300.0: '0', 350.0: '0'}
+Part D: N_lo per 200-270 keV event, 1000 GeV (P003 isoscalar value at 200 keV: 7.6): {200: {'proton_only': 4.08, 'isoscalar': 7.99}, 210: {'proton_only': 1.95, 'isoscalar': 3.8}, 220: {'proton_only': 0.77, 'isoscalar': 1.48}, 250: {'proton_only': 0.0, 'isoscalar': 0.0}} ; delta where N_lo <= 3: {300.0: 204.3, 1000.0: 204.5, 3000.0: 204.4}
+Part D: efficiency-width sensitivity (N at sigma_hi 8, 15 keV / N at 11.5), 1000 GeV: {300.0: [1.002, 0.998], 350.0: [1.005, 0.993], 365.0: [1.009, 0.988], 380.0: [1.019, 0.979]}
+Part D: LZ upper edges -> proton-only sigma_p (annual):
+ delta_keV  sigma_SI_cm2  N_events_at_edge  effective_A_over_Z_sq  sigma_p_edge_cm2
+     200.0  1.807595e-43          6.396713               4.348405      7.860157e-43
+     250.0  1.148348e-42          4.051830               4.229455      4.856885e-42
+     300.0  7.692210e-42          3.522549               3.935584      3.027334e-41
+     350.0  6.660654e-40          5.954418               2.669031      1.777749e-39
+Part E: cached light-mediator table loaded
+Part E: S = N_light/N_heavy (annual) at delta = 250/300/350:
+   m_A = 0.1 GeV: {250: 0.051, 300: 0.034, 350: 0.027}  (analytic at 248 keV: 0.020)
+   m_A = 0.3 GeV: {250: 0.495, 300: 0.445, 350: 0.403}  (analytic at 248 keV: 0.357)
+   m_A = 1.0 GeV: {250: 0.926, 300: 0.915, 350: 0.903}  (analytic at 248 keV: 0.889)
+Part F: required eps (alpha_D = 0.1), 1000 GeV, annual halo, N = 1:
+m_A_GeV       0.3      1.0      3.0      10.0
+delta_keV                                    
+250.0     3.95e-08 3.21e-07 2.77e-06 3.09e-05
+300.0     1.12e-07 8.65e-07 7.44e-06 8.28e-05
+350.0     6.91e-07 5.13e-06 4.40e-05 4.88e-04
+365.0     1.96e-06 1.42e-05 1.22e-04 1.35e-03
+380.0     9.99e-06 7.08e-05 6.05e-04 6.68e-03
+Part H: allowed m_A window (1000 GeV): eps between chi2-decay floor and BaBar 1e-3 (recalled):
+ delta_keV  alpha_D  eps_floor_chi2_decay  eps_ceiling_babar_recalled  mA_min_GeV  mA_max_GeV  eps_req_at_1GeV  eps_req_at_10GeV
+       250      0.1              7.76e-06                       0.001        5.03        56.8         3.21e-07          3.09e-05
+       250   0.0245              1.57e-05                       0.001        5.03        39.5         6.49e-07          6.25e-05
+       300      0.1              5.44e-06                       0.001        2.58        34.3         8.65e-07          8.28e-05
+       300   0.0245               1.1e-05                       0.001        2.58        24.3         1.75e-06          0.000167
+       350      0.1              4.46e-06                       0.001       0.941        14.1         5.13e-06          0.000488
+       350   0.0245                 9e-06                       0.001       0.941          10         1.04e-05          0.000986
+       365      0.1              4.39e-06                       0.001       0.524        8.51         1.42e-05           0.00135
+       365   0.0245              8.86e-06                       0.001       0.524        6.04         2.88e-05           0.00273
+       380      0.1              4.46e-06                       0.001      0.0868        3.79         7.08e-05           0.00668
+       380   0.0245                 9e-06                       0.001      0.0868        2.69         0.000143            0.0135
+Part H: chi2 lifetime and exothermic constraint (1000 GeV, annual):
+ delta_keV  alpha_D  sigma_p_N1_cm2  N_exo_if_f2_is_1   f2_max  tau_max_s  tau_at_eps_1em6_s  tau_at_eps_1em4_s  eps_min_for_no_exothermic
+       250      0.1         1.2e-42               251  0.00399   7.88e+16           4.74e+18           4.74e+14                   7.76e-06
+       250   0.0245         1.2e-42               251  0.00399   7.88e+16           1.94e+19           1.94e+15                   1.57e-05
+       300      0.1        8.59e-42               858  0.00117   6.45e+16           1.91e+18           1.91e+14                   5.44e-06
+       300   0.0245        8.59e-42               858  0.00117   6.45e+16           7.78e+18           7.78e+14                    1.1e-05
+       350      0.1        2.99e-40          1.81e+04 5.51e-05   4.44e+16           8.82e+17           8.82e+13                   4.46e-06
+       350   0.0245        2.99e-40          1.81e+04 5.51e-05   4.44e+16            3.6e+18            3.6e+14                      9e-06
+       365      0.1        2.29e-39          1.22e+05 8.17e-06   3.72e+16           7.15e+17           7.15e+13                   4.39e-06
+       365   0.0245        2.29e-39          1.22e+05 8.17e-06   3.72e+16           2.92e+18           2.92e+14                   8.86e-06
+       380      0.1         5.6e-38          2.65e+06 3.78e-07   2.94e+16           5.85e+17           5.85e+13                   4.46e-06
+       380   0.0245         5.6e-38          2.65e+06 3.78e-07   2.94e+16           2.39e+18           2.39e+14                      9e-06
+done in 6 s

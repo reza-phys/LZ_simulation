@@ -1,0 +1,73 @@
+{
+ "id": "P039",
+ "title": "Neutron-star kinetic heating by TeV inelastic dark matter: does the LZ-fit cross-section light up old neutron stars?",
+ "date": "2026-09-09",
+ "agent_tools": [
+  {"tool": "Read", "count": 13, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (two pages); papers P007, P011, P021, P012, P014, P026; lzcommon.py (kinematics l.126-205, Helm l.218-234, WimPyDD wrapper l.310-373); WimPyDD/WimPyC/WC_package.py wimp_capture docstring l.1435-1565; figures P039_T_vs_sigma.png and P039_delta_max_by_body.png (twice)"},
+  {"tool": "Bash", "count": 8, "detail": "ls of papers/work/code/data_requests + WimPyDD dir + ENVIRONMENT_versions; grep lzcommon defs + WimPyC capture entry points; WimPyC test script, Sun/WD tables, wimp_capture_geom source, DR index; WimPyC probe run (elastic H1/Fe56, inelastic Fe56 delta=300, timing, generated files); .venv/bin/python output/code/P039_ns_heating.py (syntax error), rerun (helm_F2 vector error), rerun from WD section, density-unit/orbit-radius check snippet, rerun Sun section, final run > run_log.txt; wc -w on the paper"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P039_ns_heating.py; output/work/P039/details.md; output/provenance/P039.json; output/papers/P039.md"},
+  {"tool": "Edit", "count": 7, "detail": "script fixes: dict-key syntax, vectorised Helm form factor (3 edits), WimPyC density-unit conversion, apoapsis orbit volume, figure-2 label/legend placement (2 edits)"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (before writing the matplotlib figures: fixed-order Okabe-Ito hues, single axis, direct labels)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python, cwd = simulation root)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "array algebra, trapezoid, logspace, where"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame.to_csv / to_string for result tables"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; two PNG figures"},
+  {"name": "WimPyDD (incl. WimPyC)", "version": "2.0.4", "functions": "streamed_halo_function (via lz.wd_halo), eft_hamiltonian (via lz.wd_hamiltonian), WimPyC wimp_capture (delta keyword, targets_list Fe56/Ni58/H1), wimp_capture_geom, wimp_capture_annihilation (Griest-Seckel thermal volume, t_eq), celestial_body objects Sun and White_Dwarf (r_vec, rho_tot, rho_i, v_esc, T_c)"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "wd_halo, eta0, mu_red, E_R_range_keV, delta_max_kev, vmax_kms, v_earth_kms, helm_F2 (scalar; vectorised copy in script), wd_hamiltonian, wd_c_SI_from_sigma_n, constants AMU_GEV, C_KMS, HBARC_GEV_FM"},
+  {"name": "none: derived by hand", "version": "-", "functions": "GR capture impact parameter b_max^2 = R_inf^2 (B + v_esc^2/v^2); kinetic efficiency 1 - sqrt(B); chord-averaged capture probability f(y) = 1 - 2/y^2 [1 - e^{-y}(1+y)]; inelastic recoil window and capture condition E_R + delta >= KE_inf; apoapsis rule v_esc(r_a)^2 = v_esc(0)^2 - 2 delta/mu"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P039_ns_heating.py", "purpose": "all computations (NS capture/heating/NIR flux, WD thresholds and heating, Sun delta_max and inelastic capture with own Gould integral + WimPyC), tables, figures, results.json", "command": ".venv/bin/python output/code/P039_ns_heating.py  (option --no-wimpyc skips the WimPyC solar runs; runtime ~5 min with WimPyC, ~10 s without)"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules and deliverable formats"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "sections 1-6 (event summary, inelastic kinematics, explanation list)"},
+  {"file": "output/results_ledger.csv", "parts_used": "rows P001-P030 (headline results, P007/P011/P021 cross-sections, P014/P026 lifetimes)"},
+  {"file": "output/papers/P007.md", "parts_used": "sigma_n = 7.4e-39 cm^2, Higgsino couplings c_p, c_n, delta(N=1) = 366 keV"},
+  {"file": "output/papers/P011.md", "parts_used": "sigma_p(N=1) = 1.2e-42 / 8.6e-42 / 3.0e-40 / 2.3e-39 cm^2 at delta = 250/300/350/365 keV; c_n = 0; chi2 lifetime and exothermic bound"},
+  {"file": "output/papers/P021.md", "parts_used": "kappa_hat = 7.4e-5 / 3.9e-3 / 2.19 at delta = 300/350/380 keV with kappa = 2.19 <-> sigma_n = 6.5e-38 cm^2"},
+  {"file": "output/papers/P012.md", "parts_used": "context only (dipole DM; no numbers used)"},
+  {"file": "output/papers/P014.md", "parts_used": "chi2 lifetimes tau_nunu = 4.6e5 s, tau_gamma ~ 0.06 s"},
+  {"file": "output/papers/P026.md", "parts_used": "chi2 lifetimes, exothermic requirement tau < 7e16 s, f2"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "halo, kinematics, Helm, WimPyDD wrappers, constants"},
+  {"file": "WimPyDD/WimPyC/WC_package.py", "parts_used": "wimp_capture docstring and argument list; wimp_capture_geom and wimp_capture_annihilation source; celestial_body density normalisation (M/R^3 units)"},
+  {"file": "WimPyDD/WimPyC/Celestial_bodies/Sun/densities.tab and White_Dwarf/densities.tab (via WD.Sun, WD.White_Dwarf)", "parts_used": "radial profiles rho_tot, rho_i (1H,4He,16O,56Fe,58Ni), v_esc(r); WD mass 0.49 Msun, radius 0.01348 Rsun"},
+  {"file": "WimPyDD/test_WimPyC_installation.py", "parts_used": "calling pattern for wimp_capture with targets_list and rho_loc"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "G, c, M_sun, R_sun, sigma_SB, h, k_B, pc, GeV<->erg/g conversions, nucleon masses, Jy", "presumed_source": "CODATA/PDG/IAU", "reliability": "certain"},
+  {"item": "local DM density 0.3-0.4 GeV/cm^3", "presumed_source": "Baxter et al. 2021; de Salas & Widmark 2021", "reliability": "likely"},
+  {"item": "old isolated NS space velocities ~100-400 km/s (natal kicks)", "presumed_source": "Hobbs et al. 2005", "reliability": "likely"},
+  {"item": "NS benchmark M = 1.5 Msun, R = 12 km", "presumed_source": "Baryakhtar et al. 2017 and standard NS models", "reliability": "likely"},
+  {"item": "neutron Fermi momentum ~0.35-0.5 GeV; core proton fraction Y_p ~ 0.05-0.1", "presumed_source": "nuclear EoS literature", "reliability": "likely"},
+  {"item": "kinetic-heating temperature of an old NS with full capture T ~ 1700 K, ~2500 K with annihilation", "presumed_source": "Baryakhtar, Bramante, Li, Linden, Raj, PRL 119, 131801 (2017)", "reliability": "likely"},
+  {"item": "nucleon form-factor / relativistic suppression of DM-nucleon scattering at q ~ 1 GeV, factor ~0.03-0.3", "presumed_source": "Bell, Busoni, Robles et al. 2019-2021", "reliability": "likely"},
+  {"item": "JWST/NIRCam F200W point-source sensitivity ~9 nJy (AB 28.9) at 10 sigma in 10^4 s", "presumed_source": "STScI JWST documentation", "reliability": "uncertain"},
+  {"item": "nearest known isolated NSs >~100 pc and young; local NS number density ~(1-4)e-4 pc^-3", "presumed_source": "isolated-NS population studies (Sartore et al. 2010)", "reliability": "uncertain"},
+  {"item": "Bondi-Hoyle accretion of ISM (n ~ 1 cm^-3, v ~ 30 km/s) onto an old NS unless magnetically inhibited", "presumed_source": "Bondi 1952; Blaes & Madau 1993", "reliability": "likely"},
+  {"item": "isolated NSs older than ~10^7-10^8 yr cool below ~10^3 K without heating", "presumed_source": "Yakovlev & Pethick 2004; Page et al.", "reliability": "likely"},
+  {"item": "WD benchmark M ~ 1 Msun, R ~ 8000 km (realistic 1 Msun WD: 5500-6000 km)", "presumed_source": "WD mass-radius relation", "reliability": "likely"},
+  {"item": "G_F, sin^2 theta_W, Higgsino Z couplings c_p = (G_F/sqrt2)(1 - 4 s_W^2), c_n = -G_F/sqrt2", "presumed_source": "PDG; P007", "reliability": "certain"},
+  {"item": "M4 core DM density ~10^3 GeV/cm^3 (assumption in the literature; GCs may hold little DM); faintest observed M4 WDs L ~ 10^-4.5 Lsun", "presumed_source": "Bertone & Fairbairn 2008; McCullough & Fairbairn 2010; Hansen et al. 2004", "reliability": "uncertain"},
+  {"item": "coolest known field WDs T_eff ~ 3000-4000 K", "presumed_source": "Gaia WD cooling sequences", "reliability": "likely"},
+  {"item": "IceCube solar WIMP limit at 1 TeV (W+W-): sigma_SD ~ 1e-40 cm^2, i.e. Gamma_A ~ 1e20 s^-1", "presumed_source": "IceCube Collaboration, EPJC 77, 146 (2017)", "reliability": "uncertain"},
+  {"item": "thermalisation of inelastic-only DM in the Sun stalls once v < sqrt(2 delta/mu); loop-level elastic Higgsino sigma ~1e-49 cm^2", "presumed_source": "Nussinov, Wang, Yavin 2009; Menon et al. 2010; Hill & Solon 2014 (via P007)", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First solar capture run treated WimPyC densities as g/cm^3 (they are normalised to M/R^3): mass integral 0.17 Msun and capture rates x5.9 too low; corrected and verified (mass integral 1.000 Msun, agreement with WimPyC 0.1-2%).",
+  "lz.helm_F2 is scalar-only; replaced by a vectorised copy checked to 1e-12.",
+  "First non-thermalised annihilation volume used the threshold radius r_thr; replaced by the apoapsis radius from energy conservation.",
+  "A quantitative ELT/TMT exposure estimate was not attempted (sensitivities not reliably recalled); only a qualitative statement is made."
+ ],
+ "wimpydd_generated_files": [
+  "WimPyDD/WimPyC/Response_functions/spin_1_2/__init__.py",
+  "WimPyDD/WimPyC/Response_functions/spin_1_2/1H_c_1_c_1.npy",
+  "WimPyDD/WimPyC/Response_functions/spin_1_2/56Fe_c_1_c_1.npy",
+  "WimPyDD/WimPyC/Response_functions/spin_1_2/58Ni_c_1_c_1.npy"
+ ]
+}

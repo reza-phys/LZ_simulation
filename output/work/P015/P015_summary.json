@@ -1,0 +1,868 @@
+{
+ "nai_dama_context": {
+  "250": {
+   "roi_keVee": [
+    5.147468981374001,
+    78.64205287609788
+   ],
+   "signal_events": 0.5798452190817426,
+   "background_counts": 66035986.048167825
+  },
+  "300": {
+   "roi_keVee": [
+    8.694190067968528,
+    67.0474001018083
+   ],
+   "signal_events": 0.5294962333450938,
+   "background_counts": 52431234.513555534
+  },
+  "350": {
+   "roi_keVee": [
+    15.080234047398084,
+    52.61342443468369
+   ],
+   "signal_events": 0.4863082478132355,
+   "background_counts": 33724134.56083192
+  },
+  "366": {
+   "roi_keVee": [
+    18.68556813745032,
+    46.43275220456905
+   ],
+   "signal_events": 0.6041495739778572,
+   "background_counts": 24931261.092067182
+  },
+  "380": {
+   "roi_keVee": [
+    24.170798127055296,
+    38.69410134240946
+   ],
+   "signal_events": 0.6018769307709415,
+   "background_counts": 13049405.788543947
+  }
+ },
+ "dama_bkg_cpd_kg_keVee_recalled": 1.0,
+ "Q_I_recalled": 0.09,
+ "v_max_kms": {
+  "june16": 809.1195606879396,
+  "annual_mean": 794.5524695547821,
+  "dec16": 780.0087607031676
+ },
+ "v_esc_kms": 544.0,
+ "m_ref_GeV": 1000.0,
+ "deltas_keV": [
+  250.0,
+  300.0,
+  350.0,
+  366.0,
+  380.0
+ ],
+ "delta_max_june_1000GeV": {
+  "C": 40.3,
+  "O": 53.5,
+  "F": 63.3,
+  "Na": 76.4,
+  "Ar": 130.8,
+  "Ca": 130.8,
+  "Ge": 231.9,
+  "I": 385.3,
+  "Xe": 396.1,
+  "W": 532.9
+ },
+ "delta_max_june_400GeV": {
+  "C": 39.6,
+  "O": 52.3,
+  "F": 61.7,
+  "Na": 74.1,
+  "Ar": 124.1,
+  "Ca": 124.1,
+  "Ge": 211.7,
+  "I": 332.5,
+  "Xe": 340.5,
+  "W": 437.0
+ },
+ "delta_max_june_4000GeV": {
+  "C": 40.6,
+  "O": 54.1,
+  "F": 64.2,
+  "Na": 77.6,
+  "Ar": 134.5,
+  "Ca": 134.5,
+  "Ge": 243.5,
+  "I": 418.5,
+  "Xe": 431.3,
+  "W": 598.6
+ },
+ "delta_max_mean_1000GeV": {
+  "C": 38.8,
+  "O": 51.6,
+  "F": 61.1,
+  "Na": 73.7,
+  "Ar": 126.2,
+  "Ca": 126.2,
+  "Ge": 223.6,
+  "I": 371.5,
+  "Xe": 382.0,
+  "W": 513.9
+ },
+ "A_min_june": {
+  "400GeV_250keV": 89.0,
+  "400GeV_300keV": 111.4,
+  "400GeV_350keV": 135.8,
+  "400GeV_380keV": 151.5,
+  "1000GeV_250keV": 79.1,
+  "1000GeV_300keV": 96.4,
+  "1000GeV_350keV": 114.1,
+  "1000GeV_380keV": 125.1,
+  "4000GeV_250keV": 75.0,
+  "4000GeV_300keV": 90.3,
+  "4000GeV_350keV": 105.7,
+  "4000GeV_380keV": 115.0
+ },
+ "A_min_infinite_mass": {
+  "250keV": 73.7,
+  "300keV": 88.4,
+  "350keV": 103.2,
+  "380keV": 112.0
+ },
+ "lz_normalisation": {
+  "250": {
+   "N_LZ_unit_coupling": 104591.0511990321,
+   "scale_to_1_event": 9.561047417881332e-06,
+   "c1s_mv2_sq_bestfit": 9.561047417881332e-06,
+   "sigma_SI_bestfit_cm2": 2.8341267368963632e-43,
+   "Xe_window_rate_unit_annual": 41456.720211926615,
+   "in_LZ_eff_fraction": 0.8883441512250098
+  },
+  "300": {
+   "N_LZ_unit_coupling": 13564.616911781428,
+   "scale_to_1_event": 7.372121206987119e-05,
+   "c1s_mv2_sq_bestfit": 7.372121206987119e-05,
+   "sigma_SI_bestfit_cm2": 2.185275828805874e-42,
+   "Xe_window_rate_unit_annual": 5830.623235533797,
+   "in_LZ_eff_fraction": 0.8191703300906473
+  },
+  "350": {
+   "N_LZ_unit_coupling": 264.5964928106599,
+   "scale_to_1_event": 0.0037793395875265075,
+   "c1s_mv2_sq_bestfit": 0.0037793395875265075,
+   "sigma_SI_bestfit_cm2": 1.1202880714499447e-40,
+   "Xe_window_rate_unit_annual": 208.81481018821202,
+   "in_LZ_eff_fraction": 0.4461741917381613
+  },
+  "366": {
+   "N_LZ_unit_coupling": 21.70964344462242,
+   "scale_to_1_event": 0.04606247921808705,
+   "c1s_mv2_sq_bestfit": 0.04606247921808705,
+   "sigma_SI_bestfit_cm2": 1.365403791174189e-39,
+   "Xe_window_rate_unit_annual": 44.05851100975921,
+   "in_LZ_eff_fraction": 0.17350201979866486
+  },
+  "380": {
+   "N_LZ_unit_coupling": 0.6835698280762931,
+   "scale_to_1_event": 1.4629083363936746,
+   "c1s_mv2_sq_bestfit": 1.4629083363936746,
+   "sigma_SI_bestfit_cm2": 4.336415717432594e-38,
+   "Xe_window_rate_unit_annual": 8.701192190838922,
+   "in_LZ_eff_fraction": 0.02766214056146576
+  }
+ },
+ "window_rates_unit_coupling_per_tyr": {
+  "Xe_250_annual": 41456.720211926615,
+  "Xe_250_june16": 53024.89988779726,
+  "Xe_300_annual": 5830.623235533797,
+  "Xe_300_june16": 8307.616591759048,
+  "Xe_350_annual": 208.81481018821202,
+  "Xe_350_june16": 437.28080055999254,
+  "Xe_366_annual": 44.05851100975921,
+  "Xe_366_june16": 107.54866597618329,
+  "Xe_380_annual": 8.701192190838922,
+  "Xe_380_june16": 26.009430150156362,
+  "I_250_annual": 29119.267056386554,
+  "I_250_june16": 38285.15373208889,
+  "I_300_annual": 3448.611236238521,
+  "I_300_june16": 5074.917754103435,
+  "I_350_annual": 61.783079229922684,
+  "I_350_june16": 157.59155156877367,
+  "I_366_annual": 6.297540876321833,
+  "I_366_june16": 20.97921066076355,
+  "I_380_annual": 0.19754425941156137,
+  "I_380_june16": 1.042364842969229,
+  "W_250_annual": 377624.0614739669,
+  "W_250_june16": 442694.5823679097,
+  "W_300_annual": 93124.21745125612,
+  "W_300_june16": 116388.78016202865,
+  "W_350_annual": 17094.58442222604,
+  "W_350_june16": 22994.728503741644,
+  "W_366_annual": 9772.303446112086,
+  "W_366_june16": 13334.59843201895,
+  "W_380_annual": 6080.117264625689,
+  "W_380_june16": 8374.890461923796,
+  "Ge_250_annual": 0.0,
+  "Ge_250_june16": 0.0,
+  "Ge_300_annual": 0.0,
+  "Ge_300_june16": 0.0,
+  "Ge_350_annual": 0.0,
+  "Ge_350_june16": 0.0,
+  "Ge_366_annual": 0.0,
+  "Ge_366_june16": 0.0,
+  "Ge_380_annual": 0.0,
+  "Ge_380_june16": 0.0,
+  "Ar_250_annual": 0.0,
+  "Ar_250_june16": 0.0,
+  "Ar_300_annual": 0.0,
+  "Ar_300_june16": 0.0,
+  "Ar_350_annual": 0.0,
+  "Ar_350_june16": 0.0,
+  "Ar_366_annual": 0.0,
+  "Ar_366_june16": 0.0,
+  "Ar_380_annual": 0.0,
+  "Ar_380_june16": 0.0,
+  "F_250_annual": 0.0,
+  "F_250_june16": 0.0,
+  "F_300_annual": 0.0,
+  "F_300_june16": 0.0,
+  "F_350_annual": 0.0,
+  "F_350_june16": 0.0,
+  "F_366_annual": 0.0,
+  "F_366_june16": 0.0,
+  "F_380_annual": 0.0,
+  "F_380_june16": 0.0
+ },
+ "ratio_to_Xe_annual": {
+  "Xe_250": 1.0,
+  "Xe_300": 1.0,
+  "Xe_350": 1.0,
+  "Xe_366": 1.0,
+  "Xe_380": 1.0,
+  "I_250": 0.7024016108251921,
+  "I_300": 0.5914652854297828,
+  "I_350": 0.2958749869045948,
+  "I_366": 0.142935853527299,
+  "I_380": 0.022703125626801633,
+  "W_250": 9.108874497151584,
+  "W_300": 15.971571766758231,
+  "W_350": 81.86480837646572,
+  "W_366": 221.80285311837855,
+  "W_380": 698.7682987886602,
+  "Ge_250": 0.0,
+  "Ge_300": 0.0,
+  "Ge_350": 0.0,
+  "Ge_366": 0.0,
+  "Ge_380": 0.0,
+  "Ar_250": 0.0,
+  "Ar_300": 0.0,
+  "Ar_350": 0.0,
+  "Ar_366": 0.0,
+  "Ar_380": 0.0,
+  "F_250": 0.0,
+  "F_300": 0.0,
+  "F_350": 0.0,
+  "F_366": 0.0,
+  "F_380": 0.0
+ },
+ "june_over_annual": {
+  "Xe_250": 1.2790423269552957,
+  "Xe_300": 1.4248248010829465,
+  "Xe_350": 2.0941081725278785,
+  "Xe_366": 2.441041776295178,
+  "Xe_380": 2.9891800548366776,
+  "I_250": 1.3147705145858757,
+  "I_300": 1.4715830247188906,
+  "I_350": 2.55072349149683,
+  "I_366": 3.331333781356375,
+  "I_380": 5.276614193063329,
+  "W_250": 1.172315611033776,
+  "W_300": 1.249822906946304,
+  "W_350": 1.3451469737892168,
+  "W_366": 1.3645297145704294,
+  "W_380": 1.377422522859743,
+  "Ge_250": null,
+  "Ge_300": null,
+  "Ge_350": null,
+  "Ge_366": null,
+  "Ge_380": null,
+  "Ar_250": null,
+  "Ar_300": null,
+  "Ar_350": null,
+  "Ar_366": null,
+  "Ar_380": null,
+  "F_250": null,
+  "F_300": null,
+  "F_350": null,
+  "F_366": null,
+  "F_380": null
+ },
+ "isovector_weight_rel_Xe": {
+  "C": 0.6893172492883896,
+  "O": 0.6893172492883894,
+  "F": 0.7764025498193802,
+  "Na": 0.7608852737161543,
+  "Ar": 0.8592071270167645,
+  "Ca": 0.6893172492883893,
+  "Ge": 0.9014542942085215,
+  "I": 0.9803391084822244,
+  "Xe": 1.0,
+  "W": 1.039204091429425
+ },
+ "mass_fractions": {
+  "C3F8_F": 0.8083524362158742,
+  "CF3I_I": 0.6477701381763983,
+  "NaI_I": 0.8466249482967964,
+  "CaWO4_W": 0.6385240036955481
+ },
+ "existing_exposures": [
+  {
+   "name": "PICO-60 C3F8 (2019)",
+   "element": "F",
+   "exposure_kgd": 1404.0,
+   "mass_fraction": 0.8084,
+   "element_exposure_tyr": 0.003107260288698391,
+   "reliability": "likely",
+   "note": "complete C3F8 exposure 1404 kg d, thresholds 2.45 and 3.3 keV; bubble chamber: no upper energy cut",
+   "N_at_LZ_bestfit_delta250": 0.0,
+   "N_at_LZ_bestfit_delta300": 0.0,
+   "N_at_LZ_bestfit_delta350": 0.0,
+   "N_at_LZ_bestfit_delta366": 0.0,
+   "N_at_LZ_bestfit_delta380": 0.0
+  },
+  {
+   "name": "PICO-60 CF3I (2016; recast in PICO 2023 inelastic paper)",
+   "element": "I",
+   "exposure_kgd": 1335.0,
+   "mass_fraction": 0.6478,
+   "element_exposure_tyr": 0.0023676198068870408,
+   "reliability": "uncertain",
+   "note": "CF3I run ~1335 kg d at 13.6 keV threshold; iodine recoils nucleate bubbles; no upper energy cut",
+   "N_at_LZ_bestfit_delta250": 0.000659170671432855,
+   "N_at_LZ_bestfit_delta300": 0.0006019337163941494,
+   "N_at_LZ_bestfit_delta350": 0.0005528374188236522,
+   "N_at_LZ_bestfit_delta366": 0.000686799972164152,
+   "N_at_LZ_bestfit_delta380": 0.0006842164210727034
+  },
+  {
+   "name": "DEAP-3600 (2019)",
+   "element": "Ar",
+   "exposure_kgd": 758000.0,
+   "mass_fraction": 1.0,
+   "element_exposure_tyr": 2.0752908966461328,
+   "reliability": "likely",
+   "note": "758 t d; ROI roughly 50-100 keV_nr (uncertain); irrelevant because argon is kinematically blind",
+   "N_at_LZ_bestfit_delta250": 0.0,
+   "N_at_LZ_bestfit_delta300": 0.0,
+   "N_at_LZ_bestfit_delta350": 0.0,
+   "N_at_LZ_bestfit_delta366": 0.0,
+   "N_at_LZ_bestfit_delta380": 0.0
+  },
+  {
+   "name": "DEAP-3600 PLR (2026)",
+   "element": "Ar",
+   "exposure_kgd": 1000000.0,
+   "mass_fraction": 1.0,
+   "element_exposure_tyr": 2.737850787132101,
+   "reliability": "uncertain (placeholder ~1000 t d)",
+   "note": "exposure not recalled; any value gives zero because argon is blind for delta >= 250 keV",
+   "N_at_LZ_bestfit_delta250": 0.0,
+   "N_at_LZ_bestfit_delta300": 0.0,
+   "N_at_LZ_bestfit_delta350": 0.0,
+   "N_at_LZ_bestfit_delta366": 0.0,
+   "N_at_LZ_bestfit_delta380": 0.0
+  },
+  {
+   "name": "CRESST-II Lise (2016)",
+   "element": "W",
+   "exposure_kgd": 52.0,
+   "mass_fraction": 0.6385,
+   "element_exposure_tyr": 9.090553919827103e-05,
+   "reliability": "uncertain",
+   "note": "~52 kg d CaWO4, ROI 0.3-40 keV; the Fig. S7 CRESST-II curve is the Bramante et al. (2016) recast",
+   "N_at_LZ_bestfit_delta250": 0.000328212772784998,
+   "N_at_LZ_bestfit_delta300": 0.000624087451557208,
+   "N_at_LZ_bestfit_delta350": 0.00587306504997717,
+   "N_at_LZ_bestfit_delta366": 0.04091990346336118,
+   "N_at_LZ_bestfit_delta380": 0.8085733390032342
+  },
+  {
+   "name": "CRESST-III (2019)",
+   "element": "W",
+   "exposure_kgd": 3.64,
+   "mass_fraction": 0.6385,
+   "element_exposure_tyr": 6.363387743878973e-06,
+   "reliability": "uncertain",
+   "note": "~3.6 kg d, ROI to 16 keV",
+   "N_at_LZ_bestfit_delta250": 2.2974894094949862e-05,
+   "N_at_LZ_bestfit_delta300": 4.3686121609004565e-05,
+   "N_at_LZ_bestfit_delta350": 0.00041111455349840197,
+   "N_at_LZ_bestfit_delta366": 0.002864393242435283,
+   "N_at_LZ_bestfit_delta380": 0.056600133730226404
+  },
+  {
+   "name": "DAMA/LIBRA phase1+phase2",
+   "element": "I",
+   "exposure_kgd": 898515.0,
+   "mass_fraction": 0.8466,
+   "element_exposure_tyr": 2.082697372810119,
+   "reliability": "likely",
+   "note": "2.46 t yr NaI(Tl) total (1.33 + 1.13); no NR/ER discrimination; single-hit spectra published mainly <= 20 keVee",
+   "N_at_LZ_bestfit_delta250": 0.5798452190817426,
+   "N_at_LZ_bestfit_delta300": 0.5294962333450938,
+   "N_at_LZ_bestfit_delta350": 0.4863082478132355,
+   "N_at_LZ_bestfit_delta366": 0.6041495739778572,
+   "N_at_LZ_bestfit_delta380": 0.6018769307709415
+  },
+  {
+   "name": "COSINE-100",
+   "element": "I",
+   "exposure_kgd": 73050.00000000001,
+   "mass_fraction": 0.8466,
+   "element_exposure_tyr": 0.1693249896593593,
+   "reliability": "uncertain",
+   "note": "~0.2 t yr NaI(Tl) (assignment); no NR/ER discrimination",
+   "N_at_LZ_bestfit_delta250": 0.04714188773022299,
+   "N_at_LZ_bestfit_delta300": 0.04304847425569869,
+   "N_at_LZ_bestfit_delta350": 0.039537255919775256,
+   "N_at_LZ_bestfit_delta366": 0.04911785154291523,
+   "N_at_LZ_bestfit_delta380": 0.048933083802515584
+  },
+  {
+   "name": "ANAIS-112 (3 yr)",
+   "element": "I",
+   "exposure_kgd": 123271.875,
+   "mass_fraction": 0.8466,
+   "element_exposure_tyr": 0.28573592005016873,
+   "reliability": "uncertain",
+   "note": "112.5 kg x 3 yr ~ 0.34 t yr NaI(Tl)",
+   "N_at_LZ_bestfit_delta250": 0.07955193554475126,
+   "N_at_LZ_bestfit_delta300": 0.07264430030649152,
+   "N_at_LZ_bestfit_delta350": 0.06671911936462072,
+   "N_at_LZ_bestfit_delta366": 0.08288637447866942,
+   "N_at_LZ_bestfit_delta380": 0.08257457891674502
+  },
+  {
+   "name": "LZ (this paper)",
+   "element": "Xe",
+   "exposure_kgd": 1037310.0,
+   "mass_fraction": 1.0,
+   "element_exposure_tyr": 2.84,
+   "reliability": "certain (paper)",
+   "note": "2.84 t yr; counts here are the full-window (efficiency-free) counts, larger than the fitted 1.0 by 1/eff-fraction",
+   "N_at_LZ_bestfit_delta250": 1.125689856370438,
+   "N_at_LZ_bestfit_delta300": 1.2207473382115077,
+   "N_at_LZ_bestfit_delta350": 2.2412771032414467,
+   "N_at_LZ_bestfit_delta366": 5.763621663657976,
+   "N_at_LZ_bestfit_delta380": 36.150492322818714
+  }
+ ],
+ "future": [
+  {
+   "delta_keV": 250.0,
+   "element": "I",
+   "compound": "NaI",
+   "mass_fraction": 0.8466,
+   "events_per_tyr_compound": 0.2357094386511149,
+   "exposure_tyr_compound_for_3_events": 12.727534447360197,
+   "E_minus_keV_june": 57.19409979304446,
+   "E_plus_keV_june": 873.8005875121986,
+   "E_minus_keV_mean": 60.87661836549582,
+   "E_plus_keV_mean": 820.9430704797401,
+   "E_plus_keVee_NaI": 78.64205287609788
+  },
+  {
+   "delta_keV": 250.0,
+   "element": "W",
+   "compound": "CaWO4",
+   "mass_fraction": 0.6385,
+   "events_per_tyr_compound": 2.30537913961001,
+   "exposure_tyr_compound_for_3_events": 1.301304392173643,
+   "E_minus_keV_june": 33.50689996793328,
+   "E_plus_keV_june": 1359.374440275246,
+   "E_minus_keV_mean": 35.234748283734746,
+   "E_plus_keV_mean": 1292.7131768469094,
+   "E_plus_keVee_NaI": NaN
+  },
+  {
+   "delta_keV": 250.0,
+   "element": "Xe",
+   "compound": "Xe",
+   "mass_fraction": 1.0,
+   "events_per_tyr_compound": 0.3963696677360698,
+   "exposure_tyr_compound_for_3_events": 7.5686921684370825,
+   "E_minus_keV_june": 54.433657583043406,
+   "E_plus_keV_june": 912.0252668571566,
+   "E_minus_keV_mean": 57.84595353368285,
+   "E_plus_keV_mean": 858.2254773322871,
+   "E_plus_keVee_NaI": NaN
+  },
+  {
+   "delta_keV": 300.0,
+   "element": "I",
+   "compound": "NaI",
+   "mass_fraction": 0.8466,
+   "events_per_tyr_compound": 0.2152423712784934,
+   "exposure_tyr_compound_for_3_events": 13.937776201686708,
+   "E_minus_keV_june": 96.60211186631697,
+   "E_plus_keV_june": 744.9711122423145,
+   "E_minus_keV_mean": 104.63787692220293,
+   "E_plus_keV_mean": 687.7603487264215,
+   "E_plus_keVee_NaI": 67.0474001018083
+  },
+  {
+   "delta_keV": 300.0,
+   "element": "W",
+   "compound": "CaWO4",
+   "mass_fraction": 0.6385,
+   "events_per_tyr_compound": 4.383614263101352,
+   "exposure_tyr_compound_for_3_events": 0.6843667850185198,
+   "E_minus_keV_june": 52.25185880540267,
+   "E_plus_keV_june": 1255.2611750103745,
+   "E_minus_keV_mean": 55.24096205694828,
+   "E_plus_keV_mean": 1187.3386566462937,
+   "E_plus_keVee_NaI": NaN
+  },
+  {
+   "delta_keV": 300.0,
+   "element": "Xe",
+   "compound": "Xe",
+   "mass_fraction": 1.0,
+   "events_per_tyr_compound": 0.4298406120463056,
+   "exposure_tyr_compound_for_3_events": 6.9793312123723155,
+   "E_minus_keV_june": 90.9024824788878,
+   "E_plus_keV_june": 786.4319258430758,
+   "E_minus_keV_mean": 98.08213600799503,
+   "E_plus_keV_mean": 728.8647787397385,
+   "E_plus_keVee_NaI": NaN
+  },
+  {
+   "delta_keV": 350.0,
+   "element": "I",
+   "compound": "NaI",
+   "mass_fraction": 0.8466,
+   "events_per_tyr_compound": 0.19768627959887625,
+   "exposure_tyr_compound_for_3_events": 15.175560014014517,
+   "E_minus_keV_june": 167.55815608220095,
+   "E_plus_keV_june": 584.5936048298188,
+   "E_minus_keV_mean": 191.51758497198045,
+   "E_plus_keV_mean": 511.4591774800322,
+   "E_plus_keVee_NaI": 52.61342443468369
+  },
+  {
+   "delta_keV": 350.0,
+   "element": "W",
+   "compound": "CaWO4",
+   "mass_fraction": 0.6385,
+   "events_per_tyr_compound": 41.252634798156954,
+   "exposure_tyr_compound_for_3_events": 0.0727226276498109,
+   "E_minus_keV_june": 78.02966012548077,
+   "E_plus_keV_june": 1144.1150672628937,
+   "E_minus_keV_mean": 83.11640754434299,
+   "E_plus_keV_mean": 1074.0949047314964,
+   "E_plus_keVee_NaI": NaN
+  },
+  {
+   "delta_keV": 350.0,
+   "element": "Xe",
+   "compound": "Xe",
+   "mass_fraction": 1.0,
+   "events_per_tyr_compound": 0.7891820786061432,
+   "exposure_tyr_compound_for_3_events": 3.8014041136091343,
+   "E_minus_keV_june": 153.24241016298467,
+   "E_plus_keV_june": 634.9674820407423,
+   "E_minus_keV_mean": 171.95555543318562,
+   "E_plus_keV_mean": 565.8668431963114,
+   "E_plus_keVee_NaI": NaN
+  },
+  {
+   "delta_keV": 366.0,
+   "element": "I",
+   "compound": "NaI",
+   "mass_fraction": 0.8466,
+   "events_per_tyr_compound": 0.2455892577145761,
+   "exposure_tyr_compound_for_3_events": 12.21551800725177,
+   "E_minus_keV_june": 207.61742374944802,
+   "E_plus_keV_june": 515.9194689396561,
+   "E_minus_keV_mean": 256.0815014097277,
+   "E_plus_keV_mean": 418.2803928193693,
+   "E_plus_keVee_NaI": 46.43275220456905
+  },
+  {
+   "delta_keV": 366.0,
+   "element": "W",
+   "compound": "CaWO4",
+   "mass_fraction": 0.6385,
+   "events_per_tyr_compound": 287.4229757690899,
+   "exposure_tyr_compound_for_3_events": 0.010437578944315651,
+   "E_minus_keV_june": 88.2189155842764,
+   "E_plus_keV_june": 1106.6079537473295,
+   "E_minus_keV_mean": 94.26525220824794,
+   "E_plus_keV_mean": 1035.6282020108224,
+   "E_plus_keVee_NaI": NaN
+  },
+  {
+   "delta_keV": 366.0,
+   "element": "Xe",
+   "compound": "Xe",
+   "mass_fraction": 1.0,
+   "events_per_tyr_compound": 2.029444247766893,
+   "exposure_tyr_compound_for_3_events": 1.4782372086846247,
+   "E_minus_keV_june": 185.22080025657436,
+   "E_plus_keV_june": 574.4692467893169,
+   "E_minus_keV_mean": 215.46121072088135,
+   "E_plus_keV_mean": 493.84134275077986,
+   "E_plus_keVee_NaI": NaN
+  },
+  {
+   "delta_keV": 380.0,
+   "element": "I",
+   "compound": "NaI",
+   "mass_fraction": 0.8466,
+   "events_per_tyr_compound": 0.24466541901257788,
+   "exposure_tyr_compound_for_3_events": 12.26164290853778,
+   "E_minus_keV_june": 268.56442363394774,
+   "E_plus_keV_june": 429.9344593601051,
+   "E_minus_keV_mean": NaN,
+   "E_plus_keV_mean": NaN,
+   "E_plus_keVee_NaI": 38.69410134240946
+  },
+  {
+   "delta_keV": 380.0,
+   "element": "W",
+   "compound": "CaWO4",
+   "mass_fraction": 0.6385,
+   "events_per_tyr_compound": 5679.450232133296,
+   "exposure_tyr_compound_for_3_events": 0.0005282201405739144,
+   "E_minus_keV_june": 98.09083662626479,
+   "E_plus_keV_june": 1072.8329069056683,
+   "E_minus_keV_mean": 105.14633453527954,
+   "E_plus_keV_mean": 1000.8439938841184,
+   "E_plus_keVee_NaI": NaN
+  },
+  {
+   "delta_keV": 380.0,
+   "element": "Xe",
+   "compound": "Xe",
+   "mass_fraction": 1.0,
+   "events_per_tyr_compound": 12.7290465925418,
+   "exposure_tyr_compound_for_3_events": 0.23568143758368826,
+   "E_minus_keV_june": 225.0319423154788,
+   "E_plus_keV_june": 509.70324021730625,
+   "E_minus_keV_mean": 293.353462515027,
+   "E_plus_keV_mean": 390.99422644352825,
+   "E_plus_keVee_NaI": NaN
+  }
+ ],
+ "figS7": {
+  "CRESST-II 2016 (orange)": {
+   "delta_min_keV": 1.8,
+   "delta_max_keV": 350.0,
+   "sigma_at": {
+    "250": 1.6231638574798356e-38,
+    "300": 9.284979870872012e-38,
+    "350": 9.062153164650303e-37
+   }
+  },
+  "PICO 2023 (red)": {
+   "delta_min_keV": 0.6,
+   "delta_max_keV": 350.0,
+   "sigma_at": {
+    "250": 2.948229323032226e-39,
+    "300": 2.471765296199279e-38,
+    "350": 3.3906130009416782e-37
+   }
+  },
+  "XENON1T 2018 (green)": {
+   "delta_min_keV": 1.2,
+   "delta_max_keV": 230.8,
+   "sigma_at": {
+    "250": NaN,
+    "300": NaN,
+    "350": NaN
+   }
+  },
+  "PandaX-4T 2021 (blue)": {
+   "delta_min_keV": -0.0,
+   "delta_max_keV": 303.3,
+   "sigma_at": {
+    "250": 4.9879297273252895e-40,
+    "300": 9.527838990975475e-36,
+    "350": NaN
+   }
+  },
+  "LZ 2024 (violet)": {
+   "delta_min_keV": -0.0,
+   "delta_max_keV": 250.0,
+   "sigma_at": {
+    "250": 1.8855104139288227e-42,
+    "300": NaN,
+    "350": NaN
+   }
+  },
+  "LZ 2026 upper edge": {
+   "delta_min_keV": -0.0,
+   "delta_max_keV": 350.0,
+   "sigma_at": {
+    "250": 1.1828597664732243e-42,
+    "300": 7.925432367873595e-42,
+    "350": 6.862424656752169e-40
+   }
+  },
+  "LZ 2026 lower edge": {
+   "delta_min_keV": 99.9,
+   "delta_max_keV": 350.0,
+   "sigma_at": {
+    "250": 8.814758263382041e-44,
+    "300": 3.921258694676848e-43,
+    "350": 4.2253274260839764e-41
+   }
+  }
+ },
+ "figS7_comparison": [
+  {
+   "delta_keV": 250.0,
+   "curve": "CRESST-II 2016 (orange)",
+   "sigma_cm2": 1.6231638574798356e-38,
+   "LZ_upper_cm2": 1.1828597664732243e-42,
+   "LZ_lower_cm2": 8.814758263382041e-44,
+   "ratio_to_LZ_upper": 13722.369324636069,
+   "ratio_to_LZ_bestfit": 57272.098539155435
+  },
+  {
+   "delta_keV": 250.0,
+   "curve": "PICO 2023 (red)",
+   "sigma_cm2": 2.948229323032226e-39,
+   "LZ_upper_cm2": 1.1828597664732243e-42,
+   "LZ_lower_cm2": 8.814758263382041e-44,
+   "ratio_to_LZ_upper": 2492.458875173825,
+   "ratio_to_LZ_bestfit": 10402.60227127604
+  },
+  {
+   "delta_keV": 250.0,
+   "curve": "XENON1T 2018 (green)",
+   "sigma_cm2": NaN,
+   "LZ_upper_cm2": 1.1828597664732243e-42,
+   "LZ_lower_cm2": 8.814758263382041e-44,
+   "ratio_to_LZ_upper": NaN,
+   "ratio_to_LZ_bestfit": NaN
+  },
+  {
+   "delta_keV": 250.0,
+   "curve": "PandaX-4T 2021 (blue)",
+   "sigma_cm2": 4.9879297273252895e-40,
+   "LZ_upper_cm2": 1.1828597664732243e-42,
+   "LZ_lower_cm2": 8.814758263382041e-44,
+   "ratio_to_LZ_upper": 421.68394502056117,
+   "ratio_to_LZ_bestfit": 1759.9529556633534
+  },
+  {
+   "delta_keV": 250.0,
+   "curve": "LZ 2024 (violet)",
+   "sigma_cm2": 1.8855104139288227e-42,
+   "LZ_upper_cm2": 1.1828597664732243e-42,
+   "LZ_lower_cm2": 8.814758263382041e-44,
+   "ratio_to_LZ_upper": 1.5940270075721643,
+   "ratio_to_LZ_bestfit": 6.652879666184706
+  },
+  {
+   "delta_keV": 300.0,
+   "curve": "CRESST-II 2016 (orange)",
+   "sigma_cm2": 9.284979870872012e-38,
+   "LZ_upper_cm2": 7.925432367873595e-42,
+   "LZ_lower_cm2": 3.921258694676848e-43,
+   "ratio_to_LZ_upper": 11715.42376477712,
+   "ratio_to_LZ_bestfit": 42488.823371764985
+  },
+  {
+   "delta_keV": 300.0,
+   "curve": "PICO 2023 (red)",
+   "sigma_cm2": 2.471765296199279e-38,
+   "LZ_upper_cm2": 7.925432367873595e-42,
+   "LZ_lower_cm2": 3.921258694676848e-43,
+   "ratio_to_LZ_upper": 3118.776593462316,
+   "ratio_to_LZ_bestfit": 11310.99911332454
+  },
+  {
+   "delta_keV": 300.0,
+   "curve": "XENON1T 2018 (green)",
+   "sigma_cm2": NaN,
+   "LZ_upper_cm2": 7.925432367873595e-42,
+   "LZ_lower_cm2": 3.921258694676848e-43,
+   "ratio_to_LZ_upper": NaN,
+   "ratio_to_LZ_bestfit": NaN
+  },
+  {
+   "delta_keV": 300.0,
+   "curve": "PandaX-4T 2021 (blue)",
+   "sigma_cm2": 9.527838990975475e-36,
+   "LZ_upper_cm2": 7.925432367873595e-42,
+   "LZ_lower_cm2": 3.921258694676848e-43,
+   "ratio_to_LZ_upper": 1202185.3885975194,
+   "ratio_to_LZ_bestfit": 4360016.64658593
+  },
+  {
+   "delta_keV": 300.0,
+   "curve": "LZ 2024 (violet)",
+   "sigma_cm2": NaN,
+   "LZ_upper_cm2": 7.925432367873595e-42,
+   "LZ_lower_cm2": 3.921258694676848e-43,
+   "ratio_to_LZ_upper": NaN,
+   "ratio_to_LZ_bestfit": NaN
+  },
+  {
+   "delta_keV": 350.0,
+   "curve": "CRESST-II 2016 (orange)",
+   "sigma_cm2": 9.062153164650303e-37,
+   "LZ_upper_cm2": 6.862424656752169e-40,
+   "LZ_lower_cm2": 4.2253274260839764e-41,
+   "ratio_to_LZ_upper": 1320.5468355464925,
+   "ratio_to_LZ_bestfit": 8089.127605296659
+  },
+  {
+   "delta_keV": 350.0,
+   "curve": "PICO 2023 (red)",
+   "sigma_cm2": 3.3906130009416782e-37,
+   "LZ_upper_cm2": 6.862424656752169e-40,
+   "LZ_lower_cm2": 4.2253274260839764e-41,
+   "ratio_to_LZ_upper": 494.0838217590543,
+   "ratio_to_LZ_bestfit": 3026.5545865835575
+  },
+  {
+   "delta_keV": 350.0,
+   "curve": "XENON1T 2018 (green)",
+   "sigma_cm2": NaN,
+   "LZ_upper_cm2": 6.862424656752169e-40,
+   "LZ_lower_cm2": 4.2253274260839764e-41,
+   "ratio_to_LZ_upper": NaN,
+   "ratio_to_LZ_bestfit": NaN
+  },
+  {
+   "delta_keV": 350.0,
+   "curve": "PandaX-4T 2021 (blue)",
+   "sigma_cm2": NaN,
+   "LZ_upper_cm2": 6.862424656752169e-40,
+   "LZ_lower_cm2": 4.2253274260839764e-41,
+   "ratio_to_LZ_upper": NaN,
+   "ratio_to_LZ_bestfit": NaN
+  },
+  {
+   "delta_keV": 350.0,
+   "curve": "LZ 2024 (violet)",
+   "sigma_cm2": NaN,
+   "LZ_upper_cm2": 6.862424656752169e-40,
+   "LZ_lower_cm2": 4.2253274260839764e-41,
+   "ratio_to_LZ_upper": NaN,
+   "ratio_to_LZ_bestfit": NaN
+  }
+ ],
+ "pico_crosscheck": {
+  "300": {
+   "N_pico_CF3I_iodine_at_LZ_upper_edge": 0.0021970580648386453,
+   "implied_sigma_ratio_for_2p3_event_limit": 1046.854444499588,
+   "digitised_sigma_ratio_PICO_over_LZ_upper": 3118.776593462316
+  },
+  "350": {
+   "N_pico_CF3I_iodine_at_LZ_upper_edge": 0.0020178565787063304,
+   "implied_sigma_ratio_for_2p3_event_limit": 1139.8233275204102,
+   "digitised_sigma_ratio_PICO_over_LZ_upper": 494.0838217590543
+  }
+ },
+ "runtime_s": 40.208089113235474
+}

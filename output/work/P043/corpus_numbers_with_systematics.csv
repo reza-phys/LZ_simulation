@@ -1,0 +1,11 @@
+quantity,central,stat,sys,sys_breakdown,note
+"E_R (2D-ML, paper scale) [keV]",245.3,9.84,9.6,"g1 3.7, g2 0.8, Nq-scale 8.7, field 0.0",paper: 248 +- 23 +- 23; our sys is the +-4% yield-scale proxy; 10% Nq-scale would be needed for 23 keV
+E_S1 (S1-only) [keV],248.6,10.4,10.0,"g1 3.9, Nq-scale 9.1, field 0.0",
+"E_ee (keVee, W(S1c/g1+S2c/g2))",69.9,1.2,1.6,"g1 1.2, g2 0.1, W 1.0",stat = Nq +-90 (P010)
+sigma-distance below NR median,1.54,n/a,0.54,"g2 0.44, band-width 0.22, Nq-scale 0.17, g1 0.07, field 0.04","P(>2 sigma) = 0.20, P(<1 sigma) = 0.14"
+epsilon at reconstructed energy,0.951,n/a,0.01,plateau 0.010 dominates; g1/Nq-scale cancel (edge and event share S1c),naive eps(248) with moving curve: 0.931-0.952
+1/epsilon acceptance correction,1.091,0.155,0.165,"posterior-averaged over E_true ~ N(E_ML, 9.8 keV)",1/eps(262) = 1.26
+"delta_max(1 TeV, June) [keV]",386.6,2.1,2.1,slope 0.218 keV/keV x sigma_E,400 GeV: 341.1 +- 0.3 +- 0.4; 4000 GeV: 409.4 +- 3.1 +- 3.0
+P021 likelihood peak delta (1 TeV) [keV],380.0,3.1,3.0,0.31 keV/keV x sigma_E (5 keV grid),Higgsino delta(N=1)=366 keV unaffected (rate-set)
+"d10^s (1 TeV, L10)",0.279,0.15-0.43,0.005,"g1 0.6%, Nq-scale 1.5% (via acceptance)",convention factor 2 (DR-001) separate
+"kappa(delta=380, 1 TeV) = 2.19",2.19,0.66-5.2,"x/÷ 1.14 (g1), x/÷ 1.30 (Nq-scale)","A_600(380) = 0.030 moves to 0.035-0.026 (g1), 0.046-0.023 (Nq-scale)",delta=300: x/÷ 1.00 (g1); delta=350: x/÷ 1.01

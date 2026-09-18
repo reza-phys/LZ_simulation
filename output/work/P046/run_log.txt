@@ -1,0 +1,30 @@
+target Xe: A=[124, 126, 128, 129, 130, 131, 132, 134, 136] mass[GeV]=[115.44, 117.31, 119.17, 120.1, 121.03, 121.96, 122.89, 124.75, 126.62] abund=[0.001, 0.0009, 0.0191, 0.264, 0.0407, 0.2123, 0.2691, 0.1044, 0.0886] spin=[0.0, 0.0, 0.0, 0.5, 0.0, 1.5, 0.0, 0.0, 0.0]
+target I: A=[127] mass[GeV]=[118.24] abund=[1.0] spin=[2.5]
+target W: A=[180, 182, 183, 184, 186] mass[GeV]=[167.58, 169.44, 170.37, 171.3, 173.17] abund=[0.0012, 0.265, 0.1431, 0.3064, 0.2843] spin=[0.0, 0.0, 0.5, 0.0, 0.0]
+target Ge: A=[70, 72, 73, 74, 76] mass[GeV]=[65.17, 67.03, 67.96, 68.89, 70.76] abund=[0.2052, 0.274, 0.077, 0.3652, 0.0775] spin=[0.0, 0.0, 4.5, 0.0, 0.0]
+kernels loaded from cache output/work/P046/kernels.npz (68 arrays); run with --recompute to regenerate
+halos done (0 s); v_max annual/june/dec = 810.9 / 810.9 / 782.8
+validation factorised/direct: [('Xe', 300.0, 100.0, 1.0), ('Xe', 300.0, 200.0, 1.0), ('Xe', 300.0, 400.0, 1.0), ('W', 300.0, 60.0, 1.0), ('W', 300.0, 200.0, 1.0), ('W', 300.0, 800.0, 1.0), ('I', 350.0, 200.0, 1.0), ('I', 350.0, 400.0, 1.0), ('Xe', 380.0, 250.0, 1.0634), ('Xe', 380.0, 350.0, 1.0), ('Xe', 0.0, 50.0, 1.0), ('Xe', 0.0, 200.0, 1.0), ('W', 366.0, 100.0, 1.0), ('W', 366.0, 500.0, 1.0), ('W', 366.0, 1000.0, 1.0)]
+window rates for halo annual done (2 s)
+window rates for halo june16 done (3 s)
+window rates for halo dec16 done (4 s)
+window rates for halo annual_vesc528 done (5 s)
+window rates for halo annual_vesc560 done (6 s)
+window rates for halo annual_v0220 done (7 s)
+window rates for halo annual_v0250 done (8 s)
+LZ unit-coupling events (P015: 13565/264.6/21.7/0.684 at 300/350/366/380): {250: 104618.6753, 300: 13567.9314, 350: 264.4726, 366: 21.6559, 380: 0.6868, 390: 0.0374}  L10 d10=1: 3.338 (P012 3.34)
+L10 ratios (WimPyDD): {'W/Xe full': '0.0497', 'I/Xe full': '7.6', 'Ge/Xe full': '0.245', 'W(10-1300)/Xe(5-1000)': '0.0492', 'I(5-1000)/Xe(5-1000)': '7.96'}  zero-q spin estimate W/Xe, I/Xe, Ge/Xe: {'W': '0.0743', 'I': '1.75', 'Ge': '0.315'}
+ratios W/Xe full at 300/350/366/380: [15.94, 81.71, 220.98, 692.99]  I/Xe: [0.591, 0.2954, 0.1422, 0.0227]
+sigma_delta [keV] (Xe 20 t yr 5-1000 keV; CaWO4 0.01/0.1/1 t yr): {300: [306.4, 99.2, 37.8], 330: [84.8, 28.1, 12.2], 350: [28.9, 10.2, 5.5], 366: [8.7, 3.5, 2.4], 380: [1.5, 0.8, 0.7]}
+shape sigma_delta per single event [keV] (Xe270 / Xe1000 / W / I): [(300, 87.6, 79.1, 76.2, 72.5), (330, 38.4, 35.0, 49.8, 26.7), (350, 25.5, 23.3, 41.4, 14.9), (366, 17.9, 20.9, 39.7, 10.7), (380, 9.1, 29.2, 42.4, 9.3)]
+3-sigma CaWO4 exposures (Xe 20 t yr, 5-1000 keV): [('delta=300', 'delta=380', '0.0379'), ('delta=380', 'delta=300', '0.000286'), ('delta=300', 'delta=350', '1.33'), ('delta=350', 'delta=300', '0.152'), ('delta=350', 'delta=380', '0.0283'), ('delta=380', 'delta=350', '0.000638'), ('delta=366', 'delta=380', '0.0213'), ('delta=380', 'delta=366', '0.00176'), ('delta=330', 'delta=366', '0.21'), ('delta=366', 'delta=330', '0.0155')]
+inel vs L10 (Xe 20): [('true inelastic vs L10 ', 'delta=300', 'L10', '0.215'), ('true L10 vs inelastic', 'L10', 'delta=300', '0.641'), ('true inelastic vs L10 ', 'delta=350', 'L10', '0.017'), ('true L10 vs inelastic', 'L10', 'delta=350', '0.123'), ('true inelastic vs L10 ', 'delta=366', 'L10', '0.0021'), ('true L10 vs inelastic', 'L10', 'delta=366', '0.0451'), ('true inelastic vs L10 ', 'delta=380', 'L10', '9.28e-05'), ('true L10 vs inelastic', 'L10', 'delta=380', '0.0144'), ('true inelastic vs L10 ', 'delta=300', 'L10', '0.236'), ('true inelastic vs L10 ', 'delta=350', 'L10', '0.0181'), ('true inelastic vs L10 ', 'delta=366', 'L10', '0.00222'), ('true inelastic vs L10 ', 'delta=380', 'L10', '9.75e-05')]
+mass degeneracy: R_WX at delta=300/350 for m=400/1000/4000: [(300, 45.7, 15.9, 12.5), (350, 20830767.9, 81.7, 31.7)]  delta read at true 350 if m=400/4000: nan / 329
+delta-meter bias (true 350): vesc528 -> 364.4, vesc560 -> 337.8, FFx2 -> 361.5, june -> 341.2; dlnR/ddelta = 0.0547 /keV
+W endpoint (186W, June) at delta=366: 1131.1 keV; dE+/ddelta = -2.35; dE+/dv = 4.91 keV per km/s; vesc +-16 -> -78/79 keV
+shape delta-meter bias (true 366):  [('W', 374.8, 358.0, 358.6, 366.0), ('Xe', 376.8, 356.8, 355.9, 366.0)]
+W observable edges E90/E99 [keV] and dE99/ddelta: [(300, 241, 410, 0.68, 'frac>700: 5.79e-05'), (330, 258, 430, 0.65, 'frac>700: 9.23e-05'), (350, 273, 442, 0.59, 'frac>700: 0.000124'), (366, 304, 451, 0.53, 'frac>700: 0.000151'), (380, 359, 458, 0.46, 'frac>700: 0.000171')]
+W shape: I1 = 0.0006347 per event -> sigma_delta(N=30) = 7.2 keV (toys 7.8); N for E+ +-50 keV: Fisher 3.5, order-statistic None
+180W alpha rate 2.65 /kg/day; E_R,max(W) for 10/50 MeV n: 217/1085 keV; muon-n W scatters/t yr before veto ~ 20
+programme counts (300/350/366/380 | L10): [('Xenon world, existing 7.5 t ', ['2.63', '2.63', '2.63', '2.63'], '2.63'), ('Xenon 20 t yr, 270 keV ROI', ['7.04', '7.04', '7.04', '7.04'], '7.04'), ('Xenon 20 t yr, 5-1000 keV wi', ['8.26', '15.2', '39.2', '245'], '15.7'), ('Xenon 50 t yr, 5-1000 keV wi', ['20.7', '37.9', '97.9', '612'], '39.4'), ('CaWO4 10 kg yr, W band 10-13', ['0.0438', '0.412', '2.88', '56.4'], '0.000247'), ('CaWO4 100 kg yr, W band 10-1', ['0.438', '4.12', '28.8', '564'], '0.00247'), ('CaWO4 1 t yr, W band 10-1300', ['4.38', '41.2', '288', '5.64e+03'], '0.0247'), ('CaWO4 1 t yr, W band 110-130', ['2.6', '36.9', '279', '5.62e+03'], '6.28e-05'), ('NaI(Tl) 30 t yr (no NR discr', ['6.46', '5.93', '7.37', '7.37'], '159'), ('Cryogenic discriminating iod', ['2.15', '1.98', '2.46', '2.46'], '53'), ('Germanium 1 t yr (any window', ['0', '0', '0', '0'], '0.203')]
+all done in 13 s

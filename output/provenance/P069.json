@@ -1,0 +1,65 @@
+{
+  "id": "P069",
+  "title": "The xenon world in one likelihood: what LZ, XENONnT and PandaX-4T (past, untouched and future) jointly say and should jointly do",
+  "date": "2026-09-12",
+  "agent_tools": [
+    {"tool": "Read", "count": 22, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (rows 1-13 + id/title extraction); papers P001, P005, P012, P020, P021, P034, P035, P038, P050; common/lzcommon.py (lines 1-125, 286-316); code/P050_next_generation.py (lines 40-155); code/P020_future_lz.py (lines 276-297); figures P069_exposure_timeline.png (x2), P069_scenarios.png, P069_hidden_events.png (x2)"},
+    {"tool": "Bash", "count": 23, "detail": "ls output/papers, output/work, output/data_requests; ledger id/category/title extraction (cut/awk/grep); grep lzcommon function list; ls P005/P020/P034/P035/P038/P050 work dirs + head ENVIRONMENT_versions.txt; cat P038 acceptance + P050 normalisation/discovery/exclusion/timeline/background CSVs; cat P005 counts/summary, P020 exposure/decision/N0 CSVs; cat P034 required_exposure, P035 summary/Nunit; head P053/P046 + python print of P020/P050 recalled_knowledge; python inspection of P038 acceptance columns and the P050/P038/P035 npz caches; head P005 spectra + fractions; grep P050/P005 details; grep P050 script for cache/eff; sed P050 details 140-185; cat data_requests/index.csv + DR-001; grep P020 script for posterior; grep script section lines; head -197 script to TMPDIR; cat head+tail -> script and run (.venv/bin/python output/code/P069_xenon_world.py); re-run x3 (bug fix, figure fixes); python print of hidden distributions"},
+    {"tool": "Write", "count": 2, "detail": "output/code/P069_xenon_world.py (first version); scratchpad p069_tail.py (corrected sections 4-7, concatenated into the script)"},
+    {"tool": "Edit", "count": 3, "detail": "P069_xenon_world.py: UL90 exposure bug; timeline threshold labels; hidden-events tick labels"},
+    {"tool": "Skill", "count": 1, "detail": "dataviz (loaded before figure code; JavaScript palette validator skipped per PAPER_GUIDE rule 2; Okabe-Ito palette in fixed order)"}
+  ],
+  "software": [
+    {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python, run from the simulation root"},
+    {"name": "numpy", "version": "2.5.3", "functions": "trapezoid, interp, clip, expm1/log1p, array ops"},
+    {"name": "scipy", "version": "1.18.1", "functions": "stats.poisson, stats.gamma, stats.nbinom, stats.norm, special.erf, integrate.quad, optimize.brentq"},
+    {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, pivot, pivot_table, to_csv"},
+    {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; fill_between, bar, plot, axhline/axvline"},
+    {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ constants (exposure 2.84 t yr, efficiency edges, best fit)"},
+    {"name": "WimPyDD", "version": "2.0.4", "functions": "not called directly; spectra taken from P050's cache output/work/P050/P050_spectra_cache.npz (eft_hamiltonian, streamed_halo_function 12-day average, diff_rate via lzcommon.wd_rate)"}
+  ],
+  "scripts_and_commands": [
+    {"path": "output/code/P069_xenon_world.py", "purpose": "exposure ledger, spectra normalisation, hidden-event table and distributions, N_new scenarios (Poisson Z, Gamma rate intervals, P001/P020 posterior, P034 timing), LEE accounting, protocol windows (Asimov, zero-event exclusion), timeline, three figures", "command": ".venv/bin/python output/code/P069_xenon_world.py"}
+  ],
+  "local_inputs": [
+    {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "whole"},
+    {"file": "output/00_evidence_dossier.md", "parts_used": "sections 1-6 (backgrounds, open question 5/6)"},
+    {"file": "output/results_ledger.csv", "parts_used": "rows P001-P012 in full; id/category/title of P013-P050"},
+    {"file": "output/papers/P001.md, P005.md, P012.md, P020.md, P021.md, P034.md, P035.md, P038.md, P050.md", "parts_used": "whole (headline numbers, methods, key numbers)"},
+    {"file": "output/papers/P053.md, P046.md", "parts_used": "header/headline only"},
+    {"file": "output/work/P050/P050_spectra_cache.npz", "parts_used": "E_in, E_l10, inel (delta = 300/350/366/380 keV), l10 (1 TeV, annual halo, unit coupling)"},
+    {"file": "output/work/P050/P050_normalisation.csv, P050_discovery.csv, P050_exclusion.csv, P050_timeline_milestones.csv, P050_background_rates.csv, P050_background_bins.csv, details.md (lines 140-185), P050_next_generation.py (lines 40-155)", "parts_used": "acceptances, ext400 rates, background per t yr above 200 keV (9.66e-4), E_5sigma/E_90 cross-checks, present-generation live rates, efficiency/cache conventions"},
+    {"file": "output/work/P038/P038_acceptance_vs_delta.csv", "parts_used": "A_600/A_1000 vs delta (cross-check)"},
+    {"file": "output/work/P005/counts_table.csv, summary.json, fractions_table.csv, details.md", "parts_used": "published-ROI counts, recalled ROI edges and 0.9 plateau convention"},
+    {"file": "output/work/P020/exposure_scenarios.csv, decision_table.csv, N0_upper_limits.csv, P020_future_lz.py (lines 276-297)", "parts_used": "LZ untouched exposure 6.76 (5.7-8.55), posterior check values, P001 three-hypothesis implementation"},
+    {"file": "output/work/P034/required_exposure.csv", "parts_used": "N_3sigma LLR vs delta"},
+    {"file": "output/work/P035/P035_summary.json, Nunit_table.csv", "parts_used": "inputs, 1.09 + 0.54 = 1.63 cross-check"},
+    {"file": "output/code/common/lzcommon.py", "parts_used": "LZ dict, stats helpers (read); constants used"},
+    {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"},
+    {"file": "output/data_requests/index.csv, DR-001.md", "parts_used": "checked existing requests (none needed)"}
+  ],
+  "recalled_knowledge": [
+    {"item": "XENONnT SR0+SR1 exposure 3.1 t yr (PRL 135, 221003, 2025) and PandaX-4T Run0+Run1 1.54 t yr (PRL 134, 011805, 2025)", "presumed_source": "publications cited in the LZ paper", "reliability": "certain"},
+    {"item": "XENON1T 2018 exposure 1.0 t yr (278.8 d x 1.3 t), ROI cS1 < 70 PE ~ 41 keV NR", "presumed_source": "Aprile et al. PRL 121, 111302 (2018)", "reliability": "certain (exposure) / likely (edge)"},
+    {"item": "LZ SR1: 60 live days x 5.5 t = 0.90 t yr, ROI S1c < 80 phd (~70 keV)", "presumed_source": "Aalbers et al. PRL 131, 041002 (2023)", "reliability": "certain (exposure) / likely (edge)"},
+    {"item": "LUX complete exposure 3.35e4 kg d (0.092 t yr); PandaX-II full exposure 132 t d (0.36 t yr); ROI edges ~50 keV", "presumed_source": "LUX PRL 118, 021303 (2017); PandaX-II Chin. Phys. C 44, 125001 (2020)", "reliability": "likely (exposures) / uncertain (edges)"},
+    {"item": "XENONnT fiducial ~4.0 t, PandaX-4T fiducial ~2.7 t; 60% live fraction for future accrual", "presumed_source": "XENONnT/PandaX-4T publications via P050", "reliability": "likely (masses) / assumption (live fraction)"},
+    {"item": "XENONnT continued data taking after SR1 (mid-2023) with long interruptions (neutron-veto Gd loading); untouched exposure 3.0 (2.0-5.0) t yr by Sep 2026", "presumed_source": "conference reports 2024-2025", "reliability": "uncertain"},
+    {"item": "PandaX-4T resumed data taking in late 2023 after an upgrade; untouched exposure 2.5 (1.5-3.5) t yr by Sep 2026", "presumed_source": "conference reports 2024-2025", "reliability": "uncertain"},
+    {"item": "XENONnT NR ROI upper edge ~60 keV (cS1 < 100 PE); PandaX-4T ~100 keV", "presumed_source": "P005 (recalled there as uncertain)", "reliability": "uncertain"},
+    {"item": "Run periods: LUX 2013.3-2016.4, PandaX-II 2016.2-2018.6, XENON1T 2016.9-2018.1, PandaX-4T Run0/1 2020.9-2022.4, XENONnT SR0/1 2021.5-2023.6, LZ SR1 2021.98-2022.35", "presumed_source": "publications", "reliability": "likely (used only for the timeline drawing)"},
+    {"item": "Poisson-Gamma (negative binomial) predictive; Jeffreys prior gives Gamma(1.5, 1) after one count", "presumed_source": "standard Bayesian statistics", "reliability": "certain"},
+    {"item": "Asimov significance Z = sqrt(2[(s+b) ln(1+s/b) - s]); PLR Z for observed n", "presumed_source": "Cowan, Cranmer, Gross, Vitells 2011", "reliability": "certain"},
+    {"item": "Zero-event Poisson/CLs exclusion: expected count 2.303 (90%), 2.996 (95%)", "presumed_source": "standard statistics", "reliability": "certain"},
+    {"item": "Trials-factor formula p_global = 1 - (1 - p_local)^N_eff", "presumed_source": "Gross & Vitells 2010 / standard", "reliability": "certain"}
+  ],
+  "datasets": "none",
+  "data_requests": "none",
+  "failed_or_abandoned": [
+    "First version defined the counting test on the whole LZ-like window (0.352/t yr) with only the 200-270 keV background, giving E_5sigma = 5.5 t yr; inconsistent (100-200 keV background 0.04/t yr) and replaced by a 200-270 keV band statistic",
+    "1-(1-p)^N_eff evaluated directly underflowed at p ~ 1e-15 (Z = 37 artefact); replaced by -expm1(N_eff*log1p(-p))",
+    "Zero-event UL90 for the end-2026 joint dataset first divided by 2.84 instead of the joint exposure; corrected",
+    "All-xenon '5 sigma year' initially read as a discovery date; relabelled as the date the required exposure existed on disk"
+  ],
+  "wimpydd_generated_files": "none"
+}

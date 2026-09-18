@@ -1,0 +1,60 @@
+halo v_E: sun-frame 250.6 km/s, June 16 265.1 km/s; v_max 795 / 809 km/s
+loaded 55 cached spectra
+  computed Xe|charge|sun|0|lz in 3 s (total 3 s)
+  computed Xe|spin|sun|0|lz in 3 s (total 6 s)
+  computed Xe|charge|sun|200|lz in 3 s (total 10 s)
+  computed Xe|spin|sun|200|lz in 3 s (total 13 s)
+  computed Xe|midm|sun|0|lz in 3 s (total 16 s)
+all 60 spectra available (16 s)
+=== (a) MiDM xenon spectra at 1 TeV ===
+  delta=300 keV, Sun frame: N_ROI(1 mu_N) = 2.089e+07; mu(N_ROI=1) = 2.188e-04 mu_N = 2.30e-18 e cm = 0.233 e/(2 m_chi)
+  June 16: mu(N=1) = 1.770e-04 mu_N (rate ratio June/Sun = 1.529); annual mean: 2.108e-04 mu_N (P023: 2.107e-4; ratio 1.000)
+  248 keV percentile (accepted spectrum): MiDM 88.6%, O1 contact 99.5%; accepted peak 196 vs 172 keV; 68% 160-241 vs 147-204 keV
+  fraction of accepted rate below 200 keV: MiDM 0.492, O1 0.811; kinematic window 97-733 keV
+  decomposition at 248 keV: charge 0.6%, dipole-dipole 90.4%, interference 9.02%; ROI: 1.8/88.6/9.62%
+  delta=0: charge/spin fraction at 248 keV 0.009/0.901; N_lo per hi (full/charge/spin) 386/340/28.7; v_min(248) = 339 km/s, max v_perp^2/v_max^2 = 0.818
+  delta=200: charge/spin fraction at 248 keV 0.008/0.902; N_lo per hi (full/charge/spin) 0.223/0.156/0.0189; v_min(248) = 582 km/s, max v_perp^2/v_max^2 = 0.463
+  delta=300: charge/spin fraction at 248 keV 0.006/0.904; N_lo per hi (full/charge/spin) 0/0/0; v_min(248) = 704 km/s, max v_perp^2/v_max^2 = 0.216
+  (P012 elastic reference: N_lo/hi = 376, charge part 18000, spin part 32 -- different efficiency/halo details)
+  (MiDM/O1) normalised at 248: 0.07 at 120 keV
+  (MiDM/O1) normalised at 248: 0.04 at 150 keV
+  (MiDM/O1) normalised at 248: 0.10 at 200 keV
+  (MiDM/O1) normalised at 248: 0.35 at 300 keV
+  delta=200: window 33-976 keV; N_lo per hi event MiDM 0.223, O1 7.65
+  delta=250: window 58-862 keV; N_lo per hi event MiDM 2.44e-08
+  delta=260: window 64-837 keV; N_lo per hi event MiDM 0
+=== (b) de-excitation lifetime and P(clean) ===
+  June/Sun rate ratio 1.529 (300 keV), 3.418 (350 keV)
+  sun           N=1   : P(clean) = 0.9/0.5/0.1 at delta = 321/342/355 keV
+  sun           N=0.3 : P(clean) = 0.9/0.5/0.1 at delta = 333/351/360 keV
+  sun           N=2.4 : P(clean) = 0.9/0.5/0.1 at delta = 308/333/348 keV
+  june16_scaled N=1   : P(clean) = 0.9/0.5/0.1 at delta = 331/352/360 keV
+  june16_scaled N=0.3 : P(clean) = 0.9/0.5/0.1 at delta = 344/358/365 keV
+  june16_scaled N=2.4 : P(clean) = 0.9/0.5/0.1 at delta = 319/344/357 keV
+  June 16 direct, delta=300: mu = 1.770e-04 mu_N, tau = 93.91 us, P(clean) = 0.982
+  June 16 direct, delta=350: mu = 7.627e-04 mu_N, tau = 3.18 us, P(clean) = 0.574
+  delta=300, N=1 (Sun): mu = 2.188e-04 mu_N, tau = 61.4 us, decay length 41 m, P(clean) = 0.9731, P(TPC 2nd site) = 0.0162, P(delayed veto) = 0.0099
+  (P042 reference with P023 moments: 321/344/358 keV for N=1)
+=== (c) constraints from elastic and low-energy data ===
+  delta=250: E_- = 57.6 keV, N_lo/hi = 2.44e-08, LZ-2024 events at mu(N=1) = 1.24e-08, XENONnT(<=60 keV) 4.51e-05
+  delta=260: E_- = 64.1 keV, N_lo/hi = 0, LZ-2024 events at mu(N=1) = 0, XENONnT(<=60 keV) 1.85e-09
+  delta=300: E_- = 97.5 keV, N_lo/hi = 0, LZ-2024 events at mu(N=1) = 0, XENONnT(<=60 keV) 0
+  low-energy windows empty for delta > 246 (Sun) / 251 keV (June) [55 keV edge]; 254/260 keV [60 keV edge]
+  elastic chi1 N -> chi1 N: absent at tree level (no chi1 chi1 gamma vertex); loop estimate amplitude ratio ~ (mu q)^2/(16 pi^2) = 4.9e-13 at q = 0.25 GeV -> rate ratio 2e-25 (order of magnitude, flagged)
+=== (d) relic density ===
+  spinor check (m = 1): dipole tensor L^ij = 32.0 delta^ij (analytic 32 m^4), vector L^ij = 8.0 delta^ij (analytic 8 m^2)
+  sigma v(chi1 chi2 -> f fbar) = alpha mu^2 sum N_c Q_f^2; at mu(N=1, 300 keV) = 2.19e-04 mu_N: 8.50e-28 cm^3/s -> Omega h^2 = 6.21 (52x over-abundant); gamma gamma O(mu^4) estimate 1.4e-30
+  thermal moment (Dirac-like target 4.4e-26): mu_th = 1.57e-03 mu_N = 1.66e-17 e cm, mass-independent; LZ events at mu_th: 52 (300 keV)
+  thermal MiDM gives N = 1 at delta = 351 keV, where tau = 0.74 us and P(clean) = 0.15; 68% band (N = 2.4 .. 0.3): delta = 344-358 keV, P(clean) = 0.16-0.14
+=== (e) astrophysical 300 keV photons ===
+  chi1 chi1 -> chi2 chi2 threshold v_rel = 464 km/s; sigma ~ mu^4 m^2/(4 pi) = 4.8e-41 cm^2; GC line flux ~ 1.3e-18 ph/cm^2/s/sr (SPI sensitivity ~1e-5 ph/cm^2/s; recalled/uncertain)
+=== (f) predictions ===
+  delta=300: W/Xe MiDM 0.126 vs O1 16.5 (P046 annual 15.9); I/Xe MiDM 12.4 vs O1 0.585 (P046 0.591); MiDM/O1 ratio-of-ratios W 0.01, I 21.18
+  delta=350: W/Xe MiDM 0.246 vs O1 108 (P046 annual 81.7); I/Xe MiDM 7.27 vs O1 0.215 (P046 0.295); MiDM/O1 ratio-of-ratios W 0.00, I 33.87
+  delta=366: W/Xe MiDM 0.941 vs O1 360 (P046 annual 221.0); I/Xe MiDM 1.68 vs O1 0.0296 (P046 0.142); MiDM/O1 ratio-of-ratios W 0.00, I 56.77
+  naive coherent scaling W/Xe: (Z^2/A)/(Z_Xe^2/A_Xe) = 1.341 (charge) vs (A^2/A)/(A_Xe^2/A_Xe) = 1.400 (O1) -> ratio 0.958
+  naive coherent scaling I/Xe: (Z^2/A)/(Z_Xe^2/A_Xe) = 0.997 (charge) vs (A^2/A)/(A_Xe^2/A_Xe) = 0.967 (O1) -> ratio 1.031
+  population at delta=300: tau 61.43 us; clean 97.3%, second TPC site 1.6%, OD delayed veto 1.0%, prompt 0.0%
+  population at delta=320: tau 17.31 us; clean 90.9%, second TPC site 5.6%, OD delayed veto 3.3%, prompt 0.0%
+  population at delta=340: tau 3.14 us; clean 57.0%, second TPC site 25.0%, OD delayed veto 17.5%, prompt 0.0%
+  population at delta=350: tau 0.93 us; clean 20.1%, second TPC site 59.1%, OD delayed veto 20.4%, prompt 0.0%

@@ -1,0 +1,145 @@
+{
+ "id": "P093",
+ "title": "Event-topology odds: single nuclear recoil versus wall MSSI versus charge-poor electronic recoil versus accidental versus neutron, combining every published handle",
+ "date": "2026-09-16",
+ "agent_tools": [
+  {
+   "tool": "Read",
+   "count": 39,
+   "detail": "PAPER_GUIDE; ledger; DR-002; fulltext.tex event/veto/MSSI/Table I/Discussion/waveform/neutron sections; dossier; 22 corpus papers; own figures"
+  },
+  {
+   "tool": "Bash",
+   "count": 19,
+   "detail": "ls/grep of corpus and tex; pandas ledger compaction; dumps of P070/P052/P004/P022 results; palette grep; script run x2 (first failed at plotting); CSV summaries; word-count/JSON checks x5"
+  },
+  {
+   "tool": "Write",
+   "count": 6,
+   "detail": "P093_topology_odds.py; details.md; P093.json; DR-003.md; P093.md x2"
+  },
+  {
+   "tool": "Edit",
+   "count": 25,
+   "detail": "script x9; P093.md x14; P093.json x1; details.md x1"
+  },
+  {
+   "tool": "Skill",
+   "count": 1,
+   "detail": "dataviz (JS validator skipped)"
+  }
+ ],
+ "software": [
+  {
+   "name": "python",
+   "version": "3.12.13",
+   "functions": "interpreter .venv/bin/python"
+  },
+  {
+   "name": "numpy",
+   "version": "2.5.3",
+   "functions": "random.default_rng(93).uniform, prod, quantile, median, log10, nan_to_num, errstate"
+  },
+  {
+   "name": "pandas",
+   "version": "3.0.5",
+   "functions": "DataFrame, pivot, to_csv, read_csv (ledger compaction)"
+  },
+  {
+   "name": "matplotlib",
+   "version": "3.11.2",
+   "functions": "Agg backend, barh, errorbar, imshow, TwoSlopeNorm, LinearSegmentedColormap, fill_between"
+  },
+  {
+   "name": "common/lzcommon.py",
+   "version": "corpus",
+   "functions": "LZ dict (ev_S1c, ev_S2c, MSSI_veto_eff, neutron_veto_eff, bkg_expected)"
+  }
+ ],
+ "scripts_and_commands": [
+  {
+   "path": "output/code/P093_topology_odds.py",
+   "purpose": "handle table, classification posterior (3 cases, s-scan), MC propagation (40000 draws, log-uniform ranges), odds matrix, pair discriminants, value of unpublished handles, variants, figures",
+   "command": ".venv/bin/python output/code/P093_topology_odds.py > output/work/P093/run_log.txt 2>&1"
+  }
+ ],
+ "local_inputs": [
+  {
+   "file": "inputs/LZ_arXiv_2609.02823_fulltext.tex",
+   "parts_used": "l.113-147 samples and veto definitions; l.165-166 event description; l.178 neutron tagging; l.184-196 MSSI model and 94% tagging; Table I (l.210-246); Discussion l.296-305; Waveform Analysis l.687-695; MSSI supplement l.710-724; Neutrons l.787-798"
+  },
+  {
+   "file": "output/00_evidence_dossier.md",
+   "parts_used": "section 2 handle table; section 5 initial probabilities"
+  },
+  {
+   "file": "output/results_ledger.csv",
+   "parts_used": "all 73 rows (id, category, title, headline, stance, data dependence)"
+  },
+  {
+   "file": "output/papers/P004.md, P033.md, P053.md, P070.md",
+   "parts_used": "wall/RFR MSSI k limits, f_nb, f_pos, position LRs, veto"
+  },
+  {
+   "file": "output/papers/P009.md, P024.md, P056.md, P010.md",
+   "parts_used": "band width, 1.5 sigma, ER leakage 7e-7 to 2.8e-3, EC lines"
+  },
+  {
+   "file": "output/papers/P022.md, P041.md",
+   "parts_used": "accidentals 1.49e-4, k<183, cathode slab; artefact residual 0.006"
+  },
+  {
+   "file": "output/papers/P013.md, P049.md, P063.md, P019.md",
+   "parts_used": "neutron 7e-6 to 5e-4; muon 1.3e-5; fission; atm-nu 3.4e-5 to 5e-4"
+  },
+  {
+   "file": "output/papers/P042.md, P036.md, P029.md, P006.md, P061.md, P027.md, P052.md, P077.md",
+   "parts_used": "veto/de-excitation, excitation exclusion, activation, date LR, pi_U range and L_acc, B_DM, LR 265 and panel split, PSD LR <= 2-5"
+  },
+  {
+   "file": "output/work/P070/P070_results.json, scenarios.csv, LR_table.csv, profiles_d.csv",
+   "parts_used": "position LRs by source, neighbourhood shares, composite scenarios"
+  },
+  {
+   "file": "output/work/P052/P052_results.json",
+   "parts_used": "background per panel, LR_ev, event cell, frac_event_bin 0.070"
+  },
+  {
+   "file": "output/work/P004/P004_results.json; output/work/P022/P022_results.json",
+   "parts_used": "Fig. 5 digitised bins (MSSI 1.6e-5, acc 1.93e-5, total 3.95e-5 in the event bin); f_nb; accidentals sums"
+  },
+  {
+   "file": "output/code/common/lzcommon.py",
+   "parts_used": "LZ dict"
+  },
+  {
+   "file": "environment/ENVIRONMENT_versions.txt",
+   "parts_used": "package versions"
+  },
+  {
+   "file": "output/data_requests/DR-001.md, DR-002.md, index.csv; PROMPT.md section 4",
+   "parts_used": "existing DR numbers and template"
+  }
+ ],
+ "recalled_knowledge": [
+  {
+   "item": "For a superposition of independent Poisson processes the probability that an observed point belongs to component H is mu_H p_H(D) / sum mu_H' p_H'(D) (colouring/marking theorem)",
+   "presumed_source": "Kingman, Poisson Processes (1993)",
+   "reliability": "certain"
+  }
+ ],
+ "datasets": "none",
+ "data_requests": [
+  {
+   "id": "DR-003",
+   "status": "pending"
+  }
+ ],
+ "failed_or_abandoned": [
+  "Multiplying P033's region-integrated f_pos on top of P070's class-conditional position density ratio (double counting); dropped",
+  "Matching P052's 25 phd x 0.5 sigma cell exactly: needs within-panel S1c shapes of each background (DR-002); used the +-2 sigma, S1c > 500 neighbourhood instead",
+  "Explicit random-veto survival factor (0.97) for bulk-TPC hypotheses: cancels identically; dropped",
+  "First plotting pass: negative error-bar lengths from clipped zeros in the LZ-model case; fixed with np.maximum"
+ ],
+ "wimpydd_generated_files": "none"
+}

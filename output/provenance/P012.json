@@ -1,0 +1,57 @@
+{
+ "id": "P012",
+ "title": "Magnetic-dipole dark matter at 1 TeV: the coupling from the LZ fit and the low-energy shoulder",
+ "date": "2026-09-04",
+ "agent_tools": [
+  {"tool": "Read", "count": 19, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv; papers/P003.md, P005.md, P009.md; work/P003/details.md; code/P003_nreft_shapes.py; code/P007_higgsino_inelastic.py; code/common/lzcommon.py; inputs/figures_png/Fig6_O1_L10_limit_stacked.png; fulltext.tex lines 50-80 (Theory, Fig. 1 caption), 208-298 (Table I, Results, Fig. 6 caption), 825-855 (Table S6 L10 rows); PROMPT.md lines 360-401 (data-request template); work/P012/figures/*.png (3)"},
+  {"tool": "Bash", "count": 19, "detail": "grep fulltext.tex for magnetic/d_j/L10/Table I; ls output dirs + ENVIRONMENT_versions.txt; pymupdf text spans of Fig6 PDF; pymupdf drawings listing (one failed format string, repeated); grep P003 CSVs/P005 details, data_requests/index.csv; WimPyDD eft_hamiltonian docstring; pymupdf frame/ticks/vertices of Fig6 bottom; grep PROMPT.md headings; tail process_log.md; run P012_magnetic_dipole.py (x3: first run, log re-run, Part G re-run); inspect result CSVs/JSON; find WimPyDD -newer (no files); wc -w of the paper body (x4) and JSON validation"},
+  {"tool": "Write", "count": 5, "detail": "output/code/P012_magnetic_dipole.py; output/data_requests/DR-001.md; output/work/P012/details.md; output/provenance/P012.json; output/papers/P012.md"},
+  {"tool": "Edit", "count": 9, "detail": "P012_magnetic_dipole.py: add Part G (single-count PLR reference) and its summary entry (2); P012.md trims to reach <= 550 body words (5); P012.json and details.md tool-count updates (2)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "arrays, polyfit, interp, union1d, savez"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf, integrate.trapezoid, optimize.brentq, stats.poisson"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, read_csv, to_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend, pyplot (3 figures)"},
+  {"name": "pymupdf", "version": "1.28.2", "functions": "open, page.get_drawings, page.get_text('dict') (Fig. 6 bottom digitisation)"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian with q- and mchi-dependent Wilson coefficients (keys (4,'q2'), 6; 1, 5, 4, 6 with 1/q^2), diff_rate via lzcommon.wd_rate, streamed_halo_function via lzcommon.wd_halo, Xe target"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ, M_V_GEV, M_NUCLEON_GEV, HBARC_GEV_FM, A_XE_MEAN, m_nucleus_gev, wd, wd_halo, wd_rate, wd_c_from_anand"},
+  {"name": "none: derived by hand", "version": "-", "functions": "NR reductions of L10 and of the photon-mediated magnetic dipole (details.md Sec. 3.1-3.3)"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P012_magnetic_dipole.py", "purpose": "Fig. 6 bottom digitisation; L10 spectra (WimPyDD) for 100-4000 GeV; counts per d10^2; d10 for N = 0.3/1.0/2.4/0.105/3.65; comparison with Fig. 1 (shape, scale) and Fig. 6 (implied N at edges); low-energy shoulder in the 2024 exposure; photon-mediated dipole spectra, N_lo and mu_chi; moment conversions; single-count PLR reference; 3 figures", "command": ".venv/bin/python output/code/P012_magnetic_dipole.py > output/work/P012/P012_run.log"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Theory paragraph (L10 'magnetic moment interaction', WimPyDD/DMFormFactor, Baxter SHM); Fig. 1 caption (unit coupling d_i^s = 1/m_v^2, Eq. 68 of Anand); Data Analysis (2024 ROI 5.4-55 keV); Table I (L10^s 1000 GeV 1.0 +1.4 -0.7); Results paragraph (d_j constrained, two-sided intervals); Fig. 6 caption; Table S6 L10 rows"},
+  {"file": "inputs/arXiv_2609.02823_source/Fig6_O1_L10_limit_stacked.pdf", "parts_used": "bottom panel vector paths: drawings 349 (upper), 350 (lower), 346 (median), frame 237, decade tick marks; text spans for labels"},
+  {"file": "inputs/figures_png/Fig6_O1_L10_limit_stacked.png", "parts_used": "visual check of the digitisation"},
+  {"file": "output/work/P003/fig1_digitised_bottom.csv", "parts_used": "digitised LZ Fig. 1 L10^s curves at 200 and 1000 GeV (shape and absolute normalisation reference)"},
+  {"file": "output/work/P003/details.md; output/code/P003_nreft_shapes.py; output/work/P003/P003_L10_comparison.csv", "parts_used": "L10 reduction and WimPyDD implementation, efficiency model, scale factor 247.5, N_lo values"},
+  {"file": "output/papers/P003.md, P005.md, P009.md; output/code/P007_higgsino_inelastic.py", "parts_used": "normalisation convention; L10 counts normalised to 1 LZ event (13.4); event on efficiency plateau; Fig. 6 digitisation approach"},
+  {"file": "output/00_evidence_dossier.md; output/results_ledger.csv; output/provenance/PAPER_GUIDE.md; PROMPT.md section 4", "parts_used": "context, prior results, deliverable format, data-request template"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "constants, WimPyDD wrappers, convention converter"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Anand et al. Table 1 entry 10: L10 = (d10/m_v^2)(chibar i sigma^{mu nu} q_nu/m_M chi)(Nbar i sigma_{mu rho} q^rho/m_M N) -> 4 (m_N^2/m_M^2)[(q^2/m_N^2) O4 - O6]; m_M = nucleon mass", "presumed_source": "Anand, Fitzpatrick, Haxton PRC 89 (2014) 065501; re-derived in details.md 3.1", "reliability": "likely"},
+  {"item": "NR reduction of photon-mediated magnetic-dipole DM: c1 = e mu Q/(2 m_chi), c5 = 2 e mu m_N Q/q^2, c4 = e mu g_N/m_N, c6 = -e mu g_N m_N/q^2", "presumed_source": "Fitzpatrick et al. 2012 Eq. 45; Gresham & Zurek 2014; Banks-Fox-Weiner 2010; Barger-Keung-Marfatia 2011; re-derived in details.md 3.2", "reliability": "likely"},
+  {"item": "Heavy-vector dipole-dipole matching d10/(m_v^2 m_M^2) = mu_chi^V mu_N^V / M^2", "presumed_source": "tree-level integration of a massive vector with (mu/2) psibar sigma psi V_{mu nu} couplings", "reliability": "likely"},
+  {"item": "LZ 2024 WIMP search exposure 4.2 t yr (5.5 t x 280 live days, SR1 + WS2024), PRL 135, 011802 (2025), arXiv:2410.17036", "presumed_source": "LZ 2024 result", "reliability": "certain (exposure); likely (bibliographic details)"},
+  {"item": "2024 LZ low-energy search tolerated of order 3-5 signal events in its ROI at high mass", "presumed_source": "order-of-magnitude reading of the LZ 2024 limit (P003 R4)", "reliability": "uncertain"},
+  {"item": "Nucleon g-factors g_p = 5.5857, g_n = -3.8261; alpha = 1/137.036; e = sqrt(4 pi alpha) = 0.3028 (Heaviside-Lorentz)", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "Nuclear magneton mu_N = e hbar/(2 m_p) = 1.05 x 10^-14 e cm = e/(2 m_p) in natural units", "presumed_source": "definition; computed from hbar c and m_p", "reliability": "certain"},
+  {"item": "Two-sided PLR test statistic q = 2[mu - n + n ln(n/mu)], 90% asymptotic threshold 2.706; Feldman-Cousins n=1, b=0 interval [0.11, 4.36]", "presumed_source": "Cowan et al. 2011; Feldman & Cousins 1998", "reliability": "certain"},
+  {"item": "NR spinor reductions ubar' sigma^{ij} u -> 4 m epsilon^{ijk} S^k; Gordon decomposition of the nucleon current", "presumed_source": "standard QFT", "reliability": "certain"},
+  {"item": "Nucleon tensor charges delta u ~ 0.8, delta d ~ -0.2", "presumed_source": "lattice QCD / global fits", "reliability": "likely"},
+  {"item": "Photon-dipole DM limits from XENON1T/PandaX of order 10^-20 e cm at 100 GeV-1 TeV (mentioned only, not used)", "presumed_source": "dipole-DM recasts", "reliability": "uncertain"},
+  {"item": "Bibliographic details of Banks-Fox-Weiner (PRD 82, 075004), Barger-Keung-Marfatia (PLB 696, 74), Gresham-Zurek (PRD 89, 123521), WimPyDD (CPC 276, 108342)", "presumed_source": "literature", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": [{"id": "DR-001", "status": "pending"}],
+ "failed_or_abandoned": [
+  "First script run piped through tee before the output directory existed: log lost, re-run with redirection (numbers unchanged).",
+  "Peak finder's <120 keV window mis-reports the low peak as 119 keV when the curve at 119 keV exceeds the low maximum; dip and high-peak positions reported instead.",
+  "Fig. 6 y calibration from mantissa-label centres would bias d10 by 0.035 dex; replaced by decade tick marks."
+ ],
+ "wimpydd_generated_files": "none (checked with find WimPyDD -newer script)"
+}

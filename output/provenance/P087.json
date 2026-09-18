@@ -1,0 +1,68 @@
+{
+  "id": "P087",
+  "title": "The atmospheric-neutrino floor in the extended window: CEνNS rates, spectral shape and uncertainty at 55–420 keV in xenon, and whether it limits the decisive tests",
+  "date": "2026-09-16",
+  "agent_tools": [
+    {"tool": "Read", "count": 19, "detail": "PAPER_GUIDE.md; papers P060/P050/P069/P034/P019; work/P060/details.md; code P060_astro_nu.py, P019_atm_nu.py, P050_next_generation.py l.40-120; common/lzcommon.py l.1-62 and l.108-387; fulltext.tex l.160-250, 295-330, 500-590; four P087 figures"},
+    {"tool": "Bash", "count": 13, "detail": "grep neutrino/table lines in fulltext.tex; ls output dirs + lzcommon API grep + ENVIRONMENT_versions + ledger rows (python csv); dossier grep + P019_results.json keys + P050 cache keys + P034/P050 details grep; WimPyDD/nestpy/P050-cache timing test (.venv/bin/python heredoc); palette grep in dataviz skill; .venv/bin/python output/code/P087_atmospheric_floor.py (x3, after fixes); results JSON/KL print + ls; wc -w budget checks (x4)"},
+    {"tool": "Skill", "count": 1, "detail": "dataviz (chart conventions; JS validator skipped per PAPER_GUIDE)"},
+    {"tool": "Write", "count": 4, "detail": "output/code/P087_atmospheric_floor.py; output/work/P087/details.md; output/provenance/P087.json; output/papers/P087.md"},
+    {"tool": "Edit", "count": 29, "detail": "script (23): flux re-centring (gamma_b 2.3, E2 2 GeV), E_R grid from 0.5 keV, full-range ROI integration, 8B/hep turn-on calibration, exact single-event exposures, extra F^2 nodes; paper (6): word-budget trims"}
+  ],
+  "software": [
+    {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python)"},
+    {"name": "numpy", "version": "2.5.3", "functions": "geomspace, trapezoid, interp, cumsum, gradient, polynomial.hermite_e.hermegauss, linear algebra for resolution smearing"},
+    {"name": "scipy", "version": "1.18.1", "functions": "special.erf, optimize.brentq, stats.poisson.sf, stats.norm.sf"},
+    {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, to_csv, read_csv"},
+    {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg backend), fill_between, log axes"},
+    {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian, streamed_halo_function, diff_rate via lzcommon wrappers (shell-model weak form factor from the O1 M response with c_p = -(1-4 s2w), c_n = 1; cache verification for O1 inelastic delta = 350 keV)"},
+    {"name": "nestpy", "version": "2.1.1", "functions": "NESTcalc.GetYields via lz.nest_nr_yields (248 keV NR yields, LZ-tuned parameters)"},
+    {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ constants, XE_ISOTOPES, m_nucleus_gev, eta0, vmin_kms, v_earth_kms, GEV_TO_CM2, HBARC_GEV_FM, M_V_GEV, M_NUCLEON_GEV, wd_halo, wd_hamiltonian, wd_rate, wd_c_from_anand, nest_nr_yields"}
+  ],
+  "scripts_and_commands": [
+    {"path": "output/code/P087_atmospheric_floor.py", "purpose": "atmospheric flux parametrisation and variants; vectorised CEvNS spectra with Helm, Helm+skin and WimPyDD shell-model form factors; turn-on calibration on LZ's 8B+hep expectation; normalisation vs Table I; bin counts 5.4-55/55-125/125-200/200-270/270-420 keV; DSNB/8B/hep; nestpy NR-band location; discovery limits vs exposure (exact Poisson, 25% log-normal systematic) for O1 inelastic delta = 300/350/366 keV and L10; systematic floor; KL/N_3sigma shape separation; modulation comparison; four figures", "command": ".venv/bin/python output/code/P087_atmospheric_floor.py"}
+  ],
+  "local_inputs": [
+    {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Table I (l.210-246: Atmospheric nu (1.1+-0.2)e-1, 8B+hep (5.7+-0.6)e-2); l.174-178 (neutrino backgrounds, Billard/Baxter formalism); l.307-314 (Discussion: exponentially decaying spectrum, not consistent with coherence); prompt/delayed sample tables l.506-589; l.160-166 (event)"},
+    {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "rules, deliverables, template, budgets, WimPyDD conventions"},
+    {"file": "output/00_evidence_dossier.md", "parts_used": "sections 1-3 (grep for neutrino lines)"},
+    {"file": "output/results_ledger.csv", "parts_used": "rows P002-P070 (headlines of P016, P019, P034, P038, P050, P060, P069)"},
+    {"file": "output/papers/P060.md; output/work/P060/details.md; output/code/P060_astro_nu.py", "parts_used": "CEvNS conventions, Keil-Raffelt DSNB spectra and normalisations, kinematics"},
+    {"file": "output/papers/P019.md; output/code/P019_atm_nu.py; output/work/P019/P019_results.json", "parts_used": "flux-shape family, WimPyDD weak-form-factor construction, N(200-270) = 6.5e-5, Fig. 5 digitised sums, S1 scale factor 1.082"},
+    {"file": "output/papers/P050.md; output/code/P050_next_generation.py; output/work/P050/P050_spectra_cache.npz; output/work/P050/P050_background_bins.csv; output/work/P050/P050_normalisation.csv", "parts_used": "efficiency forms (E50 269.9/423.2 keV), WimPyDD O1 inelastic and L10 spectra at unit coupling (12-day annual mean), extension background bins, kappa normalisation"},
+    {"file": "output/papers/P034.md; output/work/P034/details.md", "parts_used": "a1 amplitudes, KL, N_3sigma and E_3sigma per delta"},
+    {"file": "output/papers/P069.md", "parts_used": "b = 5.7e-4 per 2.84 t yr, untouched-exposure test"},
+    {"file": "output/code/common/lzcommon.py", "parts_used": "constants, Helm form, kinematics, eta0, WimPyDD and nestpy wrappers"},
+    {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+  ],
+  "recalled_knowledge": [
+    {"item": "G_F = 1.1663788e-5 GeV^-2", "presumed_source": "PDG", "reliability": "certain"},
+    {"item": "low-q weak mixing angle sin^2 theta_W = 0.23867", "presumed_source": "PDG (MSbar at q -> 0)", "reliability": "likely"},
+    {"item": "Q_W = N - (1 - 4 sin^2 theta_W) Z", "presumed_source": "Freedman 1974 / standard CEvNS", "reliability": "certain"},
+    {"item": "Helm form factor parameters s = 0.9 fm, a = 0.52 fm, c = 1.23 A^1/3 - 0.60 fm", "presumed_source": "Lewin & Smith 1996", "reliability": "certain"},
+    {"item": "neutron skin of xenon ~ 0.15 fm (Helm variant)", "presumed_source": "nuclear-structure literature", "reliability": "likely"},
+    {"item": "atmospheric neutrino flux above ~13 MeV, all flavours, 10.5 cm^-2 s^-1 with 20-25% uncertainty", "presumed_source": "Billard, Strigari, Figueroa-Feliciano 2014 Table I; Baxter et al. 2021", "reliability": "likely"},
+    {"item": "low-energy atmospheric spectrum E dPhi/dE roughly flat between 10 and 100 MeV", "presumed_source": "Battistoni et al. 2005 (FLUKA)", "reliability": "likely"},
+    {"item": "spectral index ~2.3 between 0.2 and 1 GeV, ~2.7-3.0 above a few GeV", "presumed_source": "Honda et al. 2011", "reliability": "likely"},
+    {"item": "all-flavour dPhi/dE at 1 GeV ~ 1.5-2.5e-4 cm^-2 s^-1 MeV^-1", "presumed_source": "Honda et al. 2011; Gaisser & Honda 2002", "reliability": "likely (x1.5)"},
+    {"item": "SURF (44 N, rigidity cutoff ~2-3 GV) low-energy flux within ~10-15% of Kamioka/LNGS values", "presumed_source": "geomagnetic-cutoff dependence of atmospheric fluxes", "reliability": "uncertain"},
+    {"item": "8B solar neutrino flux 5.25e6 cm^-2 s^-1, <E> 6.7 MeV, end point ~16.5 MeV", "presumed_source": "SNO / B16-GS98 solar model", "reliability": "certain to 5% (flux); likely (shape)"},
+    {"item": "hep flux 8.0e3 cm^-2 s^-1, end point 18.77 MeV", "presumed_source": "standard solar model", "reliability": "likely"},
+    {"item": "DSNB all-flavour flux ~30 cm^-2 s^-1, <E> 9/11/13 MeV (central) to 12/15/25 MeV (very hard)", "presumed_source": "Beacom 2010 review (as in P060)", "reliability": "uncertain (x3)"},
+    {"item": "Keil-Raffelt pinched spectrum with alpha = 2.5 as proxy shape", "presumed_source": "Keil, Raffelt, Janka 2003", "reliability": "likely"},
+    {"item": "seasonal variation of the sub-GeV atmospheric neutrino flux <~ 2% (1-4%), summer maximum for the muon-decay component", "presumed_source": "atmospheric temperature effect literature", "reliability": "uncertain"},
+    {"item": "solar-cycle variation of the ~100 MeV atmospheric flux ~5-10% over 11 yr", "presumed_source": "Honda et al. solar-min/max tables", "reliability": "uncertain"},
+    {"item": "Billard-style discovery limit: coupling at which 90% of experiments reach 3 sigma", "presumed_source": "Billard et al. 2014", "reliability": "certain"},
+    {"item": "one-sided 3 sigma p-value 1.35e-3", "presumed_source": "Gaussian statistics", "reliability": "certain"},
+    {"item": "Anand unit coupling c = 1/m_v^2 with m_v = 246.2 GeV; sigma_n = c^2 mu_n^2/pi", "presumed_source": "Anand, Fitzpatrick, Haxton 2014; LZ convention (P003)", "reliability": "certain"},
+    {"item": "typical solar-neutrino (8B) CEvNS rate in xenon of order 10^2-10^3 per t yr at all recoil energies", "presumed_source": "neutrino-floor literature", "reliability": "likely"}
+  ],
+  "datasets": "none",
+  "data_requests": "none",
+  "failed_or_abandoned": [
+    "First version integrated the ROI only above 5.4 keV and used P050's erf turn-on (sigma 2.5 keV), which set the 8B count to zero by construction while implying 45 8B events with the efficiency alone; replaced by full-range integration with a turn-on width calibrated on LZ's 0.057 8B+hep events (sigma_lo = 0.74 keV).",
+    "First flux central (gamma_b = 2.0, E2 = 1.5 GeV) gave dPhi/dE(1 GeV) = 4.5e-4 cm^-2 s^-1 MeV^-1, x2 above the recalled Honda value; re-centred to gamma_b = 2.3, E2 = 2 GeV (old central kept as the 'hard mid' variant).",
+    "Asimov Z formula rejected for the discovery limit because it returns Z = 3 for ~0.5 events when b ~ 1e-4; exact Poisson with n_crit staircase used instead."
+  ],
+  "wimpydd_generated_files": "none"
+}

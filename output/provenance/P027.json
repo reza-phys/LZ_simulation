@@ -1,0 +1,53 @@
+{
+ "id": "P027",
+ "title": "Bayesian model comparison across 293 spectra given one event: which model classes carry the posterior?",
+ "date": "2026-09-08",
+ "agent_tools": [
+  {"tool": "Read", "count": 16, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv; papers/P001.md, P016.md, P003.md, P008.md, P002.md; code/P016_joint_constraint.py lines 120-245, 245-345, 370-430; code/P008_lee_toys.py lines 60-170; code/P003_nreft_shapes.py lines 140-170; fulltext.tex lines 483-502 (LEE) and 818-912 (Tables S6-S7); work/P027/run_log.txt; four P027 figures"},
+  {"tool": "Bash", "count": 14, "detail": "ls corpus dirs + cat P016 operator table + head P008 models.csv; inspect npz caches / P016_results.json; grep P016 script, LZ tex LEE/table markers, lzcommon function index; P008 model class counts + cache grid + P016 scalar results + ENVIRONMENT_versions; grep P003 L10 construction + lzcommon wrappers (sed 305-380); WimPyDD timing test (one inelastic spectrum, ceilings); extract P016 digitised bins; P008 distinct-flag counts; sed palette.md (dataviz skill); run P027 script (600 s foreground, moved to background by harness, completed in 833 s); tail run_log/ls; ps (denied by sandbox); re-run with P027_BUDGET_S=540 (158 s, cache loaded); pandas inspection of validation/N_M/rho/1000 GeV table; pandas extraction of per-model numbers + versions + provenance format; wc -w of paper (final)"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P027_bayes_models.py; output/work/P027/details.md; output/provenance/P027.json; output/papers/P027.md"},
+  {"tool": "Edit", "count": 2, "detail": "P027_bayes_models.py: resumable partial spectra cache; internal time budget (P027_BUDGET_S) for foreground passes"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette and chart rules before writing matplotlib figures)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python"},
+  {"name": "numpy", "version": "2.5.3", "functions": "geomspace, trapezoid, interp, log-space arithmetic, savez/load"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats.norm.pdf/cdf/logpdf, stats.poisson.pmf, special.erf, special.logsumexp"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, groupby, read_csv, to_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; barh, bar, plot, Patch legend"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian (incl. q-dependent coefficient for L10 = (q^2/m_N^2)O4 - O6), diff_rate via lzcommon.wd_rate (388 spectra: L10 x 13 masses; inelastic O1s/O1v/O4s x 3 masses x 10 keV delta scan to the kinematic ceiling; O4v on the LZ grid), streamed_halo_function via lzcommon.wd_halo (explicit v_min grid, annual average)"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LSIG, OSIG, LSIG_MASSES, OSIG_DELTAS, M_NUCLEON_GEV, M_V_GEV, mu_red, m_nucleus_gev, vmax_kms, delta_max_kev, A_XE_MEAN, C_KMS, wd, wd_halo, wd_hamiltonian, wd_rate"},
+  {"name": "marginal likelihood algebra", "version": "none: derived by hand", "functions": "L(mu)/L(0) = e^{-s}(1 + rho s/b_H) W(mu); s = mu f_hi; Jeffreys substitution s = t^2; posterior entropy exp(H)"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P027_bayes_models.py", "purpose": "assemble 752 model spectra (P008 cache + WimPyDD recomputation), few-bin joint likelihood (P016), marginal likelihoods under three coupling priors and two parametrisations with/without in-window shape factor, five model priors -> B_DM, posterior over models (entropy, top-10, class masses), continuous-delta class Bayes factors, posterior predictive for 6.76 t yr, four figures", "command": ".venv/bin/python output/code/P027_bayes_models.py   (first pass computes and caches WimPyDD spectra, ~14 min; optional P027_BUDGET_S=<seconds> makes a pass exit after saving a partial cache; re-run resumes; full analysis with cache 158 s)"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "LEE supplement lines 485-498 (616 models, degeneracy rules, 293 distinguishable spectra); local-significance section and Tables S6-S7 lines 820-909"},
+  {"file": "output/work/P016/P016_results.json", "parts_used": "fig5_top_digitised (sigma_bin_low, total, data_counts), baseline_settings.b_H = 5.695e-4, b_M, sig_theta"},
+  {"file": "output/work/P016/P016_operator_table.csv", "parts_used": "N_lo, N_L2, N_M and B10_flat per 1000 GeV operator for validation"},
+  {"file": "output/work/P008/spectra_cache.npz and output/work/P008/models.csv", "parts_used": "364 elastic WimPyDD spectra (O1,O3-O15 s/v x 13 masses) on the 60-point grid; distinct_rep_1pct flags; physical flags for the inelastic grid"},
+  {"file": "output/code/P016_joint_constraint.py", "parts_used": "likelihood structure (bins, nuisance, b_M), efficiency model, Bayes-factor formula (reproduced, not imported)"},
+  {"file": "output/code/P008_lee_toys.py", "parts_used": "model naming, cache format, resolution model sigma = 23 sqrt(E/248) keV"},
+  {"file": "output/code/P003_nreft_shapes.py", "parts_used": "L10 WimPyDD Hamiltonian construction with q-dependent coefficient"},
+  {"file": "output/papers/P001.md, P002.md, P003.md, P008.md, P016.md", "parts_used": "headline numbers: B10 and N_eff (P001), delta_max and spectral percentiles (P002), N_lo (P003), N_eff = 12.2 and delta-scan trials (P008), per-operator B and b_H anchor (P016)"},
+  {"file": "output/00_evidence_dossier.md; output/results_ledger.csv; output/provenance/PAPER_GUIDE.md", "parts_used": "context, P020 exposure 6.76 t yr, deliverable format"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "LSIG/OSIG tables, kinematics, WimPyDD wrappers"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Kass-Raftery evidence scale (B 3-20 positive, 20-150 strong, >150 very strong)", "presumed_source": "Kass & Raftery, JASA 90, 773 (1995)", "reliability": "certain"},
+  {"item": "Sellke-Bayarri-Berger bound B <= -1/(e p ln p) = 14.7 at p = 4.7e-3", "presumed_source": "Sellke, Bayarri, Berger, Am. Stat. 55, 62 (2001); P001", "reliability": "certain"},
+  {"item": "Jeffreys prior for a Poisson mean is proportional to s^{-1/2}", "presumed_source": "standard Bayesian statistics", "reliability": "certain"},
+  {"item": "Lagrangian-operator map L1=O1, L2=O10, L3=O11, L4=O6, L15=O4, L10 ~ (q^2/m_N^2)O4 - O6", "presumed_source": "Anand, Fitzpatrick, Haxton PRC 89 (2014); P003/P016", "reliability": "likely"},
+  {"item": "Effective number of models exp(H) from the Shannon entropy of the posterior", "presumed_source": "information theory (perplexity)", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First full run (388 new WimPyDD spectra, 833 s) exceeded the 600 s foreground limit and was moved to the background by the harness; the script was made resumable (partial cache + P027_BUDGET_S time budget) and re-run in the foreground (158 s with the completed cache).",
+  "O4^v on the fine 10 keV delta grid was dropped (O4 spectra cost ~3 s each; LZ states O4 s/v spectra are indistinguishable; O4^v LZ-grid Bayes factors agree with O4^s within 1 %).",
+  "A prior uniform over LZ's own Lagrangian list L1-L20 was not attempted (only 12 of 40 Lagrangians map onto our operator basis); the effect is discussed qualitatively in details.md section 8."
+ ],
+ "wimpydd_generated_files": ["output/work/P027/P027_spectra.npz (our cache of WimPyDD spectra; WD.diff_rate writes no files of its own)"]
+}

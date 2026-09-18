@@ -1,0 +1,149 @@
+P069 xenon-world ledger -- 2026-09-16 15:36
+[1] ledger total on disk (all xenon TPCs, to 2 Sep 2026): 21.96 t yr; analysed to 270 keV: 2.84; hidden at high energy: 19.12 (range 16.06-24.04); core running-three (excl. archival & SR1): 16.90
+[2] loaded output/work/P050/P050_spectra_cache.npz deltas [300. 348. 350. 352. 364. 366. 368. 378. 380. 382.]
+[2] normalisation (best fit, per t yr):
+      rate_LZwin  rate_200_270  frac_200_270  rate_ext400  rate_ext400_gt200    A_LZ   A_400
+L10       0.3521        0.1205        0.3423       0.4468             0.2196  0.4220  0.5355
+d300      0.3521        0.0628        0.1784       0.4012             0.1123  0.8141  0.9277
+d350      0.3521        0.1780        0.5056       0.6875             0.5159  0.4443  0.8674
+d366      0.3521        0.2737        0.7772       1.7029             1.6344  0.1720  0.8319
+d380      0.3521        0.2783        0.7905      10.4968            10.4937  0.0277  0.8262
+    cross-check vs P050: A_LZ 0.422/0.814/0.444/0.172/0.028; ext400 rates 0.447/0.401/0.687/1.70/10.5 per t yr
+[3] hidden events in an LZ-like 270 keV window above the published edge (best fit):
+model                           L10   d300   d350   d366   d380
+name                                                           
+LUX 2013-16                   0.030  0.032  0.032  0.032  0.032
+PandaX-II 2016-18             0.118  0.127  0.127  0.127  0.127
+XENON1T 2018                  0.331  0.352  0.352  0.352  0.352
+LZ SR1 2022                   0.248  0.271  0.271  0.271  0.271
+LZ SR3 (WS2024) analysed      0.000  0.000  0.000  0.000  0.000
+LZ untouched since Apr 2024   2.380  2.380  2.380  2.380  2.380
+XENONnT SR0+SR1 analysed      1.009  1.092  1.092  1.092  1.092
+XENONnT untouched (SR2+)      1.056  1.056  1.056  1.056  1.056
+PandaX-4T Run0+Run1 analysed  0.463  0.542  0.542  0.542  0.542
+PandaX-4T untouched (Run2/3)  0.880  0.880  0.880  0.880  0.880
+[3] hidden events with true E in 200-270 keV (best fit):
+model                           L10   d300   d350   d366   d380
+name                                                           
+LUX 2013-16                   0.011  0.006  0.016  0.025  0.026
+PandaX-II 2016-18             0.043  0.023  0.064  0.099  0.100
+XENON1T 2018                  0.121  0.063  0.178  0.274  0.278
+LZ SR1 2022                   0.093  0.048  0.137  0.211  0.214
+LZ SR3 (WS2024) analysed      0.000  0.000  0.000  0.000  0.000
+LZ untouched since Apr 2024   0.815  0.425  1.203  1.850  1.882
+XENONnT SR0+SR1 analysed      0.374  0.195  0.552  0.848  0.863
+XENONnT untouched (SR2+)      0.362  0.188  0.534  0.821  0.835
+PandaX-4T Run0+Run1 analysed  0.186  0.097  0.274  0.421  0.429
+PandaX-4T untouched (Run2/3)  0.301  0.157  0.445  0.684  0.696
+[3] totals (all hidden datasets): 270-window {'L10': 6.517, 'd300': 6.733, 'd350': 6.733, 'd366': 6.733, 'd380': 6.733} ; 200-270 keV {'L10': 2.304, 'd300': 1.201, 'd350': 3.404, 'd366': 5.233, 'd380': 5.322} ; already tested in published low-energy ROIs (excl. LZ SR3) {'L10': 0.204, 'd300': 0.0, 'd350': 0.0, 'd366': 0.0, 'd380': 0.0} ; 200-400 keV window {'L10': 4.2, 'd300': 2.148, 'd350': 9.865, 'd366': 31.253, 'd380': 200.661}
+[3] core running-three totals, 270 window: {'L10': 5.79, 'd300': 5.951, 'd350': 5.951, 'd366': 5.951, 'd380': 5.951}
+[3] Jeffreys Gamma(1.5,1): 68% central 0.42-2.58, mean 1.5; flat Gamma(2,1): 0.71-3.29, mean 2.0; LZ Table I 0.30-2.36
+[3] distribution of the hidden count (all hidden, 270 window):
+  model  mu_best  mu_lo68  mu_hi68  P0_best  P_ge1_best  P_ge1_lo68  P_ge1_FC  P_ge3_best  PG_J_P0  PG_J_mean
+0   L10    6.517    1.955   15.381    0.001       0.999       0.858     0.496       0.958    0.049      9.776
+1  d300    6.733    2.020   15.890    0.001       0.999       0.867     0.507       0.964    0.047     10.100
+2  d350    6.733    2.020   15.890    0.001       0.999       0.867     0.507       0.964    0.047     10.100
+3  d366    6.733    2.020   15.890    0.001       0.999       0.867     0.507       0.964    0.047     10.100
+4  d380    6.733    2.020   15.890    0.001       0.999       0.867     0.507       0.964    0.047     10.100
+[3] 200-270 keV only:
+  model  mu_best  P0_best  P_ge1_best  P_ge1_lo68  PG_J_P0
+5   L10    2.304    0.100       0.900       0.499    0.166
+6  d300    1.201    0.301       0.699       0.303    0.306
+7  d350    3.404    0.033       0.967       0.640    0.108
+8  d366    5.233    0.005       0.995       0.792    0.064
+9  d380    5.322    0.005       0.995       0.797    0.063
+[4] adopted hidden exposure E_new = 19.12 t yr (k = 6.73 LZ exposures); core three 16.90; range 16.06-24.04
+[4] k (expected hidden 200-270 keV events at LZ best fit): {'L10': np.float64(2.3), 'd300': np.float64(1.2), 'd350': np.float64(3.4), 'd366': np.float64(5.23), 'd380': np.float64(5.32), 'count': np.float64(6.73)}
+[4] P001 check: P(DM | LZ event alone) = 0.094 (P001: 0.090)
+[4] P020 check: P(DM | N=2, k=2.38, b=2e-4) = 0.358 (P020: 0.358)
+[4] scenarios (b = 5.7e-4 per 2.84 t yr in 200-270 keV; E_new = 19.12 t yr):
+    N_new  Z_comb_poisson  Z_new_poisson  Z_comb_LR  s_hat  s_lo68  s_hi68  s_UL90  P_DM_L10  P_DM_d366  P_DM_count  P_thisN_best_L10  P_thisN_best_d366  P_thisN_PGJ_L10  Z_time_d366  Z_time_d380
+1       0           2.620          0.000      2.976  0.129   0.092   0.425   0.503     0.011      0.004       0.003             0.100              0.005            0.166        1.177        1.303
+4       1           4.272          2.667      4.525  0.259   0.178   0.598   0.688     0.065      0.014       0.009             0.230              0.028            0.174        1.664        1.843
+7       2           5.551          4.333      5.757  0.388   0.271   0.763   0.864     0.375      0.061       0.031             0.265              0.073            0.152        2.038        2.257
+10      3           6.640          5.623      6.819  0.517   0.368   0.924   1.034     0.873      0.282       0.135             0.204              0.127            0.124        2.353        2.606
+13      5           8.492          7.698      8.637  0.776   0.573   1.237   1.362     0.999      0.964       0.875             0.054              0.175            0.074        2.882        3.192
+[4] Z_comb (Poisson) for the three backgrounds:
+bkg    band200_270  nb2sig  panel
+N_new                            
+0             2.62    2.96   1.41
+1             4.27    4.72   2.73
+2             5.55    6.08   3.76
+3             6.64    7.23   4.64
+5             8.49    9.19   6.15
+[4] P(DM), L10 k, for the three backgrounds:
+bkg    band200_270  nb2sig  panel
+N_new                            
+0            0.011   0.012  0.005
+1            0.065   0.066  0.052
+2            0.375   0.377  0.319
+3            0.873   0.874  0.832
+5            0.999   0.999  0.999
+[4] with a free-rate unknown background, counting caps P(DM) at pi_DM/(pi_DM+pi_U) = 0.091 for any N
+[4] N_new = 0: new data alone exclude a band rate > 0.342 per 2.84 t yr (90%); combined flat-prior UL90 0.503; in LZ-ROI units (/f_200_270): L10 1.00, d350 0.68, d366 0.44; P(N_new=0 | best fit): L10 0.100, d366 0.005; | 0.30: L10 0.501, d366 0.208
+[4] total events (LZ + new) for 5 sigma local, counting in 200-270 keV: {'nb2sig': 3, 'band200_270': 3, 'panel': 5}
+[5] global Z for N_new new events (b = 5.7e-4 band):
+scheme  LZ 616-model set (P001, from 2.6/3.4 sigma)  LZ 616-model set (P008)  pre-registered count (1 window)  three pre-registered spectra  three separate 616-model papers
+N_new                                                                                                                                                                       
+1                                              3.64                     3.68                             4.27                          4.02                             3.35
+2                                              5.07                     5.10                             5.55                          5.36                             4.86
+3                                              6.24                     6.26                             6.64                          6.48                             6.07
+5                                              8.18                     8.20                             8.49                          8.36                             8.05
+[5] global Z (b = 0.0106 panel):
+scheme  LZ 616-model set (P001, from 2.6/3.4 sigma)  LZ 616-model set (P008)  pre-registered count (1 window)  three pre-registered spectra  three separate 616-model papers
+N_new                                                                                                                                                                       
+1                                              1.71                     1.77                             2.73                          2.34                             1.15
+2                                              3.04                     3.07                             3.76                          3.47                             2.69
+3                                              4.06                     4.09                             4.64                          4.41                             3.80
+5                                              5.72                     5.74                             6.15                          5.97                             5.53
+[5] LZ check: 3.4 sigma local -> global 2.64 (N_eff 12.2) / 2.60 (13.9); LZ: 2.6
+[5] Asimov exposures (new data only, counting):
+   model       window  rate  rate_per_tyr  E_3sigma  E_5sigma  mu_in_Enew  Z_asimov_Enew
+0    L10  200-270 keV  best         0.121     6.902    19.173       2.304          4.993
+1    L10  200-270 keV  lo68         0.036    29.438    81.773       0.691          2.418
+2    L10  200-400 keV  best         0.220     4.599    12.775       4.200          6.117
+3    L10  200-400 keV  lo68         0.066    20.699    57.498       1.260          2.883
+4   d300  200-270 keV  best         0.063    15.023    41.732       1.201          3.385
+5   d300  200-270 keV  lo68         0.019    66.298   184.161       0.360          1.611
+6   d300  200-400 keV  best         0.112    10.527    29.241       2.148          4.043
+7   d300  200-400 keV  lo68         0.034    49.772   138.255       0.644          1.860
+8   d350  200-270 keV  best         0.178     4.361    12.114       3.404          6.282
+9   d350  200-270 keV  lo68         0.053    18.284    50.788       1.021          3.068
+10  d350  200-400 keV  best         0.516     1.648     4.577       9.865         10.220
+11  d350  200-400 keV  lo68         0.155     7.067    19.629       2.960          4.935
+12  d366  200-270 keV  best         0.274     2.642     7.339       5.233          8.071
+13  d366  200-270 keV  lo68         0.082    10.894    30.262       1.570          3.975
+14  d366  200-400 keV  best         1.634     0.428     1.188      31.253         20.061
+15  d366  200-400 keV  lo68         0.490     1.750     4.862       9.376          9.916
+16  d380  200-270 keV  best         0.278     2.591     7.196       5.322          8.150
+17  d380  200-270 keV  lo68         0.084    10.676    29.657       1.597          4.015
+18  d380  200-400 keV  best        10.494     0.052     0.144     200.661         57.694
+19  d380  200-400 keV  lo68         3.148     0.202     0.560      60.198         29.221
+[5] zero-event exclusion exposures E_90 (t yr):
+model                          L10    d300    d350   d366   d380
+window      s_low                                               
+200-270 keV FC_lo 0.105     182.00  349.12  123.21  80.14  78.80
+            TableI_lo 0.30   63.70  122.19   43.12  28.05  27.58
+            best 1.0         19.11   36.66   12.94   8.42   8.27
+200-400 keV FC_lo 0.105      99.86  195.26   42.51  13.42   2.09
+            TableI_lo 0.30   34.95   68.34   14.88   4.70   0.73
+            best 1.0         10.49   20.50    4.46   1.41   0.22
+[6] cumulative exposure milestones (t yr):
+            all_xenon     LZ  XENONnT  PandaX4T  new_beyond_LZ_SR3  LZ_track
+2026-09-02      21.99  10.37     6.12      4.05              19.15      9.60
+end-2026        24.21  11.29     6.89      4.57              21.37     10.52
+mid-2027        27.61  12.69     8.09      5.38              24.77     11.92
+end-2027        31.02  14.08     9.29      6.19              28.18     13.31
+end-2028        37.83  16.88    11.69      7.81              34.99     16.11
+[6] L10: {"LZ track": {"5sigma best (E=19.2)": null, "5sigma lo68 (E=82)": null, "3sigma lo68 (E=29.4)": null, "0 ev excl best (E=19.1)": null, "0 ev excl 0.30 (E=63.7)": null, "0 ev excl 0.105 (E=182)": null}, "all xenon": {"5sigma best (E=19.2)": 2026.1, "5sigma lo68 (E=82)": null, "3sigma lo68 (E=29.4)": 2027.8, "0 ev excl best (E=19.1)": 2026.1, "0 ev excl 0.30 (E=63.7)": null, "0 ev excl 0.105 (E=182)": null}}
+[6] d350: {"LZ track": {"5sigma best (E=12.1)": 2027.6, "5sigma lo68 (E=51)": null, "3sigma lo68 (E=18.3)": null, "0 ev excl best (E=12.9)": 2027.9, "0 ev excl 0.30 (E=43.1)": null, "0 ev excl 0.105 (E=123)": null}, "all xenon": {"5sigma best (E=12.1)": 2024.6, "5sigma lo68 (E=51)": null, "3sigma lo68 (E=18.3)": 2025.9, "0 ev excl best (E=12.9)": 2024.75, "0 ev excl 0.30 (E=43.1)": null, "0 ev excl 0.105 (E=123)": null}}
+[6] d366: {"LZ track": {"5sigma best (E=7.3)": 2025.9, "5sigma lo68 (E=30)": null, "3sigma lo68 (E=10.9)": 2027.15, "0 ev excl best (E=8.4)": 2026.25, "0 ev excl 0.30 (E=28.1)": null, "0 ev excl 0.105 (E=80)": null}, "all xenon": {"5sigma best (E=7.3)": 2023.5, "5sigma lo68 (E=30)": 2027.9, "3sigma lo68 (E=10.9)": 2024.35, "0 ev excl best (E=8.4)": 2023.75, "0 ev excl 0.30 (E=28.1)": 2027.6, "0 ev excl 0.105 (E=80)": null}}
+    P050 cross-check (LZ-like window incl. 100-200 keV bins): E_5sigma L10 12.3, d350 8.5, d366 6.8 t yr; E_90(0.30) 21.8; E_90(0.105) 62.3
+[6] joint dataset for a mid-2027 paper (data to end-2026): 21.4 t yr new + 2.84 analysed = 24.2 t yr:
+       E_new  mu_best  mu_lo68  P0_best  P0_lo68  P_ge2_best  P_Ntot_ge3_best  P_Ntot_ge3_lo68  median_N  Z_comb_median  Z_asimov_new  Z_asimov_new_lo68  UL90_if_zero_LZROI_units
+L10   21.365    2.575    0.772    0.076    0.462       0.728            0.728            0.181       2.0          5.500         5.278              2.556                     0.894
+d300  21.365    1.342    0.403    0.261    0.669       0.388            0.388            0.062       1.0          4.229         3.578              1.703                     1.716
+d350  21.365    3.803    1.141    0.022    0.319       0.893            0.893            0.316       4.0          7.546         6.640              3.243                     0.606
+d366  21.365    5.847    1.754    0.003    0.173       0.980            0.980            0.523       6.0          9.237         8.531              4.201                     0.394
+d380  21.365    5.947    1.784    0.003    0.168       0.982            0.982            0.532       6.0          9.237         8.615              4.244                     0.387
+done; wrote output/work/P069

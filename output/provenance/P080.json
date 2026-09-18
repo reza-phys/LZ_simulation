@@ -1,0 +1,65 @@
+{
+ "id": "P080",
+ "title": "Millicharged particles, strongly interacting massive relics and other exotic heavy particles as the source of a single 248 keV xenon recoil",
+ "date": "2026-09-15",
+ "agent_tools": [
+  {"tool": "Read", "count": 14, "detail": "PAPER_GUIDE.md; lzcommon.py (l.1-260, 256-295); P040.md; P030.md; P036.md; P041.md; P042.md; P016.md; figures P080_fig1/fig2/fig3 (fig2 three times after fixes)"},
+  {"tool": "Bash", "count": 17, "detail": "grep lzcommon API + ls papers/work/P040; cat P040 Nlo tables, ledger head/ids, DR-001, ls environment, grep efficiency; grep fulltext.tex geometry/single-scatter/veto lines; grep P003 efficiency constants + python inspection of P017_response_curves.npz + head P017_M_ratios.csv; grep ledger for exotic-relic overlap + list EXO/MODEL rows; cat ENVIRONMENT_versions.txt + sed P040.json; sed tex l.113-124 + grep dossier + awk ledger; grep tex FV lines + pandas ledger headlines P003/P017/P019/P023; grep tex HE SB + MSSI table; run script (failed: work dir missing); mkdir + run script (log); head run_log; re-run after edits + print tables; re-run after Fig.2 fix + print tables; wc -w word-budget checks; json validity check"},
+  {"tool": "Write", "count": 5, "detail": "output/code/P080_exotic_relics.py; output/work/P080/details.md; output/papers/P080.md (written twice: full rewrite to meet word budgets); output/provenance/P080.json"},
+  {"tool": "Edit", "count": 16, "detail": "P080_exotic_relics.py (7): 55-200 keV companions + joint P(0) + multiscatter table; equivalent sigma_SI for MCP; Ahlen-Kinoshita monopole estimate; Fig.2 cleanup (first pass; sigma grid to 1e-19; annotations/legend; savefig). P080.md (4): word-budget trims of Results and KEY NUMBERS. P080.json (5): tool counts"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "trapezoid, interp, logspace/linspace, random.default_rng (chord MC), load (npz)"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf (efficiency model)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, to_csv, to_string, read_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend, pyplot plot/axvspan/fill_between/axhline/axvline, fig.legend, savefig PNG"},
+  {"name": "nestpy", "version": "2.1.1", "functions": "via lz.nest_nr_yields: LZ-tuned NR photon yields for the S1c <-> NR energy map of the HE sideband (warns beyond 300 keV)"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ dict (live_days, fiducial_mass_t, exposure_tyr, E_50pct edges, eff_plateau, g1), XE_ISOTOPES, A_XE_MEAN, AMU_GEV, M_NUCLEON_GEV, GEV_TO_CM2, HBARC_GEV_FM, C_KMS, RHO0_GEV_CM3, V0/VESC, m_nucleus_gev, mu_red, v_earth_kms, eta0, vmax_kms, vmin_kms, m_chi_min_gev, delta_max_kev, helm_F2, dRdE_SI (unit check), nest_nr_yields"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "not run; P017's cached shell-model M response table (P017_response_curves.npz) reused for F2_shell"},
+  {"name": "none: derived by hand", "version": "-", "functions": "Rutherford dsigma/dE_R for a heavy projectile and its halo rate; heavy-limit flat recoil spectrum and eta(v_min) averaging; Rutherford and Lindhard-Scharff stopping integrals; Larmor radii; isotropic-flux entry rate pi F S and mean chord 4V/S; Poisson single/multiple-scatter probabilities; flux-to-mass conversion"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P080_exotic_relics.py", "purpose": "MCP halo/relativistic spectra, N_lo, epsilon for one event, stopping and magnetic deflection; SIMP mean free path, chord MC, spectral fractions incl. HE sideband, mass for one event, overburden, continuous tracks; flux ceiling; inelastic composites; three figures and seven CSV tables + results.json", "command": ".venv/bin/python output/code/P080_exotic_relics.py > output/work/P080/run_log.txt 2>&1"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "detector paragraph l.77-83 (7 t active, Skin, OD); Data Analysis l.113-117 (SS selection, ROI, efficiency); FV l.136-139 (z cuts 9.0 / 12.8 cm); veto definitions l.143-147; event position l.166; HE SB definition l.316-317, 721-731 and Supplemental MSSI count table l.767-778 (0 observed science events in the 4.7 t FV); waveform/single-site template l.695; MS neutron cross-check l.791"},
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "rules, deliverables, template, budgets"},
+  {"file": "output/results_ledger.csv", "parts_used": "P001-P070 ids; EXO/MODEL/COMP rows; headline rows P003, P017, P019, P023"},
+  {"file": "output/papers/P040.md, P030.md, P036.md, P041.md, P042.md, P016.md", "parts_used": "N_lo floors (350/1184; 820 SHM Helm), stream results, nuclear-excitation hybrids, artefact residual, tau(chi2->chi1 gamma) > 0.43 us, fitted low-energy tolerance 1.6-2.2"},
+  {"file": "output/work/P040/P040_Nlo_powerlaw.csv, P040_Nlo_beam_summary.csv, details.md; output/provenance/P040.json", "parts_used": "F2(30)/F2(248) = 1249/6809 check; efficiency description; JSON format example"},
+  {"file": "output/work/P017/P017_response_curves.npz, P017_M_ratios.csv", "parts_used": "E_grid, F2_shell (natural Xe), F2_helm; F2 at 248 keV"},
+  {"file": "output/code/P003_nreft_shapes.py", "parts_used": "efficiency model constants (0.96, sig_lo 3.4, sig_hi 8.0 keV)"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "constants and functions listed under software"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "hypothesis H (non-DM new physics) line"},
+  {"file": "output/data_requests/DR-001.md, index.csv", "parts_used": "checked existing DR numbering (none filed)"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Rutherford cross-section dsigma/dq^2 = 4 pi Z^2 eps^2 alpha^2/(v^2 q^4) and its E_R form", "presumed_source": "textbook", "reliability": "certain"},
+  {"item": "alpha = 1/137.036; hbar c = 197.3 MeV fm", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "LZ TPC 1.456 m diameter x 1.456 m drift length", "presumed_source": "LZ instrument paper NIM A 953, 163047 (2020)", "reliability": "likely"},
+  {"item": "SURF depth 1478 m, standard rock 2.7 g/cm^3, crustal composition O/Si/Al/Fe/Ca/K/Na/Mg mass fractions", "presumed_source": "general", "reliability": "likely"},
+  {"item": "Atmospheric column 1033 g/cm^2", "presumed_source": "general", "reliability": "certain"},
+  {"item": "Thomas-Fermi screening length a = 0.885 a0 Z^-1/3", "presumed_source": "Lindhard/ZBL literature", "reliability": "likely"},
+  {"item": "Lindhard-Scharff electronic stopping S_e = 8 pi e^2 a0 Z1^(7/6) Z2/(Z1^(2/3)+Z2^(2/3))^(3/2) v/v0; eps^2 scaling for a fractional point charge", "presumed_source": "Lindhard & Scharff 1961", "reliability": "likely (formula); uncertain (eps^2 scaling)"},
+  {"item": "Minimum-ionising dE/dx in xenon ~1.25 MeV cm^2/g", "presumed_source": "PDG", "reliability": "likely"},
+  {"item": "Nuclearite cross-section pi (1e-8 cm)^2 for M < 1.5 ng; dE/dx = sigma rho v^2", "presumed_source": "De Rujula & Glashow 1984", "reliability": "likely"},
+  {"item": "Slow monopole effective charge g beta = beta/(2 alpha) e and Ahlen-Kinoshita-type dE/dx ~ (g/e)^2 K (Z/A) rho beta L", "presumed_source": "Ahlen & Kinoshita 1982", "reliability": "uncertain"},
+  {"item": "Parker bound 1e-15 cm^-2 s^-1 sr^-1; MACRO monopole flux limit 1.4e-16", "presumed_source": "Parker 1970; MACRO 2002", "reliability": "certain (Parker); likely (MACRO)"},
+  {"item": "Feldman-Cousins 90 % upper limit for n = 1, b = 0 is 4.36", "presumed_source": "Feldman & Cousins 1998", "reliability": "certain"},
+  {"item": "Heliospheric magnetic field ~5 nT at 1 AU; Earth's field ~3e-5 T; millicharged evacuation by solar-wind fields", "presumed_source": "Chuzhoy & Kolb 2009; Dunsky, Hall & Harigaya 2019", "reliability": "likely"},
+  {"item": "LZ 2024 SI limit ~1e-47 cm^2 at TeV masses", "presumed_source": "LZ WS2024 PRL", "reliability": "likely"},
+  {"item": "Heavy-DM / SIMP exclusion regions: XENON1T/LZ single-scatter, CDMS-I/XQC, CRESST and EDELWEISS surface runs, Majorana Demonstrator, DEAP-3600 multiscatter, MICA, rocky-planet heat", "presumed_source": "Bramante et al. 2018; Clark et al. 2020; DEAP 2022; Mack et al. 2007; Jacobs et al. 2015", "reliability": "uncertain (drawn schematically only)"},
+  {"item": "Cosmic-ray-produced millicharged bounds (Plestid et al. 2020, ArgoNeuT, SENSEI)", "presumed_source": "literature", "reliability": "uncertain (not used quantitatively)"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First script run failed because output/work/P080 did not exist before the shell redirect; directory created and re-run.",
+  "Fig. 2 initially clipped the upper branch of the N=1 loop at the sigma-grid ceiling 1e-22 cm^2 and had overlapping annotations; grid extended to 1e-19 and layout fixed.",
+  "A 'SIMP window' in which the overburden filters the velocity distribution towards high recoil energies: for m > 1e4 GeV the rock is transparent at sigma(lambda = 97 cm), for m < 1e3 GeV particles are thermalised; no regime enhances 248 keV relative to 5.4-55 keV.",
+  "The assignment's '5.5 t, 1.3 m x 1.3 m' fiducial replaced by the paper's 4.71 t with the stated z cuts (1.29 m x 1.24 m)."
+ ],
+ "wimpydd_generated_files": "none"
+}

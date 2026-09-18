@@ -1,0 +1,59 @@
+{
+ "id": "P024",
+ "title": "How wide is the NR band at 250 keV? Sensitivity of the '1.5 sigma below the median' statement to the yield break and fluctuation model",
+ "date": "2026-09-08",
+ "agent_tools": [
+  {"tool": "Read", "count": 21, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv; papers P009.md, P004.md, P010.md; code/P009_energy_reconstruction.py, P009_digitise_bands.py; work/P009/results.json; common/lzcommon.py; fulltext.tex l.84-123 and l.586-695; Fig2_Calibrations.png, Fig4_science_sample_wbands.png, FigS1a_science_sample_marked.png; four P024 figures (two viewed twice)"},
+  {"tool": "Bash", "count": 20, "detail": "grep of fulltext.tex for response/calibration passages; ls of figures_png, work/P004, work/P010, data_requests + grep P004 details + head ENVIRONMENT_versions; nestpy probe (failed on __version__); nestpy probe of LZ_WS2024/GetQuanta/CalculateG2; PNG colour/frame probe + sed P010 details; right-edge tick-run probe of three PNGs; dataviz palette grep; script runs x6 (.venv/bin/python output/code/P024_nr_band_width.py; first run failed on RandomGen.SetSeed, second/third crashed in figure calibration, fourth crashed on undefined 'base', fifth and sixth complete) with log inspections x3 (head/sed/tail run_log.txt); results.json extraction (python -c); word-count checks of P024.md x4 (wc -w) incl. json validation"},
+  {"tool": "Write", "count": 6, "detail": "output/code/P024_nr_band_width.py; output/work/P024/details.md; output/provenance/P024.json; output/papers/P024.md (three drafts to meet the word budget)"},
+  {"tool": "Edit", "count": 15, "detail": "script x9: set_seed fix; tick-based axis calibration (x2); Nex bookkeeping; AmBe residual analysis + fourth figure (x2); define base early; legend placement (x3). paper x6: word-budget trims. details.md x1: tool counts"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette and chart rules for the matplotlib figures)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python)"},
+  {"name": "nestpy", "version": "2.1.1", "functions": "detectors.LZ_WS2024 (nr_er_width_parameters, get_s2Fano, get_sPEres, get_P_dphe), NESTcalc.GetYields, NESTcalc.GetQuanta, NESTcalc.CalculateG2, RandomGen.rndm().set_seed"},
+  {"name": "numpy", "version": "2.5.3", "functions": "default_rng (binomial, normal, uniform), percentile, digitize, histogram, polyfit, interp, trapezoid"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats.norm, stats.skew, stats.poisson, special.j1, ndimage.label/find_objects/center_of_mass/sum"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame to_csv/query"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend, pyplot bar/barh/hist/plot, image.imread for PNG digitisation"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ dict (g1, g2, event S1c/S2c), NEST_NR_LZ, NEST_NR_DEFAULT, nest_nr_params_vector (p(E) break), DRIFT_FIELD_VCM"},
+  {"name": "none: derived by hand", "version": "-", "functions": "variance decomposition of log10 S2c (binomial recombination, omega term, ion Fano, extraction binomial, SE Fano, position residual, slice energy mixing); k_e needed to reproduce the drawn width; 2D-Gaussian containment radii"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P024_nr_band_width.py", "purpose": "fixed-S1c NR band MC with nestpy GetQuanta + detector model for ~45 variants; analytic variance decomposition; tick-calibrated digitisation of the Fig. 2/4 NR lines; AmBe point counting and residual width; AmBe recoil-spectrum bracket; MSSI/L10 contour edges from Fig. S1a; four figures; results.json", "command": "cd /Users/reza/LZ_simulation && .venv/bin/python output/code/P024_nr_band_width.py 2>&1 | grep -v 'WARNING: No data out here' > output/work/P024/run_log.txt"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "l.88 (g1, g2), l.92 (D-D 0-74 keV, AmBe 0-330 keV), l.101-106 (Fig. 2 caption: 10-90 % percentiles, flat spectra, fixed S1c), l.165 (1.5 sigma / 6.7 sigma statement), l.444 (Fig. S1 caption: 68 %/95 % containment contours), l.591-685 (detector-response supplement: sigma_p double skew-Gaussian, p(E) break, Tables S3-S5), l.691 (limited NR calibration near 250 keV; none within a few cm)"},
+  {"file": "inputs/figures_png/Fig2_Calibrations.png", "parts_used": "red NR median and 10-90 % lines at S1c 480-600 (tick-calibrated); purple AmBe points (counts per 20 phd, residuals about the median)"},
+  {"file": "inputs/figures_png/Fig4_science_sample_wbands.png", "parts_used": "red NR lines at S1c 480-600 (cross-check of Fig. 2)"},
+  {"file": "inputs/figures_png/FigS1a_science_sample_marked.png", "parts_used": "dark-blue MSSI 68 %/95 % contour edges and brown L10 contour edges at S1c 500-580"},
+  {"file": "output/work/P009/results.json", "parts_used": "alpha_paper = 11.32, beta_paper = 1.112 (paper-contour energy scale); band_at_540 digitisation for comparison"},
+  {"file": "output/code/P009_energy_reconstruction.py, output/code/P009_digitise_bands.py", "parts_used": "MC design (flat spectrum, slice at fixed S1c), detector model, ROI-box digitisation method (superseded here)"},
+  {"file": "output/papers/P009.md, P004.md, P010.md", "parts_used": "P009 band widths 0.033/0.022 dex and 1.46/2.5 sigma; P004 MSSI neighbourhood fraction 0.035 and Fig. S1a reading; P010 k = 0.50 ER width calibration and NR-line digitisation 4.044/4.016/3.987"},
+  {"file": "output/work/P004/details.md, output/work/P010/details.md", "parts_used": "P004 sec. on Fig. S1a contour reading (grep); P010 sec. 4 band-width tables"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "LZ constants, NEST parameter dicts, nest_nr_params_vector, DRIFT_FIELD_VCM"},
+  {"file": "output/00_evidence_dossier.md, output/results_ledger.csv, output/provenance/PAPER_GUIDE.md", "parts_used": "context, prior headline results, deliverable rules"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "NEST GetQuanta NR fluctuation form: Ni ~ N(Nq/(1+Nex/Ni), sqrt(W0 Ni)), Var(Ne) = r(1-r)Ni + omega^2 Ni^2 with omega = W2 exp(-(elecFrac-W3)^2/(2 W4^2)), skew-normal shape W5; entries 6-10 ER; 11-12 extra NR terms", "presumed_source": "NEST v2.3-2.4 source code (NEST.cpp) and Szydagis et al. 2024 review", "reliability": "likely (verified numerically: predicted sd(Ne) 17.52 vs MC 17.56; roles confirmed by the +-30 % scan)"},
+  {"item": "LZ electron extraction efficiency ~80.5 %", "presumed_source": "LZ first results, PRL 131, 041002 (2023)", "reliability": "uncertain (nestpy CalculateG2 gives 0.726; both carried)"},
+  {"item": "AmBe neutron spectrum shape (ISO 8529-1), mean ~4.2 MeV, tail to ~11 MeV", "presumed_source": "ISO 8529-1:2001", "reliability": "uncertain (1-MeV histogram approximation, mean 4.4 MeV)"},
+  {"item": "elastic n-Xe kinematics E_R,max = 4 m_n M/(m_n+M)^2 E_n = 0.0301 E_n (11 MeV -> 331 keV, matching LZ's 0-330 keV)", "presumed_source": "two-body kinematics", "reliability": "certain"},
+  {"item": "black-disk elastic angular pattern |2 J1(qR)/qR|^2 with R = 6.35 fm for Xe", "presumed_source": "optical-model diffraction; corpus P013", "reliability": "likely (used only as a lower bracket)"},
+  {"item": "recombination fluctuations in LXe are at least binomial (sub-binomial escape statistics not observed)", "presumed_source": "LUX/XENON/NEST recombination-fluctuation literature", "reliability": "likely"},
+  {"item": "10-90 % central interval = +-1.2816 sigma; 2D-Gaussian 68 %/95 % containment radii 1.51/2.45 sigma", "presumed_source": "normal and chi-square(2) distributions", "reliability": "certain"},
+  {"item": "measured NR exciton-to-ion ratio Nex/Ni ~ 1 in LXe at these energies", "presumed_source": "NEST NR model, Lenardo et al. 2015", "reliability": "likely (used for the floor-robustness statement)"},
+  {"item": "NEST v2.4.x carries 13 free width parameters, the last two being additional NR terms", "presumed_source": "NEST v2.4 release notes", "reliability": "uncertain (only their numerical effect is used)"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "nestpy.__version__ and RandomGen.SetSeed do not exist (used __nest_version__ = 0.0.0 string and set_seed)",
+  "ROI-dashed-box y-calibration (P009 method) fails for Figs. 4 and S1a because the grey ER cloud dominates the grey-pixel row sums; replaced by major-tick calibration",
+  "tick detection from the left frame edge fails on Fig. 4 (black data points cover the edge); right edge used",
+  "black-disk single-scatter spectrum implies 3e4-8e4 AmBe events for the observed high-S1c counts, i.e. it does not describe the moderated, multiply scattered calibration neutrons; kept only as a bracket",
+  "AmBe residual width in S1c 300-450 (0.048 dex) not used: overlapping markers and wall-leakage population"
+ ],
+ "wimpydd_generated_files": "none"
+}

@@ -1,0 +1,62 @@
+{
+ "id": "P034",
+ "title": "Annual modulation as the decisive test for inelastic dark matter near the kinematic edge",
+ "date": "2026-09-09",
+ "agent_tools": [
+  {"tool": "Read", "count": 17, "detail": "provenance/PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (2 pages); papers P006, P020, P021, P028, P018, P002, P007; code/common/lzcommon.py lines 100-390; code/P020_future_lz.py lines 130-190; work/P034/figures fig1, fig2, fig3 PNGs"},
+  {"tool": "Bash", "count": 15, "detail": "ls output/work/P018 P020 code papers provenance data_requests + cat environment/ENVIRONMENT_versions.txt + grep def in lzcommon.py; cat P018 rate_spread_summary.csv/rate_ratios_isoscalar.csv head + P020 inelastic_seasonal.csv/seasonal_visibility.csv/exposure_scenarios.csv + ls work/P006 + grep P020 code; grep sum_over_streams in P021/P018 + sed P018 kernel block + grep WimPyDD diff_rate signature; .venv/bin/python $TMPDIR/probe.py (kernel timing, K@deta vs wd_rate validation, halo variants); grep palette.md hex values; .venv/bin/python output/code/P034_modulation_test.py (run 1, crashed in gap block); cut/sort P018 halo labels; .venv/bin/python output/code/P034_modulation_test.py (run 2, complete, 97 s); ls work/P034 + tail run_log + python inspection of toy_checks/discovery/window results + grep discovery_scan.csv; .venv/bin/python output/code/P034_postprocess.py; wc -w output/papers/P034.md and section counts + json.load validation (x5 iterations while trimming)"},
+  {"tool": "Write", "count": 5, "detail": "code/P034_modulation_test.py; code/P034_postprocess.py; work/P034/details.md; provenance/P034.json; papers/P034.md"},
+  {"tool": "Edit", "count": 11, "detail": "P034_modulation_test.py x5: exact_test dead-zone tail (remove double survival factor); scan_N early stop; stat_llr NaN-safe ratio in livetime gaps; nfold degenerate branch array length; P018 halo label match. papers/P034.md x4: trims of Results/Conclusion to the word budget. provenance/P034.json x1 and work/P034/details.md x1: tool tallies"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette and chart rules for the three matplotlib figures)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python from simulation root"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "diff_rate(Xe, ham, m, E, vmin, delta_eta, j_chi=0.5, delta, sum_over_streams=False) per-stream kernels; streamed_halo_function via lz.wd_halo (explicit v_min grid 0-900 km/s, day_of_the_year, v_esc_gal, v_rot_gal variants); eft_hamiltonian via lz.wd_hamiltonian"},
+  {"name": "numpy", "version": "2.5.3", "functions": "trapezoid, histogram, cumsum, interp, random.default_rng (poisson, random)"},
+  {"name": "scipy", "version": "1.18.1", "functions": "fft.rfft/irfft/next_fast_len (exact N-fold convolution); interpolate.CubicSpline (periodic day spline); stats.norm.cdf/isf/sf, stats.binom.isf/sf, stats.poisson.pmf/sf"},
+  {"name": "pandas", "version": "3.0.5", "functions": "read_csv of P018 tables and own CSVs (post-processing)"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; plot, bar, fill_between, secondary_yaxis"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library (2026-09)", "functions": "LZ dict (exposure_tyr, E_50pct_low_keV, E_50pct_high_keV, eff_plateau), wd(), wd_halo(day_of_year, vmin, vesc, v0), wd_hamiltonian, wd_rate (validation of kernel), V0_KMS/VESC_KMS"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P034_modulation_test.py", "purpose": "WimPyDD time PDFs (5 deltas x 38 days x 171 energies; 5 halo variants; 5 efficiency variants), Fourier/duty-cycle table, cosine/LLR/window tests with exact N-fold convolution and 1e4-toy checks, exposure translation, background-only discovery scan with and without time, halo/efficiency/livetime-gap degradations, three figures, P034_results.json", "command": ".venv/bin/python output/code/P034_modulation_test.py"},
+  {"path": "output/code/P034_postprocess.py", "purpose": "Derived numbers: median Z at LZ exposure milestones, ROI-extension speed-ups, halo-shape N ratios, gap summary, compact exposure table (derived_numbers.json)", "command": ".venv/bin/python output/code/P034_postprocess.py"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules and deliverable formats"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "sec. 1 (exposure, fiducial mass, event date), sec. 2 table (panel background 0.0106, neighbourhood ~2e-4, best fit 1.0 +1.4/-0.7), sec. 3.3 timing"},
+  {"file": "output/results_ledger.csv", "parts_used": "rows P001-P030 (headline results, in particular P006, P018, P020, P021, P028)"},
+  {"file": "output/papers/P006.md", "parts_used": "modulation fractions 10/24/41/90/100 %, LR table, N_3sigma 107/18, E[lnLR], coordinator note on pre-fix halo grid"},
+  {"file": "output/papers/P020.md", "parts_used": "exposure 6.76 t yr, live fraction 0.593, June/Dec ratios, May-July fractions 41/59/71/78 %, P(LR>10) for N=3,5, end-2027 exposure 10.5 t yr, Table I = Poisson n=1 interval [0.30, 2.36]"},
+  {"file": "output/papers/P021.md", "parts_used": "likelihood peak delta ~380 keV, E* = delta mu/m_N, 68 % region 360-385 keV"},
+  {"file": "output/papers/P028.md", "parts_used": "S_m/S0 0.46/1.27/1.59/1.87, A2/A1, zero-rate fractions, phase 151.9 d, cosine-variance statement"},
+  {"file": "output/papers/P018.md", "parts_used": "rate spreads 0.7/1.5/3.6 dex, v_esc/v0 log-ratios, 0.82 keV per km/s"},
+  {"file": "output/papers/P002.md", "parts_used": "delta_max 387 keV (June), R(350)/R(300), June/Dec ratios, mass insensitivity at delta >= 350"},
+  {"file": "output/papers/P007.md", "parts_used": "Higgsino delta(N=1) = 366 keV, fixed cross-section context"},
+  {"file": "output/work/P018/rate_ratios_isoscalar.csv", "parts_used": "m=1000 GeV annual log10 N/N_SHM for vesc528/560, v0_220/250 at delta 300/350/380 (validation of our halo variants)"},
+  {"file": "output/work/P018/rate_spread_summary.csv", "parts_used": "m=1000 GeV annual Gaia-range spread 0.78/1.69/3.8 dex at delta 300/350/380"},
+  {"file": "output/work/P020/inelastic_seasonal.csv, seasonal_visibility.csv, exposure_scenarios.csv", "parts_used": "mod fractions, June/Dec, KL per event, window fractions and exposure scenarios for comparison"},
+  {"file": "output/code/P020_future_lz.py", "parts_used": "lines 138-181: efficiency parametrisation of Fig. S2 and seasonal-rate loop (method reference)"},
+  {"file": "output/code/P018_halo_tail.py, output/code/P021_full_likelihood.py", "parts_used": "grep only: per-stream kernel usage diff_rate(sum_over_streams=False)"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "LZ dict, halo/kinematics constants, wd_halo/wd_hamiltonian/wd_rate wrappers"},
+  {"file": "WimPyDD/package.py", "parts_used": "grep of diff_rate signature (read-only)"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Cosine-amplitude estimator: E[cos]=0, Var=1/2 under flat times; Z = a1 sqrt(N/2) for known phase", "presumed_source": "standard modulation statistics (Freese, Lisanti, Savage 2013)", "reliability": "certain"},
+  {"item": "Neyman-Pearson: the likelihood ratio is the most powerful test of simple hypotheses", "presumed_source": "standard statistics", "reliability": "certain"},
+  {"item": "Day-of-year numbers of month boundaries (May 1 = 121, Aug 31 = 243, Jul 31 = 212, Jun 1 = 152)", "presumed_source": "calendar arithmetic", "reliability": "certain"},
+  {"item": "LZ design goal of ~1000 live days total", "presumed_source": "LZ technical design / collaboration talks", "reliability": "likely"},
+  {"item": "XLZD-scale next-generation xenon detector ~60 t with ~80 % live fraction", "presumed_source": "XLZD design book (2024)", "reliability": "uncertain; used as an explicit assumption"},
+  {"item": "Bibliographic details of Freese-Frieman-Gould 1988, Freese-Lisanti-Savage 2013, Tucker-Smith-Weiner 2001, Cowan et al. 2011, Baxter et al. 2021, Jeong et al. 2022", "presumed_source": "literature memory", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First exact_test implementation multiplied the null tail by (1-q_dead)^N twice (the FFT power of the un-normalised pmf already carries it); corrected before results were recorded",
+  "Livetime-gap block produced NaN per-event statistics inside the gap (0/0); fixed by zero-weight unit-ratio gap bins",
+  "Toy MC (1e4) cannot resolve 5 sigma tails; kept only as a cross-check of the exact convolution at p > 1e-3",
+  "Lisanti-k and SHM++ tail shapes not propagated (not exposed by lz.wd_halo); their rate effect taken from P018 tables, their shape effect bracketed by v_esc/v0 variants"
+ ],
+ "wimpydd_generated_files": []
+}

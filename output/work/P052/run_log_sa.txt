@@ -1,0 +1,18 @@
+
+##### stage sa  args {'stage': 'sa', 'model': 'L10_1000', 'config': 'lzlike', 'toys': 10000, 'seed': 1}  2026-09-16 15:57:09
+response: {'S1c_at_248keV': 539.5030586746708, 'S1c_at_270keV': 595.3297184956162, 'E_at_S1c540': 248.1968635042426, 'mu_NR_at_540': 4.016639358563159, 'ratio_at_250': 1.0839495521222178, 'ratio_at_20': 1.0657603114865994, 'event_d_from_our_band': -1.505336352721502, 'sigma_S1c_at_540_nest': 26.258815762815924, 'sigma_S1c_at_540_paper': 50.22}
+Fig.5 L10 digitised: {"sums": {"0": 0.23095086738561565, "1": 0.6571486121717867, "2": 0.23518544957949827}, "total": 1.1232849291369007, "frac_event_bin": {"0": 0.04089382247135893, "1": 0.07448654942948038, "2": 0.07039714847856632}, "gauss_event_bin": 0.04405706932067886, "mean_d": {"0": 0.10548498979678333, "1": -0.28480631813285684, "2": -0.12547100931619587}, "sd_d": {"0": 1.0467358717286848, "1": 1.1653592905633403, "2": 1.1029008993608116}}
+68 models
+background totals: {'ER_top': 1608.8601232548112, 'ER_top_tail': 195.73634001018837, 'ER_mid': 25.087435347825917, 'ER_bot': 0.00941517368703952, 'ACC': 2.474138149423836, 'ACC_by_panel': [2.470564163423836, 0.00294346, 0.000630526], 'MSSI': 0.0049, 'NU': 0.16699999999999982, 'NU_bot': 1.716532854213515e-05, 'bottom_total': 0.01052555, 'lambda_acc_phd': 280.2260121116992, 'total_visible_model': 1636.6030119257473}
+data: {'top_digitised': 1575.0, 'top_tail': 217.0, 'plateau_scale': 1.0817378497790868, 'mid': 23, 'science_total': 1709.9999999999998, 'event_cell': [12, 12], 'event_cell_edges': [525.0, 550.0, -2.0, -1.5]}
+[base] L10_1000        q0_obs  8.79 Z_asym 2.96  p0_SA 8.85e-04 -> Z_SA 3.126264006963489; bkg in q0>0 cells 3.361e-02
+[base] O1s_1000_d350   q0_obs  7.74 Z_asym 2.78  p0_SA 1.67e-03 -> Z_SA 2.9349972947460126; bkg in q0>0 cells 1.331e-02
+[base] O1s_1000_d300   q0_obs  5.19 Z_asym 2.28  p0_SA 4.94e-03 -> Z_SA 2.5798630097320183; bkg in q0>0 cells 3.541e-02
+[base] O4s_1000        q0_obs  4.56 Z_asym 2.14  p0_SA 1.56e-03 -> Z_SA 2.9552326333074617; bkg in q0>0 cells 1.966e-02
+[base] O1v_1000        q0_obs  1.09 Z_asym 1.04  p0_SA 3.94e-04 -> Z_SA 3.3570102981640355; bkg in q0>0 cells 1.297e-03
+[lzlike] L10_1000        q0_obs  9.69 Z_asym 3.11  p0_SA 6.20e-04 -> Z_SA 3.229449360840266; bkg in q0>0 cells 3.425e-02
+[lzlike] O1s_1000_d350   q0_obs  9.26 Z_asym 3.04  p0_SA 1.04e-03 -> Z_SA 3.0793041728981496; bkg in q0>0 cells 1.727e-02
+[lzlike] O1s_1000_d300   q0_obs  6.84 Z_asym 2.62  p0_SA 2.28e-03 -> Z_SA 2.83626268032712; bkg in q0>0 cells 3.596e-02
+[lzlike] O4s_1000        q0_obs  5.55 Z_asym 2.36  p0_SA 9.61e-04 -> Z_SA 3.1020118234739935; bkg in q0>0 cells 2.001e-02
+[lzlike] O1v_1000        q0_obs  1.77 Z_asym 1.33  p0_SA 3.03e-04 -> Z_SA 3.4289388481023058; bkg in q0>0 cells 2.132e-03
+stage sa done in 8 s

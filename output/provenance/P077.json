@@ -1,0 +1,60 @@
+{
+ "id": "P077",
+ "title": "S1 pulse-shape discrimination at 550 phd: what singlet/triplet ratios, photon statistics and propagation in a 1.5 m TPC allow, and why LZ called it inconclusive",
+ "date": "2026-09-15",
+ "agent_tools": [
+  {"tool": "Read", "count": 15, "detail": "output/provenance/PAPER_GUIDE.md; output/00_evidence_dossier.md; output/results_ledger.csv (page 1; full scan via pandas in Bash); output/papers/P024.md, P009.md, P010.md, P041.md, P022.md, P042.md; inputs/LZ_arXiv_2609.02823_fulltext.tex lines 684-697 (Waveform Analysis); output/code/common/lzcommon.py lines 18-77; output/work/P077/figures/*.png (4)"},
+  {"tool": "Bash", "count": 15, "detail": "grep waveform/PSD/AmBe keywords in fulltext.tex + ls data_requests, work + head ENVIRONMENT_versions; pandas scan of results_ledger.csv for pulse/timing papers + grep PSD refs and detector lines in tex; grep lzcommon LZ dict, head P041.json, details.md headings, data_requests/index.csv; grep geometry lines in P022/P042 details + PMT/DAQ lines in tex; .venv/bin/python output/code/P077_s1_psd.py (run 1, untuned optics); P077_TUNE=1 .venv/bin/python output/code/P077_s1_psd.py (optics tuning table); .venv/bin/python output/code/P077_s1_psd.py (run 2, tuned); run 3 (final, figure ranges fixed) + log grep + ls; python check of f_p window sensitivities in P077_results.json; JSON validity + word counts of P077.md (5 passes); ls of deliverables"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P077_s1_psd.py; output/work/P077/details.md; output/provenance/P077.json; output/papers/P077.md"},
+  {"tool": "Edit", "count": 29, "detail": "P077_s1_psd.py x14: Gaussian leak50 print fix; tuned optical parameters block; shield-grid crossing at the bottom array; gate+anode crossings at the top array; re-crossing for reflected light; P077_TUNE mode; pure singlet-fraction scan replacing the tau_t scan; linear extrapolation for the allowed-Delta interpolation; fast-optics and no-propagation variants; section 3b optics-variant comparison; summary key; T_GRID 0.90; two figure-range fixes. details.md x1 (robustness bullets corrected to computed values). P077.md x12 (word-budget trims in three rounds, after one full rewrite). P077.json x2 (tool counts)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python from the simulation root"},
+  {"name": "numpy", "version": "2.5.3", "functions": "default_rng (seed 20260915), vectorised photon tracking (cylinder/plane intersections, Lambertian and isotropic direction sampling), exponential/normal/Poisson sampling, lexsort, bincount per-pulse statistics, histogram templates, interp, gradient, percentile"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; step histograms, ROC curves, depth-dependence plots (4 PNG figures)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "read_csv of results_ledger.csv for the related-paper scan only"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ dict: ev_S1c, ev_z_above_cathode_cm, g1"},
+  {"name": "csv, json, os, sys, time, math (stdlib)", "version": "3.12.13", "functions": "DictWriter tables, JSON dumps, erfc"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P077_s1_psd.py", "purpose": "optical photon MC (propagation-time distributions, TBA, collection vs depth, tuned to g1 = 0.110); S1 waveform toy (singlet/triplet/recombination emission + propagation + TTS + 10 ns digitisation); f_p, mean-time and ideal template-LR statistics; ER/NR separation for parameter brackets at 540 and 297 phd; singlet-fraction scan and the bound implied by LZ's AmBe statement; position dependence; RFR-vs-FV rise time/TBA; single-event LR table; four figures", "command": ".venv/bin/python output/code/P077_s1_psd.py   (optics tuning table: P077_TUNE=1 .venv/bin/python output/code/P077_s1_psd.py)"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "supplement Waveform Analysis (l. 687-695: lifetimes 2-4 / 21-28 ns, limited discrimination at S1c ~ 550 phd, AmBe 150 keV vs 131mXe template, rise-time RFR argument, TBA, hit pattern 2 sigma/1 sigma); detector paragraph l. 77-88 (g1, g2, PMT arrays); event description l. 166; PSD reference list l. 398-403"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "section 2 handle table (S1 pulse shape 'inconclusive', hit pattern, position z = 26.4 cm, r = 45.9 cm); section 5 hypotheses"},
+  {"file": "output/results_ledger.csv", "parts_used": "scan for pulse-shape/timing papers (none found); P009/P010/P022/P024/P041 rows"},
+  {"file": "output/papers/P024.md, P009.md, P010.md, P041.md, P022.md, P042.md", "parts_used": "quanta at 248 keV (Nph 4910, Ne 269, recombination 0.85), contour energy scale Nq = 11.32 E^1.112 (150 keV NR -> 297 phd), ER recombination 0.72 and 6.4 sigma charge deficit, drift geometry (145.6 cm, 1049 us, RFR 13.75 cm), TPC radius 72.8 cm, MSSI light split 471/69 phd"},
+  {"file": "output/work/P022/details.md, output/work/P042/details.md", "parts_used": "geometry lines (drift length, radius, RFR depth, event position)"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "LZ dict (ev_S1c, ev_z_above_cathode_cm, g1)"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "LZ TPC active radius 72.8 cm and drift length 145.6 cm", "presumed_source": "LZ detector paper, NIM A 953, 163047 (2020)", "reliability": "likely"},
+  {"item": "LXe refractive index 1.69 at 175-178 nm; group index ~1.9", "presumed_source": "Solovov et al. 2004; Hitachi et al. 2005; Grace et al. 2017", "reliability": "likely / uncertain"},
+  {"item": "Rayleigh scattering length 29-40 cm at 175 nm", "presumed_source": "Ishida et al. 1997; Seidel et al. 2002", "reliability": "uncertain"},
+  {"item": "PTFE reflectance immersed in LXe >= 0.95", "presumed_source": "Neves et al. 2017; Kravitz et al. 2020", "reliability": "likely"},
+  {"item": "R11410 PMT QE ~0.30 at 175 nm; TTS ~9 ns FWHM", "presumed_source": "Hamamatsu datasheet; XENON/LZ PMT papers", "reliability": "uncertain"},
+  {"item": "LZ digitiser 100 MS/s (10 ns samples)", "presumed_source": "LZ detector/DAQ papers", "reliability": "likely"},
+  {"item": "Woven-mesh electrode optical transparency ~0.9; array-plane reflectance ~0.2-0.5", "presumed_source": "assumption informed by LUX/LZ optical models", "reliability": "uncertain"},
+  {"item": "Singlet 2.2-4.3 ns and triplet 21-27 ns excimer lifetimes", "presumed_source": "Hitachi et al. PRB 27, 5279 (1983); LZ paper quotes 2-4 / 21-28 ns", "reliability": "certain (ranges)"},
+  {"item": "45 ns recombination component for electrons at zero field, quenched by field", "presumed_source": "Kubota et al. PRB 20, 3486 (1979)", "reliability": "likely"},
+  {"item": "I_s/I_t = 0.05 for electrons at zero field; 1.6 for fission fragments; 0.45 for alphas", "presumed_source": "Hitachi et al. 1983", "reliability": "likely"},
+  {"item": "I_s/I_t ~0.4-0.6 for ERs at ~100-200 V/cm", "presumed_source": "assignment bracket; LUX PRD 97, 112002 (2018)", "reliability": "uncertain"},
+  {"item": "I_s/I_t ~1-3 for Xe nuclear recoils", "presumed_source": "Akimov et al. 2002; Dawson et al. 2005; Kwong et al. 2010", "reliability": "uncertain"},
+  {"item": "ER-NR effective decay-time difference of a few ns in LUX (180 V/cm) and XMASS (0 V/cm)", "presumed_source": "LUX 2018; XMASS JINST 13, P12032 (2018)", "reliability": "uncertain"},
+  {"item": "S1 photons emitted isotropically; total internal reflection at the liquid surface makes S1 bottom-heavy (TBA as z proxy)", "presumed_source": "standard dual-phase TPC optics (LUX, XENON, LZ)", "reliability": "certain"},
+  {"item": "131mXe line energy 164 keV", "presumed_source": "nuclear data", "reliability": "certain"},
+  {"item": "Gaussian LR/leakage relations exp(d^2/2), erfc(d/sqrt 2)/2", "presumed_source": "statistics", "reliability": "certain"},
+  {"item": "Nph for a 150 keV NR ~ 2700 (297 phd)", "presumed_source": "P009 contour scale with ~10% electron fraction (corpus-derived)", "reliability": "likely"},
+  {"item": "Recombination-light dominance for both 70 keV ERs and 250 keV NRs", "presumed_source": "P010 (r = 0.72), P024 (r = 0.85) corpus values", "reliability": "likely"},
+  {"item": "LZ's dedicated PSD paper arXiv:2603.26877 exists (cited by LZ); content not known to us", "presumed_source": "LZ reference list", "reliability": "certain (existence only)"}
+ ],
+ "datasets": "none",
+ "data_requests": "none (the event waveform and per-channel hit times are not a public dataset; deliberately not filed)",
+ "failed_or_abandoned": [
+  "Untuned optical model (PTFE 0.97, array reflectance 0.5, detection 0.25, no grids) gave a collection efficiency of 0.28, 2.5x LZ's g1; retuned to 0.11 (propagation mean 36 -> 27 ns).",
+  "First scan of the ER-NR timing difference varied the NR triplet lifetime at fixed I_s/I_t = 1, which changed the pulse shape independently of the mean and produced d ~ 1.2-1.7 even at 0.5 ns; replaced by a singlet-fraction scan at fixed lifetimes.",
+  "Reproducing LZ's dedicated PSD paper (arXiv:2603.26877) was not attempted: not read."
+ ],
+ "wimpydd_generated_files": "none"
+}

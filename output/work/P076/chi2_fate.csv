@@ -1,0 +1,9 @@
+channel,tau_s,decay_length_Rsun_at_1000kms,transit_time_s,note
+Higgsino gamma channel,0.06,8.616480454950168e-05,1392.68,P014/P026 tau_gamma ~ 0.01-10 s
+Higgsino nu nubar,1200000.0,1723.2960909900337,1392.68,P026 (300 keV)
+dark photon nu nubar (floor),7.2e+16,103397765459402.02,1392.68,P011/P026 exothermic floor
+Z' B-L nu nubar,17000000000.0,24413361.289025474,1392.68,P054 (300 keV)
+Higgsino bound chi2 down-scatter at centre (delta=366),345.4059676430099,,,exothermic rate 2.90e-03 s^-1 at v = 1000 km/s
+dark photon bound chi2 down-scatter at centre (delta=300),251871.71803045046,,,exothermic rate 3.97e-06 s^-1 at v = 1000 km/s
+Z' bound chi2 down-scatter at centre (delta=300),255208.62094959198,,,exothermic rate 3.92e-06 s^-1 at v = 1000 km/s
+binding energy m v_esc^2/2 at centre / 0.5 R_sun [keV],10490.967396270577,4153.978002003816,,release of delta <= 380 keV cannot unbind a captured particle

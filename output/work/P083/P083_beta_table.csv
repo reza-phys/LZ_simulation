@@ -1,0 +1,67 @@
+stratum,variant,prior,n_items,n_unresolved,k,n,mean,median,lo68,hi68,lo95,hi95,up95_onesided
+"DD, new physics",resolved only,Jeffreys,8,1,0,7,0.0625,0.0309,0.0028,0.1272,0.0001,0.2924,0.2325
+"DD, new physics",resolved only,uniform,8,1,0,7,0.1111,0.0830,0.0216,0.2047,0.0032,0.3694,0.3123
+"DD, new physics",unresolved as null,Jeffreys,8,1,0,8,0.0556,0.0272,0.0025,0.1127,0.0001,0.2622,0.2075
+"DD, new physics",unresolved as null,uniform,8,1,0,8,0.1000,0.0741,0.0192,0.1842,0.0028,0.3363,0.2831
+"DD, new physics",unresolved as real,Jeffreys,8,1,1,8,0.1667,0.1417,0.0528,0.2839,0.0138,0.4537,0.3967
+"DD, new physics",unresolved as real,uniform,8,1,1,8,0.2000,0.1796,0.0805,0.3218,0.0281,0.4825,0.4291
+"DD, new physics, in window",resolved only,Jeffreys,4,0,0,4,0.1000,0.0520,0.0048,0.2067,0.0001,0.4448,0.3625
+"DD, new physics, in window",resolved only,uniform,4,0,0,4,0.1667,0.1294,0.0343,0.3069,0.0051,0.5218,0.4507
+"DD, new physics, in window",unresolved as null,Jeffreys,4,0,0,4,0.1000,0.0520,0.0048,0.2067,0.0001,0.4448,0.3625
+"DD, new physics, in window",unresolved as null,uniform,4,0,0,4,0.1667,0.1294,0.0343,0.3069,0.0051,0.5218,0.4507
+"DD, new physics, in window",unresolved as real,Jeffreys,4,0,0,4,0.1000,0.0520,0.0048,0.2067,0.0001,0.4448,0.3625
+"DD, new physics, in window",unresolved as real,uniform,4,0,0,4,0.1667,0.1294,0.0343,0.3069,0.0051,0.5218,0.4507
+"broader, new physics",resolved only,Jeffreys,27,9,0,18,0.0263,0.0124,0.0011,0.0526,0.0000,0.1286,0.0999
+"broader, new physics",resolved only,uniform,27,9,0,18,0.0500,0.0358,0.0091,0.0919,0.0013,0.1765,0.1459
+"broader, new physics",unresolved as null,Jeffreys,27,9,0,27,0.0179,0.0083,0.0007,0.0356,0.0000,0.0881,0.0681
+"broader, new physics",unresolved as null,uniform,27,9,0,27,0.0345,0.0245,0.0062,0.0634,0.0009,0.1234,0.1015
+"broader, new physics",unresolved as real,Jeffreys,27,9,9,27,0.3393,0.3354,0.2506,0.4281,0.1795,0.5209,0.4906
+"broader, new physics",unresolved as real,uniform,27,9,9,27,0.3448,0.3412,0.2573,0.4324,0.1864,0.5235,0.4938
+"broader, new physics, in window",resolved only,Jeffreys,14,5,0,9,0.0500,0.0243,0.0022,0.1012,0.0001,0.2376,0.1874
+"broader, new physics, in window",resolved only,uniform,14,5,0,9,0.0909,0.0670,0.0173,0.1674,0.0025,0.3085,0.2589
+"broader, new physics, in window",unresolved as null,Jeffreys,14,5,0,14,0.0333,0.0158,0.0014,0.0669,0.0000,0.1616,0.1261
+"broader, new physics, in window",unresolved as null,uniform,14,5,0,14,0.0625,0.0452,0.0116,0.1150,0.0017,0.2180,0.1810
+"broader, new physics, in window",unresolved as real,Jeffreys,14,5,5,14,0.3667,0.3606,0.2436,0.4901,0.1515,0.6155,0.5753
+"broader, new physics, in window",unresolved as real,uniform,14,5,5,14,0.3750,0.3697,0.2552,0.4951,0.1634,0.6162,0.5774
+"all, new physics",resolved only,Jeffreys,35,10,0,25,0.0192,0.0090,0.0008,0.0383,0.0000,0.0947,0.0732
+"all, new physics",resolved only,uniform,35,10,0,25,0.0370,0.0263,0.0067,0.0681,0.0010,0.1323,0.1088
+"all, new physics",unresolved as null,Jeffreys,35,10,0,35,0.0139,0.0064,0.0006,0.0276,0.0000,0.0688,0.0530
+"all, new physics",unresolved as null,uniform,35,10,0,35,0.0270,0.0191,0.0048,0.0496,0.0007,0.0974,0.0798
+"all, new physics",unresolved as real,Jeffreys,35,10,10,35,0.2917,0.2878,0.2167,0.3667,0.1574,0.4479,0.4211
+"all, new physics",unresolved as real,uniform,35,10,10,35,0.2973,0.2936,0.2229,0.3718,0.1635,0.4519,0.4255
+"all, new physics, in window",resolved only,Jeffreys,18,5,0,13,0.0357,0.0170,0.0015,0.0718,0.0000,0.1726,0.1349
+"all, new physics, in window",resolved only,uniform,18,5,0,13,0.0667,0.0483,0.0124,0.1227,0.0018,0.2316,0.1926
+"all, new physics, in window",unresolved as null,Jeffreys,18,5,0,18,0.0263,0.0124,0.0011,0.0526,0.0000,0.1286,0.0999
+"all, new physics, in window",unresolved as null,uniform,18,5,0,18,0.0500,0.0358,0.0091,0.0919,0.0013,0.1765,0.1459
+"all, new physics, in window",unresolved as real,Jeffreys,18,5,5,18,0.2895,0.2820,0.1870,0.3923,0.1148,0.5060,0.4687
+"all, new physics, in window",unresolved as real,uniform,18,5,5,18,0.3000,0.2932,0.1989,0.4014,0.1258,0.5120,0.4758
+"all, new physics, few-event",resolved only,Jeffreys,5,2,0,3,0.1250,0.0674,0.0062,0.2609,0.0002,0.5356,0.4441
+"all, new physics, few-event",resolved only,uniform,5,2,0,3,0.2000,0.1591,0.0427,0.3675,0.0063,0.6024,0.5271
+"all, new physics, few-event",unresolved as null,Jeffreys,5,2,0,5,0.0833,0.0423,0.0039,0.1711,0.0001,0.3794,0.3057
+"all, new physics, few-event",unresolved as null,uniform,5,2,0,5,0.1429,0.1091,0.0286,0.2632,0.0042,0.4593,0.3930
+"all, new physics, few-event",unresolved as real,Jeffreys,5,2,2,5,0.4167,0.4068,0.2188,0.6164,0.0944,0.7906,0.7394
+"all, new physics, few-event",unresolved as real,uniform,5,2,2,5,0.4286,0.4214,0.2440,0.6143,0.1181,0.7772,0.7287
+"all, expected process",resolved only,Jeffreys,8,3,4,5,0.7500,0.7789,0.5790,0.9152,0.3714,0.9775,0.9636
+"all, expected process",resolved only,uniform,8,3,4,5,0.7143,0.7356,0.5471,0.8780,0.3588,0.9567,0.9372
+"all, expected process",unresolved as null,Jeffreys,8,3,4,8,0.5000,0.5000,0.3345,0.6655,0.1990,0.8010,0.7607
+"all, expected process",unresolved as null,uniform,8,3,4,8,0.5000,0.5000,0.3429,0.6571,0.2120,0.7880,0.7486
+"all, expected process",unresolved as real,Jeffreys,8,3,7,8,0.8333,0.8583,0.7161,0.9472,0.5463,0.9862,0.9775
+"all, expected process",unresolved as real,uniform,8,3,7,8,0.8000,0.8204,0.6782,0.9195,0.5175,0.9719,0.9590
+"all, expected process, in window",resolved only,Jeffreys,6,2,3,4,0.7000,0.7282,0.4995,0.8937,0.2838,0.9715,0.9540
+"all, expected process, in window",resolved only,uniform,6,2,3,4,0.6667,0.6862,0.4769,0.8526,0.2836,0.9473,0.9236
+"all, expected process, in window",unresolved as null,Jeffreys,6,2,3,6,0.5000,0.5000,0.3125,0.6875,0.1668,0.8332,0.7911
+"all, expected process, in window",unresolved as null,uniform,6,2,3,6,0.5000,0.5000,0.3245,0.6755,0.1841,0.8159,0.7747
+"all, expected process, in window",unresolved as real,Jeffreys,6,2,5,6,0.7857,0.8137,0.6372,0.9295,0.4419,0.9814,0.9698
+"all, expected process, in window",unresolved as real,uniform,6,2,5,6,0.7500,0.7715,0.6010,0.8959,0.4213,0.9633,0.9466
+all items,resolved only,Jeffreys,43,13,4,30,0.1452,0.1375,0.0837,0.2068,0.0467,0.2865,0.2593
+all items,resolved only,uniform,43,13,4,30,0.1562,0.1491,0.0937,0.2189,0.0545,0.2983,0.2714
+all items,unresolved as null,Jeffreys,43,13,4,43,0.1023,0.0963,0.0581,0.1465,0.0322,0.2062,0.1856
+all items,unresolved as null,uniform,43,13,4,43,0.1111,0.1054,0.0656,0.1567,0.0379,0.2167,0.1961
+all items,unresolved as real,Jeffreys,43,13,17,43,0.3977,0.3962,0.3244,0.4711,0.2599,0.5444,0.5205
+all items,unresolved as real,uniform,43,13,17,43,0.4000,0.3985,0.3274,0.4726,0.2634,0.5450,0.5215
+"all items, in window",resolved only,Jeffreys,24,7,3,17,0.1944,0.1830,0.1041,0.2854,0.0523,0.4001,0.3616
+"all items, in window",resolved only,uniform,24,7,3,17,0.2105,0.2002,0.1195,0.3021,0.0641,0.4142,0.3767
+"all items, in window",unresolved as null,Jeffreys,24,7,3,24,0.1400,0.1304,0.0732,0.2071,0.0365,0.2973,0.2665
+"all items, in window",unresolved as null,uniform,24,7,3,24,0.1538,0.1449,0.0853,0.2226,0.0454,0.3122,0.2817
+"all items, in window",unresolved as real,Jeffreys,24,7,10,24,0.4200,0.4178,0.3219,0.5181,0.2382,0.6140,0.5832
+"all items, in window",unresolved as real,uniform,24,7,10,24,0.4231,0.4211,0.3268,0.5194,0.2440,0.6133,0.5832

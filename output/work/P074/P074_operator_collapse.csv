@@ -1,0 +1,14 @@
+op,n,N_lo_longrange,N_lo_contact_same_op,reference_op,N_lo_reference_contact,ratio_to_reference,note
+O6s,1,27.8,0.4355,O4s,28.13,0.9881,rate Sigma'' q^4 / q^4 -> Sigma'' at q^0: O4-like shape (O4 = Sigma' + Sigma'')
+O15s,1,99.56,1.909,O12s,100.3,0.9926,rate (Sigma' q^4 + Phi'' q^4 v^2)/q^4 -> q^0 velocity/spin shape: O12-like
+O6s,2,6288,0.4355,O4s,28.13,223.5,rate Sigma'' q^4 / q^8 -> Sigma''/q^4: softer than any contact operator
+O10s,1,353.2,3.086,O4s,28.13,12.55,rate Sigma'' q^2 / q^4 -> Sigma''/q^2: overshoots O4 (reference) toward O4/q^2
+O9s,1,505.8,2.073,O4s,28.13,17.98,rate Sigma' q^2 / q^4 -> Sigma'/q^2: overshoots O4
+O11s,1,4.029e+04,258.9,O1s,2754,14.63,"rate M q^2 / q^4 -> M/q^2: overshoots O1 (P044 photon EDM is the O11/q^2 amplitude, rate M/q^2 -> 18 100)"
+O5s,1,2382,14.23,O8s,155.9,15.28,rate (M q^2 v^2 + Delta q^4)/q^4 -> M v^2/q^2 + Delta: overshoots O8 (M v^2 + Delta q^2)
+O3s,1,1027,12.67,O7s,32.35,31.73,rate (Phi'' q^2 + M q^2 v^2)/q^4 -> q^-2 velocity-suppressed: overshoots O7
+O14s,1,577.3,2.352,O7s,32.35,17.84,rate Sigma' q^2 v^2 / q^4 -> Sigma' v^2/q^2: overshoots O7 (Sigma' v^2)
+O13s,1,416.5,4.913,O12s,100.3,4.153,rate (Sigma'' + Phi~') q^2 v^2 / q^4 -> q^-2: overshoots O12
+O12s,1,1.464e+04,100.3,,,,rate (Sigma v^2 + Phi q^2)/q^4 -> softer than any contact operator
+O4s,1,8283,28.13,,,,rate Sigma/q^4 -> softer than any contact operator
+O1s,1,7.72e+05,2754,,,,rate M/q^4 (light-mediator SI) -> dR/dE ~ F^2 eta / E^2

@@ -1,0 +1,57 @@
+{
+ "id": "P010",
+ "title": "ER leakage: the recombination fraction required and the 124Xe/125I double-vacancy hypothesis",
+ "date": "2026-09-04",
+ "agent_tools": [
+  {"tool": "Read", "count": 14, "detail": "output/provenance/PAPER_GUIDE.md; output/00_evidence_dossier.md; inputs/LZ_arXiv_2609.02823_fulltext.tex lines 96-175, 196-310, 580-660; output/code/common/lzcommon.py; inputs/figures_png/Fig5_NR_distance_3panels_no_sig.png; inputs/figures_png/Fig4_science_sample_wbands.png; output/work/P010/figures/fig5_bottom_crop.png and fig5_middle_crop.png; own figures P010_fig1 (x2), P010_fig2, P010_fig3"},
+  {"tool": "Bash", "count": 21, "detail": "grep -n of the tex for recombination/double-vacancy/Table S4/83mKr passages; ls output/* + cat results_ledger.csv + head ENVIRONMENT_versions.txt + sed tex 649-660; nestpy/radioactivedecay/periodictable probe (x2, first failed on nestpy.__version__); Fig.4 axis-frame pixel detection; Fig.4 tick detection + Fig.5 crops (PIL); band-width debug MC; script runs x6 (two failed: pandas column name, keyword syntax); nestpy RandomGen API check; definitive run; reproducibility run + cmp; wc -w / JSON key validation / Pillow version (x3 recounts); survey of other papers' headlines"},
+  {"tool": "Write", "count": 5, "detail": "output/code/P010_er_leakage.py (initial and restructured); output/work/P010/details.md; output/provenance/P010.json; output/papers/P010.md"},
+  {"tool": "Edit", "count": 14, "detail": "output/code/P010_er_leakage.py x7: pandas column access (x2), keyword fix, 124Xe f-scan block, 125I (f,N) scan block, nestpy seed, figure annotation position; output/papers/P010.md x5: Results rewrite, Abstract trim, Results trims (x2), header P004/P009; output/provenance/P010.json x1 (Pillow version); output/work/P010/details.md x1 (Pillow version)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "random.default_rng, interp, percentile, gradient, trapezoid, histogram"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats.skewnorm (cdf/pdf/rvs/fit), stats.norm, stats.skew, special.erf, optimize.brentq, integrate.quad, ndimage.label/sum/center_of_mass"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, to_csv, pivot"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg backend), fill_between, errorbar, axvspan"},
+  {"name": "nestpy", "version": "2.1.1", "functions": "detectors.LZ_WS2024, NESTcalc.GetYields (beta, LZ Table S3 parameters), NESTcalc.GetQuanta (default width parameters; skewness and Fano measured), RandomGen.rndm().set_seed"},
+  {"name": "radioactivedecay", "version": "0.6.1", "functions": "Nuclide.half_life for I-125, Xe-125, Xe-127, Xe-131m, Xe-129m, Xe-133, Kr-83m (ICRP-107)"},
+  {"name": "periodictable", "version": "2.1.0", "functions": "Xe[124].abundance, Xe.mass"},
+  {"name": "Pillow", "version": "12.3.0", "functions": "Image.open/convert/crop for Fig.4 digitisation and Fig.5 crops"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ dict (g1, g2, event S1c/S2c, ROI, Table I, I125 effective half-life), NEST_ER_LZ, NEST_ER_FLUCT_LZ, nest_er_yields, nest_nr_yields, DRIFT_FIELD_VCM"},
+  {"name": "none: derived by hand", "version": "-", "functions": "quanta conservation, recombination fraction, skew-normal moment matching, Bateman equation, Poisson likelihood of 1-in-V/0-in-G"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P010_er_leakage.py", "purpose": "event quanta and required recombination; Table S4 sigma_p and band calibration against digitised Fig.4; line-tail probabilities vs enhancement f for four tail shapes; 124Xe/125I populations and timing; Fig.5 plateau read-off and gap likelihood; figures and CSV/JSON tables", "command": ".venv/bin/python output/code/P010_er_leakage.py"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Data Analysis (ROI definition, g1/g2 via lzcommon), Fig.2 and Fig.4 captions, background paragraph (83mKr, 125I effective half-life 3.6 d), Table I expected counts (124Xe 21.0+-6.3, 125I 8.9+-2.7, 127Xe+125Xe 1.5+-0.3, 83mKr 17.1, continuum components), Fig.5 caption (0.0106+-0.0008), Discussion paragraph on ER discrimination and double-vacancy modes (64.3, 67.3 keV; tail systematic not included; lack of events), Supplement 'Details of the Detector Response modeling' with Tables S3 (ER mean yields) and S4 (double skew-Gaussian sigma_p)"},
+  {"file": "inputs/figures_png/Fig4_science_sample_wbands.png", "parts_used": "digitised ER/NR band lines at S1c = 200, 300, 400, 540 phd; black-point positions at S1c > 150 phd; axis calibration from frame and ticks"},
+  {"file": "inputs/figures_png/Fig5_NR_distance_3panels_no_sig.png", "parts_used": "bottom panel (S1c > 500): ER-tail plateau per 0.5 sigma_NR bin, component floor; middle panel: EC/IC and continuum shapes at the ROI edge (read by eye from crops)"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "Sections 2 (quanta, r ~0.95 estimate), 4.4, 5C, 6.3 (the question this paper answers)"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "LZ constants, NEST_ER_LZ, NEST_ER_FLUCT_LZ, nest_er_yields, nest_nr_yields"},
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "rules, deliverables, templates"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "NEST v2 ER exciton-to-ion ratio alpha = 0.067366 + 0.039693*rho (0.182 at 2.9 g/cm3)", "presumed_source": "NEST v2 source code / Szydagis et al. 2023", "reliability": "likely"},
+  {"item": "NEST GetQuanta recombination variance form Var(Ne) = r(1-r)Ni + sigma_p^2 Ni^2 with (skew-)Gaussian sampling", "presumed_source": "NEST v2 source code", "reliability": "likely (calibration factor k=0.5 needed to match the drawn LZ band, so the exact v2.4.5 form is uncertain)"},
+  {"item": "124Xe 2nuECEC half-life 1.1e22 yr (XENONnT 2022, LZ 2024); 1.8e22 yr (XENON1T 2019)", "presumed_source": "XENON1T Nature 2019; XENONnT PRC 2022; LZ 2024", "reliability": "likely"},
+  {"item": "124Xe 2nuECEC capture-shell branching KK 0.724, KL 0.200, KM+KN 0.056, LL+LM+MM 0.020", "presumed_source": "XENON1T/XENONnT 2nuECEC analyses (Doi-Kotani ratios)", "reliability": "uncertain (+-0.03)"},
+  {"item": "Te atomic binding energies K 31.8 keV, L 4.9 keV, M 1.0 keV; mode energies KL 36.7, KM 33.2, LL 9.8 keV", "presumed_source": "atomic data tables", "reliability": "likely"},
+  {"item": "125I decays by EC to the 35.5 keV level of 125Te (K:L+M capture ~80:20), 100% to that level; the level de-excites mostly by internal conversion", "presumed_source": "nuclear data (ENSDF)", "reliability": "likely"},
+  {"item": "125Xe decay gamma lines 188, 243, 55 keV; 127Xe 203/375 keV + 33 keV K-shell; 131mXe 164 keV; 129mXe 236 keV; 133Xe beta + 81 keV gamma; 83mKr 32.1 + 9.4 keV", "presumed_source": "nuclear data (ENSDF)", "reliability": "likely (used qualitatively only)"},
+  {"item": "LZ 2025 inner-shell-vacancy paper reports charge-yield reductions of order 10-20% for EC lines relative to beta ERs", "presumed_source": "arXiv:2503.05679", "reliability": "uncertain"},
+  {"item": "W = 13.7 eV (NEST) and 13.5 eV (literature) work functions; nestpy's own W = 13.44 eV measured in this work", "presumed_source": "NEST / Dahl thesis", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Using the Table S4 sigma_p directly as omega in Var(Ne) = r(1-r)Ni + omega^2 Ni^2 (k = 1) over-predicts the drawn Fig.4 band width by x2 and the observed ROI leakage at 250-500 phd by x4-20; demoted to an upper bound, replaced by the k = 0.50 calibration.",
+  "Interpreting the Table S4 alpha_i as skewness parameters of the Ne distribution: they parametrise sigma_p(x) only; the negative-skew variant is kept solely as a heavy-tail toy.",
+  "Counting Fig.4 black points by pixel blobs: unreliable where points overlap (250-330 phd); used only to confirm the empty gap region.",
+  "Deriving the absolute 125I decay count from the paper alone: not possible (degenerate with the enhancement f); replaced by a (f, N) scan over 10^2-10^4 decays.",
+  "First script run failed on DataFrame.tail name collision and a keyword-argument syntax error (fixed)."
+ ],
+ "wimpydd_generated_files": []
+}

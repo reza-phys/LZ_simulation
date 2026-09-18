@@ -1,0 +1,5 @@
+facility,years,doublet_reach,tripletY1_reach,verdict
+"HL-LHC (14 TeV, 3 ab^-1)","2030-2041 (recalled, likely)","disappearing tracks: 300 GeV (12 cm), 475 GeV (5 cm); monojet ~200 GeV (recalled)",c tau 0.1 cm: no tracklets; monojet-like only,below or at the LZ floor (259 GeV); cannot test the fit
+"FCC-ee / CEPC / ILC (Z pole, WW, 250-500 GeV)","2045-2065 (recalled, uncertain)",W parameter: m < 278 GeV; direct pair production < sqrt(s)/2 = 125-250 GeV,W: m < 556 GeV,no sensitivity to the LZ region
+"FCC-hh (100 TeV, 30 ab^-1)","2070s (recalled, likely)","disappearing tracks: 1300 GeV (10 cm), 2050 GeV (5 cm) at 95% CL; monojet ~0.9 TeV (recalled)",monojet/soft pions; 4x production; no tracklets,"exclusion of the thermal Higgsino plausible, 5 sigma marginal; measures m only if discovered"
+"Muon collider (10 TeV, 10 ab^-1)","2050s at the earliest (recalled, uncertain)","16902 pairs; 1490 tracklets r>5 cm at 1.1 TeV; 5 sigma to ~3150 GeV; m, sigma_prod (multiplet), c tau (Delta m+-)","78135 pairs, mono-photon/soft pions; no tracklets (c tau 0.1 cm)","full coverage of every P007 fit point; measures m, Y, Delta m+-; blind to delta"

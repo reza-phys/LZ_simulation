@@ -1,0 +1,86 @@
+# P026 run log
+rho_DM0 = 1.264e-06 GeV/cm3, rho_gamma0 = 2.603e-10, n_b0 = 2.516e-07 cm^-3, rho_DM/rho_gamma today = 4858
+t(z=1100) = 1.157e+13 s, t(z=2e6) = 5.983e+06 s, t(z=5e4) = 9.369e+09 s, t(z=0.001) = 4.353e+17 s
+g_*(10 MeV) = 10.76, g_*(1 MeV) = 10.56, g_*(0.05 MeV) = 3.385 (3.36 expected), T_nu/T(0.01 MeV) = 0.7138 (0.7138)
+check: Higgsino sigma_n (NR, c_n^2 = G_F^2/2) = 7.408e-39 cm2 (P007: 7.40e-39)
+check: sigma(chi2 nu -> chi1 nu) per nu state at E = 1 MeV = 1.425e-44 cm2 (= G_F^2 (E+delta)^2/pi)
+check: total CEvNS-like sigma G_F^2 E^2/(4pi) at 1 MeV = 4.215e-45 cm2
+Higgsino delta = 200 keV: T_* = 0.85 MeV, f2_eq(T_*) = 0.442, f2_freeze = 0.446
+Higgsino delta = 250 keV: T_* = 0.85 MeV, f2_eq(T_*) = 0.427, f2_freeze = 0.433
+Higgsino delta = 300 keV: T_* = 0.85 MeV, f2_eq(T_*) = 0.413, f2_freeze = 0.420
+Higgsino delta = 350 keV: T_* = 0.85 MeV, f2_eq(T_*) = 0.398, f2_freeze = 0.407
+Higgsino delta = 366 keV: T_* = 0.85 MeV, f2_eq(T_*) = 0.394, f2_freeze = 0.403
+Higgsino delta = 400 keV: T_* = 0.85 MeV, f2_eq(T_*) = 0.384, f2_freeze = 0.394
+Higgsino delta=300 nu-only bath: T_* = 0.89 MeV, f2_freeze = 0.424
+Higgsino delta=300 rate x0.5: T_* = 1.07 MeV, f2 = 0.436; x2: T_* = 0.68, f2 = 0.400
+chi2 chi2 -> chi1 chi1 at T_*: n_chi = 2.23e+19 cm^-3, sigma = 8.43e-33 cm2, Gamma/H = 3.7e-05
+Dark photon delta = 250 keV: c_D^2/G_F^2 = 8.09e-05, T_* = 26.7 MeV, f2_freeze = 0.4979
+Dark photon delta = 300 keV: c_D^2/G_F^2 = 5.80e-04, T_* = 15.0 MeV, f2_freeze = 0.4953
+Dark photon delta = 350 keV: c_D^2/G_F^2 = 2.02e-02, T_* = 4.7 MeV, f2_freeze = 0.4826
+Dark photon delta = 365 keV: c_D^2/G_F^2 = 1.54e-01, T_* = 2.4 MeV, f2_freeze = 0.4644
+Dark photon delta = 380 keV: c_D^2/G_F^2 = 3.78e+00, T_* = 0.8 MeV, f2_freeze = 0.3963
+Higgsino mu=300 delta=310: tau_nunu = 1.05e+06 s (T = 1.12 keV), tau_gamma = 9.42e-03 s [1.0e-03, 9.4e-01] (T = 8.9 MeV)
+Higgsino mu=500 delta=342: tau_nunu = 6.41e+05 s (T = 1.44 keV), tau_gamma = 1.95e-02 s [2.2e-03, 1.9e+00] (T = 6.2 MeV)
+Higgsino mu=1000 delta=366: tau_nunu = 4.57e+05 s (T = 1.70 keV), tau_gamma = 6.36e-02 s [7.1e-03, 6.4e+00] (T = 3.4 MeV)
+Higgsino mu=2000 delta=375: tau_nunu = 4.05e+05 s (T = 1.81 keV), tau_gamma = 2.36e-01 s [2.6e-02, 2.4e+01] (T = 1.8 MeV)
+Higgsino mu=4000 delta=376: tau_nunu = 3.99e+05 s (T = 1.82 keV), tau_gamma = 9.38e-01 s [1.0e-01, 9.4e+01] (T = 0.9 MeV)
+Higgsino mu=1000 delta=300: tau_nunu = 1.23e+06 s (T = 1.03 keV), tau_gamma = 1.15e-01 s [1.3e-02, 1.2e+01] (T = 2.5 MeV)
+Higgsino mu=1000 delta=250: tau_nunu = 3.07e+06 s (T = 0.66 keV), tau_gamma = 1.99e-01 s [2.2e-02, 2.0e+01] (T = 1.9 MeV)
+Higgsino mu=1000 delta=200: tau_nunu = 9.38e+06 s (T = 0.38 keV), tau_gamma = 3.90e-01 s [4.3e-02, 3.9e+01] (T = 1.4 MeV)
+DP delta=300 mA'=0.3 GeV: eps^2 alpha_D = 5.55e-16, tau = 3.21e+20 s, f2_today = 4.99e-01, N_exo = 4.29e+02
+DP delta=300 mA'=0.5 GeV: eps^2 alpha_D = 4.28e-15, tau = 4.16e+19 s, f2_today = 4.95e-01, N_exo = 4.25e+02
+DP delta=300 mA'=1.0 GeV: eps^2 alpha_D = 6.85e-14, tau = 2.60e+18 s, f2_today = 4.23e-01, N_exo = 3.63e+02
+DP delta=300 mA'=2.0 GeV: eps^2 alpha_D = 1.10e-12, tau = 1.62e+17 s, f2_today = 3.44e-02, N_exo = 2.95e+01
+DP delta=300 mA'=2.6 GeV: eps^2 alpha_D = 3.13e-12, tau = 5.69e+16 s, f2_today = 2.39e-04, N_exo = 2.05e-01
+DP delta=300 mA'=5.0 GeV: eps^2 alpha_D = 4.28e-11, tau = 4.16e+15 s, f2_today = 1.89e-46, N_exo = 1.62e-43
+DP delta=300 mA'=10.0 GeV: eps^2 alpha_D = 6.85e-10, tau = 2.60e+14 s, f2_today = 0.00e+00, N_exo = 0.00e+00
+DP delta=300 mA'=30.0 GeV: eps^2 alpha_D = 5.55e-08, tau = 3.21e+12 s, f2_today = 0.00e+00, N_exo = 0.00e+00
+DP delta=365 mA'=0.3 GeV: eps^2 alpha_D = 1.48e-13, tau = 4.52e+17 s, f2_today = 1.91e-01, N_exo = 2.34e+04
+DP delta=365 mA'=0.5 GeV: eps^2 alpha_D = 1.14e-12, tau = 5.86e+16 s, f2_today = 3.00e-04, N_exo = 3.67e+01
+DP delta=365 mA'=1.0 GeV: eps^2 alpha_D = 1.82e-11, tau = 3.66e+15 s, f2_today = 1.41e-52, N_exo = 1.73e-47
+DP delta=365 mA'=2.0 GeV: eps^2 alpha_D = 2.92e-10, tau = 2.29e+14 s, f2_today = 0.00e+00, N_exo = 0.00e+00
+DP delta=365 mA'=2.6 GeV: eps^2 alpha_D = 8.33e-10, tau = 8.02e+13 s, f2_today = 0.00e+00, N_exo = 0.00e+00
+DP delta=365 mA'=5.0 GeV: eps^2 alpha_D = 1.14e-08, tau = 5.86e+12 s, f2_today = 0.00e+00, N_exo = 0.00e+00
+DP delta=365 mA'=10.0 GeV: eps^2 alpha_D = 1.82e-07, tau = 3.66e+11 s, f2_today = 0.00e+00, N_exo = 0.00e+00
+DP delta=365 mA'=30.0 GeV: eps^2 alpha_D = 1.48e-05, tau = 4.52e+09 s, f2_today = 0.00e+00, N_exo = 0.00e+00
+DP delta=250: f2_max(LZ exo) = 3.99e-03, tau_max = 9.00e+16 s, m_A' >= 4.76 GeV (P011: 2.58 at 300); tau = t_U at m_A' = 3.21 GeV; tau(1 GeV) = 4.64e+19 s
+DP delta=300: f2_max(LZ exo) = 1.17e-03, tau_max = 7.18e+16 s, m_A' >= 2.45 GeV (P011: 2.58 at 300); tau = t_U at m_A' = 1.56 GeV; tau(1 GeV) = 2.60e+18 s
+DP delta=350: f2_max(LZ exo) = 5.51e-05, tau_max = 4.77e+16 s, m_A' >= 0.92 GeV (P011: 2.58 at 300); tau = t_U at m_A' = 0.53 GeV; tau(1 GeV) = 3.46e+16 s
+DP delta=365: f2_max(LZ exo) = 8.17e-06, tau_max = 3.95e+16 s, m_A' >= 0.55 GeV (P011: 2.58 at 300); tau = t_U at m_A' = 0.30 GeV; tau(1 GeV) = 3.66e+15 s
+DP delta=380: f2_max(LZ exo) = 3.78e-07, tau_max = 3.09e+16 s, m_A' >= 0.25 GeV (P011: 2.58 at 300); tau = t_U at m_A' = 0.13 GeV; tau(1 GeV) = 1.22e+14 s
+Energy budget (m = 1 TeV, delta = 300 keV, f2 = 0.420): f2 delta/m = 1.26e-07 of rho_DM; 633 eV per baryon (n_DM/n_b = 5.03e-03)
+tau = 6.0e-02 s: z = 1.998e+10, T = 3.508e+03 keV, Drho/rho_g = 3.06e-14 (thermalised (z > 2e6), mu/y = 0.0e+00); deposited 0.00e+00 eV/baryon (gamma channel; window frac x f_eff = 0.00e+00)
+tau = 4.6e+05 s: z = 7.216e+06, T = 1.695e+00 keV, Drho/rho_g = 8.48e-11 (thermalised (z > 2e6), mu/y = 0.0e+00); deposited 0.00e+00 eV/baryon (gamma channel; window frac x f_eff = 0.00e+00)
+tau = 1.2e+06 s: z = 4.468e+06, T = 1.049e+00 keV, Drho/rho_g = 1.37e-10 (thermalised (z > 2e6), mu/y = 0.0e+00); deposited 0.00e+00 eV/baryon (gamma channel; window frac x f_eff = 0.00e+00)
+tau = 1.0e+08 s: z = 4.888e+05, T = 1.148e-01 keV, Drho/rho_g = 1.25e-09 (mu, mu/y = 1.8e-09); deposited 0.00e+00 eV/baryon (gamma channel; window frac x f_eff = 0.00e+00)
+tau = 1.0e+10 s: z = 4.838e+04, T = 1.136e-02 keV, Drho/rho_g = 1.26e-08 (y, mu/y = 3.2e-09); deposited 0.00e+00 eV/baryon (gamma channel; window frac x f_eff = 0.00e+00)
+tau = 1.0e+12 s: z = 4.422e+03, T = 1.039e-03 keV, Drho/rho_g = 1.38e-07 (y, mu/y = 3.5e-08); deposited 2.79e-03 eV/baryon (gamma channel; window frac x f_eff = 4.41e-06)
+tau = 1.0e+13 s: z = 1.199e+03, T = 2.819e-04 keV, Drho/rho_g = 5.10e-07 (y, mu/y = 1.3e-07); deposited 9.68e+01 eV/baryon (gamma channel; window frac x f_eff = 1.53e-01)
+tau = 1.0e+14 s: z = 2.907e+02, T = 6.852e-05 keV, Drho/rho_g = 2.10e-06 (post-recombination (anisotropies), mu/y = 5.2e-07); deposited 2.81e+02 eV/baryon (gamma channel; window frac x f_eff = 4.44e-01)
+tau = 1.0e+15 s: z = 6.467e+01, T = 1.542e-05 keV, Drho/rho_g = 9.32e-06 (post-recombination (anisotropies), mu/y = 2.3e-06); deposited 2.35e+02 eV/baryon (gamma channel; window frac x f_eff = 3.72e-01)
+tau = 1.0e+16 s: z = 1.332e+01, T = 3.363e-06 keV, Drho/rho_g = 4.27e-05 (post-recombination (anisotropies), mu/y = 1.1e-05); deposited 8.14e+01 eV/baryon (gamma channel; window frac x f_eff = 1.29e-01)
+tau = 1.0e+17 s: z = 2.070e+00, T = 7.209e-07 keV, Drho/rho_g = 1.99e-04 (post-recombination (anisotropies), mu/y = 5.0e-05); deposited 1.60e+01 eV/baryon (gamma channel; window frac x f_eff = 2.52e-02)
+tau = 1.0e+18 s: z = 1.000e-03, T = 2.351e-07 keV, Drho/rho_g = 6.11e-04 (post-recombination (anisotropies), mu/y = 1.5e-04); deposited 2.12e+00 eV/baryon (gamma channel; window frac x f_eff = 3.35e-03)
+tau = 1.0e+20 s: z = 1.000e-03, T = 2.351e-07 keV, Drho/rho_g = 6.11e-04 (post-recombination (anisotropies), mu/y = 1.5e-04); deposited 2.24e-02 eV/baryon (gamma channel; window frac x f_eff = 3.53e-05)
+tau = 1.0e+22 s: z = 1.000e-03, T = 2.351e-07 keV, Drho/rho_g = 6.11e-04 (post-recombination (anisotropies), mu/y = 1.5e-04); deposited 2.24e-04 eV/baryon (gamma channel; window frac x f_eff = 3.53e-07)
+sigma_KN(300 keV) = 3.534e-25 cm2; tau_Compton/Hubble at z = 1000/300/100/30: 60.74, 10.91, 2.18, 0.37
+CMB anisotropies (gamma channel, f2 = 0.420, m = 1 TeV, delta = 300 keV, E_crit = 0.2 eV/baryon): excluded tau in [2.0e+12, 1.0e+19] s
+CMB anisotropies: minimum allowed f2 over all tau (gamma channel) = 2.88e-04 at tau = 2.0e+14 s; E_crit x3 -> 8.6e-04
+  f2 = 0.5: excluded tau in [1.6e+12, 1.3e+19] s
+  f2 = 0.1: excluded tau in [2.0e+12, 2.5e+18] s
+  f2 = 0.01: excluded tau in [4.0e+12, 2.0e+17] s
+  f2 = 0.001: excluded tau in [1.0e+13, 7.9e+15] s
+FIRAS: max mu = 2.0e-08 (limit 9e-5), max y = 1.5e-07 (limit 1.5e-5) for f2 = 0.5, m = 1 TeV; mass-scaled: y_max = 5.1e-07 at 300 GeV
+nu nubar injection at tau = 1.2e+06 s (delta = 300): Drho/rho_gamma = 1.4e-10 -> Delta N_eff = 6.1e-10
+nu nubar injection at tau = 4.6e+05 s (delta = 366): Drho/rho_gamma = 1.0e-10 -> Delta N_eff = 4.6e-10
+NFW decay D-factor: 2.35e+21 (5 deg), 7.41e+21 (10 deg), 1.56e+22 (16 deg) GeV cm^-2 sr
+line: f2 = 0.5, tau = 1e+18 s, m = 1 TeV: Phi(10 deg) = 2.95e-01 ph/cm2/s (above SPI ~3e-05)
+line: f2 = 0.5, tau = 1e+20 s, m = 1 TeV: Phi(10 deg) = 2.95e-03 ph/cm2/s (above SPI ~3e-05)
+line: f2 = 0.5, tau = 1e+22 s, m = 1 TeV: Phi(10 deg) = 2.95e-05 ph/cm2/s (below SPI ~3e-05)
+line: f2 = 0.5, tau = 1e+24 s, m = 1 TeV: Phi(10 deg) = 2.95e-07 ph/cm2/s (below SPI ~3e-05)
+line: f2 = 0.001, tau = 1e+18 s, m = 1 TeV: Phi(10 deg) = 5.90e-04 ph/cm2/s (above SPI ~3e-05)
+line: f2 = 0.001, tau = 1e+20 s, m = 1 TeV: Phi(10 deg) = 5.90e-06 ph/cm2/s (below SPI ~3e-05)
+line: f2 = 0.001, tau = 1e+22 s, m = 1 TeV: Phi(10 deg) = 5.90e-08 ph/cm2/s (below SPI ~3e-05)
+line: f2 = 0.001, tau = 1e+24 s, m = 1 TeV: Phi(10 deg) = 5.90e-10 ph/cm2/s (below SPI ~3e-05)
+SPI bound: f2_today/tau_gamma <= 5.1e-23 s^-1 (10 deg, 1 TeV); tau_gamma >= 9.8e+21 s for f2 = 0.5, 2.0e+19 s for f2 = 1e-3
+EGB: decay intensity x E < 2 keV/cm2/s/sr requires tau_gamma >= 5.7e+19 s for f2 = 0.5 (isotropic, z<1 shell)

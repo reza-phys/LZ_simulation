@@ -1,0 +1,131 @@
+
+== kinematics (E_R = 248 keV on natural Xe, m_N = 122.4 GeV)
+ m_chi_GeV  T_min_248_MeV  T_min_200_MeV  T_min_270_MeV  beta_min_248   p_min_MeV  E_R_max_at_2Tmin_keV
+     0.001     122.318878     109.733131     127.677739      0.999967  123.314824            982.061435
+     0.010     113.720028     101.179655     119.062250      0.996728  123.315228            916.116103
+     0.100      58.793431      49.226449      62.991522      0.776799  123.350531            608.099958
+     1.000       7.683919       6.201141       8.362821      0.123258  124.204998            497.836823
+    10.000       0.887836       0.716001       0.966593      0.013325  133.257274            496.015867
+  1000.000       0.638178       0.514660       0.694791      0.001130 1129.759848            496.000097
+neutron check: T_min(248 keV) = 8.166 MeV (P013: 8.20 MeV)
+
+== form-factor numbers used
+E=  10 keV  Helm F2(nat, A^2-weighted)=6.098e-01  P017 Helm=6.100e-01  shell=6.008e-01  eff=0.875
+E=  30 keV  Helm F2(nat, A^2-weighted)=2.041e-01  P017 Helm=2.043e-01  shell=1.982e-01  eff=0.960
+E=  55 keV  Helm F2(nat, A^2-weighted)=3.725e-02  P017 Helm=3.731e-02  shell=3.802e-02  eff=0.960
+E= 200 keV  Helm F2(nat, A^2-weighted)=1.504e-03  P017 Helm=1.507e-03  shell=5.055e-04  eff=0.960
+E= 248 keV  Helm F2(nat, A^2-weighted)=1.634e-04  P017 Helm=1.644e-04  shell=2.911e-05  eff=0.957
+E= 270 keV  Helm F2(nat, A^2-weighted)=1.633e-05  P017 Helm=1.644e-05  shell=4.007e-06  eff=0.475
+F2(30)/F2(248): Helm 1249, shell 6809
+
+== N_lo for a flat-in-E_R spectrum (E_R,max >> 270 keV), const amplitude:
+   none    N_lo =      0.72
+   helm    N_lo =    349.93
+   shell   N_lo =   1184.48
+   spp_q4  N_lo =      0.18
+   q^2n ladder (const x E_R^n x F2): {'q^0_helm': np.float64(349.93), 'q^0_shell': np.float64(1184.48), 'q^2_helm': np.float64(33.2), 'q^2_shell': np.float64(113.48), 'q^4_helm': np.float64(4.12), 'q^4_shell': np.float64(14.25)}
+   minimum over E_R,max (helm): N_lo = 349.9 at E_R,max = 298 keV; E_R,max=250: 362.0, 270: 349.9
+   minimum over E_R,max (shell): N_lo = 1184.5 at E_R,max = 322 keV; E_R,max=250: 1203.5, 270: 1184.5
+
+== monochromatic beams (N_lo):
+ m_chi_GeV  kind     T_label  T_MeV  E_R_max_keV  N_lo_helm  N_lo_shell
+     0.001 const 1.2xTmin270  153.2        387.6      349.9        1184
+     0.001 const  10xTmin270   1277    2.614e+04      349.9        1184
+     0.001  vecD 1.2xTmin270  153.2        387.6      756.8        2528
+     0.001  vecD  10xTmin270   1277    2.614e+04      352.6        1193
+     0.001  scaD 1.2xTmin270  153.2        387.6      33.23       113.6
+     0.001  scaD  10xTmin270   1277    2.614e+04      33.23       113.6
+      0.01 const 1.2xTmin270  142.9        379.3      349.9        1184
+      0.01 const  10xTmin270   1191     2.31e+04      349.9        1184
+      0.01  vecD 1.2xTmin270  142.9        379.3      773.5        2582
+      0.01  vecD  10xTmin270   1191     2.31e+04        353        1195
+      0.01  scaD 1.2xTmin270  142.9        379.3      35.56       121.5
+      0.01  scaD  10xTmin270   1191     2.31e+04      35.56       121.5
+       0.1 const 1.2xTmin270  75.59        339.5      349.9        1184
+       0.1 const  10xTmin270  629.9         8442      349.9        1184
+       0.1  vecD 1.2xTmin270  75.59        339.5      592.6        1990
+       0.1  vecD  10xTmin270  629.9         8442      358.2        1212
+       0.1  scaD 1.2xTmin270  75.59        339.5      168.9       575.1
+       0.1  scaD  10xTmin270  629.9         8442      168.9       575.1
+         1 const 1.2xTmin270  10.04        324.3      349.9        1184
+         1 const  10xTmin270  83.63         2798      349.9        1184
+         1  vecD 1.2xTmin270  10.04        324.3      354.2        1199
+         1  vecD  10xTmin270  83.63         2798      353.6        1197
+         1  scaD 1.2xTmin270  10.04        324.3      345.8        1171
+         1  scaD  10xTmin270  83.63         2798      345.8        1171
+        10 const 1.2xTmin270   1.16          324      349.9        1184
+        10 const  10xTmin270  9.666         2701      349.9        1184
+        10  vecD 1.2xTmin270   1.16          324        350        1185
+        10  vecD  10xTmin270  9.666         2701        350        1185
+        10  scaD 1.2xTmin270   1.16          324      349.9        1184
+        10  scaD  10xTmin270  9.666         2701      349.9        1184
+
+== power-law incident spectra (const amplitude):
+ m_chi_GeV  gamma T_lo_label  T_lo_MeV  N_lo_helm  N_lo_shell
+     0.001    1.5    Tmin270     127.7      349.9        1184
+     0.001    1.5      10MeV        10  1.062e+04   3.562e+04
+     0.001      2    Tmin270     127.7      349.9        1184
+     0.001      2      10MeV        10  2.238e+04   7.496e+04
+     0.001    2.7    Tmin270     127.7      349.9        1184
+     0.001    2.7      10MeV        10  6.534e+04   2.184e+05
+      0.01    1.5    Tmin270     119.1      349.9        1184
+      0.01    1.5      10MeV        10  1.357e+04   4.552e+04
+      0.01      2    Tmin270     119.1      349.9        1184
+      0.01      2      10MeV        10  3.242e+04   1.086e+05
+      0.01    2.7    Tmin270     119.1      349.9        1184
+      0.01    2.7      10MeV        10  1.153e+05   3.854e+05
+       0.1    1.5    Tmin270     62.99      349.9        1184
+       0.1    1.5      10MeV        10       5625   1.876e+04
+       0.1      2    Tmin270     62.99      349.9        1184
+       0.1      2      10MeV        10  1.242e+04   4.129e+04
+       0.1    2.7    Tmin270     62.99      349.9        1184
+       0.1    2.7      10MeV        10  3.836e+04   1.269e+05
+         1    1.5    Tmin270     8.363      349.9        1184
+         1    1.5      10MeV        10      349.9        1184
+         1      2    Tmin270     8.363      349.9        1184
+         1      2      10MeV        10      349.9        1184
+         1    2.7    Tmin270     8.363      349.9        1184
+         1    2.7      10MeV        10      349.9        1184
+        10    1.5    Tmin270    0.9666      349.9        1184
+        10    1.5      10MeV        10      349.9        1184
+        10      2    Tmin270    0.9666      349.9        1184
+        10      2      10MeV        10      349.9        1184
+        10    2.7    Tmin270    0.9666      349.9        1184
+        10    2.7      10MeV        10      349.9        1184
+
+== CRDM flux at sigma_chi p = 1e-30 cm^2, D_eff = 1 kpc, rho = 0.3 GeV/cm^3 (cm^-2 s^-1):
+ m_chi_GeV  Phi_total  Phi_T_gt_10MeV  Phi_T_gt_Tmin248  T_min248_MeV  recalled_scaling_1em7_GeV_over_m
+     0.001    1.1e-05        1.66e-06          2.13e-07           122                            0.0001
+      0.01   1.13e-06        6.58e-07          1.32e-07           114                             1e-05
+       0.1   9.08e-08        8.35e-08          5.19e-08          58.8                             1e-06
+         1   2.57e-09        2.31e-09          2.37e-09          7.68                             1e-07
+        10   8.95e-11           4e-11          8.35e-11         0.888                             1e-08
+
+== sigma_chi p giving 1 event in 200-270 keV (2.84 t yr) and CRDM-spectrum N_lo:
+ m_chi_GeV  sigma_p_1event_helm_D1kpc_cm2  sigma_p_1event_helm_D10kpc_cm2  sigma_p_1event_shell_D1kpc_cm2  sigma_p_1event_shell_D10kpc_cm2  N_lo_crdm_helm  N_lo_crdm_shell
+     0.001                       3.62e-30                        1.15e-30                        6.69e-30                         2.11e-30        1.69e+04         5.66e+04
+      0.01                       4.41e-30                        1.39e-30                        8.13e-30                         2.57e-30        1.48e+04         4.97e+04
+       0.1                       6.34e-30                           2e-30                        1.17e-29                          3.7e-30        2.19e+03         7.32e+03
+         1                       2.35e-29                        7.43e-30                        4.36e-29                         1.38e-29             762         2.57e+03
+        10                       2.47e-29                        7.82e-30                        4.59e-29                         1.45e-29             675         2.28e+03
+
+== Earth attenuation, 1478 m rock (X = 3.99e+05 g/cm^2), Helm form factors, flat spectrum:
+ m_chi_GeV    T_GeV  n_scatters_at_1em30  frac_loss_at_1em30  sigma_p_30pct_loss_cm2  sigma_p_1_scatter_cm2
+     0.001    0.183                0.506            0.000785                3.82e-28               1.98e-30
+      0.01    0.171                0.539            0.000898                3.34e-28               1.86e-30
+       0.1   0.0882                0.819             0.00262                1.15e-28               1.22e-30
+         1   0.0115                  3.1              0.0755                3.97e-30               3.22e-31
+        10  0.00133                 84.2                  16                1.87e-32               1.19e-32
+     1e+03 0.000957             3.22e+03                 154                1.95e-33                3.1e-34
+
+== heavy fast component:
+ m_chi_GeV  beta  T_GeV  E_R_max_keV  E_R_max_NR_formula_keV  N_lo_helm  N_lo_shell
+      1000 0.005 0.0125         4858                    4858      349.9        1184
+      1000  0.01   0.05    1.943e+04               1.943e+04      349.9        1184
+      1000  0.02 0.2001    7.775e+04               7.772e+04      349.9        1184
+      4000 0.005   0.05         5762                    5761      349.9        1184
+      4000  0.01    0.2    2.305e+04               2.305e+04      349.9        1184
+      4000  0.02 0.8002    9.222e+04               9.218e+04      349.9        1184
+   SHM 1 TeV elastic SI (Helm, lzcommon): N_lo = 820  (P030 Helm: 353 flat; P003 shell O1: 2752)
+
+wrote output/work/P040

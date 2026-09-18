@@ -1,0 +1,56 @@
+{
+ "id": "P089",
+ "title": "Identical spectra, different couplings: the isoscalar/isovector and Lagrangian degeneracies of LZ's Table S6 and the coupling ratios that relate them",
+ "date": "2026-09-16",
+ "agent_tools": [
+  {"tool": "Read", "count": 17, "detail": "PAPER_GUIDE.md; P057.md; work/P057/details.md; fulltext.tex lines 30-80, 225-300, 484-501, 800-911; papers P003, P012, P027, P031, P032, P044; code/P057_operator_degeneracy.py lines 40-220; WimPyDD/package.py lines 940-1010; own figures P089_dendrogram/class_spectra/Z_vs_Nlo.png"},
+  {"tool": "Bash", "count": 14, "detail": "grep tex for Lagrangian/Anand lines and ls P057/P003 work dirs; grep lzcommon wd_* + ledger rows P001/P027; ls papers + grep P031 details for L identifications; sed lzcommon wd_rate/wd_c_from_anand + function list; grep P057 script structure; grep P044 script + WimPyDD eft_hamiltonian docs; python: inspect P003/P057 npz caches, ls P016/P062, headlines; sed P044 z_pred + head P016 curve + P003 grid; python timing test of WimPyDD multi-operator q-dependent Hamiltonians (10 points each); sed lzcommon LSIG/OSIG + P016 curve range; run 1 of script (compute 60 spectra, crashed on ZeroDivision at analysis); run 2 after fixes (rm cache, recompute 239 s); run 3 (figure fix, 1 s); python extraction of key H values/regression/coupling ratios; python class summary; ls data_requests + versions; head DR-002/DR-003/index.csv; find WimPyDD files newer than script"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P089_table_s6_degeneracies.py; output/work/P089/details.md; output/provenance/P089.json; output/papers/P089.md"},
+  {"tool": "Edit", "count": 4, "detail": "script: guard N3sigma for identical pdfs; 1/m_v^2 factor in coefficient closures; ratio diagnostics restricted to 20-270 keV + two-variable Z regression; dendrogram label placement"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python from the simulation root"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian (integer Anand operator keys, closure coefficient functions of q with no default arguments), diff_rate via lz.wd_rate, streamed_halo_function via lz.wd_halo (Sun-frame Baxter-2021), coeff_squared_list (interference bookkeeping)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "arange, trapezoid, polyfit, linalg.lstsq, savez/load, cumsum, searchsorted"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf, stats.norm.pdf, cluster.hierarchy.linkage/fcluster/dendrogram"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, read_csv, to_csv, groupby"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; pyplot subplots/plot/scatter/annotate; hierarchy.dendrogram plotting"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ, LSIG, OSIG, M_V_GEV, M_NUCLEON_GEV, wd, wd_halo, wd_rate"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P089_table_s6_degeneracies.py", "purpose": "encode the NR reductions of L1-L20 as WimPyDD Hamiltonians (s and v, 1 TeV), compute 60 spectra (40 L, 28 O, sign variants, checks; 16 taken from P057's cache), fold LZ efficiency and resolution, Hellinger/KL clustering, coupling-ratio and Table S6 pattern tables, figures", "command": ".venv/bin/python output/code/P089_table_s6_degeneracies.py   (run three times: compute + analysis; cache cleared between runs 1 and 2 after the normalisation fix; run 3 for the figure fix)"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Theory paragraph (lines 35-74, unit coupling d_i = 1/m_v^2, Anand reference); Table I (225-246, L10^s best fit 1.0 events); Results (253-295); LEE section (485-501: 616 -> 293 models, constant pairs, s/v list); Tables S6/S7 (820-909)"},
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "rules, deliverables, conventions (WimPyDD c^0 = 2/m_v^2, closures, halo labelling)"},
+  {"file": "output/papers/P057.md; output/work/P057/details.md", "parts_used": "operator-level degeneracies (O6 = E_R x O10, O9/O14, s/v Sigma'' pairs), response coefficient functions, method conventions (grid, efficiency, resolution, KL floor, N_3sigma)"},
+  {"file": "output/work/P057/cache/m1000_{O1s,O4s,O5v,O6s,O6v,O9s,O9v,O10s,O10v,O13s,O14s,O14v,O15s,O15v,L10}.npy", "parts_used": "1 TeV spectra on the 2.5 keV grid, sub-sampled to 5 keV (identical halo and code)"},
+  {"file": "output/code/P057_operator_degeneracy.py; output/code/P044_anapole_edm.py", "parts_used": "closure pattern for q-dependent coefficients; efficiency/smearing functions; P016 Z(N_lo) point table (fallback)"},
+  {"file": "output/work/P016/P016_Z_vs_Nlo_curves.csv", "parts_used": "baseline Z(N_lo) calibration curve at 1000 GeV"},
+  {"file": "output/papers/P003.md, P012.md, P027.md, P031.md, P032.md, P044.md", "parts_used": "normalisation (P003), L10 fit d10 = 0.28 (P012), N_eff/B ratios (P027), earlier L identifications (P031, P044), isovector M nodes (P032)"},
+  {"file": "output/results_ledger.csv", "parts_used": "P001 N_eff = 13.9, P008 12.2, P027 rows"},
+  {"file": "output/work/P003/P003_spectra.npz", "parts_used": "inspected (grid 1-300 keV, 107 points) and not used numerically"},
+  {"file": "WimPyDD/package.py", "parts_used": "eft_hamiltonian docstring on q-dependent Wilson coefficients and reserved argument names (read-only)"},
+  {"file": "output/data_requests/DR-001.md, DR-002.md, DR-003.md, index.csv", "parts_used": "checked existing requests before deciding not to file one"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Structure and ordering of Anand-Fitzpatrick-Haxton Table 1: L1-L4 scalar/pseudoscalar products, L5-L20 the 4x4 grid {V,T,A,T-gamma5}_chi x {V,T,A,T-gamma5}_N in the order L5 = VV, L6 = VT, L7 = VA, L8 = V T~, L9 = TV, L10 = TT, L11 = TA, L12 = T T~, L13 = AV, L14 = AT, L15 = AA, L16 = A T~, L17 = T~V, L18 = T~T, L19 = T~A, L20 = T~T~", "presumed_source": "Anand, Fitzpatrick, Haxton, PRC 89, 065501 (2014), Table 1", "reliability": "likely (confirmed a posteriori: reproduces LZ's five constant pairs and its ten-member s/v list)"},
+  {"item": "Nonrelativistic reductions of the Dirac bilinears (scalar, pseudoscalar, vector, axial, tensor, tensor-gamma5) with 2m normalisation; Gordon identity", "presumed_source": "standard (Fitzpatrick et al. 2013 appendix; textbook)", "reliability": "certain"},
+  {"item": "Anand response coefficient functions R_M, R_Sigma'', R_Sigma', R_Delta, R_Phi'', R_Phi''M, R_Phi~' incl. the combination (c12 - q^2/m_N^2 c15) in Sigma' and Phi''", "presumed_source": "Anand et al. 2014 eqs. 38-40 / Fitzpatrick et al. 2013 eq. 40 (as also recalled by P057)", "reliability": "certain"},
+  {"item": "Tensor mass scale m_M = m_N in the LZ/Anand normalisation", "presumed_source": "Anand et al. 2014; P012's convention", "reliability": "likely"},
+  {"item": "L10 -> 4[(q^2/m_N^2) O4 - O6]", "presumed_source": "Anand et al. 2014 Table 1; confirmed by P003/P012 against LZ Fig. 1", "reliability": "likely (corpus-confirmed)"},
+  {"item": "Vector identity (S_N.q)(S_chi.(q x v_perp))/m_N^2 = (q^2/m_N^2) O12 + O15 (the operator Fitzpatrick et al. call O16)", "presumed_source": "derived here from the decomposition of S_N in {q, v_perp, q x v_perp}", "reliability": "certain (derivation); WimPyDD's x5400 suppression for the same-sign combination confirms the cancellation"},
+  {"item": "Hellinger and KL divergence definitions; Gaussian log-likelihood-ratio asymptotics for N_3sigma", "presumed_source": "standard statistics", "reliability": "certain"},
+  {"item": "(N-Z)^2/A^2 = 0.03 for natural xenon (isovector coherent suppression)", "presumed_source": "arithmetic from Z = 54, A = 131", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First compute run omitted the 1/m_v^2 factor in the Anand-to-WimPyDD coefficient closures: shapes unaffected, absolute rates 3.67e9 (= m_v^4) too large relative to P057's cache; caught by the L8s/O10s = 4 and L20s/O6s = 16 checks; cache cleared and all 44 fresh spectra recomputed (239 s).",
+  "ZeroDivisionError in the Gaussian N_3sigma for identical (aliased) pdfs (L1s vs O1s etc.); guarded to return infinity.",
+  "Expectation that L12 (q^4 v^2 Sigma'' + q^4 Phi~') would be O6-like up to a slowly varying <v_perp^2> factor: WimPyDD's Phi~' response makes it a separate class (H = 0.30 to L20s); the expectation was dropped.",
+  "LZ's count of 293 distinguishable spectra could not be reproduced from its stated reductions (40 -> 23 Lagrangian entries x 11 masses = 253 leaves 40 for the inelastic set, which has 60-69 physical entries); noted, not resolved.",
+  "Ratio diagnostics over 20-400 keV were dominated by Sigma'' nodes; restricted to 20-270 keV with a 1e-3-of-maximum mask."
+ ],
+ "wimpydd_generated_files": "none (WD.diff_rate writes no response-function files; no file under WimPyDD/ is newer than the P089 script)"
+}

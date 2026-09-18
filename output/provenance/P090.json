@@ -1,0 +1,60 @@
+{
+ "id": "P090",
+ "title": "Propagating the 100 % MSSI uncertainty into the local and global significance: what a factor-2, factor-10 or mis-shaped wall/RFR background does to the 3.4 sigma",
+ "date": "2026-09-16",
+ "agent_tools": [
+  {"tool": "Read", "count": 16, "detail": "PAPER_GUIDE.md; P052_reproduce_significance.py; papers P052, P004, P033, P073, P079, P070, P053, P008, P071, P001, P016; figures P090_fig1/2/3 (twice for fig2)"},
+  {"tool": "Bash", "count": 8, "detail": "grep/sed of fulltext.tex (MSSI lines; l.184-200, 222-250, 300-320, 470-485, 520-582, 764-785; LEE lines); ls of P052 work/toys and related code; python one-liners printing P052_results.json, P004/P070/P073/P079/P033 result files and CSVs, P052 details.md l.25-45, P008/P071 N_eff lines, ledger rows; grep of dataviz palette.md; three runs of '.venv/bin/python output/code/P090_mssi_systematic.py' (2 s each) with table dumps; timestamp check of output/work/P052 files"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P090_mssi_systematic.py; output/work/P090/details.md; output/provenance/P090.json; output/papers/P090.md"},
+  {"tool": "Edit", "count": 5, "detail": "P090_mssi_systematic.py: one-sided k95 check; LZ-anchored columns; ROI self-constraint record; Fig. 2 twin-axis replaced by annotations; annotation position"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette/mark guidance; JS validator skipped per PAPER_GUIDE)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python"},
+  {"name": "numpy", "version": "2.5.3", "functions": "array algebra, interp, logspace, argmin"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats.norm.sf/isf, stats.poisson.cdf/pmf, stats.chi2.ppf, optimize.brentq"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, read_csv, to_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; plot, contour/contourf, annotate"},
+  {"name": "iminuit", "version": "2.32.0", "functions": "Minuit.migrad (strategy 0, fallback 1), limits, fixed"},
+  {"name": "Pillow", "version": "12.3.0", "functions": "Image.open (only inside P052's header: Fig. 5 L10 digitisation)"},
+  {"name": "nestpy", "version": "2.1.1", "functions": "not called: P052's yield cache P052_yield_cache.npz read by the header"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "not called: P003/P012/P021 spectra caches read by P052's header"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "lz.LZ (g1, g2, ev_S1c, ev_log10S2c), lz.OSIG/OSIG_DELTAS, lz.dRdE_SI, lz.nest_nr_yields (through P052's header); lz.sigma_to_p semantics for N_eff"},
+  {"name": "P052_reproduce_significance.py", "version": "corpus (P052)", "functions": "model-building header executed in a private namespace: binning, response, background/data cells, Likelihood class, signal_cells/sig_for"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P090_mssi_systematic.py", "purpose": "load P052 engine; MLike (log t_MSSI, priors, FV rate factor, six-wall-bin sideband terms, MSSI map, position weight); parts 1-5; tables; three figures", "command": ".venv/bin/python output/code/P090_mssi_systematic.py"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Table I (l.222-250: MSSI 4.9+-4.9e-3); Tables S1/S2 (l.520-582: prompt MSSI 7.7+-7.7e-2, lambda_MSSI 0.94+-0.02, delayed 1.4e-4); MSSI text l.184-196 (100 % geometry uncertainty, 0.3/0.6 % dead volume), l.307-319 (validation, 12 bins, p = 0.7); supplement l.710-785 (MSSI comparison table: six wall and six RFR bins)"},
+  {"file": "output/code/P052_reproduce_significance.py", "parts_used": "header (lines 1-363) executed; Likelihood class subclassed"},
+  {"file": "output/work/P052/P052_results.json", "parts_used": "L10_1000 lzlike q0/Z/s_hat/b_event_cell; toys Z 3.03 [2.98,3.10]; variants MSSI x2 = 2.975"},
+  {"file": "output/work/P052/P052_yield_cache.npz + output/work/P003/P003_spectra.npz + output/work/P012/P012_L10_spectra_d10_1.npz + output/work/P021/spectra_{s,v}_{400,1000,4000}.npz + output/work/P003/fig1_digitised_{top,bottom}.csv + output/work/P016/P016_results.json + output/work/P004/P004_fig5_digitised.csv + output/work/P022/P022_fig5_accidentals_digitised.csv + inputs/figures_png/Fig5_NR_distance_3panels_no_sig.png", "parts_used": "read by P052's header (signal spectra, background/data cells, MSSI d-shape)"},
+  {"file": "output/work/P070/profiles_d.csv", "parts_used": "column uniform (FV volume per 1-cm wall-distance shell) for the wall-MSSI position PDF"},
+  {"file": "output/work/P070/LR_table.csv, output/work/P070/P070_results.json", "parts_used": "exp_true LR 21.7/5.73/2.63 at lambda 3/4.3/6 cm (validation); event r = 45.9 cm"},
+  {"file": "output/work/P079/details.md, output/work/P079/P079_results.json", "parts_used": "annulus/FV wall-MSSI ratios 6.25 (1.23 cm), 1.34/0.86/0.76/0.60/0.46 (3/4.3/4.8/6/8 cm); 2.3 cm leakage width"},
+  {"file": "output/work/P004/P004_k_limits.csv, output/work/P004/P004_results.json", "parts_used": "k_ML 0.62, k95 1.64; f_nb 0.035; bottom-panel MSSI 5.06e-4"},
+  {"file": "output/work/P033/P033_summary.json", "parts_used": "f_pos wall12 0.0137 (equal mix 0.0098), depth scale 4.3 cm"},
+  {"file": "output/work/P073/P073_veto_silence_LR.csv, P073_summary.json", "parts_used": "veto-silence factor 0.46, event topology r = 45.9 cm (context)"},
+  {"file": "output/work/P071/details.md", "parts_used": "debiased N_eff 4.87/6.12/9.01/14.2 at 2.0/2.5/3.0/3.4 sigma"},
+  {"file": "output/work/P052/details.md", "parts_used": "l.17-33 (MSSI term, constraints, 45/45/10 split)"},
+  {"file": "output/papers/P001.md, P004.md, P008.md, P016.md, P033.md, P052.md, P053.md, P070.md, P071.md, P073.md, P079.md", "parts_used": "headline results and key numbers cited"},
+  {"file": "output/results_ledger.csv", "parts_used": "rows P004, P033, P053, P070, P071, P073, P079"},
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "rules, deliverables, template"}
+ ],
+ "recalled_knowledge": [
+  {"item": "asymptotic Z = sqrt(q0) for a one-sided test of a single parameter of interest (Wilks/Chernoff)", "presumed_source": "Cowan, Cranmer, Gross, Vitells (2011)", "reliability": "certain"},
+  {"item": "one-sided 95 % profile-likelihood upper limit at Delta(2 ln L) = 2.71", "presumed_source": "standard chi2_1 quantile", "reliability": "certain"},
+  {"item": "p_global = 1 - (1 - p_local)^N_eff for N_eff effective independent trials (Sidak form)", "presumed_source": "Gross & Vitells (2010); P008/P071 usage", "reliability": "certain"},
+  {"item": "a log-normal prior is the standard model of a multiplicative (factor) uncertainty on a rate", "presumed_source": "statistics practice", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "New background-only toys per deformation: ~50 ms/toy in P052's loop gives only ~4000 toys in the 4-minute budget (4 exceedances at p ~ 1e-3), too coarse for 0.1-sigma shifts; P052's measured toy offset (-0.08 sigma) and P071's N_eff mapping used instead",
+  "Common MSSI parameter tied to the RFR sideband bins as well: rejected (RFR is 2 % of the FV expectation; RFR treated with its own six bins)",
+  "Digitising Fig. S4 to count prompt-veto events at S1c > 500 phd in the band: not attempted; the predicted 0.11 events at g_max show it would be uninformative",
+  "Own simplified-cylinder annulus/FV ratio: thin-annulus estimate reproduces 6.25 at 1.23 cm but gives 0.74 vs P079's 0.86 at 4.3 cm (z extension of the 5.4 t volume); P079's contour integrals used"
+ ],
+ "wimpydd_generated_files": "none"
+}

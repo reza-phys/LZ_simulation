@@ -1,0 +1,63 @@
+{
+ "id": "P044",
+ "title": "Anapole and electric-dipole dark matter versus the LZ event: contact and photon-mediated versions",
+ "date": "2026-09-10",
+ "agent_tools": [
+  {"tool": "Read", "count": 13, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (2 attempts, second page over cap -> re-read via pandas in Bash); papers P003, P012, P016, P027; code/P012_magnetic_dipole.py; common/lzcommon.py lines 300-385; 3 output figures"},
+  {"tool": "Bash", "count": 24, "detail":"ls output/papers, code, work, data_requests, work/P003, work/P012; ls work/P031 + grep fulltext.tex for L16/L18/L19/3.4; grep lzcommon.py for wd_* defs; python print of ledger rows P014-P040 (id/title/headline); cat P031_tableS6_comparison.csv + grep P031 details; sed fulltext.tex l.40-62 (Theory paragraph; second half of the command failed on a zsh '=' word); grep fulltext.tex LEE lines + sed lzcommon (failed, same cause); grep P003_nreft_shapes.py (failed, same cause); sed fulltext.tex l.835-880 (Table S6) and l.486-500 (LEE); sed P031 details l.55-70, 84-135; grep P031 script for anapole/dipole/closures + head DR-001.md + ENVIRONMENT_versions.txt; sed P031 script l.160-200 + P012 summary runtime + P003 npz keys; WimPyDD path/grep (returned only the directory); grep WimPyDD/package.py reserved argument names; grep lzcommon constants; run P044_anapole_edm.py (363 s); rerun after adding hardness columns (707 s, moved to background after 600 s); tail progress of the rerun; sed run log hardness table + pandas print of new CSV columns + ls figures; wc -w / per-section word counts on the paper x5"},
+  {"tool": "Write", "count": 5, "detail": "output/code/P044_anapole_edm.py; output/work/P044/details.md; output/provenance/P044.json; output/papers/P044.md (written twice: full rewrite to meet the word budget)"},
+  {"tool": "Edit", "count": 13, "detail": "P044_anapole_edm.py x3 (O9 x q^2 at all masses; hardness columns in summarise; hardness log table); details.md x3 (section 6a addendum; Lambda values; tools section); P044.md x5 (word-budget trims); P044.json x2 (tool counts)"},
+  {"tool": "ToolSearch", "count": 1, "detail": "select:Monitor (loaded, not used: the background task notified completion by itself)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python, run from /Users/reza/LZ_simulation"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian with closure-captured constant and q-dependent Wilson coefficients (q^-2, q^0, q^2); diff_rate via lzcommon.wd_rate; streamed_halo_function via lzcommon.wd_halo (explicit v_min grid)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "arrays, union1d, interp, searchsorted, savez"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf (efficiency), integrate.trapezoid (window rates, KL integrals)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame tables, to_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; pyplot subplots/bar/fill_between"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "wd(), wd_halo(), wd_rate(), LZ dict (exposure, efficiency edges, plateau), M_V_GEV, M_NUCLEON_GEV, HBARC_GEV_FM"},
+  {"name": "none: derived by hand", "version": "-", "functions": "NR reductions of anapole and EDM (checked numerically against directdm output tabulated in work/P031); unit conversions"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P044_anapole_edm.py", "purpose": "WimPyDD spectra for photon anapole (O8+O9, decomposition, sign flip), heavy-vector A-V, q^2 anapole, photon EDM (O11/q^2), contact O11 and O11 x q^2, pure O9, O9 x q^2, O14, L10 reference; window rates, N_lo, Z_pred (P016 curve), couplings for 1.0 ROI event and 1 event in 200-270 keV, physical moments, 2024-null bounds, hardness vs mass, KL-based distinguishability from L10; figures and tables", "command": ".venv/bin/python output/code/P044_anapole_edm.py  (run twice; final run 707 s)"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules and deliverable formats"},
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Theory paragraph (l.40-62: NREFT basis, L1-L20, WimPyDD, Baxter halo); Table S6 (l.835-870: L9, L10, L11, L12, L14, L16, L18, L19 rows); LEE section (l.486-500: 616 models, degeneracies L1=L5, L2=L8, L3=L17, L4=L20, L11=L14, s/v-indistinguishable list, 293 spectra); abstract line 16 (3.4 sigma local, 2.6 sigma global)"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "event numbers, explanation J (heavy WIMP with momentum-/spin-suppressed EFT), open question 10"},
+  {"file": "output/results_ledger.csv", "parts_used": "all rows P001-P040 (headlines) for context; P003, P012, P016, P027, P031-related entries"},
+  {"file": "output/papers/P003.md", "parts_used": "N_lo table (O6 0.43, O9 2.1, O11s 258, O8s 156, O4 28), WimPyDD c0 = 2/m_v^2 convention, efficiency model, compatible/excluded criterion"},
+  {"file": "output/papers/P012.md", "parts_used": "L10 implementation and d10 = 0.28 (LZ norm.) / 0.55 (WimPyDD norm.), photon magnetic dipole N_lo 376 and mu = 2.1e-5 mu_N, factor 1.96, DR-001"},
+  {"file": "output/papers/P016.md", "parts_used": "Z(N_lo) calibration points (L10 3.40, O6 3.26, O10 3.08, O4 2.70, O11s 1.90, O1v 1.65, O1s 0.48; Z<3/2/1 at N_lo 10.9/160/937); fit tolerance 1.6-2.2 companions; Bayes factors"},
+  {"file": "output/papers/P027.md", "parts_used": "in-window shape factor rho definition; model-averaged prediction 0.92 events"},
+  {"file": "output/work/P031/P031_tableS6_comparison.csv, details.md (sections 3.1-3.3), P031_directdm_matching.py", "parts_used": "directdm NR coefficients for anapole (c8p 0.606, c9 1.69/-1.16), EDM (c11p 0.072), MDM (c5, c6, c4, c1); N_lo anapole 26.9, EDM 18200, MDM 422; anapole a = 2.73e-6 GeV^-2; closure pattern for WimPyDD coefficient functions"},
+  {"file": "output/code/P012_magnetic_dipole.py", "parts_used": "efficiency/summarise functions, L10 Hamiltonian syntax, photon-dipole coefficient formulae, constants"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "wd_halo, wd_rate, wd_c_from_anand docstrings; constants"},
+  {"file": "output/work/P012/P012_summary.json; output/work/P003/P003_spectra.npz", "parts_used": "runtime (grid sizing); cache keys (cross-check availability)"},
+  {"file": "WimPyDD/package.py", "parts_used": "reserved coefficient-function argument names (q, mchi, delta, q0*) — read only"},
+  {"file": "output/data_requests/DR-001.md; environment/ENVIRONMENT_versions.txt", "parts_used": "DR-001 scope; package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Anapole reduction after photon EOM: c8^N = 2 e A Q_N, c9^N = e A g_N for L = A chibar g^mu g5 chi d^nu F_{mu nu}", "presumed_source": "Fitzpatrick et al. 2012 (A-V -> 2O8+2O9), Gresham & Zurek 2014, Del Nobile 2021 review; confirmed numerically by directdm output in work/P031", "reliability": "likely"},
+  {"item": "EDM reduction: c11^N = 2 e d_E Q_N m_N / q^2 for L = (d_E/2) chibar sigma^{mu nu} i g5 chi F_{mu nu}", "presumed_source": "Fitzpatrick et al. 2012; Banks-Fox-Weiner 2010; confirmed numerically by directdm C52 output in work/P031", "reliability": "likely"},
+  {"item": "Axial-vector(DM) x vector(N) -> 2 O8 + 2 O9; tensor F2 piece adds 2 F2 O9", "presumed_source": "Fitzpatrick et al. 2012 Table 1 / Anand et al. 2014", "reliability": "certain (up to sign convention, tested)"},
+  {"item": "e = sqrt(4 pi alpha) = 0.30282, g_p = 5.5857, g_n = -3.8261, m_N = 0.938272 GeV, hbar c = 0.19733 GeV fm, mu_N = 1.052e-14 e cm", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "LZ 2024 WS exposure 4.2 t yr (5.5 t x 280 live days)", "presumed_source": "LZ PRL 135, 011802 (2025)", "reliability": "certain"},
+  {"item": "2024 low-energy search tolerates ~3-5 signal events in 5.4-55 keV", "presumed_source": "P003/P012 assumption", "reliability": "uncertain"},
+  {"item": "Published photon-EDM DM limits from XENON100/LUX-era recasts ~1e-22 to 1e-21 e cm at 100 GeV-1 TeV", "presumed_source": "Banks-Fox-Weiner 2010; Barger-Keung-Marfatia 2011; Del Nobile et al. 2012", "reliability": "uncertain (quoted only as order of magnitude; not used in any computed result)"},
+  {"item": "Energy resolution scaling sigma(E) ~ sqrt(E), anchored to LZ's +-23 keV stat at 248 keV", "presumed_source": "standard LXe TPC behaviour", "reliability": "likely"},
+  {"item": "Form of Anand et al. L16 (candidate: chibar g^mu g5 chi Nbar i sigma_{mu nu} q^nu g5 N / m_M) and L18/L19", "presumed_source": "Anand, Fitzpatrick, Haxton PRC 89 (2014) 065501 Table 1", "reliability": "uncertain (not asserted; tested as a pattern against Table S6)"},
+  {"item": "directdm operator normalisations Q51 = e/(8 pi^2) chibar sigma chi F, Q52 with i g5; mu = e C51/(4 pi^2)", "presumed_source": "Bishara, Brod, Grinstein, Zupan (directdm manual), as used in work/P031", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Reconstructing Anand et al.'s L16/L18/L19 Lagrangians and reductions from memory: abandoned as unreliable; replaced by a pattern test against Table S6 with flagged candidate structures",
+  "Quoting published anapole/EDM limits directly: replaced by a self-computed bound from the 2024 null (recalled literature values kept only as an order-of-magnitude, uncertain comparison)",
+  "First script run lacked mass-dependent hardness measures and O9 x q^2 at 200/4000 GeV; extended and rerun (rerun exceeded the 600 s foreground limit and finished in the background, 707 s; all first-run numbers reproduced)",
+  "Simple hardness proxy (fraction above 270 keV, density at 248 keV per ROI event) does not reproduce L16's drop from 3.4 to 3.2 sigma at 4 TeV; left as an open point",
+  "Three Bash commands failed on a zsh parsing quirk ('=====' echo separators) and were rerun with plain separators"
+ ],
+ "wimpydd_generated_files": ["none (WD.diff_rate via lzcommon.wd_rate; no response-function files written)"]
+}

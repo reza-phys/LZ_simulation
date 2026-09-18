@@ -1,0 +1,48 @@
+L_acc central = 0.009279, upper = 0.066;  SBB cap = 14.60
+validation: {"P001_3hyp_piU0.01_LU0.1": {"ours": 0.45586897179253866, "P001": 0.46}, "P001_3hyp_piU0.1_LU0.1": {"ours": 0.08962432915921287, "P001": 0.09}, "P001_2hyp_piDM0.01_b2e-4": {"ours": 0.835, "P001": 0.84}}
+area fractions: {"central": {"gt_0p5": 0.0, "between": 0.15318262426611112, "lt_0p1": 0.8468173757338889}, "optimistic": {"gt_0p5": 0.1480690759456621, "between": 0.3561061276493173, "lt_0p1": 0.4958247964050206}, "pessimistic": {"gt_0p5": 0.0, "between": 0.0, "lt_0p1": 1.0}}
+central {"pi_DM(P=0.1)": 0.08530299853218706, "pi_DM(P=0.5)": 0.6621975040694521, "pi_DM(P=0.9)": 2.6640480232840167} {"pi_DM(P=0.1)": 0.3998343468232335, "pi_DM(P=0.5)": 3.103868692349431, "pi_DM(P=0.9)": 12.48699248120301}
+optimistic {"pi_DM(P=0.1)": 0.010185519719081739, "pi_DM(P=0.5)": 0.08892610313662945, "pi_DM(P=0.9)": 0.6305025827167389} {"pi_DM(P=0.1)": 0.04063186311324011, "pi_DM(P=0.5)": 0.354742158426369, "pi_DM(P=0.9)": 2.515187770487227}
+pessimistic {"pi_DM(P=0.1)": 5.864803579554072, "pi_DM(P=0.5)": 24.519118579581484, "pi_DM(P=0.9)": 37.92087283425956} {"pi_DM(P=0.1)": 12.690224480509634, "pi_DM(P=0.5)": 53.054311984781236, "pi_DM(P=0.9)": 82.0529421379536}
+community prior: {"median": 0.015276872376661494, "q16": 0.0015555563327635065, "q84": 0.1366599987245998, "q2p5": 0.00019137094649599752, "q97p5": 0.4950527150563231, "mean": 0.07119936495975623, "frac_gt_0p5": 0.0243425, "frac_0p1_0p5": 0.1784025, "frac_lt_0p1": 0.797255, "mean_binary_entropy_nats": 0.17122842871933994}
+  f_FP=1 (no forking-paths penalty): median 0.047 [0.005,0.317] >0.5 0.081 <0.1 0.636
+  f_FP=10: median 0.005 [0.001,0.044] >0.5 0.000 <0.1 0.928
+  B_DM=28.7 fixed (class priors): median 0.025 [0.003,0.202] >0.5 0.040 <0.1 0.732
+  B_DM=6.6 fixed (uniform-s): median 0.006 [0.001,0.054] >0.5 0.002 <0.1 0.909
+  pi_DM=0.2 fixed (dossier DM total): median 0.173 [0.038,0.459] >0.5 0.131 <0.1 0.347
+  pi_DM=0.01 fixed: median 0.010 [0.002,0.037] >0.5 0.000 <0.1 0.973
+  L_rest=1e-3 fixed: median 0.036 [0.005,0.243] >0.5 0.049 <0.1 0.684
+  L_rest=0.1 fixed: median 0.006 [0.001,0.055] >0.5 0.003 <0.1 0.905
+  pi_U=0.01 fixed: median 0.051 [0.007,0.309] >0.5 0.072 <0.1 0.626
+  pi_U=0.5 fixed: median 0.003 [0.000,0.028] >0.5 0.000 <0.1 0.959
+  L_acc upper bracket (0.066): median 0.007 [0.001,0.060] >0.5 0.005 <0.1 0.897
+  L_acc = 0 (no accounted channels): median 0.022 [0.002,0.197] >0.5 0.044 <0.1 0.743
+  b_eff=2e-4 (L_DM = B_DM b_H held fixed): median 0.019 [0.002,0.172] >0.5 0.039 <0.1 0.766
+  b_eff=1.1e-3 (L_DM held fixed): median 0.012 [0.001,0.110] >0.5 0.013 <0.1 0.827
+  uniform (linear) hyper-prior: median 0.012 [0.003,0.055] >0.5 0.003 <0.1 0.916
+sensitivity (logit): {"pi_DM": 0.5587569855912048, "pi_U": 0.14446567102948357, "L_rest": 0.1402228141570281, "f_FP": 0.0895644220919608, "B_DM": 0.06351105272325609}
+elasticities: {"pi_DM": 1.0070552728726885, "pi_U": -0.7718817748400518, "L_rest": -0.4125828030486122, "f_FP": -1.000000000000023, "B_DM": 1.000000000000023, "P_DM_at_point": 0.037135910759403146}
+implied pi_DM: {"r=0.02": {"P_ref": 0.007582175242128772, "pi_DM_implied_Lrest0.01": 0.00597637920071842, "pi_DM_implied_Lrest0.1": 0.02801263396603302}, "r=0.05": {"P_ref": 0.019322702285157027, "pi_DM_implied_Lrest0.01": 0.015378878124742926, "pi_DM_implied_Lrest0.1": 0.07208426193319009}, "r=0.1": {"P_ref": 0.03993498066624554, "pi_DM_implied_Lrest0.01": 0.03233748168225866, "pi_DM_implied_Lrest0.1": 0.15157305239927152}, "r=0.2": {"P_ref": 0.08558158292469689, "pi_DM_implied_Lrest0.01": 0.07207894582425416, "pi_DM_implied_Lrest0.1": 0.33785023644243284}}
+                                             explanation  dossier_P  L_event_central  posterior_central  posterior_q16  posterior_q84  posterior_optimistic  posterior_pessimistic
+A                   A fluctuation of modelled background        0.1          0.00057             0.0144        0.00239          0.021                0.0114                 0.0023
+B                            B wall/RFR MSSI mismodelled       0.19            2e-06           9.62e-05       1.59e-05        0.00014              7.63e-05               2.52e-05
+C                                 C ER leakage / EC tail       0.13           0.0028             0.0921         0.0152          0.134                0.0731                 0.0523
+D                                              D neutron       0.08          6.6e-06           0.000134       2.21e-05       0.000195              0.000106                0.00161
+E                               E accidental coincidence       0.05          0.00015             0.0019       0.000314        0.00277               0.00151                 0.0544
+F                 F detector artefact + unknown unknowns       0.18            0.016              0.729          0.567          0.952                 0.253                   0.87
+G                                  G calibration-related       0.05          0.00015             0.0019       0.000314        0.00277               0.00151                 0.0161
+H                                   H non-DM new physics       0.02          0.00057            0.00288       0.000477        0.00421               0.00229               0.000459
+I                                         I inelastic DM        0.1          0.00312               0.11         0.0164          0.205                  0.46                0.00212
+J                         J heavy WIMP, q-suppressed EFT       0.06          0.00312             0.0394        0.00586         0.0734                 0.164               0.000757
+K                                             K other DM       0.04          0.00312            0.00789        0.00117         0.0147                0.0328               0.000151
+DM total (I+J+K)                                DM total        0.2          0.00312              0.158         0.0234          0.293                 0.657                0.00303
+VOI LZ next exposure 6.76 t yr (N = 0/1/>=2): IG 0.0078 nats (H 0.172->0.164); width68 0.137->0.141; P(m) [0.72, 0.09, 0.19]; central P(DM) 0.037 -> [0.03, 0.093, 0.038]; P(U) -> [0.695, 0.904, 0.962]
+VOI LZ next exposure, if H_U is a one-off effect (f_trans = 1): IG 0.0521 nats (H 0.172->0.120); width68 0.137->0.071; P(m) [0.97, 0.016, 0.014]; central P(DM) 0.037 -> [0.022, 0.968, 1.0]; P(U) -> [0.778, 0.0, 0.0]
+VOI LZ next exposure, L10 plug-in predictive (P020): IG 0.0544 nats (H 0.172->0.118); width68 0.137->0.177; P(m) [0.685, 0.09, 0.225]; central P(DM) 0.037 -> [0.005, 0.093, 0.119]; P(U) -> [0.713, 0.904, 0.881]
+VOI XENONnT+PandaX-4T 270 keV reanalysis (0 / >=1): IG 0.0273 nats (H 0.172->0.145); width68 0.137->0.145; P(m) [0.901, 0.099]; central P(DM) 0.037 -> [0.022, 0.194]; P(U) -> [0.762, 0.804]
+VOI XENONnT+PandaX-4T at LZ best-fit coupling (1.63 events): IG 0.0738 nats (H 0.172->0.098); width68 0.137->0.131; P(m) [0.876, 0.124]; central P(DM) 0.037 -> [0.008, 0.295]; P(U) -> [0.773, 0.703]
+VOI wall-MSSI calibration (k <= 2 / k > 100): IG 0.0000 nats (H 0.172->0.172); width68 0.137->0.137; P(m) [1.0, 0.0]; central P(DM) 0.037 -> [0.037, 0.024]; P(U) -> [0.766, 0.848]
+VOI LZ internal artefact audit (nothing / artefact found): IG 0.0106 nats (H 0.172->0.161); width68 0.137->0.144; P(m) [0.838, 0.162]; central P(DM) 0.037 -> [0.048, 0.002]; P(U) -> [0.695, 0.99]
+VOI f_trans f_trans=0.0: IG 0.0053; width 0.137; central after [0.048, 0.049, 0.019]
+VOI f_trans f_trans=0.5: IG 0.0078; width 0.141; central after [0.03, 0.093, 0.038]
+VOI f_trans f_trans=1.0: IG 0.0521; width 0.071; central after [0.022, 0.968, 1.0]

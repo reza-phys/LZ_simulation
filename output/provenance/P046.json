@@ -1,0 +1,67 @@
+{
+ "id": "P046",
+ "title": "A multi-target confirmation programme for a 300-390 keV inelastic splitting: xenon, iodine and tungsten as a delta-meter",
+ "date": "2026-09-10",
+ "agent_tools": [
+  {"tool": "Read", "count": 20, "detail": "output/provenance/PAPER_GUIDE.md; output/00_evidence_dossier.md; output/results_ledger.csv (lines 1-14, then compact extraction by script); output/papers/P015.md, P028.md, P005.md, P035.md, P034.md, P018.md, P021.md, P038.md, P017.md; output/code/common/lzcommon.py; output/code/P015_target_complementarity.py; output/code/P005_other_xenon_expectations.py l.84-113; output/code/P012_magnetic_dipole.py l.120-141; output/work/P046/figures/P046_fig1..fig3 (visual check)"},
+  {"tool": "Bash", "count": 17, "detail": "ls output/work/P015 + cat rates_table.csv, future_exposures.csv; grep L10 in P012/P005 scripts + head ENVIRONMENT_versions.txt; python: print ledger P014-P040 headlines; python: P015_summary lz_normalisation + check no P046 files + grep P015 details; python probe: WimPyDD O1/L10 rates on Xe/I/W/Ge, timing, single-stream kernel test; ls/head WimPyDD/Targets/Nuclear_response_functions/183W_func_w.py; sed WimPyDD/package.py diff_rate (l.5351-5486), dsigma_der kinematic block (l.5240-5280), get_vmin (l.5130-5153), c_light grep; python: element attributes (a, mass, spin, abundance, nt_kg); .venv/bin/python output/code/P046_multi_target.py (run 1, 44 s, 220-pt kernels); run 2 (545 s, 1 keV kernels, --recompute equivalent); run 3 (18 s, cached kernels); python/awk/column extraction of P046 CSV/JSON tables (x3); node scripts/validate_palette.js (x2); wc -w"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P046_multi_target.py; output/work/P046/details.md; output/provenance/P046.json; output/papers/P046.md"},
+  {"tool": "Edit", "count": 11, "detail": "P046_multi_target.py: expo_W_for_Z simplification; kernel block on 1 keV grid + 400/4000 GeV kernels + cache; Halo.eta strict inequality; vmin_iso with WimPyDD c = 3e5; E_FINE relocation; spin-estimate values; mass-degeneracy block; W edges / falling-edge Fisher block; shape-delta-meter KL bias block; Fig.1 label; Fig.2 palette order"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (loaded before writing figure code; palette validated with its validate_palette.js)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python from the simulation root"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian (O1 constant and L10 q-dependent Wilson coefficients), streamed_halo_function (via lz.wd_halo, explicit v_min grid, day_of_the_year), diff_rate with isotopes_list={0:[i]} and single-stream halos (kernels), Xe/I/W/Ge element objects (a, mass, spin, abundance, nt_kg); 18xW_func_w modules patched at runtime with np (P015 workaround)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "geomspace, searchsorted, cumsum, gradient, interp, random.default_rng (toys), savez/load (kernel cache)"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf/erfc (LZ efficiency), optimize.brentq (3/5 sigma exposures), stats (imported)"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend, pyplot (3 PNG figures)"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "wd, wd_halo, wd_hamiltonian, wd_rate, E_R_range_keV, LZ dict (exposure, efficiency edges, plateau), M_V_GEV, M_NUCLEON_GEV, V0_KMS, VESC_KMS, C_KMS"},
+  {"name": "node", "version": "26.4.0", "functions": "dataviz skill validate_palette.js (palette check only; no physics)"},
+  {"name": "none: derived by hand", "version": "-", "functions": "kernel x eta factorisation of the WimPyDD rate; multinomial Fisher information with profiled coupling; Asimov likelihood ratio; order-statistic quantiles F^N; E+ kinematics and derivatives; neutron elastic kinematics; 180W activity"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P046_multi_target.py", "purpose": "kernels, halos, window rates and ratios vs delta, LZ normalisation, delta-meter Fisher/Asimov/systematics, shape Fisher and KL biases, endpoint analysis with toys, background arithmetic, programme table, 3 figures", "command": ".venv/bin/python output/code/P046_multi_target.py   (first run computes and caches output/work/P046/kernels.npz, ~9 min; later runs ~20 s; add --recompute to regenerate kernels)"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules, deliverables, page budget"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "sections 1-6 (event, significance table, explanations, open questions)"},
+  {"file": "output/results_ledger.csv", "parts_used": "all rows P001-P040 (headline results; builds-on)"},
+  {"file": "output/papers/P015.md", "parts_used": "kinematic map, W/Xe and I/Xe ratios, exposures for 3 events, tungsten Helm caveat"},
+  {"file": "output/work/P015/rates_table.csv, future_exposures.csv, P015_summary.json (lz_normalisation, mass_fractions), details.md (tungsten form-factor notes)", "parts_used": "cross-checks of rates, normalisation and windows; CaWO4/NaI mass fractions"},
+  {"file": "output/papers/P028.md", "parts_used": "NaI has no discrimination; iodine exposures"},
+  {"file": "output/papers/P005.md, P035.md", "parts_used": "xenon-world exposures (7.48 t yr), 270 keV re-analysis expectations, one-event delta constraint"},
+  {"file": "output/papers/P034.md", "parts_used": "modulation exposures for context"},
+  {"file": "output/papers/P018.md", "parts_used": "v_esc/v0 ranges, 0.82 keV per km/s, tail systematics"},
+  {"file": "output/papers/P021.md, P038.md", "parts_used": "delta preference and its ROI-edge dependence; motivation for the 5-1000 keV xenon window"},
+  {"file": "output/papers/P017.md", "parts_used": "Helm vs shell-model factors; Sigma-prime nodes"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "WimPyDD wrapper, halo, kinematics, LZ constants"},
+  {"file": "output/code/P015_target_complementarity.py", "parts_used": "tungsten numpy injection, efficiency model, normalisation recipe, target list"},
+  {"file": "output/code/P005_other_xenon_expectations.py (l.84-113), output/code/P012_magnetic_dipole.py (l.120-141)", "parts_used": "L10 hamiltonian construction and WimPyDD coupling normalisation (c4 = 8 q^2/(m_v^2 m_N^2), c6 = -8/m_v^2)"},
+  {"file": "WimPyDD/package.py (l.5130-5153 get_vmin, 5240-5280 dsigma_der, 5351-5486 diff_rate), WimPyDD/Targets/Nuclear_response_functions/183W_func_w.py", "parts_used": "read-only: stream-sum structure, c = 3e5 km/s, strict inequality, Gaussian spin response for W"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Atomic masses of Ca, W, O, Na, I, Cs (mass fractions CaWO4 W 0.6385, NaI I 0.8466, CsI I 0.488)", "presumed_source": "standard atomic weights (also P015)", "reliability": "certain"},
+  {"item": "Anand et al. L10 reduction 4[(q^2/m_M^2)O4 - (m_N^2/m_M^2)O6]", "presumed_source": "Anand, Fitzpatrick, Haxton PRC 89 (2014) Table 1 via P003/P005/P012", "reliability": "likely"},
+  {"item": "Nuclear spin expectation values <S_p>+<S_n>: 129Xe 0.34, 131Xe -0.28, 127I 0.38, 73Ge 0.47 (183W -0.17 is WimPyDD's own)", "presumed_source": "Menendez/Klos et al. shell-model tables; Ellis-Floris for W", "reliability": "likely (Xe, Ge) / uncertain (I)"},
+  {"item": "CaWO4 light yields relative to e/gamma: alpha ~0.22, O ~0.11, Ca ~0.06, W ~0.02-0.04", "presumed_source": "CRESST quenching-factor publications", "reliability": "likely"},
+  {"item": "210Po decay gives a 103 keV 206Pb recoil", "presumed_source": "decay kinematics (Q = 5.4 MeV)", "reliability": "certain"},
+  {"item": "180W alpha decay: T1/2 = 1.8e18 yr, Q = 2.516 MeV, abundance 0.12 %", "presumed_source": "CRESST 2004 observation of 180W alpha decay; nuclear data", "reliability": "likely"},
+  {"item": "Muon-induced neutron flux above 10 MeV at ~3600 m.w.e. ~1e-10 cm^-2 s^-1", "presumed_source": "LNGS neutron-flux literature", "reliability": "uncertain (factor 3)"},
+  {"item": "n-W elastic cross-section ~3 b at 10-50 MeV", "presumed_source": "ENDF-type evaluations", "reliability": "uncertain (factor 2)"},
+  {"item": "Radiogenic (alpha,n) and fission neutrons have E_n <~ 10 MeV", "presumed_source": "P013 and standard background literature", "reliability": "likely"},
+  {"item": "Cryogenic calorimeter phonon energy resolution ~1 % at 0.1-1 MeV", "presumed_source": "CRESST/COSINUS detector performance", "reliability": "uncertain (assumption)"},
+  {"item": "XENONnT 3.1 t yr and PandaX-4T 1.54 t yr exposures (xenon world 7.48 t yr)", "presumed_source": "2025 PRLs via P005", "reliability": "certain"},
+  {"item": "CRESST-III crystals ~24 g; COSINUS = cryogenic NaI with phonon+light readout; LEGEND-class germanium ~1 t", "presumed_source": "experiment descriptions", "reliability": "likely (qualitative timescales only)"},
+  {"item": "Neutron elastic kinematics E_R,max = 4 m_n M/(m_n+M)^2 E_n", "presumed_source": "two-body kinematics", "reliability": "certain"},
+  {"item": "Multinomial Fisher information for count fractions; Asimov median significance sqrt(q); order statistics F^N", "presumed_source": "Cowan-Cranmer-Gross-Vitells 2011 and standard statistics", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "220-point log-grid kernels interpolated onto the analysis grid with c = 299792 km/s and a non-strict step: 5-23 % disagreement with direct WimPyDD calls at kinematic edges and Helm nodes; replaced by 1 keV kernels, c = 3e5 km/s and strict inequality (agreement 1.0000 at 14/15 test points)",
+  "Direct endpoint estimator from the maximum observed tungsten recoil: never approaches E+ (median E_max 253-690 keV for N = 3-3000 vs E+ = 1131 keV); replaced by full-shape Fisher/MLE plus a conditional above-300 keV Fisher showing the falling edge carries no delta information",
+  "L10 tungsten rate from WimPyDD's Gaussian single-particle spin response kept only as an order-of-magnitude value, bracketed by a zero-momentum-transfer spin estimate (0.050 vs 0.074)"
+ ],
+ "wimpydd_generated_files": "none (single-stream diff_rate calls write no response-function files; kernel cache output/work/P046/kernels.npz is our own)"
+}

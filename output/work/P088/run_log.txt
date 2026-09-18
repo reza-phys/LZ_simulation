@@ -1,0 +1,284 @@
+[ 45.3s] timeline table done (60 rows)
+[ 68.5s] settled table done
+[ 69.8s] A-vs-B, CaWO4, isotopes done
+[ 72.5s] figures done
+
+=== exposures on disk now (t.yr): {'LZ': 10.48, 'XENONnT': 6.2, 'PandaX-4T': 4.1, 'present': 20.78}
+=== present generation, 600 phd (200-270 keV), new-only, best fit
+   model  mu_now  P0_now  mu_end2027  mu_end2028  asimov3_new  asimov5_new  toy3_best_med  toy5_best_med  toy5_best_q16  toy5_best_q84  toy5_lo68_med  toy5_PG_med  toy5_comb_med  P5_best_by2027  P5_best_by2028  P5_lo68_by2028  P5_comb_by2027
+30   L10   2.162   0.115       3.221       4.043      2024.37      2026.90        2023.96        2027.29        2025.06        2029.62            inf      2025.63        2025.79           0.632           0.777           0.131           0.832
+31  d300   1.127   0.324       1.679       2.107      2026.11      2030.21        2027.19        2030.32        2027.21            inf            inf      2027.73        2027.90           0.242           0.356           0.030           0.515
+32  d350   3.194   0.041       4.759       5.971      2022.89      2025.49        2022.53        2026.01        2023.76        2027.89        2031.44      2024.64        2024.78           0.853           0.935           0.269           0.950
+33  d366   4.910   0.007       7.316       9.180      2022.16      2024.46        2022.15        2024.84        2022.15        2026.47        2028.82      2022.39        2023.67           0.977           0.995           0.524           0.995
+34  d380   4.994   0.007       7.440       9.337      2022.15      2024.43        2022.13        2024.79        2022.15        2026.40        2028.73      2022.37        2023.61           0.980           0.996           0.537           0.994
+=== present generation, 1000 phd (200-400 keV)
+   model   mu_now  P0_now  asimov5_new  toy3_best_med  toy5_best_med  toy5_lo68_med  P5_best_by2027
+35   L10    4.565   0.010      2025.02        2023.66        2024.86            inf           0.895
+36  d300    2.335   0.097      2027.96        2025.30        2028.36            inf           0.448
+37  d350   10.722   0.000      2023.04        2021.79        2023.30        2026.96           1.000
+38  d366   33.966   0.000      2021.73        2021.31        2021.84        2023.36           1.000
+39  d380  218.086   0.000      2021.04        2021.00        2021.06        2021.42           1.000
+=== LZ alone / XENONnT / PandaX / XLZD (600 & 1000), toy5 median
+   experiment   window model  mu_now  toy3_best_med  toy5_best_med  toy5_lo68_med  asimov5_new
+0          LZ   600phd   L10    0.92        2026.03        2031.83            inf      2030.84
+1          LZ   600phd  d300    0.48        2031.67            inf            inf          inf
+2          LZ   600phd  d350    1.36        2025.36        2029.22            inf      2028.32
+3          LZ   600phd  d366    2.09        2024.88        2027.25            inf      2026.61
+4          LZ   600phd  d380    2.13        2024.88        2027.19            inf      2026.56
+5          LZ  1000phd   L10    2.30        2025.32        2027.32            inf      2027.53
+6          LZ  1000phd  d300    1.18        2027.90            inf            inf          inf
+7          LZ  1000phd  d350    5.41        2023.43        2024.80        2030.96      2024.60
+8          LZ  1000phd  d366   17.13        2022.19        2023.48        2024.89      2023.38
+9          LZ  1000phd  d380  109.99        2022.02        2022.06        2022.24      2022.05
+10    XENONnT   600phd   L10    0.75        2026.35            inf            inf          inf
+11    XENONnT   600phd  d300    0.39            inf            inf            inf          inf
+12    XENONnT   600phd  d350    1.10        2024.45        2030.17            inf      2029.18
+13    XENONnT   600phd  d366    1.70        2023.22        2027.93            inf      2027.19
+14    XENONnT   600phd  d380    1.72        2023.18        2027.89            inf      2027.13
+15    XENONnT  1000phd   L10    1.36        2026.88        2029.22            inf      2029.45
+16    XENONnT  1000phd  d300    0.70        2029.84            inf            inf          inf
+17    XENONnT  1000phd  d350    3.20        2022.42        2025.67            inf      2025.12
+18    XENONnT  1000phd  d366   10.13        2021.80        2022.50        2025.94      2022.31
+19    XENONnT  1000phd  d380   65.02        2021.55        2021.61        2021.87      2021.60
+20  PandaX-4T   600phd   L10    0.49        2027.73            inf            inf          inf
+21  PandaX-4T   600phd  d300    0.26            inf            inf            inf          inf
+22  PandaX-4T   600phd  d350    0.73        2026.58            inf            inf      2031.66
+23  PandaX-4T   600phd  d366    1.12        2025.01        2029.83            inf      2028.71
+24  PandaX-4T   600phd  d380    1.14        2024.98        2029.70            inf      2028.62
+25  PandaX-4T  1000phd   L10    0.90        2028.34        2031.60            inf          inf
+26  PandaX-4T  1000phd  d300    0.46            inf            inf            inf          inf
+27  PandaX-4T  1000phd  d350    2.12        2022.20        2027.37            inf      2027.01
+28  PandaX-4T  1000phd  d366    6.71        2021.32        2022.33        2027.49      2022.06
+29  PandaX-4T  1000phd  d380   43.07        2021.00        2021.06        2021.42      2021.04
+40       XLZD   600phd   L10    0.00        2032.13        2032.47        2033.96      2032.40
+41       XLZD   600phd  d300    0.00        2032.44        2032.89        2035.95      2032.87
+42       XLZD   600phd  d350    0.00        2032.09        2032.31        2033.04      2032.26
+43       XLZD   600phd  d366    0.00        2032.06        2032.20        2032.68      2032.16
+44       XLZD   600phd  d380    0.00        2032.06        2032.19        2032.67      2032.15
+45       XLZD  1000phd   L10    0.00        2032.13        2032.26        2033.13      2032.24
+46       XLZD  1000phd  d300    0.00        2032.28        2032.62        2034.71      2032.54
+47       XLZD  1000phd  d350    0.00        2032.03        2032.11        2032.36      2032.09
+48       XLZD  1000phd  d366    0.00        2032.01        2032.03        2032.12      2032.03
+49       XLZD  1000phd  d380    0.00        2032.01        2032.01        2032.02      2032.01
+=== LZ sideband
+   model                         dataset  exposure_tyr  mu_sideband  b_sideband  P0_if_true  Z_if_zero_excl  Z_asimov_disc
+0    L10  SR3 (analysed, sideband empty)          2.84       0.2815      0.0027      0.7546          0.7504         1.4436
+1    L10     untouched Apr 2024-Sep 2026          6.76       0.6701      0.0064      0.5117          1.1577         2.2272
+2    L10                   SR3+untouched          9.60       0.9516      0.0091      0.3861          1.3796         2.6541
+3   d300  SR3 (analysed, sideband empty)          2.84       0.1550      0.0027      0.8564          0.5568         0.9863
+4   d300     untouched Apr 2024-Sep 2026          6.76       0.3689      0.0064      0.6915          0.8590         1.5217
+5   d300                   SR3+untouched          9.60       0.5239      0.0091      0.5922          1.0237         1.8134
+6   d350  SR3 (analysed, sideband empty)          2.84       1.0620      0.0027      0.3458          1.4574         3.2564
+7   d350     untouched Apr 2024-Sep 2026          6.76       2.5279      0.0064      0.0798          2.2485         5.0240
+8   d350                   SR3+untouched          9.60       3.5899      0.0091      0.0276          2.6795         5.9870
+9   d366  SR3 (analysed, sideband empty)          2.84       3.8100      0.0027      0.0221          2.7604         6.9055
+10  d366     untouched Apr 2024-Sep 2026          6.76       9.0689      0.0064      0.0001          4.2588        10.6539
+11  d366                   SR3+untouched          9.60      12.8789      0.0091      0.0000          5.0752        12.6961
+12  d380  SR3 (analysed, sideband empty)          2.84      30.6000      0.0027      0.0000          7.8230        22.5874
+13  d380     untouched Apr 2024-Sep 2026          6.76      72.8366      0.0064      0.0000         12.0695        34.8481
+14  d380                   SR3+untouched          9.60     103.4366      0.0091      0.0000         14.3831        41.5281
+=== settled (present, 600phd, best fit & one-off)
+      window model      date  k_expected         truth  P_BF_gt100  P_BF_lt0p01  P_settled  BF_if_zero  N_min_for_BF100
+120   600phd   L10  end-2027       3.221  A/B best fit       0.832        0.000      0.832       0.056                2
+122   600phd   L10  end-2027       3.221     C one-off       0.000        0.000      0.000       0.056                2
+123   600phd   L10  end-2028       4.043  A/B best fit       0.912        0.000      0.912       0.039                2
+125   600phd   L10  end-2028       4.043     C one-off       0.000        0.000      0.000       0.039                2
+126   600phd   L10  end-2030       5.685  A/B best fit       0.977        0.000      0.977       0.022                2
+128   600phd   L10  end-2030       5.685     C one-off       0.000        0.000      0.000       0.022                2
+129   600phd   L10  end-2032       6.506  A/B best fit       0.989        0.000      0.989       0.018                2
+131   600phd   L10  end-2032       6.506     C one-off       0.000        0.000      0.000       0.018                2
+132   600phd  d300  end-2027       1.679  A/B best fit       0.502        0.000      0.502       0.139                2
+134   600phd  d300  end-2027       1.679     C one-off       0.000        0.000      0.000       0.139                2
+135   600phd  d300  end-2028       2.107  A/B best fit       0.624        0.000      0.624       0.104                2
+137   600phd  d300  end-2028       2.107     C one-off       0.000        0.000      0.000       0.104                2
+138   600phd  d300  end-2030       2.963  A/B best fit       0.797        0.000      0.797       0.064                2
+140   600phd  d300  end-2030       2.963     C one-off       0.000        0.000      0.000       0.064                2
+141   600phd  d300  end-2032       3.391  A/B best fit       0.853        0.000      0.853       0.052                2
+143   600phd  d300  end-2032       3.391     C one-off       0.000        0.000      0.000       0.052                2
+144   600phd  d350  end-2027       4.759  A/B best fit       0.951        0.000      0.951       0.030                2
+146   600phd  d350  end-2027       4.759     C one-off       0.000        0.000      0.000       0.030                2
+147   600phd  d350  end-2028       5.971  A/B best fit       0.982        0.000      0.982       0.021                2
+149   600phd  d350  end-2028       5.971     C one-off       0.000        0.000      0.000       0.021                2
+150   600phd  d350  end-2030       8.397  A/B best fit       0.998        0.000      0.998       0.011                2
+152   600phd  d350  end-2030       8.397     C one-off       0.000        0.000      0.000       0.011                2
+153   600phd  d350  end-2032       9.610  A/B best fit       0.999        0.000      0.999       0.009                2
+155   600phd  d350  end-2032       9.610     C one-off       0.000        0.989      0.989       0.009                2
+156   600phd  d366  end-2027       7.316  A/B best fit       0.994        0.000      0.994       0.014                2
+158   600phd  d366  end-2027       7.316     C one-off       0.000        0.000      0.000       0.014                2
+159   600phd  d366  end-2028       9.180  A/B best fit       0.999        0.000      0.999       0.010                2
+161   600phd  d366  end-2028       9.180     C one-off       0.000        0.993      0.993       0.010                2
+162   600phd  d366  end-2030      12.909  A/B best fit       1.000        0.000      1.000       0.005                2
+164   600phd  d366  end-2030      12.909     C one-off       0.000        0.991      0.991       0.005                2
+165   600phd  d366  end-2032      14.774  A/B best fit       1.000        0.000      1.000       0.004                2
+167   600phd  d366  end-2032      14.774     C one-off       0.000        0.989      0.989       0.004                2
+168   600phd  d380  end-2027       7.440  A/B best fit       0.995        0.000      0.995       0.014                2
+170   600phd  d380  end-2027       7.440     C one-off       0.000        0.000      0.000       0.014                2
+171   600phd  d380  end-2028       9.337  A/B best fit       0.999        0.000      0.999       0.009                2
+173   600phd  d380  end-2028       9.337     C one-off       0.000        0.993      0.993       0.009                2
+174   600phd  d380  end-2030      13.129  A/B best fit       1.000        0.000      1.000       0.005                2
+176   600phd  d380  end-2030      13.129     C one-off       0.000        0.991      0.991       0.005                2
+177   600phd  d380  end-2032      15.026  A/B best fit       1.000        0.000      1.000       0.004                2
+179   600phd  d380  end-2032      15.026     C one-off       0.000        0.989      0.989       0.004                2
+180  1000phd   L10  end-2027       6.495  A/B best fit       0.989        0.000      0.989       0.018                2
+182  1000phd   L10  end-2027       6.495     C one-off       0.000        0.000      0.000       0.018                2
+183  1000phd   L10  end-2028       7.991  A/B best fit       0.987        0.000      0.987       0.012                3
+185  1000phd   L10  end-2028       7.991     C one-off       0.000        0.000      0.000       0.012                3
+186  1000phd   L10  end-2030      10.984  A/B best fit       0.999        0.000      0.999       0.007                3
+188  1000phd   L10  end-2030      10.984     C one-off       0.000        0.953      0.953       0.007                3
+189  1000phd   L10  end-2032      12.481  A/B best fit       1.000        0.000      1.000       0.006                3
+191  1000phd   L10  end-2032      12.481     C one-off       0.000        0.947      0.947       0.006                3
+192  1000phd  d300  end-2027       3.322  A/B best fit       0.847        0.000      0.847       0.054                2
+194  1000phd  d300  end-2027       3.322     C one-off       0.000        0.000      0.000       0.054                2
+195  1000phd  d300  end-2028       4.087  A/B best fit       0.917        0.000      0.917       0.039                2
+197  1000phd  d300  end-2028       4.087     C one-off       0.001        0.000      0.001       0.039                2
+198  1000phd  d300  end-2030       5.618  A/B best fit       0.921        0.000      0.921       0.023                3
+200  1000phd  d300  end-2030       5.618     C one-off       0.000        0.000      0.000       0.023                3
+201  1000phd  d300  end-2032       6.383  A/B best fit       0.955        0.000      0.955       0.018                3
+203  1000phd  d300  end-2032       6.383     C one-off       0.000        0.000      0.000       0.018                3
+204  1000phd  d350  end-2027      15.256  A/B best fit       1.000        0.000      1.000       0.004                3
+206  1000phd  d350  end-2027      15.256     C one-off       0.000        0.972      0.972       0.004                3
+207  1000phd  d350  end-2028      18.771  A/B best fit       1.000        0.000      1.000       0.003                3
+209  1000phd  d350  end-2028      18.771     C one-off       0.000        0.966      0.966       0.003                3
+210  1000phd  d350  end-2030      25.800  A/B best fit       1.000        0.000      1.000       0.001                3
+212  1000phd  d350  end-2030      25.800     C one-off       0.000        0.953      0.953       0.001                3
+213  1000phd  d350  end-2032      29.315  A/B best fit       1.000        0.000      1.000       0.001                3
+215  1000phd  d350  end-2032      29.315     C one-off       0.000        0.947      0.947       0.001                3
+216  1000phd  d366  end-2027      48.331  A/B best fit       1.000        0.000      1.000       0.000                3
+218  1000phd  d366  end-2027      48.331     C one-off       0.000        0.972      0.972       0.000                3
+219  1000phd  d366  end-2028      59.466  A/B best fit       1.000        0.000      1.000       0.000                3
+221  1000phd  d366  end-2028      59.466     C one-off       0.000        0.966      0.966       0.000                3
+222  1000phd  d366  end-2030      81.736  A/B best fit       1.000        0.000      1.000       0.000                4
+224  1000phd  d366  end-2030      81.736     C one-off       0.000        0.999      0.999       0.000                4
+225  1000phd  d366  end-2032      92.871  A/B best fit       1.000        0.000      1.000       0.000                4
+227  1000phd  d366  end-2032      92.871     C one-off       0.000        0.999      0.999       0.000                4
+228  1000phd  d380  end-2027     310.313  A/B best fit       1.000        0.000      1.000       0.000                4
+230  1000phd  d380  end-2027     310.313     C one-off       0.000        1.000      1.000       0.000                4
+231  1000phd  d380  end-2028     381.807  A/B best fit       1.000        0.000      1.000       0.000                4
+233  1000phd  d380  end-2028     381.807     C one-off       0.000        0.999      0.999       0.000                4
+234  1000phd  d380  end-2030     524.796  A/B best fit       1.000        0.000      1.000       0.000                5
+236  1000phd  d380  end-2030     524.796     C one-off       0.000        1.000      1.000       0.000                5
+237  1000phd  d380  end-2032     596.290  A/B best fit       1.000        0.000      1.000       0.000                5
+239  1000phd  d380  end-2032     596.290     C one-off       0.000        1.000      1.000       0.000                5
+=== null branch (present)
+    experiment   window model  alpha   prior      pi   P_now  date_P_lt_0.01  date_P_lt_0.001  date_P_lt_0.0001
+60     present   600phd   L10    2.0  median  0.0150  0.0015         2022.00          2027.61               inf
+61     present   600phd   L10    2.0    lo68  0.0016  0.0002         2021.00          2022.07           2027.74
+62     present   600phd   L10    2.0    hi68  0.1370  0.0156         2027.69              inf               inf
+63     present   600phd   L10    1.5  median  0.0150  0.0027         2022.16          2030.34               inf
+64     present   600phd   L10    1.5    lo68  0.0016  0.0003         2021.00          2022.26           2030.60
+65     present   600phd   L10    1.5    hi68  0.1370  0.0275         2030.51              inf               inf
+66     present   600phd  d300    2.0  median  0.0150  0.0034         2022.40          2030.86               inf
+67     present   600phd  d300    2.0    lo68  0.0016  0.0004         2021.00          2022.80           2031.10
+68     present   600phd  d300    2.0    hi68  0.1370  0.0339         2031.01              inf               inf
+69     present   600phd  d300    1.5  median  0.0150  0.0049         2023.33              inf               inf
+70     present   600phd  d300    1.5    lo68  0.0016  0.0005         2021.00          2023.99               inf
+71     present   600phd  d300    1.5    hi68  0.1370  0.0487             inf              inf               inf
+72     present   600phd  d350    2.0  median  0.0150  0.0009         2021.77          2026.38               inf
+73     present   600phd  d350    2.0    lo68  0.0016  0.0001         2021.00          2021.85           2026.50
+74     present   600phd  d350    2.0    hi68  0.1370  0.0089         2026.46              inf               inf
+75     present   600phd  d350    1.5  median  0.0150  0.0018         2021.97          2028.32               inf
+76     present   600phd  d350    1.5    lo68  0.0016  0.0002         2021.00          2022.04           2028.50
+77     present   600phd  d350    1.5    hi68  0.1370  0.0181         2028.43              inf               inf
+78     present   600phd  d366    2.0  median  0.0150  0.0004         2021.59          2025.16           2030.16
+79     present   600phd  d366    2.0    lo68  0.0016  0.0000         2021.00          2021.65           2025.24
+80     present   600phd  d366    2.0    hi68  0.1370  0.0045         2025.21          2030.30               inf
+81     present   600phd  d366    1.5  median  0.0150  0.0011         2021.72          2026.84               inf
+82     present   600phd  d366    1.5    lo68  0.0016  0.0001         2021.00          2021.80           2026.95
+83     present   600phd  d366    1.5    hi68  0.1370  0.0109         2026.91              inf               inf
+84     present   600phd  d380    2.0  median  0.0150  0.0004         2021.59          2025.12           2030.06
+85     present   600phd  d380    2.0    lo68  0.0016  0.0000         2021.00          2021.64           2025.20
+86     present   600phd  d380    2.0    hi68  0.1370  0.0044         2025.17          2030.19               inf
+87     present   600phd  d380    1.5  median  0.0150  0.0010         2021.71          2026.79               inf
+88     present   600phd  d380    1.5    lo68  0.0016  0.0001         2021.00          2021.79           2026.91
+89     present   600phd  d380    1.5    hi68  0.1370  0.0107         2026.86              inf               inf
+90     present  1000phd   L10    2.0  median  0.0150  0.0005         2021.67          2025.11           2031.24
+91     present  1000phd   L10    2.0    lo68  0.0016  0.0001         2021.00          2021.74           2025.21
+92     present  1000phd   L10    2.0    hi68  0.1370  0.0051         2025.17          2031.41               inf
+93     present  1000phd   L10    1.5  median  0.0150  0.0012         2021.83          2027.10               inf
+94     present  1000phd   L10    1.5    lo68  0.0016  0.0001         2021.00          2021.93           2027.24
+95     present  1000phd   L10    1.5    hi68  0.1370  0.0119         2027.19              inf               inf
+96     present  1000phd  d300    2.0  median  0.0150  0.0014         2022.03          2027.45               inf
+97     present  1000phd  d300    2.0    lo68  0.0016  0.0001         2021.00          2022.10           2027.59
+98     present  1000phd  d300    2.0    hi68  0.1370  0.0141         2027.54              inf               inf
+99     present  1000phd  d300    1.5  median  0.0150  0.0025         2022.20          2030.38               inf
+100    present  1000phd  d300    1.5    lo68  0.0016  0.0003         2021.00          2022.30           2030.66
+101    present  1000phd  d300    1.5    hi68  0.1370  0.0254         2030.56              inf               inf
+102    present  1000phd  d350    2.0  median  0.0150  0.0001         2021.34          2023.41           2026.89
+103    present  1000phd  d350    2.0    lo68  0.0016  0.0000         2021.00          2021.41           2023.46
+104    present  1000phd  d350    2.0    hi68  0.1370  0.0012         2023.44          2026.96               inf
+105    present  1000phd  d350    1.5  median  0.0150  0.0004         2021.50          2024.42           2031.49
+106    present  1000phd  d350    1.5    lo68  0.0016  0.0000         2021.00          2021.54           2024.51
+107    present  1000phd  d350    1.5    hi68  0.1370  0.0039         2024.47          2031.72               inf
+108    present  1000phd  d366    2.0  median  0.0150  0.0000         2021.04          2021.97           2023.74
+109    present  1000phd  d366    2.0    lo68  0.0016  0.0000         2021.00          2021.06           2021.99
+110    present  1000phd  d366    2.0    hi68  0.1370  0.0001         2021.98          2023.78           2027.15
+111    present  1000phd  d366    1.5  median  0.0150  0.0001         2021.09          2022.27           2025.89
+112    present  1000phd  d366    1.5    lo68  0.0016  0.0000         2021.00          2021.12           2022.30
+113    present  1000phd  d366    1.5    hi68  0.1370  0.0008         2022.29          2025.99               inf
+114    present  1000phd  d380    2.0  median  0.0150  0.0000         2021.00          2021.17           2021.69
+115    present  1000phd  d380    2.0    lo68  0.0016  0.0000         2021.00          2021.00           2021.18
+116    present  1000phd  d380    2.0    hi68  0.1370  0.0000         2021.18          2021.70           2022.45
+117    present  1000phd  d380    1.5  median  0.0150  0.0000         2021.00          2021.38           2022.16
+118    present  1000phd  d380    1.5    lo68  0.0016  0.0000         2021.00          2021.00           2021.40
+119    present  1000phd  d380    1.5    hi68  0.1370  0.0000         2021.39          2022.18           2025.04
+=== A vs B (present)
+   experiment   window truth  roi_rate_per_tyr  N_shape_P057  N_shape_P050  shape_q16  shape_med  shape_q84  shape_P050_med  mod3_q16  mod3_med  mod3_q84  mod5_med  N_mod3  N_mod5
+10    present   600phd   L10              0.35             2             4    2022.03    2023.17    2024.28         2024.52       NaN       NaN       NaN       NaN     NaN     NaN
+11    present   600phd  d300              0.35             7             6    2024.98    2026.34    2027.65         2025.73       inf       inf       inf       inf    96.5   268.0
+12    present   600phd  d350              0.35             7             6    2024.98    2026.34    2027.65         2025.73   2027.07   2028.32   2029.84       inf    11.5    32.0
+13    present   600phd  d366              0.35             7             6    2024.98    2026.34    2027.65         2025.73   2024.73   2026.04   2027.40   2030.86     6.5    17.6
+14    present   600phd  d380              0.35             7             6    2024.98    2026.34    2027.65         2025.73   2024.01   2025.31   2026.80   2029.40     5.3    14.1
+15    present  1000phd   L10              0.45             2             4    2021.90    2022.48    2023.46         2023.50       NaN       NaN       NaN       NaN     NaN     NaN
+16    present  1000phd  d300              0.40             5             6    2023.46    2024.24    2025.56         2024.78       inf       inf       inf       inf    96.5   268.0
+17    present  1000phd  d350              0.69             5             6    2022.75    2023.46    2024.20         2023.70   2026.65   2027.90   2029.43       inf    11.5    32.0
+18    present  1000phd  d366              1.70             5             6    2021.93    2022.19    2022.78         2022.31   2022.71   2023.46   2024.01   2025.82     6.5    17.6
+19    present  1000phd  d380             10.50             5             6    2021.17    2021.34    2021.53         2021.43   2021.31   2021.53   2021.66   2021.99     5.3    14.1
+=== CaWO4
+                                     scenario model           bkg  exposure_tyr  mu_total  b_total  asimov3  asimov5  toy3_med  toy5_med  P3_by_end  P5_by_end  kgyr_for_3sigma_vs_L10_P046
+0          10 kg.yr (CRESST-scale, 2027-2030)   L10  b=0.01/kg.yr          0.01     0.000      0.1      inf      inf       inf       inf      0.002      0.000                          NaN
+1          10 kg.yr (CRESST-scale, 2027-2030)   L10   b=0.1/kg.yr          0.01     0.000      1.0      inf      inf       inf       inf      0.004      0.000                          NaN
+2          10 kg.yr (CRESST-scale, 2027-2030)  d300  b=0.01/kg.yr          0.01     0.026      0.1      inf      inf       inf       inf      0.004      0.000                       215.00
+3          10 kg.yr (CRESST-scale, 2027-2030)  d300   b=0.1/kg.yr          0.01     0.026      1.0      inf      inf       inf       inf      0.004      0.000                       215.00
+4          10 kg.yr (CRESST-scale, 2027-2030)  d350  b=0.01/kg.yr          0.01     0.370      0.1      inf      inf       inf       inf      0.032      0.001                        17.00
+5          10 kg.yr (CRESST-scale, 2027-2030)  d350   b=0.1/kg.yr          0.01     0.370      1.0      inf      inf       inf       inf      0.013      0.000                        17.00
+6          10 kg.yr (CRESST-scale, 2027-2030)  d366  b=0.01/kg.yr          0.01     2.790      0.1  2028.95      inf   2029.16       inf      0.622      0.178                         2.10
+7          10 kg.yr (CRESST-scale, 2027-2030)  d366   b=0.1/kg.yr          0.01     2.790      1.0      inf      inf       inf       inf      0.254      0.010                         2.10
+8          10 kg.yr (CRESST-scale, 2027-2030)  d380  b=0.01/kg.yr          0.01    56.220      0.1  2027.05  2027.13   2027.04   2027.15      1.000      1.000                         0.09
+9          10 kg.yr (CRESST-scale, 2027-2030)  d380   b=0.1/kg.yr          0.01    56.220      1.0  2027.08  2027.22   2027.09   2027.24      1.000      1.000                         0.09
+10  100 kg.yr (hypothetical array, 2029-2034)   L10  b=0.01/kg.yr          0.10     0.000      1.0      inf      inf       inf       inf      0.005      0.000                          NaN
+11  100 kg.yr (hypothetical array, 2029-2034)   L10   b=0.1/kg.yr          0.10     0.000     10.0      inf      inf       inf       inf      0.009      0.000                          NaN
+12  100 kg.yr (hypothetical array, 2029-2034)  d300  b=0.01/kg.yr          0.10     0.260      1.0      inf      inf       inf       inf      0.009      0.000                       215.00
+13  100 kg.yr (hypothetical array, 2029-2034)  d300   b=0.1/kg.yr          0.10     0.260     10.0      inf      inf       inf       inf      0.012      0.000                       215.00
+14  100 kg.yr (hypothetical array, 2029-2034)  d350  b=0.01/kg.yr          0.10     3.695      1.0      inf      inf       inf       inf      0.408      0.031                        17.00
+15  100 kg.yr (hypothetical array, 2029-2034)  d350   b=0.1/kg.yr          0.10     3.695     10.0      inf      inf       inf       inf      0.077      0.000                        17.00
+16  100 kg.yr (hypothetical array, 2029-2034)  d366  b=0.01/kg.yr          0.10    27.900      1.0  2029.33  2029.91   2029.38   2029.96      1.000      1.000                         2.10
+17  100 kg.yr (hypothetical array, 2029-2034)  d366   b=0.1/kg.yr          0.10    27.900     10.0  2030.00  2031.77   2029.96   2031.67      0.999      0.935                         2.10
+18  100 kg.yr (hypothetical array, 2029-2034)  d380  b=0.01/kg.yr          0.10   562.200      1.0  2029.01  2029.03   2029.02   2029.03      1.000      1.000                         0.09
+19  100 kg.yr (hypothetical array, 2029-2034)  d380   b=0.1/kg.yr          0.10   562.200     10.0  2029.02  2029.04   2029.02   2029.05      1.000      1.000                         0.09
+20           1 t.yr (hypothetical, 2030-2035)   L10  b=0.01/kg.yr          1.00     0.000     10.0      inf      inf       inf       inf      0.012      0.000                          NaN
+21           1 t.yr (hypothetical, 2030-2035)   L10   b=0.1/kg.yr          1.00     0.000    100.0      inf      inf       inf       inf      0.009      0.000                          NaN
+22           1 t.yr (hypothetical, 2030-2035)  d300  b=0.01/kg.yr          1.00     2.602     10.0      inf      inf       inf       inf      0.046      0.000                       215.00
+23           1 t.yr (hypothetical, 2030-2035)  d300   b=0.1/kg.yr          1.00     2.602    100.0      inf      inf       inf       inf      0.012      0.000                       215.00
+24           1 t.yr (hypothetical, 2030-2035)  d350  b=0.01/kg.yr          1.00    36.950     10.0  2030.64  2031.76   2030.62   2031.74      1.000      0.997                        17.00
+25           1 t.yr (hypothetical, 2030-2035)  d350   b=0.1/kg.yr          1.00    36.950    100.0  2033.69      inf       inf       inf      0.119      0.000                        17.00
+26           1 t.yr (hypothetical, 2030-2035)  d366  b=0.01/kg.yr          1.00   279.000     10.0  2030.04  2030.10   2030.05   2030.10      1.000      1.000                         2.10
+27           1 t.yr (hypothetical, 2030-2035)  d366   b=0.1/kg.yr          1.00   279.000    100.0  2030.10  2030.28   2030.10   2030.27      1.000      0.927                         2.10
+28           1 t.yr (hypothetical, 2030-2035)  d380  b=0.01/kg.yr          1.00  5622.000     10.0  2030.01  2030.01   2030.01   2030.01      1.000      1.000                         0.09
+29           1 t.yr (hypothetical, 2030-2035)  d380   b=0.1/kg.yr          1.00  5622.000    100.0  2030.01  2030.01   2030.01   2030.01      1.000      1.000                         0.09
+   enriched_mass_t  live_frac  tyr_per_yr  years_to_12p8_tyr  N_events_total
+0              1.0        0.6         0.6          21.333333               9
+1              5.0        0.6         3.0           4.266667               9
+   experiment   window    L10 3σ    L10 5σ L10 5σ(×0.30)  δ=300 3σ  δ=300 5σ δ=300 5σ(×0.30)  δ=350 3σ  δ=350 5σ δ=350 5σ(×0.30)  δ=366 3σ  δ=366 5σ δ=366 5σ(×0.30)  δ=380 3σ  δ=380 5σ δ=380 5σ(×0.30)
+0          LZ   600phd   on disk  Oct 2031         >2035  Sep 2031     >2035           >2035   on disk  Mar 2029           >2035   on disk  Apr 2027           >2035   on disk  Mar 2027           >2035
+1          LZ  1000phd   on disk  Apr 2027         >2035  Nov 2027     >2035           >2035   on disk   on disk        Dec 2030   on disk   on disk         on disk   on disk   on disk         on disk
+2     XENONnT   600phd   on disk     >2035         >2035     >2035     >2035           >2035   on disk  Mar 2030           >2035   on disk  Dec 2027           >2035   on disk  Nov 2027           >2035
+3     XENONnT  1000phd  Nov 2026  Mar 2029         >2035  Nov 2029     >2035           >2035   on disk   on disk           >2035   on disk   on disk         on disk   on disk   on disk         on disk
+4   PandaX-4T   600phd  Sep 2027     >2035         >2035     >2035     >2035           >2035   on disk     >2035           >2035   on disk  Oct 2029           >2035   on disk  Sep 2029           >2035
+5   PandaX-4T  1000phd  May 2028  Aug 2031         >2035     >2035     >2035           >2035   on disk  May 2027           >2035   on disk   on disk        Jun 2027   on disk   on disk         on disk
+6     present   600phd   on disk  Apr 2027         >2035  Mar 2027  Apr 2030           >2035   on disk   on disk        Jun 2031   on disk   on disk        Oct 2028   on disk   on disk        Sep 2028
+7     present  1000phd   on disk   on disk         >2035   on disk  May 2028           >2035   on disk   on disk        Dec 2026   on disk   on disk         on disk   on disk   on disk         on disk
+8        XLZD   600phd  Feb 2032  Jun 2032      Dec 2033  Jun 2032  Nov 2032        Dec 2035  Feb 2032  Apr 2032        Jan 2033  Jan 2032  Mar 2032        Sep 2032  Jan 2032  Mar 2032        Sep 2032
+9        XLZD  1000phd  Feb 2032  Apr 2032      Feb 2033  Apr 2032  Aug 2032        Sep 2034  Jan 2032  Feb 2032        May 2032  Jan 2032  Jan 2032        Feb 2032  Jan 2032  Jan 2032        Jan 2032
+10      world   600phd   on disk  Apr 2027      Jun 2032  Mar 2027  Apr 2030        Nov 2033   on disk   on disk        May 2031   on disk   on disk        Oct 2028   on disk   on disk        Oct 2028
+11      world  1000phd   on disk   on disk      Jan 2032   on disk  Apr 2028        Aug 2033   on disk   on disk        Dec 2026   on disk   on disk         on disk   on disk   on disk         on disk
+done in 72.6 s

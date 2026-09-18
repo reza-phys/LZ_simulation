@@ -1,0 +1,54 @@
+{
+ "id": "P061",
+ "title": "Prior sensitivity of the dark-matter posterior: how robust is any probability statement about the LZ event?",
+ "date": "2026-09-12",
+ "agent_tools": [
+  {"tool": "Read", "count": 15, "detail": "provenance/PAPER_GUIDE.md (full); 00_evidence_dossier.md lines 34-83 (Sections 3-6, Section-5 table); results_ledger.csv via persisted pandas dump (two pages, all 50 rows: headline, key numbers, stance); papers/P001.md, P008.md, P016.md, P027.md, P045.md (full); provenance/P027.json (format template); work/P061/figures/P061_fig1_map.png (x2), P061_fig2_distribution.png, P061_fig3_voi.png (x3) for visual checks"},
+  {"tool": "Bash", "count": 10, "detail": "grep '^## ' dossier + wc; .venv/bin/python pandas dump of results_ledger.csv (id/date/category/title/headline/key numbers/stance); grep lzcommon def index + head ENVIRONMENT_versions.txt + ls work/P001 work/P027 data_requests; grep hex values in dataviz references/palette.md; run P061 script (SyntaxError: keyword with dot); mkdir work/P061 + run with tee (success, 35 s); run (figure fixes); run (KeyError in print block); final run; grep of run_log lines"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P061_prior_sensitivity.py; output/work/P061/details.md; output/provenance/P061.json; output/papers/P061.md"},
+  {"tool": "Edit", "count": 9, "detail": "P061 script: voi() takes name argument (x3 call sites); table L_event column simplified; IMPLIED dict keys with dots -> string keys; Fig. 1 axis labels; f_trans = 1 row added to PRED; Fig. 3 rebuilt as two panels; Fig. 3 x-labels shortened; b_eff variants hold L_DM fixed; print-block keys"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (form/colour rules before writing matplotlib figures; JS validator skipped per PAPER_GUIDE)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python, run from the simulation root"},
+  {"name": "numpy", "version": "2.5.3", "functions": "default_rng(20260912).uniform, geomspace, meshgrid, quantile, bincount, searchsorted, argsort/cumsum/interp (weighted quantiles), savez"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats (imported; all posterior algebra closed-form)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, to_csv, to_string"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; pcolormesh, contour/clabel, hist (log bins), barh, LinearSegmentedColormap"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ dict (exposure_tyr fallback 2.84)"},
+  {"name": "posterior algebra", "version": "none: derived by hand", "functions": "three-hypothesis posterior Eq. 1; pi_DM(P_t) boundary Eq. 2; reference-class posterior Eq. 3; elasticities d ln O/d ln theta; Poisson-Gamma (Exponential(1)) -> negative-binomial predictive; mutual information / expected binary-entropy reduction Eq. 4; first-order variance-based sensitivity indices by quantile binning"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P061_prior_sensitivity.py", "purpose": "channel residual table -> L_acc; three-hypothesis posterior; (pi_DM, L_rest) maps for pessimistic/central/optimistic hyper-parameters with analytic P = 0.1/0.5/0.9 boundaries; 400k-sample Monte Carlo over the log-uniform community hyper-prior with 15 variants; first-order sensitivity indices and elasticities; reference-class (base-rate) translation to implied pi_DM; dossier Section-5 table update (rule: dossier weight x corpus event likelihood) with hyper-prior ranges; value of information (expected information gain and expected community 68% width) for LZ next exposure (3 predictives, f_trans bracket), XENONnT+PandaX reanalysis (2 couplings), wall-MSSI calibration, LZ artefact audit; three figures", "command": ".venv/bin/python output/code/P061_prior_sensitivity.py  (35 s; writes output/work/P061/P061_results.json, P061_table1_channels.csv, P061_table3_dossier_update.csv, P061_map.npz, figures/P061_fig1_map.png, P061_fig2_distribution.png, P061_fig3_voi.png; console log in output/work/P061/run_log.txt)"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules, deliverable structure, word budgets"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "Section 4 (non-blind choices: FV shrink, salting failure, sideband definition) and Section 5 table A-K with priors 0.10/0.19/0.13/0.08/0.05/0.18/0.05/0.02/0.10/0.06/0.04"},
+  {"file": "output/results_ledger.csv", "parts_used": "headline results and key numbers of P001, P004, P005, P008, P010, P013, P016, P019, P020, P022, P027, P029, P033, P035, P036, P040, P041, P045, P049"},
+  {"file": "output/papers/P001.md", "parts_used": "three-hypothesis posterior form and validation values 0.46 / 0.09 / 0.84; b bracket 2e-4-1.1e-3; SBB cap"},
+  {"file": "output/papers/P008.md", "parts_used": "N_eff = 12.2 and the equality of Bayesian and frequentist trials factors"},
+  {"file": "output/papers/P016.md", "parts_used": "b_H anchor 5.70e-4; per-operator Bayes factors"},
+  {"file": "output/papers/P027.md", "parts_used": "B_DM = 16.4 (uniform spectra), 28.7 (class priors), range 6.6 (uniform-s) to 45.7 (continuous-delta class); class masses inelastic 0.58/0.85, q^2-spin 0.30/0.11, O1 elastic < 1e-4; predictive for 6.76 t yr: 0.92 events, P(0) = 0.58, P(>=2) = 0.20"},
+  {"file": "output/papers/P045.md", "parts_used": "non-zero lower limits carry no evidence beyond p_local < 0.10 (context only)"},
+  {"file": "output/provenance/P027.json", "parts_used": "provenance file structure"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "LZ dict; function index (grep) to confirm no stats helper was needed"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Kass-Raftery evidence scale (B 3-20 positive, 20-150 strong)", "presumed_source": "Kass & Raftery, JASA 90, 773 (1995)", "reliability": "certain"},
+  {"item": "Sellke-Bayarri-Berger bound B <= -1/(e p ln p); 14.60 at p = 4.7e-3", "presumed_source": "Sellke, Bayarri, Berger, Am. Stat. 55, 62 (2001)", "reliability": "certain"},
+  {"item": "Expected information gain of an experiment = mutual information between hypothesis and outcome (Lindley 1956)", "presumed_source": "D. V. Lindley, Ann. Math. Stat. 27, 986 (1956)", "reliability": "certain"},
+  {"item": "'Garden of forking paths' as a name for uncorrected data-dependent analysis choices", "presumed_source": "Gelman & Loken, Am. Sci. 102, 460 (2014)", "reliability": "certain"},
+  {"item": "Poisson rate with Gamma(r,1) posterior gives a negative-binomial predictive; log-uniform prior + one event -> Exponential(1) posterior, P(0) = 1/(1+k)", "presumed_source": "standard Bayesian statistics", "reliability": "certain"},
+  {"item": "Reference class of ~3 sigma single-event / small-excess anomalies that resolved as background or artefact (CDMS-II Si, CRESST-II, XENON1T ER excess, 750 GeV diphoton); used only to motivate the parametrised base rate r = 0.01-0.3, no value adopted", "presumed_source": "general knowledge of the field", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "A per-channel mixture model for H_U with dossier-relative weights was drafted and dropped: the weight of the unaccounted component is not separable from L_rest; the union (sum) treatment is used instead and is conservative against DM by at most x1.55 on L_acc.",
+  "Folding the historical base rate r into the hyper-prior as a sixth parameter was rejected as double-counting (r and pi_DM parametrise the same prior); r is reported as a translation to an implied pi_DM.",
+  "First version of the b_eff variant varied b with B_DM fixed, which wrongly rescaled L_DM (P027's B_DM scales as 1/b_H); corrected to hold L_DM = B_DM b_H fixed.",
+  "First Fig. 3 mixed nats and probability units on one axis; rebuilt as two panels."
+ ],
+ "wimpydd_generated_files": []
+}

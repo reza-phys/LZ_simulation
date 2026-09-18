@@ -1,0 +1,86 @@
+[   0.0s] Part 0: v_E(16 June) = 265.96 km/s; |v_orb mine - WimPyDD| <= 0.40 km/s
+[   0.1s]   cold disk (v_lag 0, sigma 30)          v_lab(16 Jun) 34.6  fit mean 33.9 amp 11.06 peak doy 75.6  <1/v>/<1/v>_SHM 6.47  frac>700: 5.6e-108
+[   0.1s]   fiducial disk (v_lag 50, sigma 50)     v_lab(16 Jun) 80.1  fit mean 69.6 amp 12.80 peak doy 133.6  <1/v>/<1/v>_SHM 3.31  frac>700: 1.2e-34
+[   0.1s]   hot disk (v_lag 100, sigma 90)         v_lab(16 Jun) 128.9  fit mean 116.4 amp 13.81 peak doy 145.0  <1/v>/<1/v>_SHM 1.96  frac>700: 6.1e-10
+[   0.4s]   hot disk truncated check: frac > 700 km/s analytic 6.14e-10, numerical truncated 5.71e-10; hard max 800 km/s
+[   0.4s] Part 2: kernels
+[   0.4s]   O1 elastic kernel ready
+[   0.4s]   O6 elastic kernel ready
+[   0.4s]   loaded P058 iso endo/exo and P068 Higgsino/L10 kernels
+[   0.4s]   SHM delta_eta vs wd_halo (16 June): ratio 0.991 (300), 0.959 (366); closure 1.0000
+[   0.4s] Part 3: endothermic inelastic
+[   0.5s]   iso unit-coupling SHM June counts: 250: 1.333e+05, 300: 1.922e+04, 350: 619, 366: 66.02, 380: 2.479; hot-disk pure max: 1.0e-01, 6.5e-04, 2.9e-06, 4.5e-07, 7.8e-08
+[   0.5s] Part 4: elastic
+ op key   f  pure_over_SHM_lo  pure_over_SHM_hi  N_lo_annual  hi_band_ratio_June16    lo_a1  lo_peak_doy  el248_LR_16June
+ O1 fid 0.0          1.635913          0.000014  2787.217986              1.000000 0.024966   335.168497         1.041359
+ O1 fid 0.1          1.635913          0.000014  3257.169946              0.900001 0.012919   348.620734         1.041359
+ O1 fid 0.3          1.635913          0.000014  4599.885290              0.700004 0.012013   109.576300         1.041359
+ O1 hot 0.0          1.583708          0.104326  2787.217986              1.000000 0.024966   335.168497         1.041359
+ O1 hot 0.1          1.583708          0.104326  3241.100275              0.910433 0.023219   334.529744         1.042676
+ O1 hot 0.3          1.583708          0.104326  4491.892479              0.731298 0.020239   333.182300         1.046364
+L10 fid 0.0          1.149371          0.000007     0.205414              1.000000 0.022042   335.167907         1.041559
+L10 fid 0.1          1.149371          0.000007     0.228735              0.900001 0.008892   362.245086         1.041559
+L10 fid 0.3          1.149371          0.000007     0.295366              0.700002 0.023345   121.363347         1.041559
+L10 hot 0.0          1.436966          0.082230     0.205414              1.000000 0.022042   335.167907         1.041559
+L10 hot 0.1          1.436966          0.082230     0.235689              0.908223 0.018675   335.327168         1.042863
+L10 hot 0.3          1.436966          0.082230     0.319768              0.724669 0.012669   335.821530         1.046513
+ O6 fid 0.0          0.732721          0.000007     0.442547              1.000000 0.018779   335.167079         1.041371
+ O6 fid 0.1          0.732721          0.000007     0.473146              0.900001 0.007205     2.885133         1.041371
+ O6 fid 0.3          0.732721          0.000007     0.560573              0.700002 0.025851   122.942690         1.041371
+ O6 hot 0.0          1.280628          0.081875     0.442547              1.000000 0.018779   335.167079         1.041371
+ O6 hot 0.1          1.280628          0.081875     0.499512              0.908188 0.013951   336.564003         1.042687
+ O6 hot 0.3          1.280628          0.081875     0.657732              0.724563 0.005011   346.393613         1.046372
+[   0.6s] Part 5: exothermic
+ delta     E_star   f  pure_over_SHM_roi  pure_over_SHM_b200  boost_roi_annual  boost_roi_over_endo  companions_125_200_per_200_270_SHM  companions_125_200_per_200_270_pure  a1_roi_pure  peak_doy_pure
+ 278.0 247.686449 0.0           0.469513            2.748853          1.000000             1.000000                            6.452844                             1.215952     0.075102     133.646958
+ 278.0 247.686449 0.2           0.469513            2.748853          0.893903             1.117378                            6.452844                             1.215952     0.075102     133.646958
+ 300.0 267.287535 0.0           0.330092            1.967119          1.000000             1.000000                            6.014426                             0.657092     0.122647     133.647899
+ 300.0 267.287535 0.2           0.330092            1.967119          0.866018             1.082523                            6.014426                             0.657092     0.122647     133.647899
+ 350.0 311.835458 0.0           0.081486            0.482049          1.000000             1.000000                            4.976130                             0.132626     0.256391     133.650397
+ 350.0 311.835458 0.2           0.081486            0.482049          0.816297             1.020371                            4.976130                             0.132626     0.256391     133.650397
+ 366.0 326.090793 0.0           0.044365            0.254663          1.000000             1.000000                            4.641516                             0.072746     0.305559     133.651284
+ 366.0 326.090793 0.2           0.044365            0.254663          0.808873             1.011091                            4.641516                             0.072746     0.305559     133.651284
+ 380.0 338.564211 0.0           0.024455            0.135116          1.000000             1.000000                            4.349558                             0.041211     0.351344     133.652068
+ 380.0 338.564211 0.2           0.024455            0.135116          0.804891             1.006114                            4.349558                             0.041211     0.351344     133.652068
+[   1.0s] Part 6: Higgsino delta(N=1) vs f
+  f  delta_N1_annual  delta_N1_June  coupling_factor  events_factor  N_366_annual  N_300_annual  N_350_annual  P021_kappa_380  P021_kappa_300  P021_sigma_n_380_cm2  P007_exclusion_300  P007_exclusion_350
+0.0       365.635405     372.131873         1.000000            1.0      0.986093    782.320944     10.799246        2.190000        0.000074          6.500000e-38               226.0                1.90
+0.1       365.005716     371.469155         1.111111            0.9      0.887484    704.088849      9.719322        2.433333        0.000082          7.222222e-38               203.4                1.71
+0.2       364.284969     370.728300         1.250000            0.8      0.788875    625.856755      8.639397        2.737500        0.000092          8.125000e-38               180.8                1.52
+0.3       363.467696     369.892322         1.428571            0.7      0.690265    547.624661      7.559473        3.128571        0.000106          9.285714e-38               158.2                1.33
+0.5       361.408334     367.850524         2.000000            0.5      0.493047    391.160472      5.399623        4.380000        0.000148          1.300000e-37               113.0                0.95
+                                                         quantity          SHM  SHM_plus_DD_f0p1  SHM_plus_DD_f0p3             unit                              note
+    inelastic O1 ROI events (unit coupling, 16 June), delta = 300 19217.121853      17295.409668      13451.985297 events/2.84 t yr exactly (1 - f): DD contributes 0
+                                    date LR(16 June), delta = 300     1.430097          1.430097          1.430097                                          unchanged
+    inelastic O1 ROI events (unit coupling, 16 June), delta = 366    66.018559         59.416703         46.212991 events/2.84 t yr exactly (1 - f): DD contributes 0
+                                    date LR(16 June), delta = 366     3.203659          3.203659          3.203659                                          unchanged
+    inelastic O1 ROI events (unit coupling, 16 June), delta = 380     2.478668          2.230801          1.735068 events/2.84 t yr exactly (1 - f): DD contributes 0
+                                    date LR(16 June), delta = 380     3.934192          3.934192          3.934192                                          unchanged
+                       inelastic a1 (first harmonic), delta = 300     0.430097          0.430097          0.430097                                          unchanged
+                       inelastic a1 (first harmonic), delta = 380     1.688059          1.688059          1.688059                                          unchanged
+              N_lo (5.4-55 per 200-270 keV, annual), O1, fid disk  2787.217986       3257.169946       4599.885290                                                   
+              N_lo (5.4-55 per 200-270 keV, annual), O1, hot disk  2787.217986       3241.100275       4491.892479                                                   
+             N_lo (5.4-55 per 200-270 keV, annual), L10, fid disk     0.205414          0.228735          0.295366                                                   
+             N_lo (5.4-55 per 200-270 keV, annual), L10, hot disk     0.205414          0.235689          0.319768                                                   
+              N_lo (5.4-55 per 200-270 keV, annual), O6, fid disk     0.442547          0.473146          0.560573                                                   
+              N_lo (5.4-55 per 200-270 keV, annual), O6, hot disk     0.442547          0.499512          0.657732                                                   
+               elastic 200-270 keV rate (fid disk, 16 June) / SHM     1.000000          0.900001          0.700004                                     (1 - f) + tail
+                          elastic dR/dE(248) LR(16 June), O1, fid     1.041359          1.041359          1.041359                                                   
+               low-energy (5.4-55 keV) O1 modulation a1, fid disk     0.024966          0.012919          0.012013         fraction    peak day in note column of CSV
+                                 low-energy O1 peak day, fid disk   335.168497        348.620734        109.576300              doy                                  
+           exothermic ROI rate / SHM (annual), |delta| = 278, fid     1.000000          0.946951          0.840854                                      f = 0.2: 0.89
+ exothermic TOTAL rate (all E, no eff.) / SHM, |delta| = 278, fid     1.000000          0.949246          0.847739                    f = 0.2: 0.90; pure DD/SHM 0.49
+            exothermic 272-670 keV rate / SHM, |delta| = 278, fid     1.000000          0.981450          0.944351                                      f = 0.2: 0.96
+exothermic companions 125-200 per 200-270 keV, |delta| = 278, fid     6.452844          5.227580          3.620314                                      pure DD: 1.22
+           exothermic ROI rate / SHM (annual), |delta| = 300, fid     1.000000          0.933009          0.799028                                      f = 0.2: 0.87
+ exothermic TOTAL rate (all E, no eff.) / SHM, |delta| = 300, fid     1.000000          0.941168          0.823504                    f = 0.2: 0.88; pure DD/SHM 0.41
+            exothermic 272-670 keV rate / SHM, |delta| = 300, fid     1.000000          1.023140          1.069421                                      f = 0.2: 1.05
+exothermic companions 125-200 per 200-270 keV, |delta| = 300, fid     6.014426          5.053507          3.563867                                      pure DD: 0.66
+           exothermic ROI rate / SHM (annual), |delta| = 366, fid     1.000000          0.904436          0.713309                                      f = 0.2: 0.81
+ exothermic TOTAL rate (all E, no eff.) / SHM, |delta| = 366, fid     1.000000          0.946253          0.838758                    f = 0.2: 0.89; pure DD/SHM 0.46
+            exothermic 272-670 keV rate / SHM, |delta| = 366, fid     1.000000          1.146358          1.439075                                      f = 0.2: 1.29
+exothermic companions 125-200 per 200-270 keV, |delta| = 366, fid     4.641516          4.515796          4.191942                                      pure DD: 0.07
+                                 Higgsino delta(N=1), annual mean   365.635405        365.005716        363.467696              keV                                  
+                               P021 kappa-hat(380) = (c1 m_v^2)^2     2.190000          2.433333          3.128571                                        x 1/(1 - f)
+        P007 Higgsino excess over LZ 90% edge at 300 keV (events)   226.000000        203.400000        158.200000                                          x (1 - f)
+[   1.8s] done

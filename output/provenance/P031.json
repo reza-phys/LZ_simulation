@@ -1,0 +1,60 @@
+{
+ "id": "P031",
+ "title": "Relativistic operator matching for the LZ-preferred nonrelativistic operators with directdm",
+ "date": "2026-09-09",
+ "agent_tools": [
+  {"tool": "Read", "count": 11, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; papers P003/P012/P016/P027; fulltext.tex lines 34-78 (Theory) and 825-911 (Tables S6/S7); code/P012_magnetic_dipole.py lines 20-144; figures P031_nr_coefficient_map.png, P031_Z_vs_tableS6.png"},
+  {"tool": "Bash", "count": 24, "detail": "ledger head + grep of fulltext; directdm API exploration (dir, docstrings, inspect.getsource of WC_3flavor/_my_cNR/cNR, METADATA, WilCo_EW docs, Num_input); grep lzcommon wrappers and P012/P003 scripts; grep WimPyDD eft_hamiltonian docstring/source (package.py); P016/P012/P003 work-dir listings and CSV heads; directdm single-operator cNR probes (Dirac, Majorana), 5/4-flavour class failure + np.delete workaround test, RG probes; WimPyDD tuple-key / mixed-q / multi-operator tests; runs of P031_directdm_matching.py (--masses 1000; --masses 200,4000; full grid --final [background]; --masses 1000 --final; --masses 200,4000 --only ... --final; --skip-spectra --final); result printing; wait loop on run log"},
+  {"tool": "Write", "count": 4, "detail": "code/P031_directdm_matching.py; work/P031/details.md; provenance/P031.json; papers/P031.md"},
+  {"tool": "Edit", "count": 4, "detail": "P031 script: closure-based coefficient functions (bug fix), full/diagonal ratio log, --only option (2 edits)"},
+  {"tool": "ToolSearch", "count": 1, "detail": "select:Monitor (not used further)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "argparse, json, math"},
+  {"name": "directdm", "version": "2.2.2", "functions": "WC_3f(coeffs, DM_type).cNR(m,q), ._my_cNR(m), .ip; WC_5f(...).cNR(m,q,RGE=True/False), .match(); WC_4f(dict).match(); WilCo_EW docstring only"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian (tuple keys, q-dependent coefficient functions with q0 normalisation), diff_rate via lzcommon.wd_rate, Xe target, halo via lzcommon.wd_halo"},
+  {"name": "numpy", "version": "2.5.3", "functions": "arrays, interp, union1d, savez/load; in-script wrapper around np.delete dropping out-of-range indices (directdm compatibility)"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf, integrate.trapezoid"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, read_csv, to_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend, imshow heat map, errorbar, scatter"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ dict (exposure_tyr, eff_plateau, E_50pct_low/high_keV), LSIG, LSIG_MASSES, M_V_GEV, M_NUCLEON_GEV, A_XE_MEAN, m_nucleus_gev, wd, wd_halo, wd_rate, wd_c_from_anand"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P031_directdm_matching.py", "purpose": "directdm LO matching of 29 relativistic operator structures onto NR coefficients (q = 50/246 MeV; 200/1000/4000 GeV); WimPyDD spectra with all pole/q^2 pieces; N_lo classification; Wilson coefficient and Lambda for 1.0 (0.3-2.4) LZ events; RG running MZ->2 GeV; Table S6 comparison via P016 Z(N_lo) curve; figures", "command": ".venv/bin/python output/code/P031_directdm_matching.py --masses 1000,200,4000 --final   (also run in chunks: --masses 1000 --final; --masses 200,4000 --only PP_isov,Q15_charge,Q17_univ,Q18_univ --final; --skip-spectra --final for the final aggregation; results cached in output/work/P031/cache/)"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Theory paragraph (lines 35-74: NREFT basis, L1-L20, Fig. 1 caption with Anand Eq. 21/68 unit couplings, m_v = 246.2 GeV); LEE degeneracies (lines 494-497: L1=L5, L2=L8, L3=L17, L4=L20, L11=L14; s/v-indistinguishable list); Table S6 (825-878); Table S7 (880-909)"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "event summary, significance pattern, L10/L16 remarks"},
+  {"file": "output/results_ledger.csv", "parts_used": "P001-P030 headlines"},
+  {"file": "output/papers/P003.md", "parts_used": "compatible/excluded NR operator sets, N_lo values, WimPyDD c0 = 2 x Anand convention, L10 reduction"},
+  {"file": "output/papers/P012.md", "parts_used": "d10 = 0.28, (20.9 GeV)^-4, photon-dipole N_lo 376 and mu = 9.2e-7 mu_N for cross-check"},
+  {"file": "output/papers/P016.md", "parts_used": "Z(N_lo) mechanism and calibration; posterior mass statement"},
+  {"file": "output/papers/P027.md", "parts_used": "posterior class fractions"},
+  {"file": "output/code/P012_magnetic_dipole.py", "parts_used": "efficiency model, window integrals, L10 WimPyDD Hamiltonian (reference)"},
+  {"file": "output/work/P012/P012_coupling_table.csv", "parts_used": "N_unit_wd = 3.336 at 1000 GeV (validation)"},
+  {"file": "output/work/P003/P003_operator_table.csv and details.md", "parts_used": "single-operator N_lo and dR/dE for validation; recalled-knowledge list R5/R6"},
+  {"file": "output/work/P016/P016_Z_vs_Nlo_curves.csv and details.md", "parts_used": "baseline Z(N_lo) curve for the Table S6 comparison"},
+  {"file": ".venv/lib/python3.12/site-packages/directdm/wilson_coefficients.py, dm_eft.py, METADATA", "parts_used": "cNR formulae and normalisation, class docstrings, operator name lists, np.delete failure location"},
+  {"file": "WimPyDD/package.py", "parts_used": "eft_hamiltonian docstring and q-normalisation code (line ~201)"}
+ ],
+ "recalled_knowledge": [
+  {"item": "directdm/BBGZ operator basis: Q1,2^(5) dipoles with e/(8 pi^2); Q1-4^(6) V/A quark currents; Q1-4^(7) gluon operators with alpha_s/(12 pi), alpha_s/(8 pi); Q5-10^(7) m_q-weighted S/P/T; twist-2", "presumed_source": "Bishara, Brod, Grinstein, Zupan arXiv:1707.06998; Brod et al. arXiv:1801.04240", "reliability": "likely"},
+  {"item": "Structure of the dim-7 derivative operators C715-C718 (chibar sigma (i gamma5) chi x d(qbar gamma (gamma5) q))", "presumed_source": "inferred from directdm's NR output (F1/F2/FA weights)", "reliability": "likely"},
+  {"item": "Magnetic moment normalisation mu_chi = e C51/(4 pi^2) for L = (mu/2) chibar sigma F chi; standard dipole NR reduction c1 = e mu/(2 m_chi), c5 = 2 e mu m_N/q^2, c4 = e mu g_N/m_N, c6 = e mu g_N m_N/q^2", "presumed_source": "Del Nobile 2021 review; Anand et al. 2014", "reliability": "likely (confirmed by internal consistency of the code output and by 1.4 % agreement with P012)"},
+  {"item": "alpha_em = 1/137.036; nucleon mass 0.938 GeV", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "Z-boson axial charges of quarks T3 = +1/2 (u), -1/2 (d, s); electric charges 2/3, -1/3", "presumed_source": "SM", "reliability": "certain"},
+  {"item": "Anand Lagrangians L1 = S-S, L2 = S-P, L3 = P-S, L4 = P-P, L5 = V-V, L15 = A-A; L6 = DM dipole x nucleon vector current; L7 = V-A; L10 = dipole-dipole", "presumed_source": "Anand, Fitzpatrick, Haxton 2014 Table 1 (via P003/P012)", "reliability": "likely for L1-L5, L15, L10; likely/uncertain for L6, L7"},
+  {"item": "Anapole operator a chibar gamma^mu gamma5 chi d^nu F_mu nu reduces by the photon EOM to e Q_q A-V quark operators", "presumed_source": "standard (e.g. Del Nobile 2021)", "reliability": "certain"},
+  {"item": "Direct-detection EFT validity condition Lambda >> q ~ 0.25 GeV; heavy-mediator interpretation needs mediator above the scales integrated out (M_Z for running from the EW scale)", "presumed_source": "general EFT reasoning", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "directdm 2.2.2 WC_5f/WC_4f (RG running classes) crash under numpy 2.5.3 with IndexError in np.delete (out-of-range slice indices, e.g. np.s_[27:144] on a length-131 array, wilson_coefficients.py lines 1551-1556 and 2647-2652). Worked around inside the script by wrapping np.delete to drop out-of-range indices (old numpy behaviour); the installed package was not modified. WC_3f (matching only) works unmodified.",
+  "First WimPyDD implementation passed coefficient values as lambda default arguments (c0=..., c1=..., kind=...); WimPyDD treats default arguments as global Hamiltonian parameters shared across coefficients, so pieces overwrote each other (V-A rate collapsed to its O9 admixture, photon dipole N_lo 24.5 instead of 422). Detected by the per-piece diagonal-rate check; fixed with closures; cache deleted and all spectra recomputed.",
+  "The full-grid run (87 spectra + final) exceeded the 600 s foreground limit and was moved to the background by the harness; it completed (exit 0). Meanwhile the grid was re-run in resumable foreground chunks (1000 GeV; then 200/4000 GeV restricted to the four compatible structures not yet cached); the final aggregation (--skip-spectra --final) was run on the complete cache, so no reduction of the grid was ultimately needed.",
+  "directdm's WilCo_EW class (unbroken-phase running above M_Z) was not used; running is quoted from M_Z down. directdm's NLO coherent tensor corrections (NLO=True) not used.",
+  "Anand L identification for L8, L9, L11-L14, L16-L20 could not be established from memory; only class-level statements are made (flagged uncertain), and the anapole = L16 and A-V = L8 hypotheses are rejected by the significance pattern."
+ ],
+ "wimpydd_generated_files": "none (WD.diff_rate used; no response-function files written). Own cache: output/work/P031/cache/*.npz"
+}

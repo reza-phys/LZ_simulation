@@ -1,0 +1,56 @@
+{
+ "id": "P098",
+ "title": "Energy resolution at 250 keV from quanta statistics: does a +-23 keV (9 %) uncertainty follow from N_q fluctuations, recombination and the NR-band width?",
+ "date": "2026-09-16",
+ "agent_tools": [
+  {"tool": "Read", "count": 15, "detail": "PAPER_GUIDE.md; papers P009, P024, P043, P064, P056, P052, P057; fulltext.tex l.84-123 and l.586-690; lzcommon.py l.1-75 and l.255-290; P009_energy_reconstruction.py l.150-197; figures P098_budget_and_energy_dependence.png, P098_fixed_energy_scatter.png"},
+  {"tool": "Bash", "count": 16, "detail": "grep dossier for energy/keV; grep fulltext.tex for recoil energy/resolution/pm; grep lzcommon defs; grep P021/P038/ledger for sigma_E + cat ENVIRONMENT_versions + ls work dirs; grep P009 script/results; grep P024 details/results; cat P043 systematic_budget.csv + grep P009 details + ledger rows; nestpy probe 1 (timeout not available); nestpy probe 1b (accessor names; GetQuanta failed with None widths); nestpy probe 2 (WorkFunction, widths, GetQuanta 20k in 0.04 s, ER yields); script run 1 (failed: work dir missing); script run 2 (mkdir + run, 4 s); script run 3 (after grid fix); script run 4 (final, 2-3 s) + results extraction + ls; word-count/JSON checks x4"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P098_energy_resolution.py; output/work/P098/details.md; output/provenance/P098.json; output/papers/P098.md"},
+  {"tool": "Edit", "count": 16, "detail": "script x6: nestpy width/P_dphe accessors; WorkFunction via NESTcalc; E_grid 20-500 keV (fix truncation); event 2D Gaussian estimate + Nq weight; ne_m_local; figure label position. Paper x9: three trimming passes to meet word budgets. JSON x1: this tool tally"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python from simulation root"},
+  {"name": "nestpy", "version": "2.1.1", "functions": "detectors.LZ_WS2024 (nr_er_width_parameters, get_P_dphe, get_sPEres, get_s2Fano), NESTcalc.GetYields, NESTcalc.GetQuanta (120k NR samples at 248 keV, 25k per energy at 100-330 keV, 40k ER, 80k for 2D means), NESTcalc.WorkFunction(2.9).Wq_eV = 13.44 eV, RandomGen.set_seed, interactions.NR/beta, default_nr_parameters"},
+  {"name": "numpy", "version": "2.5.3", "functions": "default_rng(98).binomial/normal/choice, cov, corrcoef, var, percentile, interp, gradient, polyfit, log/sqrt"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats.norm.cdf (smeared kinematic-edge density)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, to_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; barh, errorbar, scatter, savefig"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ (g1, g2, event S1c/S2c), NEST_NR_LZ, NEST_ER_LZ, DRIFT_FIELD_VCM, W_EV, nest_nr_yields, nest_nr_params_vector, nest_er_yields, combined_energy_keV, delta_max_kev, vmax_kms, v_earth_kms"},
+  {"name": "none: derived by hand", "version": "-", "functions": "analytic marginal variances (binomial, double-phe, SPE, Fano, position, e-lifetime); Fisher-information 2D resolution; band-width to energy conversion; 2 x 11.45 = 22.9 keV observation"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P098_energy_resolution.py", "purpose": "Mean quanta and energy inversions (Table S5 and P009 contour scales); nestpy GetQuanta fluctuations at fixed E; layered detector variance budget for N_q, S1-only, S2-only and 2D Gaussian-ML estimators; band-width vs resolution relation; energy dependence 100-330 keV and power-law fit; detector variants; ER 248 keV budget; event S1/S2-only energies; propagation to delta_max and P021 peak; figures", "command": ".venv/bin/python output/code/P098_energy_resolution.py > output/work/P098/run_stdout.txt 2>&1"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules, deliverables, template"},
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "l.15, 165, 332 (248 +- 23 stat +- 23 sys keV, no decomposition); l.84-117 (g1, g2, calibrations, NEST v2.4.5); l.591-685 (Tables S3-S5, p(E) break); grep for 'resolution' (none stated)"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "section 1 and evidence table: energy 248 +- 23 +- 23 keV transcribed from the paper; N_ph/N_e/N_q calc; check (i) 265 keV; drift time 870 us"},
+  {"file": "output/papers/P009.md", "parts_used": "contour scale N_q = 11.32 E^1.112, W = 13.46 eV; E_S1/E_comb/E_ML on both scales; 10-11 keV statistical width; roll-off sigma_E 11.8 keV"},
+  {"file": "output/work/P009/results.json, output/work/P009/details.md, output/code/P009_energy_reconstruction.py", "parts_used": "alpha_paper, beta_paper, W_paper; width vector; P_dphe 0.214, sPEres 0.338, s2Fano 4.0, ext 0.726; detector model conventions; note that +-23 keV was irreproducible"},
+  {"file": "output/papers/P024.md, output/work/P024/details.md, output/work/P024/results.json", "parts_used": "band decomposition 0.0313 dex (recombination 0.0231, extraction 0.0125, position 0.0087, SE Fano 0.0085, omega 0.0083, ion Fano 0.0062, mixing 0.0061); N_e = 301, N_i = 2012, r = 0.850; sd(N_e) 17.56; median 4.0152; event 1.54 sigma; sd_E 10.65 keV; ext_eff 0.80 baseline"},
+  {"file": "output/papers/P043.md, output/work/P043/systematic_budget.csv", "parts_used": "g1 3.7, g2 0.8, N_q-scale 8.7, total 9.6 keV systematic; delta_max 341.1/386.6/409.4 keV; 2-3 % position residual"},
+  {"file": "output/papers/P064.md", "parts_used": "Lindhard slope interpretation of the +-23 keV systematic (delta beta 0.085); nestpy reproduction 0.11 %"},
+  {"file": "output/papers/P056.md", "parts_used": "Table S4 double-skew ER fluctuation model status in nestpy 2.1.1 (v2.4.0 single skew)"},
+  {"file": "output/papers/P052.md", "parts_used": "23 keV (9.3 %) resolution variant and its effect on the Table S6/S7 reproduction (rms 0.52 -> 0.42 sigma)"},
+  {"file": "output/papers/P057.md, output/papers/P021.md, output/papers/P038.md", "parts_used": "sigma_E = 11 sqrt(E/248) keV usage; P021 peak slope 0.31 keV/keV and collapse beyond delta ~ 385 keV"},
+  {"file": "output/results_ledger.csv", "parts_used": "grep for resolution/sigma_E usage across papers"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "constants and wrappers listed under software"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "LZ electron extraction efficiency ~ 0.80 (SR1 80.5 %)", "presumed_source": "J. Aalbers et al. (LZ), PRL 131, 041002 (2023)", "reliability": "uncertain"},
+  {"item": "LZ electron lifetime ~ 6 ms during SR3 (used for the 1.5 % S2c correction uncertainty at 870 us drift)", "presumed_source": "LZ SR1/SR3 detector papers", "reliability": "uncertain"},
+  {"item": "XENON1T combined-energy resolution sigma/E = 0.317/sqrt(E/keV) + 0.0015", "presumed_source": "E. Aprile et al. (XENON1T), EPJC 80, 785 (2020)", "reliability": "likely"},
+  {"item": "LXe combined-energy resolution ~ 4 % at the 164 keV 131mXe / 236 keV 129mXe lines", "presumed_source": "assignment prompt / general LXe TPC experience", "reliability": "uncertain"},
+  {"item": "W = 13.7 eV per quantum (lzcommon W_EV); 13.44 eV nestpy; 13.46 eV implied by LZ contours (P009)", "presumed_source": "LUX PRD 95, 012008 (2017); NEST", "reliability": "likely"},
+  {"item": "Fisher information sigma_E^-2 = m'^T C^-1 m' and optimal linear weights C^-1 m'/(m'^T C^-1 m') for a Gaussian 2D estimator; binomial/Fano variance formulas", "presumed_source": "standard statistics", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "nestpy accessor guesses get_nr_er_width_parameters() and top-level nestpy.WorkFunction do not exist in 2.1.1; replaced by the nr_er_width_parameters attribute and NESTcalc.WorkFunction(rho).Wq_eV",
+  "First energy-dependence run used an inversion grid starting at 100 keV, truncating the 100 keV point (4.3 keV, fit exponent 0.88); grid widened to 20-500 keV (6.99 keV, exponent 0.54)",
+  "Did not reproduce LZ's Table S4 double-skew ER fluctuation model (not needed: recombination fluctuations cancel in the combined energy at the 99 % level; P056 covers it)"
+ ],
+ "wimpydd_generated_files": []
+}

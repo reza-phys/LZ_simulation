@@ -1,0 +1,68 @@
+Q_W(131Xe) = 74.55;  q(248 keV, A=131) = 246.0 MeV
+S1 scale factor (paper contour / nestpy Table S5) = 1.082;  S1c(248) = 538.8 phd; E at S1c=250: 128.4 keV; at 500: 232.4 keV
+[helm   ] central (g1=1, Eb=100, g2=2.5)             N>200=6.51e-05  N(225-271)=1.66e-05  frac>200(raw)=4.16e-04  N_lo/hi=1631  Npred(recalled flux)=0.073
+[wimpydd] central (g1=1, Eb=100, g2=2.5)             N>200=4.76e-06  N(225-271)=6.18e-07  frac>200(raw)=4.30e-05  N_lo/hi=23006  Npred(recalled flux)=0.065
+[helm   ] soft high-E (g1=1, Eb=100, g2=3)           N>200=4.56e-05  N(225-271)=1.13e-05  frac>200(raw)=2.83e-04  N_lo/hi=2329  Npred(recalled flux)=0.068
+[wimpydd] soft high-E (g1=1, Eb=100, g2=3)           N>200=3.32e-06  N(225-271)=4.20e-07  frac>200(raw)=2.86e-05  N_lo/hi=32803  Npred(recalled flux)=0.060
+[helm   ] hard high-E (g1=1, Eb=100, g2=2)           N>200=9.69e-05  N(225-271)=2.51e-05  frac>200(raw)=6.39e-04  N_lo/hi=1099  Npred(recalled flux)=0.082
+[wimpydd] hard high-E (g1=1, Eb=100, g2=2)           N>200=7.09e-06  N(225-271)=9.49e-07  frac>200(raw)=6.82e-05  N_lo/hi=15496  Npred(recalled flux)=0.072
+[helm   ] Honda-like (g1=1.5, Eb=1000, g2=2.7)       N>200=1.21e-04  N(225-271)=3.18e-05  frac>200(raw)=7.78e-04  N_lo/hi=879  Npred(recalled flux)=0.067
+[wimpydd] Honda-like (g1=1.5, Eb=1000, g2=2.7)       N>200=8.86e-06  N(225-271)=1.21e-06  frac>200(raw)=8.41e-05  N_lo/hi=12410  Npred(recalled flux)=0.059
+[helm   ] steep low-E (g1=2, Eb=100, g2=2.5)         N>200=4.69e-05  N(225-271)=1.19e-05  frac>200(raw)=2.43e-04  N_lo/hi=2241  Npred(recalled flux)=0.031
+[wimpydd] steep low-E (g1=2, Eb=100, g2=2.5)         N>200=3.38e-06  N(225-271)=4.40e-07  frac>200(raw)=2.47e-05  N_lo/hi=31943  Npred(recalled flux)=0.028
+[helm   ] low break (g1=1, Eb=50, g2=2.5)            N>200=4.29e-05  N(225-271)=1.09e-05  frac>200(raw)=2.48e-04  N_lo/hi=2460  Npred(recalled flux)=0.051
+[wimpydd] low break (g1=1, Eb=50, g2=2.5)            N>200=3.10e-06  N(225-271)=4.03e-07  frac>200(raw)=2.53e-05  N_lo/hi=35063  Npred(recalled flux)=0.046
+[helm   ] high break (g1=1, Eb=150, g2=2.5)          N>200=9.07e-05  N(225-271)=2.32e-05  frac>200(raw)=5.98e-04  N_lo/hi=1174  Npred(recalled flux)=0.083
+[wimpydd] high break (g1=1, Eb=150, g2=2.5)          N>200=6.65e-06  N(225-271)=8.72e-07  frac>200(raw)=6.25e-05  N_lo/hi=16499  Npred(recalled flux)=0.073
+[helm   ] single power law E^-2 above 10 MeV         N>200=7.37e-05  N(225-271)=1.91e-05  frac>200(raw)=4.03e-04  N_lo/hi=1429  Npred(recalled flux)=0.035
+[wimpydd] single power law E^-2 above 10 MeV         N>200=5.34e-06  N(225-271)=7.14e-07  frac>200(raw)=4.22e-05  N_lo/hi=20352  Npred(recalled flux)=0.032
+Fig.5 top: green sum = 1.756e-01  (|sigma|<2: 1.080e-01); blue total sum = 1672; frame (496, 1299), 141.0 px/decade, 5 major ticks, frame top = 10^2.70
+Fig.5 mid: green sum = 8.173e-04  (|sigma|<2: 7.536e-04); blue total sum = 24.63; frame (1299, 2102), 120.0 px/decade, 6 major ticks, frame top = 10^1.69
+Fig.5 bot: green sum = 3.373e-05  (|sigma|<2: 3.088e-05); blue total sum = 0.01082; frame (2102, 2905), 96.5 px/decade, 4 major ticks, frame top = 10^2.32
+Panel split (central, helm): {'top': 0.10918245972889125, 'mid': 0.000521651547233932, 'bot': 1.1297031486621316e-05}
+Panel split (central, wimpydd): {'top': 0.10957546979621986, 'mid': 0.00010899926789731863, 'bot': 4.946160719071291e-07}
+F^2(248 keV) natural Xe: Helm 1.616e-04, WimPyDD 2.630e-06; node2 at {'helm': 278.5, 'wimpydd': 246.0}
+per-isotope 248 keV F^2: {124: '5.74e-04 (node 307 keV)', 126: '4.31e-04 (node 298 keV)', 128: '3.10e-04 (node 291 keV)', 129: '2.58e-04 (node 287 keV)', 130: '2.11e-04 (node 283 keV)', 131: '1.69e-04 (node 280 keV)', 132: '1.33e-04 (node 276 keV)', 134: '7.42e-05 (node 269 keV)', 136: '3.41e-05 (node 262 keV)'}
+E_nu=   30 MeV: sigma_NCE p=1.94e-42 n=2.26e-42 (free 2.00e-41) cm^2; nucleus incoh 2.79e-40, coh 1.68e-38, ratio 0.017
+E_nu=   50 MeV: sigma_NCE p=8.12e-42 n=9.50e-42 (free 5.18e-41) cm^2; nucleus incoh 1.17e-39, coh 3.28e-38, ratio 0.036
+E_nu=  100 MeV: sigma_NCE p=4.99e-41 n=5.94e-41 (free 1.75e-40) cm^2; nucleus incoh 7.27e-39, coh 4.76e-38, ratio 0.153
+E_nu=  150 MeV: sigma_NCE p=1.28e-40 n=1.56e-40 (free 3.31e-40) cm^2; nucleus incoh 1.89e-38, coh 5.09e-38, ratio 0.372
+E_nu=  200 MeV: sigma_NCE p=2.31e-40 n=2.85e-40 (free 4.97e-40) cm^2; nucleus incoh 3.44e-38, coh 5.21e-38, ratio 0.661
+E_nu=  300 MeV: sigma_NCE p=4.50e-40 n=5.71e-40 (free 8.02e-40) cm^2; nucleus incoh 6.82e-38, coh 5.29e-38, ratio 1.290
+E_nu=  500 MeV: sigma_NCE p=7.44e-40 n=9.88e-40 (free 1.22e-39) cm^2; nucleus incoh 1.16e-37, coh 5.34e-38, ratio 2.178
+E_nu= 1000 MeV: sigma_NCE p=9.81e-40 n=1.37e-39 (free 1.60e-39) cm^2; nucleus incoh 1.58e-37, coh 5.60e-38, ratio 2.829
+q=246 MeV: Q^2 = 0.0605 GeV^2; struck-nucleon T = 32.3 MeV; coherent weight Q_W^2 F^2 = 0.9
+Incoherent NC rates: n-knockout 1.45e-02/t yr, p-knockout 7.96e-03/t yr -> 4.12e-02, 2.26e-02 in exposure
+Residual-nucleus recoil: E_max = 279 keV; fraction in 225-271: 0.233; lone-NR events 1.73e-04 [7.7e-06, 5.0e-04] (vs coherent window 1.66e-05)
+NC excitation 129Xe (39.58 keV): 3.78e-05 events (x3.4e-04 of CEvNS); lands at S1c~286 phd, log10 S2c~4.46
+NC excitation 131Xe (80.19 keV): 2.98e-05 events (x2.7e-04 of CEvNS); lands at S1c~545 phd, log10 S2c~4.77
+HNL m4=0: E_R range at E_nu=200 MeV -0.00e+00-653.5 keV, at 300 MeV -0.00e+00-1467.9; E_nu,min(248 keV)=123.13296526839284; N_lo=2.01e+04
+HNL m4=0.3: E_R range at E_nu=200 MeV 2.07e-10-653.5 keV, at 300 MeV 9.22e-11-1467.9; E_nu,min(248 keV)=123.13314836646214; N_lo=2.01e+04
+HNL m4=10: E_R range at E_nu=200 MeV 2.56e-04-652.6 keV, at 300 MeV 1.14e-04-1467.1; E_nu,min(248 keV)=123.3364075686392; N_lo=1.96e+04
+HNL m4=50: E_R range at E_nu=200 MeV 1.65e-01-632.8 keV, at 300 MeV 7.21e-02-1447.4; E_nu,min(248 keV)=128.2190227745665; N_lo=1.26e+04
+HNL m4=100: E_R range at E_nu=200 MeV 2.94e+00-568.7 keV, at 300 MeV 1.21e+00-1384.9; E_nu,min(248 keV)=143.47719529310984; N_lo=4.97e+03
+HNL m4=200: E_R range at E_nu=200 MeV nan-nan keV, at 300 MeV 2.39e+01-1117.0; E_nu,min(248 keV)=204.50988536726834; N_lo=1.62e+03
+HNL m4=230: E_R range at E_nu=200 MeV nan-nan keV, at 300 MeV 4.73e+01-988.1; E_nu,min(248 keV)=230.75394209915936; N_lo=1.37e+03
+HNL m4=240: E_R range at E_nu=200 MeV nan-nan keV, at 300 MeV 5.91e+01-937.9; E_nu,min(248 keV)=240.31573021078253; N_lo=1.31e+03
+HNL m4=245: E_R range at E_nu=200 MeV nan-nan keV, at 300 MeV 6.61e+01-911.1; E_nu,min(248 keV)=245.24920599177887; N_lo=1.28e+03
+SM CEvNS (heavy mediator / rescaled)          N_lo =   1.63e+03   frac(200-270) = 5.935e-04
+nu magnetic moment (nuclear, Z^2/E_R)         N_lo =   2.01e+04   frac(200-270) = 4.545e-05
+vector Z' m=10 MeV                            N_lo =   5.23e+05   frac(200-270) = 1.593e-06
+vector Z' m=30 MeV                            N_lo =   2.97e+05   frac(200-270) = 2.971e-06
+vector Z' m=100 MeV                           N_lo =   3.32e+04   frac(200-270) = 2.854e-05
+vector Z' m=246 MeV                           N_lo =   4.95e+03   frac(200-270) = 1.942e-04
+vector Z' m=1000 MeV                          N_lo =   1.79e+03   frac(200-270) = 5.402e-04
+scalar m=30 MeV                               N_lo =   1.24e+05   frac(200-270) = 7.287e-06
+scalar m=246 MeV                              N_lo =   2.35e+03   frac(200-270) = 4.139e-04
+scalar m=1000 MeV                             N_lo =        862   frac(200-270) = 1.130e-03
+scalar m=100000 MeV                           N_lo =        786   frac(200-270) = 1.239e-03
+dipole HNL m4=0 MeV                           N_lo =   2.01e+04   frac(200-270) = 4.545e-05
+dipole HNL m4=0.3 MeV                         N_lo =   2.01e+04   frac(200-270) = 4.545e-05
+dipole HNL m4=10 MeV                          N_lo =   1.96e+04   frac(200-270) = 4.667e-05
+dipole HNL m4=50 MeV                          N_lo =   1.26e+04   frac(200-270) = 7.468e-05
+dipole HNL m4=100 MeV                         N_lo =   4.97e+03   frac(200-270) = 1.930e-04
+dipole HNL m4=200 MeV                         N_lo =   1.62e+03   frac(200-270) = 5.956e-04
+dipole HNL m4=230 MeV                         N_lo =   1.37e+03   frac(200-270) = 7.060e-04
+dipole HNL m4=240 MeV                         N_lo =   1.31e+03   frac(200-270) = 7.401e-04
+dipole HNL m4=245 MeV                         N_lo =   1.28e+03   frac(200-270) = 7.567e-04
+Solar end points: {'hep_18p8': 5.791092351766643, 'B8_16p3': 4.353492405025761, 'B8_15': 3.686840516965795, 'A_used': 131, 'Enu_needed_for_248keV_MeV': 123.13296526839008, 'Enu_needed_for_200keV_MeV': 110.56530093201212}

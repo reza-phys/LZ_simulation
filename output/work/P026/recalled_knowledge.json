@@ -1,0 +1,87 @@
+[
+ {
+  "item": "G_F, sin^2 theta_W = 0.2312, alpha, alpha_2 = 0.0338, m_e, m_mu, m_p, M_Pl",
+  "presumed_source": "PDG",
+  "reliability": "certain"
+ },
+ {
+  "item": "Planck 2018: H0 = 67.4, Omega_c h^2 = 0.120, Omega_b h^2 = 0.0224, T0 = 2.7255 K; Omega_gamma h^2 = 2.47e-5; t_U = 13.8 Gyr; t_rec = 3.8e5 yr",
+  "presumed_source": "Planck 2018 / PDG",
+  "reliability": "certain"
+ },
+ {
+  "item": "Z couplings g_V = T3 - 2Q s_W^2, g_A = T3; Higgsino neutral Dirac state couples like nu with g_V = 1 (vector-like, T3 = 1/2 both chiralities) -> L = -sqrt2 G_F [psi-bar gamma psi][f-bar gamma (g_V - g_A gamma5) f]; consistent with P007 c_n = -G_F/sqrt2 and sigma_n = G_F^2 mu^2/2pi",
+  "presumed_source": "SM; P007",
+  "reliability": "certain (reproduces P007 sigma_n)"
+ },
+ {
+  "item": "Heavy-target scattering cross-section sigma(chi2 f -> chi1 f) = (c_V^2 + c_A^2)(E+delta)^2/(2 pi) for massless f, derived here (Tr[p' g0 p g0] = 4E E'(1+cos theta))",
+  "presumed_source": "derived; checks: CEvNS total sigma = G_F^2 Q_W^2 E^2/4pi reproduced",
+  "reliability": "certain"
+ },
+ {
+  "item": "Detailed balance Gamma_up = Gamma_down exp(-delta/T) for a heavy two-level system in a thermal bath",
+  "presumed_source": "statistical mechanics",
+  "reliability": "certain"
+ },
+ {
+  "item": "Neutrino decoupling at T ~ 1-2 MeV; T_nu/T_gamma -> (4/11)^(1/3) after e+e- annihilation",
+  "presumed_source": "standard cosmology",
+  "reliability": "certain"
+ },
+ {
+  "item": "Gamma(chi2 -> chi1 nu nubar) = G_F^2 delta^5/(20 pi^3) (Higgsino, 3 flavours); dark photon: Gamma = 3 G_eff^2 delta^5/(120 pi^3), G_eff = g_D eps tan(theta_W) g/(4 cos(theta_W) m_Z^2)",
+  "presumed_source": "corpus P014 / P011 (derived there)",
+  "reliability": "corpus"
+ },
+ {
+  "item": "Gamma(chi2 -> chi1 gamma) = mu_12^2 delta^3/pi with mu_12 ~ kappa (alpha_2/2pi) e/(2 mu), kappa = 0.1-3",
+  "presumed_source": "P014 estimate; heavy-neutrino transition-moment width",
+  "reliability": "uncertain (order of magnitude)"
+ },
+ {
+  "item": "Dark-photon chi2 -> chi1 gamma vanishes for an on-shell photon (kinetic mixing couples the photon to the dark current only through eps q^2/(q^2 - m_A'^2))",
+  "presumed_source": "corpus P011; Holdom kinetic mixing",
+  "reliability": "likely"
+ },
+ {
+  "item": "Photodissociation thresholds: D 2.224 MeV, 7Be 1.587, 7Li 2.467, 3He 5.49, 4He 19.81 MeV",
+  "presumed_source": "nuclear binding energies",
+  "reliability": "certain"
+ },
+ {
+  "item": "COBE/FIRAS: |mu| < 9e-5, |y| < 1.5e-5 (95%); mu ~ 1.4 Delta rho/rho for z = 5e4-2e6, y = Delta rho/(4 rho) for z < 5e4; thermalisation complete for z > 2e6; PIXIE-class sensitivity ~1e-8",
+  "presumed_source": "Fixsen et al. 1996; Chluba & Sunyaev 2012; Kogut et al. 2011",
+  "reliability": "certain (FIRAS), likely (windows), uncertain (PIXIE)"
+ },
+ {
+  "item": "Planck bound on decaying DM (tau >> t_U): f_eff Gamma <~ 1e-25 s^-1 for decays to e+e-/gamma, i.e. ~0.2 eV of deposited energy per baryon per Hubble time at z ~ 600; used here as 'deposited EM energy per baryon between t_rec and t_U <~ 0.2 eV' (factor ~3)",
+  "presumed_source": "Slatyer & Wu PRD 95, 023010 (2017); Poulin, Serpico, Lesgourgues 2016",
+  "reliability": "uncertain (factor 3; exact shape of the bound vs tau not reproduced)"
+ },
+ {
+  "item": "f_eff for 300 keV photons ~0.5 x (1 - exp(-tau_Compton per Hubble time)); Klein-Nishina cross-section formula",
+  "presumed_source": "Slatyer 2016 deposition efficiencies (order of magnitude); QED",
+  "reliability": "uncertain (f_eff), certain (KN)"
+ },
+ {
+  "item": "INTEGRAL/SPI narrow-line 3 sigma sensitivity at 300 keV ~ 3e-5 ph cm^-2 s^-1 (deep GC exposure ~1e-5)",
+  "presumed_source": "SPI instrument papers (Roques et al. 2003; Vedrenne et al. 2003) and 511 keV/60Fe line studies",
+  "reliability": "uncertain (factor 3)"
+ },
+ {
+  "item": "Cosmic gamma-ray background at 300 keV: E^2 dN/dE ~ 2 keV cm^-2 s^-1 sr^-1",
+  "presumed_source": "HEAO-1 / SMM / COMPTEL compilations",
+  "reliability": "uncertain (factor 2)"
+ },
+ {
+  "item": "Galactic NFW: r_s = 20 kpc, R_sun = 8.2 kpc, rho_sun = 0.3 GeV/cm^3 (lzcommon RHO0)",
+  "presumed_source": "standard; Baxter et al. 2021 for rho_sun",
+  "reliability": "likely"
+ },
+ {
+  "item": "Ionisation energy of H 13.6 eV; Planck tau_reio = 0.054 +- 0.007",
+  "presumed_source": "atomic physics; Planck 2018",
+  "reliability": "certain"
+ }
+]

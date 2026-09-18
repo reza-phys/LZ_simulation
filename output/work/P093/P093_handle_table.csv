@@ -1,0 +1,57 @@
+H,handle,central,lo,hi,LZ_model,source
+NR,rate,1.0,1.0,1.0,1.0,s: LZ L10 best fit 1.0 (+1.4 -0.7); scanned 0.105 / 1.0 / 2.4
+NR,E,0.21,0.15,0.45,0.21,P052: L10 split 0.21/0.59/0.21 across Fig. 5 panels; P038: delta>=350 keV spectra put more above 500 phd
+NR,B,0.9,0.85,0.95,0.9,Gaussian +-2 sigma 0.954; LZ Fig. 5 L10 d-curve has heavier tails (P052)
+NR,P,1.0,1.0,1.0,1.0,uniform in FV by construction (P070)
+NR,W,1.0,1.0,1.0,1.0,"LZ: S2 shape, TBA, hit pattern all consistent with a SS at the reconstructed position"
+NR,V,1.0,1.0,1.0,1.0,no companion expected (Higgsino/dark-photon/contact: P042 P(not clean) <= 3e-5)
+NR,T,1.0,1.0,1.0,1.0,elastic 0.98; inelastic 1.4-2.6 (P006) treated as a variant
+WALL,rate,0.04959999999999995,0.015999999999999983,0.13119999999999984,0.07999999999999992,"pre-veto wall MSSI 0.0048/0.06 x k; P004 k_ML = 0.62, k < 1.64 (95 %); lower bracket 0.2"
+WALL,E,0.103,0.08,0.13,0.103,P004 Fig. 5 digitisation: MSSI fraction at S1c > 500 phd = 0.103 (spectrum ~flat in S1c)
+WALL,B,0.343,0.3,0.4,0.343,P004: 1.74e-4 of 5.06e-4 within +-2 sigma_NR (MSSI ~flat in d)
+WALL,P,0.06622516556291391,0.02,0.4347826086956522,0.06622516556291391,P070: LR(uniform/wall MSSI) 15.1 (P033 equal mix); 2.3 (bottom/cathode source) - 49.9 (wall source)
+WALL,W,1.0,0.3,1.0,1.0,LZ: S1 pattern cannot distinguish SS from wall-MSSI template; TBA of merged S1 requires wall deposit within ~7 cm in z (unquantified)
+WALL,V,0.06000000000000005,0.040000000000000036,0.07999999999999996,0.06000000000000005,LZ prompt-veto tagging 94 +- 2 % for MSSI
+WALL,T,1.0,1.0,1.0,1.0,214Pb mixed-flow coincidence unremarkable (P053); activation route <= 1e-9 (P029)
+RFR,rate,0.0016666666666666653,0.0011666666666666657,0.0023333333333333314,0.0016666666666666653,pre-veto RFR MSSI 1e-4/0.06; HE-SB validated to ~20-30 % (LZ 21.5 vs 18; P053)
+RFR,E,0.103,0.05,0.2,0.103,assumed as wall MSSI; 204 +- 65 keV RFR deposit broadens the S1c distribution
+RFR,B,0.343,0.3,0.4,0.343,as wall MSSI (flat in d)
+RFR,P,0.6896551724137931,0.016666666666666666,0.7407407407407407,0.6896551724137931,P070: detector-gamma RFR map 1.45; 214Pb E2 profiles 17-60 (352/295 keV)
+RFR,W,0.01,0.001,0.1,0.01,"LZ: S1 pattern inconsistent with RFR template, rise time less consistent than NR; P077: 6-7.6 sigma effects (toy)"
+RFR,V,0.06000000000000005,0.040000000000000036,0.07999999999999996,0.06000000000000005,LZ 94 +- 2 %
+RFR,T,1.0,1.0,1.0,1.0,flat
+ER,rate,1700.0,1700.0,1700.0,1700.0,"Table I: 1713 +- 39 science-sample events, ER-dominated"
+ER,E,5.5e-06,4e-06,7e-06,5.5e-06,ER at S1c > 500 phd inside the ROI: 0.0106 - MSSI - acc - nu = 9.4e-3 of 1700
+ER,B,0.004680851063829787,7.446808510638297e-05,0.2978723404255319,0.0,leakage to d ~ -1.5 sigma_NR: P056 Gaussian 7e-7 (at event) .. P010 flat extrapolation of LZ's own tail 2.8e-3; LZ model: 0 below +1 sigma_NR
+ER,P,1.0,1.0,1.0,1.0,bulk ER uniform in FV
+ER,W,1.0,1.0,1.0,1.0,a genuine SS ER passes all pulse checks; PSD inconclusive (LZ; P077 LR <= 2-5)
+ER,V,1.0,1.0,1.0,1.0,
+ER,T,1.0,1.0,3.0,1.0,"activation-linked (125I) sub-case: activity at +8.4 d is 0.2-0.4 of peak, 2-4x the run-average density (P010/P029)"
+ACC,rate,2.47,0.741,7.41,2.47,"P022: 2.47 (Table I 2.6); UDT zero above 495 phd gives k_ML = 0, k < 183 (95 %); bracket x0.3-3"
+ACC,E,0.00025506072874493927,0.0002,0.0003,0.00025506072874493927,"P022: 6.3e-4 at S1c > 500 phd (isolated-S1 spectrum falls, lambda ~280 phd)"
+ACC,B,0.23650793650793647,0.2,0.3,0.23650793650793647,P022: 1.49e-4 within +-2 sigma_NR
+ACC,P,1.0,1.0,7.6,1.0,uniform pairing -> 1; cathode-emission S2 slab (drift > 850 us) favours the event's z by 1/0.13 = 7.6 (P070 adverse)
+ACC,W,0.1,0.01,1.0,0.1,TBA/hit pattern consistent with z = 26 cm requires the isolated S1 to originate at that depth; isolated S1s are RFR/bottom-array dominated (P022); unknown whether LZ's cuts already enforce this
+ACC,V,1.0,1.0,1.0,1.0,
+ACC,T,1.0,1.0,1.0,1.0,flat
+NEU,rate,1.4750000000000008,1.4750000000000008,1.4750000000000008,1.4750000000000008,pre-veto detector-NR SS: LZ fit interval upper edge 0.118 / 0.08
+NEU,E,6.2e-05,2.7e-05,0.0044,0.0,"P013: F(200-270 | ROI SS) = 5.1e-5 (alpha,n black disk) + muon-induced (P049 1.3e-5); stacked-conservative 5e-4 total -> 4.4e-3"
+NEU,B,0.95,0.95,0.95,0.95,genuine NR
+NEU,P,0.7142857142857143,0.5882352941176471,0.9090909090909091,0.7142857142857143,"P070: neutrons from surfaces, exp(-d/14 cm): LR 1.1-1.7"
+NEU,W,1.0,1.0,1.0,1.0,genuine SS NR
+NEU,V,0.07999999999999996,0.040000000000000036,0.12,0.07999999999999996,LZ 92 +- 4 %
+NEU,T,1.0,1.0,1.0,1.0,41-min OD muon uninformative (P049)
+ART,rate,0.1,0.01,0.5,0.0,pi_U: prior weight of an LZ-specific unmodelled class (P061 hyper-prior range)
+ART,E,0.006,0.002,0.01,0.006,P041 residual artefact likelihood for an event-like charge-poor ER (joint E x B; channel priors are judgement)
+ART,B,1.0,1.0,1.0,1.0,included in E (joint)
+ART,P,1.0,1.0,3.0,1.0,"uniform; lifetime-type channels favour long drift (event at 859 of 1049 us), P041"
+ART,W,1.0,1.0,1.0,1.0,clipping/truncation already excluded inside the P041 residual (alpha template)
+ART,V,1.0,1.0,1.0,1.0,
+ART,T,1.0,1.0,1.0,1.0,'no abnormalities' and monitor counts already inside P041
+NU,rate,0.167,0.167,0.167,0.167,Table I: 0.11 atm-nu + 0.057 8B/hep
+NU,E,0.00020359281437125747,5.988023952095808e-05,0.002994011976047904,0.00020359281437125747,P019: coherent tail 3.4e-5 at S1c > 500 (Fig. 5); incoherent Fermi-recoil channel up to 5e-4
+NU,B,0.95,0.95,0.95,0.95,genuine NR
+NU,P,1.0,1.0,1.0,1.0,uniform
+NU,W,1.0,1.0,1.0,1.0,genuine SS NR
+NU,V,1.0,1.0,1.0,1.0,
+NU,T,1.0,1.0,1.0,1.0,flat

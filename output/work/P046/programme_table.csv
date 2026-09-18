@@ -1,0 +1,12 @@
+entry,window,exposure_tyr_compound,element_fraction,decides,timescale,N_delta300,N_delta350,N_delta366,N_delta380,N_L10
+"Xenon world, existing 7.5 t yr, 270 keV ROI (LZ 2.84 + XENONnT 3.1 + PandaX-4T 1.54; P005/P035)","Xe_LZ270",7.48,1,"whether the LZ rate is real (P(0) ~ 20 %); no delta information beyond event energies","now (re-analysis)",2.634,2.634,2.634,2.634,2.634
+"Xenon 20 t yr, 270 keV ROI","Xe_LZ270",20,1,"rate x10 test; delta only via energies (P035: +-15 keV per event)","~2030",7.042,7.042,7.042,7.042,7.042
+"Xenon 20 t yr, 5-1000 keV window (P038 extension)","Xe_5_1000",20,1,"captures the >270 keV lobe: x2-30 more events at delta >= 350; spectral delta-meter","~2030",8.261,15.17,39.18,244.9,15.74
+"Xenon 50 t yr, 5-1000 keV window","Xe_5_1000",50,1,"anchor for the ratio: N_Xe sets the coupling","2030s",20.65,37.92,97.94,612.4,39.36
+"CaWO4 10 kg yr, W band 10-1300 keV","W_10_1300",0.01,0.6385,"delta >= 350: tens of events or exclusion; blind to delta = 300 (0.04 ev)","2-3 yr (CRESST-scale array)",0.0438,0.4121,2.879,56.45,0.0002475
+"CaWO4 100 kg yr, W band 10-1300 keV","W_10_1300",0.1,0.6385,"delta >= 330 decided; 3 sigma vs L10 for delta >= 330; W/Xe delta-meter to ~10 keV at delta >= 350","~5 yr",0.438,4.121,28.79,564.5,0.002475
+"CaWO4 1 t yr, W band 10-1300 keV","W_10_1300",1,0.6385,"delta = 300 confirmed (4 ev); ratio delta-meter over the whole window; endpoint statistics at delta >= 350","~10 yr (dedicated)",4.38,41.21,287.9,5645,0.02475
+"CaWO4 1 t yr, W band 110-1300 keV (206Pb-recoil-safe)","W_110_1300",1,0.6385,"same with a hardware-simple threshold","~10 yr",2.602,36.95,279,5622,6.281e-05
+"NaI(Tl) 30 t yr (no NR discrimination; P028)","I_5_1000",30,0.8466,"nothing: signal buried in ~1e9 undiscriminated counts","-",6.458,5.926,7.367,7.368,159.1
+"Cryogenic discriminating iodine (NaI/CsI bolometer) 10 t yr, zero background","I_5_1000",10,0.8466,"I/Xe ratio: second delta-meter, weak (I/Xe < 0.6 and falling)","unrealistic before 2040",2.153,1.975,2.456,2.456,53.05
+"Germanium 1 t yr (any window)","Ge_1_1000",1,1,"null control: any NR population > 100 keV falsifies inelastic DM with delta > 232 keV","LEGEND-class exposures exist",0,0,0,0,0.2028

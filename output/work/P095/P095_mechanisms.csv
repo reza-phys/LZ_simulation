@@ -1,0 +1,10 @@
+mechanism,probability,extra_ER_keV,shift_sigma,note
+recombination + electron-counting fluctuation (band itself),0.05673877754796807,0.0,-1.5827539557862103,P024: 5.7 % from MC; binomial floor 0.023 dex; 4/31 AmBe points at/below the event
+"S2 position-correction residual alone (2 % rms, P024 term 0.0087 dex)",6.194836249053358e-09,0.0,-1.5827539557862103,needs a 5.7 sigma excursion of the residual
+electron-lifetime mis-correction at 859 us (11 % charge loss),,0.0,-1.5827539557862103,"tau_true = 3.0 ms if 5 ms assumed (3.9 if 8 ms); excluded by Kr-83m monitoring/P041 witnesses at the 78 % level, untested at 10 %"
+"g2 3 % low (systematic, not per event)",,0.0,-0.44,P043: g2 +-3 % moves the event by 0.44 sigma; P024: 1.10-1.99 sigma
+Migdal M-shell hole (this work),0.009585786329782733,1.261132325026752,2.8933796078745693,wrong sign: charge-rich
+Migdal L-shell hole (this work),0.0005880663674550616,7.970263300208044,7.080827049074597,wrong sign; above ROI ceiling
+Migdal K-shell hole (this work),1.5680021290502783e-05,54.891,18.32217280350199,wrong sign; above ROI ceiling
+Migdal N+O shells (in electronic stopping already),0.5637275886579024,0.046357713335611145,0.1786288018045851,"dipole limit marginal (q r ~ 0.4-1.3); ~10 eV mean, 1e-4 of the electronic budget"
+nuclear bremsstrahlung photon > 1 keV (this work),7.166894762556524e-05,1.0,2.569528284289204,wrong sign; Z_eff = 40-54 above 1 keV

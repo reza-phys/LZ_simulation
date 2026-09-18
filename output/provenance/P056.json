@@ -1,0 +1,58 @@
+{
+ "id": "P056",
+ "title": "ER/NR discrimination at 250 keV: the leakage predicted by the double-skew-Gaussian recombination model and how far the tails must be trusted",
+ "date": "2026-09-11",
+ "agent_tools": [
+  {"tool": "Read", "count": 21, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (ids/titles via pandas); papers P010, P024, P009, P041, P004; work/P010/details.md; code/P010_er_leakage.py; code/P024_nr_band_width.py; code/P004_wall_mssi.py l.60-140; lzcommon.py l.1-110, 255-300; LZ tex l.84-130, 150-270, 296-330, 586-700; Fig2_Calibrations.png; Fig4_science_sample_wbands.png; Fig5_NR_distance_3panels_no_sig.png; work/P010/figures/fig5_bottom_crop.png"},
+  {"tool": "Bash", "count": 16, "detail": "ledger id/title listing; grep of the tex for NEST/skew/Table S3-S5/Fig.5 passages; ls of work dirs, code, figures, lzcommon API; cat of P010/P004/P024 CSVs; nestpy probe (GetQuanta signature, ER widths/skewness vs E) x2; nestpy width decomposition (omega amplitude -> 0, SkewnessER scan); ENVIRONMENT_versions, DR index, PNG sizes, P004 Fig.5 code grep; Fig.5/Fig.2 colour probe; Fig.5 frame/tick probe; engine timing test; script run x3 (first crashed on er_means scalar cast, second on a format string after all numbers were logged, third complete); log/CSV extraction x3; until-loop wait for completion"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P056_er_leakage_model.py; output/work/P056/details.md; output/provenance/P056.json; output/papers/P056.md"},
+  {"tool": "Edit", "count": 16, "detail": "script fixes: scalar er_means helper; Fig.5 tick calibration on the right frame edge with decade-per-tick rule; multiplicity-weighted 212Pb statistics; special.ndtr and 2-keV grid for speed; 3-node quadrature; log10 S2c grid extended to 5.20; k-grid calibration instead of minimize_scalar; DE factors; format-string fix in Fig. 3"},
+  {"tool": "ToolSearch", "count": 2, "detail": "TaskStop, Monitor schemas"},
+  {"tool": "TaskStop", "count": 1, "detail": "stopped the first slow run before optimising the engine"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "polynomial.hermite_e.hermegauss, interp, digitize, add.at, random.default_rng (MC cross-check), linalg via @"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.ndtr, special.erf, stats.skew, stats.norm.cdf, optimize.brentq, ndimage.label/center_of_mass/sum"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, to_csv, groupby"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend, pyplot, image.imread (pixel digitisation of Figs 2, 4, 5)"},
+  {"name": "nestpy", "version": "2.1.1", "functions": "detectors.LZ_WS2024 (nr_er_width_parameters, get_sPEres), NESTcalc.GetYields (beta, Table S3 parameters), NESTcalc.GetQuanta(yields, density, width_params, SkewnessER), RandomGen.set_seed"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ dict (g1, g2, event, ROI, Table I), NEST_ER_LZ, NEST_ER_FLUCT_LZ, nest_er_yields, DRIFT_FIELD_VCM"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P056_er_leakage_model.py", "purpose": "Table S3/S4 ER response with skew-normal recombination fluctuations integrated exactly on a (S1c, log10 S2c) grid; digitisation of Fig. 4/2 band lines, Fig. 2 212Pb points and Fig. 5 histograms; k calibration and asymmetry test; beta-continuum and EC-line leakage per S1c bin; Fig. 5 projection; alpha_i/skew/k sensitivity; calibration requirements; four figures", "command": ".venv/bin/python output/code/P056_er_leakage_model.py  (run from /Users/reza/LZ_simulation; ~12 min; log in output/work/P056/run_log.txt)"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "detector/calibration paragraphs and Fig. 2 caption (l.84-108); ROI definition (l.114); Fig. 4 caption and backgrounds (l.150-200); Table I (l.210-246); Fig. 5 caption (l.255-266); Discussion ER paragraph (l.305); detector-response supplement, Tables S3-S5 (l.591-685); waveform section (l.687-695)"},
+  {"file": "inputs/figures_png/Fig4_science_sample_wbands.png", "parts_used": "ER (blue) and NR (red) median and 10-90 % lines digitised every 10 phd at 250-800 phd"},
+  {"file": "inputs/figures_png/Fig2_Calibrations.png", "parts_used": "same lines (cross-check); 212Pb (green) and grey calibration points at S1c 450-800"},
+  {"file": "inputs/figures_png/Fig5_NR_distance_3panels_no_sig.png", "parts_used": "all three panels: continuous-ER, internal gamma+IC+EC, total, MSSI, accidentals, NR histograms and data points"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "sections 2, 4, 5 (ER-tail hypothesis C), 6.3"},
+  {"file": "output/results_ledger.csv", "parts_used": "ids/titles of P001-P050; rows P004, P009, P010, P024"},
+  {"file": "output/papers/P010.md, P024.md, P009.md, P041.md, P004.md", "parts_used": "k = 0.50 calibration, 6.7 sigma = 6.8 half-widths, r = 0.939 (P010); NR width 0.031 dex, detector model, drawn-line convention (P024); energy scale (P009); charge-loss exclusion and empty strip (P041); Fig. 5 digitisation method (P004)"},
+  {"file": "output/work/P010/details.md; output/code/P010_er_leakage.py; output/code/P024_nr_band_width.py; output/code/P004_wall_mssi.py", "parts_used": "prior fluctuation model and Fig. 4 digitisation; P024 detector model and tick calibration routines (re-implemented); P004 Fig. 5 frame/colour values"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "LZ, NEST_ER_LZ, NEST_ER_FLUCT_LZ, nest_er_yields, DRIFT_FIELD_VCM"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "NEST GetQuanta electron variance Var(Ne) = r(1-r) Ni + (sigma_p Ni)^2 and skew-normal sampling of Ne with the NEST skewness", "presumed_source": "NEST v2 source code / Szydagis et al. 2024 review", "reliability": "likely"},
+  {"item": "NEST sets the ER skewness to zero for Nq > 1e4 (and the skewness formula is energy- and field-dependent)", "presumed_source": "NEST v2 source code; confirmed numerically with nestpy 2.1.1 (skew -> 0 above ~135 keV)", "reliability": "likely"},
+  {"item": "LZ electron extraction efficiency ~0.80", "presumed_source": "LZ SR1 detector paper / PRL 131 041002", "reliability": "uncertain"},
+  {"item": "2 % residual of position corrections on S1c and S2c (assumption, as P009/P024)", "presumed_source": "assumption", "reliability": "uncertain"},
+  {"item": "Allowed beta-spectrum shape with the non-relativistic Fermi function", "presumed_source": "standard nuclear physics", "reliability": "certain"},
+  {"item": "Beta endpoints: 212Pb 570 keV, 14C 156.5 keV, 214Pb 1019 keV", "presumed_source": "nuclear data tables", "reliability": "likely"},
+  {"item": "Skew-normal moment relations (mean, sd, skewness vs shape a) and Azzalini sampling", "presumed_source": "Azzalini 1985", "reliability": "certain"},
+  {"item": "Fig. 5 axis-label values (panel bottoms 1e-3/1e-5/1e-6, tick spacing) read from the figure image", "presumed_source": "the LZ figure itself", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First run: numpy 2.x refuses float() on 1-element arrays returned by er_means -> scalar helper added.",
+  "First engine layout (5x5 quadrature nodes, 1-keV energy grid, log10 S2c grid stopping at 4.40) omitted the ER band itself and was too slow (> 10 min for the k calibration alone); replaced by 3x3 nodes, 2-keV grid, grid to 5.20, special.ndtr, and a 5-point k-grid with interpolation.",
+  "Fig. 5 y-calibration from ticks on the LEFT frame edge failed for the top/middle panels (histogram lines start on that edge) and the assumed decades-per-tick were wrong for the middle panel; switched to right-edge ticks with a spacing rule (verified: bottom total 0.0108 vs 0.0106, middle 24.6 events vs ~25 data points).",
+  "212Pb statistics from single-marker blobs only were biased towards outliers; replaced by multiplicity-weighted blobs (still approximate).",
+  "Second run crashed in Figure 3 on a literal '%' in a format string after all numerical results had been logged (run_log_first_pass.txt); fixed and rerun.",
+  "Black-point counting in Fig. 5 (data_points) is unreliable in the top panel (merged markers) and was not used."
+ ],
+ "wimpydd_generated_files": "none"
+}

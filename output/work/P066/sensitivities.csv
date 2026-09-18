@@ -1,0 +1,7 @@
+instrument,ROI,S_lo,S_hi,note,reliability
+SPI 1 Ms point-like (instrument paper),cone_5,2e-05,5e-05,"Roques+2003 narrow-line 3 sigma, 1e6 s",uncertain x2
+"SPI full mission, inner 10 deg",cone_10,3e-06,3e-05,60Fe/26Al anchored; coded-mask diffuse penalty,uncertain x3
+"SPI full mission, |l|,|b|<30 deg",box_30,1e-05,0.0001,wide-ROI systematics-limited,uncertain x3
+"SPI 16 yr DM-line search |l|,|b|<47.5",box_47.5,1e-05,0.0001,Calore+2023-like ROI,uncertain x3
+"COSI 2 yr survey, inner 10 deg",cone_10,3e-06,3e-05,Tomsick+2023 ~1e-5 at 511 keV,uncertain x3
+"e-ASTROGAM/AMEGO concept, inner 10 deg",cone_10,1e-06,5e-06,concept-level,uncertain

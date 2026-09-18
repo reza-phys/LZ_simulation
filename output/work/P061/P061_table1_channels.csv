@@ -1,0 +1,9 @@
+channel,L_central,L_upper,source
+wall/RFR MSSI at the event's position class (k = 1 / k = 1.64),2e-06,3.3e-06,"P033 (2e-6 x k), P004 (k < 1.64 at 95%)"
+"accidental coincidence, high-S1 tail (as modelled / k < 183)",0.00015,0.027,P022 (1.5e-4 in +-2 sigma_NR at S1c > 500; UDT k < 183 at 95%)
+ER leakage incl. 124Xe/125I double vacancy (flat tail extrapolation / max),0.0028,0.01,P010 (2.8e-3 extrapolation; <= 1e-2)
+neutrons of any origin (central / every conservative choice stacked),6.6e-06,0.0005,"P013 (6.6e-6; <= 5e-4), P049 (1.3e-5 muon-induced)"
+detector artefact / partial charge loss (P041 residual / x3),0.006,0.02,P041 residual 0.006 (upper bracket x3 is our judgement)
+"AmBe/57Co activation, MSSI-like (per run / upper)",0.00015,0.008,P029 (1.5e-4 per run; 9e-6 - 8e-3)
+atmospheric-nu incoherent lone NR (central / upper),0.00017,0.0005,P019 (1.7e-4; 8e-6 - 5e-4)
+"nuclear-excitation hybrid, boosted/fast light DM",0.0,0.0,"P036, P040 (excluded)"

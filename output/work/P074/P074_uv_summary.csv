@@ -1,0 +1,14 @@
+uv_structure,nr_route,op,n,N_lo_contact,N_lo_m0p1,N_lo_m0p3,N_lo_m1,N_lo_longrange,m_min_Nlo5_GeV,verdict,note
+"scalar mediator, S-S (Higgs portal, light scalar)",O1 isoscalar,O1s,1,2754,5.263e+04,6222,3021,7.72e+05,inf,excluded at every mediator mass,light-mediator SI DM
+"vector mediator, V-V (Z', B-L)",O1 isoscalar,O1s,1,2754,5.263e+04,6222,3021,7.72e+05,inf,excluded at every mediator mass,
+kinetically mixed dark photon (couples to charge),O1 proton-only,O1p,1,1245,2.413e+04,2843,1368,3.477e+05,inf,excluded at every mediator mass,P011/P051 elastic analogue
+two-mediator / dipole-dipole SI (e.g. scalar x scalar box),O1 x q^-4,O1s,2,2754,1.098e+06,1.408e+04,3315,4.86e+08,inf,excluded at every mediator mass,
+"pseudoscalar mediator, P-P (P031 -> O6)",O6 isoscalar,O6s,1,0.4355,5.55,0.9498,0.4773,27.8,0.1064,allowed for m_med >= 0.11 GeV,P031: m_pi/eta poles already in the q^-2 class
+S-P (scalar DM current x pseudoscalar quark current),O10 isoscalar,O10s,1,3.086,46.09,6.881,3.389,353.2,0.4118,allowed for m_med >= 0.41 GeV,
+"axial-vector mediator, A-A (dark Z', light)",O4 isoscalar,O4s,1,28.13,566.9,65.73,31.02,8283,inf,excluded at every mediator mass,excluded already as a contact operator (P003: 28)
+DM tensor x quark axial current via a light mediator,O9 isoscalar,O9s,1,2.073,40.89,4.846,2.287,505.8,0.2935,allowed for m_med >= 0.29 GeV,P031 route to O9 (Lambda = 62 GeV contact)
+DM tensor(g5) x quark axial current via a light mediator,O14 isoscalar,O14s,1,2.352,46.46,5.497,2.594,577.3,0.324,allowed for m_med >= 0.32 GeV,
+vector mediator with DM velocity coupling (V-A),O7 isoscalar,O7s,1,32.35,739.9,77.3,35.75,1.288e+04,inf,excluded at every mediator mass,
+"vector mediator, anapole-like DM current (A-V, charge part)",O8 isoscalar,O8s,1,155.9,3253,368.6,172.1,4.754e+04,inf,excluded at every mediator mass,P044: photon anapole already 26.9
+EDM-type DM x charge via a light mediator,O11 isoscalar,O11s,1,258.9,4114,567.6,283.3,4.029e+04,inf,excluded at every mediator mass,P044: photon EDM 18 100
+"q^2-weighted spin (O15, O13, O12, O5, O3) via a light mediator",O15 / O13 / O12 / O5 / O3,O15s,1,1.909,23.27,4.133,2.09,99.56,0.2579,allowed for m_med >= 0.26 GeV,

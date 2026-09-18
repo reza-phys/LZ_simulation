@@ -1,0 +1,73 @@
+{
+ "id": "P048",
+ "title": "Chargino lifetimes, disappearing tracks and the road to a thermal Higgsino: HL-LHC, FCC-hh and a muon collider after LZ",
+ "date": "2026-09-10",
+ "agent_tools": [
+  {"tool": "Read", "count": 15, "detail": "provenance/PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (three pages); papers/P014.md; papers/P007.md; papers/P037.md; papers/P025.md; work/P014/details.md; provenance/P014.json; work/P048/figures/P048_fig1_reach_vs_mass.png; work/P048/figures/P048_fig2_survival_betagamma.png (x3 iterations)"},
+  {"tool": "Bash", "count": 15, "detail": "ls output/work/P014 + output/code + output/provenance + output/data_requests; cat of P014 CSVs (chargino_lifetimes, chi2_decays, constraint_map, production_and_pair_counts, toy_tracklet_yield, tracklet_survival) + recalled_knowledge.json; grep of lzcommon.py constants/functions (zsh '===' failure); cat environment/ENVIRONMENT_versions.txt + ls work/papers + grep process_log for P041-P048; grep of dataviz palette.md for hex codes; .venv/bin/python output/code/P048_future_colliders.py (x5: one SyntaxError run, four successful runs incl. figure-label iterations); wc -w / awk section counts on papers/P048.md (x5) + json.load validation + final ls of deliverables"},
+  {"tool": "Write", "count": 5, "detail": "code/P048_future_colliders.py; work/P048/details.md; provenance/P048.json; papers/P048.md (x2: first draft, then full rewrite to budget)"},
+  {"tool": "Edit", "count": 23, "detail": "script (6): rename hyphenated dict key; clipped_100TeV flag + note; analytic massless-check message; cross-section-band reach table; two figure-2 label placements. details.md (1): robustness percentages. papers/P048.md (16): trimming headline, key numbers, Results, Caveats, header, tools and confidence lines to the word budgets. provenance/P048.json (1): tool-count update"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette and chart rules for the two figures)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "polyfit/polyval (anchor fit), random.default_rng (toy Drell-Yan sampling, seed 48), percentile, histogram, trapezoid, interp"},
+  {"name": "scipy", "version": "1.18.1", "functions": "integrate.quad (ISR convolution for mono-photon signal and background)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, to_csv, to_string"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg backend), log axes, step histograms, annotate/text"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "GEV_TO_CM2 (GeV^-2 -> cm^2 -> fb conversion)"},
+  {"name": "none: derived by hand", "version": "-", "functions": "tau-scaling identity sigma(m,s2)=sigma(m sqrt(s1/s2),s1) s1/s2; pair-mass spectrum M^-(2a+1) beta(3-beta^2)/2 and angular law 2-beta^2 sin^2 theta; transverse decay radius depends on p_T/m only; Majorana off-diagonal current psi-bar gamma psi = i chi1-bar gamma chi2; pure-Higgsino chargino vector-like Z coupling; W-parameter coefficient g^2 mW^2 Sum T3^2/(60 pi^2 m^2) from the alpha/(15 pi) q^2/m^2 term; chi2 photon lab-energy range gamma(1+-beta) delta; delta bound from Delta m+- = Delta m_rad + c_tree delta"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P048_future_colliders.py", "purpose": "cross-sections (tau-scaled hadron, tree-level muon collider incl. Y=1 triplet), toy Drell-Yan beta-gamma_T distributions, tracklet survival, wino-calibrated efficiency, expected tracklets and reach vs mass with background and cross-section bands, mono-photon estimate, chi2 lab decays, Delta m -> delta bound, W parameter, identification numbers, timeline table, two figures, CSV/JSON outputs", "command": ".venv/bin/python output/code/P048_future_colliders.py"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules and deliverable formats"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "sections 1-3, 5-6 (event summary, inelastic kinematics, open question 10)"},
+  {"file": "output/results_ledger.csv", "parts_used": "rows P001-P040 (P002, P007, P014, P018, P020, P034, P037 headline numbers)"},
+  {"file": "output/papers/P014.md", "parts_used": "Delta m+- = 342 MeV, c tau 0.71 cm, delta-independence 0.19%, 13 TeV cross-sections 201/23/0.67 fb, tracklet survival at fixed beta-gamma, HL-LHC toy yields, chi2 lifetimes, recalled prospects"},
+  {"file": "output/papers/P007.md", "parts_used": "fit points delta(N=1) = 310/342/366/375/376 keV, N falls x5 per 10 keV, thermal 1.1 TeV, G_F-fixed sigma_n"},
+  {"file": "output/papers/P037.md", "parts_used": "Y=1 triplet: sigma_n x4, delta(N=1) = 374 keV, Lambda = 22 TeV, Delta m(Q=1) = 511 MeV; (2Y)^2 shifts delta by +8 keV"},
+  {"file": "output/papers/P025.md", "parts_used": "Higgsino indirect status (allowed), context only"},
+  {"file": "output/work/P014/details.md", "parts_used": "sections 3-8: tree-piece coefficients (0.096-2.126)e-3, anchor cross-section table, wino calibration (2470 events, ~5 selected, eps_kin), tracklet radii, chi2 decay estimates"},
+  {"file": "output/work/P014/chargino_lifetimes.csv", "parts_used": "Higgsino c tau at 300-4000 GeV; wino 660 GeV c tau 6.82 cm"},
+  {"file": "output/work/P014/chi2_decays.csv", "parts_used": "tau_gamma 0.059 s, tau_nunu 4.57e5 s at 1 TeV"},
+  {"file": "output/work/P014/production_and_pair_counts.csv, tracklet_survival.csv, toy_tracklet_yield.csv, constraint_map.csv, recalled_knowledge.json", "parts_used": "cross-check of pair counts and survival probabilities; list of recalled bounds"},
+  {"file": "output/provenance/P014.json", "parts_used": "format template"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "GEV_TO_CM2; constant list (grep)"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "alpha(mZ)=1/127.95, sin^2 theta_W=0.2312, mZ=91.1876, Gamma_Z=2.4952, mW=80.377 GeV, G_F=1.1664e-5 GeV^-2, m_e=511 keV", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "13 TeV NLO+NLL pure-wino chi1+-chi2^0 cross-sections 12 pb (100 GeV) ... 1.3 fb (1 TeV)", "presumed_source": "LHC SUSY xsec WG via corpus P014", "reliability": "likely (factor ~1.5)"},
+  {"item": "Higgsino chi+-chi0 channels = 1/2 of wino C1N2 at equal mass; chi+chi- + chi1chi2 add ~50% (split ~1/3 and ~1/6 of chi+-chi0)", "presumed_source": "P014 (SU(2) Wigner-Eckart); own estimate for the split", "reliability": "likely (total) / uncertain (split)"},
+  {"item": "Parton-luminosity tau-scaling sigma(m, s2) = sigma(m sqrt(s1/s2), s1) x s1/s2, neglecting PDF Q^2 evolution", "presumed_source": "collinear factorisation; own derivation", "reliability": "likely (x/÷1.5 at fixed tau)"},
+  {"item": "100 TeV Higgsino cross-sections: assignment ~30 fb (chi+chi- + chi+-chi0) at 1 TeV; Low-Wang 2014 total ~60 fb", "presumed_source": "Low & Wang JHEP 08 (2014) 161; assignment", "reliability": "uncertain (factor 3)"},
+  {"item": "Tree-level l+l- -> f fbar via s-channel gamma+Z with massive final fermions: (3-beta^2)/2 for VV, beta^2 for AA terms", "presumed_source": "textbook (Peskin-Schroeder ch. 21; LEP2 literature)", "reliability": "certain (massless limit reproduced analytically)"},
+  {"item": "Pure-Higgsino chargino vector-like under Z (g_L=g_R=1/2-s_W^2); neutral Dirac Higgsino g=-1/2; Y=1 triplet (T3,Q)=(1,2),(0,1),(-1,0)", "presumed_source": "SU(2)xU(1) quantum numbers", "reliability": "certain"},
+  {"item": "Tracklet radii: ATLAS 4-hit pixel tracklet r >~ 12 cm; ITk / FCC-hh short-tracklet proposals r ~ 5-10 cm (ITk innermost layer ~3.4 cm; FCC-hh layers from ~2.5 cm); CMS-like r >~ 30 cm; MuC vertex detector from ~3 cm with 10-degree nozzles", "presumed_source": "ATLAS EPJC 82 (2022) 606; Fukuda et al. 2018; Saito et al. 2019; FCC-hh CDR; MuC detector concept", "reliability": "uncertain"},
+  {"item": "ATLAS 136 fb^-1 disappearing-track wino exclusion at 660 GeV (tau=0.2 ns) corresponds to ~5 selected events; fake-tracklet background O(few-10)", "presumed_source": "ATLAS EPJC 82 (2022) 606 via P014", "reliability": "likely (mass) / uncertain (counts)"},
+  {"item": "Projected fake-tracklet backgrounds: HL-LHC 3 ab^-1 ~30 (10-100); FCC-hh 30 ab^-1 ~100 (10-1000); MuC ~3 (1-30) after BIB rejection", "presumed_source": "luminosity scaling of ATLAS Run-2; Saito et al. 2019; Capdevilla et al. 2021", "reliability": "uncertain"},
+  {"item": "Vector-coupled pair angular law 2 - beta^2 sin^2 theta; pair-mass spectrum from dL/dtau ~ tau^-a with a = -slope/2", "presumed_source": "own derivation; luminosity power law fitted to anchor slopes", "reliability": "likely"},
+  {"item": "eps_kin calibration: ATLAS wino exclusion ~ 5 selected events out of 1.5 x sigma_C1N2 x 136 fb^-1 produced", "presumed_source": "P014 toy", "reliability": "uncertain (factor 2)"},
+  {"item": "MuC tracklet reconstruction efficiency ~50% after BIB-driven quality cuts", "presumed_source": "assumption motivated by Capdevilla et al. 2021", "reliability": "uncertain"},
+  {"item": "Collinear ISR structure function dP/dx dtheta^2 = (alpha/2pi)(1+(1-x)^2)/x/theta^2; 10-170 degree integration gives ln(1/theta_min^2) ~ 3.5 per beam", "presumed_source": "Weizsaecker-Williams / electron structure function", "reliability": "likely (factor ~2 for wide-angle photons)"},
+  {"item": "sigma(l+l- -> nu nubar, 3 flavours) at multi-TeV ~ 50-100 pb (t-channel W dominated, G_F^2 mW^2/pi scale)", "presumed_source": "standard result; own estimate", "reliability": "uncertain (factor 2)"},
+  {"item": "Literature MuC reach: 10 TeV, 10 ab^-1 mono-photon ~95% CL for the 1.1 TeV Higgsino (Han-Liu-Wang-Wang 2020); disappearing tracks 5 sigma (Capdevilla et al. 2021); 3 TeV MuC excludes it", "presumed_source": "arXiv:2009.11287; JHEP 06 (2021) 133", "reliability": "likely (qualitative) / uncertain (numbers)"},
+  {"item": "Hadron-collider mono-jet reach for the Higgsino ~200 GeV (HL-LHC), ~0.9 TeV (FCC-hh); HL-LHC Higgsino disappearing-track projections 200-300 GeV (12 cm) up to ~500-600 GeV with shorter tracklets; FCC-hh Higgsino discovery ~1 TeV (Saito et al.)", "presumed_source": "Low & Wang 2014; Fukuda et al. 2018; Mahbubani et al. 2017; Saito et al. 2019; CERN YR 1812.07831", "reliability": "uncertain"},
+  {"item": "chi2 lifetimes tau_gamma ~ 0.06 s (O(1) uncertain), tau_nunu = 4.6e5 s; e+e- closed", "presumed_source": "corpus P014", "reliability": "corpus (photon channel uncertain)"},
+  {"item": "P014 tree-level (Delta m+- - Delta m_rad)/delta = (0.1-2.1)e-3; one-loop Delta m_rad scheme uncertainty +-10 MeV; two-loop would give ~+-3 MeV", "presumed_source": "corpus P014; own estimate of the two-loop improvement", "reliability": "corpus / uncertain"},
+  {"item": "Oblique W parameter of a heavy vector-coupled fermion multiplet W = g^2 mW^2 Sum T3^2/(60 pi^2 m^2); FCC-ee/CEPC sensitivity |W| ~ 3e-5 (LEP ~1e-3)", "presumed_source": "Barbieri-Pomarol-Rattazzi-Strumia NPB 703 (2004) definitions, own one-loop expansion; Di Luzio-Groeber-Panico JHEP 01 (2019) 011", "reliability": "likely (formula) / uncertain (sensitivity)"},
+  {"item": "Facility timelines: HL-LHC 2030-2041; FCC-ee 2045-2065; FCC-hh 2070s; 10 TeV muon collider 2050s at the earliest; thermal Higgsino 1.1 TeV", "presumed_source": "European Strategy / CERN FCC feasibility study / IMCC roadmap; standard thermal mass", "reliability": "likely (HL-LHC, FCC-hh, thermal mass) / uncertain (FCC-ee, MuC)"},
+  {"item": "P007/P018/P037 corpus numbers: delta(N=1) 366 (1 TeV) / 375 (2 TeV) keV, N falls x5 per 10 keV, halo systematic -17/+11 keV, (2Y)^2 shifts delta by +8 keV", "presumed_source": "corpus", "reliability": "corpus"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First script run: SyntaxError from a hyphenated keyword in the summary dict (renamed).",
+  "No parton-level PDF convolution (no PDF sets offline); tau-scaling of the P014 anchor fit and a power-law luminosity are used instead; the 100 TeV curve is frozen below m = 460 GeV and those rows are flagged and unused.",
+  "No full mono-photon analysis (recoil mass, polarisation); an inclusive collinear-ISR estimate with S/sqrt(B) ~ 0.2 is reported instead.",
+  "Figure-2 muon-collider label needed two placement iterations (hidden by the legend, then clipped by the axes)."
+ ],
+ "wimpydd_generated_files": "none"
+}

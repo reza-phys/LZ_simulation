@@ -1,0 +1,65 @@
+{
+ "id": "P030",
+ "title": "Streams and substructure: can a fast dark-matter stream produce the 248 keV event without a low-energy population?",
+ "date": "2026-09-08",
+ "agent_tools": [
+  {"tool": "Read", "count": 15, "detail": "provenance/PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv; papers/P002.md, P003.md, P006.md, P007.md, P018.md; code/common/lzcommon.py; code/P018_halo_tail.py; code/P007_higgsino_inelastic.py; provenance/P018.json; work/P030/figures/P030_fig1/2/3 PNGs (fig2 twice, before/after legend fix)"},
+  {"tool": "Bash", "count": 16, "detail": "ls output/* + cat ENVIRONMENT_versions.txt; cat work/P018/validation.json + grep WimPyDD signatures; python timing test of WD.diff_rate(sum_over_streams=False) and v_earth_sun; .venv/bin/python output/code/P030_streams.py x5 (run 1: SyntaxError; run 2: 95 s; run 3: 155 s with Part 4b; run 4: 147 s exact truncated integral; run 5: 86 s figure legend fix; log in work/P030/run_log.txt); python bin-convention check (upper/lower boundary vs WimPyDD delta_eta); python extraction of O4/O6/O10 rows from elastic_Nlo_Nhi.csv; python collection of numbers from part4_ceiling.json, validation.json, modulation_timeseries.json, fs_for_one_event.csv, deltamax_vs_vlab.csv + isotope ceilings; wc -w section counts of papers/P030.md x5 (last one also validates P030.json)"},
+  {"tool": "Write", "count": 5, "detail": "code/P030_streams.py; work/P030/details.md; provenance/P030.json; papers/P030.md (written twice: full rewrite for word budget)"},
+  {"tool": "Edit", "count": 19, "detail": "P030_streams.py x6: invalid identifier delta_N_1e-3 renamed (x2), dead expression removed, Part 4b (dispersion table + truncated bound stream) added, 3-D shell quadrature replaced by exact axisymmetric integral, Fig. 2a legend moved; papers/P030.md word-count trims x11; provenance/P030.json and details.md final tool counts x2"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette/chart guidance before plotting)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "linspace, cumsum, trapezoid, interp, linalg.norm, cross, ptp, array algebra"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf, special.erfc (stream eta, efficiency)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, pivot, to_csv, read_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg), semilogy, axvspan, axhspan"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "diff_rate(target=Xe, sum_over_streams=False, delta=...) per-stream kernels; eft_hamiltonian via lz.wd_hamiltonian; streamed_halo_function via lz.wd_halo (validation only); v_earth_sun (Earth orbital velocity vector)"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ, V0_KMS, VESC_KMS, V_SUN_PEC, XE_ISOTOPES, A_XE_MEAN, M_V_GEV, C_KMS, m_nucleus_gev, mu_red, vmin_kms, E_R_range_keV, delta_max_kev, helm_F2, eta0, wd, wd_halo, wd_hamiltonian"},
+  {"name": "analytic derivation", "version": "none: derived by hand", "functions": "stream eta(vmin) = [erf((v+v_lab)/v0s) - erf((v-v_lab)/v0s)]/(2 v_lab); axisymmetric truncated-stream S(v) with analytic cos(theta) integral and cap c_min = (v^2+v_o^2-v_esc^2)/(2 v v_o); flat-spectrum N_lo/N_hi = Int F^2 eff (5.4-55)/Int F^2 eff (200-270); d(delta_max)/dv = sqrt(2 m_N E_R)/c"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P030_streams.py", "purpose": "Parts 0-4: analytic stream/SHM delta_eta construction validated against WimPyDD; elastic N_lo/N_hi for O1/O4/O6/O10 with monochromatic and composite streams; Higgsino inelastic counts on a (delta 300-500 keV x v_lab 600-1000 km/s) grid, delta_max(v_lab), f_s for one event, dispersion sensitivity, annual modulation for five stream directions; known-substructure table; tail enhancement, bound-stream boosts and exact v_esc-truncated retrograde streams; three figures", "command": ".venv/bin/python output/code/P030_streams.py  (cwd = simulation root; 147 s; stdout in output/work/P030/run_log.txt)"},
+  {"path": "(inline python, not saved)", "purpose": "bin-boundary convention check: upper vs lower boundary delta_eta vs WimPyDD's at delta = 300/350/380 keV; cumulative eta comparison at 700-805 km/s", "command": ".venv/bin/python - <<EOF ... EOF"},
+  {"path": "(inline python, not saved)", "purpose": "extraction/collection of numbers from the CSV/JSON outputs for details.md and the paper; isotope-resolved delta_max and mu v^2/2 ceilings at 810 km/s", "command": ".venv/bin/python - <<EOF ... EOF"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules and deliverable formats"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "sections 1-3 (event, kinematics, timing), section 5 row K (halo substructure)"},
+  {"file": "output/results_ledger.csv", "parts_used": "rows P001-P020 (headline results; P002/P003/P006/P007/P018 numbers)"},
+  {"file": "output/papers/P002.md", "parts_used": "delta_max values, rate fall-off toward delta_max"},
+  {"file": "output/papers/P003.md", "parts_used": "N_lo definition and SHM values (O1 2752, O4 28, O6 0.43, O10 3.1), efficiency proxy"},
+  {"file": "output/papers/P006.md", "parts_used": "v_E(16 June), modulation peak day, June/Dec ratios"},
+  {"file": "output/papers/P007.md", "parts_used": "Higgsino couplings and sigma_n = 7.4e-39 cm^2; one-event window 358-380 keV; PLR band 0.105-3.65"},
+  {"file": "output/papers/P018.md", "parts_used": "delta_max slope 0.82 keV/(km/s), Sausage eta -> 0.80, WimPyDD half-bin tail bias, recalled v_esc range"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "whole file (constants, kinematics, eta0, Helm FF, WimPyDD wrappers)"},
+  {"file": "output/code/P018_halo_tail.py", "parts_used": "delta_eta convention, v_obs_vec/v_earth_sun phase convention, kernel + N_roi technique, shell quadrature (tried, then replaced), figure palette"},
+  {"file": "output/code/P007_higgsino_inelastic.py", "parts_used": "Higgsino c_p/c_n derivation, efficiency(E) model, kernel technique"},
+  {"file": "output/provenance/P018.json", "parts_used": "provenance format; recalled-knowledge list"},
+  {"file": "output/work/P018/validation.json", "parts_used": "P018 eta and rate validation numbers for comparison"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Baxter-2021 SHM: v0 = 238, v_esc = 544, v_sun,pec = (11.1, 12.2, 7.3) km/s, rho0 = 0.3 GeV/cm^3 (via lzcommon)", "presumed_source": "Baxter et al. EPJC 81, 907 (2021)", "reliability": "certain"},
+  {"item": "Mean inverse speed of a boosted Maxwellian, eta = [erf(x+y) - erf(x-y)]/(2 y v0) (v_esc -> infinity)", "presumed_source": "Lewin & Smith 1996; McCabe PRD 82, 023530 (2010)", "reliability": "certain"},
+  {"item": "G_F = 1.166e-5 GeV^-2, sin^2 theta_W = 0.231; Higgsino Z couplings c_p = (G_F/sqrt2)(1-4 s_W^2), c_n = -G_F/sqrt2", "presumed_source": "PDG; P007", "reliability": "certain"},
+  {"item": "Earth orbital speed 29.8 km/s; projection onto the solar-motion direction ~15 km/s; peak ~2 June", "presumed_source": "standard annual-modulation kinematics (Freese, Frieman, Gould 1988); WimPyDD v_earth_sun", "reliability": "certain"},
+  {"item": "Sagittarius stream near the Sun: v ~ 300 km/s roughly perpendicular to the disk; local density fraction <~ few % (early claims 0.3-25 %)", "presumed_source": "Freese, Gondolo, Newberg, Lewis PRL 92, 111301 (2004); Purcell, Zentner, Wang JCAP 08 (2012) 027", "reliability": "likely (speed) / uncertain (direction sign, fraction)"},
+  {"item": "S1 stream: retrograde, Galactocentric (v_r, v_phi, v_z) ~ (-34, -306, -64) km/s, dispersions ~(82, 27, 59) km/s, lab-frame ~ 500-575 km/s, density fraction up to ~10 % considered", "presumed_source": "Myeong et al. ApJL 863, L28 (2018); O'Hare et al. PRD 98, 103006 (2018)", "reliability": "likely (velocity) / uncertain (fraction)"},
+  {"item": "S2 stream prograde with large vertical velocity (~(6, 164, -250) km/s); retrograde 'shards' (Rg-type) with v_phi ~ -(250-300) km/s and small fractions", "presumed_source": "O'Hare et al. PRD 101, 023006 (2020)", "reliability": "uncertain"},
+  {"item": "Gaia-Enceladus/Sausage debris: v_phi ~ 0, |v_r| ~ 200-300 km/s, strongly radial, ~20 % of local density (SHM++)", "presumed_source": "Belokurov et al. 2018; Evans, O'Hare, McCabe PRD 99, 023012 (2019)", "reliability": "likely"},
+  {"item": "Helmi streams: prograde with large |v_z| (~250 km/s), local fraction <~ 1 %", "presumed_source": "Helmi et al. Nature 402, 53 (1999)", "reliability": "uncertain"},
+  {"item": "Galactic escape speed at the Sun 500-580 km/s (RAVE 533, Gaia ~528)", "presumed_source": "Piffl et al. 2014; Deason et al. 2019 (as in P018)", "reliability": "likely"},
+  {"item": "Unbound/extragalactic dark matter near the Sun is a small fraction (<< 1 %) of the local density", "presumed_source": "Freese, Gondolo, Stodolsky PRD 64, 123502 (2001) and Local Group modelling", "reliability": "uncertain"},
+  {"item": "Cold tidal streams of dwarf-galaxy debris have internal dispersions ~10-30 km/s", "presumed_source": "stellar-stream literature (e.g. Sgr stream kinematics)", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Run 1 failed on an invalid keyword identifier (delta_N_1e-3_of_300); renamed.",
+  "The 3-D shell quadrature copied from P018 (48 x 64 angular nodes) cannot resolve a sigma = 20 km/s stream at 800 km/s (1.4 deg): untruncated eta0 came out 4.4-6.7 % high; replaced by the exact axisymmetric integral (valid for streams anti-parallel to v_obs), which reproduces the analytic stream to 5e-7.",
+  "Untruncated Gaussian streams overstate bound-stream rates above delta ~ 380 keV (by x60 at delta = 400 keV for v_gal = 544); kept only for unbound streams and as an upper envelope, flagged where used."
+ ],
+ "wimpydd_generated_files": []
+}

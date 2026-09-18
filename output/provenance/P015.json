@@ -1,0 +1,68 @@
+{
+  "id": "P015",
+  "title": "Fluorine, argon, germanium, iodine and tungsten: which targets can confirm an inelastic 300-390 keV splitting?",
+  "date": "2026-09-05",
+  "agent_tools": [
+    {"tool": "Read", "count": 18, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv; P002.md; P005.md; P007.md; fulltext.tex l.26-31 and l.800-824; lzcommon.py l.108-217 and l.305-372; P007_higgsino_inelastic.py l.100-180; FigS7_O1_as_SI.png; work/P007/lz_intervals_digitised.json; P015 figures fig1 (x1), fig2 (x2), fig3 (x2)"},
+    {"tool": "Bash", "count": 19, "detail": "grep fulltext.tex for S7/CRESST/PICO/DEAP + lzcommon function list; ls figure/work dirs + WimPyDD target probe; WimPyDD element/isotope attributes + P005 efficiency constants; grep P005 constants + P007 digitise + source listing; pymupdf enumeration of FigS7 drawings + WimPyDD timing probe (tungsten NameError found); inspect 180W_func_w.py + package.py func_w_custom; inspect get_function_dir + W files; palette hex grep (dataviz skill); script run 1 (syntax error); run 2; print tables; run 3 + corrected counts; final run 4 + key numbers + WimPyDD new-file check; wc -w + JSON key check; wc recount; python body rewrite + wc; targeted trims + wc; table-to-sentence + wc; final trims + wc + json validation + ls"},
+    {"tool": "Write", "count": 5, "detail": "output/code/P015_target_complementarity.py; output/work/P015/details.md; output/provenance/P015.json; output/papers/P015.md (x2: first draft, then rewritten to meet the word limit)"},
+    {"tool": "Edit", "count": 8, "detail": "script: fix key name with '.', DAMA/COSINE exposure units (kg d), fig2 y-range/labels (x2), fig3 zeros/labels/size (x2), NaI background context block, fig3 legend position"},
+    {"tool": "Skill", "count": 1, "detail": "dataviz (chart palette and mark rules)"}
+  ],
+  "software": [
+    {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv)"},
+    {"name": "numpy", "version": "2.5.3", "functions": "linspace, trapezoid, polyfit, clip, mean, argmax"},
+    {"name": "scipy", "version": "1.18.1", "functions": "special.erf, special.erfc (LZ efficiency model)"},
+    {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; pyplot plots, scatter, axvspan"},
+    {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian (O1 isoscalar c0=2/m_v^2), streamed_halo_function (explicit vmin grid, day_of_the_year), diff_rate for targets Xe, I, W, Ge, Ar, F; runtime injection of numpy as `np` into the 180/182/183/184/186W_func_w modules (WimPyDD bug: `from numpy import *` but `np.` used); W uses WimPyDD's Helm M form factor"},
+    {"name": "pymupdf", "version": "1.28.2", "functions": "Page.get_drawings (vector-path digitisation of FigS7 curves by stroke colour)"},
+    {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ dict (exposure, efficiency points), v_earth_kms, mu_red, m_nucleus_gev, E_R_range_keV, wd, wd_halo, wd_hamiltonian, wd_rate, M_V_GEV, GEV_TO_CM2, M_NUCLEON_GEV, AMU_GEV, C_KMS, VESC_KMS"},
+    {"name": "kinematics algebra", "version": "none: derived by hand", "functions": "delta_max = mu v_max^2/2; v_thr = sqrt(2 delta/mu); A_min bisection; isovector weights ((N-(1-4 s_W^2)Z)/A)^2"}
+  ],
+  "scripts_and_commands": [
+    {"path": "output/code/P015_target_complementarity.py", "purpose": "kinematic ceilings and windows for 10 nuclei; WimPyDD O1 window rates for Xe/I/W/Ge/Ar/F at delta = 250/300/350/366/380 keV (annual and 16-June halos); LZ one-event normalisation; counts in recalled exposures; future exposures for 3 events; FigS7 curve digitisation; 3 figures", "command": ".venv/bin/python output/code/P015_target_complementarity.py"}
+  ],
+  "local_inputs": [
+    {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all"},
+    {"file": "output/00_evidence_dossier.md", "parts_used": "sections 1-6 (event numbers, open question 5)"},
+    {"file": "output/results_ledger.csv", "parts_used": "P001-P010 rows"},
+    {"file": "output/papers/P002.md", "parts_used": "delta_max values, window/peak positions, rate ratios"},
+    {"file": "output/papers/P005.md", "parts_used": "xenon-world counts, ROI-edge method, efficiency model"},
+    {"file": "output/papers/P007.md", "parts_used": "Higgsino delta(N=1)=366 keV at 1 TeV; LZ upper edge ~3.65 events; digitised Fig.6/S7 edges"},
+    {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "l.26-31 Introduction citations (DEAP-3600 2026, CRESST-III 2019, PICO-60 2019); l.800-817 O1-as-cross-section equation and Fig. S7 caption; bibliography entries l.347-353, 409-412"},
+    {"file": "inputs/arXiv_2609.02823_source/FigS7_O1_as_SI.pdf", "parts_used": "vector paths of CRESST-II, PICO 2023, XENON1T, PandaX-4T, LZ 2024 and LZ 2026 interval edges"},
+    {"file": "inputs/figures_png/FigS7_O1_as_SI.png", "parts_used": "visual check of curve identities and extents"},
+    {"file": "output/work/P007/lz_intervals_digitised.json", "parts_used": "Fig. 6 / S7 LZ interval edges for the normalisation cross-check"},
+    {"file": "output/code/P007_higgsino_inelastic.py", "parts_used": "digitise() axis calibration for FigS7; efficiency model; annual-halo construction"},
+    {"file": "output/code/P005_other_xenon_expectations.py", "parts_used": "efficiency-curve constants"},
+    {"file": "output/code/common/lzcommon.py", "parts_used": "kinematics, halo, WimPyDD wrapper, constants"},
+    {"file": "WimPyDD/package.py and WimPyDD/Targets/Nuclear_response_functions/18xW_func_w.py", "parts_used": "read-only inspection to diagnose the tungsten NameError and the Helm M form factor for W"},
+    {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+  ],
+  "recalled_knowledge": [
+    {"item": "inelastic scattering kinematics: v_min, delta_max = mu v^2/2, E_R window", "presumed_source": "Tucker-Smith & Weiner 2001; standard", "reliability": "certain"},
+    {"item": "atomic masses C 12.011, O 15.999, F 18.998, Na 22.990, Ca 40.078, I 126.904, W 183.84 u", "presumed_source": "IUPAC", "reliability": "certain"},
+    {"item": "sin^2 theta_W = 0.231", "presumed_source": "PDG", "reliability": "certain"},
+    {"item": "PICO-60 C3F8 complete exposure 1404 kg d, thresholds 2.45 and 3.3 keV", "presumed_source": "Amole et al. PRD 100, 022001 (2019)", "reliability": "likely"},
+    {"item": "PICO-60 CF3I run exposure ~1335 kg d at 13.6 keV threshold; PICO 2023 inelastic limits use CF3I iodine", "presumed_source": "Amole et al. 2016; Adams et al. PRD 108, 062003 (2023)", "reliability": "uncertain"},
+    {"item": "DEAP-3600 2019 exposure 758 t d; ROI roughly 50-100 keV_nr", "presumed_source": "Ajaj et al. PRD 100, 022004 (2019)", "reliability": "likely (exposure) / uncertain (ROI)"},
+    {"item": "CRESST-II Lise module ~52 kg d, ROI 0.3-40 keV; Fig. S7 CRESST-II 2016 curve is the Bramante et al. recast", "presumed_source": "Angloher et al. EPJC 76, 25 (2016); Bramante et al. 2016", "reliability": "uncertain"},
+    {"item": "CRESST-III 2019 exposure ~3.64 kg d", "presumed_source": "Abdelhameed et al. PRD 100, 102002 (2019)", "reliability": "uncertain"},
+    {"item": "DAMA/LIBRA phase1+phase2 total exposure 2.46 t yr (1.33 + 1.13)", "presumed_source": "Bernabei et al. 2018", "reliability": "likely"},
+    {"item": "COSINE-100 exposure ~0.2 t yr", "presumed_source": "assignment / COSINE publications", "reliability": "uncertain"},
+    {"item": "ANAIS-112: 112.5 kg, ~3 yr", "presumed_source": "Amare et al. 2021", "reliability": "uncertain"},
+    {"item": "iodine quenching factor in NaI(Tl) Q_I ~ 0.09", "presumed_source": "DAMA convention", "reliability": "likely"},
+    {"item": "DAMA/LIBRA single-hit rate ~1 cpd/kg/keVee at 10-60 keVee", "presumed_source": "DAMA/LIBRA spectra", "reliability": "likely"},
+    {"item": "CaWO4 cryogenic phonon channel linear to MeV; light-yield discrimination improves with energy", "presumed_source": "CRESST detector papers", "reliability": "likely"}
+  ],
+  "datasets": "none",
+  "data_requests": "none",
+  "failed_or_abandoned": [
+    "First WimPyDD tungsten call crashed with NameError 'np' in 180W_func_w.py (WimPyDD bug); resolved by runtime injection of numpy into the five 18xW_func_w modules, no file edited",
+    "Script syntax error from a dict key containing '2.3'; renamed",
+    "First exposure table entered DAMA/LIBRA and COSINE exposures as 2.46e6 / 2e5 kg d (x2.7 too large); corrected to 2.46 and 0.2 t yr converted to kg d",
+    "Figure 2 clipped the tungsten peak and misplaced its label; figure 3 overflowed and hid the zeros; both fixed",
+    "DEAP-3600 actual ROIs not modelled because argon is kinematically blind for every delta >= 250 keV"
+  ],
+  "wimpydd_generated_files": []
+}

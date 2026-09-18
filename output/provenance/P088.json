@@ -1,0 +1,63 @@
+{
+ "id": "P088",
+ "title": "Decisive-test timeline: LZ, XENONnT, PandaX-4T, XLZD and CaWO4 through 2028-2032 -- when does each interpretation of the 248 keV event get a 3 sigma / 5 sigma verdict?",
+ "date": "2026-09-16",
+ "agent_tools": [
+  {"tool": "Read", "count": 24, "detail": "PAPER_GUIDE.md; papers P034, P038, P046, P047, P050, P057, P058, P059, P061, P062, P067, P069; persisted table dumps of P069 (hidden events, timeline, joint end-2026, normalisation, zero-event, scenarios), P038 (acceptance, MSSI, signal-vs-background extension), P034 (required exposure, discovery scan), P046 (programme, separation, rates), P057 key pairs, P061 results; figures P088_fig1/fig2/fig3 (fig2 twice)"},
+  {"tool": "Bash", "count": 13, "detail": "ls papers/work/code dirs; head ledger; cat P050 tables; python: pandas prints of P069/P038/P034/P046/P057/P061 tables; python: ledger rows for P016/P020/P021/P001/P005/P035/P027/P045/P070; grep lzcommon API + LZ dict + ENVIRONMENT_versions; grep P050/P069 details for XLZD/recalled/posterior; grep section line numbers in persisted outputs; grep dataviz palette.md; run .venv/bin/python output/code/P088_timeline.py (4 runs: 1 aborted at 300 s, 3 completed 50-73 s); tail/sed/cut of run_log.txt; python json digest of P088_results.json; wc -w checks"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P088_timeline.py; output/papers/P088.md; output/provenance/P088.json; output/work/P088/details.md"},
+  {"tool": "Edit", "count": 9, "detail": "P088_timeline.py: fast first-arrival toy generator (first 30 arrivals of a unit Poisson process), inf-safe quantiles, 'on disk' date floor, world = present + XLZD(400 keV), N range for Bayes-factor sums, Fig. 1 marker floor, decision-tree layout"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette/mark guidance; JS validator skipped per PAPER_GUIDE)"},
+  {"tool": "ToolSearch", "count": 1, "detail": "select:TaskStop"},
+  {"tool": "TaskStop", "count": 1, "detail": "stopped the first (slow) background run of P088_timeline.py"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python, run from the simulation root"},
+  {"name": "numpy", "version": "2.5.3", "functions": "default_rng(88).exponential/gamma/poisson, cumsum, searchsorted, interp, quantile, trapezoid, log1p"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats.poisson.sf/pmf, stats.gamma.pdf/ppf, stats.norm.sf/isf"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, to_csv, to_markdown"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend, pyplot, FancyBboxPatch, annotate"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "imported (LZ constants dict); no numerical call was needed -- all rates come from corpus tables"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "not called; all spectra enter through P050/P069/P038/P034/P046/P057 result tables"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P088_timeline.py", "purpose": "exposure calendar; Asimov Z; 20 000 exact-Poisson first-crossing toys per configuration (best fit, x0.30, Gamma-marginalised, combined with LZ's event); Gamma-Poisson Bayes factors and P(settled); null-branch P(DM) update; A-vs-B shape/modulation dates; CaWO4 and 136Xe scenarios; LZ sideband test; tables, JSON and three figures", "command": ".venv/bin/python output/code/P088_timeline.py > output/work/P088/run_log.txt 2>&1   (runtime 73 s)"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules, template, budgets"},
+  {"file": "output/results_ledger.csv", "parts_used": "rows P001, P005, P016, P020, P021, P027, P035, P045, P070 (headline + key numbers)"},
+  {"file": "output/papers/P069.md + output/work/P069/{P069_exposure_ledger,P069_hidden_events,P069_timeline,P069_joint_end2026,P069_normalisation,P069_zero_event_exclusion,P069_scenarios}.csv + details.md (grep)", "parts_used": "exposure ledger, accrual rates 2.79/2.4/1.62 t.yr per yr, per-window rates per t.yr at the best fit (200-270 and 200-400 keV), hidden events, Z_comb and P(DM) scenarios, UL90 if zero (0.89/0.39), P(DM) free-rate cap 0.091"},
+  {"file": "output/papers/P050.md + output/work/P050/{P050_timeline_milestones,P050_discovery,P050_normalisation,P050_background_bins,P050_background_rates,P050_shape_discrimination,P050_exclusion}.csv + details.md (grep)", "parts_used": "acceptances A_LZ/A_400, rates in 400/600 keV windows, backgrounds >200 keV (6.0e-4, 2.7e-3, 1.6e-3 per 2.84 t.yr), XLZD 60 t / 48 t.yr per yr from 2032, shape N_3sigma 4/6, E_5sigma"},
+  {"file": "output/papers/P038.md + output/work/P038/{P038_acceptance_vs_delta,P038_mssi_vs_edge,P038_signal_vs_background_extension}.csv", "parts_used": "A_600/A_1000 vs delta, extra 600-1000 phd events per ROI event (0.155/1.06/3.81/30.6), sideband MSSI 0.0027 per 2.84 t.yr, P(0 extra) values"},
+  {"file": "output/papers/P034.md + output/work/P034/{required_exposure,discovery_scan}.csv", "parts_used": "N_3sigma/N_5sigma vs delta (96.5/11.5/6.5/5.3; 268/32/17.6/14.1), 400 keV ROI gains x2.8 (366) / x21 (380)"},
+  {"file": "output/papers/P046.md + output/work/P046/{programme_table,separation_exposures,rates_L10,rates_vs_delta}.csv + backgrounds.json", "parts_used": "CaWO4 W-band (110-1300 keV) counts per t.yr at LZ's fit (2.60/36.95/279/5622; L10 6.3e-5), kg.yr for 3 sigma vs L10 (215/17/2.1/0.09), threshold acceptances, 206Pb recoil 103 keV"},
+  {"file": "output/papers/P047.md", "parts_used": "136Xe-enriched/natural pair: 9 events, 12.8 t.yr per detector"},
+  {"file": "output/papers/P057.md + output/work/P057/P057_key_pairs.csv", "parts_used": "L10 vs inel366 N_3sigma toys 2/7 (LZ edge), 2/5 (1000 phd); second-event energy lookups"},
+  {"file": "output/papers/P061.md + output/work/P061/P061_results.json", "parts_used": "P(DM) community-prior median 0.015, 68% 0.0016-0.137; L_acc = 9.3e-3 (upper 0.066); b_eff 5.7e-4"},
+  {"file": "output/papers/P062.md, P067.md, P059.md, P058.md", "parts_used": "context: mass degeneracy (no mass test in xenon), directional rates (decades), archival exposures set nothing (excluded from ledger), exothermic branch already constrained by LZ's 125-200 keV bin"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "import; LZ dict inspected (exposure 2.84, fiducial 4.71 t, live days 220, panel background 0.0106)"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "XENONnT fiducial mass ~4.0 t and 60% live fraction for future accrual (2.4 t.yr per yr)", "presumed_source": "XENONnT SR0/SR1 papers; live fraction is an assumption shared with P050/P069", "reliability": "likely (mass) / uncertain (live fraction)"},
+  {"item": "PandaX-4T fiducial mass ~2.7 t, 60% live (1.62 t.yr per yr)", "presumed_source": "PandaX-4T commissioning/Run papers", "reliability": "likely / uncertain"},
+  {"item": "XLZD-class detector: 60 t fiducial, 400 keV ROI, 48 t.yr per yr from 2032.0", "presumed_source": "XLZD design book (Aalbers et al. 2023); start date is a guess shared with P050", "reliability": "uncertain"},
+  {"item": "LZ continues to take data at 4.71 t x 0.593 live fraction until 2032 (design goal was ~1000 live days, reached about 2027-2028)", "presumed_source": "LZ TDR / P020", "reliability": "uncertain"},
+  {"item": "CRESST-scale CaWO4 exposures are of order 1-10 kg.yr over several years (CRESST-III total ~kg.yr)", "presumed_source": "CRESST-III publications (Abdelhameed et al. 2019)", "reliability": "likely"},
+  {"item": "CaWO4 nuclear-recoil-band background above 110 keV of 0.01-0.1 events per kg.yr (placeholder bracket)", "presumed_source": "order-of-magnitude judgement; CRESST backgrounds are dominated by low energies and alphas separated by light yield", "reliability": "uncertain"},
+  {"item": "nEXO-class enriched 136Xe inventory ~5 t as the size reference for a hypothetical enriched TPC", "presumed_source": "nEXO pCDR", "reliability": "likely"},
+  {"item": "Gamma-Poisson conjugacy: flat prior + one observed event gives Gamma(2,1) for the rate; predictive for zero events (1+k)^-alpha (negative binomial)", "presumed_source": "standard Bayesian statistics", "reliability": "certain"},
+  {"item": "Jeffreys prior for a Poisson mean is Gamma(1/2) -> Gamma(1.5) after one count", "presumed_source": "standard", "reliability": "certain"},
+  {"item": "Asimov median significance Z = sqrt(2((s+b)ln(1+s/b)-s)); exact Poisson counting significance Z = Phi^-1(1 - P(>=n|b))", "presumed_source": "Cowan et al. 2011", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First implementation of the first-crossing toys drew all N ~ Poisson(mu_total) arrival positions per toy (arrays up to 20 000 x 2000 for XLZD at delta = 380 keV); it exceeded 300 s and was stopped. Replaced by drawing only the first 30 arrivals of a unit-rate Poisson process in cumulative-mean space (exact for the first crossing, since no configuration needs more than 5 events for 5 sigma).",
+  "np.quantile on arrays containing inf ('never crosses') returned NaN medians; replaced by an inf-safe quantile helper.",
+  "A 'world' row that counted XLZD in the 200-270 keV window was replaced by XLZD always using its 400 keV ROI.",
+  "P081 (posterior-predictive framework) and P072 (exothermic follow-up) do not exist in output/papers; own Gamma-Poisson predictive used instead, P058 used for the exothermic branch.",
+  "Dataviz JS palette validator not run (PAPER_GUIDE rule); the skill's validated default categorical palette was used as documented."
+ ],
+ "wimpydd_generated_files": []
+}

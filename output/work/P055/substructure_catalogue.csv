@@ -1,0 +1,11 @@
+key,name,U,V,W,v_gal,sigU,sigV,sigW,f_nominal,f_lo,f_hi,reliability,source
+SHM_num,SHM (numerical check),0,0,0,0,168.3,168.3,168.3,0,0,0,Baxter 2021 (certain),Baxter+2021
+Sgr_m,Sagittarius stream (-W),0,0,-300,300,30,30,30,0.03,0.01,0.05,speed likely; vertical sense and density uncertain,Freese+2004; Purcell+2012
+Sgr_p,Sagittarius stream (+W),0,0,300,300,30,30,30,0.03,0.01,0.05,"as above, opposite vertical sense",Freese+2004; Purcell+2012
+GSE,Gaia Sausage/Enceladus (SHM++ form),0,0,0,0,266.1,84.15,84.15,0.2,0.1,0.3,"beta = 0.9, eta = 20 % (likely); zero mean, radially elongated","Evans, O'Hare, McCabe 2019; Necib+2019"
+S1,S1 stream (retrograde),30,-297,-73,307.3,83,27,59,0.1,0.01,0.1,"(v_r, v_phi, v_z) = (-30, -297, -73), sigma (83, 27, 59) likely; sign of U and f = 10 % claimed uncertain",Myeong+2018; O'Hare+2018
+S2,"S2 stream (prograde, vertical)",6,164,-250,299.1,30,20,40,0.01,0.003,0.02,uncertain (velocities and dispersions from memory of O'Hare+2020),O'Hare+2020
+Helmi_p,Helmi streams (+W clump),0,150,250,291.5,30,30,30,0.005,0.002,0.01,"v_phi ~ +150, |v_z| ~ 250 (likely); f uncertain",Helmi+1999; Koppelman+2019
+Helmi_m,Helmi streams (-W clump),0,150,-250,291.5,30,30,30,0.005,0.002,0.01,"as above, second clump",Helmi+1999; Koppelman+2019
+Shards,Retrograde shards (Rg-type),0,-290,0,290,60,30,60,0.01,0.003,0.02,v_phi ~ -(250-300) uncertain; f uncertain,O'Hare+2020
+Vesc_retro,Reference: retrograde stream at v_esc,-24.1,-543.2,-15.85,544,20,20,20,0.01,0.01,0.01,hypothetical (P030 limiting case),P030

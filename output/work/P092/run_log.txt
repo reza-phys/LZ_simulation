@@ -1,0 +1,58 @@
+[1] ICRS->Galactic matrix vs P055 Hipparcos matrix: max |diff| = 9.73e-08
+    ephemeris check perihelion 2023-01-04: |v_orb| = 30.275 km/s, r = 0.9833 AU, angle(r,v) = 90.00 deg
+    ephemeris check aphelion 2023-07-06: |v_orb| = 29.282 km/s, r = 1.0167 AU, angle(r,v) = 90.00 deg
+    ephemeris check event: |v_orb| = 29.328 km/s, r = 1.0159 AU, angle(r,v) = 89.69 deg
+    (astropy - wimprates) orbital vector = [ 0.881 -0.171  0.466] km/s; its projection on the apex = -0.162 km/s (= the 265.81 vs 265.98 difference); |v_orb| wimprates = 29.800 (circular 29.79) vs astropy 29.328
+    v_sun = [ 11.1 250.2   7.3] |v_sun| = 250.552 km/s
+    v_orb(event) astropy = [  1.012  14.724 -25.344] |v_orb| = 29.328 km/s
+    geocentric |v_lab|(event) = 265.814 km/s; wimprates 265.977; P055 265.963; lzcommon cosine 265.06; |astropy - wimprates| vector = 1.012 km/s
+    Earth rotation at SURF: v_rot = 0.3319 km/s eastward (lat 44.352, R = 6366.0 km)
+    apex (geocentric lab velocity): RA 319.44 Dec 43.75; (l,b) = (87.38, -3.89)
+    analytic diurnal amplitude v_rot cos(Dec_apex) = 0.2398 km/s (peak-to-peak 0.4796)
+    rotation-only series: mean 265.8140, min 265.5742, max 266.0537, p2p 0.4796 km/s; UTC of max 4.600 h, of min 16.567 h
+    full series: 00:00 265.9462 -> 24:00 265.8971 km/s (orbital drift -0.0523 km/s/day); mean 265.8349
+    at the event: |v_lab| = 265.7414 km/s = geocentric 265.8139 -0.0725; relative to sidereal mean -0.0726 km/s; rotation projection on apex -0.0727 km/s
+    sidereal mean - geocentric = +1.49e-04 km/s (expected ~ v_rot^2/(4 v) = 1.0e-04)
+    LST(SURF, event) = 8.1199 h (P067 8.120); apex HA +10.824 h, alt -0.51, az 347.4 (P067: -0.5, 347.4)
+    apex altitude range -1.90 .. +89.40 deg; below horizon 11.5 % of the day; upper culmination at UTC 10.583 h, lower at 22.550 h; apex due east (max lab speed) at UTC 4.600 h, due west at 16.567 h
+[2] d delta_max / d v_max = 0.8218 keV/(km/s) (P018: 0.8218)
+    m = 400 GeV: delta_max(248) mean 341.658, event 341.598 (-0.060), range 341.461..341.855 (p2p 0.394 keV)
+    m = 1000 GeV: delta_max(248) mean 387.186, event 387.126 (-0.060), range 386.989..387.383 (p2p 0.394 keV)
+    m = 4000 GeV: delta_max(248) mean 409.950, event 409.890 (-0.060), range 409.753..410.147 (p2p 0.394 keV)
+    loaded cached per-isotope response C_A(E) from output/work/P092/P092_unit_stream_kernel.npz
+    unit-stream response ratio (all isotopes, delta 0/366 at E = 150/248/300) / cached sum: [1. 1. 1. 1. 1. 1.]
+    validation delta=300: WimPyDD day-halo (v_lab 265.92) N_ROI = 6.2380e+12; analytic-eta method 6.2384e+12; ratio 1.0001; spectrum ratio range 0.998-1.002
+    validation delta=350: WimPyDD day-halo (v_lab 265.92) N_ROI = 2.0183e+11; analytic-eta method 2.0247e+11; ratio 1.0031; spectrum ratio range 0.820-1.009
+    validation delta=366: WimPyDD day-halo (v_lab 265.92) N_ROI = 2.1761e+10; analytic-eta method 2.1921e+10; ratio 1.0074; spectrum ratio range 0.995-1.017
+    validation delta=380: WimPyDD day-halo (v_lab 265.92) N_ROI = 8.9194e+08; analytic-eta method 9.0182e+08; ratio 1.0111; spectrum ratio range 0.934-1.019
+    validation delta=385: WimPyDD day-halo (v_lab 265.92) N_ROI = 2.2074e+08; analytic-eta method 2.2433e+08; ratio 1.0163; spectrum ratio range 0.978-1.023
+    (P034 annual-mean unit counts x 2.84: reference 1.24e13/2.39e11/1.95e10/6.7e8 per 2.84 t yr at 300/350/366/380 keV)
+    rates on 289 time points done at 22.7 s
+    delta=300: <R> 6.2209e+12/t/yr (unit c); p2p 1.26 %; a1 0.630 %; max at LST 229.4 deg (UTC 4.58 h); dlnR/dv 0.0263/(km/s); KL 9.913e-06 nats; N3 LLR 4.539e+05, cos 4.542e+05; LR(event) 0.9981 (full series 0.9976); R(event)/R(geocentric) 0.9981
+    delta=350: <R> 2.0084e+11/t/yr (unit c); p2p 3.63 %; a1 1.815 %; max at LST 229.4 deg (UTC 4.58 h); dlnR/dv 0.0757/(km/s); KL 8.238e-05 nats; N3 LLR 5.463e+04, cos 5.466e+04; LR(event) 0.9945 (full series 0.9931); R(event)/R(geocentric) 0.9945
+    delta=366: <R> 2.1620e+10/t/yr (unit c); p2p 6.27 %; a1 3.135 %; max at LST 229.4 deg (UTC 4.58 h); dlnR/dv 0.1308/(km/s); KL 2.458e-04 nats; N3 LLR 1.831e+04, cos 1.832e+04; LR(event) 0.9904 (full series 0.9879); R(event)/R(geocentric) 0.9906
+    delta=380: <R> 8.8146e+08/t/yr (unit c); p2p 10.47 %; a1 5.233 %; max at LST 229.4 deg (UTC 4.58 h); dlnR/dv 0.2183/(km/s); KL 6.851e-04 nats; N3 LLR 6.569e+03, cos 6.573e+03; LR(event) 0.9836 (full series 0.9796); R(event)/R(geocentric) 0.9843
+    delta=385: <R> 2.1926e+08/t/yr (unit c); p2p 10.50 %; a1 5.251 %; max at LST 229.4 deg (UTC 4.58 h); dlnR/dv 0.2191/(km/s); KL 6.899e-04 nats; N3 LLR 6.524e+03, cos 6.528e+03; LR(event) 0.9835 (full series 0.9794); R(event)/R(geocentric) 0.9842
+    delta=300: N3 diurnal/annual = 4704; KL annual/diurnal = 4741; a1 annual/diurnal = 68
+    delta=350: N3 diurnal/annual = 4750; KL annual/diurnal = 4734; a1 annual/diurnal = 65
+    delta=366: N3 diurnal/annual = 2816; KL annual/diurnal = 2929; a1 annual/diurnal = 48
+    delta=380: N3 diurnal/annual = 1239; KL annual/diurnal = 1314; a1 annual/diurnal = 32
+    diurnal amplitude a1 ~ (R+ - R-)/(R+ + R-) on 2 June (peak) (v 266.4): 300: 0.63 %, 350: 1.79 %, 366: 3.07 %, 380: 5.17 %, 385: 5.27 %
+    diurnal amplitude a1 ~ (R+ - R-)/(R+ + R-) on 16 June (event) (v 265.8): 300: 0.63 %, 350: 1.81 %, 366: 3.13 %, 380: 5.23 %, 385: 5.25 %
+    diurnal amplitude a1 ~ (R+ - R-)/(R+ + R-) on 1 Sep (mean) (v 250.8): 300: 0.74 %, 350: 2.70 %, 366: 5.21 %, 380: 5.48 %, 385: 8.39 %
+    diurnal amplitude a1 ~ (R+ - R-)/(R+ + R-) on 1 Dec (trough) (v 237.4): 300: 0.88 %, 350: 4.29 %, 366: 6.08 %, 380: 56.76 %, 385: nan %
+    v_esc = 528: diurnal a1 300: 0.74 %, 350: 2.78 %, 366: 5.36 %, 380: 5.64 %, 385: 9.57 %
+    v_esc = 560: diurnal a1 300: 0.55 %, 350: 1.31 %, 366: 2.01 %, 380: 3.24 %, 385: 3.92 %
+[5] v = 700 km/s: Earth blueshift 0.0894 km/s (1.3e-04; delta_max +0.074 keV, time-constant); Earth focusing anisotropy (v_esc/v)^2 = 2.6e-04; Sun blueshift 1.266 km/s (delta_max +1.04 keV, annual, not daily); Sun focusing (v_esc,1AU/v)^2 = 3.6e-03, its daily change 3.1e-07
+[5] v = 750 km/s: Earth blueshift 0.0835 km/s (1.1e-04; delta_max +0.069 keV, time-constant); Earth focusing anisotropy (v_esc/v)^2 = 2.2e-04; Sun blueshift 1.182 km/s (delta_max +0.97 keV, annual, not daily); Sun focusing (v_esc,1AU/v)^2 = 3.2e-03, its daily change 2.7e-07
+[5] v = 810 km/s: Earth blueshift 0.0773 km/s (9.5e-05; delta_max +0.064 keV, time-constant); Earth focusing anisotropy (v_esc/v)^2 = 1.9e-04; Sun blueshift 1.094 km/s (delta_max +0.90 keV, annual, not daily); Sun focusing (v_esc,1AU/v)^2 = 2.7e-03, its daily change 2.3e-07
+    inelastic ceiling delta_max = mu v_max^2/2 in Earth nuclei (1 TeV, v_max 809.8): O 54 keV, Fe 181 keV, Si 93 keV, Mg 80 keV, Ni 187 keV, Ca 131 keV, Al 90 keV, S 106 keV; v_min for delta = 300 keV: O 1916, Si 1457, Fe 1043, Ni 1026 km/s
+    delta=300: unit-coupling events (16 June halo) 1.767e+13 -> one-event sigma_n = 1.54e-42 cm2; if the same coupling were ELASTIC, lambda_Earth = 2.861e+07 km
+    delta=350: unit-coupling events (16 June halo) 5.704e+11 -> one-event sigma_n = 4.77e-41 cm2; if the same coupling were ELASTIC, lambda_Earth = 9.236e+05 km
+    delta=366: unit-coupling events (16 June halo) 6.140e+10 -> one-event sigma_n = 4.43e-40 cm2; if the same coupling were ELASTIC, lambda_Earth = 9.943e+04 km
+    delta=380: unit-coupling events (16 June halo) 2.503e+09 -> one-event sigma_n = 1.09e-38 cm2; if the same coupling were ELASTIC, lambda_Earth = 4.054e+03 km
+    delta=385: unit-coupling events (16 June halo) 6.227e+08 -> one-event sigma_n = 4.37e-38 cm2; if the same coupling were ELASTIC, lambda_Earth = 1.008e+03 km
+    Earth path toward the apex: at the event 204.7 km; min 1.48 km (zenith), horizon 137.2 km, max 462.9 km (alt -1.90); lambda_Earth (coherent, F^2 = 1) = 4409 km at sigma_n = 1e-38 cm2; overburden stops sigma_n > 1.7e-34 cm2
+    diurnal shadow amplitude ~ L_max/lambda for an ELASTIC sigma_n: 1e-38: 1.0e-01, 1e-40: 1.0e-03, 1e-42: 1.0e-05, 1e-45: 1.0e-08
+    an elastic component gives a shadow < 1e-4 for sigma_el < 9.5e-42 cm2; LZ's own elastic limit (~1e-45) makes it < 1e-08
+done in 23.3 s

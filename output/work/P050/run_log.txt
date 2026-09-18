@@ -1,0 +1,219 @@
+FV radii (m) and surface scaling: {'LZ-like': (0.728, 1.0), '40 t': (1.306, 0.558), '60 t': (1.495, 0.487)}
+loaded spectra cache output/work/P050/P050_spectra_cache.npz
+
+Normalisation (1 TeV; 1 event per 2.84 t yr in LZ ROI):
+          N_LZ_unit    A_LZ  A_ext300  A_ext400  rate_full_per_tyr  rate_ext300_per_tyr  rate_ext400_per_tyr  frac_true_gt_270
+L10          3.3222  0.4220    0.4532    0.5355             0.8344               0.3782               0.4468            0.5536
+inel300  13557.2490  0.8141    0.8263    0.9277             0.4325               0.3574               0.4012            0.1477
+inel350    266.6722  0.4443    0.4886    0.8674             0.7926               0.3873               0.6875            0.5361
+inel366     21.8591  0.1720    0.2397    0.8319             2.0469               0.4906               1.7029            0.8224
+inel380      0.6996  0.0277    0.1060    0.8262            12.7053               1.3461              10.4968            0.9746
+P038 A_600 for 300/350/370/380: 0.81/0.44/0.12/0.029; ours at 300/350/366/380: [np.float64(0.814), np.float64(0.444), np.float64(0.172), np.float64(0.028)]
+
+Background per 2.84 t yr in the NR band, LZ-like detector, by observed-energy bin:
+ E_lo  E_hi  b_const_per284  b_surf_per284  b_total_LZ_per284
+100.0 125.0        0.100000       0.000000           0.100000
+125.0 200.0        0.020000       0.000000           0.020000
+200.0 270.0        0.000404       0.000170           0.000574
+270.0 300.0        0.000031       0.000257           0.000287
+300.0 350.0        0.000052       0.000650           0.000701
+350.0 400.0        0.000052       0.001073           0.001124
+400.0 450.0        0.000052       0.001874           0.001926
+450.0 500.0        0.000052       0.003390           0.003442
+500.0 600.0        0.000103       0.020052           0.020155
+
+Background rates per t yr (NR band) by window and detector:
+window detector  b_100_200_per_tyr  b_200_270_per_tyr  b_ext_per_tyr  b_ge200_per_tyr  b_ge200_per_284  b_ge100_per_tyr
+    LZ  LZ-like           0.042254           0.000202       0.000010         0.000212         0.000601         0.042465
+    LZ     40 t           0.042254           0.000176       0.000006         0.000181         0.000515         0.042435
+    LZ     60 t           0.042254           0.000171       0.000005         0.000177         0.000502         0.042430
+ext300  LZ-like           0.042254           0.000202       0.000095         0.000297         0.000845         0.042551
+ext300     40 t           0.042254           0.000176       0.000058         0.000233         0.000662         0.042487
+ext300     60 t           0.042254           0.000171       0.000052         0.000223         0.000633         0.042477
+ext400  LZ-like           0.042254           0.000202       0.000764         0.000966         0.002744         0.043220
+ext400     40 t           0.042254           0.000176       0.000447         0.000622         0.001768         0.042876
+ext400     60 t           0.042254           0.000171       0.000396         0.000568         0.001612         0.042821
+ext600  LZ-like           0.042254           0.000202       0.009649         0.009851         0.027977         0.052105
+ext600     40 t           0.042254           0.000176       0.005433         0.005608         0.015928         0.047862
+ext600     60 t           0.042254           0.000171       0.004761         0.004932         0.014008         0.047186
+
+Discovery exposures (t yr) at the LZ best fit (1 event / 2.84 t yr in LZ ROI):
+window detector   model  rate_per_tyr  b_per_tyr  E_3sigma  E_5sigma  E_5sigma_lo68  E_5sigma_hi68   E_N3  E_P90_N3  s_at_5sigma
+    LZ  LZ-like     L10         0.299      0.042     4.437    12.324         57.533          4.269 10.027    17.789        3.687
+    LZ  LZ-like inel300         0.352      0.042     4.124    11.455         56.992          3.870  8.524    15.123        4.031
+    LZ  LZ-like inel350         0.352      0.042     3.073     8.535         38.388          3.024  8.525    15.125        3.004
+    LZ  LZ-like inel366         0.351      0.042     2.448     6.800         28.769          2.490  8.541    15.152        2.389
+    LZ  LZ-like inel380         0.346      0.007     2.067     5.742         23.497          2.146  8.671    15.384        1.987
+ext300  LZ-like     L10         0.325      0.043     3.935    10.930         50.628          3.804  9.218    16.354        3.557
+ext300  LZ-like inel300         0.357      0.043     4.049    11.247         55.891          3.802  8.398    14.898        4.018
+ext300  LZ-like inel350         0.387      0.043     2.710     7.527         33.602          2.678  7.748    13.746        2.915
+ext300  LZ-like inel366         0.490      0.043     1.612     4.478         18.641          1.655  6.117    10.853        2.196
+ext300  LZ-like inel380         1.345      0.007     0.414     1.149          4.491          0.440  2.231     3.958        1.545
+ext400  LZ-like     L10         0.394      0.043     3.223     8.954         41.711          3.112  7.614    13.508        3.528
+ext400  LZ-like inel300         0.401      0.043     3.588     9.966         49.545          3.369  7.480    13.270        3.997
+ext400  LZ-like inel350         0.687      0.043     1.407     3.909         17.189          1.405  4.364     7.743        2.687
+ext400  LZ-like inel366         1.703      0.008     0.421     1.171          4.805          0.437  1.762     3.126        1.993
+ext400  LZ-like inel380        10.495      0.008     0.051     0.141          0.546          0.054  0.286     0.507        1.476
+ext400     40 t     L10         0.394      0.043     3.078     8.549         39.222          2.995  7.614    13.508        3.368
+ext400     40 t inel300         0.401      0.043     3.492     9.700         47.718          3.296  7.480    13.270        3.890
+ext400     40 t inel350         0.687      0.043     1.323     3.676         15.883          1.333  4.364     7.743        2.527
+ext400     40 t inel366         1.703      0.008     0.394     1.093          4.421          0.411  1.762     3.126        1.861
+ext400     40 t inel380        10.495      0.008     0.048     0.133          0.510          0.051  0.286     0.507        1.391
+ext400     60 t     L10         0.394      0.043     3.049     8.468         38.731          2.971  7.614    13.508        3.337
+ext400     60 t inel300         0.401      0.043     3.472     9.645         47.344          3.280  7.480    13.270        3.868
+ext400     60 t inel350         0.687      0.043     1.306     3.629         15.624          1.318  4.364     7.743        2.494
+ext400     60 t inel366         1.703      0.008     0.388     1.077          4.344          0.406  1.762     3.126        1.834
+ext400     60 t inel380        10.495      0.008     0.047     0.131          0.502          0.051  0.286     0.507        1.373
+ext600     60 t     L10         0.547      0.047     2.309     6.415         29.961          2.228  5.487     9.735        3.507
+ext600     60 t inel300         0.413      0.047     3.403     9.453         46.493          3.211  7.270    12.898        3.901
+ext600     60 t inel350         0.757      0.047     1.209     3.359         14.534          1.217  3.964     7.033        2.542
+ext600     60 t inel366         1.955      0.012     0.348     0.966          3.917          0.363  1.535     2.723        1.888
+ext600     60 t inel380        12.134      0.012     0.042     0.116          0.448          0.045  0.247     0.439        1.411
+
+Zero-event exclusion exposures (t yr):
+window   model  s_low_per284_LZROI  rate_in_window_per_tyr  E_90_CLs  E_95_CLs  E_90_P0
+    LZ     L10               0.105                   0.037    62.279    81.027   28.986
+    LZ     L10               0.380                   0.134    17.209    22.389   13.063
+    LZ inel300               0.105                   0.037    62.279    81.027   28.986
+    LZ inel300               0.380                   0.134    17.209    22.389   13.063
+    LZ inel350               0.105                   0.037    62.279    81.027   28.986
+    LZ inel350               0.380                   0.134    17.209    22.389   13.063
+    LZ inel366               0.105                   0.037    62.279    81.027   28.986
+    LZ inel366               0.380                   0.134    17.209    22.389   13.063
+    LZ inel380               0.105                   0.037    62.279    81.027   52.064
+    LZ inel380               0.380                   0.134    17.209    22.389   16.324
+ext300     L10               0.105                   0.040    57.985    75.440   27.991
+ext300     L10               0.380                   0.144    16.022    20.845   12.362
+ext300 inel300               0.105                   0.038    61.357    79.827   28.754
+ext300 inel300               0.380                   0.136    16.954    22.058   12.909
+ext300 inel350               0.105                   0.041    56.628    73.675   27.671
+ext300 inel350               0.380                   0.147    15.647    20.357   12.138
+ext300 inel366               0.105                   0.052    44.696    58.151   24.478
+ext300 inel366               0.380                   0.186    12.350    16.068   10.055
+ext300 inel380               0.105                   0.141    16.290    21.194   15.486
+ext300 inel380               0.380                   0.512     4.501     5.856    4.438
+ext400     L10               0.105                   0.047    49.076    63.849   25.545
+ext400     L10               0.380                   0.170    13.560    17.643   10.809
+ext400 inel300               0.105                   0.042    54.654    71.106   26.978
+ext400 inel300               0.380                   0.152    15.102    19.648   11.766
+ext400 inel350               0.105                   0.072    31.897    41.499   19.952
+ext400 inel350               0.380                   0.261     8.814    11.467    7.563
+ext400 inel366               0.105                   0.179    12.878    16.754   12.326
+ext400 inel366               0.380                   0.647     3.558     4.629    3.515
+ext400 inel380               0.105                   1.102     2.089     2.718    2.074
+ext400 inel380               0.380                   3.989     0.577     0.751    0.576
+ext600     L10               0.105                   0.064    36.212    47.113   19.903
+ext600     L10               0.380                   0.230    10.006    13.018    8.159
+ext600 inel300               0.105                   0.043    53.120    69.111   24.123
+ext600 inel300               0.380                   0.157    14.678    19.097   11.018
+ext600 inel350               0.105                   0.079    28.977    37.701   17.501
+ext600 inel350               0.380                   0.288     8.007    10.417    6.779
+ext600 inel366               0.105                   0.205    11.218    14.596   10.365
+ext600 inel366               0.380                   0.743     3.100     4.033    3.031
+ext600 inel380               0.105                   1.274     1.807     2.351    1.784
+ext600 inel380               0.380                   4.611     0.499     0.650    0.498
+
+Shape discrimination L10 vs inelastic 366 keV:
+                                       0         1         2         3
+window                                LZ    ext300    ext400    ext600
+E_thr_inel366                   159.7844  161.2384  167.3459  168.0902
+E_top_inel366                    306.118  344.5203  436.8757  496.8239
+f_L10_outside                     0.2826    0.2658    0.2512     0.302
+N_3sigma_counting                19.8971   21.3867   22.8429    18.379
+KL_L10_vs_inel_floor0.001         1.7334    1.7056    1.9022    1.9636
+KL_inel_vs_L10_floor0.001         0.5329    0.6266    0.9152    0.9809
+N_gauss_reject_inel_floor0.001    0.5027    1.0628    1.1295    1.1208
+N_gauss_reject_L10_floor0.001     15.077   13.7101    8.8818    7.8146
+N_toy_reject_inel_floor0.001           3         3         3         3
+N_toy_reject_L10_floor0.001           10         8         5         5
+KL_L10_vs_inel_floor0.01          1.2229    1.2246    1.4624    1.5144
+KL_inel_vs_L10_floor0.01          0.5151    0.6023    0.8926    0.9543
+N_gauss_reject_inel_floor0.01     1.0125     1.784    1.6699    1.6721
+N_gauss_reject_L10_floor0.01     13.5515   11.8979    7.0633    6.3675
+N_toy_reject_inel_floor0.01            4         4         4         3
+N_toy_reject_L10_floor0.01            10         9         6         5
+E_reject_inel_if_L10_true_tyr      11.36   10.5766    8.9517    4.9539
+E_reject_L10_if_inel_true_tyr       28.4   18.3436    3.5234    2.5579
+E_counting_if_inel_true_tyr      56.5079     43.59   13.4141    9.4022
+
+Fisher information on delta (shape only, coupling free):
+ delta window  fisher_per_event_keV2  sigma_delta_1event  N_for_10keV  frac_info_top10pct  E_median_obs  E_for_10keV_60t_tyr  yr_60t
+ 350.0     LZ                 0.0015             25.9873       6.7534              0.1258      201.1643              19.1797  0.3996
+ 350.0 ext300                 0.0017             24.0994       5.8078              0.2158      204.2876              14.9974  0.3124
+ 350.0 ext400                 0.0019             22.7974       5.1972              0.0640      252.3482               7.5596  0.1575
+ 350.0 ext600                 0.0018             23.4123       5.4814              0.0431      294.9633               7.2431  0.1509
+ 366.0     LZ                 0.0029             18.6572       3.4809              0.2080      216.4208               9.8858  0.2060
+ 366.0 ext300                 0.0045             14.8890       2.2168              0.1523      227.8950               4.5183  0.0941
+ 366.0 ext400                 0.0026             19.4417       3.7798              0.0175      330.4527               2.2196  0.0462
+ 366.0 ext600                 0.0023             20.6776       4.2756              0.0081      339.0820               2.1873  0.0456
+ 380.0     LZ                 0.0110              9.5159       0.9055              0.2702      235.4863               2.5717  0.0536
+ 380.0 ext300                 0.0082             11.0336       1.2174              0.0297      288.8989               0.9044  0.0188
+ 380.0 ext400                 0.0014             26.9336       7.2542              0.0012      341.2525               0.6911  0.0144
+ 380.0 ext600                 0.0012             28.6541       8.2106              0.0200      348.4419               0.6767  0.0141
+
+Tungsten/xenon ratio method (P015 ratios): d ln(W/Xe)/d delta = 0.0714/keV -> +-10 keV needs ratio to 71 %, i.e. ~3.9 events in each target
+
+Timeline milestones:
+                                    programme   model rate  Z    year  exposure_tyr
+                                     LZ alone     L10 best  3 2024.85          4.52
+                                     LZ alone     L10 lo68  3     NaN           NaN
+                                     LZ alone     L10 best  5 2027.65         12.34
+                                     LZ alone     L10 lo68  5     NaN           NaN
+                                     LZ alone inel300 best  3 2024.75          4.24
+                                     LZ alone inel300 lo68  3     NaN           NaN
+                                     LZ alone inel300 best  5 2027.35         11.50
+                                     LZ alone inel300 lo68  5     NaN           NaN
+                                     LZ alone inel350 best  3 2024.35          3.12
+                                     LZ alone inel350 lo68  3 2028.20         13.87
+                                     LZ alone inel350 best  5 2026.30          8.57
+                                     LZ alone inel350 lo68  5     NaN           NaN
+                                     LZ alone inel366 best  3 2024.25          2.84
+                                     LZ alone inel366 lo68  3 2026.95         10.38
+                                     LZ alone inel366 best  5 2025.70          6.89
+                                     LZ alone inel366 lo68  5     NaN           NaN
+                                     LZ alone inel380 best  3 2024.25          2.84
+                                     LZ alone inel380 lo68  3 2026.30          8.57
+                                     LZ alone inel380 best  5 2025.30          5.77
+                                     LZ alone inel380 lo68  5     NaN           NaN
+present generation (LZ + XENONnT + PandaX-4T)     L10 best  3 2024.85          4.52
+present generation (LZ + XENONnT + PandaX-4T)     L10 lo68  3 2027.65         20.92
+present generation (LZ + XENONnT + PandaX-4T)     L10 best  5 2026.70         14.44
+present generation (LZ + XENONnT + PandaX-4T)     L10 lo68  5     NaN           NaN
+present generation (LZ + XENONnT + PandaX-4T) inel300 best  3 2024.75          4.24
+present generation (LZ + XENONnT + PandaX-4T) inel300 lo68  3 2027.60         20.58
+present generation (LZ + XENONnT + PandaX-4T) inel300 best  5 2026.70         14.44
+present generation (LZ + XENONnT + PandaX-4T) inel300 lo68  5     NaN           NaN
+present generation (LZ + XENONnT + PandaX-4T) inel350 best  3 2024.35          3.12
+present generation (LZ + XENONnT + PandaX-4T) inel350 lo68  3 2026.70         14.44
+present generation (LZ + XENONnT + PandaX-4T) inel350 best  5 2026.30          8.57
+present generation (LZ + XENONnT + PandaX-4T) inel350 lo68  5     NaN           NaN
+present generation (LZ + XENONnT + PandaX-4T) inel366 best  3 2024.25          2.84
+present generation (LZ + XENONnT + PandaX-4T) inel366 lo68  3 2026.70         14.44
+present generation (LZ + XENONnT + PandaX-4T) inel366 best  5 2025.70          6.89
+present generation (LZ + XENONnT + PandaX-4T) inel366 lo68  5 2028.85         29.09
+present generation (LZ + XENONnT + PandaX-4T) inel380 best  3 2024.25          2.84
+present generation (LZ + XENONnT + PandaX-4T) inel380 lo68  3 2026.30          8.57
+present generation (LZ + XENONnT + PandaX-4T) inel380 best  5 2025.30          5.77
+present generation (LZ + XENONnT + PandaX-4T) inel380 lo68  5 2028.05         23.64
+      60 t detector from 2032, ROI to 400 keV     L10 best  3 2032.07          3.12
+      60 t detector from 2032, ROI to 400 keV     L10 lo68  3 2032.29         14.04
+      60 t detector from 2032, ROI to 400 keV     L10 best  5 2032.18          8.52
+      60 t detector from 2032, ROI to 400 keV     L10 lo68  5 2032.81         38.76
+      60 t detector from 2032, ROI to 400 keV inel300 best  3 2032.07          3.48
+      60 t detector from 2032, ROI to 400 keV inel300 lo68  3 2032.36         17.16
+      60 t detector from 2032, ROI to 400 keV inel300 best  5 2032.20          9.72
+      60 t detector from 2032, ROI to 400 keV inel300 lo68  5 2032.99         47.40
+      60 t detector from 2032, ROI to 400 keV inel350 best  3 2032.03          1.32
+      60 t detector from 2032, ROI to 400 keV inel350 lo68  3 2032.12          5.64
+      60 t detector from 2032, ROI to 400 keV inel350 best  5 2032.08          3.72
+      60 t detector from 2032, ROI to 400 keV inel350 lo68  5 2032.33         15.72
+      60 t detector from 2032, ROI to 400 keV inel366 best  3 2032.01          0.48
+      60 t detector from 2032, ROI to 400 keV inel366 lo68  3 2032.04          1.68
+      60 t detector from 2032, ROI to 400 keV inel366 best  5 2032.02          1.08
+      60 t detector from 2032, ROI to 400 keV inel366 lo68  5 2032.09          4.44
+      60 t detector from 2032, ROI to 400 keV inel380 best  3 2032.00          0.12
+      60 t detector from 2032, ROI to 400 keV inel380 lo68  3 2032.00          0.24
+      60 t detector from 2032, ROI to 400 keV inel380 best  5 2032.00          0.24
+      60 t detector from 2032, ROI to 400 keV inel380 lo68  5 2032.01          0.60
+
+done in 16 s

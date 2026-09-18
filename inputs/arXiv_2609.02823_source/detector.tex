@@ -1,0 +1,40 @@
+\paragraph{LZ Detector and Calibrations --}
+The heart of the LZ experiment is a low-background dual-phase time projection chamber (TPC) containing 7 tonnes of active liquid xenon (LXe)~\cite{LZ:Experiment_2020, LZ:TDR_2017}.
+The TPC is equipped with arrays of photomultiplier tubes (PMTs) at its top and bottom to detect optical signals.
+Cathode, gate, and anode electrodes create a set of electric fields that drift ionization electrons to the liquid surface and extract them into the gas phase.
+The liquid-gas interface lies between the gate and anode at the top of the detector, and the cathode defines the bottom of the active region. A bottom electrode sits below the cathode to shield the lower PMT array.
+
+The TPC  is surrounded by a LXe Skin veto detector, consisting of 2~tonnes of LXe instrumented for scintillation readout whose main purpose is to identify $\gamma$-rays  entering or exiting the TPC.
+The TPC and Skin are contained within a vacuum-insulated cryostat, which is in turn surrounded by the Outer Detector (OD) veto. The OD is 17~tonnes of gadolinium-loaded liquid scintillator (0.1\% by mass) and 229~tonnes of ultra-pure water, read out by PMTs in the water space, and it detects neutrons, $\gamma$-rays, and muons.
+The LZ detectors are described in more detail in Ref.~\cite{LZ:Experiment_2020}.
+
+Energy depositions in the TPC typically produce two signals: prompt scintillation light (S1), produced at the location of the interaction; and delayed electroluminescence light (S2), produced when extracted electrons are accelerated through the gaseous phase by the applied electric field.
+The S2 light hit pattern in the top PMT array enables position reconstruction in the ($x,y$) plane, and the time interval between S1 and S2 pulses provides the depth, $z$. S1 and S2 signal sizes are measured in photons detected (phd) and vary with the position of the interaction vertex. Position-corrected values, denoted S1$c$ and S2$c$, allow for scale factors to correlate the signals to the original number of photons and electrons produced.
+The photon gain factor $g_1=0.110\pm0.002$~phd/photon and the electron gain factor $g_2=34.5\pm1.1$~phd/electron are determined using monoenergetic peaks from background and calibration sources.
+
+The S1 to S2 ratio provides discrimination power between electron recoil (ER) events, produced mainly by $\gamma$-ray and $\beta$-decay interactions, and nuclear recoil (NR) events, expected from dark matter interactions as well as neutrons and coherent scattering of neutrinos -- as illustrated in~\autoref{fig:calibrations} with calibration datasets. 
+The ER response is measured using \textit{in-situ} $\beta$-decays of tritium and $^{14}$C, injected as methane, and $^{212}$Pb from $^{220}$Rn injections.
+The NR response is measured using neutrons from Deuterium-Deuterium (D-D) fusion (0--74~keV NRs) and from AmBe ($\alpha$,n) reactions (0--330~keV NRs)~\cite{LZ:Calibrations_2024}. 
+We define the ``ER band'' and ``NR band'' as the distributions in \{S1$c$, log$_{10}$(S2$c$)\} space populated by flat-in-energy ER and NR recoil spectra, shown by the solid and dashed lines in Fig.~\ref{fig:calibrations}. The detector and model response parameters from NEST v2.4.5 (Noble Element Simulation Technique)~\cite{ NEST:paper_2023, nest_v2_4_5} are tuned to describe the ER and NR calibration data. 
+The best-fit NEST parameters are provided in the \textcolor{black}{Data Release}, with more detail of the model in the \textcolor{black}{Supplemental Material}. 
+
+
+
+
+
+
+
+ 
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.95\linewidth]{\plotfolder Fig2_Calibrations.pdf}
+    \caption{
+    Calibration events in \{S1$c$,~log$_{10}$(S2$c$)\} space from tritium and $^{14}$C (light blue), $^{212}$Pb (green), D-D neutrons (orange), and AmBe neutrons (purple). 
+    The mean (solid) and 10\%-90\% percentiles (dashed) of the ER (dark blue) and NR (red) bands are given by the calibrated NEST model, taking flat energy spectra and evaluating along lines of fixed S$1c$. The  solid grey lines show contours of constant energy in \{S1$c$, log$_{10}$(S2$c$)\} space. The dashed grey line indicates the WS~ROI.
+    Tritium and ${}^{14}$C data are cut off above S1$c=500$~phd to avoid ${}^{133}$Xe contamination from activation due to a preceding neutron calibration. 
+    To increase statistics, the calibration datasets include events outside the fiducial volume used in the main WIMP search analysis, leading to some wall leakage. Grey points are outside of $4\sigma$ from the mean of the ER and NR bands. These points are not used in deriving the NEST model as they are likely from interactions near the TPC walls.  
+    }
+    \label{fig:calibrations}
+\end{figure}

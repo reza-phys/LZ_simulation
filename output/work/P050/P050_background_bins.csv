@@ -1,0 +1,10 @@
+E_lo,E_hi,b_const_per284,b_surf_per284,b_total_LZ_per284,source
+100.0,125.0,0.1,0.0,0.1,"ER leakage into NR band (estimate, x3 bracket)"
+125.0,200.0,0.02,0.0,0.02,P016 b_M (125-200 keV NR-band bin)
+200.0,270.0,0.00040399999999999995,0.00017,0.000574,P016 b_H = 5.7e-4: accidentals 1.5e-4 (P022) + nu 3.4e-5 (P019) + ER/other 2.2e-4 | MSSI 1.7e-4 (P004)
+270.0,300.0,3.090909090909091e-05,0.000256580619326896,0.0002874897102359869,P038 MSSI interpolation x NR-band share 0.15 | accidentals 1e-4 per 100 keV + nu
+300.0,350.0,5.151515151515152e-05,0.0006498007002478911,0.0007013158517630426,P038 MSSI interpolation x NR-band share 0.15 | accidentals 1e-4 per 100 keV + nu
+350.0,400.0,5.151515151515152e-05,0.0010728203805220246,0.0011243355320371762,P038 MSSI interpolation x NR-band share 0.15 | accidentals 1e-4 per 100 keV + nu
+400.0,450.0,5.151515151515152e-05,0.0018740615867684643,0.001925576738283616,P038 MSSI interpolation x NR-band share 0.15 | accidentals 1e-4 per 100 keV + nu
+450.0,500.0,5.151515151515152e-05,0.0033900504043060773,0.0034415655558212286,P038 MSSI interpolation x NR-band share 0.15 | accidentals 1e-4 per 100 keV + nu
+500.0,600.0,0.00010303030303030303,0.020052271107331918,0.02015530141036222,P038 MSSI interpolation x NR-band share 0.15 | accidentals 1e-4 per 100 keV + nu

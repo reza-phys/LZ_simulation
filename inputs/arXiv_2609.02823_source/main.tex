@@ -1,0 +1,111 @@
+\documentclass[aps, prl, reprint, superscriptaddress, amsmath, amssymb, preprintnumbers, nobibnotes, nofootinbib]{revtex4-2}
+\usepackage{fancyhdr}
+\usepackage{graphicx}% Include figure files
+\newcommand{\plotfolder}{}
+
+
+
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+\usepackage{hyperref}% add hypertext capabilities
+\usepackage{cleveref}
+
+\usepackage[mathlines]{lineno}% Enable numbering of text and display math
+%\linenumbers\relax % Commence numbering lines
+%\linenumbers
+
+\usepackage{xcolor}
+\usepackage{import}
+\usepackage{lipsum}
+\usepackage{multirow}
+
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage[version=4]{mhchem}
+
+\sisetup{
+    separate-uncertainty,
+    table-align-uncertainty = true,
+    exponent-product = \times
+}
+
+%\usepackage{booktabs}
+%\usepackage[version=4]{mhchem}
+%\sisetup{separate-uncertainty}
+% Configure the footer
+%\pagestyle{fancy}
+%\fancyhf{} % Clear all headers and footers
+%\cfoot{v10.3} % Keep page number in the center
+%\rfoot{\thepage} % Add your version number to the right footer
+\renewcommand{\headrulewidth}{0pt} % Remove the default header line
+\renewcommand{\footrulewidth}{0pt} % Remove the default footer line
+%\usepackage[showframe,%Uncomment any one of the following lines to test 
+%%scale=0.7, marginratio={1:1, 2:3}, ignoreall,% default settings
+%%text={7in,10in},centering,
+%%margin=1.5in,
+%%total={6.5in,8.75in}, top=1.2in, left=0.9in, includefoot,
+%%height=10in,a5paper,hmargin={3cm,0.8in},
+%]{geometry}
+%\newcommand\HL[1]{\textcolor{blue}{[HL: #1]}}
+
+\newcommand{\prlsubhead}[1]{#1:\ }
+\newcommand{\prlsubtopic}[1]{\textit{#1.}\ }
+\renewcommand{\figureautorefname}{Fig.} 
+%\renewcommand{\tableautorefname}{Tab.} 
+\renewcommand{\equationautorefname}{Eq.}
+\renewcommand{\sectionautorefname}{Section}
+
+%\autorefname{figure}{Fig.}{Figs.}   % singular, plural for \autoref
+%\autorefname{figure}{Fig.}{Figs.}
+
+\begin{document}
+{
+\title{Search for dark matter particle interactions in an extended nuclear recoil  energy window with the LUX-ZEPLIN (LZ) experiment}
+
+\include{LZ-author-Sep2026}
+
+\begin{abstract}
+We report on a search for dark matter particles interacting with xenon nuclei in an exposure of 2.84~tonne-years with the LUX-ZEPLIN (LZ) experiment. 
+An extended nuclear recoil energy window up to approximately 270~keV enables searches for effective field theory and inelastic models of dark matter where high-energy recoils account for a larger fraction of the predicted recoil spectrum compared to the nominal spin independent interaction.
+We observe one event with characteristics consistent with a nuclear recoil of $248\pm23\,\mathrm{(stat)}\pm23\,\mathrm{(sys)}$~keV, in a region where the known background expectation is low. 
+A profile likelihood ratio test finds tension with the background-only hypothesis at a global significance of 2.6$\sigma$ when accounting for look-elsewhere effects, with a maximum local significance of 3.4$\sigma$ across the models tested. 
+We describe the analysis and event of interest, the background model used in the statistical inference, and detail several of the rare background topologies considered.  
+\end{abstract}
+
+\maketitle
+}
+\thispagestyle{fancy}
+
+\input{introduction}
+
+\input{theory}
+
+\input{detector}
+
+\input{analysis}
+
+\input{results}
+
+\input{discussion}
+
+\input{conclusion}
+
+\paragraph{\label{sec:acknowledgements}Acknowledgements --}
+\input{acknowledgments}
+
+
+
+
+
+
+\bibliography{references}
+
+\clearpage
+\onecolumngrid
+\appendix
+\input{SupplementalMaterial}
+
+
+\end{document}
+
+\typeout{get arXiv to do 4 passes: Label(s) may have changed. Rerun}

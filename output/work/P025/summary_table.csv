@@ -1,0 +1,6 @@
+model,sigv_today,channel,strongest_bound,ratio,verdict
+"Higgsino doublet, 1 TeV, delta=366 keV",9.6e-27 (S=1) - 2.9e-26 (S=3),"W+W- (54%), ZZ (46%)","H.E.S.S. GC Einasto ~4e-26 (likely, profile x10)",0.24-0.7,allowed; marginal only for S~3 and a cuspy profile; CTA-testable
+Higgsino line,1e-28 (S=1),gamma gamma + gamma Z/2,H.E.S.S. line ~4e-28 (likely),0.30-0.91,allowed (x3-10 below)
+"Dark photon, 1 TeV, alpha_D=0.035 (relic), m_A' < 9 GeV",4.4e-26 x S_sat (S_sat=225 at 1 GeV),A'A' -> 4l / 2l+hadrons,Planck p_ann (S_allowed=23),10 at m_A'=1 GeV,excluded at every sub-GeV and few-GeV mass (valleys included)
+"Dark photon, 1 TeV, m_A' = 9-32 GeV (valleys) or >= 32 GeV",4.4e-26 x S<23,A'A' -> leptons+hadrons (soft gammas),Planck; Fermi dSph cascades ~3e-25 (uncertain) need m_A' >= 45 GeV,<1,allowed (CMB); dwarfs marginal below ~50 GeV
+"L10 contact dipole, 1 TeV, d10=0.28 (symmetric Dirac)",3e-21-2e-20 (dim-6); 2e-17 (literal dim-8),q qbar (tensor),Fermi/H.E.S.S. qq ~1e-25; unitarity,3e+04,excluded as a symmetric thermal WIMP; EFT invalid; viable only as asymmetric Dirac DM (no annihilation today)

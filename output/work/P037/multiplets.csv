@@ -1,0 +1,9 @@
+n,Y,label,charges,has_neutral,gZ_neutral_units_g_over_cW,coupling_sq_rel_higgsino,sigma_n_cm2_1TeV,sigma_SI_eq_cm2_1TeV,elastic_excess_vs_LZ2024,n_Higgs_in_splitting_op,operator_dimension,thermal_mass_TeV_recalled,thermal_mass_reliability
+2,0.5,doublet Y=1/2 (Higgsino-like),+0 +1,True,-0.5,1.0,7.403824259386692e-39,2.303355941105108e-39,46067118.82210216,2,5,1.1,certain
+3,0.0,triplet Y=0 (wino-like),-1 +0 +1,True,-0.0,0.0,0.0,0.0,0.0,0,3,2.8,likely (2.7-3.0)
+3,1.0,triplet Y=1,+0 +1 +2,True,-1.0,4.0,2.961529703754677e-38,9.213423764420432e-39,184268475.28840864,4,7,2.0,uncertain
+4,0.5,quadruplet Y=1/2,-1 +0 +1 +2,True,-0.5,1.0,7.403824259386692e-39,2.303355941105108e-39,46067118.82210216,2,5,2.4,uncertain
+4,1.5,quadruplet Y=3/2,+0 +1 +2 +3,True,-1.5,9.0,6.663441833448023e-38,2.0730203469945973e-38,414604069.39891946,6,9,2.4,uncertain
+5,0.0,quintuplet Y=0 (MDM),-2 -1 +0 +1 +2,True,-0.0,0.0,0.0,0.0,0.0,0,3,9.4,likely
+5,1.0,quintuplet Y=1,-1 +0 +1 +2 +3,True,-1.0,4.0,2.961529703754677e-38,9.213423764420432e-39,184268475.28840864,4,7,4.5,uncertain
+5,2.0,quintuplet Y=2,+0 +1 +2 +3 +4,True,-2.0,16.0,1.1846118815018708e-37,3.685369505768173e-38,737073901.1536345,8,11,4.5,uncertain

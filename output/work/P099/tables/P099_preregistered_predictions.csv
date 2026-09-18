@@ -1,0 +1,8 @@
+id,dataset,outcome,P_DM_posterior,P_background,cross_reference
+F1,"LZ next release, 2.8 t.yr new, 200-270 keV, 600 phd edge",N=0,0.7491893585811189,0.9994381860456081,P081: 0.75 / 0.9994
+F2,same,N>=1,0.2508106414188811,0.0005618139543919209,P081: 0.25 / 5.6e-4
+F3,same,N>=2,0.08242970832159457,1.5784702266337704e-07,P081: 0.08 / 1.6e-7
+F4,"same, 55-270 keV",N>=1,0.5,0.11207840249507739,P081: 0.50 (DM); background dominated by 55-125 keV
+F5,"same, 1000 phd edge, 270-420 keV only",N>=1,0.26,0.0027567565290171903,P081 median: 0.26 (DM) / 0.0028 (B)
+F6,"LZ full untouched 6.76 t.yr, 200-270 keV",N>=1,0.41708658951235245,0.001355840579879919,P020 plug-in (band-anchored): 0.91
+F7,XENONnT+PandaX-4T 10.1 t.yr reanalysed above 200 keV,N>=1,0.4981479258746563,0.0020330713500834596,P069 best fit: 0.71 (L10) - 0.94 (d366)

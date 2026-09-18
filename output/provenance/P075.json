@@ -1,0 +1,69 @@
+{
+ "id": "P075",
+ "title": "Thermal history of ~1 TeV pseudo-Dirac dark matter with the LZ-fitted coupling: freeze-out, coannihilation and non-thermal production",
+ "date": "2026-09-15",
+ "agent_tools": [
+  {"tool": "Read", "count": 13, "detail": "provenance/PAPER_GUIDE.md (full); papers P054, P011, P007, P025, P026, P021 (lines 1-30), P014 (1-30), P048 (1-30); code/P054_zprime_idm.py lines 20-320; work/P025/details.md lines 17-66; work/P075/figures/P075_fig1_mechanism_map.png and P075_fig2_thermal_quantities.png"},
+  {"tool": "Bash", "count": 15, "detail": "(1) pandas print of results_ledger.csv ids/titles/headlines; (2) ls work/P011,P054,P007 + cat work/P054/lz_requirement.csv + head environment/ENVIRONMENT_versions.txt; (3) cat P011 sigma_p_required.csv, P011 relic_lifetime.json/couplings.json, P054 relic_method_validation.csv/contact_limit_tension.csv, P007 relic_and_lifetime.json (output truncated); (4) grep annihilation/relic functions in code/P054_zprime_idm.py; (5) pandas print of P011 annual-halo grid subset + P007/P011 relic JSONs + P054 validation CSVs + grep lzcommon constants; (6) grep LZ fulltext.tex for Higgsino/inelastic/relic, ls data_requests and provenance, head provenance/P054.json; (7) P007 N_events_grid.csv columns/unique values + grep lzcommon wd_* signatures; (8) $TMPDIR/time_wd.py: WimPyDD timing test at (1000,300),(10000,300),(1000,365) [reproduced P011 grid]; (9) .venv/bin/python output/code/P075_thermal_history.py (first run, 404 s, live WimPyDD inside); (10) .venv/bin/python output/code/P075_wimpydd_grid.py (57 s, Higgsino live grid); (11) main script run 2 (NameError KAPPA_HIGGSINO at Part G); (12) main script run 3 (178 s, complete); (13) cat relic_validation.json, ls work/P075, pandas extraction of Z' band crossings and Higgsino table; (14) pandas extraction of T_RH<5 MeV crossings, dark-photon epsilons, s-channel fractions, coannihilation table + sed shortening of the figure suptitle; (15) main script run 4 (183 s, final figures); plus 4 word-count checks of papers/P075.md"},
+  {"tool": "Write", "count": 5, "detail": "code/P075_thermal_history.py; code/P075_wimpydd_grid.py; work/P075/details.md; provenance/P075.json; papers/P075.md"},
+  {"tool": "Edit", "count": 27, "detail": "13 edits of code/P075_thermal_history.py (grid loading from cached helper, ceiling-scaled mass interpolation with leave-one-out test, exact masses in MGRID, Higgsino table from P007 kernels, Z' window lower bound 250 keV, dark-photon D_to_open per mass, freeze-in s-range to 40T and log guard, errstate for log10, KAPPA_HIGGSINO constant, docstring); 13 word-budget trims of papers/P075.md; 1 update of this JSON"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python, run from the simulation root"},
+  {"name": "numpy", "version": "2.5.3", "functions": "geomspace, interp, trapezoid, searchsorted, meshgrid, errstate"},
+  {"name": "scipy", "version": "1.18.1", "functions": "integrate.solve_ivp (Radau, rtol 1e-8), optimize.brentq, special.kve, special.erf, special.erfc"},
+  {"name": "pandas", "version": "3.0.5", "functions": "read_csv, DataFrame, to_csv, concat"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; pcolormesh, contour, clabel, colorbar, subplots"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "via lzcommon: wd_halo(day_of_year, vmin) averaged over 12 days, wd_hamiltonian(name, {1: (c0, c1)}), wd_rate(ham, m, E, halo=(v, eta), delta_kev) [diff_rate; no response-function files written]"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ dict (exposure_tyr, E_50pct_low/high_keV, eff_plateau), M_V_GEV, M_NUCLEON_GEV, GEV_TO_CM2, VESC_KMS, V_EARTH_ORBIT, A_XE_MEAN, AMU_GEV, C_KMS, E_R_range_keV, wd_halo, wd_hamiltonian, wd_rate"},
+  {"name": "none: derived by hand", "version": "-", "functions": "Griest-Seckel sigma_eff ratios (second-order cancellation), detailed-balance sigma(ff->chi chi), UV freeze-in closed form, dilution scaling floor ~ alpha_D^3 / ceiling ~ alpha_D^(1/4), T_RH* condition"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P075_wimpydd_grid.py", "purpose": "cached live WimPyDD grids: isoscalar/proton unit-coupling counts at 0.5/2/5/10 TeV and Higgsino (P007 couplings) counts at 5/10 TeV, delta = 250-390 keV, annual-mean Baxter halo; 1 TeV check points", "command": ".venv/bin/python output/code/P075_wimpydd_grid.py  (about 5 min first time; then cached)"},
+  {"path": "output/code/P075_thermal_history.py", "purpose": "relic solver + validation, coannihilation with delta, Higgsino/Z'/dark-photon thermal-history maps, non-thermal T_RH, dilution, freeze-in, asymmetric-DM oscillation, figures and tables", "command": ".venv/bin/python output/code/P075_thermal_history.py  (about 3 min)"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules, deliverables, template, budgets"},
+  {"file": "output/results_ledger.csv", "parts_used": "ids, titles, headline results of P001-P070 (pandas print)"},
+  {"file": "output/papers/P054.md, P011.md, P007.md, P025.md, P026.md, P021.md, P014.md, P048.md", "parts_used": "headline numbers, conventions (sigma_eff = sigma_Dirac/2; alpha_D conventions; Planck S_allowed = 23 at 1 TeV; chi2 floors; LZ 90% band 0.105-3.65), collider/lifetime context"},
+  {"file": "output/work/P011/sigma_p_required.csv", "parts_used": "halo = annual, eff_sigma_keV = 11.5: N_iso_unit, N_p_unit at 300/1000/3000 GeV, delta 240-400 keV"},
+  {"file": "output/work/P007/N_events_grid.csv", "parts_used": "halo = annual, eff 11.5: Higgsino N(m, delta) at 300/500/1000/2000/4000 GeV"},
+  {"file": "output/work/P007/higgsino_couplings.json", "parts_used": "c0_wimpydd = -7.618e-6, c1_wimpydd = 8.871e-6 GeV^-2, c_eq_isoscalar_mv2_sq = 0.0777"},
+  {"file": "output/work/P054/lz_requirement.csv, contact_limit_tension.csv, relic_method_validation.csv", "parts_used": "G(N=1) values and P054 fixed-point numbers for cross-checks"},
+  {"file": "output/work/P011/relic_lifetime.json, couplings.json; output/work/P007/relic_and_lifetime.json", "parts_used": "P011 thermal alpha_D and s-channel remarks; P007 thermal Omega h^2 and fractions"},
+  {"file": "output/code/P054_zprime_idm.py", "parts_used": "lines 20-320: N_unit recipe, sigma(chi chibar -> ff), thermal average, ODE and semi-analytic solvers (for consistency of conventions)"},
+  {"file": "output/work/P025/details.md", "parts_used": "section 2.1 (ADG Higgsino freeze-out formula and mu = 1167 GeV), 3.1 (A'A' sigma_eff = pi alpha_D^2/(2 m^2))"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "constants and WimPyDD wrappers listed under software"},
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "grep of the Theory paragraph (Higgsino-like O1s inelastic model; Tucker-Smith-Weiner references) for citation context only"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "M_Pl = 1.2209e19 GeV; Omega h^2 = 2.755e8 Y m/GeV (s0 = 2891 cm^-3, rho_c/h^2 = 1.054e-5 GeV cm^-3)", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "SM g_*(T) table: 10.75 (1 MeV-50 MeV), 17.25 (100 MeV), ~60-75 (0.2-1 GeV), 86.25 (10 GeV), 96 (100 GeV), 106.75 (>200 GeV)", "presumed_source": "Kolb & Turner; Husdal 2016", "reliability": "likely (+-5%)"},
+  {"item": "canonical thermal cross-section 2.2e-26 cm^3/s gives Omega h^2 = 0.12 for m >> 10 GeV", "presumed_source": "Steigman, Dasgupta, Beacom PRD 86, 023506 (2012)", "reliability": "certain"},
+  {"item": "Higgsino effective freeze-out cross-section g^4 (21 + 3 tan^2 + 11 tan^4 theta_W)/(512 pi mu^2); thermal mass 1.1 TeV", "presumed_source": "Arkani-Hamed, Delgado, Giudice NPB 741, 108 (2006); Cirelli-Fornengo-Strumia 2006", "reliability": "likely (formula) / certain (1.1 TeV)"},
+  {"item": "g = 0.6517, sin^2 theta_W = 0.2312, alpha = 1/137.036", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "Griest-Seckel coannihilation: sigma_eff = sum sigma_ij g_i g_j (1+D_i)^1.5 (1+D_j)^1.5 exp(-x(D_i+D_j))/g_eff^2", "presumed_source": "Griest & Seckel PRD 43, 3191 (1991); Edsjo & Gondolo 1997", "reliability": "certain"},
+  {"item": "Boltzmann equation dY/dx = -sqrt(pi/45) M_Pl m sqrt(g*) <sigma v>(Y^2 - Yeq^2)/x^2, Yeq = 45 g x^2 K2(x)/(4 pi^4 g*)", "presumed_source": "Gondolo & Gelmini NPB 360, 145 (1991); Kolb & Turner", "reliability": "certain"},
+  {"item": "Gondolo-Gelmini collision term n_a n_b <sigma v> = g_a g_b T/(32 pi^4) Int ds sigma (s - 4m^2) sqrt(s) K1(sqrt(s)/T) (massless initial states)", "presumed_source": "Gondolo & Gelmini 1991", "reliability": "certain"},
+  {"item": "Int_0^inf u^mu K_nu(u) du = 2^(mu-1) Gamma((1+mu+nu)/2) Gamma((1+mu-nu)/2)", "presumed_source": "Gradshteyn-Ryzhik", "reliability": "certain"},
+  {"item": "annihilation-limited non-thermal yield Y = H/(s <sigma v>) at T_RH for moduli/gravitino decay with T_RH < T_fo (Omega_NT ~ Omega_th T_fo/T_RH)", "presumed_source": "Moroi & Randall NPB 570, 455 (2000); Giudice, Kolb, Riotto PRD 64, 023508 (2001)", "reliability": "likely"},
+  {"item": "BBN lower bound on the reheating temperature T_RH >~ 4-5 MeV", "presumed_source": "Hannestad PRD 70, 043506 (2004); de Salas et al. PRD 92, 123534 (2015)", "reliability": "likely"},
+  {"item": "dark-photon kinetic-mixing ceiling eps <~ 1e-3 for m_A' = 1-10 GeV", "presumed_source": "BaBar PRL 113, 201801 (2014); LHCb 2020 (as used by P011)", "reliability": "likely"},
+  {"item": "sum_f N_c Q_f^2 = 8 for all charged SM fermions (top included); B-L 6.5 and U(1)_B 2 from P054", "presumed_source": "SM charges", "reliability": "certain"},
+  {"item": "detailed balance: sigma(ff -> chi chi)/sigma(chi chi -> ff) = (g_chi^2/g_f^2)(beta_chi/beta_f)^2", "presumed_source": "textbook", "reliability": "certain"},
+  {"item": "pseudo-Dirac chi-chibar oscillations with frequency delta erase a particle asymmetry (asymmetric DM requires delta generated after freeze-out)", "presumed_source": "Tulin, Yu, Zurek JCAP 05 (2012) 013; Buckley & Profumo 2012", "reliability": "likely"},
+  {"item": "UV freeze-in yield ~ G^2 M_Pl T_RH^3 for a dimension-6 operator; FIMP couplings ~1e-11", "presumed_source": "Hall, Jedamzik, March-Russell, West JHEP 03 (2010) 080; Elahi-Kolda-Unwin 2015", "reliability": "likely"},
+  {"item": "v_sun ~ 250.6 km/s (lzcommon Sun-frame value, P035) used with v_esc = 544 and v_orb = 29.8 km/s to define the kinematic ceiling scaling variable", "presumed_source": "Baxter et al. 2021 conventions / lzcommon", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Mass interpolation of ln N linearly in ln m at fixed delta: neighbours beyond their kinematic ceiling are zero, collapsing the interpolated count to zero and producing bogus Higgsino windows (320/360 keV); replaced by interpolation at fixed xi = delta/delta_c(m) (leave-one-out ratios 1.01-1.18 for delta <= 366 keV, x32 at 380 keV over a factor-4 mass leap).",
+  "Higgsino counts as 0.0777 x N_iso (P007's isoscalar-equivalent coupling): overestimates P007's isovector-dominated grid by x1.3-1.85 because of the different form-factor node (P032); replaced by P007's own kernels plus live WimPyDD at 5/10 TeV (agreement 1.01-1.07 at 1 TeV).",
+  "Freeze-in s-integration truncated at sqrt(s) ~ 2m + 6T reproduced the massless closed form only to 0.68; extended to 40 T (1.000). A log(0) in the T_RH root finder returned NaN for m >= 1 TeV; guarded.",
+  "Single script with live WimPyDD inside took 6.8 min; the grids were moved into a cached helper so the main script runs in 3 min.",
+  "First-order delta effect on sigma_eff expected (~x delta/m ~ 1e-5) but found to cancel exactly at first order (chi2 in numerator and g_eff); the residual is second order (1e-10) and Y_eq changes at first order by <= 1.6e-5."
+ ],
+ "wimpydd_generated_files": ["none beyond output/work/P075/N_unit_grid_live.csv and output/work/P075/higgsino_grid_live.csv (script outputs; wd_rate uses diff_rate and writes no response-function files)"]
+}

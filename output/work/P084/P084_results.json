@@ -1,0 +1,1020 @@
+{
+ "constants": {
+  "alpha2": 0.03378378378378378,
+  "sw2": 0.2312,
+  "alpha0": 0.0072973525205055605,
+  "alpha_mZ": 0.00781081081081081,
+  "mW": 80.377,
+  "mZ": 91.1876,
+  "gev2_to_cm3s": 1.1673e-17
+ },
+ "validation": {
+  "coulomb_a0.01_v0.1": {
+   "numerical": 1.3433258616249024,
+   "exact": 1.3468434968519967
+  },
+  "coulomb_a0.03_v0.05": {
+   "numerical": 3.8316518763679577,
+   "exact": 3.858874095117473
+  },
+  "coulomb_a0.03_v0.02": {
+   "numerical": 9.476288522041333,
+   "exact": 9.425538597187012
+  },
+  "yukawa_a0.03_v0.001": {
+   "numerical": 5.970127052494998,
+   "hulthen": 6.125663420080741
+  },
+  "yukawa_a0.05_v0.001": {
+   "numerical": 41.72211338892518,
+   "hulthen": 46.9371811535134
+  },
+  "yukawa_a0.03_v0.01": {
+   "numerical": 5.590740839395104,
+   "hulthen": 5.811172214038749
+  },
+  "conv_r0_over_m0.005": {
+   "ref": 136.86180543604982,
+   "alt": 139.04012346591335
+  },
+  "conv_r0_over_m0.08": {
+   "ref": 136.86180543604982,
+   "alt": 135.24809740444385
+  },
+  "conv_rmax_over_mW18.0": {
+   "ref": 136.86180543604982,
+   "alt": 136.8622931182787
+  },
+  "conv_rmax_over_mW8.0": {
+   "ref": 136.86180543604982,
+   "alt": 136.82299686681878
+  },
+  "conv_rtol1e-08": {
+   "ref": 136.86180543604982,
+   "alt": 136.86180542287232
+  },
+  "majorana_check_m1000": {
+   "dirac": 1.6626525836037567,
+   "majorana_delta0": 1.6626525836037893,
+   "majorana_delta366": 1.6594040797573524,
+   "dirac_v1e6": 1.6626502886219188,
+   "majorana_delta366_v1e6": 1.658637054906099
+  },
+  "majorana_check_m3000": {
+   "dirac": 5.821470134913832,
+   "majorana_delta0": 5.821470134915341,
+   "majorana_delta366": 5.823570380608685,
+   "dirac_v1e6": 5.8230503762784895,
+   "majorana_delta366_v1e6": 5.732607252711231
+  }
+ },
+ "thermal_masses_TeV": {
+  "(2,1/2)": 1.1,
+  "(3,1)": 2.0,
+  "(4,3/2)": 2.4,
+  "(5,2)": 4.5
+ },
+ "limits": {
+  "Fermi_dSph": {
+   "anchor": 1e-25,
+   "slope": 1.0,
+   "band": [
+    5e-26,
+    2e-25
+   ],
+   "rel": "likely (x2)",
+   "S": "dwarf"
+  },
+  "HESS_GC": {
+   "anchor": 2e-26,
+   "slope": 0.5,
+   "band": [
+    5e-27,
+    4e-26
+   ],
+   "rel": "uncertain (Einasto; cored x10 weaker)",
+   "S": "MW"
+  },
+  "AMS_pbar": {
+   "anchor": 3e-26,
+   "slope": 1.0,
+   "band": [
+    1e-26,
+    1e-25
+   ],
+   "rel": "uncertain (propagation x3-10)",
+   "S": "MW"
+  },
+  "Planck_CMB": {
+   "anchor": 1e-24,
+   "slope": 1.0,
+   "band": [
+    1e-24,
+    1.5999999999999997e-24
+   ],
+   "rel": "likely (p_ann 3.2-3.5e-28, f_eff 0.2-0.35)",
+   "S": "CMB"
+  },
+  "HESS_line": {
+   "anchor": 2e-28,
+   "slope": 1.0,
+   "band": [
+    1e-28,
+    4e-28
+   ],
+   "rel": "uncertain (H.E.S.S. Einasto line)",
+   "S": "MW"
+  }
+ },
+ "splittings_GeV": {
+  "(2,1/2)": [
+   0.0,
+   0.358
+  ],
+  "(3,1)": [
+   0.0,
+   0.5488,
+   1.432
+  ],
+  "(4,3/2)": [
+   0.0,
+   0.7395,
+   1.8135,
+   3.2221
+  ],
+  "(5,2)": [
+   0.0,
+   0.9303,
+   2.195,
+   3.7943,
+   5.7281
+  ],
+  "(3,0)": [
+   0.0,
+   0.1673
+  ],
+  "(5,0)": [
+   0.0,
+   0.1673,
+   0.669
+  ]
+ },
+ "resonances": {
+  "(2,1/2)": [
+   [
+    6986.371459534426,
+    8053.212334586906,
+    3241.67098684355
+   ]
+  ],
+  "(3,1)": [
+   [
+    2533.7206064700063,
+    11070.3013599115,
+    8591.488195802598
+   ],
+   [
+    5703.652831137525,
+    4151.082024021713,
+    3017.855949854328
+   ],
+   [
+    10482.113376039699,
+    83885.53893868356,
+    7670.371465684781
+   ]
+  ],
+  "(4,3/2)": [
+   [
+    1288.536594916753,
+    9298.341508811774,
+    8639.380355758585
+   ],
+   [
+    2368.0590451364865,
+    1965.7679400379723,
+    1922.4506776294782
+   ],
+   [
+    4656.445167075474,
+    147479.0903402483,
+    15274.313630722034
+   ],
+   [
+    7475.11484894418,
+    61518.90817005978,
+    31391.51564231627
+   ],
+   [
+    9156.225069012507,
+    12899.938690906278,
+    7860.5030530089925
+   ]
+  ],
+  "(5,2)": [
+   [
+    750.1829409410059,
+    170597.34960317722,
+    106933.93916691681
+   ],
+   [
+    1288.536594916753,
+    2512.99764204896,
+    2514.7343769014947
+   ],
+   [
+    2068.52194935641,
+    95194.55627991064,
+    29222.001234381783
+   ],
+   [
+    3103.5397587384286,
+    5732.065807134437,
+    5311.863927017446
+   ],
+   [
+    4982.194636129438,
+    5150397.63914643,
+    121209.31628881718
+   ],
+   [
+    6529.5834454625465,
+    2465.6309098177676,
+    1988.363462414432
+   ],
+   [
+    8557.566109938487,
+    2369.5020627744593,
+    2641.569095552755
+   ],
+   [
+    10482.113376039699,
+    9898.479819265696,
+    7273.0470521526
+   ]
+  ],
+  "(3,0)": [
+   [
+    2368.0590451364865,
+    11654.4061996739,
+    9920.558968391457
+   ],
+   [
+    9156.225069012507,
+    21745.165787786238,
+    8191.942343192812
+   ]
+  ],
+  "(5,0)": [
+   [
+    802.6632528391823,
+    403554.6872930509,
+    282486.3453587221
+   ],
+   [
+    1806.873466165042,
+    87.59343206407641,
+    85.94628426457732
+   ],
+   [
+    3103.5397587384286,
+    27088.64720680768,
+    26191.55348036681
+   ],
+   [
+    6102.661477163973,
+    7680.105922362589,
+    5354.089232252882
+   ],
+   [
+    7998.049105827163,
+    51.16415100180726,
+    51.01129362130862
+   ]
+  ]
+ },
+ "exclusion_scan": {
+  "(2,1/2)": {
+   "Fermi_dSph": {
+    "min_allowed_mass_TeV": 6.986371459534427,
+    "ratio_1TeV": 0.16058874117323438,
+    "n_excluded_points": 1,
+    "allowed_islands": 2
+   },
+   "HESS_GC": {
+    "min_allowed_mass_TeV": 7.47511484894418,
+    "ratio_1TeV": 0.8020585675916858,
+    "n_excluded_points": 13,
+    "allowed_islands": 3
+   },
+   "Planck_CMB": {
+    "min_allowed_mass_TeV": null,
+    "ratio_1TeV": 0.01605887411732344,
+    "n_excluded_points": 0,
+    "allowed_islands": 0
+   }
+  },
+  "(3,1)": {
+   "Fermi_dSph": {
+    "min_allowed_mass_TeV": 10.482113376039699,
+    "ratio_1TeV": 4.673600681432553,
+    "n_excluded_points": 36,
+    "allowed_islands": 5
+   },
+   "HESS_GC": {
+    "min_allowed_mass_TeV": 12.000000000000007,
+    "ratio_1TeV": 23.35546040032774,
+    "n_excluded_points": 44,
+    "allowed_islands": 2
+   },
+   "Planck_CMB": {
+    "min_allowed_mass_TeV": 10.482113376039699,
+    "ratio_1TeV": 0.4673600681432553,
+    "n_excluded_points": 11,
+    "allowed_islands": 7
+   }
+  },
+  "(4,3/2)": {
+   "Fermi_dSph": {
+    "min_allowed_mass_TeV": 12.000000000000007,
+    "ratio_1TeV": 370.1804496375021,
+    "n_excluded_points": 46,
+    "allowed_islands": 4
+   },
+   "HESS_GC": {
+    "min_allowed_mass_TeV": 12.000000000000007,
+    "ratio_1TeV": 1855.4285815741957,
+    "n_excluded_points": 48,
+    "allowed_islands": 0
+   },
+   "Planck_CMB": {
+    "min_allowed_mass_TeV": 9.156225069012507,
+    "ratio_1TeV": 37.018044963750214,
+    "n_excluded_points": 32,
+    "allowed_islands": 7
+   }
+  },
+  "(5,2)": {
+   "Fermi_dSph": {
+    "min_allowed_mass_TeV": 12.000000000000007,
+    "ratio_1TeV": 1714.8251826580588,
+    "n_excluded_points": 48,
+    "allowed_islands": 0
+   },
+   "HESS_GC": {
+    "min_allowed_mass_TeV": 12.000000000000007,
+    "ratio_1TeV": 8553.889927795393,
+    "n_excluded_points": 48,
+    "allowed_islands": 0
+   },
+   "Planck_CMB": {
+    "min_allowed_mass_TeV": 11.21540728250546,
+    "ratio_1TeV": 171.48251826580588,
+    "n_excluded_points": 44,
+    "allowed_islands": 3
+   }
+  }
+ },
+ "benchmarks": [
+  {
+   "multiplet": "(2,1/2)",
+   "mass_TeV": 1.0,
+   "delta_N1_keV": 365.8,
+   "sigv_tree_WW": 5.2149665411506675e-27,
+   "sigv_tree_ZZ": 4.4074666741214315e-27,
+   "sigv_tree_tot": 9.6224332152721e-27,
+   "S_tot_MW": 1.6626525836037567,
+   "S_WW_MW": 1.825359484864887,
+   "S_ZZ_MW": 1.470315636199494,
+   "S_tot_MW_v3em4": 1.6626504947751488,
+   "S_tot_MW_v2em3": 1.6626595261762336,
+   "S_tot_dwarf": 1.6626502906807976,
+   "S_tot_dwarf_v1em4": 1.6626503115219569,
+   "S_tot_CMB": 1.6626502886219188,
+   "sigv_MW_tot": 1.599876344592676e-26,
+   "sigv_dwarf_tot": 1.599874138242872e-26,
+   "sigv_CMB_tot": 1.5998741362617294e-26,
+   "sigv_line_MW": 1.1939776801306359e-28,
+   "sigv_gg_MW": 8.489017014400036e-29,
+   "sigv_line_CMB": 1.1938754099598382e-28
+  },
+  {
+   "multiplet": "(2,1/2)",
+   "mass_TeV": 1.1,
+   "delta_N1_keV": 367.0,
+   "sigv_tree_WW": 4.312320933389343e-27,
+   "sigv_tree_ZZ": 3.64518384175833e-27,
+   "sigv_tree_tot": 7.957504775147673e-27,
+   "S_tot_MW": 1.7554126115799882,
+   "S_WW_MW": 1.9412165272746928,
+   "S_ZZ_MW": 1.5357725245063378,
+   "S_tot_MW_v3em4": 1.7554113472789066,
+   "S_tot_MW_v2em3": 1.7554168678705888,
+   "S_tot_dwarf": 1.755411224158058,
+   "S_tot_dwarf_v1em4": 1.7554112367272134,
+   "S_tot_CMB": 1.7554112229163854,
+   "sigv_MW_tot": 1.3968704239002202e-26,
+   "sigv_dwarf_tot": 1.396869319858557e-26,
+   "sigv_CMB_tot": 1.3968693188704954e-26,
+   "sigv_line_MW": 1.22030385255354e-28,
+   "sigv_gg_MW": 8.676192477845557e-29,
+   "sigv_line_CMB": 1.2201864612506572e-28
+  },
+  {
+   "multiplet": "(2,1/2)",
+   "mass_TeV": 2.0,
+   "delta_N1_keV": 375.0,
+   "sigv_tree_WW": 1.3069168470986785e-27,
+   "sigv_tree_ZZ": 1.1053258794149311e-27,
+   "sigv_tree_tot": 2.4122427265136097e-27,
+   "S_tot_MW": 2.9627408603420644,
+   "S_WW_MW": 3.4598141878784814,
+   "S_ZZ_MW": 2.3751470599967726,
+   "S_tot_MW_v3em4": 2.962839355518133,
+   "S_tot_MW_v2em3": 2.9624182854094077,
+   "S_tot_dwarf": 2.962849015586805,
+   "S_tot_dwarf_v1em4": 2.962848028847918,
+   "S_tot_CMB": 2.962849113069536,
+   "sigv_MW_tot": 7.14685009090482e-27,
+   "sigv_dwarf_tot": 7.147110987607279e-27,
+   "sigv_CMB_tot": 7.147111222759287e-27,
+   "sigv_line_MW": 1.582732020847139e-28,
+   "sigv_gg_MW": 1.125300688429709e-28,
+   "sigv_line_CMB": 1.582471396066039e-28
+  },
+  {
+   "multiplet": "(3,1)",
+   "mass_TeV": 1.0,
+   "delta_N1_keV": 374.1,
+   "sigv_tree_WW": 2.085986616460267e-26,
+   "sigv_tree_ZZ": 7.05194667859429e-26,
+   "sigv_tree_tot": 9.137933295054558e-26,
+   "S_tot_MW": 5.103657644707864,
+   "S_WW_MW": 9.570221462839491,
+   "S_ZZ_MW": 3.783668689864748,
+   "S_tot_MW_v3em4": 5.103881047454809,
+   "S_tot_MW_v2em3": 5.102921767261713,
+   "S_tot_dwarf": 5.103902925954169,
+   "S_tot_dwarf_v1em4": 5.103900691411537,
+   "S_tot_CMB": 5.103903146707822,
+   "sigv_MW_tot": 4.6636883118135715e-25,
+   "sigv_dwarf_tot": 4.663912448180298e-25,
+   "sigv_CMB_tot": 4.663912649903513e-25,
+   "sigv_line_MW": 2.4379761856605223e-27,
+   "sigv_gg_MW": 2.4370973695733076e-27,
+   "sigv_line_CMB": 2.4378918786771928e-27
+  },
+  {
+   "multiplet": "(3,1)",
+   "mass_TeV": 2.0,
+   "delta_N1_keV": 384.7,
+   "sigv_tree_WW": 5.227667388394714e-27,
+   "sigv_tree_ZZ": 1.7685214070638898e-26,
+   "sigv_tree_tot": 2.2912881459033613e-26,
+   "S_tot_MW": 101.51107659352041,
+   "S_WW_MW": 250.30978082253043,
+   "S_ZZ_MW": 57.537083592470935,
+   "S_tot_MW_v3em4": 101.76466600939155,
+   "S_tot_MW_v2em3": 100.68515236165995,
+   "S_tot_dwarf": 101.78957296306046,
+   "S_tot_dwarf_v1em4": 101.78702851961096,
+   "S_tot_CMB": 101.78982433955483,
+   "sigv_MW_tot": 2.3259112647662147e-24,
+   "sigv_dwarf_tot": 2.3322924190682572e-24,
+   "sigv_CMB_tot": 2.332298178828074e-24,
+   "sigv_line_MW": 6.398406777465872e-26,
+   "sigv_gg_MW": 6.08410461447703e-26,
+   "sigv_line_CMB": 6.414441327925209e-26
+  },
+  {
+   "multiplet": "(4,3/2)",
+   "mass_TeV": 1.0,
+   "delta_N1_keV": 379.2,
+   "sigv_tree_WW": 4.693469887035601e-26,
+   "sigv_tree_ZZ": 3.5700480060383606e-25,
+   "sigv_tree_tot": 4.0393949947419205e-25,
+   "S_tot_MW": 87.9599593794537,
+   "S_WW_MW": 294.5843289982648,
+   "S_ZZ_MW": 60.82083839033595,
+   "S_tot_MW_v3em4": 88.0210528660051,
+   "S_tot_MW_v2em3": 87.75922956507134,
+   "S_tot_dwarf": 88.02703981438913,
+   "S_tot_dwarf_v1em4": 88.0264283105559,
+   "S_tot_CMB": 88.02710022611289,
+   "sigv_MW_tot": 3.553050196550679e-23,
+   "sigv_dwarf_tot": 3.555759840281912e-23,
+   "sigv_CMB_tot": 3.555762280550058e-23,
+   "sigv_line_MW": 3.0872613005937852e-25,
+   "sigv_gg_MW": 2.92952426600292e-25,
+   "sigv_line_CMB": 3.08934473802565e-25
+  },
+  {
+   "multiplet": "(4,3/2)",
+   "mass_TeV": 2.0,
+   "delta_N1_keV": 390.8,
+   "sigv_tree_WW": 1.1762251623888109e-26,
+   "sigv_tree_ZZ": 8.953139623260942e-26,
+   "sigv_tree_tot": 1.0129364785649753e-25,
+   "S_tot_MW": 130.48260887334,
+   "S_WW_MW": 889.4407282142868,
+   "S_ZZ_MW": 30.79709615058509,
+   "S_tot_MW_v3em4": 130.47151078428587,
+   "S_tot_MW_v2em3": 130.51939972157322,
+   "S_tot_dwarf": 130.47042569348076,
+   "S_tot_dwarf_v1em4": 130.47053650380107,
+   "S_tot_CMB": 130.4704147465509,
+   "sigv_MW_tot": 1.3217059434613203e-23,
+   "sigv_dwarf_tot": 1.3215825355882767e-23,
+   "sigv_CMB_tot": 1.3215824247028308e-23,
+   "sigv_line_MW": 2.6433077824380857e-24,
+   "sigv_gg_MW": 2.4287347631755692e-24,
+   "sigv_line_CMB": 2.6417991582612877e-24
+  },
+  {
+   "multiplet": "(4,3/2)",
+   "mass_TeV": 2.4,
+   "delta_N1_keV": 392.0,
+   "sigv_tree_WW": 8.170248847103615e-27,
+   "sigv_tree_ZZ": 6.219436495339216e-26,
+   "sigv_tree_tot": 7.036461380049577e-26,
+   "S_tot_MW": 569.4795234207235,
+   "S_WW_MW": 4902.172266028879,
+   "S_ZZ_MW": 0.40109009148233266,
+   "S_tot_MW_v3em4": 574.658924448657,
+   "S_tot_MW_v2em3": 552.9693434186379,
+   "S_tot_dwarf": 575.1704852275445,
+   "S_tot_dwarf_v1em4": 575.1182017000501,
+   "S_tot_CMB": 575.1756508323901,
+   "sigv_MW_tot": 4.007120673278959e-23,
+   "sigv_dwarf_tot": 4.0471649062479934e-23,
+   "sigv_CMB_tot": 4.047201253826994e-23,
+   "sigv_line_MW": 4.073360857982885e-23,
+   "sigv_gg_MW": 3.3894428391386697e-23,
+   "sigv_line_CMB": 4.11085575920685e-23
+  },
+  {
+   "multiplet": "(5,2)",
+   "mass_TeV": 1.0,
+   "delta_N1_keV": 382.7,
+   "sigv_tree_WW": 8.343946465841068e-26,
+   "sigv_tree_ZZ": 1.1283114685750865e-24,
+   "sigv_tree_tot": 1.2117509332334972e-24,
+   "S_tot_MW": 136.86180543604982,
+   "S_WW_MW": 1074.9660501887151,
+   "S_ZZ_MW": 67.5530878185917,
+   "S_tot_MW_v3em4": 136.88522689754512,
+   "S_tot_MW_v2em3": 136.78469845004093,
+   "S_tot_dwarf": 136.8875209518047,
+   "S_tot_dwarf_v1em4": 136.88728664782963,
+   "S_tot_CMB": 136.8875440990598,
+   "sigv_MW_tot": 1.6584242046115469e-22,
+   "sigv_dwarf_tot": 1.6587358126136924e-22,
+   "sigv_CMB_tot": 1.658736093100772e-22,
+   "sigv_line_MW": 6.266885812509739e-24,
+   "sigv_gg_MW": 6.2225228002914656e-24,
+   "sigv_line_CMB": 6.267148748115401e-24
+  },
+  {
+   "multiplet": "(5,2)",
+   "mass_TeV": 2.0,
+   "delta_N1_keV": 393.0,
+   "sigv_tree_WW": 2.0910669553578857e-26,
+   "sigv_tree_ZZ": 2.8296342513022237e-25,
+   "sigv_tree_tot": 3.0387409468380124e-25,
+   "S_tot_MW": 204.66176146261668,
+   "S_WW_MW": 2682.544692771523,
+   "S_ZZ_MW": 21.591607654190025,
+   "S_tot_MW_v3em4": 205.40474046370718,
+   "S_tot_MW_v2em3": 202.25272436703892,
+   "S_tot_dwarf": 205.47779851734643,
+   "S_tot_dwarf_v1em4": 205.47033436274808,
+   "S_tot_CMB": 205.4785359417973,
+   "sigv_MW_tot": 6.219140748084473e-23,
+   "sigv_dwarf_tot": 6.243938000207916e-23,
+   "sigv_CMB_tot": 6.243960408626657e-23,
+   "sigv_line_MW": 1.380614907223722e-22,
+   "sigv_gg_MW": 7.355666632968258e-23,
+   "sigv_line_CMB": 1.3855087892544247e-22
+  },
+  {
+   "multiplet": "(5,2)",
+   "mass_TeV": 4.5,
+   "delta_N1_keV": 398.0,
+   "sigv_tree_WW": 4.133182820210784e-27,
+   "sigv_tree_ZZ": 5.594070782425181e-26,
+   "sigv_tree_tot": 6.007389064446259e-26,
+   "S_tot_MW": 530.6297283551753,
+   "S_WW_MW": 5537.751749373348,
+   "S_ZZ_MW": 160.69514147735728,
+   "S_tot_MW_v3em4": 532.2018467134264,
+   "S_tot_MW_v2em3": 525.546948554726,
+   "S_tot_dwarf": 532.3565504287042,
+   "S_tot_dwarf_v1em4": 532.3407437979479,
+   "S_tot_CMB": 532.3581120633818,
+   "sigv_MW_tot": 3.187699227390969e-23,
+   "sigv_dwarf_tot": 3.198072919431731e-23,
+   "sigv_CMB_tot": 3.1980823007788156e-23,
+   "sigv_line_MW": 2.5719748944425745e-24,
+   "sigv_gg_MW": 2.5709186938756726e-24,
+   "sigv_line_CMB": 2.5784994274924996e-24
+  }
+ ],
+ "verdicts": [
+  {
+   "multiplet": "(2,1/2)",
+   "mass_TeV": 1.0,
+   "delta_N1_keV": 365.8,
+   "f_thermal": 0.8,
+   "delta_N1_subcomponent_keV": 364.41353116146786,
+   "sigv_tree_tot": 9.6224332152721e-27,
+   "S_MW": 1.6626525836037567,
+   "S_dwarf": 1.6626502906807976,
+   "S_CMB": 1.6626502886219188,
+   "sigv_MW": 1.599876344592676e-26,
+   "sigv_line_MW": 1.1939776801306359e-28,
+   "ratio_Fermi_dSph": 0.1599874138242872,
+   "ratio_Fermi_dSph_range": "0.08-0.32",
+   "ratio_Fermi_dSph_thermal": 0.10239194484754383,
+   "ratio_HESS_GC": 0.7999381722963379,
+   "ratio_HESS_GC_range": "0.4-3.2",
+   "ratio_HESS_GC_thermal": 0.5119604302696563,
+   "ratio_AMS_pbar": 0.5332921148642253,
+   "ratio_AMS_pbar_range": "0.16-1.6",
+   "ratio_AMS_pbar_thermal": 0.3413069535131043,
+   "ratio_Planck_CMB": 0.015998741362617294,
+   "ratio_Planck_CMB_range": "0.01-0.016",
+   "ratio_Planck_CMB_thermal": 0.01023919447207507,
+   "ratio_line": 0.5969888400653179,
+   "ratio_line_range": "0.3-1.2",
+   "ratio_line_thermal": 0.38207285764180354,
+   "worst_probe": "HESS_GC",
+   "worst_ratio": 0.7999381722963379,
+   "verdict_full_density": "allowed, marginal (<x2 headroom)",
+   "worst_ratio_thermal": 0.5119604302696563,
+   "verdict_thermal_fraction": "marginal (f=0.80)",
+   "f_max_evade_anchor": 1.0,
+   "f_max_evade_band_high": 1.0,
+   "delta_N1_at_f_max_keV": 365.8
+  },
+  {
+   "multiplet": "(2,1/2)",
+   "mass_TeV": 1.1,
+   "delta_N1_keV": 367.0,
+   "f_thermal": 1.0,
+   "delta_N1_subcomponent_keV": 367.0,
+   "sigv_tree_tot": 7.957504775147673e-27,
+   "S_MW": 1.7554126115799882,
+   "S_dwarf": 1.755411224158058,
+   "S_CMB": 1.7554112229163854,
+   "sigv_MW": 1.3968704239002202e-26,
+   "sigv_line_MW": 1.22030385255354e-28,
+   "ratio_Fermi_dSph": 0.12698811998714152,
+   "ratio_Fermi_dSph_range": "0.063-0.25",
+   "ratio_Fermi_dSph_thermal": 0.12698811998714152,
+   "ratio_HESS_GC": 0.665931845606246,
+   "ratio_HESS_GC_range": "0.33-2.7",
+   "ratio_HESS_GC_thermal": 0.665931845606246,
+   "ratio_AMS_pbar": 0.4232940678485515,
+   "ratio_AMS_pbar_range": "0.13-1.3",
+   "ratio_AMS_pbar_thermal": 0.4232940678485515,
+   "ratio_Planck_CMB": 0.012698811989731777,
+   "ratio_Planck_CMB_range": "0.0079-0.013",
+   "ratio_Planck_CMB_thermal": 0.012698811989731777,
+   "ratio_line": 0.5546835693425182,
+   "ratio_line_range": "0.28-1.1",
+   "ratio_line_thermal": 0.5546835693425182,
+   "worst_probe": "HESS_GC",
+   "worst_ratio": 0.665931845606246,
+   "verdict_full_density": "allowed, marginal (<x2 headroom)",
+   "worst_ratio_thermal": 0.665931845606246,
+   "verdict_thermal_fraction": "marginal (f=1.00)",
+   "f_max_evade_anchor": 1.0,
+   "f_max_evade_band_high": 1.0,
+   "delta_N1_at_f_max_keV": 367.0
+  },
+  {
+   "multiplet": "(2,1/2)",
+   "mass_TeV": 2.0,
+   "delta_N1_keV": 375.0,
+   "f_thermal": 1.0,
+   "delta_N1_subcomponent_keV": 375.0,
+   "sigv_tree_tot": 2.4122427265136097e-27,
+   "S_MW": 2.9627408603420644,
+   "S_dwarf": 2.962849015586805,
+   "S_CMB": 2.962849113069536,
+   "sigv_MW": 7.14685009090482e-27,
+   "sigv_line_MW": 1.582732020847139e-28,
+   "ratio_Fermi_dSph": 0.035735554938036394,
+   "ratio_Fermi_dSph_range": "0.018-0.071",
+   "ratio_Fermi_dSph_thermal": 0.035735554938036394,
+   "ratio_HESS_GC": 0.2526793081701246,
+   "ratio_HESS_GC_range": "0.13-1",
+   "ratio_HESS_GC_thermal": 0.2526793081701246,
+   "ratio_AMS_pbar": 0.119114168181747,
+   "ratio_AMS_pbar_range": "0.036-0.36",
+   "ratio_AMS_pbar_thermal": 0.119114168181747,
+   "ratio_Planck_CMB": 0.003573555611379644,
+   "ratio_Planck_CMB_range": "0.0022-0.0036",
+   "ratio_Planck_CMB_thermal": 0.003573555611379644,
+   "ratio_line": 0.39568300521178473,
+   "ratio_line_range": "0.2-0.79",
+   "ratio_line_thermal": 0.39568300521178473,
+   "worst_probe": "line",
+   "worst_ratio": 0.39568300521178473,
+   "verdict_full_density": "allowed",
+   "worst_ratio_thermal": 0.39568300521178473,
+   "verdict_thermal_fraction": "allowed (f=1.00)",
+   "f_max_evade_anchor": 1.0,
+   "f_max_evade_band_high": 1.0,
+   "delta_N1_at_f_max_keV": 375.0
+  },
+  {
+   "multiplet": "(3,1)",
+   "mass_TeV": 1.0,
+   "delta_N1_keV": 374.1,
+   "f_thermal": 0.25,
+   "delta_N1_subcomponent_keV": 365.4864688385322,
+   "sigv_tree_tot": 9.137933295054558e-26,
+   "S_MW": 5.103657644707864,
+   "S_dwarf": 5.103902925954169,
+   "S_CMB": 5.103903146707822,
+   "sigv_MW": 4.6636883118135715e-25,
+   "sigv_line_MW": 2.4379761856605223e-27,
+   "ratio_Fermi_dSph": 4.663912448180298,
+   "ratio_Fermi_dSph_range": "2.3-9.3",
+   "ratio_Fermi_dSph_thermal": 0.2914945280112686,
+   "ratio_HESS_GC": 23.318441559067857,
+   "ratio_HESS_GC_range": "12-93",
+   "ratio_HESS_GC_thermal": 1.457402597441741,
+   "ratio_AMS_pbar": 15.545627706045238,
+   "ratio_AMS_pbar_range": "4.7-47",
+   "ratio_AMS_pbar_thermal": 0.9716017316278274,
+   "ratio_Planck_CMB": 0.4663912649903514,
+   "ratio_Planck_CMB_range": "0.29-0.47",
+   "ratio_Planck_CMB_thermal": 0.02914945406189696,
+   "ratio_line": 12.189880928302612,
+   "ratio_line_range": "6.1-24",
+   "ratio_line_thermal": 0.7618675580189133,
+   "worst_probe": "HESS_GC",
+   "worst_ratio": 23.318441559067857,
+   "verdict_full_density": "EXCLUDED (beyond band)",
+   "worst_ratio_thermal": 1.457402597441741,
+   "verdict_thermal_fraction": "excluded (f=0.25)",
+   "f_max_evade_anchor": 0.20708576137304427,
+   "f_max_evade_band_high": 0.2928634923081176,
+   "delta_N1_at_f_max_keV": 364.31632177791533
+  },
+  {
+   "multiplet": "(3,1)",
+   "mass_TeV": 2.0,
+   "delta_N1_keV": 384.7,
+   "f_thermal": 1.0,
+   "delta_N1_subcomponent_keV": 384.7,
+   "sigv_tree_tot": 2.2912881459033613e-26,
+   "S_MW": 101.51107659352041,
+   "S_dwarf": 101.78957296306046,
+   "S_CMB": 101.78982433955483,
+   "sigv_MW": 2.3259112647662147e-24,
+   "sigv_line_MW": 6.398406777465872e-26,
+   "ratio_Fermi_dSph": 11.661462095341285,
+   "ratio_Fermi_dSph_range": "5.8-23",
+   "ratio_Fermi_dSph_thermal": 11.661462095341285,
+   "ratio_HESS_GC": 82.23338138771848,
+   "ratio_HESS_GC_range": "41-3.3e+02",
+   "ratio_HESS_GC_thermal": 82.23338138771848,
+   "ratio_AMS_pbar": 38.76518774610358,
+   "ratio_AMS_pbar_range": "12-1.2e+02",
+   "ratio_AMS_pbar_thermal": 38.76518774610358,
+   "ratio_Planck_CMB": 1.1661490894140372,
+   "ratio_Planck_CMB_range": "0.73-1.2",
+   "ratio_Planck_CMB_thermal": 1.1661490894140372,
+   "ratio_line": 159.9601694366468,
+   "ratio_line_range": "80-3.2e+02",
+   "ratio_line_thermal": 159.9601694366468,
+   "worst_probe": "line",
+   "worst_ratio": 159.9601694366468,
+   "verdict_full_density": "EXCLUDED (beyond band)",
+   "worst_ratio_thermal": 159.9601694366468,
+   "verdict_thermal_fraction": "excluded (f=1.00)",
+   "f_max_evade_anchor": 0.07906678359968951,
+   "f_max_evade_band_high": 0.1118173176998995,
+   "delta_N1_at_f_max_keV": 368.9338595232088
+  },
+  {
+   "multiplet": "(4,3/2)",
+   "mass_TeV": 1.0,
+   "delta_N1_keV": 379.2,
+   "f_thermal": 0.17361111111111113,
+   "delta_N1_subcomponent_keV": 368.32081378734455,
+   "sigv_tree_tot": 4.0393949947419205e-25,
+   "S_MW": 87.9599593794537,
+   "S_dwarf": 88.02703981438913,
+   "S_CMB": 88.02710022611289,
+   "sigv_MW": 3.553050196550679e-23,
+   "sigv_line_MW": 3.0872613005937852e-25,
+   "ratio_Fermi_dSph": 355.5759840281912,
+   "ratio_Fermi_dSph_range": "1.8e+02-7.1e+02",
+   "ratio_Fermi_dSph_thermal": 10.717350984646005,
+   "ratio_HESS_GC": 1776.5250982753394,
+   "ratio_HESS_GC_range": "8.9e+02-7.1e+03",
+   "ratio_HESS_GC_thermal": 53.545919484089865,
+   "ratio_AMS_pbar": 1184.350065516893,
+   "ratio_AMS_pbar_range": "3.6e+02-3.6e+03",
+   "ratio_AMS_pbar_thermal": 35.69727965605991,
+   "ratio_Planck_CMB": 35.557622805500586,
+   "ratio_Planck_CMB_range": "22-36",
+   "ratio_Planck_CMB_thermal": 1.071735833981379,
+   "ratio_line": 1543.6306502968926,
+   "ratio_line_range": "7.7e+02-3.1e+03",
+   "ratio_line_thermal": 46.52629033736295,
+   "worst_probe": "HESS_GC",
+   "worst_ratio": 1776.5250982753394,
+   "verdict_full_density": "EXCLUDED (beyond band)",
+   "worst_ratio_thermal": 53.545919484089865,
+   "verdict_thermal_fraction": "excluded (f=0.17)",
+   "f_max_evade_anchor": 0.023725442779971326,
+   "f_max_evade_band_high": 0.03355284295274228,
+   "delta_N1_at_f_max_keV": 355.95457224696764
+  },
+  {
+   "multiplet": "(4,3/2)",
+   "mass_TeV": 2.0,
+   "delta_N1_keV": 390.8,
+   "f_thermal": 0.6944444444444445,
+   "delta_N1_subcomponent_keV": 388.5343449488124,
+   "sigv_tree_tot": 1.0129364785649753e-25,
+   "S_MW": 130.48260887334,
+   "S_dwarf": 130.47042569348076,
+   "S_CMB": 130.4704147465509,
+   "sigv_MW": 1.3217059434613203e-23,
+   "sigv_line_MW": 2.6433077824380857e-24,
+   "ratio_Fermi_dSph": 66.07912677941384,
+   "ratio_Fermi_dSph_range": "33-1.3e+02",
+   "ratio_Fermi_dSph_thermal": 31.866862837294494,
+   "ratio_HESS_GC": 467.2936176780315,
+   "ratio_HESS_GC_range": "2.3e+02-1.9e+03",
+   "ratio_HESS_GC_thermal": 225.35378938948287,
+   "ratio_AMS_pbar": 220.28432391022005,
+   "ratio_AMS_pbar_range": "66-6.6e+02",
+   "ratio_AMS_pbar_thermal": 106.23279509559227,
+   "ratio_Planck_CMB": 6.607912123514154,
+   "ratio_Planck_CMB_range": "4.1-6.6",
+   "ratio_Planck_CMB_thermal": 3.1866860163552064,
+   "ratio_line": 6608.269456095215,
+   "ratio_line_range": "3.3e+03-1.3e+04",
+   "ratio_line_thermal": 3186.8583410953015,
+   "worst_probe": "line",
+   "worst_ratio": 6608.269456095215,
+   "verdict_full_density": "EXCLUDED (beyond band)",
+   "worst_ratio_thermal": 3186.8583410953015,
+   "verdict_thermal_fraction": "excluded (f=0.69)",
+   "f_max_evade_anchor": 0.012301444975610953,
+   "f_max_evade_band_high": 0.017396870321295377,
+   "delta_N1_at_f_max_keV": 363.4734500794739
+  },
+  {
+   "multiplet": "(4,3/2)",
+   "mass_TeV": 2.4,
+   "delta_N1_keV": 392.0,
+   "f_thermal": 1.0,
+   "delta_N1_subcomponent_keV": 392.0,
+   "sigv_tree_tot": 7.036461380049577e-26,
+   "S_MW": 569.4795234207235,
+   "S_dwarf": 575.1704852275445,
+   "S_CMB": 575.1756508323901,
+   "sigv_MW": 4.007120673278959e-23,
+   "sigv_line_MW": 4.073360857982885e-23,
+   "ratio_Fermi_dSph": 168.63187109366638,
+   "ratio_Fermi_dSph_range": "84-3.4e+02",
+   "ratio_Fermi_dSph_thermal": 168.63187109366638,
+   "ratio_HESS_GC": 1293.292636154405,
+   "ratio_HESS_GC_range": "6.5e+02-5.2e+03",
+   "ratio_HESS_GC_thermal": 1293.292636154405,
+   "ratio_AMS_pbar": 556.544537955411,
+   "ratio_AMS_pbar_range": "1.7e+02-1.7e+03",
+   "ratio_AMS_pbar_thermal": 556.544537955411,
+   "ratio_Planck_CMB": 16.863338557612476,
+   "ratio_Planck_CMB_range": "11-17",
+   "ratio_Planck_CMB_thermal": 16.863338557612476,
+   "ratio_line": 84861.68454131011,
+   "ratio_line_range": "4.2e+04-1.7e+05",
+   "ratio_line_thermal": 84861.68454131011,
+   "worst_probe": "line",
+   "worst_ratio": 84861.68454131011,
+   "verdict_full_density": "EXCLUDED (beyond band)",
+   "worst_ratio_thermal": 84861.68454131011,
+   "verdict_thermal_fraction": "excluded (f=1.00)",
+   "f_max_evade_anchor": 0.0034327658080852796,
+   "f_max_evade_band_high": 0.004854663962244839,
+   "delta_N1_at_f_max_keV": 356.7430389152942
+  },
+  {
+   "multiplet": "(5,2)",
+   "mass_TeV": 1.0,
+   "delta_N1_keV": 382.7,
+   "f_thermal": 0.04938271604938271,
+   "delta_N1_subcomponent_keV": 364.00928338202846,
+   "sigv_tree_tot": 1.2117509332334972e-24,
+   "S_MW": 136.86180543604982,
+   "S_dwarf": 136.8875209518047,
+   "S_CMB": 136.8875440990598,
+   "sigv_MW": 1.6584242046115469e-22,
+   "sigv_line_MW": 6.266885812509739e-24,
+   "ratio_Fermi_dSph": 1658.7358126136924,
+   "ratio_Fermi_dSph_range": "8.3e+02-3.3e+03",
+   "ratio_Fermi_dSph_thermal": 4.045080475814522,
+   "ratio_HESS_GC": 8292.121023057734,
+   "ratio_HESS_GC_range": "4.1e+03-3.3e+04",
+   "ratio_HESS_GC_thermal": 20.221602860680342,
+   "ratio_AMS_pbar": 5528.08068203849,
+   "ratio_AMS_pbar_range": "1.7e+03-1.7e+04",
+   "ratio_AMS_pbar_thermal": 13.481068573786896,
+   "ratio_Planck_CMB": 165.87360931007723,
+   "ratio_Planck_CMB_range": "1e+02-1.7e+02",
+   "ratio_Planck_CMB_thermal": 0.404508115982508,
+   "ratio_line": 31334.429062548694,
+   "ratio_line_range": "1.6e+04-6.3e+04",
+   "ratio_line_thermal": 76.41378829458604,
+   "worst_probe": "line",
+   "worst_ratio": 31334.429062548694,
+   "verdict_full_density": "EXCLUDED (beyond band)",
+   "worst_ratio_thermal": 76.41378829458604,
+   "verdict_thermal_fraction": "excluded (f=0.05)",
+   "f_max_evade_anchor": 0.005649228052541608,
+   "f_max_evade_band_high": 0.007989214928842891,
+   "delta_N1_at_f_max_keV": 350.53823513142873
+  },
+  {
+   "multiplet": "(5,2)",
+   "mass_TeV": 2.0,
+   "delta_N1_keV": 393.0,
+   "f_thermal": 0.19753086419753085,
+   "delta_N1_subcomponent_keV": 382.9228145434963,
+   "sigv_tree_tot": 3.0387409468380124e-25,
+   "S_MW": 204.66176146261668,
+   "S_dwarf": 205.47779851734643,
+   "S_CMB": 205.4785359417973,
+   "sigv_MW": 6.219140748084473e-23,
+   "sigv_line_MW": 1.380614907223722e-22,
+   "ratio_Fermi_dSph": 312.1969000103958,
+   "ratio_Fermi_dSph_range": "1.6e+02-6.2e+02",
+   "ratio_Fermi_dSph_thermal": 12.181436732611083,
+   "ratio_HESS_GC": 2198.798298062054,
+   "ratio_HESS_GC_range": "1.1e+03-8.8e+03",
+   "ratio_HESS_GC_thermal": 85.79368454563112,
+   "ratio_AMS_pbar": 1036.5234580140789,
+   "ratio_AMS_pbar_range": "3.1e+02-3.1e+03",
+   "ratio_AMS_pbar_thermal": 40.443530750130186,
+   "ratio_Planck_CMB": 31.219802043133285,
+   "ratio_Planck_CMB_range": "20-31",
+   "ratio_Planck_CMB_thermal": 1.2181480449690778,
+   "ratio_line": 345153.72680593055,
+   "ratio_line_range": "1.7e+05-6.9e+05",
+   "ratio_line_thermal": 13467.360777673863,
+   "worst_probe": "line",
+   "worst_ratio": 345153.72680593055,
+   "verdict_full_density": "EXCLUDED (beyond band)",
+   "worst_ratio_thermal": 13467.360777673863,
+   "verdict_thermal_fraction": "excluded (f=0.20)",
+   "f_max_evade_anchor": 0.0017021338811363887,
+   "f_max_evade_band_high": 0.002407180819677835,
+   "delta_N1_at_f_max_keV": 353.38447620999216
+  },
+  {
+   "multiplet": "(5,2)",
+   "mass_TeV": 4.5,
+   "delta_N1_keV": 398.0,
+   "f_thermal": 1.0,
+   "delta_N1_subcomponent_keV": 398.0,
+   "sigv_tree_tot": 6.007389064446259e-26,
+   "S_MW": 530.6297283551753,
+   "S_dwarf": 532.3565504287042,
+   "S_CMB": 532.3581120633818,
+   "sigv_MW": 3.187699227390969e-23,
+   "sigv_line_MW": 2.5719748944425745e-24,
+   "ratio_Fermi_dSph": 71.06828709848291,
+   "ratio_Fermi_dSph_range": "36-1.4e+02",
+   "ratio_Fermi_dSph_thermal": 71.06828709848291,
+   "ratio_HESS_GC": 751.3479133570909,
+   "ratio_HESS_GC_range": "3.8e+02-3e+03",
+   "ratio_HESS_GC_thermal": 751.3479133570909,
+   "ratio_AMS_pbar": 236.12586869562733,
+   "ratio_AMS_pbar_range": "71-7.1e+02",
+   "ratio_AMS_pbar_thermal": 236.12586869562733,
+   "ratio_Planck_CMB": 7.106849557286258,
+   "ratio_Planck_CMB_range": "4.4-7.1",
+   "ratio_Planck_CMB_thermal": 7.106849557286258,
+   "ratio_line": 2857.749882713972,
+   "ratio_line_range": "1.4e+03-5.7e+03",
+   "ratio_line_thermal": 2857.749882713972,
+   "worst_probe": "line",
+   "worst_ratio": 2857.749882713972,
+   "verdict_full_density": "EXCLUDED (beyond band)",
+   "worst_ratio_thermal": 2857.749882713972,
+   "verdict_thermal_fraction": "excluded (f=1.00)",
+   "f_max_evade_anchor": 0.018706299878991688,
+   "f_max_evade_band_high": 0.02645470299068823,
+   "delta_N1_at_f_max_keV": 373.2777358530432
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+,explanation,dossier_P,L_event_central,posterior_central,posterior_q16,posterior_q84,posterior_optimistic,posterior_pessimistic
+A,A fluctuation of modelled background,0.1,0.00057,0.01442,0.002385,0.02105,0.01145,0.002295
+B,B wall/RFR MSSI mismodelled,0.19,2e-06,9.617e-05,1.59e-05,0.0001403,7.63e-05,2.525e-05
+C,C ER leakage / EC tail,0.13,0.0028,0.09212,0.01523,0.1344,0.07309,0.05235
+D,D neutron,0.08,6.6e-06,0.0001336,2.21e-05,0.000195,0.000106,0.001611
+E,E accidental coincidence,0.05,0.00015,0.001898,0.0003139,0.00277,0.001506,0.05436
+F,F detector artefact + unknown unknowns,0.18,0.016,0.7288,0.5675,0.952,0.253,0.8698
+G,G calibration-related,0.05,0.00015,0.001898,0.0003139,0.00277,0.001506,0.01611
+H,H non-DM new physics,0.02,0.00057,0.002885,0.0004771,0.00421,0.002289,0.000459
+I,I inelastic DM,0.1,0.003116,0.1104,0.0164,0.2054,0.4599,0.002121
+J,"J heavy WIMP, q-suppressed EFT",0.06,0.003116,0.03943,0.005859,0.07337,0.1642,0.0007574
+K,K other DM,0.04,0.003116,0.007886,0.001172,0.01467,0.03285,0.0001515
+DM total (I+J+K),DM total,0.2,0.003116,0.1577,0.02343,0.2935,0.657,0.00303

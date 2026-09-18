@@ -1,0 +1,13 @@
+experiment,window,L10 3σ,L10 5σ,L10 5σ(×0.30),δ=300 3σ,δ=300 5σ,δ=300 5σ(×0.30),δ=350 3σ,δ=350 5σ,δ=350 5σ(×0.30),δ=366 3σ,δ=366 5σ,δ=366 5σ(×0.30),δ=380 3σ,δ=380 5σ,δ=380 5σ(×0.30)
+LZ,600phd,on disk,Oct 2031,>2035,Sep 2031,>2035,>2035,on disk,Mar 2029,>2035,on disk,Apr 2027,>2035,on disk,Mar 2027,>2035
+LZ,1000phd,on disk,Apr 2027,>2035,Nov 2027,>2035,>2035,on disk,on disk,Dec 2030,on disk,on disk,on disk,on disk,on disk,on disk
+XENONnT,600phd,on disk,>2035,>2035,>2035,>2035,>2035,on disk,Mar 2030,>2035,on disk,Dec 2027,>2035,on disk,Nov 2027,>2035
+XENONnT,1000phd,Nov 2026,Mar 2029,>2035,Nov 2029,>2035,>2035,on disk,on disk,>2035,on disk,on disk,on disk,on disk,on disk,on disk
+PandaX-4T,600phd,Sep 2027,>2035,>2035,>2035,>2035,>2035,on disk,>2035,>2035,on disk,Oct 2029,>2035,on disk,Sep 2029,>2035
+PandaX-4T,1000phd,May 2028,Aug 2031,>2035,>2035,>2035,>2035,on disk,May 2027,>2035,on disk,on disk,Jun 2027,on disk,on disk,on disk
+present,600phd,on disk,Apr 2027,>2035,Mar 2027,Apr 2030,>2035,on disk,on disk,Jun 2031,on disk,on disk,Oct 2028,on disk,on disk,Sep 2028
+present,1000phd,on disk,on disk,>2035,on disk,May 2028,>2035,on disk,on disk,Dec 2026,on disk,on disk,on disk,on disk,on disk,on disk
+XLZD,600phd,Feb 2032,Jun 2032,Dec 2033,Jun 2032,Nov 2032,Dec 2035,Feb 2032,Apr 2032,Jan 2033,Jan 2032,Mar 2032,Sep 2032,Jan 2032,Mar 2032,Sep 2032
+XLZD,1000phd,Feb 2032,Apr 2032,Feb 2033,Apr 2032,Aug 2032,Sep 2034,Jan 2032,Feb 2032,May 2032,Jan 2032,Jan 2032,Feb 2032,Jan 2032,Jan 2032,Jan 2032
+world,600phd,on disk,Apr 2027,Jun 2032,Mar 2027,Apr 2030,Nov 2033,on disk,on disk,May 2031,on disk,on disk,Oct 2028,on disk,on disk,Oct 2028
+world,1000phd,on disk,on disk,Jan 2032,on disk,Apr 2028,Aug 2033,on disk,on disk,Dec 2026,on disk,on disk,on disk,on disk,on disk,on disk

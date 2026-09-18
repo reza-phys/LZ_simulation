@@ -1,0 +1,46 @@
+[
+ {
+  "dr":"DR-001",
+  "requested_by":"P012 (P045)",
+  "content":"L10 signal normalisation and two-sided interval tables",
+  "provisional":[
+   "P012 d10 = 0.28 (factor 2)",
+   "P045 lower-edge identification (0.31-0.38 vs 0.105)"
+  ],
+  "inherits":[
+   "P025 L10 annihilation estimate",
+   "P044 d10 comparison",
+   "P068 d10 scale",
+   "P046 L10 spin response"
+  ],
+  "status":"pending"
+ },
+ {
+  "dr":"DR-002",
+  "requested_by":"P052",
+  "content":"event list, per-component 2D PDFs, NR-band mu\/sigma, toy q0",
+  "provisional":[
+   "P052 toy Z 3.0-3.2 sigma and isoscalar-inelastic -0.5 sigma offset"
+  ],
+  "inherits":[
+   "P090 (P052 engine, 0.3 sigma deficit)",
+   "P016\/P021\/P027\/P038\/P081 (b_H anchor and 1D proxy would be replaced)"
+  ],
+  "status":"pending"
+ },
+ {
+  "dr":"DR-003",
+  "requested_by":"P093",
+  "content":"waveform-level quantities and calibration templates for the candidate",
+  "provisional":[
+   "P093 NR:ER and NR:ART odds (+0.5\/-0.6 dex)",
+   "P099 artefact kill condition"
+  ],
+  "inherits":[
+   "P061 L_acc (artefact 0.006, ER 2.8e-3 residuals)",
+   "P081 mixture weights via P061",
+   "P077 PSD LR <= 2-5"
+  ],
+  "status":"pending"
+ }
+]

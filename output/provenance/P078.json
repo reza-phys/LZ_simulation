@@ -1,0 +1,54 @@
+{
+ "id": "P078",
+ "title": "Isospin violation and the isovector suppression factor for xenon at 250 keV: per-isotope amplitudes, the f_n/f_p scan and what it does to the high-energy/low-energy ratio",
+ "date": "2026-09-15",
+ "agent_tools": [
+  {"tool": "Read", "count": 14, "detail": "output/provenance/PAPER_GUIDE.md; output/papers/P032.md; output/work/P032/details.md; output/code/P062_mass_splitting_degeneracy.py; output/code/P032_isovector.py; output/code/common/lzcommon.py (l. 1-120, 295-405); output/work/P078/run_log.txt (x3); 4 P078 figures"},
+  {"tool": "Bash", "count": 15, "detail": "ls output/code, output/work/P032; grep lzcommon wd_ functions; python: print ledger rows for P003/P007/P016/P021/P030/P032/P035/P040/P050/P055/P062; head run logs of P062/P032, sed LZ tex l. 486-500, grep isoscalar/isovector in tex, grep N_lo in P016/P030 papers; cat P032_isotope_nodes.csv, head P032_r_scan.csv/P032_summary.json, ls provenance/data_requests; python: WimPyDD Xe attributes, func_w shape, diff_rate/eft_hamiltonian signatures, get_vmin source, per-isotope kernel timing, K/W00 proportionality, O4 spin responses per isotope; python: per-isotope W_pp/W_nn minima diagnostic; .venv/bin/python output/code/P078_isospin_violation.py (6 runs: initial + 5 after fixes, cached kernels after the first); python post-processing of node_vs_r.csv, isotope_nodes.csv, validation csv, r_scan.csv; python rewrite of the paper's Results section; wc -w on paper (x4); json load check of this file"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P078_isospin_violation.py; output/work/P078/details.md; output/provenance/P078.json; output/papers/P078.md"},
+  {"tool": "Edit", "count": 13, "detail": "script fixes: removed stray constant; enriched composition; F_p/F_n zero finding via W_pn sign changes; local sign-consistency check; dyad criterion (spin-based) and pointwise range; inelastic minimisation of N_mid; O4 minimum refinement and r-ranges; rho_248 guard; r_cancel sign; log label"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette and chart rules; JS validator skipped per PAPER_GUIDE)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python, run from simulation root"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "Xe target object (a, z, spin, mass, abundance, func_w), nuclear_current, eft_hamiltonian (via lzcommon.wd_hamiltonian closures), diff_rate with isotopes_list={0:[i]} and stream halo (per-isotope kernels), get_vmin (convention read from source), streamed_halo_function (via lzcommon.wd_halo)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "arrays, trapezoid, interp, searchsorted, cumsum, savez/load cache"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf (efficiency), integrate.cumulative_trapezoid (percentiles), optimize.minimize_scalar (N_lo/N_mid minima)"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; pyplot subplots/plot/savefig (4 PNG figures)"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "wd, wd_halo(day_of_year, vmin), wd_hamiltonian, wd_rate(isotopes_list), helm_F2, LZ dict (exposure_tyr), M_NUCLEON_GEV, VESC_KMS, OSIG/LSIG (for comparison only)"},
+  {"name": "csv/json/math (stdlib)", "version": "3.12.13", "functions": "table output, summary JSON"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P078_isospin_violation.py", "purpose": "per-isotope M and Sigma'/Sigma'' response functions, signed F_p/F_n amplitudes and nodes vs E_R and r; per-isotope O1/O4 kernels K_i^{tt'}(E) (stream halo) with factorised rate = (1000/m) sum_i K_i eta(v_min,i); validation vs direct WimPyDD; r scan (-2..2) for elastic and delta = 250/300/350/380 keV, two halos, three masses; xenophobic-point interference table; enriched/depleted targets and two-target test; O4 spin structure and scan; figures; summary JSON", "command": ".venv/bin/python output/code/P078_isospin_violation.py   (add --recompute to rebuild the kernel cache; ~45 s first run, 15 s cached)"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules, deliverables, template, WimPyDD conventions and pitfalls"},
+  {"file": "output/papers/P032.md", "parts_used": "competing paper: headline, key numbers, tables (nodes, N_lo, rho, percentiles)"},
+  {"file": "output/work/P032/details.md", "parts_used": "method (quadratic form, node definition, efficiency model, likelihood), per-isotope node table, r-scan table, inelastic table, caveats"},
+  {"file": "output/work/P032/P032_isotope_nodes.csv, P032_r_scan.csv, P032_summary.json", "parts_used": "column layout and reference values for comparison"},
+  {"file": "output/code/P032_isovector.py", "parts_used": "method reference (basis spectra, efficiency parameters, node finder criterion)"},
+  {"file": "output/code/P062_mass_splitting_degeneracy.py", "parts_used": "per-isotope kernel factorisation and stream-halo trick, Halo class, v_min convention, n_separate formula"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "WimPyDD wrapper (wd_halo, wd_hamiltonian, wd_rate), helm_F2, constants, LZ exposure"},
+  {"file": "output/results_ledger.csv", "parts_used": "rows P003, P007, P016, P021, P030, P032, P035, P040, P050, P055, P062 (headline and key numbers)"},
+  {"file": "output/papers/P016.md, output/papers/P030.md", "parts_used": "N_lo values and Z thresholds (P016: Z<3 sigma at N_lo>10.9; P030: SHM N_lo 2569, stream 1182)"},
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "l. 486-500 (model space, L1/L5 degeneracy, O4 isoscalar/isovector indistinguishable), isoscalar/isovector basis statements (l. 54, 801); Tables S6/S7 values via lzcommon LSIG/OSIG"},
+  {"file": "output/work/P062/run_log.txt, output/work/P032/run_log.txt", "parts_used": "timing/validation format reference"}
+ ],
+ "recalled_knowledge": [
+  {"item": "(hbar c)^2 = 0.3894e-27 GeV^2 cm^2 (cross-section conversion)", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "Xenophobic isospin ratio f_n/f_p ~ -0.7 (= -Z/N for xenon) and its origin", "presumed_source": "Feng, Kumar, Marfatia, Sanford, PLB 703 (2011) 124", "reliability": "certain"},
+  {"item": "Multipole selection rule: M_J with even J <= 2 J_nuc, so J <= 1/2 nuclei have a single M_0 multipole (dyad response); 131Xe (J=3/2) also has M_2", "presumed_source": "Fitzpatrick et al. 2013 / Anand et al. 2014", "reliability": "certain"},
+  {"item": "0-nu-beta-beta-grade enriched xenon is ~90% 136Xe with mostly 134Xe remainder", "presumed_source": "KamLAND-Zen / nEXO descriptions", "reliability": "likely"},
+  {"item": "Two-body (meson-exchange) currents contribute few-30% of the one-body isoscalar M response and are absent from WimPyDD", "presumed_source": "Hoferichter, Klos, Menendez, Schwenk PRD 94 (2016) 063505", "reliability": "likely (discussion only)"},
+  {"item": "Sigma''/Sigma' longitudinal/transverse split 1/3 : 2/3 at q -> 0", "presumed_source": "NREFT spin response structure (Fitzpatrick et al.)", "reliability": "certain (confirmed numerically: 0.335/0.339)"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Locating F_p/F_n zeros as deep local minima of W_pp/W_nn with a neighbour-depth criterion missed second zeros (responses ~1e-6 of W(0), slightly negative from tabulation noise); replaced by sign changes of W_pn = F_p F_n",
+  "Dyad test normalised to the q->0 maximum was insensitive (131Xe passed); pointwise ratio over 5-350 keV was noise-dominated near zeros (136Xe failed with deviation 20); final criterion spin-based (J<=1/2) with pointwise check restricted to 5-200 keV, >8 keV from zeros",
+  "Minimising N_lo for inelastic delta >= 250 keV is meaningless (5.4-55 keV window kinematically empty); replaced by N_mid = R(55-200)/R(200-270)",
+  "rho(248) undefined where the isoscalar reference vanishes at 248 keV (delta = 380 keV Sun-frame, onset 228 keV, node 250 keV); flagged nan"
+ ],
+ "wimpydd_generated_files": ["none beyond our own cache output/work/P078/kernels_O1_O4_1000gev.npz (WimPyDD diff_rate writes no response-function files)"]
+}

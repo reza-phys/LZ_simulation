@@ -1,0 +1,52 @@
+{
+ "id": "P091",
+ "title": "The corpus posterior after two weeks: updating the explanation probabilities for the LZ 248 keV event with P001-P099",
+ "date": "2026-09-16",
+ "agent_tools": [
+  {"tool": "Read", "count": 18, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (95 rows via three pandas dumps, read as four pages); P061.md, P093.md, P094.md, P083.md, P041.md, P090.md, P099.md; provenance/P093.json (format reference); own figures fig1, fig2, fig3 (fig3 twice)"},
+  {"tool": "Bash", "count": 17, "detail": "ls output/papers + wc ledger/dossier + ENVIRONMENT_versions; three .venv/bin/python pandas dumps of ledger rows 1-32, 33-64, 65-95; grep P061 details section 1.3/4.4 + P027.md B_DM + ls work dirs; grep dataviz palette.md; run script (failed: missing output dir); mkdir + run script; probe of variance NaN; run script after fixes; ls for P090/P099; run script + factor-table dump; word counts of P091.md x5"},
+  {"tool": "Write", "count": 6, "detail": "output/code/P091_corpus_posterior.py; output/work/P091/details.md; output/provenance/P091.json; output/papers/P091.md (three versions while fitting the word budget)"},
+  {"tool": "Edit", "count": 16, "detail": "script x8: variance-share guard (fixed factor std 1e-17), leave-one-out reference b_H, column renames x3, fig3 legend position x2, P090 confirming citation; paper x8: word trimming; details/JSON tool tallies x2"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette reference used; JavaScript validator skipped per PAPER_GUIDE)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter .venv/bin/python, run from simulation root"},
+  {"name": "numpy", "version": "2.5.3", "functions": "random.default_rng(91).uniform/gamma, exp, log, quantile, median, mean, corrcoef, interp, logspace, cumsum, diff, vstack, clip, argmax"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, pivot, merge, rank, sort_values, to_csv, read_csv (ledger compaction), to_dict"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; bar, barh, errorbar, imshow, colorbar, LinearSegmentedColormap, rcParams"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ dict (import cross-check only; b_H = 5.7e-4 taken from P016)"},
+  {"name": "none: derived by hand", "version": "-", "functions": "Eqs. 1-3 (class posterior), Gamma(2,1/3.23) sideband posterior for k_B, UDT-weighted log-uniform marginal for k_E, sequential and leave-one-out KL"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P091_corpus_posterior.py", "purpose": "factor table (30 factors, 20 primary papers) -> class likelihoods -> Monte Carlo posterior (200000 log-uniform draws) for A-K; sensitivity over 5 priors x 3 artefact likelihoods; variance shares of logit P(DM); sequential and leave-one-out KL per paper; predictive check; three figures; CSV/JSON tables", "command": ".venv/bin/python output/code/P091_corpus_posterior.py > output/work/P091/run_log.txt 2>&1"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules, deliverables, template, word budgets"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "Section 5 prior probabilities A-K and reasoning; Section 2 handle table; Section 4 points against"},
+  {"file": "output/results_ledger.csv", "parts_used": "all 95 rows (P001-P089, P092-P098): id, category, title, headline_result, key_numbers, stance, confidence"},
+  {"file": "output/papers/P061.md; output/work/P061/details.md", "parts_used": "P(DM) formula, L_acc 9.3e-3, f_FP range, community prior, dossier Section-5 update table (sections 1.3, 4.4)"},
+  {"file": "output/papers/P093.md", "parts_used": "topology odds NR:H per class with 68% ranges, neighbourhood background 3.5e-4 and shares, W ranges, ART = 0.006 x pi_U convention"},
+  {"file": "output/papers/P083.md", "parts_used": "base rate r = 0.062, implied pi_DM 0.009, P(DM|LZ) 0.012"},
+  {"file": "output/papers/P041.md", "parts_used": "artefact residual 0.006 and its channel decomposition"},
+  {"file": "output/papers/P090.md, P094.md, P099.md", "parts_used": "late papers checked before finalising: P090 k-hat 0.62 / k<1.64 confirmation and MSSI significance robustness; P094 neutral multi-component signals; P099 predictive P(>=1)=0.25 and decision rule"},
+  {"file": "output/papers/P027.md", "parts_used": "B_DM definitions 16.4/28.7 and class masses (via grep)"},
+  {"file": "output/provenance/P093.json", "parts_used": "JSON structure reference"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "import and LZ dict length as environment check"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Colouring/marking theorem for superposed independent Poisson processes: P(component H | observed point) = mu_H p_H(D) / sum_H' mu_H' p_H'(D)", "presumed_source": "Kingman, Poisson Processes (1993)", "reliability": "certain"},
+  {"item": "A Poisson count n with expectation a*k and a log-uniform (1/k) prior yields a Gamma(n, scale 1/a) posterior on k; for n = 2, a = 3.23 the mean is 0.62 and the 95% point 1.47", "presumed_source": "standard conjugate Bayesian result", "reliability": "certain"},
+  {"item": "Kullback-Leibler divergence KL(p||q) = sum p ln(p/q) as the information gained when the posterior moves from q to p", "presumed_source": "Kullback & Leibler 1951; Lindley 1956", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Mapping the P001/P061 single 'unmodelled' hypothesis U with free rate onto the dossier classes B-G one-to-one: not possible; kept the dossier's eleven classes and put unknown unknowns into F as the dossier does",
+  "Leave-one-out KL with rate factors reset to the 10% viability yardstick (first run): rewards whichever paper defined a class's rate irrespective of the class's weight (P016/P013/P019 inflated to 1-2 nats); replaced by the as-modelled b_H reference",
+  "First variance decomposition returned NaN: a fixed factor (T_J = 0.98) passed the std == 0 guard by 1e-17; fixed with a tolerance on std(log)",
+  "First script run failed because output/work/P091/ did not exist for the log redirect; created the directory",
+  "Attributing the position handle to P070 in the sequential ranking: P070's LR 15.1 is computed from P033's transport maps, so P033 keeps primary credit"
+ ],
+ "wimpydd_generated_files": "none"
+}

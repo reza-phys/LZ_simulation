@@ -1,0 +1,98 @@
+[
+ {
+  "item": "fine-structure constant 1/137.036",
+  "value": 0.0072973525205055605,
+  "presumed_source": "PDG",
+  "reliability": "certain"
+ },
+ {
+  "item": "nucleon g-factors g_p = 5.5857, g_n = -3.8261",
+  "value": "(5.5857, -3.8261)",
+  "presumed_source": "PDG",
+  "reliability": "certain"
+ },
+ {
+  "item": "hbar = 6.5821e-25 GeV s",
+  "value": 6.5821e-25,
+  "presumed_source": "PDG",
+  "reliability": "certain"
+ },
+ {
+  "item": "Omega_DM h^2 = 0.120",
+  "value": 0.12,
+  "presumed_source": "Planck 2018",
+  "reliability": "certain"
+ },
+ {
+  "item": "thermal relic <sigma v> = 2.2e-26 cm^3/s for a self-conjugate WIMP, m >> 10 GeV",
+  "value": 2.2e-26,
+  "presumed_source": "Steigman, Dasgupta, Beacom 2012",
+  "reliability": "certain"
+ },
+ {
+  "item": "Dirac-like (two-species, chi1 chi2 only) thermal target 2 x 2.2e-26 = 4.4e-26 cm^3/s",
+  "value": 4.4e-26,
+  "presumed_source": "standard Boltzmann bookkeeping (dn/dt = -<sv> n1 n2 x 2 with n1 = n2 = n/2)",
+  "reliability": "likely"
+ },
+ {
+  "item": "NREFT photon-dipole coefficients c1 = e mu Q/(2 m_chi), c5 = 2 e mu Q m_N/q^2, c4 = e mu g_N/m_N, c6 = -e mu g_N m_N/q^2 (Anand normalisation)",
+  "value": "formula",
+  "presumed_source": "Fitzpatrick et al. 2012 / Anand et al. 2014, as implemented in P012 and P023",
+  "reliability": "likely"
+ },
+ {
+  "item": "MiDM de-excitation width Gamma(chi2 -> chi1 gamma) = mu_tr^2 delta^3/pi",
+  "value": "formula",
+  "presumed_source": "Chang, Weiner, Yavin 2010",
+  "reliability": "likely"
+ },
+ {
+  "item": "millicharge annihilation sigma v_rel(chi chibar -> f fbar) = pi alpha^2 eps^2 N_c Q_f^2 / m_chi^2 (s-wave, massless f)",
+  "value": "formula",
+  "presumed_source": "standard QED (e+e- -> mu+mu- at threshold); used to normalise the dipole derivation",
+  "reliability": "likely"
+ },
+ {
+  "item": "sum over SM fermions N_c Q_f^2 = 8 (3 leptons + 3 up-type x 3 x 4/9 + 3 down-type x 3 x 1/9) at sqrt(s) = 2 TeV; W+W- neglected",
+  "value": 8.0,
+  "presumed_source": "SM charges",
+  "reliability": "certain (W+W- channel omitted, +O(10%))"
+ },
+ {
+  "item": "MiDM literature moment for DAMA-scale fits ~ 1e-3 mu_N at m ~ 100 GeV",
+  "value": 0.001,
+  "presumed_source": "Chang, Weiner, Yavin 2010 (order of magnitude)",
+  "reliability": "uncertain"
+ },
+ {
+  "item": "LZ 2024 low-energy search exposure 4.2 t yr, 5.4-55 keV window, tolerance <= 3-5 events",
+  "value": "(4.2, 3, 5)",
+  "presumed_source": "LZ PRL 135, 011802 (2025) via P003/P012",
+  "reliability": "certain (exposure) / uncertain (tolerance)"
+ },
+ {
+  "item": "XENONnT 3.1 t yr and PandaX-4T 1.54 t yr exposures, ROIs ending at <= 60-70 keV",
+  "value": "(3.1, 1.54)",
+  "presumed_source": "XENONnT/PandaX-4T 2025 results via P005",
+  "reliability": "certain (exposures) / uncertain (ROI edges)"
+ },
+ {
+  "item": "local DM density 0.3 GeV/cm^3 (WimPyDD default rho_loc)",
+  "value": 0.3,
+  "presumed_source": "standard / Baxter 2021",
+  "reliability": "certain"
+ },
+ {
+  "item": "P042 P(clean | tau) tables (Woodcock photon MC in an LZ model) and P(not clean) = 1.68 us/tau asymptote",
+  "value": "tables",
+  "presumed_source": "corpus P042 (work/P042/*.csv)",
+  "reliability": "corpus"
+ },
+ {
+  "item": "P046/P015 O1 target ratios W/Xe = 15.9/81.7/221/693, I/Xe = 0.591/0.295/0.142/0.0227 at 300/350/366/380 keV (annual halo, full windows)",
+  "value": "table",
+  "presumed_source": "corpus P046",
+  "reliability": "corpus"
+ }
+]

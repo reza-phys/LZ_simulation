@@ -1,0 +1,44 @@
+{
+ "id": "P004",
+ "title": "Wall MSSI as the origin of the LZ event: the mismodelling factor required and what the sidebands allow",
+ "date": "2026-09-03",
+ "agent_tools": [
+  {"tool": "Read", "count": 11, "detail": "output/provenance/PAPER_GUIDE.md; output/00_evidence_dossier.md; inputs/LZ_arXiv_2609.02823_fulltext.tex lines 130-209, 210-254, 255-324, 440-489, 520-584, 685-789; inputs/figures_png/Fig5_NR_distance_3panels_no_sig.png; inputs/figures_png/FigS1a_science_sample_marked.png; output/work/P004/figures/P004_k_likelihood_and_Pge1.png"},
+  {"tool": "Bash", "count": 7, "detail": "grep -n -i MSSI/charge-dead/stand-off/prompt-veto/0.0106 in fulltext.tex + ls inputs/figures_png output/papers output/work + head results_ledger.csv; grep def/class in output/code/common/lzcommon.py + head environment/ENVIRONMENT_versions.txt + ls output tree; .venv/bin/python inline PIL probe of Fig5 PNG colours and frame rows/cols; .venv/bin/python output/code/P004_wall_mssi.py (run 1, first-pass axis calibration); .venv/bin/python inline probe of Fig5 tick-mark pixel rows/cols + head P004_results.json; .venv/bin/python output/code/P004_wall_mssi.py (run 2, final) + python print of key results; wc -w on the body of output/papers/P004.md"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P004_wall_mssi.py; output/work/P004/details.md; output/provenance/P004.json; output/papers/P004.md"},
+  {"tool": "Edit", "count": 3, "detail": "output/code/P004_wall_mssi.py: removed a walrus expression in a dict literal; removed duplicate xa lines in the digitiser; replaced frame-edge y calibration by tick-mark calibration (10^2 at row 2131, 96.75 px/decade)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python"},
+  {"name": "numpy", "version": "2.5.3", "functions": "array ops, trapezoid, interp, logspace"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats.poisson, stats.chi2, stats.truncnorm, optimize.minimize_scalar, integrate.quad"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg backend) for the figure"},
+  {"name": "Pillow (PIL)", "version": "12.3.0", "functions": "Image.open/convert for pixel-colour digitisation of Fig. 5"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "imported (lz.LZ constants available); no numerical dependence"},
+  {"name": "none: derived by hand", "version": "-", "functions": "Compton kinematics, minimal path-length geometry, Poisson/likelihood-ratio formulae"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P004_wall_mssi.py", "purpose": "Digitise Fig. 5 bottom panel (MSSI, total) by pixel colour; Poisson likelihood scan of the wall-MSSI scale factor k over the sideband bins with variants; P(>=1|k), k_required, Bayes factors; Compton/attenuation topology estimate; veto propagation; figure and CSV/JSON tables", "command": "cd /Users/reza/LZ_simulation && .venv/bin/python output/code/P004_wall_mssi.py"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "main text MSSI paragraphs (lines 184-196: charge-dead regions, 0.3% volume, 100% uncertainty, 94+-2% veto efficiency), FV paragraph (lines 132-139: stand-off 8.0/6.0 cm, event 26.9 cm from wall), Table I (MSSI 4.9e-3), Fig. 5 caption (0.0106), Discussion MSSI validation (lines 316-318: 12 bins, p=0.7), supplement MSSI section (lines 710-735, event decomposition 12+-2 keV / 471 phd / 77+-7 keV) and Table 'Comparison of simulated and observed MSSI counts' (lines 765-783), waveform analysis (lines 687-695), prompt-sample table (lambda_MSSI)"},
+  {"file": "inputs/figures_png/Fig5_NR_distance_3panels_no_sig.png", "parts_used": "bottom panel (S1c>500 phd): MSSI and total-model histograms digitised by colour; axis tick marks for calibration"},
+  {"file": "inputs/figures_png/FigS1a_science_sample_marked.png", "parts_used": "visual read of the MSSI 68%/95% contours near S1c=540 phd as an independent check of f_nb"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "Sections 2, 4 (point 3), 5 (explanation B), 6 (question 2)"},
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules, deliverables and template"},
+  {"file": "output/results_ledger.csv", "parts_used": "checked; header only (no earlier papers at time of writing)"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Total gamma attenuation lengths in LXe (rho=2.9 g/cm3): 122 keV 0.30 cm; 200 keV 1.0; 300 keV 2.0; 500 keV 3.7; 662 keV 4.7; 1000 keV 6.0; 1500 keV 7.6; 1764 keV 8.3; 2615 keV 9.8 cm", "presumed_source": "NIST XCOM mass attenuation coefficients for Xe; the 122 keV value is anchored to the paper's '<4 mm' statement", "reliability": "likely (+-20%)"},
+  {"item": "LZ TPC active radius 72.8 cm (diameter 145.6 cm)", "presumed_source": "LZ detector/TDR papers", "reliability": "likely"},
+  {"item": "Electron rest energy 510.999 keV; Compton kinematics and Klein-Nishina differential cross-section", "presumed_source": "standard physics", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First digitisation pass assumed the bottom-panel frame edges were the 10^2 and 10^-6 ticks; the total integrated to 0.0083 (78% of the caption 0.0106). Replaced by tick-mark calibration (ratio 0.993).",
+  "A full 2D reconstruction of the MSSI PDF from the Fig. S1a/S6 contours was not attempted; the 1D Fig. 5 projection was used and validated instead."
+ ],
+ "wimpydd_generated_files": []
+}

@@ -1,0 +1,67 @@
+{
+ "id": "P060",
+ "title": "Diffuse supernova, Galactic supernova, solar-flare and other astrophysical neutrinos at 248 keV: could a neutrino burst on 16 June 2023 explain the event?",
+ "date": "2026-09-11",
+ "agent_tools": [
+  {"tool": "Read", "count": 12, "detail": "provenance/PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (rows 1-14 via Read, 15-47 via Bash print); papers/P019.md; code/P019_atm_nu.py; papers/P013.md; papers/P049.md; papers/P040.md; fulltext.tex l.172-246 (neutrino/neutron backgrounds, Table I) and l.305-316 (Discussion, coherence statement); code/common/lzcommon.py l.1-62, 108-131, 218-235; work/P060/figures/*.png (two rounds, 3 figures each)"},
+  {"tool": "Bash", "count": 9, "detail": "1) python print of ledger rows P014-P050 + grep atmospheric/CEvNS/Table I in fulltext.tex + ls work/data_requests + head ENVIRONMENT_versions.txt; 2) grep lzcommon API + python print of P019_results.json (constants, headline, knockout, central summary, incoherent table, solar) + head provenance/P019.json + ls work/P019 work/P040 + cat data_requests/index.csv; 3) grep headings of work/P019/details.md + Tools section + head ledger_row.json; 4) grep palette hex values in the dataviz skill reference; 5) .venv/bin/python output/code/P060_astro_nu.py (run 1, ~2 min); 6) .venv/bin/python output/code/P060_astro_nu.py (run 2 after figure fixes); 7) run 3 (final) + python print of P060_results.json; 8-9) wc -w budget checks on the paper (three rounds)"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (chart conventions: fixed categorical order, single axis, direct labels; JS validator not run per PAPER_GUIDE)"},
+  {"tool": "Write", "count": 5, "detail": "output/code/P060_astro_nu.py; output/work/P060/details.md; output/provenance/P060.json; output/papers/P060.md; output/work/P060/ledger_row.json"},
+  {"tool": "Edit", "count": 12, "detail": "P060_astro_nu.py figure section: extend Fig.1 axes to 1e10 MeV and reposition labels (2 edits); Fig.2 legend Patch handles and shorter title; Fig.3 label offsets; papers/P060.md word-budget trims (4 edits: headline, Results transient paragraph, table rows, kinematics sentence); provenance/P060.json tool counts (3 edits); details.md tools line (1 edit)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python"},
+  {"name": "numpy", "version": "2.5.3", "functions": "geomspace, trapezoid, interp, arrays"},
+  {"name": "scipy", "version": "1.18.1", "functions": "integrate.quad (spectrum normalisations, flux-weighted cross-section integrals, DIS rate), optimize.brentq (lone-NR threshold), stats.norm (efficiency roll-off)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame.to_csv for result tables"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; pyplot; patches.Patch"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ dict (fiducial mass, live days, exposure, Table I backgrounds), XE_ISOTOPES, A_XE_MEAN, m_nucleus_gev, helm_F2, GEV_TO_CM2"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P060_astro_nu.py", "purpose": "kinematics E_R,max(E_nu) and E_nu,min; Keil-Raffelt source spectra (DSNB variants, Galactic SN at 10/1/0.2 kpc, SN 2023ixf); coherent CEvNS counts in the FV per source (all E_R, ROI, >50, >100, 200-270, 225-271 keV); Llewellyn-Smith NC quasi-elastic knock-out with Pauli factor (P019) plus new impulse-approximation threshold for the Fermi-recoil lone-NR channel, counts per source and validation against P019's atmospheric numbers; IceCube diffuse DIS interaction count; required fluence for one window event vs E_nu, energy budgets, Super-K IBD response, LZ low-energy companions; summary table; three figures", "command": ".venv/bin/python output/code/P060_astro_nu.py"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "l.174-178 (neutrino/neutron NR backgrounds, Billard formalism, Baxter normalisation); Table I l.210-246 (atmospheric nu 0.11+-0.02, 8B+hep 0.057+-0.006, 4.71 t x 220 d); l.302 (no anomalous populations around the event); l.307-314 (dominant backgrounds near the event; 'not consistent with scattering coherence')"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "sections 1-2 (event, exposure), 5 (hypotheses A, H), 6"},
+  {"file": "output/results_ledger.csv", "parts_used": "all rows P001-P050 (context; P019, P040, P013, P049 used)"},
+  {"file": "output/papers/P019.md", "parts_used": "E_nu,min = 123 MeV; coherent 1-3e-5 and 6.5e-5 above 200 keV; lone-NR channel 1.7e-4 (8e-6-5e-4) with E_max = 279 keV; N_lo >= 790; conventions"},
+  {"file": "output/code/P019_atm_nu.py", "parts_used": "CEvNS cross-section convention, efficiency function (P009), Llewellyn-Smith NC elastic + Pauli factor code (copied), knock-out factors P_esc/P_untagged/P_gs and Fermi-sphere window fraction, atmospheric flux shape"},
+  {"file": "output/work/P019/P019_results.json", "parts_used": "C_norm of the central flux shape (0.05339), knock-out count 0.0412, lone-NR 1.73e-4, coherent 225-271 1.66e-5, N_above_200 6.5e-5, N_lo 1631 (validation and figure)"},
+  {"file": "output/papers/P013.md", "parts_used": "neutron context (E_n,min 8.2 MeV; neutrons excluded) for the discussion"},
+  {"file": "output/papers/P049.md", "parts_used": "muon-induced neutron context"},
+  {"file": "output/papers/P040.md", "parts_used": "N_lo floor 350 (Helm) / 1184 (shell) for relativistic contact-interaction beams; T_min(1 MeV) = 122 MeV cross-check"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "LZ constants, isotopes, nuclear masses, Helm form factor, unit conversion"},
+  {"file": "output/provenance/P019.json and output/work/P019/details.md", "parts_used": "format of provenance and details files"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "G_F = 1.1664e-5 GeV^-2, m_n = 939.57 MeV, m_p = 938.27 MeV, N_A, erg/MeV, kpc in cm, AU in cm", "presumed_source": "PDG / CODATA", "reliability": "certain"},
+  {"item": "sin^2 theta_W = 0.23867 at low q; Q_W = N - (1 - 4 s2w) Z", "presumed_source": "PDG; Freedman 1974", "reliability": "likely / certain"},
+  {"item": "CEvNS dsigma/dE_R = G_F^2 M/(4 pi) Q_W^2 (1 - M E_R/2E^2) F^2", "presumed_source": "Freedman 1974; Billard et al. 2014", "reliability": "certain"},
+  {"item": "Keil-Raffelt-Janka pinched spectrum f ~ E^alpha exp(-(alpha+1)E/<E>), alpha = 2-3", "presumed_source": "Keil, Raffelt, Janka ApJ 590, 971 (2003)", "reliability": "likely"},
+  {"item": "DSNB all-flavour number flux ~30 cm^-2 s^-1 (few per species), redshift-softened <E> ~ 9-13 MeV", "presumed_source": "Beacom ARNPS 60, 439 (2010); Horiuchi, Beacom, Dwek 2009", "reliability": "uncertain (x3)"},
+  {"item": "Super-K DSNB nu_e-bar limit ~2.7 cm^-2 s^-1 above 17.3 MeV", "presumed_source": "Bays et al. PRD 85, 052007 (2012)", "reliability": "likely"},
+  {"item": "Core-collapse SN releases ~3e53 erg in neutrinos, ~equipartitioned over 6 species, <E> ~ 12/15/18 MeV (nu_e / nu_e-bar / nu_x)", "presumed_source": "standard SN neutrino literature; SN 1987A", "reliability": "certain (energy to x1.5) / likely (<E>)"},
+  {"item": "Tens of CEvNS events per tonne of xenon for a 10 kpc supernova", "presumed_source": "Horowitz et al. 2003; Lang et al. PRD 94, 103009 (2016)", "reliability": "likely (used only as sanity check; our value 27/t)"},
+  {"item": "SN 2023ixf: Type II supernova in M101 discovered 19 May 2023, distance ~6.4 Mpc", "presumed_source": "ATel/TNS reports 2023; Itagaki discovery", "reliability": "likely"},
+  {"item": "No Galactic supernova neutrino burst has been detected since SN 1987A; SNEWS has never issued an alert (as of Sept 2026)", "presumed_source": "SNEWS collaboration; general knowledge", "reliability": "certain (to the best of our knowledge)"},
+  {"item": "Betelgeuse distance ~0.2 kpc", "presumed_source": "Hipparcos/VLA parallax literature", "reliability": "likely"},
+  {"item": "Llewellyn-Smith NC elastic cross-section with dipole form factors M_A = 1.03, M_V = 0.84 GeV, g_A = 1.267, mu_p = 2.793, mu_n = -1.913; Fermi-gas Pauli factor 1.5x - 0.5x^3, k_F = 260 MeV/c", "presumed_source": "Llewellyn Smith 1972; Moniz et al. 1971 (via P019)", "reliability": "likely (form) / uncertain (Xe k_F)"},
+  {"item": "Neutron separation energies of stable Xe isotopes 7.9-9.6 MeV (adopted 8.5 MeV)", "presumed_source": "AME/ENSDF mass tables", "reliability": "likely"},
+  {"item": "IceCube diffuse astrophysical flux per flavour E^2 Phi ~ 1e-8 GeV cm^-2 s^-1 sr^-1 at 100 TeV, spectral index ~2.5", "presumed_source": "IceCube HESE/through-going muon analyses 2015-2020", "reliability": "likely (x2)"},
+  {"item": "Neutrino-nucleon cross-section: sigma_CC ~ 0.68e-38 E[GeV] cm^2 at low E, 5.53e-36 E^0.363 cm^2 above ~10 PeV; NC ~ 0.4 CC; ~4e-34 cm^2 total at 100 TeV", "presumed_source": "Gandhi, Quigg, Reno, Sarcevic PRD 58, 093009 (1998)", "reliability": "likely (x2)"},
+  {"item": "DIS dsigma/dy approximately flat at small y (hadronic energy fraction)", "presumed_source": "standard DIS kinematics", "reliability": "likely"},
+  {"item": "Magnetar giant flare SGR 1806-20 (Dec 2004): ~2e46 erg at ~10-15 kpc", "presumed_source": "Hurley et al. 2005; Palmer et al. 2005", "reliability": "likely"},
+  {"item": "GRB neutrino fluence per bright burst E^2 F <~ 1e-3 GeV cm^-2 at 100 TeV (model predictions and IceCube limits)", "presumed_source": "Waxman-Bahcall 1997; IceCube GRB searches 2012-2017", "reliability": "uncertain"},
+  {"item": "Solar-flare neutrino fluence at Earth: models <~ 1e2-1e4 cm^-2 per large flare (10-300 MeV, pion decay); Super-K per-flare limits ~1e5-1e7 cm^-2; large-flare bolometric energy ~1e32 erg", "presumed_source": "Fargion 2004; Takeishi et al. 2017; Super-K solar-flare search 2022; solar physics", "reliability": "uncertain"},
+  {"item": "Super-Kamiokande fiducial mass 22.5 kt (1.5e33 free protons); IBD sigma ~ 9.52e-44 E_e p_e cm^2 (MeV units)", "presumed_source": "Super-K publications; Vogel & Beacom PRD 60, 053003 (1999)", "reliability": "certain (mass) / certain in form, overestimates <~x2 at 150-300 MeV"},
+  {"item": "Detectors operating in June 2023 with MeV-burst sensitivity: Super-K, IceCube (SN trigger), KamLAND, Borexino, SNO+, LVD; JUNO not yet running", "presumed_source": "SNEWS 2.0 membership; general knowledge", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": "none (checking GCN/SNEWS/GOES logs for 16 June 2023 21:22:39 UTC would be trivial with network access but cannot change the conclusion; deliberately not filed)",
+ "failed_or_abandoned": [
+  "First figure draft: IceCube band fell outside the x-range of Fig. 1, threshold labels overlapped source labels, and Fig. 2 legend handles were drawn from empty barh calls (both blue); fixed with extended axes, repositioned text and Patch handles, then re-run.",
+  "No physics approach was abandoned; the un-gated P019 treatment of the lone-NR channel was evaluated only as a robustness variant (it overestimates soft-source counts by ~x15)."
+ ],
+ "wimpydd_generated_files": "none"
+}

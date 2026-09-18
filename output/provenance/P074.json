@@ -1,0 +1,60 @@
+{
+ "id": "P074",
+ "title": "Long-range operators (q^-2, q^-4) versus the LZ event: a systematic map of which mediator masses and operator structures can leave a lone 248 keV recoil",
+ "date": "2026-09-15",
+ "agent_tools": [
+  {"tool": "Read", "count": 14, "detail": "PAPER_GUIDE.md (full); 00_evidence_dossier.md (full); papers P003, P012, P044, P051, P031, P040; fulltext.tex l.35-46 (Theory paragraph) and l.850-911 (Table S6/S7); lzcommon.py l.300-386; P044_anapole_edm.py (full); P051_light_mediator.py l.1-200; P012_magnetic_dipole.py l.222-281; WimPyDD/package.py l.972-1011 and l.1250-1294; figures P074_heatmap_Nlo.png, P074_Nlo_vs_mmed.png"},
+  {"tool": "Bash", "count": 12, "detail": "wc + pandas print of results_ledger.csv (id/title/headline); grep fulltext.tex for Theory/Table labels; grep lzcommon defs + ls work/P044, P051, P012, papers, data_requests; cat P044_results_table.csv, P012_photon_dipole.csv, head P044.json; grep P012 script for dipole coefficients; python -c print WimPyDD path + grep package.py for q handling; head P044 details.md + grep headings + head ENVIRONMENT_versions.txt; run P074_long_range.py --stage contact (47 s); run --stage validate (18 s) and --stage dipole (32 s); run --stage analysis (120 s); re-run --stage analysis after edits (72 s) + print of results JSON dipole keys + cat wide n=1 CSV; pandas print of survivors/validation/O1 rows; wc -w + per-section word-count checks on the paper x3"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P074_long_range.py; output/work/P074/details.md; output/provenance/P074.json; output/papers/P074.md"},
+  {"tool": "Edit", "count": 11, "detail": "P074_long_range.py x3: corrected operator-collapse power-counting notes; added c_mv2_1hi column; added massive-mediator dipole m_min interpolation. P074.md x6: word-budget trims of Results, Conclusion and Key numbers. P074.json x2: tool counts"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python run from /Users/reza/LZ_simulation"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian with closure-captured coefficient functions (constant; propagator-dressed c0 [m^2/(m^2+q^2)]^n via f(q); q^-2 for c5, c6); diff_rate via lzcommon.wd_rate; streamed_halo_function via lzcommon.wd_halo (Sun-frame, explicit v_min grid)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "arrays, union1d, interp, logspace, gradient, searchsorted, savez/load"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf (efficiency), integrate.trapezoid and cumulative_trapezoid (window rates, percentiles)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame tables, pivot, to_csv, read_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; imshow heat map, log-log line plots, spectra"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "wd(), wd_halo(), wd_rate(), wd_c_from_anand(), m_nucleus_gev(), LZ dict (exposure, efficiency edges, plateau), M_V_GEV, M_NUCLEON_GEV, A_XE_MEAN"},
+  {"name": "none: derived by hand", "version": "-", "functions": "propagator rate factor P_n(E) = [m^2/(m^2 + 2 m_A E_R)]^(2n); power counting of |c(q)|^2 x operator q-power; analytic long-range ratio <E^-2>_lo/<E^-2>_hi and the kinematic integral (1/5.4-1/55)/(1/200-1/270) = 128.8"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P074_long_range.py", "purpose": "WimPyDD contact spectra for O1, O3-O15 (isoscalar) and O1 proton-only at 1 TeV; propagator-dressed spectra for m_med = 0.01-10 GeV and m -> 0, n = 1, 2 (factorised, validated against full WimPyDD q-dependent closures); N_lo table and heat map; m_med,min per operator; survivors' percentile, 100-200/200-270 ratio and couplings; analytic long-range check; operator collapse; photon magnetic dipole decomposition and massive-mediator version; UV summary table; figures and CSV/JSON", "command": ".venv/bin/python output/code/P074_long_range.py --stage contact ; --stage validate ; --stage dipole ; --stage analysis (run twice; total wall time ~290 s)"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules, deliverables, halo labelling note, WimPyDD closure pitfall"},
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Theory paragraph l.35-46 (NREFT basis, contact-interaction statement); Table S6 rows L9-L20 and Table S7 (l.850-909)"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "event numbers; explanation J (momentum-suppressed EFT); open question 10"},
+  {"file": "output/results_ledger.csv", "parts_used": "headlines of P001-P070 for context"},
+  {"file": "output/papers/P003.md", "parts_used": "N_lo per operator at 1 TeV; compatible set; WimPyDD c0 = 2/m_v^2; efficiency model; lone-event criterion N_lo <= 3-5"},
+  {"file": "output/papers/P012.md; output/code/P012_magnetic_dipole.py l.222-281; output/work/P012/P012_photon_dipole.csv", "parts_used": "photon-dipole NR coefficients c1, c4, c5, c6; N_lo = 376; charge/spin decomposition method"},
+  {"file": "output/papers/P044.md; output/code/P044_anapole_edm.py; output/work/P044/P044_results_table.csv", "parts_used": "closure pattern for q-dependent coefficients; efficiency/summarise functions; photon anapole 26.9, photon EDM 18 100, contact O11 118, O11 x q^2 2.19, O9 x q^2 0.024, L10 0.20"},
+  {"file": "output/papers/P051.md; output/code/P051_light_mediator.py l.1-200", "parts_used": "propagator factorisation at the mean xenon mass and its validation; inelastic light-mediator conclusions (percentile 99.6 -> 99.8 %, 100-200 keV band 4.1 -> 6.8)"},
+  {"file": "output/papers/P031.md", "parts_used": "relativistic routes to O6, O10, O9, O14, L10-like; Lambda = 1.5-62 GeV; pion-pole O10 N_lo 25.8; Q15-charge 2.52"},
+  {"file": "output/papers/P040.md", "parts_used": "velocity-independent contact floor N_lo >= 350 (Helm) / 1184 (shell)"},
+  {"file": "output/code/common/lzcommon.py l.300-386", "parts_used": "wd_halo, wd_hamiltonian, wd_rate, wd_c_from_anand; Sun-frame note"},
+  {"file": "WimPyDD/package.py l.972-1011, 1250-1294", "parts_used": "q-dependent coefficient handling: c(q)/c(q_norm) normalisation with q_norm = 1 GeV when no q0 argument; only the isoscalar q-dependence component is used (same factor for both isospin components required) - read only"},
+  {"file": "output/work/P044/details.md (head), output/provenance/P044.json (head)", "parts_used": "format of details.md and provenance JSON"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "t-channel propagator dressing of a contact coefficient: c(q) = c0 m_med^2/(m_med^2 + q^2) per mediator; long-range limit c ~ 1/q^2", "presumed_source": "standard QFT / light-mediator direct-detection literature (Fornengo-Panci-Regis 2011; Kaplinghat-Tulin-Yu 2014)", "reliability": "certain"},
+  {"item": "q^2 = 2 m_A E_R for elastic nuclear recoil", "presumed_source": "kinematics", "reliability": "certain"},
+  {"item": "Intrinsic q-power of each Anand NR operator in the rate: O1, O4, O7 q^0; O8, O12 mixed q^0/q^2; O3, O5, O9, O10, O11, O13, O14 q^2; O6, O15 q^4", "presumed_source": "Fitzpatrick et al. 2013 / Anand et al. 2014 response functions", "reliability": "likely (confirmed numerically by the collapse test: O6/q^2 -> O4 to 1.2 %, O15/q^2 -> O12 to 0.7 %)"},
+  {"item": "Photon magnetic-dipole NR reduction c1 = e mu Q/(2 m_chi), c5 = 2 e mu m_N Q/q^2, c4 = e mu g_N/m_N, c6 = -e mu g_N m_N/q^2", "presumed_source": "P012 (Fitzpatrick 2012, Gresham-Zurek 2014, Banks-Fox-Weiner 2010); directdm-consistent per P031", "reliability": "likely"},
+  {"item": "e = sqrt(4 pi alpha) = 0.30282, g_p = 5.5857, g_n = -3.8261, m_N = 0.938272 GeV", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "A kinetically mixed dark photon couples to the nuclear charge only (proton-only O1); a massive mediator replacing the photon multiplies all dipole coefficients by q^2/(q^2 + m^2)", "presumed_source": "Holdom 1986; standard dark-photon phenomenology", "reliability": "certain"},
+  {"item": "LZ 2024 low-energy search tolerates ~3-5 signal events in 5.4-55 keV (lone-event criterion N_lo <= 3-5)", "presumed_source": "P003/P012/P044 assumption; P016 gives 1.6-2.2 from LZ's own fit", "reliability": "uncertain"},
+  {"item": "Energy resolution sigma(E) = 23 sqrt(E/248) keV for the smeared percentile", "presumed_source": "LZ +-23 keV stat at 248 keV; sqrt(E) scaling of LXe TPC resolution", "reliability": "likely"},
+  {"item": "Existence and content of the light-mediator SI DM literature (Fornengo, Panci, Regis PRD 84, 115002 (2011); Kaplinghat, Tulin, Yu PRD 89, 035009 (2014))", "presumed_source": "memory of the literature", "reliability": "likely (cited, not used numerically)"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Naive power counting 'O_i x q^-2 collapses onto the contact operator one q^2 lower' was wrong at the rate level for q^2 operators (O9, O10, O11 overshoot to q^-2, N_lo 353-4e4); corrected to |c(q)|^2 counting and the note strings in the script were fixed (numbers unchanged)",
+  "A Sigma''-only O4 Hamiltonian (WimPyDD response-keyed syntax) to isolate the longitudinal spin response was not built; the O6/q^2 vs O4 agreement (0.988) made it unnecessary",
+  "EXPOSURE_2024 = 4.2 t yr is defined in the script but unused; no 2024 event count is quoted",
+  "Masses other than 1 TeV were not scanned (P003's mass scaling of N_lo carries over since the propagator factor is m_chi-independent)"
+ ],
+ "wimpydd_generated_files": "none (diff_rate used throughout; WimPyDD's internal response-function cache may have been extended for the new Hamiltonian names P074_*)"
+}

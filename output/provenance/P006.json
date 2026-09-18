@@ -1,0 +1,54 @@
+{
+ "id": "P006",
+ "title": "Sixteenth of June: the event date under inelastic dark matter and under background",
+ "date": "2026-09-03",
+ "agent_tools": [
+  {"tool": "Read", "count": 7, "detail": "output/provenance/PAPER_GUIDE.md; output/00_evidence_dossier.md; output/code/common/lzcommon.py; WimPyDD/package.py lines 6266-6335 (day_of_the_year -> v_earth_sun); inputs/figures_png/FigS2_efficiency_werror.png; output/work/P006/figures/rate_vs_doy.png; output/work/P006/figures/LR_vs_delta.png"},
+  {"tool": "Bash", "count": 13, "detail": "grep LZ tex for modulation/livetime/calibration lines + cat ledger + ls + cat ENVIRONMENT_versions.txt; sed tex lines 44-56, 111, 296-303, 452-460 (twice, first failed on zsh glob); grep P000_dossier_checks.py + head dossier_numbers.json; python probe of WimPyDD signatures and wimprates v_earth (twice); grep WimPyDD/package.py for day_of_the_year; grep dossier script June/Dec + ls figures_png; python timing probe of wd_rate inelastic + Earth-velocity models; .venv/bin/python output/code/P006_event_date.py (crashed on index bug, rerun ~17 min in background); wait loops (pgrep blocked; file polling); grep run log + sed P001/P004 headers; .venv/bin/python output/code/P006_postprocess.py; find for WimPyDD-generated files; wc -w of paper body"},
+  {"tool": "Write", "count": 5, "detail": "output/code/P006_event_date.py; output/code/P006_postprocess.py; output/work/P006/details.md; output/provenance/P006.json; output/papers/P006.md"},
+  {"tool": "Edit", "count": 1, "detail": "P006_event_date.py: fix event-day matching in the day grid"},
+  {"tool": "ToolSearch", "count": 1, "detail": "loaded Monitor tool schema (not used)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter .venv/bin/python"},
+  {"name": "numpy", "version": "2.5.3", "functions": "trapezoid, interp, linalg.norm, random.default_rng, clip, savetxt/loadtxt"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats.norm.cdf/isf, interpolate.CubicSpline"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame.to_csv/to_string"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg) for four PNG figures"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "streamed_halo_function (day_of_the_year), diff_rate (O1 elastic/inelastic, O11), eft_hamiltonian, v_earth_sun"},
+  {"name": "wimprates", "version": "0.5.0", "functions": "v_earth, j2000_from_ymd (independent Earth-speed check)"},
+  {"name": "numericalunits", "version": "1.28", "functions": "km, s (unit conversion of wimprates output)"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ constants, v_earth_kms, VESC_KMS, V_SUN_PEC, V0_KMS, delta_max_kev, vmin_kms, wd, wd_halo, wd_hamiltonian, wd_rate"},
+  {"name": "none: derived by hand", "version": "-", "functions": "LR definition, KL/variance of log-LR, N_3sigma = 9 Var_flat/(E_M - E_flat)^2, Asimov N = 4.5/KL"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P006_event_date.py", "purpose": "Earth speed models; WimPyDD in-ROI rates vs day for 9 models; time PDFs, LR, P(+-30 d), KL/variance, N_3sigma (analytic + toy), delta_max kinematics; CSV/JSON tables and 4 figures", "command": ".venv/bin/python output/code/P006_event_date.py   (run from /Users/reza/LZ_simulation; ~17 min)"},
+  {"path": "output/code/P006_postprocess.py", "purpose": "Frequentist p-value of the date under flat backgrounds, position of observed lnLR under model/flat, combination with P001 Bayes factors", "command": ".venv/bin/python output/code/P006_postprocess.py"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "line 50 (Theory: inelastic modulation peaking around June 2); line 111 (220 live days, 27 March 2023 - 1 April 2024); line 165 (event 21:22:39 UTC 16 June 2023); lines 300-302 (57Co, AmBe 8 June, one of three NR calibrations); lines 452-460 (Fig. S2 caption, 269.9 keV and 5.4 keV 50% points)"},
+  {"file": "inputs/figures_png/FigS2_efficiency_werror.png", "parts_used": "high-energy efficiency roll-off read by eye: 0.92@250, 0.75@260, 0.50@269.9, 0.25@280, 0.09@290 keV"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "Sections 1-3 (event facts, timing point 3, delta_max values), section 6"},
+  {"file": "output/work/dossier/dossier_numbers.json", "parts_used": "v_earth and delta_max cross-check values"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "constants, kinematics and WimPyDD wrapper"},
+  {"file": "output/papers/P001.md", "parts_used": "headline Bayes factor 7-37 (100-500 before Occam penalty) for combination"},
+  {"file": "output/papers/P004.md", "parts_used": "header/headline only (not used)"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Earth orbital speed 29.8 km/s, ~15 km/s projection on the solar motion, modulation peak around 2 June", "presumed_source": "Freese, Frieman & Gould 1988; Freese, Lisanti & Savage 2013; encoded in lzcommon", "reliability": "certain"},
+  {"item": "Phase reversal of the annual modulation for v_min below ~200 km/s (December maximum for low-threshold, heavy-WIMP elastic rates)", "presumed_source": "Freese, Frieman & Gould 1988; Lewin & Smith 1996", "reliability": "certain"},
+  {"item": "Expected log-likelihood-ratio of one draw equals the KL divergence; N events give mean N*KL and variance N*Var; 3-sigma scaling N = 9 Var/(dE)^2; Asimov sqrt(2 N KL)", "presumed_source": "standard statistics (Cowan et al. 2011 for the Asimov form)", "reliability": "certain"},
+  {"item": "Baxter et al. 2021 SHM parameters v0 = 238, v_esc = 544, v_sun,pec = (11.1, 12.2, 7.3) km/s, rho0 = 0.3 GeV/cm^3", "presumed_source": "Baxter et al., EPJC 81, 907 (2021), via lzcommon", "reliability": "certain"},
+  {"item": "Bibliographic details of Tucker-Smith & Weiner 2001; Bramante et al. 2016; Kang et al. WimPyDD 2022", "presumed_source": "memory", "reliability": "likely"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Wait loop with pgrep to detect the end of the background WimPyDD run: process listing is blocked in the sandbox; replaced by polling for the output file",
+  "First run crashed on an exact-float match of the event day in the rounded day grid; fixed with a tolerance and rerun",
+  "No mapping of the LZ L10 magnetic-dipole Lagrangian onto WimPyDD couplings; O11 (q^2-suppressed) used as a labelled proxy",
+  "Calibration-related time-dependent backgrounds (AmBe activation) not modelled in the time PDF (backgrounds taken flat)"
+ ],
+ "wimpydd_generated_files": "none (no new files under WimPyDD/ after the run; O1/O11 xenon response functions were already present)"
+}

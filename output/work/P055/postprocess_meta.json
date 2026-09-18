@@ -1,0 +1,8 @@
+{
+ "runtime_s": 53.29277801513672,
+ "angular_grid_reduced": [
+  48,
+  32
+ ],
+ "note": "S1 and shards on a 48x32 angular grid; isotropic streams analytic"
+}

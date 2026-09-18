@@ -1,0 +1,58 @@
+{
+ "id": "P013",
+ "title": "Neutron origins of a 248 keV single scatter: spectra, multiplicity and what the 2.84 t yr already exclude",
+ "date": "2026-09-05",
+ "agent_tools": [
+  {"tool": "Read", "count": 16, "detail": "output/provenance/PAPER_GUIDE.md; output/00_evidence_dossier.md; output/results_ledger.csv; output/papers/P004.md; output/papers/P010.md; inputs/LZ_arXiv_2609.02823_fulltext.tex lines 140-250 (samples, Table I, neutron constraint), 296-330 (Discussion), 466-540 and 540-590 (likelihood, Tables S1-S2), 785-800 (supplement Neutrons); output/code/common/lzcommon.py lines 1-75 and 255-300; output/provenance/P010.json (format template); own figures P013_fig1, fig3, fig4"},
+  {"tool": "Bash", "count": 12, "detail": "grep -n of the tex for neutron/AmBe/fission/muon lines; lzcommon API + ENVIRONMENT_versions + ls output dirs; nestpy yields and periodictable isotope-mass probe; script run 1 (failed: frac_between keyword); script run 2 (success); pandas inspection of ss_spectrum_fractions/fission_silent_factor + MC summaries + ls; script run 3 (R-sensitivity, fig4 y-range); script run 4 (error-propagation fix) + wc -w body + JSON key check; body/per-section word recounts x4 (awk | wc -w)"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P013_neutron_origins.py; output/work/P013/details.md; output/provenance/P013.json; output/papers/P013.md"},
+  {"tool": "Edit", "count": 15, "detail": "output/code/P013_neutron_origins.py x5: frac_between n-argument; black-disk R sensitivity for the 200-270 keV window (x2 incl. J1 zeros); Fig.4 y-range; MC error propagation without max(count,1). output/papers/P013.md x7: Question/approach trim; Results compression x4; Caveats trim x2 (word budget 650 -> 536). output/work/P013/details.md x2: stacked-conservative (alpha,n) derivation; tool counts. output/provenance/P013.json x1: tool counts"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "random.default_rng (seed 20260905), interp, trapezoid, cumsum, cross, linalg.norm, geomspace"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.j1, special.jn_zeros, integrate.quad, optimize.brentq, stats"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, to_csv, read_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg), barh, axvspan"},
+  {"name": "periodictable", "version": "2.1.0", "functions": "isotopic masses of Xe, F, Na, C, O, Ne, B, N, Al, P, Be, Mg, Si, S"},
+  {"name": "nestpy", "version": "2.1.1", "functions": "via lzcommon: NESTcalc.GetYields NR (Table S5 with p(E) break) and beta ER (Table S3)"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ dict (g1, g2, event S1c/S2c, detector_NR_fit_interval, muon_neutron_UL90, neutron_veto_eff), XE_ISOTOPES, NEST_NR_LZ, NEST_ER_LZ, nest_nr_yields, nest_er_yields"},
+  {"name": "none: derived by hand", "version": "-", "functions": "two-body (alpha,n) and n-Xe elastic kinematics, black-disk (Fraunhofer) elastic pattern, Watt spectrum moments, fission silent-companion generating function, veto-partition arithmetic"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P013_neutron_origins.py", "purpose": "kinematics; (alpha,n) endpoints; source spectra; recalled cross sections; vectorised MC neutron transport in an LXe cylinder with SS classification; expected 200-270 keV counts; (n,n'gamma) hybrid loci; four figures; CSV/JSON tables", "command": ".venv/bin/python output/code/P013_neutron_origins.py > output/work/P013/run_log.txt 2>&1"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Data Analysis: sample definitions and tagging (l. 141-147), neutron shape/rate constraint 92+-4% (l. 177-178), Table I detector NRs [0,0.118] (l. 237); Discussion: calibration proximity (AmBe 8 June, l. 301), neutron paragraph (l. 321-327); supplement: likelihood and lambda_PN/lambda_DN (l. 476-478), Tables S1-S2 (prompt [0,0.07], delayed [0,1.3], lambda_DN 0.87, lambda_PN 0.05), Neutrons section (l. 787-798: fission <=1% of (alpha,n), MS cross-check 0.02+-0.02, 2.1e9 muons/1200 yr, 80+-4% rock-neutron tagging, UL 4.6e-4); NR calibration sources D-D and AmBe (l. 92)"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "Section 2 handles, 5D (neutron prior 0.08), 6.7 (the question this paper answers)"},
+  {"file": "output/results_ledger.csv", "parts_used": "P003 low-energy tolerance 3-5 events; P004 and P010 headline results; P009 band width 0.033 dex"},
+  {"file": "output/papers/P004.md", "parts_used": "wall-MSSI conclusion and format"},
+  {"file": "output/papers/P010.md", "parts_used": "ER-leakage conclusion, 125Xe/125I discussion, format"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "LZ constants, XE_ISOTOPES, NEST parameter sets and nestpy wrappers"},
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "rules, deliverables, templates"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "(alpha,n) Q-values: 19F -1.951, 13C +2.216, 17O +0.587, 18O -0.697, 10B +1.059, 11B +0.158, 27Al -2.644, 9Be +5.702, 25Mg +2.654, 29Si -1.527 MeV", "presumed_source": "nuclear mass tables (AME)", "reliability": "likely (+-0.05 MeV)"},
+  {"item": "alpha energies of the U and Th chains (218Po 6.003, 214Po 7.687, 210Po 5.304, 220Rn 6.288, 216Po 6.778, 212Po 8.785 MeV; 212Bi alpha branch 36%)", "presumed_source": "ENSDF", "reliability": "certain"},
+  {"item": "thick-target (alpha,n) yields per 1e6 alphas at 5.3 MeV: F ~12, natural C ~0.11, natural O ~0.07, Al ~0.7; steep E_alpha dependence", "presumed_source": "SOURCES-4C / Heaton et al. compilations", "reliability": "uncertain (x2)"},
+  {"item": "fraction of PTFE (alpha,n) neutrons above 6.5 MeV (13C ground-state forward emission) f_C ~ 2.5e-3, bracketed 5e-4 to 1e-2", "presumed_source": "own estimate from the yields above", "reliability": "uncertain (x3)"},
+  {"item": "238U spontaneous-fission Watt spectrum a = 0.988 MeV, b = 2.249 MeV^-1; nu_bar = 2.0; ~7 prompt gammas per fission", "presumed_source": "SOURCES-4C Watt table; nuclear data", "reliability": "likely"},
+  {"item": "238U SF neutron multiplicity distribution P(nu) = 0.05, 0.25, 0.37, 0.25, 0.07, 0.01", "presumed_source": "fission multiplicity compilations", "reliability": "uncertain"},
+  {"item": "muon-induced neutron production spectrum ~E^-1 (10 MeV-1 GeV) steepening to ~E^-2 above ~100 MeV", "presumed_source": "Wang et al. 2001; Mei & Hime 2006", "reliability": "likely"},
+  {"item": "n-Xe elastic/nonelastic cross sections 0.5 MeV-1 GeV (3.5/1.8 b at 10 MeV; 2.0/1.6 b at 100 MeV; 1.0/1.6 b at 1 GeV)", "presumed_source": "ENDF/B evaluations scaled from n-Pb systematics", "reliability": "likely (+-30%)"},
+  {"item": "sharp-cutoff black-disk elastic pattern |2 J1(qR)/qR|^2 with R = 1.25 A^(1/3) fm = 6.35 fm; backward/forward ratio ~1e-3 for 14 MeV n-Pb", "presumed_source": "textbook diffraction model; measured 14 MeV angular distributions", "reliability": "likely (R +-15%)"},
+  {"item": "129Xe 39.58 keV (0.97 ns, converted) and 131Xe 80.19 keV (0.48 ns) first excited states; 132Xe 667.7 keV", "presumed_source": "ENSDF", "reliability": "certain"},
+  {"item": "per-particle silent probabilities for fission companions from a wall source: p_n ~ 0.07 (0.05-0.15), p_gamma ~ 0.15 (0.10-0.30); LZ active TPC 72.8 cm radius x 145.6 cm height", "presumed_source": "geometry estimate; LZ instrument paper", "reliability": "uncertain / likely"},
+  {"item": "<= 3 unexplained NR-band single scatters tolerated in 5.4-55 keV by the 2024 LZ search", "presumed_source": "LZ 2024 WS result (via P003)", "reliability": "uncertain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Exponential angular form exp(-a(1-cos theta)) with a=(kR)^2/2 (Gaussian diffraction lobe): gives f(E_R>200 keV) ~ 3e-6 at all energies, three orders of magnitude below the black-disk pattern because it lacks secondary maxima; computed and reported, not used.",
+  "First script run failed on a missing keyword argument in frac_between (fixed).",
+  "MC error propagation with max(count,1) for zero-count bulk components inflated the quoted uncertainty; the bulk is kinematically zero above 200 keV (E_n < 6.6 MeV), so the term was removed.",
+  "A first-principles derivation of the 13C share of PTFE (alpha,n) neutrons was not possible from the paper; replaced by recalled thick-target yields with a x3 uncertainty and a f_C scan (5e-4, 2.5e-3, 1e-2)."
+ ],
+ "wimpydd_generated_files": []
+}

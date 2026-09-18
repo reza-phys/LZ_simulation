@@ -1,0 +1,79 @@
+Earth barycentric velocity (ICRS) [29.21 -2.43 -1.05] km/s; Galactic [  1.03  14.73 -25.35]; |v_lab,gal| = 265.8 km/s (lzcommon cosine model 265.1)
+LST = 8.12 h; DM-wind anti-apex RA 139.4 Dec -43.7: altitude +0.5 deg (positive: fast DM moves upward through the detector)
+delta 250: v_min 643, <v1> 686, <v2> 617 km/s (range 569-752), speed loss 10.1%, <cos zenith> +0.01, upward fraction 0.52
+delta 300: v_min 704, <v1> 734, <v2> 663 km/s (range 630-746), speed loss 9.6%, <cos zenith> +0.01, upward fraction 0.52
+delta 350: v_min 765, <v1> 779, <v2> 706 km/s (range 691-740), speed loss 9.3%, <cos zenith> +0.01, upward fraction 0.52
+delta 380: v_min 801, <v1> 804, <v2> 730 km/s (range 727-737), speed loss 9.2%, <cos zenith> +0.01, upward fraction 0.54
+
+=== Part 2/3: geometry MC ===
+geometry: TPC r<72.8 cm, 0<z<145.6; RFR to -13.75; Skin 75.8-81.8 cm; ICV 81.8-82.6; OCV 89.6-90.4; GdLS 94.4-155.4 cm, z -126..244; water to 380.0 cm
+LXe attenuation length (cm): 250 keV: 1.52, 300 keV: 2.30, 350 keV: 2.69, 380 keV: 3.02; GdLS 300 keV: 10.1 cm; water 8.5 cm; Ti 2.13 cm
+chi2 path in active TPC: mean 65.2 cm (10-90%: 30-117, range 27-147); time in TPC mean 0.98 us (10-90%: 0.44-1.74); Skin 7.1 cm / 0.108 us; GdLS 65.9 cm / 0.99 us; through RFR: 0.07 (mean 1.6 cm); leaves everything after 3.0 us (max 4.8)
+tau >> transit: shares of the non-clean outcomes  TPC(resolved) 0.522, TPC(merged) 0.085, RFR S1-only 0.017, prompt veto 0.000, delayed veto 0.377
+  P_notclean(tau) -> 1.682e-06 x (1 s / tau)  =>  effective "sensitive time" 1.682 us
+photon emitted at the vertex: P(no TPC deposit) = 0.0000; P(no TPC & Skin >= 5 keV) = 0.0000
+single clean event, delta = 300 keV: P_clean = 0.10 at tau = 4.284e-07 s (90% CL lower limit); 0.50 at 2.138e-06; 0.90 at 1.570e-05 (P023-type "expected topology" line); 0.99 at 1.673e-04
+  tau = 1.0e-08 s: P_tpc 1.000e+00 (merged 1.00e+00), P_rfr 1.34e-23, prompt 0.00e+00, delayed 6.75e-17, clean 0.0000
+  tau = 1.0e-07 s: P_tpc 9.970e-01 (merged 7.53e-01), P_rfr 1.58e-05, prompt 0.00e+00, delayed 9.18e-04, clean 0.0020
+  tau = 1.4e-07 s: P_tpc 9.883e-01 (merged 6.32e-01), P_rfr 1.11e-04, prompt 0.00e+00, delayed 3.62e-03, clean 0.0080
+  tau = 5.0e-07 s: P_tpc 8.024e-01 (merged 2.45e-01), P_rfr 4.84e-03, prompt 0.00e+00, delayed 6.86e-02, clean 0.1239
+  tau = 1.0e-06 s: P_tpc 5.914e-01 (merged 1.31e-01), P_rfr 7.88e-03, prompt 0.00e+00, delayed 1.24e-01, clean 0.2750
+  tau = 1.4e-06 s: P_tpc 4.833e-01 (merged 9.55e-02), P_rfr 8.00e-03, prompt 0.00e+00, delayed 1.36e-01, clean 0.3711
+  tau = 5.0e-06 s: P_tpc 1.784e-01 (merged 2.77e-02), P_rfr 4.29e-03, prompt 0.00e+00, delayed 8.78e-02, clean 0.7271
+  tau = 1.0e-05 s: P_tpc 9.464e-02 (merged 1.39e-02), P_rfr 2.44e-03, prompt 0.00e+00, delayed 5.23e-02, clean 0.8490
+  tau = 6.6e-05 s: P_tpc 1.513e-02 (merged 2.13e-03), P_rfr 4.13e-04, prompt 0.00e+00, delayed 9.22e-03, clean 0.9749
+  tau = 1.0e-03 s: P_tpc 1.006e-03 (merged 1.40e-04), P_rfr 2.77e-05, prompt 0.00e+00, delayed 6.24e-04, clean 0.9983
+  tau = 6.0e-02 s: P_tpc 1.680e-05 (merged 2.34e-06), P_rfr 4.63e-07, prompt 0.00e+00, delayed 1.04e-05, clean 1.0000
+  Bayesian (log-uniform prior 1e-9..1e2 s): 10th percentile of the posterior at tau = 1.24e-05 s (prior-dominated)
+
+=== variants ===
+  d300_iso: tau90 4.56e-07 s, tau(P_clean=0.9) 1.71e-05 s, P_notclean(66 us) 0.0273, P_delayed(66 us) 1.06e-02, <t_TPC> 0.98 us
+  d300_xe0p7: tau90 4.14e-07 s, tau(P_clean=0.9) 1.55e-05 s, P_notclean(66 us) 0.0248, P_delayed(66 us) 9.16e-03, <t_TPC> 0.96 us
+  d300_xe1p4: tau90 4.14e-07 s, tau(P_clean=0.9) 1.45e-05 s, P_notclean(66 us) 0.0233, P_delayed(66 us) 7.17e-03, <t_TPC> 0.99 us
+  d300_odprompt100keV: tau90 4.28e-07 s, P_delayed(66 us) 9.23e-03
+  d300_skinres0: tau90 4.86e-07 s, P_delayed(66 us) 1.02e-02
+
+=== delta scan ===
+  delta 250: tau90 3.52e-07 s, tau(0.9) 1.08e-05 s, <v2> 617 km/s, <t_TPC> 1.01 us
+  delta 270: tau90 3.63e-07 s, tau(0.9) 1.17e-05 s, <v2> 634 km/s, <t_TPC> 1.01 us
+  delta 290: tau90 3.85e-07 s, tau(0.9) 1.42e-05 s, <v2> 655 km/s, <t_TPC> 0.98 us
+  delta 300: tau90 4.28e-07 s, tau(0.9) 1.57e-05 s, <v2> 664 km/s, <t_TPC> 0.98 us
+  delta 310: tau90 4.56e-07 s, tau(0.9) 1.66e-05 s, <v2> 671 km/s, <t_TPC> 0.95 us
+  delta 320: tau90 5.02e-07 s, tau(0.9) 1.74e-05 s, <v2> 681 km/s, <t_TPC> 0.96 us
+  delta 330: tau90 5.31e-07 s, tau(0.9) 1.78e-05 s, <v2> 689 km/s, <t_TPC> 0.95 us
+  delta 340: tau90 5.40e-07 s, tau(0.9) 1.76e-05 s, <v2> 698 km/s, <t_TPC> 0.92 us
+  delta 350: tau90 5.48e-07 s, tau(0.9) 1.76e-05 s, <v2> 706 km/s, <t_TPC> 0.91 us
+  delta 360: tau90 5.78e-07 s, tau(0.9) 1.80e-05 s, <v2> 715 km/s, <t_TPC> 0.94 us
+  delta 366: tau90 5.87e-07 s, tau(0.9) 1.79e-05 s, <v2> 719 km/s, <t_TPC> 0.93 us
+  delta 370: tau90 5.81e-07 s, tau(0.9) 1.80e-05 s, <v2> 723 km/s, <t_TPC> 0.95 us
+  delta 380: tau90 5.59e-07 s, tau(0.9) 1.73e-05 s, <v2> 730 km/s, <t_TPC> 0.88 us
+  delta 390: kinematically forbidden on 16 June (v_min 813 > v_max 810 km/s) -- skipped
+
+=== Part 4: models ===
+check: mu_tr = 2.107e-4 mu_N at 300 keV -> tau = 6.625e-05 s (P023: 6.626e-5 s)
+  photon-M1 (N=1): P_clean = 0.9 at delta = 321 keV; 0.5 at 344; 0.1 (90% CL exclusion) at 358 keV
+  photon-M1 (N=3.65): P_clean = 0.9 at delta = 302 keV; 0.5 at 330; 0.1 (90% CL exclusion) at 348 keV
+  photon-M1 (N=0.105): P_clean = 0.9 at delta = 346 keV; 0.5 at 362; 0.1 (90% CL exclusion) at 370 keV
+  N=1 delta 300: mu 2.11e-04 mu_N, tau 6.62e-05 s, P_clean 0.975, mu_max(90%) 2.62e-03 mu_N (headroom x12.4)
+  N=1 delta 330: mu 4.85e-04 mu_N, tau 9.37e-06 s, P_clean 0.820, mu_max(90%) 2.04e-03 mu_N (headroom x4.2)
+  N=1 delta 350: mu 1.14e-03 mu_N, tau 1.41e-06 s, P_clean 0.316, mu_max(90%) 1.84e-03 mu_N (headroom x1.6)
+  N=1 delta 360: mu 2.11e-03 mu_N, tau 3.81e-07 s, P_clean 0.054, mu_max(90%) 1.72e-03 mu_N (headroom x0.8)
+  N=1 delta 366: mu 3.40e-03 mu_N, tau 1.40e-07 s, P_clean 0.006, mu_max(90%) 1.66e-03 mu_N (headroom x0.5)
+  N=1 delta 380: mu 2.16e-02 mu_N, tau 3.10e-09 s, P_clean 0.000, mu_max(90%) 1.61e-03 mu_N (headroom x0.1)
+  Higgsino: tau_gamma 0.06 s -> P_notclean 2.8e-05; tau_nunu 4.6e5 s -> invisible
+  dark photon: tau(nu nu) 1.9e18 s -> P_notclean ~ 8.9e-25; invisible final state anyway
+  L10-type inelastic contact (d10 = 0.28): loop mu_tr ~ 1.0e-07 mu_N (nucleon loop) -> tau ~ 277 s (decay length 2.1e+05 km); quark loop ~ 5.5e-10 mu_N -> 9.8e+06 s
+
+=== Part 5: population ===
+  MiDM delta=300 (66 us): clean 0.9750, two-site 1.507e-02 (merged 2.1e-03), RFR 4.1e-04, prompt 0.0e+00, delayed 9.2e-03; events per two-site 66.3, per veto-tag 109
+  MiDM delta=330 (9.4 us): clean 0.8205, two-site 9.785e-02 (merged 1.5e-02), RFR 2.4e-03, prompt 0.0e+00, delayed 7.8e-02; events per two-site 10.2, per veto-tag 12.9
+  MiDM delta=350 (1.4 us): clean 0.3165, two-site 4.581e-01 (merged 1.0e-01), RFR 3.2e-03, prompt 0.0e+00, delayed 2.2e-01; events per two-site 2.18, per veto-tag 4.54
+  MiDM delta=366 (0.14 us): clean 0.0057, two-site 9.841e-01 (merged 7.0e-01), RFR 3.1e-06, prompt 0.0e+00, delayed 1.0e-02; events per two-site 1.02, per veto-tag 97.8
+  Higgsino (0.06 s): clean 1.0000, two-site 1.680e-05 (merged 2.3e-06), RFR 4.6e-07, prompt 0.0e+00, delayed 1.0e-05; events per two-site 5.95e+04, per veto-tag 9.59e+04
+  tau = 1 us: clean 0.2750, two-site 5.914e-01 (merged 1.3e-01), RFR 7.9e-03, prompt 0.0e+00, delayed 1.2e-01; events per two-site 1.69, per veto-tag 8.04
+  tau = 10 us: clean 0.8490, two-site 9.464e-02 (merged 1.4e-02), RFR 2.4e-03, prompt 0.0e+00, delayed 5.2e-02; events per two-site 10.6, per veto-tag 19.1
+  two-site companions (tau >> transit): vertex-ER separation mean 42 cm (10-90%: 7-88); S1 time difference mean 0.63 us (90%: 1.33); full-absorption fraction 0.98, mean ER energy 297 keV; separation/dt = 70 cm/us
+  given 1 clean science event, expected delayed-veto inelastic events (MiDM 300): 9.43e-03; prompt-veto: 0.00e+00; two-site (rejected as SS): 1.55e-02
+  given 1 clean science event, expected delayed-veto inelastic events (MiDM 350): 6.95e-01; prompt-veto: 0.00e+00; two-site (rejected as SS): 1.45e+00
+
+done in 114 s; 21 recalled items

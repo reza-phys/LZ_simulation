@@ -1,0 +1,57 @@
+{
+  "id": "P062",
+  "title": "Mass-splitting degeneracy: why a single recoil cannot fix m_chi above 400 GeV, what the spectral onset and endpoint do, and the (m, delta) ridge",
+  "date": "2026-09-12",
+  "agent_tools": [
+    {"tool": "Read", "count": 20, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (page 1); papers P002, P021, P038, P037, P046, P050, P018; fulltext.tex l.484-499 (LEE) and l.850-915 (Tables S6/S7); lzcommon.py l.126-220, 305-400; P046_multi_target.py l.1-170; work/P062/run_log.txt; persisted table output; fig1 and fig2 PNGs"},
+    {"tool": "Bash", "count": 15, "detail": "ledger id list + rows P014/P015/P020/P034/P035/P045/P048 via csv; grep tex for LEE/tables; grep lzcommon defs + wd_halo source; grep P046 script for kernel method; grep dataviz palette.md; WimPyDD timing/1/m-scaling probe (.venv python heredoc); full run of P062 script (644 s, moved to background by harness at 600 s); cat run_log; background wait-loop until completion; tail of task output + ls; debugging probe of Higgsino counts vs delta (.venv python heredoc); rerun with cached kernels/maps (66 s); pandas print of result CSVs; figure rerun after cosmetic edits; wc -w on paper"},
+    {"tool": "Write", "count": 4, "detail": "output/code/P062_mass_splitting_degeneracy.py; output/work/P062/details.md; output/provenance/P062.json; output/papers/P062.md"},
+    {"tool": "Edit", "count": 5, "detail": "script: brentq bracket guard in delta_N1; Part-1 cache loader; three figure cosmetic edits"},
+    {"tool": "Skill", "count": 1, "detail": "dataviz (palette/mark guidance; JS palette validator skipped per PAPER_GUIDE rule 2)"},
+    {"tool": "ToolSearch", "count": 1, "detail": "select:Monitor (schema loaded; Bash until-loop used instead)"}
+  ],
+  "software": [
+    {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python, run from /Users/reza/LZ_simulation"},
+    {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian (via lz.wd_hamiltonian), streamed_halo_function (via lz.wd_halo with explicit vmin grid; day_of_the_year for 16 June, 16 Dec, 12-day annual mean, 24 modulation days), diff_rate (via lz.wd_rate with isotopes_list for per-isotope kernels; 11,700 calls at 1000 GeV, cached)"},
+    {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ dict (exposure_tyr, eff_plateau, E_50pct_low/high_keV), M_V_GEV, VESC_KMS, wd, wd_halo, wd_hamiltonian, wd_rate"},
+    {"name": "numpy", "version": "2.5.3", "functions": "arrays, searchsorted, cumsum, linalg.eigh/inv/lstsq, savez/load"},
+    {"name": "scipy", "version": "1.18.1", "functions": "special.erf, optimize.brentq"},
+    {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend, pcolormesh, contour, LinearSegmentedColormap"},
+    {"name": "pandas", "version": "3.0.5", "functions": "read_csv/to_string for inspecting result tables (not used in the script)"},
+    {"name": "none: derived by hand", "version": "-", "functions": "E+- window, E* = delta mu/m_N, v_min* = sqrt(2 delta/mu), sqrt(E+E-) = E*, (E+ + E-)/2 = (mu^2 v^2 - mu delta)/m_N, v_min(E) mass dependence via (1 + m_N/m), two-hypothesis N_3sigma formula, Poisson rate Fisher term"}
+  ],
+  "scripts_and_commands": [
+    {"path": "output/code/P062_mass_splitting_degeneracy.py", "purpose": "kernels, halos, (m,delta) grid spectra, pairwise KL, KL maps and ridge, Fisher matrices, separations, modulation, endpoint, fixed-coupling normalisation, interpretation table, figures", "command": ".venv/bin/python output/code/P062_mass_splitting_degeneracy.py   (first pass 644 s; reruns with cached kernels and KL maps 66 s; --recompute regenerates)"}
+  ],
+  "local_inputs": [
+    {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules, deliverables, halo-labelling and WimPyDD pitfalls"},
+    {"file": "output/00_evidence_dossier.md", "parts_used": "sections 1-6 (event, kinematics, open questions)"},
+    {"file": "output/results_ledger.csv", "parts_used": "rows P001-P012 read; rows P014, P015, P020, P034, P035, P045, P048 extracted"},
+    {"file": "output/papers/P002.md", "parts_used": "KS(400 vs 4000) 0.07/0.98, delta_max, June/Dec ratios"},
+    {"file": "output/papers/P021.md", "parts_used": "likelihood peaks 340/380/400 keV, E* = delta mu/m_N = 354 keV at ceiling, Higgsino delta(N=1) 365.5-370, resolution/efficiency model"},
+    {"file": "output/papers/P038.md", "parts_used": "edge effects, acceptance vs delta"},
+    {"file": "output/papers/P037.md", "parts_used": "multiplet (2Y)^2 scaling, delta(N=1) 366/374/379/383 keV"},
+    {"file": "output/papers/P046.md", "parts_used": "kernel factorisation method, mass biases -21/+38 keV, W endpoint 0.39 % above 500 keV, 15 keV halo floor"},
+    {"file": "output/papers/P050.md", "parts_used": "sigma(delta) 19-27 keV per event at fixed m, extended-window acceptances"},
+    {"file": "output/papers/P018.md", "parts_used": "halo-tail rate uncertainty x5-30, delta(N=1) shifts"},
+    {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "LEE section l.484-499 (degenerate masses >= 400 GeV, 616 -> 293 models); Tables S6/S7 l.850-909"},
+    {"file": "output/code/common/lzcommon.py", "parts_used": "constants, kinematics conventions, WimPyDD wrapper source"},
+    {"file": "output/code/P046_multi_target.py", "parts_used": "lines 1-170: per-isotope kernel factorisation and Halo class pattern (re-implemented)"}
+  ],
+  "recalled_knowledge": [
+    {"item": "Inelastic two-body kinematics: v_min(E), E+-(v), E* = delta mu/m_N, v_min* = sqrt(2 delta/mu), ceiling mu v^2/2", "presumed_source": "Tucker-Smith & Weiner 2001; standard", "reliability": "certain"},
+    {"item": "Fisher information, KL divergence and the two-hypothesis N_3sigma = [3(sqrt V_p + sqrt V_q)/(KL_pq + KL_qp)]^2 criterion", "presumed_source": "standard asymptotic statistics (Cowan et al. 2011 style)", "reliability": "certain"},
+    {"item": "Poisson rate Fisher term I = N (d ln R)(d ln R) for a fixed-coupling model", "presumed_source": "standard", "reliability": "certain"},
+    {"item": "Thermal Higgsino mass 1.1 TeV; LZ-fitting Higgsino c tau = 0.71 cm beyond HL-LHC, 5 sigma at FCC-hh at 1.1 TeV, muon collider to ~3 TeV", "presumed_source": "corpus P007, P014, P048 (used as quoted)", "reliability": "certain (as corpus results)"},
+    {"item": "For small cosine amplitude, sigma(a1) ~ sqrt(2/N)", "presumed_source": "standard", "reliability": "certain (used only as a labelled approximation)"}
+  ],
+  "datasets": "none",
+  "data_requests": "none",
+  "failed_or_abandoned": [
+    "First full run crashed in Part 5: scipy brentq bracket failure for the (2Y)^2 = 16 multiplet at 300 GeV, which gives > 1 LZ event even at the kinematic ceiling; fixed by returning NaN (excluded) and reloading Parts 1-4 from saved tables on the rerun",
+    "First run exceeded the 600 s foreground limit (644 s; 312 s kernel generation) and was moved to the background by the harness; kernel cache makes reruns 66 s",
+    "The assignment's proposed banana delta(m) = delta_1000 mu_1000/mu(m) (E* = const) was tested and rejected: it has the wrong sign; the KL ridge is nearly flat in delta and closer to the onset-matched curve",
+    "Monitor tool schema loaded but a Bash until-loop was used instead for the single completion signal"
+  ],
+  "wimpydd_generated_files": "none (WD.diff_rate only; no response-function files written). Cached kernel file output/work/P062/kernels_xe_o1_1000gev.npz is written by the script."
+}

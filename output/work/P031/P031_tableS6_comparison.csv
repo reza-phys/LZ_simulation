@@ -1,0 +1,18 @@
+anand_L,structure,confidence,Z_LZ_tableS6_1000GeV,N_lo,Z_pred_P016,leading_op_248,classification,Z_LZ_4000GeV,Z_LZ_200GeV
+L1s,SS_univ,certain,0,2.78e+03,0.158,O1,excluded,0,0
+L1s,SGG,certain (gluon version),0,2.76e+03,0.162,O1,excluded,0,0
+L5s,VV_univ,certain,0,2.76e+03,0.162,O1,excluded,0,0
+L5v,VV_isov,certain,1.3,477,1.43,O1,excluded,1.3,0
+L2s,SP_univ,certain,3,0.846,3.49,O10,compatible,3.1,2.8
+L2v,SP_isov,certain,3.1,25.8,2.73,O10,excluded,3.1,2.5
+L3s,PS_univ,certain,1.7,260,1.76,O11,excluded,1.8,1.1
+L4s,PP_univ,certain,3.1,0.0693,3.59,O6,compatible,3,3.1
+L4v,PP_isov,certain,3.1,3.33,3.29,O6,compatible,3.1,3.1
+L15s,AA_univ,likely,2.7,28.2,2.7,O4,excluded,2.7,2.3
+L15v,AA_Zlike,likely (isovector-like),2.7,55.9,2.45,O4,excluded,2.7,2.4
+L7s,VA_univ,likely,2.7,31.5,2.66,O7,excluded,2.7,2.5
+L6s,Q15_univ,likely,2.6,15.3,2.9,O5,marginal,2.6,2.2
+L8s,AV_univ,uncertain,3,167,1.98,O8,excluded,3,2.8
+L13s,AV_univ,uncertain,2.5,167,1.98,O8,excluded,2.6,2
+L16s,AV_anapole,uncertain (anapole),3.4,26.9,2.72,O9,excluded,3.2,3.3
+L9s,Q17_univ,uncertain,3,2.06,3.38,O9,compatible,3.1,2.9

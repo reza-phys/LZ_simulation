@@ -1,0 +1,115 @@
+P052 engine loaded in 0.3 s: 68 models
+LEE mapping: {"Z_table": [2.0, 2.5, 3.0, 3.4], "Neff_P071": [4.87, 6.12, 9.01, 14.2], "Neff_P008": [4.8, 6.0, 8.3, 12.2], "Neff_at": {"1.0": {"P071": 2.395056958973658, "P008": 2.400000000000001}, "1.5": {"P071": 3.6275128598176374, "P008": 3.6000000000000005}, "2.0": {"P071": 4.87, "P008": 4.8}, "2.5": {"P071": 6.12, "P008": 6.0}, "3.0": {"P071": 9.009999999999998, "P008": 8.3}, "3.11": {"P071": 10.269880868804023, "P008": 9.27270378898282}, "3.4": {"P071": 14.2, "P008": 12.2}}, "Zglobal_check_3p4": {"P071": 2.591799422220528, "P008": 2.6434915950613305, "LZ": 2.6}, "toy_offset": -0.08000000000000007}
+baseline (u = ln t, Gaussian prior): {"q0": 9.664361389041005, "Z": 3.108755601368658, "s_hat": 1.1781927400662706, "t_H0": 1.3576563507844406, "t_H1": 0.998648098452058, "b_event_cell_H0": 1.1585814394094107e-05, "mssi_FV_H0": 0.006652516118843758}
+P052 lzlike L10: q0 9.664 Z 3.109 s_hat 1.181 b_ev 1.159e-05
+MSSI x2: Z 2.976 (P052 variant 2.975)
+baseline extras: {'P052_mssi_x2_Z': 2.975, 'mssi_event_cell_nominal': 3.995e-06, 'mssi_share_of_event_cell': 0.3448182289228161, 'mssi_event_cell_fraction_of_total': 0.0008153061224489796, 'neighbourhood_fraction_c0': 0.0354469387755102, 'neighbourhood_cells': 32, 'g_max_all_in_neighbourhood': 38.32916145181477, 'bottom_panel_frac_within_2sig': 0.34295519211137904, 'bottom_panel_frac_event_bin': 0.03155290442708179, 'P004_f_nb': 0.035, 'P033_f_nb': 0.053}
+prior gauss100  sidebands False: Z 3.109 t_H0 1.358 t_H1 0.999 MSSI_FV(H0) 0.0067
+prior gauss100  sidebands True : Z 3.169 t_H0 0.780 t_H1 0.687 MSSI_FV(H0) 0.0038
+prior LN0.7     sidebands False: Z 3.117 t_H0 1.255 t_H1 0.998 MSSI_FV(H0) 0.0061
+prior LN0.7     sidebands True : Z 3.158 t_H0 0.843 t_H1 0.778 MSSI_FV(H0) 0.0041
+prior LN1.5     sidebands False: Z 3.003 t_H0 5.847 t_H1 0.995 MSSI_FV(H0) 0.0287
+prior LN1.5     sidebands True : Z 3.171 t_H0 0.763 t_H1 0.674 MSSI_FV(H0) 0.0037
+prior LN2.3     sidebands False: Z 2.652 t_H0 47.185 t_H1 0.980 MSSI_FV(H0) 0.2312
+prior LN2.3     sidebands True : Z 3.175 t_H0 0.741 t_H1 0.645 MSSI_FV(H0) 0.0036
+prior flat      sidebands False: Z 1.756 t_H0 165.463 t_H1 0.021 MSSI_FV(H0) 0.8108
+prior flat      sidebands True : Z 3.179 t_H0 0.721 t_H1 0.620 MSSI_FV(H0) 0.0035
+f=   1: Z common 3.169 FV-only 3.169 no-SB 3.109  MSSI_FV(H0) 0.0067
+f=   2: Z common 3.167 FV-only 3.070 no-SB 2.976  MSSI_FV(H0) 0.0143
+f=   5: Z common 3.173 FV-only 2.868 no-SB 2.731  MSSI_FV(H0) 0.0375
+f=  10: Z common 3.176 FV-only 2.666 no-SB 2.503  MSSI_FV(H0) 0.0758
+f=  20: Z common 3.177 FV-only 2.428 no-SB 2.247  MSSI_FV(H0) 0.1496
+f=  50: Z common 3.178 FV-only 2.068 no-SB 1.881  MSSI_FV(H0) 0.3491
+f= 100: Z common 3.178 FV-only 1.770 no-SB 1.623  MSSI_FV(H0) 0.6029
+f= 200: Z common 3.178 FV-only 1.472 no-SB 1.478  MSSI_FV(H0) 0.8730
+f= 500: Z common 3.179 FV-only 1.147 no-SB 1.578  MSSI_FV(H0) 0.9656
+f required (FV-only): {'Z=3.0': 2.8742348179826136, 'Z=2.0': 58.71471178493867, 'Z=1.0': 977.495005503596}
+f required (common): {'Z=3.0': nan, 'Z=2.0': nan, 'Z=1.0': nan}
+             f  p_six_wall_bins  p_annulus_sci  p_HESB_wall_sci  p_wall_prompt  p_prompt_total_4p7t      chi2_BC  Z_six_wall                    note
+0     1.000000     3.736779e-01   9.704455e-01     5.488116e-01   5.184296e-01         5.326743e-01     9.473116    0.322128                     NaN
+1     1.640000     1.017504e-01   9.519907e-01     3.738129e-01   2.019142e-01         5.302647e-01    11.628731    1.271640                     NaN
+2     2.000000     4.432409e-02   9.417645e-01     3.011942e-01   1.087867e-01         5.289094e-01    13.160527    1.702572                     NaN
+3     5.000000     1.429277e-05   8.607080e-01     4.978707e-02   2.226424e-04         5.176180e-01    28.875364    4.184452                     NaN
+4    10.000000     5.206408e-12   7.408182e-01     2.478752e-03   1.864817e-09         4.988301e-01    58.402775    6.800678                     NaN
+5    20.000000     1.894327e-25   5.488116e-01     6.144212e-06   3.667442e-20         4.615180e-01   120.230187   10.359518                     NaN
+6    50.000000     9.596975e-67   2.231302e-01     9.357623e-14   2.987138e-53         3.544061e-01   310.365024   17.218796                     NaN
+7   100.000000    2.772979e-136   4.978707e-02     8.756511e-27  4.127548e-109         2.056327e-01   630.592435   24.819326                     NaN
+8   200.000000    5.841768e-276   2.478752e-03     7.667648e-53  1.993042e-221         4.708801e-02  1273.819846   35.475622                     NaN
+9   500.000000     0.000000e+00   3.059023e-07    5.148200e-131   0.000000e+00         3.898983e-05  3208.154683         inf                     NaN
+10    2.874235     4.959855e-03   9.173859e-01     1.782549e-01   2.068073e-02         5.256182e-01    17.357527    2.578616  FV-only: Z_local = 3.0
+11   58.714712     7.873059e-79   1.717971e-01     5.015507e-16   5.935595e-63         3.253714e-01   366.019393   18.760983  FV-only: Z_local = 2.0
+12  977.495006     0.000000e+00   1.838143e-13    1.939045e-255   0.000000e+00         1.429556e-12  6290.090879         inf  FV-only: Z_local = 1.0
+sideband k check: {'k_ML': 0.6191863954651552, 'k95_one_sided_LR': 1.6418206068689565, 'k95_two_sided_LR': 1.9134578192730913, 'P004': {'k_ML': 0.62, 'k95': 1.64}}
+position LR check vs P070 (exp_true): {'lambda=3.0': {'LR_this': 23.895943548770642, 'LR_P070': 21.7}, 'lambda=4.3': {'LR_this': 6.550998447103005, 'LR_P070': 5.73}, 'lambda=6.0': {'LR_this': 3.07358529877331, 'LR_P070': 2.63}}
+lambda 1.23: f_lambda   1.00  LR_pos  2.74e+04  f(d>25cm) 4.50e-06  Z blind 3.169 aware 3.294
+lambda 2.00: f_lambda   2.32  LR_pos       247  f(d>25cm) 5.06e-04  Z blind 3.043 aware 3.293
+lambda 3.00: f_lambda   4.66  LR_pos      23.9  f(d>25cm) 6.02e-03  Z blind 2.886 aware 3.268
+lambda 4.30: f_lambda   7.27  LR_pos      6.55  f(d>25cm) 2.62e-02  Z blind 2.764 aware 3.158
+lambda 6.00: f_lambda  10.42  LR_pos      3.07  f(d>25cm) 6.70e-02  Z blind 2.653 aware 2.966
+lambda 8.00: f_lambda  13.59  LR_pos      2.02  f(d>25cm) 1.19e-01  Z blind 2.564 aware 2.790
+baseline (P004 d-shape, 10 % at S1c>500)                               g   1.00 f2sig 0.343 Z 3.169
+d: 25 % N(0,1) admixture                                               g   1.10 f2sig 0.496 Z 3.158
+d: 50 % N(0,1) admixture                                               g   1.20 f2sig 0.649 Z 3.148
+d: 100 % N(0,1) (MSSI on the NR band)                                  g   1.40 f2sig 0.954 Z 3.127
+d: flat within |d|<2 only                                              g   3.96 f2sig 1.000 Z 2.926
+S1c: 20 % at S1c>500                                                   g   1.94 f2sig 0.343 Z 3.076
+S1c: 50 % at S1c>500                                                   g   4.84 f2sig 0.343 Z 2.875
+S1c: 100 % at S1c>500                                                  g   9.68 f2sig 0.343 Z 2.672
+S1c 100 % >500 and d flat |d|<2 (all MSSI in the neighbourhood)        g  38.33 f2sig 1.000 Z 2.153
+RFR k=    1: f_equiv    1.00 Z 3.109 p(HE-SB RFR 18 | 21.5) 2.66e-01
+RFR k=   10: f_equiv    1.18 Z 3.081 p(HE-SB RFR 18 | 215) 6.95e-68
+RFR k=  100: f_equiv    3.02 Z 2.874 p(HE-SB RFR 18 | 2.15e+03) 0.00e+00
+RFR k=  500: f_equiv   11.18 Z 2.464 p(HE-SB RFR 18 | 1.08e+04) 0.00e+00
+RFR k= 1000: f_equiv   21.39 Z 2.221 p(HE-SB RFR 18 | 2.15e+04) 0.00e+00
+RFR k= 5000: f_equiv  103.02 Z 1.614 p(HE-SB RFR 18 | 1.08e+05) 0.00e+00
+f*g=   1.0: Z (rate, no SB) 3.109  Z (shape only) 3.169  b_ev 1.16e-05
+f*g=   1.5: Z (rate, no SB) 3.037  Z (shape only) 3.117  b_ev 1.49e-05
+f*g=   2.0: Z (rate, no SB) 2.976  Z (shape only) 3.070  b_ev 1.83e-05
+f*g=   3.0: Z (rate, no SB) 2.876  Z (shape only) 2.990  b_ev 2.52e-05
+f*g=   5.0: Z (rate, no SB) 2.731  Z (shape only) 2.866  b_ev 3.90e-05
+f*g=   7.0: Z (rate, no SB) 2.625  Z (shape only) 2.772  b_ev 5.27e-05
+f*g=  10.0: Z (rate, no SB) 2.503  Z (shape only) 2.661  b_ev 7.30e-05
+f*g=  15.0: Z (rate, no SB) 2.356  Z (shape only) 2.523  b_ev 1.06e-04
+f*g=  20.0: Z (rate, no SB) 2.247  Z (shape only) 2.417  b_ev 1.38e-04
+f*g=  30.0: Z (rate, no SB) 2.087  Z (shape only) 2.256  b_ev 2.00e-04
+f*g=  50.0: Z (rate, no SB) 1.881  Z (shape only) 2.034  b_ev 3.11e-04
+f*g=  70.0: Z (rate, no SB) 1.749  Z (shape only) 1.873  b_ev 4.09e-04
+f*g= 100.0: Z (rate, no SB) 1.623  Z (shape only) 1.690  b_ev 5.25e-04
+f*g= 150.0: Z (rate, no SB) 1.515  Z (shape only) 1.460  b_ev 6.64e-04
+f*g= 200.0: Z (rate, no SB) 1.478  Z (shape only) 1.282  b_ev 7.45e-04
+f*g= 300.0: Z (rate, no SB) 1.497  Z (shape only) 1.002  b_ev 8.18e-04
+f*g= 500.0: Z (rate, no SB) 1.578  Z (shape only) 0.586  b_ev 8.18e-04
+f*g=1000.0: Z (rate, no SB) 1.662  Z (shape only) 0.000  b_ev 7.76e-04
+f*g product required for Z_local = 3/2/1: {'Z=3.0': 2.8657914261525614, 'Z=2.0': 53.75948064372212, 'Z=1.0': 300.7359429900184}
+MSSI-only: {"Z=2.0": {"fg": 53.75948064372212, "rate_only_f": 53.75948064372212, "rate_only_sideband_p6": 5.90251779679848e-72, "rate_only_p_annulus": 0.1993318172870969, "shape_only_g_needed": 53.75948064372212, "shape_max_g": 38.32916145181477, "shape_only_possible": false, "f_at_gmax": 1.4025738786721298, "sideband_p6_at_f_gmax": 0.17019703768683067, "lambda43_f": 7.267441860465117, "g_needed_with_lambda43": 7.397304536576163, "lambda43_position_aware_g_needed": 48.45973053185846, "mssi_at_S1c_gt500_needed_if_rate_only": 0.027226542731493712, "mssi_in_neighbourhood_needed_events": 0.006872612005493436}, "Z=3.0": {"fg": 2.8657914261525614, "rate_only_f": 2.8657914261525614, "rate_only_sideband_p6": 0.0050702366708024445, "rate_only_p_annulus": 0.9176183250058677, "shape_only_g_needed": 2.8657914261525614, "shape_max_g": 38.32916145181477, "shape_only_possible": true, "f_at_gmax": 0.07476791345292723, "sideband_p6_at_f_gmax": 0.3736779344296693, "lambda43_f": 7.267441860465117, "g_needed_with_lambda43": 0.3943329002385924, "lambda43_position_aware_g_needed": 2.583274217104643, "mssi_at_S1c_gt500_needed_if_rate_only": 0.0014513829335663908, "mssi_in_neighbourhood_needed_events": 0.00036636277591934344}}
+ROI self-constraint: {'Z_min': 1.4776689283094881, 'f_at_min': 200.0, 't_H0_along_ladder': {1: 1.3576563507844406, 2: 1.45763528400203, 5: 1.5313729204212505, 10: 1.5466768062464884, 20: 1.526937646524496, 50: 1.4248938841479417, 100: 1.230423898791239, 200: 0.8908422132825705, 500: 0.39410996029525275}, 'mssi_FV_H0_along_ladder': {1: 0.006652516118843758, 2: 0.014284825783219893, 5: 0.03751863655032064, 10: 0.07578716350607792, 20: 0.14963988935940062, 50: 0.34909900161624574, 100: 0.6029077104077071, 200: 0.8730253690169192, 500: 0.9655694027233692}}
+
+SUMMARY
+                                                    hypothesis   Z_local  Z_global    mssi_FV_H0    sideband_p
+0           LZ model: 0.0049 +- 100 % Gaussian (P052 baseline)  3.108756  2.341952  6.652516e-03  3.736779e-01
+1                                        MSSI removed (f -> 0)  3.294459  2.499107  4.892228e-09           NaN
+2                    prior LN0.7, LZ-style (no sideband terms)  3.117149  2.348873  6.148527e-03           NaN
+3                         prior LN0.7 + six wall sideband bins  3.158205  2.382987  4.128653e-03           NaN
+4                    prior LN1.5, LZ-style (no sideband terms)  3.003354  2.256694  2.865227e-02           NaN
+5                         prior LN1.5 + six wall sideband bins  3.171490  2.394116  3.738431e-03           NaN
+6                    prior LN2.3, LZ-style (no sideband terms)  2.652172  1.920244  2.312063e-01           NaN
+7                         prior LN2.3 + six wall sideband bins  3.175237  2.397263  3.631453e-03           NaN
+8                     prior flat, LZ-style (no sideband terms)  1.755728  1.002414  8.107679e-01           NaN
+9                          prior flat + six wall sideband bins  3.178617  2.400105  3.534443e-03           NaN
+10                       rate x2, common (sidebands scale too)  3.167440  2.390718  3.938386e-03  4.432409e-02
+11                      rate x2, FV-only (sidebands unchanged)  3.070311  2.310495  8.120297e-03  3.736779e-01
+12                       rate x5, common (sidebands scale too)  3.172800  2.395216  3.762611e-03  1.429277e-05
+13                      rate x5, FV-only (sidebands unchanged)  2.868063  2.125145  2.160900e-02  3.736779e-01
+14                      rate x10, common (sidebands scale too)  3.175536  2.397514  3.648551e-03  5.206408e-12
+15                     rate x10, FV-only (sidebands unchanged)  2.665607  1.932736  4.425302e-02  3.736779e-01
+16                      rate x50, common (sidebands scale too)  3.177976  2.399566  3.560264e-03  9.596975e-67
+17                     rate x50, FV-only (sidebands unchanged)  2.067608  1.318263  2.161097e-01  3.736779e-01
+18   wall depth scale 4.3 cm, annulus-anchored, position-blind  2.763605  2.024953  3.188731e-02  3.736779e-01
+19   wall depth scale 4.3 cm, annulus-anchored, position-aware  3.158367  2.383122  2.778436e-02  3.736779e-01
+20  wall depth scale 1.23 cm, annulus-anchored, position-blind  3.169246  2.392233  3.820958e-03  3.736779e-01
+21  wall depth scale 1.23 cm, annulus-anchored, position-aware  3.294456  2.499104  3.350142e-03  3.736779e-01
+22                       d-shape: MSSI on the NR band (N(0,1))  3.127147  2.357140  3.937480e-03           NaN
+23                               S1c: 100 % of MSSI at S1c>500  2.672053  1.938743  4.466464e-03           NaN
+24                       all MSSI in the neighbourhood (g_max)  2.152565  1.407659  4.581298e-03           NaN
+25                    RFR MSSI x100 (HE-SB RFR 18 obs vs 2150)  2.874370  2.131251  2.218427e-02  0.000000e+00
+done in 2 s

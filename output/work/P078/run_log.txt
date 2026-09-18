@@ -1,0 +1,235 @@
+active isotopes A=[128, 129, 130, 131, 132, 134, 136], abundances=[0.0191, 0.26401, 0.04071, 0.21232, 0.26909, 0.10436, 0.08857] (sum 0.9982); masses [119.17, 120.1, 121.03, 121.96, 122.89, 124.75, 126.62] GeV
+q->0 checks (sqrt(W_nn/W_pp) should equal N/Z if M counts nucleons): [(128, 1.3696, 1.3704, 0.0197, 0.0242), (129, 1.3879, 1.3889, 0.0393, 0.0051), (130, 1.4064, 1.4074, 0.0197, 0.0027), (131, 1.4249, 1.4259, 0.0786, 0.0156), (132, 1.4434, 1.4444, 0.0196, 0.0083), (134, 1.4801, 1.4815, 0.0196, 0.0031), (136, 1.5172, 1.5185, 0.0196, 0.0064)]
+pointwise dyad deviation max|W_pn^2/(W_pp W_nn) - 1| (5-200 keV, >8 keV from zeros): {128: '2.4e-02', 129: '5.1e-03', 130: '2.7e-03', 131: '1.6e-02', 132: '8.3e-03', 134: '3.1e-03', 136: '6.4e-03'}
+sign-consistency |F_p F_n - W_pn| / sqrt(W_pp W_nn) (dyads, same range): {128: '1.2e-02', 129: '2.6e-03', 130: '1.4e-03', 132: '4.2e-03', 134: '1.5e-03', 136: '3.2e-03'}
+  128Xe  zeros F_p [114.5, 302.2]  F_n [104.6, 258.8]  | minima iso [109.1, 277.6]  vec [74.8, 190.1]  p-only [114.4, 301.3]  xeno [146.8, 380.3] (depth [-0.0012, -0.00082])
+  129Xe  zeros F_p [110.7, 299.4]  F_n [101.1, 257.2]  | minima iso [105.4, 276.0]  vec [72.3, 185.3, 410.5]  p-only [110.7, 299.4]  xeno [142.5, 371.6] (depth [0.00099, 0.00032])
+  130Xe  zeros F_p [111.1, 294.0]  F_n [100.5, 252.2]  | minima iso [105.2, 270.3]  vec [71.4, 185.9, 410.7]  p-only [111.1, 295.3]  xeno [146.1, 373.5] (depth [-0.0032, -0.00053])
+  131Xe  zeros F_p [107.8, 293.3]  F_n [97.2, 249.0]  | minima iso [101.9, 268.4]  vec [69.2, 181.8, 405.8]  p-only [107.8, 293.3]  xeno [142.5, 367.9] (depth [-0.15, -0.21])
+  132Xe  zeros F_p [108.2, 289.5]  F_n [96.6, 244.2]  | minima iso [101.7, 263.3]  vec [68.3, 182.9, 403.9]  p-only [108.3, 289.6]  xeno [146.2, 369.1] (depth [0.0086, -0.0028])
+  134Xe  zeros F_p [103.7, 283.8]  F_n [91.5, 239.4]  | minima iso [96.7, 258.4]  vec [64.8, 179.5, 392.8]  p-only [103.7, 284.0]  xeno [143.9, 358.6] (depth [0.00086, -0.00013])
+  136Xe  zeros F_p [101.7, 279.0]  F_n [89.6, 231.0]  | minima iso [94.8, 251.1]  vec [64.2, 173.2, 383.7]  p-only [101.7, 278.6]  xeno [140.7, 352.7] (depth [-0.00053, -0.00021])
+natural-Xe response minima (keV): iso 102.51798156713966 268.8044708886724  vec 69.31332231455447 182.17461504097287  p-only 108.44045381024789 293.6405525606398  xeno 143.12958718332828 367.5991267047444
+r values at which the natural-Xe second minimum crosses 248 keV: [-0.826]
+Helm F^2 (A=131) minima: [94.6, 279.5]  vs shell-model isoscalar natural-Xe 102.51798156713966 268.8044708886724
+kernels loaded from cache
+  K^00/W^00 for 129Xe: mean 4.815244e+15, rel. spread 2.9e-16  (const_i should be prop. to ab_i/m_i: 2.19827e-03)
+  K^11/W^11 for 129Xe: mean 4.815244e+15, rel. spread 2.7e-16  (const_i should be prop. to ab_i/m_i: 2.19827e-03)
+  K^01/W^01 for 129Xe: mean 4.815244e+15, rel. spread 1.3e-15  (const_i should be prop. to ab_i/m_i: 2.19827e-03)
+  K^00/W^00 for 131Xe: mean 1.966257e+15, rel. spread 1.3e-16  (const_i should be prop. to ab_i/m_i: 1.74088e-03)
+  K^11/W^11 for 131Xe: mean 1.966257e+15, rel. spread 1.3e-16  (const_i should be prop. to ab_i/m_i: 1.74088e-03)
+  K^01/W^01 for 131Xe: mean 1.966257e+15, rel. spread 1.1e-15  (const_i should be prop. to ab_i/m_i: 1.74088e-03)
+  K^00/W^00 for 136Xe: mean 3.406150e+15, rel. spread 1.8e-16  (const_i should be prop. to ab_i/m_i: 6.99517e-04)
+  K^11/W^11 for 136Xe: mean 3.406150e+15, rel. spread 1.3e-16  (const_i should be prop. to ab_i/m_i: 6.99517e-04)
+  K^01/W^01 for 136Xe: mean 3.406150e+15, rel. spread 9.7e-16  (const_i should be prop. to ab_i/m_i: 6.99517e-04)
+halo v_max: sunframe 795.4, annual 810.9 km/s
+validation factorised/direct: [('O1', -0.7, 1000.0, 0.0, 20.0, 1.0), ('O1', -0.7, 1000.0, 0.0, 100.0, 1.0), ('O1', -0.7, 1000.0, 0.0, 200.0, 1.0), ('O1', -0.7, 1000.0, 0.0, 248.0, 1.0), ('O1', -1.0, 400.0, 0.0, 10.0, 1.0), ('O1', -1.0, 400.0, 0.0, 150.0, 1.0), ('O1', -1.0, 400.0, 0.0, 248.0, 1.0), ('O1', 1.0, 1000.0, 300.0, 150.0, 1.0), ('O1', 1.0, 1000.0, 300.0, 248.0, 1.0), ('O1', 1.0, 1000.0, 300.0, 280.0, 1.0), ('O1', -0.744, 4000.0, 350.0, 200.0, 1.0), ('O1', -0.744, 4000.0, 350.0, 248.0, 1.0), ('O1', -0.744, 4000.0, 350.0, 300.0, 1.0), ('O1', 0.3, 1000.0, 250.0, 120.0, 1.0), ('O1', 0.3, 1000.0, 250.0, 248.0, 1.0), ('O4', -1.0, 1000.0, 0.0, 20.0, 1.0), ('O4', -1.0, 1000.0, 0.0, 100.0, 1.0), ('O4', -1.0, 1000.0, 0.0, 248.0, 1.0), ('O4', 0.5, 1000.0, 300.0, 200.0, 1.0), ('O4', 0.5, 1000.0, 300.0, 248.0, 1.0)]
+  max |ratio - 1| = 9.21e-15
+scan sunframe done (5 s)
+scan annual done (7 s)
+[sunframe delta=  0] iso     r=+1.000: R_hi/lo=3.646e-04 N_lo=2743 N_mid=92.2 rho_lo=1.000e+00 rho_hi=1.000 rho_248=1.000 nodes 102.0/266.9 pct248=1.000 peak=10 f248/fpk=0.000 onset=0 | r_min=-0.7436 Nlo_min=7.245 max rho_hi 1.92 at r=+2.00; max ratio enh 375 at r=-0.74
+[sunframe delta=  0] p-only  r=+0.000: R_hi/lo=8.063e-04 N_lo=1240 N_mid=53.9 rho_lo=1.825e-01 rho_hi=0.404 rho_248=0.929 nodes 108.1/291.9 pct248=1.000 peak=10 f248/fpk=0.000 onset=0 | r_min=-0.7436 Nlo_min=7.245 max rho_hi 1.92 at r=+2.00; max ratio enh 375 at r=-0.74
+[sunframe delta=  0] xeno    r=-0.700: R_hi/lo=5.892e-02 N_lo=16.97 N_mid=11.7 rho_lo=1.090e-03 rho_hi=0.176 rho_248=0.957 nodes 143.7/366.0 pct248=0.992 peak=42 f248/fpk=0.030 onset=0 | r_min=-0.7436 Nlo_min=7.245 max rho_hi 1.92 at r=+2.00; max ratio enh 375 at r=-0.74
+[sunframe delta=  0] N_lo-min r=-0.744: R_hi/lo=1.380e-01 N_lo=7.245 N_mid=9.78 rho_lo=4.414e-04 rho_hi=0.167 rho_248=0.961 nodes 149.5/372.2 pct248=0.987 peak=7 f248/fpk=0.043 onset=0 | r_min=-0.7436 Nlo_min=7.245 max rho_hi 1.92 at r=+2.00; max ratio enh 375 at r=-0.74
+[sunframe delta=  0] vec     r=-1.000: R_hi/lo=2.107e-03 N_lo=474.6 N_mid=8.49 rho_lo=2.189e-02 rho_hi=0.127 rho_248=0.989 nodes 68.6/181.6 pct248=0.999 peak=9 f248/fpk=0.001 onset=0 | r_min=-0.7436 Nlo_min=7.245 max rho_hi 1.92 at r=+2.00; max ratio enh 375 at r=-0.74
+[sunframe delta=  0] r=-2    r=-2.000: R_hi/lo=1.189e-04 N_lo=8412 N_mid=178 rho_lo=5.183e-01 rho_hi=0.169 rho_248=1.178 nodes 90.4/224.3 pct248=1.000 peak=10 f248/fpk=0.000 onset=0 | r_min=-0.7436 Nlo_min=7.245 max rho_hi 1.92 at r=+2.00; max ratio enh 375 at r=-0.74
+[sunframe delta=  0] r=+2    r=+2.000: R_hi/lo=2.823e-04 N_lo=3542 N_mid=111 rho_lo=2.474e+00 rho_hi=1.916 rho_248=1.201 nodes 100.2/259.6 pct248=1.000 peak=10 f248/fpk=0.000 onset=0 | r_min=-0.7436 Nlo_min=7.245 max rho_hi 1.92 at r=+2.00; max ratio enh 375 at r=-0.74
+[sunframe delta=250] iso     r=+1.000: R_hi/lo=1.542e+05 N_lo=6.485e-06 N_mid=7.81 rho_lo=1.000e+00 rho_hi=1.000 rho_248=1.000 nodes 101.3/266.1 pct248=0.997 peak=157 f248/fpk=0.026 onset=54 | r_min=-0.7544 Nlo_min=0.973 max rho_hi 1.90 at r=+2.00; max ratio enh 9.43e+03 at r=-0.90
+[sunframe delta=250] p-only  r=+0.000: R_hi/lo=2.882e+05 N_lo=3.47e-06 N_mid=4.02 rho_lo=2.221e-01 rho_hi=0.415 rho_248=0.956 nodes 107.6/291.4 pct248=0.986 peak=168 f248/fpk=0.118 onset=54 | r_min=-0.7544 Nlo_min=0.973 max rho_hi 1.90 at r=+2.00; max ratio enh 9.43e+03 at r=-0.90
+[sunframe delta=250] xeno    r=-0.700: R_hi/lo=2.921e+06 N_lo=3.424e-07 N_mid=1.01 rho_lo=1.023e-02 rho_hi=0.194 rho_248=1.011 nodes 143.6/365.7 pct248=0.874 peak=221 f248/fpk=0.833 onset=54 | r_min=-0.7544 Nlo_min=0.973 max rho_hi 1.90 at r=+2.00; max ratio enh 9.43e+03 at r=-0.90
+[sunframe delta=250] N_mid-min r=-0.754: R_hi/lo=5.392e+06 N_lo=1.855e-07 N_mid=0.973 rho_lo=5.235e-03 rho_hi=0.183 rho_248=1.018 nodes 150.8/373.0 pct248=0.858 peak=227 f248/fpk=0.907 onset=54 | r_min=-0.7544 Nlo_min=0.973 max rho_hi 1.90 at r=+2.00; max ratio enh 9.43e+03 at r=-0.90
+[sunframe delta=250] vec     r=-1.000: R_hi/lo=6.845e+06 N_lo=1.461e-07 N_mid=1.89 rho_lo=3.297e-03 rho_hi=0.146 rho_248=1.056 nodes nan/181.3 pct248=0.854 peak=118 f248/fpk=0.558 onset=54 | r_min=-0.7544 Nlo_min=0.973 max rho_hi 1.90 at r=+2.00; max ratio enh 9.43e+03 at r=-0.90
+[sunframe delta=250] r=-2    r=-2.000: R_hi/lo=8.695e+04 N_lo=1.15e-05 N_mid=18.8 rho_lo=3.436e-01 rho_hi=0.194 rho_248=1.299 nodes 89.3/223.5 pct248=0.967 peak=140 f248/fpk=0.063 onset=54 | r_min=-0.7544 Nlo_min=0.973 max rho_hi 1.90 at r=+2.00; max ratio enh 9.43e+03 at r=-0.90
+[sunframe delta=250] r=+2    r=+2.000: R_hi/lo=1.254e+05 N_lo=7.972e-06 N_mid=9.84 rho_lo=2.337e+00 rho_hi=1.901 rho_248=1.188 nodes 99.5/258.9 pct248=0.998 peak=154 f248/fpk=0.013 onset=54 | r_min=-0.7544 Nlo_min=0.973 max rho_hi 1.90 at r=+2.00; max ratio enh 9.43e+03 at r=-0.90
+[sunframe delta=300] iso     r=+1.000: R_hi/lo=inf N_lo=0 N_mid=4.24 rho_lo=nan rho_hi=1.000 rho_248=1.000 nodes nan/265.6 pct248=0.995 peak=168 f248/fpk=0.042 onset=92 | r_min=-0.8235 Nlo_min=0.229 max rho_hi 1.89 at r=+2.00; max ratio enh nan at r=+nan
+[sunframe delta=300] p-only  r=+0.000: R_hi/lo=inf N_lo=0 N_mid=2.15 rho_lo=nan rho_hi=0.426 rho_248=0.978 nodes nan/291.1 pct248=0.976 peak=178 f248/fpk=0.175 onset=92 | r_min=-0.8235 Nlo_min=0.229 max rho_hi 1.89 at r=+2.00; max ratio enh nan at r=+nan
+[sunframe delta=300] xeno    r=-0.700: R_hi/lo=inf N_lo=0 N_mid=0.316 rho_lo=nan rho_hi=0.211 rho_248=1.054 nodes 143.4/365.4 pct248=0.792 peak=231 f248/fpk=0.906 onset=92 | r_min=-0.8235 Nlo_min=0.229 max rho_hi 1.89 at r=+2.00; max ratio enh nan at r=+nan
+[sunframe delta=300] N_mid-min r=-0.823: R_hi/lo=inf N_lo=0 N_mid=0.229 rho_lo=nan rho_hi=0.189 rho_248=1.075 nodes nan/160.0 pct248=0.727 peak=244 f248/fpk=0.995 onset=92 | r_min=-0.8235 Nlo_min=0.229 max rho_hi 1.89 at r=+2.00; max ratio enh nan at r=+nan
+[sunframe delta=300] vec     r=-1.000: R_hi/lo=inf N_lo=0 N_mid=0.456 rho_lo=nan rho_hi=0.166 rho_248=1.110 nodes nan/180.8 pct248=0.700 peak=252 f248/fpk=0.988 onset=92 | r_min=-0.8235 Nlo_min=0.229 max rho_hi 1.89 at r=+2.00; max ratio enh nan at r=+nan
+[sunframe delta=300] r=-2    r=-2.000: R_hi/lo=inf N_lo=0 N_mid=7.85 rho_lo=nan rho_hi=0.219 rho_248=1.396 nodes nan/223.1 pct248=0.922 peak=153 f248/fpk=0.139 onset=92 | r_min=-0.8235 Nlo_min=0.229 max rho_hi 1.89 at r=+2.00; max ratio enh nan at r=+nan
+[sunframe delta=300] r=+2    r=+2.000: R_hi/lo=inf N_lo=0 N_mid=5.32 rho_lo=nan rho_hi=1.888 rho_248=1.177 nodes 92.8/258.4 pct248=0.996 peak=166 f248/fpk=0.021 onset=92 | r_min=-0.8235 Nlo_min=0.229 max rho_hi 1.89 at r=+2.00; max ratio enh nan at r=+nan
+[sunframe delta=350] iso     r=+1.000: R_hi/lo=inf N_lo=0 N_mid=0.542 rho_lo=nan rho_hi=1.000 rho_248=1.000 nodes nan/262.6 pct248=0.970 peak=204 f248/fpk=0.152 onset=154 | r_min=-1.1164 Nlo_min=0.006 max rho_hi 1.81 at r=+2.00; max ratio enh nan at r=+nan
+[sunframe delta=350] p-only  r=+0.000: R_hi/lo=inf N_lo=0 N_mid=0.306 rho_lo=nan rho_hi=0.497 rho_248=1.110 nodes nan/289.6 pct248=0.907 peak=214 f248/fpk=0.468 onset=154 | r_min=-1.1164 Nlo_min=0.006 max rho_hi 1.81 at r=+2.00; max ratio enh nan at r=+nan
+[sunframe delta=350] xeno    r=-0.700: R_hi/lo=inf N_lo=0 N_mid=0.0695 rho_lo=nan rho_hi=0.328 rho_248=1.321 nodes nan/363.7 pct248=0.658 peak=248 f248/fpk=1.000 onset=154 | r_min=-1.1164 Nlo_min=0.006 max rho_hi 1.81 at r=+2.00; max ratio enh nan at r=+nan
+[sunframe delta=350] N_mid-min r=-1.116: R_hi/lo=inf N_lo=0 N_mid=0.00636 rho_lo=nan rho_hi=0.300 rho_248=1.499 nodes nan/184.6 pct248=0.442 peak=256 f248/fpk=0.883 onset=154 | r_min=-1.1164 Nlo_min=0.006 max rho_hi 1.81 at r=+2.00; max ratio enh nan at r=+nan
+[sunframe delta=350] vec     r=-1.000: R_hi/lo=inf N_lo=0 N_mid=0.0117 rho_lo=nan rho_hi=0.302 rho_248=1.445 nodes nan/nan pct248=0.497 peak=255 f248/fpk=0.925 onset=154 | r_min=-1.1164 Nlo_min=0.006 max rho_hi 1.81 at r=+2.00; max ratio enh nan at r=+nan
+[sunframe delta=350] r=-2    r=-2.000: R_hi/lo=inf N_lo=0 N_mid=0.23 rho_lo=nan rho_hi=0.417 rho_248=2.005 nodes nan/219.0 pct248=0.385 peak=262 f248/fpk=0.618 onset=154 | r_min=-1.1164 Nlo_min=0.006 max rho_hi 1.81 at r=+2.00; max ratio enh nan at r=+nan
+[sunframe delta=350] r=+2    r=+2.000: R_hi/lo=inf N_lo=0 N_mid=0.647 rho_lo=nan rho_hi=1.812 rho_248=1.114 nodes nan/256.4 pct248=0.960 peak=202 f248/fpk=0.083 onset=154 | r_min=-1.1164 Nlo_min=0.006 max rho_hi 1.81 at r=+2.00; max ratio enh nan at r=+nan
+[sunframe delta=380] iso     r=+1.000: R_hi/lo=inf N_lo=0 N_mid=0 rho_lo=nan rho_hi=1.000 rho_248=nan nodes nan/250.4 pct248=0.076 peak=271 f248/fpk=-0.001 onset=228 | r_min=-1.9700 Nlo_min=0.000 max rho_hi 19.23 at r=-2.00; max ratio enh nan at r=+nan
+[sunframe delta=380] p-only  r=+0.000: R_hi/lo=inf N_lo=0 N_mid=0 rho_lo=nan rho_hi=1.342 rho_248=nan nodes nan/277.1 pct248=0.405 peak=250 f248/fpk=0.902 onset=228 | r_min=-1.9700 Nlo_min=0.000 max rho_hi 19.23 at r=-2.00; max ratio enh nan at r=+nan
+[sunframe delta=380] xeno    r=-0.700: R_hi/lo=inf N_lo=0 N_mid=0 rho_lo=nan rho_hi=4.993 rho_248=nan nodes nan/356.1 pct248=0.156 peak=262 f248/fpk=0.520 onset=228 | r_min=-1.9700 Nlo_min=0.000 max rho_hi 19.23 at r=-2.00; max ratio enh nan at r=+nan
+[sunframe delta=380] N_mid-min r=-1.970: R_hi/lo=inf N_lo=0 N_mid=0 rho_lo=nan rho_hi=18.793 rho_248=-1707.219 nodes nan/nan pct248=0.075 peak=266 f248/fpk=0.297 onset=228 | r_min=-1.9700 Nlo_min=0.000 max rho_hi 19.23 at r=-2.00; max ratio enh nan at r=+nan
+[sunframe delta=380] vec     r=-1.000: R_hi/lo=inf N_lo=0 N_mid=0 rho_lo=nan rho_hi=7.419 rho_248=nan nodes nan/387.2 pct248=0.122 peak=262 f248/fpk=0.426 onset=228 | r_min=-1.9700 Nlo_min=0.000 max rho_hi 19.23 at r=-2.00; max ratio enh nan at r=+nan
+[sunframe delta=380] r=-2    r=-2.000: R_hi/lo=inf N_lo=0 N_mid=0 rho_lo=nan rho_hi=19.231 rho_248=nan nodes nan/nan pct248=0.074 peak=266 f248/fpk=0.294 onset=228 | r_min=-1.9700 Nlo_min=0.000 max rho_hi 19.23 at r=-2.00; max ratio enh nan at r=+nan
+[sunframe delta=380] r=+2    r=+2.000: R_hi/lo=inf N_lo=0 N_mid=0 rho_lo=nan rho_hi=6.393 rho_248=nan nodes nan/244.1 pct248=0.004 peak=271 f248/fpk=0.009 onset=228 | r_min=-1.9700 Nlo_min=0.000 max rho_hi 19.23 at r=-2.00; max ratio enh nan at r=+nan
+[annual   delta=  0] iso     r=+1.000: R_hi/lo=3.669e-04 N_lo=2726 N_mid=91.8 rho_lo=1.000e+00 rho_hi=1.000 rho_248=1.000 nodes 102.0/266.9 pct248=1.000 peak=10 f248/fpk=0.000 onset=0 | r_min=-0.7436 Nlo_min=7.199 max rho_hi 1.92 at r=+2.00; max ratio enh 375 at r=-0.74
+[annual   delta=  0] p-only  r=+0.000: R_hi/lo=8.114e-04 N_lo=1232 N_mid=53.7 rho_lo=1.825e-01 rho_hi=0.404 rho_248=0.929 nodes 108.1/291.9 pct248=1.000 peak=10 f248/fpk=0.000 onset=0 | r_min=-0.7436 Nlo_min=7.199 max rho_hi 1.92 at r=+2.00; max ratio enh 375 at r=-0.74
+[annual   delta=  0] xeno    r=-0.700: R_hi/lo=5.928e-02 N_lo=16.87 N_mid=11.6 rho_lo=1.090e-03 rho_hi=0.176 rho_248=0.957 nodes 143.7/366.0 pct248=0.992 peak=42 f248/fpk=0.030 onset=0 | r_min=-0.7436 Nlo_min=7.199 max rho_hi 1.92 at r=+2.00; max ratio enh 375 at r=-0.74
+[annual   delta=  0] N_lo-min r=-0.744: R_hi/lo=1.389e-01 N_lo=7.199 N_mid=9.73 rho_lo=4.416e-04 rho_hi=0.167 rho_248=0.961 nodes 149.5/372.2 pct248=0.987 peak=7 f248/fpk=0.043 onset=0 | r_min=-0.7436 Nlo_min=7.199 max rho_hi 1.92 at r=+2.00; max ratio enh 375 at r=-0.74
+[annual   delta=  0] vec     r=-1.000: R_hi/lo=2.122e-03 N_lo=471.3 N_mid=8.45 rho_lo=2.189e-02 rho_hi=0.127 rho_248=0.988 nodes 68.6/181.6 pct248=0.999 peak=9 f248/fpk=0.001 onset=0 | r_min=-0.7436 Nlo_min=7.199 max rho_hi 1.92 at r=+2.00; max ratio enh 375 at r=-0.74
+[annual   delta=  0] r=-2    r=-2.000: R_hi/lo=1.197e-04 N_lo=8355 N_mid=178 rho_lo=5.182e-01 rho_hi=0.169 rho_248=1.178 nodes 90.4/224.3 pct248=1.000 peak=10 f248/fpk=0.000 onset=0 | r_min=-0.7436 Nlo_min=7.199 max rho_hi 1.92 at r=+2.00; max ratio enh 375 at r=-0.74
+[annual   delta=  0] r=+2    r=+2.000: R_hi/lo=2.840e-04 N_lo=3521 N_mid=110 rho_lo=2.474e+00 rho_hi=1.916 rho_248=1.201 nodes 100.2/259.6 pct248=1.000 peak=10 f248/fpk=0.000 onset=0 | r_min=-0.7436 Nlo_min=7.199 max rho_hi 1.92 at r=+2.00; max ratio enh 375 at r=-0.74
+[annual   delta=250] iso     r=+1.000: R_hi/lo=1.245e+03 N_lo=0.0008035 N_mid=7.94 rho_lo=1.000e+00 rho_hi=1.000 rho_248=1.000 nodes 101.3/266.1 pct248=0.998 peak=157 f248/fpk=0.026 onset=52 | r_min=-0.7563 Nlo_min=0.993 max rho_hi 1.90 at r=+2.00; max ratio enh 1.09e+04 at r=-0.88
+[annual   delta=250] p-only  r=+0.000: R_hi/lo=2.345e+03 N_lo=0.0004264 N_mid=4.1 rho_lo=2.203e-01 rho_hi=0.415 rho_248=0.956 nodes 107.6/291.4 pct248=0.987 peak=168 f248/fpk=0.118 onset=52 | r_min=-0.7563 Nlo_min=0.993 max rho_hi 1.90 at r=+2.00; max ratio enh 1.09e+04 at r=-0.88
+[annual   delta=250] xeno    r=-0.700: R_hi/lo=2.516e+04 N_lo=3.974e-05 N_mid=1.03 rho_lo=9.581e-03 rho_hi=0.194 rho_248=1.010 nodes 143.6/365.7 pct248=0.875 peak=221 f248/fpk=0.833 onset=52 | r_min=-0.7563 Nlo_min=0.993 max rho_hi 1.90 at r=+2.00; max ratio enh 1.09e+04 at r=-0.88
+[annual   delta=250] N_mid-min r=-0.756: R_hi/lo=4.911e+04 N_lo=2.036e-05 N_mid=0.993 rho_lo=4.629e-03 rho_hi=0.183 rho_248=1.017 nodes 151.1/373.2 pct248=0.859 peak=227 f248/fpk=0.910 onset=52 | r_min=-0.7563 Nlo_min=0.993 max rho_hi 1.90 at r=+2.00; max ratio enh 1.09e+04 at r=-0.88
+[annual   delta=250] vec     r=-1.000: R_hi/lo=4.822e+04 N_lo=2.074e-05 N_mid=1.91 rho_lo=3.776e-03 rho_hi=0.146 rho_248=1.055 nodes nan/181.3 pct248=0.855 peak=118 f248/fpk=0.553 onset=52 | r_min=-0.7563 Nlo_min=0.993 max rho_hi 1.90 at r=+2.00; max ratio enh 1.09e+04 at r=-0.88
+[annual   delta=250] r=-2    r=-2.000: R_hi/lo=6.876e+02 N_lo=0.001454 N_mid=19 rho_lo=3.505e-01 rho_hi=0.194 rho_248=1.297 nodes 89.3/223.5 pct248=0.968 peak=140 f248/fpk=0.062 onset=52 | r_min=-0.7563 Nlo_min=0.993 max rho_hi 1.90 at r=+2.00; max ratio enh 1.09e+04 at r=-0.88
+[annual   delta=250] r=+2    r=+2.000: R_hi/lo=1.010e+03 N_lo=0.0009902 N_mid=10 rho_lo=2.343e+00 rho_hi=1.901 rho_248=1.188 nodes 99.5/258.9 pct248=0.998 peak=154 f248/fpk=0.013 onset=52 | r_min=-0.7563 Nlo_min=0.993 max rho_hi 1.90 at r=+2.00; max ratio enh 1.09e+04 at r=-0.88
+[annual   delta=300] iso     r=+1.000: R_hi/lo=inf N_lo=0 N_mid=4.33 rho_lo=nan rho_hi=1.000 rho_248=1.000 nodes nan/265.6 pct248=0.995 peak=168 f248/fpk=0.041 onset=84 | r_min=-0.8178 Nlo_min=0.246 max rho_hi 1.89 at r=+2.00; max ratio enh nan at r=+nan
+[annual   delta=300] p-only  r=+0.000: R_hi/lo=inf N_lo=0 N_mid=2.19 rho_lo=nan rho_hi=0.425 rho_248=0.976 nodes nan/291.1 pct248=0.976 peak=178 f248/fpk=0.173 onset=84 | r_min=-0.8178 Nlo_min=0.246 max rho_hi 1.89 at r=+2.00; max ratio enh nan at r=+nan
+[annual   delta=300] xeno    r=-0.700: R_hi/lo=inf N_lo=0 N_mid=0.327 rho_lo=nan rho_hi=0.210 rho_248=1.051 nodes 143.5/365.4 pct248=0.794 peak=231 f248/fpk=0.905 onset=84 | r_min=-0.8178 Nlo_min=0.246 max rho_hi 1.89 at r=+2.00; max ratio enh nan at r=+nan
+[annual   delta=300] N_mid-min r=-0.818: R_hi/lo=inf N_lo=0 N_mid=0.246 rho_lo=nan rho_hi=0.189 rho_248=1.071 nodes 159.4/380.5 pct248=0.733 peak=244 f248/fpk=0.994 onset=84 | r_min=-0.8178 Nlo_min=0.246 max rho_hi 1.89 at r=+2.00; max ratio enh nan at r=+nan
+[annual   delta=300] vec     r=-1.000: R_hi/lo=inf N_lo=0 N_mid=0.494 rho_lo=nan rho_hi=0.165 rho_248=1.106 nodes nan/180.9 pct248=0.707 peak=252 f248/fpk=0.988 onset=84 | r_min=-0.8178 Nlo_min=0.246 max rho_hi 1.89 at r=+2.00; max ratio enh nan at r=+nan
+[annual   delta=300] r=-2    r=-2.000: R_hi/lo=inf N_lo=0 N_mid=8.16 rho_lo=nan rho_hi=0.218 rho_248=1.390 nodes nan/223.1 pct248=0.925 peak=153 f248/fpk=0.135 onset=84 | r_min=-0.8178 Nlo_min=0.246 max rho_hi 1.89 at r=+2.00; max ratio enh nan at r=+nan
+[annual   delta=300] r=+2    r=+2.000: R_hi/lo=inf N_lo=0 N_mid=5.44 rho_lo=nan rho_hi=1.888 rho_248=1.177 nodes nan/258.4 pct248=0.996 peak=166 f248/fpk=0.020 onset=84 | r_min=-0.8178 Nlo_min=0.246 max rho_hi 1.89 at r=+2.00; max ratio enh nan at r=+nan
+[annual   delta=350] iso     r=+1.000: R_hi/lo=inf N_lo=0 N_mid=0.893 rho_lo=nan rho_hi=1.000 rho_248=1.000 nodes nan/262.7 pct248=0.978 peak=201 f248/fpk=0.127 onset=138 | r_min=-1.0464 Nlo_min=0.015 max rho_hi 1.83 at r=+2.00; max ratio enh nan at r=+nan
+[annual   delta=350] p-only  r=+0.000: R_hi/lo=inf N_lo=0 N_mid=0.495 rho_lo=nan rho_hi=0.478 rho_248=1.080 nodes nan/289.9 pct248=0.925 peak=208 f248/fpk=0.416 onset=138 | r_min=-1.0464 Nlo_min=0.015 max rho_hi 1.83 at r=+2.00; max ratio enh nan at r=+nan
+[annual   delta=350] xeno    r=-0.700: R_hi/lo=inf N_lo=0 N_mid=0.0996 rho_lo=nan rho_hi=0.298 rho_248=1.261 nodes 141.6/364.5 pct248=0.681 peak=244 f248/fpk=0.997 onset=144 | r_min=-1.0464 Nlo_min=0.015 max rho_hi 1.83 at r=+2.00; max ratio enh nan at r=+nan
+[annual   delta=350] N_mid-min r=-1.046: R_hi/lo=inf N_lo=0 N_mid=0.015 rho_lo=nan rho_hi=0.264 rho_248=1.388 nodes nan/182.9 pct248=0.487 peak=256 f248/fpk=0.916 onset=138 | r_min=-1.0464 Nlo_min=0.015 max rho_hi 1.83 at r=+2.00; max ratio enh nan at r=+nan
+[annual   delta=350] vec     r=-1.000: R_hi/lo=inf N_lo=0 N_mid=0.0167 rho_lo=nan rho_hi=0.267 rho_248=1.369 nodes nan/177.2 pct248=0.510 peak=255 f248/fpk=0.932 onset=138 | r_min=-1.0464 Nlo_min=0.015 max rho_hi 1.83 at r=+2.00; max ratio enh nan at r=+nan
+[annual   delta=350] r=-2    r=-2.000: R_hi/lo=inf N_lo=0 N_mid=0.537 rho_lo=nan rho_hi=0.365 rho_248=1.867 nodes nan/220.8 pct248=0.507 peak=262 f248/fpk=0.622 onset=138 | r_min=-1.0464 Nlo_min=0.015 max rho_hi 1.83 at r=+2.00; max ratio enh nan at r=+nan
+[annual   delta=350] r=+2    r=+2.000: R_hi/lo=inf N_lo=0 N_mid=1.08 rho_lo=nan rho_hi=1.832 rho_248=1.128 nodes nan/256.8 pct248=0.973 peak=196 f248/fpk=0.068 onset=138 | r_min=-1.0464 Nlo_min=0.015 max rho_hi 1.83 at r=+2.00; max ratio enh nan at r=+nan
+[annual   delta=380] iso     r=+1.000: R_hi/lo=inf N_lo=0 N_mid=0.00685 rho_lo=nan rho_hi=1.000 rho_248=1.000 nodes nan/252.5 pct248=0.751 peak=228 f248/fpk=0.385 onset=193 | r_min=-1.4761 Nlo_min=-0.000 max rho_hi 3.44 at r=-2.00; max ratio enh nan at r=+nan
+[annual   delta=380] p-only  r=+0.000: R_hi/lo=inf N_lo=0 N_mid=0.00252 rho_lo=nan rho_hi=0.965 rho_248=2.106 nodes nan/284.5 pct248=0.691 peak=242 f248/fpk=0.939 onset=193 | r_min=-1.4761 Nlo_min=-0.000 max rho_hi 3.44 at r=-2.00; max ratio enh nan at r=+nan
+[annual   delta=380] xeno    r=-0.700: R_hi/lo=inf N_lo=0 N_mid=0.000462 rho_lo=nan rho_hi=1.445 rho_248=3.449 nodes nan/360.9 pct248=0.392 peak=260 f248/fpk=0.848 onset=193 | r_min=-1.4761 Nlo_min=-0.000 max rho_hi 3.44 at r=-2.00; max ratio enh nan at r=+nan
+[annual   delta=380] N_mid-min r=-1.476: R_hi/lo=inf N_lo=0 N_mid=-3.95e-06 rho_lo=nan rho_hi=2.465 rho_248=5.486 nodes nan/198.2 pct248=0.216 peak=264 f248/fpk=0.591 onset=193 | r_min=-1.4761 Nlo_min=-0.000 max rho_hi 3.44 at r=-2.00; max ratio enh nan at r=+nan
+[annual   delta=380] vec     r=-1.000: R_hi/lo=inf N_lo=0 N_mid=0.000139 rho_lo=nan rho_hi=1.779 rho_248=4.168 nodes nan/nan pct248=0.305 peak=260 f248/fpk=0.721 onset=193 | r_min=-1.4761 Nlo_min=-0.000 max rho_hi 3.44 at r=-2.00; max ratio enh nan at r=+nan
+[annual   delta=380] r=-2    r=-2.000: R_hi/lo=inf N_lo=0 N_mid=8.52e-05 rho_lo=nan rho_hi=3.442 rho_248=7.186 nodes nan/208.5 pct248=0.162 peak=264 f248/fpk=0.494 onset=193 | r_min=-1.4761 Nlo_min=-0.000 max rho_hi 3.44 at r=-2.00; max ratio enh nan at r=+nan
+[annual   delta=380] r=+2    r=+2.000: R_hi/lo=inf N_lo=0 N_mid=0.00716 rho_lo=nan rho_hi=1.885 rho_248=0.849 nodes nan/244.0 pct248=0.461 peak=268 f248/fpk=0.138 onset=193 | r_min=-1.4761 Nlo_min=-0.000 max rho_hi 3.44 at r=-2.00; max ratio enh nan at r=+nan
+  N_lo elastic sunframe m=400 r=+1.0: 3837  (nodes 102.0/266.9, rho_248 1.000)
+  N_lo elastic sunframe m=400 r=+0.0: 1748  (nodes 108.1/292.1, rho_248 0.929)
+  N_lo elastic sunframe m=400 r=-0.7: 23.97  (nodes 143.7/366.1, rho_248 0.957)
+  N_lo elastic sunframe m=400 r=-1.0: 699  (nodes 68.7/181.6, rho_248 0.988)
+  N_lo elastic sunframe m=400 r=-2.0: 1.233e+04  (nodes 90.4/224.3, rho_248 1.177)
+  N_lo minimum m=400 sunframe: r_min=-0.7431, N_lo=10.294   (P032: -0.7429/-0.7435/-0.7437, 10.35/7.28/6.27)
+    N_lo <= 10 for r in [-, -], <= 5: none
+  N_lo elastic sunframe m=1000 r=+1.0: 2743  (nodes 102.0/266.9, rho_248 1.000)
+  N_lo elastic sunframe m=1000 r=+0.0: 1240  (nodes 108.1/291.9, rho_248 0.929)
+  N_lo elastic sunframe m=1000 r=-0.7: 16.97  (nodes 143.7/366.0, rho_248 0.957)
+  N_lo elastic sunframe m=1000 r=-1.0: 474.6  (nodes 68.6/181.6, rho_248 0.989)
+  N_lo elastic sunframe m=1000 r=-2.0: 8412  (nodes 90.4/224.3, rho_248 1.178)
+  N_lo minimum m=1000 sunframe: r_min=-0.7436, N_lo=7.245   (P032: -0.7429/-0.7435/-0.7437, 10.35/7.28/6.27)
+    N_lo <= 10 for r in [-0.76, -0.73], <= 5: none
+  N_lo elastic sunframe m=4000 r=+1.0: 2376  (nodes 102.0/266.7, rho_248 1.000)
+  N_lo elastic sunframe m=4000 r=+0.0: 1071  (nodes 108.1/292.0, rho_248 0.929)
+  N_lo elastic sunframe m=4000 r=-0.7: 14.65  (nodes 143.7/366.0, rho_248 0.956)
+  N_lo elastic sunframe m=4000 r=-1.0: 402.3  (nodes 68.6/181.6, rho_248 0.988)
+  N_lo elastic sunframe m=4000 r=-2.0: 7145  (nodes 90.4/224.2, rho_248 1.176)
+  N_lo minimum m=4000 sunframe: r_min=-0.7439, N_lo=6.236   (P032: -0.7429/-0.7435/-0.7437, 10.35/7.28/6.27)
+    N_lo <= 10 for r in [-0.77, -0.72], <= 5: none
+isovector/isoscalar at equal c_p (1 TeV, sunframe): q->0 0.0317  5.4-55: 0.0219  200-270: 0.1265  248: 0.9885
+xenophobic r=-0.7 per isotope at 248 keV: (A, F_p, rF_n, amplitude, interference, share_248, share_20)
+   128 {'Z_plus_rN': 2.2, 'share_20': 0.04, 'share_248': 0.013, 'Fp_248': -0.73, 'rFn_248': 0.153, 'amp_248': -0.577, 'interference_248': 'destructive'}
+   129 {'Z_plus_rN': 1.5, 'share_20': 0.456, 'share_248': 0.231, 'Fp_248': -0.791, 'rFn_248': 0.128, 'amp_248': -0.664, 'interference_248': 'destructive'}
+   130 {'Z_plus_rN': 0.8, 'share_20': 0.053, 'share_248': 0.034, 'Fp_248': -0.688, 'rFn_248': 0.092, 'amp_248': -0.596, 'interference_248': 'destructive'}
+   131 {'Z_plus_rN': 0.1, 'share_20': 0.218, 'share_248': 0.217}
+   132 {'Z_plus_rN': -0.6, 'share_20': 0.192, 'share_248': 0.262, 'Fp_248': -0.62, 'rFn_248': -0.063, 'amp_248': -0.683, 'interference_248': 'constructive'}
+   134 {'Z_plus_rN': -2.0, 'share_20': 0.035, 'share_248': 0.124, 'Fp_248': -0.602, 'rFn_248': -0.136, 'amp_248': -0.739, 'interference_248': 'constructive'}
+   136 {'Z_plus_rN': -3.4, 'share_20': 0.006, 'share_248': 0.119, 'Fp_248': -0.5, 'rFn_248': -0.267, 'amp_248': -0.767, 'interference_248': 'constructive'}
+sigma_p for one 200-270 keV event (2.84 t yr, 1 TeV): [(1.0, '5.57e-44'), (0.0, '1.38e-43'), (-0.7, '3.17e-43'), (-0.744, '3.34e-43'), (-1.0, '4.41e-43'), (-2.0, '3.30e-43'), (2.0, '2.91e-44')]
+enriched targets (sunframe, delta=0): target, r, R_hi/natural, dRdE248/natural, N_lo, nodes
+  natural                                r=+1.0: R_hi/nat 1.000  248/nat 1.000  N_lo 2743  nodes 102.0/266.9  R_hi/lo 3.646e-04
+  natural                                r=+0.0: R_hi/nat 1.000  248/nat 1.000  N_lo 1240  nodes 108.1/291.9  R_hi/lo 8.063e-04
+  natural                                r=-0.7: R_hi/nat 1.000  248/nat 1.000  N_lo 16.97  nodes 143.7/366.0  R_hi/lo 5.892e-02
+  natural                                r=-1.0: R_hi/nat 1.000  248/nat 1.000  N_lo 474.6  nodes 68.6/181.6  R_hi/lo 2.107e-03
+  136Xe-depleted                         r=+1.0: R_hi/nat 1.041  248/nat 1.102  N_lo 2634  nodes 102.6/268.3  R_hi/lo 3.797e-04
+  136Xe-depleted                         r=+0.0: R_hi/nat 1.021  248/nat 1.045  N_lo 1221  nodes 108.7/293.2  R_hi/lo 8.188e-04
+  136Xe-depleted                         r=-0.7: R_hi/nat 0.964  248/nat 0.970  N_lo 18.43  nodes 144.1/368.1  R_hi/lo 5.426e-02
+  136Xe-depleted                         r=-1.0: R_hi/nat 0.916  248/nat 0.933  N_lo 501.9  nodes 69.2/182.9  R_hi/lo 1.992e-03
+  134+136Xe-depleted                     r=+1.0: R_hi/nat 1.069  248/nat 1.204  N_lo 2568  nodes 103.4/269.7  R_hi/lo 3.895e-04
+  134+136Xe-depleted                     r=+0.0: R_hi/nat 1.031  248/nat 1.078  N_lo 1214  nodes 109.3/294.6  R_hi/lo 8.235e-04
+  134+136Xe-depleted                     r=-0.7: R_hi/nat 0.935  248/nat 0.944  N_lo 19.89  nodes 144.1/369.8  R_hi/lo 5.027e-02
+  134+136Xe-depleted                     r=-1.0: R_hi/nat 0.858  248/nat 0.882  N_lo 522.2  nodes 70.0/183.5  R_hi/lo 1.915e-03
+  136Xe-enriched (90/10 136/134)         r=+1.0: R_hi/nat 0.614  248/nat 0.023  N_lo 4458  nodes 95.0/251.8  R_hi/lo 2.243e-04
+  136Xe-enriched (90/10 136/134)         r=+0.0: R_hi/nat 0.810  248/nat 0.579  N_lo 1457  nodes 101.9/279.1  R_hi/lo 6.863e-04
+  136Xe-enriched (90/10 136/134)         r=-0.7: R_hi/nat 1.342  248/nat 1.284  N_lo 7.009  nodes 141.0/353.0  R_hi/lo 1.427e-01
+  136Xe-enriched (90/10 136/134)         r=-1.0: R_hi/nat 1.781  248/nat 1.628  N_lo 344.1  nodes 64.2/173.7  R_hi/lo 2.906e-03
+  129Xe-enriched (80 % + natural rest)   r=+1.0: R_hi/nat 1.231  248/nat 1.707  N_lo 2228  nodes 104.7/274.2  R_hi/lo 4.489e-04
+  129Xe-enriched (80 % + natural rest)   r=+0.0: R_hi/nat 1.134  248/nat 1.260  N_lo 1117  nodes 110.2/298.1  R_hi/lo 8.953e-04
+  129Xe-enriched (80 % + natural rest)   r=-0.7: R_hi/nat 0.910  248/nat 0.912  N_lo 24.57  nodes 142.8/370.3  R_hi/lo 4.070e-02
+  129Xe-enriched (80 % + natural rest)   r=-1.0: R_hi/nat 0.746  248/nat 0.774  N_lo 556.3  nodes 71.4/184.4  R_hi/lo 1.798e-03
+  pure 129Xe                             r=+1.0: R_hi/nat 1.290  248/nat 1.887  N_lo 2126  nodes 105.4/276.0  R_hi/lo 4.704e-04
+  pure 129Xe                             r=+0.0: R_hi/nat 1.168  248/nat 1.326  N_lo 1090  nodes 110.7/299.5  R_hi/lo 9.174e-04
+  pure 129Xe                             r=-0.7: R_hi/nat 0.887  248/nat 0.890  N_lo 26.75  nodes 142.5/371.8  R_hi/lo 3.738e-02
+  pure 129Xe                             r=-1.0: R_hi/nat 0.682  248/nat 0.717  N_lo 586.8  nodes 72.3/185.4  R_hi/lo 1.704e-03
+  pure 131Xe                             r=+1.0: R_hi/nat 1.091  248/nat 1.109  N_lo 2512  nodes 101.9/268.4  R_hi/lo 3.981e-04
+  pure 131Xe                             r=+0.0: R_hi/nat 1.078  248/nat 1.093  N_lo 1154  nodes 107.9/293.3  R_hi/lo 8.662e-04
+  pure 131Xe                             r=-0.7: R_hi/nat 1.024  248/nat 1.021  N_lo 16.68  nodes 142.5/367.5  R_hi/lo 5.996e-02
+  pure 131Xe                             r=-1.0: R_hi/nat 0.968  248/nat 0.979  N_lo 473.3  nodes 69.2/181.8  R_hi/lo 2.113e-03
+  pure 132Xe                             r=+1.0: R_hi/nat 0.844  248/nat 0.587  N_lo 3258  nodes 101.7/263.3  R_hi/lo 3.069e-04
+  pure 132Xe                             r=+0.0: R_hi/nat 0.879  248/nat 0.834  N_lo 1403  nodes 108.3/289.6  R_hi/lo 7.125e-04
+  pure 132Xe                             r=-0.7: R_hi/nat 0.948  248/nat 0.968  N_lo 14.91  nodes 146.3/369.0  R_hi/lo 6.706e-02
+  pure 132Xe                             r=-1.0: R_hi/nat 0.989  248/nat 1.007  N_lo 498.9  nodes 68.4/182.9  R_hi/lo 2.004e-03
+  pure 136Xe                             r=+1.0: R_hi/nat 0.590  248/nat -0.011  N_lo 4642  nodes 94.8/251.1  R_hi/lo 2.154e-04
+  pure 136Xe                             r=+0.0: R_hi/nat 0.796  248/nat 0.555  N_lo 1480  nodes 101.7/278.6  R_hi/lo 6.756e-04
+  pure 136Xe                             r=-0.7: R_hi/nat 1.360  248/nat 1.297  N_lo 6.75  nodes 140.7/352.7  R_hi/lo 1.481e-01
+  pure 136Xe                             r=-1.0: R_hi/nat 1.828  248/nat 1.662  N_lo 339.2  nodes 64.2/173.1  R_hi/lo 2.948e-03
+enriched targets (annual, delta=300): target, r, R_hi/natural, dRdE248/natural, pct248, peak
+  natural                                r=+1.0: R_hi/nat 1.000  248/nat 1.000  pct248 0.995  peak 168  node2 265.6
+  natural                                r=+0.0: R_hi/nat 1.000  248/nat 1.000  pct248 0.976  peak 178  node2 291.1
+  natural                                r=-0.7: R_hi/nat 1.000  248/nat 1.000  pct248 0.794  peak 231  node2 365.4
+  natural                                r=-1.0: R_hi/nat 1.000  248/nat 1.000  pct248 0.707  peak 252  node2 180.9
+  136Xe-depleted                         r=+1.0: R_hi/nat 1.023  248/nat 1.103  pct248 0.995  peak 170  node2 267.6
+  136Xe-depleted                         r=+0.0: R_hi/nat 0.997  248/nat 1.027  pct248 0.974  peak 181  node2 292.7
+  136Xe-depleted                         r=-0.7: R_hi/nat 0.928  248/nat 0.936  pct248 0.789  peak 231  node2 367.5
+  136Xe-depleted                         r=-1.0: R_hi/nat 0.877  248/nat 0.894  pct248 0.701  peak 253  node2 182.6
+  134+136Xe-depleted                     r=+1.0: R_hi/nat 1.028  248/nat 1.193  pct248 0.995  peak 171  node2 269.2
+  134+136Xe-depleted                     r=+0.0: R_hi/nat 0.983  248/nat 1.038  pct248 0.972  peak 179  node2 294.2
+  134+136Xe-depleted                     r=-0.7: R_hi/nat 0.873  248/nat 0.885  pct248 0.786  peak 231  node2 369.8
+  134+136Xe-depleted                     r=-1.0: R_hi/nat 0.795  248/nat 0.818  pct248 0.695  peak 253  node2 183.4
+  136Xe-enriched (90/10 136/134)         r=+1.0: R_hi/nat 0.792  248/nat 0.027  pct248 0.997  peak 160  node2 251.8
+  136Xe-enriched (90/10 136/134)         r=+0.0: R_hi/nat 1.038  248/nat 0.750  pct248 0.990  peak 171  node2 278.9
+  136Xe-enriched (90/10 136/134)         r=-0.7: R_hi/nat 1.680  248/nat 1.599  pct248 0.816  peak 222  node2 353.2
+  136Xe-enriched (90/10 136/134)         r=-1.0: R_hi/nat 2.149  248/nat 1.990  pct248 0.730  peak 248  node2 173.6
+  129Xe-enriched (80 % + natural rest)   r=+1.0: R_hi/nat 1.113  248/nat 1.604  pct248 0.992  peak 172  node2 273.7
+  129Xe-enriched (80 % + natural rest)   r=+0.0: R_hi/nat 1.013  248/nat 1.140  pct248 0.967  peak 184  node2 297.6
+  129Xe-enriched (80 % + natural rest)   r=-0.7: R_hi/nat 0.795  248/nat 0.805  pct248 0.788  peak 231  node2 370.0
+  129Xe-enriched (80 % + natural rest)   r=-1.0: R_hi/nat 0.654  248/nat 0.678  pct248 0.686  peak 254  node2 184.0
+  pure 129Xe                             r=+1.0: R_hi/nat 1.142  248/nat 1.758  pct248 0.990  peak 172  node2 276.0
+  pure 129Xe                             r=+0.0: R_hi/nat 1.016  248/nat 1.176  pct248 0.964  peak 184  node2 299.4
+  pure 129Xe                             r=-0.7: R_hi/nat 0.743  248/nat 0.755  pct248 0.786  peak 231  node2 371.6
+  pure 129Xe                             r=-1.0: R_hi/nat 0.566  248/nat 0.597  pct248 0.677  peak 254  node2 185.3
+  pure 131Xe                             r=+1.0: R_hi/nat 1.089  248/nat 1.171  pct248 0.996  peak 170  node2 268.4
+  pure 131Xe                             r=+0.0: R_hi/nat 1.062  248/nat 1.099  pct248 0.974  peak 180  node2 293.3
+  pure 131Xe                             r=-0.7: R_hi/nat 0.975  248/nat 0.982  pct248 0.791  peak 231  node2 367.3
+  pure 131Xe                             r=-1.0: R_hi/nat 0.904  248/nat 0.924  pct248 0.691  peak 252  node2 181.9
+  pure 132Xe                             r=+1.0: R_hi/nat 0.889  248/nat 0.650  pct248 0.997  peak 166  node2 263.3
+  pure 132Xe                             r=+0.0: R_hi/nat 0.918  248/nat 0.880  pct248 0.978  peak 179  node2 289.6
+  pure 132Xe                             r=-0.7: R_hi/nat 0.962  248/nat 0.977  pct248 0.785  peak 228  node2 368.9
+  pure 132Xe                             r=-1.0: R_hi/nat 0.982  248/nat 0.998  pct248 0.708  peak 252  node2 182.8
+  pure 136Xe                             r=+1.0: R_hi/nat 0.771  248/nat -0.016  pct248 0.996  peak 160  node2 251.1
+  pure 136Xe                             r=+0.0: R_hi/nat 1.031  248/nat 0.729  pct248 0.990  peak 171  node2 278.6
+  pure 136Xe                             r=-0.7: R_hi/nat 1.717  248/nat 1.629  pct248 0.818  peak 222  node2 352.7
+  pure 136Xe                             r=-1.0: R_hi/nat 2.221  248/nat 2.047  pct248 0.731  peak 248  node2 173.2
+  test 136Xe-depleted                   r +1.0 vs -1.0: rho 1.041 vs 0.916 -> N_3sigma = 8777 high-energy events (both targets)
+  test 136Xe-depleted                   r +1.0 vs -0.7: rho 1.041 vs 0.964 -> N_3sigma = 23844 high-energy events (both targets)
+  test 136Xe-depleted                   r -0.7 vs -1.0: rho 0.964 vs 0.916 -> N_3sigma = 56815 high-energy events (both targets)
+  test 136Xe-depleted                   r +1.0 vs +0.0: rho 1.041 vs 1.021 -> N_3sigma = 353042 high-energy events (both targets)
+  test 136Xe-enriched (90/10 136/134)   r +1.0 vs -1.0: rho 0.614 vs 1.781 -> N_3sigma = 124 high-energy events (both targets)
+  test 136Xe-enriched (90/10 136/134)   r +1.0 vs -0.7: rho 0.614 vs 1.342 -> N_3sigma = 233 high-energy events (both targets)
+  test 136Xe-enriched (90/10 136/134)   r -0.7 vs -1.0: rho 1.342 vs 1.781 -> N_3sigma = 1884 high-energy events (both targets)
+  test 136Xe-enriched (90/10 136/134)   r +1.0 vs +0.0: rho 0.614 vs 0.810 -> N_3sigma = 1929 high-energy events (both targets)
+  test pure 129Xe                       r +1.0 vs -1.0: rho 1.290 vs 0.682 -> N_3sigma = 352 high-energy events (both targets)
+  test pure 129Xe                       r +1.0 vs -0.7: rho 1.290 vs 0.887 -> N_3sigma = 1027 high-energy events (both targets)
+  test pure 129Xe                       r -0.7 vs -1.0: rho 0.887 vs 0.682 -> N_3sigma = 2106 high-energy events (both targets)
+  test pure 129Xe                       r +1.0 vs +0.0: rho 1.290 vs 1.168 -> N_3sigma = 14733 high-energy events (both targets)
+  O4 129Xe: S_p/S_n(q->0) = +0.0292, cancellation r* = -0.0292, iso/vec F2 ratio q0 1.124, 100 keV 0.984, 248 keV 1.257; minima {'iso': [], 'vec': [], 'p': [], 'n': []}; Sigma'' share 0.335; dyad dev 0.012
+  O4 131Xe: S_p/S_n(q->0) = +0.0257, cancellation r* = -0.0257, iso/vec F2 ratio q0 1.108, 100 keV 1.091, 248 keV 1.058; minima {'iso': [], 'vec': [], 'p': [], 'n': []}; Sigma'' share 0.339; dyad dev 0.122
+  O4 sunframe delta=0 r=+1.0: N_lo 28.02 N_mid 9.99 R_hi/lo 3.569e-02 rho_hi 1.000 rho_248 1.000 nodes nan/nan pct248 0.995 ratio_enh 1.000
+  O4 sunframe delta=0 r=+0.0: N_lo 7.985 N_mid 15.5 R_hi/lo 1.252e-01 rho_hi 0.003 rho_248 0.002 nodes nan/nan pct248 0.997 ratio_enh 3.509
+  O4 sunframe delta=0 r=-0.7: N_lo 29.51 N_mid 10.9 R_hi/lo 3.389e-02 rho_hi 0.409 rho_248 0.412 nodes nan/nan pct248 0.995 ratio_enh 0.950
+  O4 sunframe delta=0 r=-1.0: N_lo 29.27 N_mid 10.7 R_hi/lo 3.416e-02 rho_hi 0.861 rho_248 0.867 nodes nan/nan pct248 0.995 ratio_enh 0.957
+  O4 sunframe delta=0 r=+2.0: N_lo 28.35 N_mid 10.1 R_hi/lo 3.527e-02 rho_hi 3.851 rho_248 3.862 nodes nan/nan pct248 0.995 ratio_enh 0.988
+  O4 sunframe delta=0 r=-2.0: N_lo 28.98 N_mid 10.5 R_hi/lo 3.450e-02 rho_hi 3.574 rho_248 3.597 nodes nan/nan pct248 0.995 ratio_enh 0.967
+    O4 N_lo over r in [-2,2]: min 3.61 at r=-0.0248 (rho_hi there 0.0021, rho_lo 2.74e-04); max 30.5 at r=-0.200; N_lo<=5 for r in [-0.034, -0.014], <=10 for r in [-0.048, 0.006]
+  O4 sunframe delta=300 r=+1.0: N_lo 0 N_mid 1.09 R_hi/lo inf rho_hi 1.000 rho_248 1.000 nodes nan/nan pct248 0.881 ratio_enh nan
+  O4 sunframe delta=300 r=+0.0: N_lo 0 N_mid 2.33 R_hi/lo inf rho_hi 0.003 rho_248 0.002 nodes nan/nan pct248 0.966 ratio_enh nan
+  O4 sunframe delta=300 r=-0.7: N_lo 0 N_mid 1.13 R_hi/lo inf rho_hi 0.414 rho_248 0.415 nodes nan/nan pct248 0.880 ratio_enh nan
+  O4 sunframe delta=300 r=-1.0: N_lo 0 N_mid 1.12 R_hi/lo inf rho_hi 0.869 rho_248 0.872 nodes nan/nan pct248 0.880 ratio_enh nan
+  O4 sunframe delta=300 r=+2.0: N_lo 0 N_mid 1.09 R_hi/lo inf rho_hi 3.860 rho_248 3.867 nodes nan/nan pct248 0.880 ratio_enh nan
+  O4 sunframe delta=300 r=-2.0: N_lo 0 N_mid 1.11 R_hi/lo inf rho_hi 3.598 rho_248 3.611 nodes nan/nan pct248 0.880 ratio_enh nan
+    O4 N_mid over r in [-2,2]: min 1.09 at r=+0.6360 (rho_hi there 0.4214, rho_lo nan); max 3.35 at r=-0.038; N_mid<=5 for r in [-2.0, 2.0], <=10 for r in [-2.0, 2.0]
+  O4 isoscalar vs isovector normalised shapes (5-270 keV, elastic): KS distance 0.0050, max |ratio-1| 0.057, ratio at 248 1.041
+  O1 isoscalar vs isovector normalised shapes (5-270 keV, elastic): KS distance 0.1115, max |ratio-1| 69.981, ratio at 248 0.023
+all done (11 s)

@@ -1,0 +1,460 @@
+{
+ "recalled": {
+  "phi_mu": {
+   "val": 5.3e-09,
+   "rng": [
+    4.4e-09,
+    5.5e-09
+   ],
+   "unit": "cm^-2 s^-1",
+   "note": "total muon flux at the SURF 4850 ft (Davis campus) level; Majorana Demonstrator measurement 5.31+-0.17e-9; Mei-Hime flat-overburden formula at 4.3 km w.e. gives 3.8e-9",
+   "rel": "likely"
+  },
+  "E_mu_mean": {
+   "val": 320.0,
+   "rng": [
+    280.0,
+    350.0
+   ],
+   "unit": "GeV",
+   "note": "mean muon energy at 4.3 km w.e., Mei-Hime <E>=eps(1-e^{-bh})/(gamma-2) with eps=693 GeV, b=0.4/km w.e., gamma=3.77",
+   "rel": "likely"
+  },
+  "Y_n": {
+   "val": 0.00035,
+   "rng": [
+    0.00025,
+    0.0005
+   ],
+   "unit": "n per (mu g cm^-2)",
+   "note": "muon-induced neutron yield in standard rock at ~300 GeV; Mei-Hime 4.14e-6 E^0.74 gives 3.0e-4, FLUKA/GEANT4 spread and the assignment's 4e-4 bracketed",
+   "rel": "likely (x1.5)"
+  },
+  "f_hard": {
+   "val": 0.3,
+   "rng": [
+    0.2,
+    0.4
+   ],
+   "unit": "",
+   "note": "fraction of produced neutrons in the hard (cascade) component E^-1 (1-50 MeV) -> E^-2 (50 MeV-3 GeV); the rest is an evaporation Maxwellian T=1.2 MeV; tuned so that f(>10 MeV)~0.15-0.25, f(>100 MeV)~0.02-0.04",
+   "rel": "uncertain (x2 on f(>8.3 MeV))"
+  },
+  "E_knee": {
+   "val": 50.0,
+   "rng": [
+    30.0,
+    100.0
+   ],
+   "unit": "MeV",
+   "note": "knee where the cascade spectrum steepens from E^-1 to E^-2",
+   "rel": "uncertain"
+  },
+  "rho_rock": {
+   "val": 2.7,
+   "rng": [
+    2.6,
+    2.9
+   ],
+   "unit": "g cm^-3",
+   "note": "Homestake rock density (~2.7-2.85)",
+   "rel": "likely"
+  },
+  "lam_esc": {
+   "val": [
+    20.0,
+    30.0,
+    40.0
+   ],
+   "rng": [
+    [
+     12.0,
+     20.0,
+     30.0
+    ],
+    [
+     30.0,
+     45.0,
+     60.0
+    ]
+   ],
+   "unit": "cm",
+   "note": "effective rock depth from which a neutron escapes still above 8.3 MeV, for 8-30 / 30-100 / >100 MeV: elastic+nonelastic removal (lambda_tot 7-8 cm, lambda_nonel 14-35 cm in SiO2 rock)",
+   "rel": "uncertain (x1.5)"
+  },
+  "tank": {
+   "val": [
+    3.8,
+    5.9
+   ],
+   "rng": null,
+   "unit": "m",
+   "note": "LZ water tank radius 3.8 m, height 5.9 m (pi R^2 H = 268 m^3 vs 229 t water + 17 t GdLS + cryostat)",
+   "rel": "likely"
+  },
+  "gdls_env": {
+   "val": [
+    1.9,
+    3.9
+   ],
+   "rng": [
+    [
+     1.7,
+     3.4
+    ],
+    [
+     2.1,
+     4.2
+    ]
+   ],
+   "unit": "m",
+   "note": "outer envelope of the GdLS acrylic vessels around the cryostat (61 cm thick side tanks)",
+   "rel": "uncertain"
+  },
+  "tpc": {
+   "val": [
+    0.728,
+    1.456
+   ],
+   "rng": null,
+   "unit": "m",
+   "note": "LZ active TPC radius 72.8 cm, height 145.6 cm (as in P013)",
+   "rel": "likely"
+  },
+  "n_zenith": {
+   "val": 3.5,
+   "rng": [
+    2.5,
+    4.5
+   ],
+   "unit": "",
+   "note": "muon zenith distribution I ~ cos^n(theta) at 4.3 km w.e.",
+   "rel": "likely"
+  },
+  "L_path": {
+   "val": 2.5,
+   "rng": [
+    2.0,
+    3.0
+   ],
+   "unit": "m",
+   "note": "water+GdLS path from tank surface to the TPC for neutrons aimed at it",
+   "rel": "uncertain"
+  },
+  "lam_att_hi": {
+   "val": 1.0,
+   "rng": [
+    0.8,
+    1.2
+   ],
+   "unit": "m",
+   "note": "effective attenuation length in water for E>100 MeV neutrons, including cascade regeneration (nuclear interaction length in water 83 g/cm^2 = 0.83 m)",
+   "rel": "uncertain"
+  },
+  "lam_att_mid": {
+   "val": 0.7,
+   "rng": [
+    0.55,
+    0.9
+   ],
+   "unit": "m",
+   "note": "same for 50-100 MeV",
+   "rel": "uncertain"
+  },
+  "sigma_H": {
+   "val": "0.94 b (10 MeV), 0.69 (15), 0.48 (20), 0.38 (25), 0.30 (30), 0.17 (50)",
+   "rng": null,
+   "unit": "b",
+   "note": "n-p total cross section",
+   "rel": "likely (+-10%)"
+  },
+  "sigma_O_nonel": {
+   "val": "0.5 b (10-30 MeV), 0.4 (50), 0.3 (100 MeV)",
+   "rng": null,
+   "unit": "b",
+   "note": "n-16O nonelastic",
+   "rel": "likely (+-30%)"
+  },
+  "GdLS": {
+   "val": "LAB C18H30 rho=0.86; n_H 6.3e22, n_C 3.8e22 cm^-3; sigma_H(100 MeV) 0.075 b; sigma_C nonel 0.22 b, el 0.28 b",
+   "rng": null,
+   "unit": "",
+   "note": "for the crude prompt-tag estimate",
+   "rel": "likely"
+  },
+  "Gd_capture": {
+   "val": "~30 us mean capture time in 0.1% Gd LS; ~200 us in pure water",
+   "rng": null,
+   "unit": "us",
+   "note": "",
+   "rel": "likely"
+  },
+  "beta_n": {
+   "val": "9Li 178 ms (beta-n 51%), 8He 119 ms (16%), 17N 4.17 s (95%), 16N 7.13 s (beta-gamma only); 9Li yield in water ~1.9e-7 /(mu g cm^-2); beta-delayed neutron energies <= 2 MeV",
+   "rng": null,
+   "unit": "",
+   "note": "Super-K spallation yields; ENSDF",
+   "rel": "likely"
+  }
+ },
+ "muon_rates": [
+  {
+   "volume": "water tank (R 3.8 m, H 5.9 m)",
+   "R_m": 3.8,
+   "H_m": 5.9,
+   "rate_per_h": 13.996741470480053,
+   "top_per_h": 8.655565282723227,
+   "side_per_h": 5.341176187756827,
+   "mean_interval_min": 4.286712026977386,
+   "P_gap_ge_41min": 7.01805041034288e-05,
+   "P_gap_ge_127min": 1.3595722067517076e-13,
+   "P_gap_le_41min": 0.9999298194958965,
+   "rate_range_per_h": [
+    11.157075342821766,
+    15.36467383285049
+   ],
+   "P_ge41_range": [
+    2.7558658578243954e-05,
+    0.0004885828577106467
+   ]
+  },
+  {
+   "volume": "GdLS envelope (R 1.9 m, H 3.9 m)",
+   "R_m": 1.9,
+   "H_m": 3.9,
+   "rate_per_h": 3.9291953149394194,
+   "top_per_h": 2.163891320680807,
+   "side_per_h": 1.7653039942586126,
+   "mean_interval_min": 15.270302235134645,
+   "P_gap_ge_41min": 0.0682245961441582,
+   "P_gap_ge_127min": 0.000244377413769664,
+   "P_gap_le_41min": 0.9317754038558418,
+   "rate_range_per_h": [
+    3.108993995112613,
+    4.355012464387444
+   ],
+   "P_ge41_range": [
+    0.05100022757575368,
+    0.11949518157237177
+   ]
+  },
+  {
+   "volume": "TPC active (R 0.728 m, H 1.456 m)",
+   "R_m": 0.728,
+   "H_m": 1.456,
+   "rate_per_h": 0.5701998186648776,
+   "top_per_h": 0.3176808248475614,
+   "side_per_h": 0.2525189938173162,
+   "mean_interval_min": 105.226269872358,
+   "P_gap_ge_41min": 0.6773030004503505,
+   "P_gap_ge_127min": 0.2991162606662103,
+   "P_gap_le_41min": 0.3226969995496495,
+   "rate_range_per_h": [
+    0.45149039158540594,
+    0.6314184777526648
+   ],
+   "P_ge41_range": [
+    0.6495540080017962,
+    0.7345344114833691
+   ]
+  }
+ ],
+ "musun_rate_per_s": 0.055454153674550664,
+ "musun_area_m2": 1046.3047863122767,
+ "UL_decomposition": {
+  "poisson_0_in_1200yr_scaled": 0.0011557579283595712,
+  "x_untagged": 0.00023115158567191426,
+  "x_untagged_x2": 0.0004623031713438285,
+  "paper": 0.00046
+ },
+ "P_muon_within_1ms": 3.887983741800015e-06,
+ "spectrum_fractions": {
+  "1": 0.7510588639459453,
+  "8.2": 0.17343035054553202,
+  "10": 0.15947094332793638,
+  "20": 0.11641402970178007,
+  "30": 0.09156589559259218,
+  "50": 0.060261190317074304,
+  "100": 0.02961990710500259,
+  "300": 0.009192384963622447,
+  "1000": 0.002042752214138101
+ },
+ "spectrum_fraction_corners": {
+  "fhard0.2_knee30.0": [
+   0.10688248917667569,
+   0.013208242526790285
+  ],
+  "fhard0.2_knee100.0": [
+   0.12718918996278605,
+   0.034698311965329444
+  ],
+  "fhard0.4_knee30.0": [
+   0.21036913318206046,
+   0.02641648505358057
+  ],
+  "fhard0.4_knee100.0": [
+   0.25098253475428106,
+   0.06939662393065889
+  ]
+ },
+ "production_per_cm2_s_per_cm": 5.008500000000001e-12,
+ "geometry": {
+  "A_top_m2": 45.36459791783661,
+  "A_side_m2": 140.86901458696633,
+  "A_eff_m2": 115.79910521131977,
+  "f_geo_iso": 0.04313488876831253,
+  "f_geo_down": 0.036702493074792245,
+  "f_geo": 0.03991869092155238
+ },
+ "chain": {
+  "N_tank": 334.31074200078206,
+  "N_aimed": 13.34524718168406,
+  "N_lxe": 0.4903234302064804,
+  "N_ss_any_untagged": 0.0007991756373287343,
+  "N_win_untagged": 1.3293671203561807e-05,
+  "N_lxe_by_band": {
+   "8.2-30": 0.0021408854010837876,
+   "30-100": 0.10299083231947548,
+   "100-3000": 0.38168082356734306
+  }
+ },
+ "survival": {
+  "10": 3.873082663946856e-08,
+  "15": 2.798981119232602e-05,
+  "20": 0.0005719379794489319,
+  "30": 0.003901282241542916,
+  "50": 0.028115659748972035,
+  "100": 0.0820849986238988,
+  "200": 0.0820849986238988,
+  "500": 0.0820849986238988,
+  "1000": 0.0820849986238988
+ },
+ "lam_removal_cm": {
+  "10": 14.648468971320057,
+  "15": 23.846610967342546,
+  "20": 33.482979931641154,
+  "30": 45.07387608289988,
+  "50": 70.0,
+  "100": 100.0,
+  "200": 100.0,
+  "500": 100.0,
+  "1000": 100.0
+ },
+ "expected": {
+  "N_win_central": 1.3293671203561807e-05,
+  "N_any_central": 0.0007991756373287343,
+  "N_win_all_low": 1.4254519446492865e-07,
+  "N_win_all_high": 0.00019045934927352102,
+  "N_any_all_low": 8.512256335009199e-06,
+  "N_any_all_high": 0.01154068024904255,
+  "sigma_ln": 1.3955667243813688,
+  "N_win_68": [
+   3.292744291498722e-06,
+   5.3670032782282036e-05
+  ],
+  "ratio_any_to_LZ_UL": 1.7373383420189876
+ },
+ "sensitivity": [
+  {
+   "parameter": "phi_mu",
+   "low": 4.4e-09,
+   "high": 5.5e-09,
+   "N_win_low": 1.1036255338806026e-05,
+   "N_win_high": 1.3795319173507534e-05,
+   "N_any_low": 0.0006634665668389491,
+   "N_any_high": 0.0008293332085486865,
+   "span": 1.25
+  },
+  {
+   "parameter": "Y_n",
+   "low": 0.00025,
+   "high": 0.0005,
+   "N_win_low": 9.495479431115577e-06,
+   "N_win_high": 1.8990958862231154e-05,
+   "N_any_low": 0.000570839740949096,
+   "N_any_high": 0.001141679481898192,
+   "span": 2.0
+  },
+  {
+   "parameter": "f_hard",
+   "low": 0.2,
+   "high": 0.4,
+   "N_win_low": 8.862449088429155e-06,
+   "N_win_high": 1.7724893318694464e-05,
+   "N_any_low": 0.0005327837971527003,
+   "N_any_high": 0.0010655674775047685,
+   "span": 1.9999994518260362
+  },
+  {
+   "parameter": "E_knee",
+   "low": 30.0,
+   "high": 100.0,
+   "N_win_low": 9.02927792013354e-06,
+   "N_win_high": 2.1780195019260718e-05,
+   "N_any_low": 0.0005402184330967497,
+   "N_any_high": 0.0013187913561055066,
+   "span": 2.4121746181602304
+  },
+  {
+   "parameter": "lam_esc",
+   "low": "(12.0, 20.0, 30.0)",
+   "high": "(30.0, 45.0, 60.0)",
+   "N_win_low": 9.758445607162501e-06,
+   "N_win_high": 1.994050680534271e-05,
+   "N_any_low": 0.0005874315022729459,
+   "N_any_high": 0.0011987634559931014,
+   "span": 2.043410150352919
+  },
+  {
+   "parameter": "L_path",
+   "low": 2.0,
+   "high": 3.0,
+   "N_win_low": 2.327952228000352e-05,
+   "N_win_high": 7.706133043519603e-06,
+   "N_any_low": 0.001389014785133596,
+   "N_any_high": 0.00046536068535766,
+   "span": 3.0209084307959366
+  },
+  {
+   "parameter": "lam_att_hi",
+   "low": 0.8,
+   "high": 1.2,
+   "N_win_low": 8.268241373603853e-06,
+   "N_win_high": 1.8883111673934242e-05,
+   "N_any_low": 0.0004934683367134436,
+   "N_any_high": 0.0011391928728617423,
+   "span": 2.2838123393709924
+  },
+  {
+   "parameter": "lam_att_mid",
+   "low": 0.55,
+   "high": 0.9,
+   "N_win_low": 1.2078367296709037e-05,
+   "N_win_high": 1.535455150087441e-05,
+   "N_any_low": 0.0007255598234010544,
+   "N_any_high": 0.0009265005430752939,
+   "span": 1.271243962340674
+  },
+  {
+   "parameter": "f_untag",
+   "low": 0.04,
+   "high": 0.24,
+   "N_win_low": 2.658734240712362e-06,
+   "N_win_high": 1.595240544427417e-05,
+   "N_any_low": 0.0001598351274657469,
+   "N_any_high": 0.0009590107647944814,
+   "span": 6.0
+  },
+  {
+   "parameter": "f_geo",
+   "low": 0.036702493074792245,
+   "high": 0.06470233315246879,
+   "N_win_low": 1.222261712554972e-05,
+   "N_win_high": 2.154708792236084e-05,
+   "N_any_low": 0.0007347870788709691,
+   "N_any_high": 0.0012953462936797493,
+   "span": 1.7628865979381438
+  }
+ ],
+ "Li9_in_water_220d": 7.0207655215927955
+}

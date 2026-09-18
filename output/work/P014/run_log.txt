@@ -1,0 +1,105 @@
+=== Part A: radiative splitting ===
+  ftilde(r)/(2 pi r) at r=0.001: 0.9995
+  ftilde(r)/(2 pi r) at r=0.01: 0.9953
+  ftilde(r)/(2 pi r) at r=0.1: 0.9555
+  ftilde(r)/(2 pi r) at r=0.3: 0.8812
+  asymptotic Higgsino splitting alpha m_Z/2 = 356.3 MeV (with alpha(0)=1/137.036: 332.7 MeV); wino alpha_2 m_W (1-c_W)/2 = 161.1 MeV (on-shell c_W; MSbar c_W: 167.4 MeV)
+  wino at 1 TeV: on-shell 160.7 MeV vs MSbar 172.8 MeV; literature two-loop ~164 MeV
+  M=  100 GeV: Delta m_rad Higgsino =  258.0 MeV, wino =  147.2 MeV
+  M=  200 GeV: Delta m_rad Higgsino =  296.9 MeV, wino =  155.8 MeV
+  M=  300 GeV: Delta m_rad Higgsino =  313.5 MeV, wino =  158.2 MeV
+  M=  500 GeV: Delta m_rad Higgsino =  328.9 MeV, wino =  159.9 MeV
+  M= 1000 GeV: Delta m_rad Higgsino =  341.8 MeV, wino =  160.7 MeV
+  M= 2000 GeV: Delta m_rad Higgsino =  348.8 MeV, wino =  161.0 MeV
+  M= 4000 GeV: Delta m_rad Higgsino =  352.5 MeV, wino =  161.0 MeV
+  Higgsino scheme spread at 1 TeV: alpha(m_Z) -> 341.8 MeV, alpha(0) -> 319.1 MeV
+
+=== Part B: tree-level piece and total Delta m+- ===
+  tree-level (m_chi+- - m_chi1)/delta by hierarchy and tan beta (P007 4x4 diagonalisation):
+    M2=-2M1                tanb=   2: 2125.966 x 1e-3
+    M2=-2M1                tanb=  10: 902.183 x 1e-3
+    M2=2M1                 tanb=   2: 395.203 x 1e-3
+    M2=2M1                 tanb=  10: 474.061 x 1e-3
+    bino_only(M2=1e9)      tanb=   2: 885.184 x 1e-3
+    bino_only(M2=1e9)      tanb=  10: 595.485 x 1e-3
+    wino_only(M1=1e9)      tanb=   2: 96.350 x 1e-3
+    wino_only(M1=1e9)      tanb=  10: 400.044 x 1e-3
+  range over hierarchies/tan beta: (95.90 - 2128.65) x 1e-3 -> tree piece = (95.90-2128.65) x 1e-3 delta
+  mu=  300 GeV, delta=310 keV: Delta m_rad=313.5 MeV, tree=0.03-0.66 MeV, total=313.9 MeV
+  mu=  500 GeV, delta=342 keV: Delta m_rad=328.9 MeV, tree=0.03-0.73 MeV, total=329.2 MeV
+  mu= 1000 GeV, delta=366 keV: Delta m_rad=341.8 MeV, tree=0.04-0.78 MeV, total=342.2 MeV
+  mu= 2000 GeV, delta=375 keV: Delta m_rad=348.8 MeV, tree=0.04-0.80 MeV, total=349.3 MeV
+  mu= 4000 GeV, delta=376 keV: Delta m_rad=352.5 MeV, tree=0.04-0.80 MeV, total=352.9 MeV
+  Delta m+- (1 TeV, max tree coefficient) for delta = [np.int64(100), np.int64(200), np.int64(300), np.int64(366), np.int64(400)] keV: [342.01  342.222 342.435 342.576 342.648] MeV; fractional change 100->400 keV: 0.187 %
+
+=== Part C: chargino widths and lifetimes ===
+  wino  M=  200: Delta m=155.8 MeV, BR(pi)=0.976, BR(e)=0.022, BR(mu)=0.0018, tau=0.275 ns, c tau=8.24 cm
+  wino  M=  500: Delta m=159.9 MeV, BR(pi)=0.976, BR(e)=0.021, BR(mu)=0.0021, tau=0.232 ns, c tau=6.95 cm
+  wino  M=  660: Delta m=160.3 MeV, BR(pi)=0.976, BR(e)=0.021, BR(mu)=0.0021, tau=0.228 ns, c tau=6.82 cm
+  wino  M= 1000: Delta m=160.7 MeV, BR(pi)=0.977, BR(e)=0.021, BR(mu)=0.0021, tau=0.224 ns, c tau=6.72 cm
+  wino  M= 2000: Delta m=161.0 MeV, BR(pi)=0.977, BR(e)=0.021, BR(mu)=0.0021, tau=0.222 ns, c tau=6.66 cm
+  wino  M= 2900: Delta m=161.0 MeV, BR(pi)=0.977, BR(e)=0.021, BR(mu)=0.0021, tau=0.222 ns, c tau=6.65 cm
+  wino at Delta m = 165 MeV exactly: tau = 0.193 ns, c tau = 5.77 cm (literature: ~0.2 ns, ~6 cm)
+  Higgsino mu=  300, delta=310 keV: Delta m=313.9 MeV, BR(pi)=0.932, BR(e)=0.043, BR(mu)=0.025, tau=0.0318 ns, c tau=0.953 cm  [Delta m -+10 MeV: 1.064/0.857 cm]
+  Higgsino mu=  500, delta=342 keV: Delta m=329.2 MeV, BR(pi)=0.925, BR(e)=0.047, BR(mu)=0.028, tau=0.0270 ns, c tau=0.811 cm  [Delta m -+10 MeV: 0.900/0.733 cm]
+  Higgsino mu= 1000, delta=366 keV: Delta m=342.2 MeV, BR(pi)=0.919, BR(e)=0.050, BR(mu)=0.031, tau=0.0237 ns, c tau=0.712 cm  [Delta m -+10 MeV: 0.787/0.646 cm]
+  Higgsino mu= 2000, delta=375 keV: Delta m=349.3 MeV, BR(pi)=0.916, BR(e)=0.051, BR(mu)=0.033, tau=0.0222 ns, c tau=0.664 cm  [Delta m -+10 MeV: 0.733/0.604 cm]
+  Higgsino mu= 4000, delta=376 keV: Delta m=352.9 MeV, BR(pi)=0.914, BR(e)=0.052, BR(mu)=0.034, tau=0.0214 ns, c tau=0.641 cm  [Delta m -+10 MeV: 0.707/0.584 cm]
+
+=== Part D: production ===
+  quadratic-in-ln m fit to the wino anchors, residuals (%): [ 0.7 -4.   3.3  3.5 -0.  -3.2 -2.4  2.4]
+  local log-slope d ln sigma/d ln m at 300/1000/2000 GeV: -3.88, -5.61, -6.60
+  m=  300: sigma wino C1N2=  402.799 fb, Higgsino chi+-chi0= 201.399 fb (total ~ 322.239), alt=  20.309 fb; Higgsino pairs 140/300/3000 fb^-1 =  28195.9/ 60419.8/ 604198.3
+  m=  500: sigma wino C1N2=   45.982 fb, Higgsino chi+-chi0=  22.991 fb (total ~  36.785), alt=   2.150 fb; Higgsino pairs 140/300/3000 fb^-1 =   3218.7/  6897.3/  68972.7
+  m=  660: sigma wino C1N2=   12.086 fb, Higgsino chi+-chi0=   6.043 fb (total ~   9.669), alt=   0.634 fb; Higgsino pairs 140/300/3000 fb^-1 =    846.0/  1812.9/  18129.0
+  m= 1000: sigma wino C1N2=    1.331 fb, Higgsino chi+-chi0=   0.666 fb (total ~   1.065), alt=   0.102 fb; Higgsino pairs 140/300/3000 fb^-1 =     93.2/   199.7/   1996.7
+  m= 1100: sigma wino C1N2=    0.775 fb, Higgsino chi+-chi0=   0.388 fb (total ~   0.620), alt=   0.067 fb; Higgsino pairs 140/300/3000 fb^-1 =     54.3/   116.3/   1162.6  [extrapolated]
+  m= 2000: sigma wino C1N2=    0.019 fb, Higgsino chi+-chi0=   0.010 fb (total ~   0.015), alt=   0.005 fb; Higgsino pairs 140/300/3000 fb^-1 =      1.4/     2.9/     29.1  [extrapolated]
+  m= 2900: sigma wino C1N2=    0.002 fb, Higgsino chi+-chi0=   0.001 fb (total ~   0.001), alt=   0.001 fb; Higgsino pairs 140/300/3000 fb^-1 =      0.1/     0.2/      2.3  [extrapolated]
+
+=== Part E: disappearing-track survival ===
+  r_min=  12 cm, beta gamma=0.5: P(Higgsino, c tau=0.71 cm)=2.27e-15, P(wino, c tau=6.82 cm)=2.97e-02, ratio=7.6e-14
+  r_min=  12 cm, beta gamma=1.0: P(Higgsino, c tau=0.71 cm)=4.76e-08, P(wino, c tau=6.82 cm)=1.72e-01, ratio=2.8e-07
+  r_min=  12 cm, beta gamma=2.0: P(Higgsino, c tau=0.71 cm)=2.18e-04, P(wino, c tau=6.82 cm)=4.15e-01, ratio=5.3e-04
+  r_min=  12 cm, beta gamma=3.0: P(Higgsino, c tau=0.71 cm)=3.62e-03, P(wino, c tau=6.82 cm)=5.56e-01, ratio=6.5e-03
+  r_min=  30 cm, beta gamma=0.5: P(Higgsino, c tau=0.71 cm)=2.44e-37, P(wino, c tau=6.82 cm)=1.52e-04, ratio=1.6e-33
+  r_min=  30 cm, beta gamma=1.0: P(Higgsino, c tau=0.71 cm)=4.94e-19, P(wino, c tau=6.82 cm)=1.23e-02, ratio=4.0e-17
+  r_min=  30 cm, beta gamma=2.0: P(Higgsino, c tau=0.71 cm)=7.03e-10, P(wino, c tau=6.82 cm)=1.11e-01, ratio=6.3e-09
+  r_min=  30 cm, beta gamma=3.0: P(Higgsino, c tau=0.71 cm)=7.91e-07, P(wino, c tau=6.82 cm)=2.31e-01, ratio=3.4e-06
+  beta gamma needed for P(r>12 cm) = 1e-3 with c tau = 0.71 cm: 2.4
+  toy calibration: wino 660 GeV produces 2466 events in 136 fb^-1 -> eps_tot ~ 2.03e-03; P_W(bg=1)=0.172 -> eps_kin ~ 0.012
+  toy HL-LHC Higgsino tracklets (upper bound, r_min=12 cm, beta gamma=1.0): m=200: 4.65e-03
+  toy HL-LHC Higgsino tracklets (upper bound, r_min=12 cm, beta gamma=2.0): m=200: 2.13e+01
+  toy HL-LHC Higgsino tracklets (upper bound, r_min=12 cm, beta gamma=1.0): m=300: 1.08e-03
+  toy HL-LHC Higgsino tracklets (upper bound, r_min=12 cm, beta gamma=2.0): m=300: 4.97e+00
+  toy HL-LHC Higgsino tracklets (upper bound, r_min=12 cm, beta gamma=1.0): m=500: 1.24e-04
+  toy HL-LHC Higgsino tracklets (upper bound, r_min=12 cm, beta gamma=2.0): m=500: 5.67e-01
+  toy HL-LHC Higgsino tracklets (upper bound, r_min=12 cm, beta gamma=1.0): m=1000: 3.58e-06
+  toy HL-LHC Higgsino tracklets (upper bound, r_min=12 cm, beta gamma=2.0): m=1000: 1.64e-02
+
+=== Part F: kinematic floors (lzcommon) and constraint map ===
+  m_min(248 keV, delta=300 keV, v_max(16 June)=809.1 km/s) = 259 GeV
+  m_min(248 keV, delta=350 keV, v_max(16 June)=809.1 km/s) = 453 GeV
+  m_min(248 keV, delta=366 keV, v_max(16 June)=809.1 km/s) = 596 GeV
+  m_min(248 keV, delta=380 keV, v_max(16 June)=809.1 km/s) = 821 GeV
+  (P002 quotes 259 / 453 / 821 GeV at 300 / 350 / 380 keV)
+             model  m_GeV                                         disappearing_track                             overall
+Higgsino (doublet)    300 unprobed (c tau 0.71 cm; P(r>12 cm)=5e-08 at beta gamma=1) allowed / unprobed by all colliders
+Higgsino (doublet)    500 unprobed (c tau 0.71 cm; P(r>12 cm)=5e-08 at beta gamma=1) allowed / unprobed by all colliders
+Higgsino (doublet)   1000 unprobed (c tau 0.71 cm; P(r>12 cm)=5e-08 at beta gamma=1) allowed / unprobed by all colliders
+Higgsino (doublet)   1100 unprobed (c tau 0.71 cm; P(r>12 cm)=5e-08 at beta gamma=1) allowed / unprobed by all colliders
+Higgsino (doublet)   2000 unprobed (c tau 0.71 cm; P(r>12 cm)=5e-08 at beta gamma=1) allowed / unprobed by all colliders
+Higgsino (doublet)   4000 unprobed (c tau 0.71 cm; P(r>12 cm)=5e-08 at beta gamma=1) allowed / unprobed by all colliders
+    wino (triplet)    300              excluded (ATLAS wino DT <660 GeV, tau 0.2 ns)                            excluded
+    wino (triplet)    500              excluded (ATLAS wino DT <660 GeV, tau 0.2 ns)                            excluded
+    wino (triplet)    660              excluded (ATLAS wino DT <660 GeV, tau 0.2 ns)                            excluded
+    wino (triplet)   1000                                   allowed (beyond 660 GeV)                  allowed / unprobed
+    wino (triplet)   2000                                   allowed (beyond 660 GeV)                  allowed / unprobed
+    wino (triplet)   2900                                   allowed (beyond 660 GeV)                  allowed / unprobed
+
+=== Part G: chi2 decays at the LZ-favoured splitting ===
+  mu=  300, delta=310 keV: e+e- open? False (2 m_e = 1022 keV); tau(chi2->chi1 nu nubar) = 1.05e+06 s; mu_12 ~ 2.8e-06 GeV^-1 -> tau(chi2->chi1 gamma) ~ 8.8e-03 s (c_loop=1, uncertain)
+  mu=  500, delta=342 keV: e+e- open? False (2 m_e = 1022 keV); tau(chi2->chi1 nu nubar) = 6.41e+05 s; mu_12 ~ 1.7e-06 GeV^-1 -> tau(chi2->chi1 gamma) ~ 1.8e-02 s (c_loop=1, uncertain)
+  mu= 1000, delta=366 keV: e+e- open? False (2 m_e = 1022 keV); tau(chi2->chi1 nu nubar) = 4.57e+05 s; mu_12 ~ 8.4e-07 GeV^-1 -> tau(chi2->chi1 gamma) ~ 5.9e-02 s (c_loop=1, uncertain)
+  mu= 2000, delta=375 keV: e+e- open? False (2 m_e = 1022 keV); tau(chi2->chi1 nu nubar) = 4.05e+05 s; mu_12 ~ 4.2e-07 GeV^-1 -> tau(chi2->chi1 gamma) ~ 2.2e-01 s (c_loop=1, uncertain)
+  mu= 4000, delta=376 keV: e+e- open? False (2 m_e = 1022 keV); tau(chi2->chi1 nu nubar) = 3.99e+05 s; mu_12 ~ 2.1e-07 GeV^-1 -> tau(chi2->chi1 gamma) ~ 8.8e-01 s (c_loop=1, uncertain)

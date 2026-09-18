@@ -1,0 +1,65 @@
+=== P036  nuclear-excitation hybrids;  g1=0.11, g2=34.5, event (540.1, 9268.0) log10S2c=3.9670
+event quanta: Nph=4910, Ne=268.6
+
+=== 1. NEST-LZ yields and hybrid loci ===
+pure NR: S1c=540 <-> E_NR=266 keV (Table S5), median log10S2c=4.027; event -0.060 dex = -1.91 sigma (sigma=0.0313)
+ER band at S1c=540: E_ER=89 keV, median log10S2c=4.766; event -15.0 sigma_ER (sigma_ER=0.053)
+ER 39.58 keV (LZ Table S3 beta yields): Nph=2243, Ne=702 -> alone S1c=247 phd, log10S2c=4.384; electron fraction 0.238
+ER 80.19 keV (LZ Table S3 beta yields): Nph=4497, Ne=1470 -> alone S1c=495 phd, log10S2c=4.705; electron fraction 0.246
+hybrid 129Xe (39.58 keV): S1c=540 needs E_NR=157 keV -> log10S2c=4.520 = +15.8 sigma above NR median (-4.6 sigma_ER from ER median), predicted S2c/observed = 3.57; S2c match needs Ne_NR = -433 e (ER alone 702 e vs observed 269) -> solution exists: False; 248 keV + line -> (745 phd, 4.539), in ROI: False; any locus point in ROI: False
+hybrid 131Xe (80.19 keV): S1c=540 needs E_NR=34 keV -> log10S2c=4.740 = +22.8 sigma above NR median (-0.5 sigma_ER from ER median), predicted S2c/observed = 5.93; S2c match needs Ne_NR = -1201 e (ER alone 1470 e vs observed 269) -> solution exists: False; 248 keV + line -> (992 phd, 4.786), in ROI: False; any locus point in ROI: False
+two-equation scan (S1c fixed at 540.1 by E_NR; residual in log10 S2c vs observed):
+   E_ER=  0.00 keV  E_NR= 266.2 keV  log10S2c=4.027  residual=+0.060 dex (+1.9 sigma)
+   E_ER=  1.00 keV  E_NR= 265.6 keV  log10S2c=4.105  residual=+0.138 dex (+4.4 sigma)
+   E_ER=  2.00 keV  E_NR= 263.5 keV  log10S2c=4.138  residual=+0.171 dex (+5.5 sigma)
+   E_ER=  5.00 keV  E_NR= 256.0 keV  log10S2c=4.201  residual=+0.234 dex (+7.5 sigma)
+   E_ER= 10.00 keV  E_NR= 242.6 keV  log10S2c=4.275  residual=+0.308 dex (+9.8 sigma)
+   E_ER= 20.00 keV  E_NR= 214.6 keV  log10S2c=4.379  residual=+0.412 dex (+13.2 sigma)
+   E_ER= 30.00 keV  E_NR= 185.6 keV  log10S2c=4.458  residual=+0.491 dex (+15.7 sigma)
+   E_ER= 39.58 keV  E_NR= 157.3 keV  log10S2c=4.520  residual=+0.553 dex (+17.7 sigma)
+   E_ER= 50.00 keV  E_NR= 126.1 keV  log10S2c=4.580  residual=+0.613 dex (+19.6 sigma)
+   E_ER= 60.00 keV  E_NR=  96.0 keV  log10S2c=4.636  residual=+0.669 dex (+21.4 sigma)
+   E_ER= 80.19 keV  E_NR=  33.7 keV  log10S2c=4.740  residual=+0.773 dex (+24.7 sigma)
+   E_ER=100.00 keV  E_NR=   nan keV  log10S2c=nan  residual=+nan dex (+nan sigma)
+  d(residual)/dE_ER near 0 = +0.0222 dex/keV; residual at E_ER=0 is +0.060 dex -> a root would need E_ER = -2.7 keV (unphysical)
+  variant P009 scale x1.077: 129Xe hybrid at 540 phd: E_NR=148, log10S2c=4.526, +15.2 sigma above NR median 4.050 (event -2.64)
+  variant P009 scale x1.077: 131Xe hybrid at 540 phd: E_NR=32, log10S2c=4.742, +22.1 sigma above NR median 4.050 (event -2.64)
+  variant NEST-default ER yields 39.58 keV: Nph=2192, Ne=753 (LZ: 2243, 702)
+  variant NEST-default ER yields 80.19 keV: Nph=4363, Ne=1603 (LZ: 4497, 1470)
+
+=== 2. WimPyDD O4 rates at 1 TeV ===
+WimPyDD Xe isotopes (A: index): {124: 0, 126: 1, 128: 2, 129: 3, 130: 4, 131: 5, 132: 6, 134: 7, 136: 8}
+unit-coupling O4s counts in 2.84 t yr: natural Xe ROI 1947, 200-270 keV 47.43; 129Xe/131Xe share of 200-270 keV: 0.47/0.53
+129Xe: elastic total 1533, ROI 1073, 200-270 22.2; threshold-shifted (delta=39.58 keV, same structure factor) total 654.6 -> kinematic factor f_kin = 0.427 (June 0.451)
+131Xe: elastic total 1047, ROI 874.1, 200-270 25.23; threshold-shifted (delta=80.19 keV, same structure factor) total 266.4 -> kinematic factor f_kin = 0.255 (June 0.276)
+O4s low-energy companions (5.4-55 keV) per 200-270 keV event: 29.8 (P003: 28)
+  129_el: mean 26.6, median 12.6, peak 1 keV, fraction above 200 keV 0.023, last non-zero grid E 420
+  129_inel: mean 38.3, median 19.8, peak 10 keV, fraction above 200 keV 0.037, last non-zero grid E 420
+  131_el: mean 63.3, median 42.7, peak 1 keV, fraction above 200 keV 0.043, last non-zero grid E 420
+  131_inel: mean 94.6, median 77.4, peak 44 keV, fraction above 200 keV 0.074, last non-zero grid E 420
+coupling^2 for 1 elastic O4s event in 200-270 keV: (c4 m_v^2)^2 = 0.02108; hybrid counts in 2.84 t yr:
+   R=0.01  N_hyb 129Xe=0.14  131Xe=0.06  total=0.19   (elastic low-E companions 29.8)
+   R=0.03  N_hyb 129Xe=0.41  131Xe=0.17  total=0.58   (elastic low-E companions 29.8)
+   R=0.1   N_hyb 129Xe=1.38  131Xe=0.56  total=1.94   (elastic low-E companions 29.8)
+   R=0.3   N_hyb 129Xe=4.14  131Xe=1.69  total=5.83   (elastic low-E companions 29.8)
+   R=1.0   N_hyb 129Xe=13.80  131Xe=5.62  total=19.42   (elastic low-E companions 29.8)
+   equivalent per-nucleon SD cross-section (c_p=c_n): sigma_n^SD = 1.17e-40 cm^2
+  q->0 check 129Xe: analytic SD dR/dE(0) = 0.4319 /t/yr/keV vs WimPyDD(1 keV, neutron-only O4) = 0.2262; ratio 0.52 (<S_n> recalled)
+  q->0 check 131Xe: analytic SD dR/dE(0) = 0.1314 /t/yr/keV vs WimPyDD(1 keV, neutron-only O4) = 0.06593; ratio 0.50 (<S_n> recalled)
+  O4/O1 (neutron-only, q->0) 129Xe: WimPyDD 8.141e-06 vs (J+1)/(4J) <S_n>^2/N^2 = 1.443e-05 with <S_n>=0.329; implied |<S_n>| in WimPyDD's density matrices = 0.247
+  O4/O1 (neutron-only, q->0) 131Xe: WimPyDD 2.760e-06 vs (J+1)/(4J) <S_n>^2/N^2 = 5.199e-06 with <S_n>=-0.272; implied |<S_n>| in WimPyDD's density matrices = 0.198
+recalled SD-n limit at 1 TeV sigma_n=4.0e-41 cm^2 -> c_n=1.400e-06 GeV^-2: elastic O4 ROI rate 4.685 /t/yr (200-270 keV 0.1115); excitation rate (R=1) 129Xe 1.556, 131Xe 0.653 /t/yr; hybrids at R=0.1: 0.221 /t/yr = 0.63 in 2.84 t yr
+excitation/elastic SD rate ratio in natural Xe = R x f_kin with f_kin(weighted) = 0.357; R=R=0.01: 0.00357, R=R=0.03: 0.0107, R=R=0.1: 0.0357, R=R=0.3: 0.107, R=R=1.0: 0.357
+
+=== 3. Kinematics ===
+129Xe E*=39.58 keV: v_min(248 keV, 1 TeV) elastic 341 -> with threshold 390 km/s; E_R window at v_max=809 km/s (1 TeV): 0.9-1323.5 keV (elastic max 1395.2); m_chi,min(248 keV + E*) = 80 GeV; m_chi,min for any excitation 11.9 GeV; m_chi,min(E_NR=157 + E*) = 58 GeV
+131Xe E*=80.19 keV: v_min(248 keV, 1 TeV) elastic 339 -> with threshold 437 km/s; E_R window at v_max=809 km/s (1 TeV): 4.0-1265.1 keV (elastic max 1412.1); m_chi,min(248 keV + E*) = 90 GeV; m_chi,min for any excitation 26.9 GeV; m_chi,min(E_NR=34 + E*) = 31 GeV
+
+=== 4. Containment / pulse-shape numbers ===
+  gamma/x-ray 39.58 keV: mu/rho=20.0 cm^2/g -> mean free path 0.17 mm, P(>5 mm) = 2.5e-13
+  gamma/x-ray 80.19 keV: mu/rho=3.5 cm^2/g -> mean free path 0.99 mm, P(>5 mm) = 6.3e-03
+  gamma/x-ray 29.7 keV: mu/rho=8.0 cm^2/g -> mean free path 0.43 mm, P(>5 mm) = 9.2e-06
+  129Xe hybrid at S1c=540: 46% of the S1 photons are ER-type; IC fraction alpha/(1+alpha) = 0.92; T1/2 = 0.97 ns
+  131Xe hybrid at S1c=540: 92% of the S1 photons are ER-type; IC fraction alpha/(1+alpha) = 0.62; T1/2 = 0.48 ns
+
+done in 26.4 s; outputs in output/work/P036

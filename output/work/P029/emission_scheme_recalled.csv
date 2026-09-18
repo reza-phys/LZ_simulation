@@ -1,0 +1,41 @@
+nuclide,kind,energy_keV,prob,note
+Xe-125,local,33.2,0.8,I K-shell vacancy (K capture)
+Xe-125,local,4.9,0.17,I L-shell vacancy
+Xe-125,local,55.0,0.068,"55.0 keV transition, mostly IC"
+Xe-125,gamma,188.4,0.54,gamma escaping the site
+Xe-125,gamma,243.4,0.3,gamma escaping the site
+Xe-125,gamma,55.0,0.068,gamma escaping the site
+I-125,local,67.3,0.8,K capture + 35.5 keV (IC 93%)
+I-125,local,40.4,0.17,L capture + 35.5
+I-125,local,36.5,0.03,M capture + 35.5
+I-125,gamma,35.5,0.067,gamma escaping the site
+Xe-127,local,33.2,0.83,I K-shell vacancy
+Xe-127,local,4.9,0.14,I L-shell vacancy
+Xe-127,local,57.6,0.05,"57.6 keV transition, mostly IC"
+Xe-127,gamma,202.9,0.687,gamma escaping the site
+Xe-127,gamma,172.1,0.257,gamma escaping the site
+Xe-127,gamma,375.0,0.173,gamma escaping the site
+Xe-127,gamma,145.3,0.043,gamma escaping the site
+Xe-127,gamma,57.6,0.012,gamma escaping the site
+Xe-129m,local,236.1,0.88,both steps IC
+Xe-129m,local,196.6,0.075,39.6 keV gamma escapes (mm)
+Xe-129m,local,39.6,0.046,196.6 keV gamma escapes
+Xe-129m,gamma,196.6,0.046,gamma escaping the site
+Xe-129m,gamma,39.6,0.075,gamma escaping the site
+Xe-131m,local,163.9,0.98,IC electron + Xe X-rays/Auger
+Xe-131m,gamma,163.9,0.0195,gamma escaping the site
+Xe-133,local,beta,1.0,"beta continuum, endpoint 346 keV"
+Xe-133,local,81.0,0.62,IC of 81 keV transition (+Cs K X-rays)
+Xe-133,gamma,81.0,0.38,gamma escaping the site
+Xe-133m,local,233.2,0.9,IC
+Xe-133m,gamma,233.2,0.1,gamma escaping the site
+Xe-135,local,beta,1.0,"beta continuum, endpoint 915 keV"
+Xe-135,gamma,249.8,0.9,gamma escaping the site
+Xe-135,gamma,608.2,0.029,gamma escaping the site
+Xe-135m,local,526.6,0.19,IC
+Xe-135m,gamma,526.6,0.81,gamma escaping the site
+Xe-137,local,beta,1.0,"beta continuum, endpoint 4.17 MeV"
+Xe-137,gamma,455.5,0.31,gamma escaping the site
+Cs-137,local,beta,1.0,endpoint 514 keV
+Cs-137,gamma,661.7,0.85,gamma escaping the site
+Kr-83m,local,41.5,1.0,two IC steps at the same site

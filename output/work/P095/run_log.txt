@@ -1,0 +1,91 @@
+=== P095: Migdal + bremsstrahlung for a 248 keV Xe recoil ===
+v_A = 2.014e-03 c = 604 km/s;  q_e = m_e v_A = 1029 eV/c = 0.276 a.u.;  q_e^2 = 0.0762 a.u.
+DM kick: R_N = 6.1 fm, tau = 1.2e-20 s, hbar/tau = 54 keV (sudden for L, M, N, O; marginal for K)
+Cascade Xe-Xe kick: a_TF = 0.078 A, tau = 1.3e-17 s, hbar/tau = 51 eV (adiabatic for M and deeper)
+Hydrogen 1s check: sigma(threshold) = 6.30e-18 cm^2 (textbook 6.3e-18), continuum oscillator strength 0.435 (textbook 0.435), continuum share of <z^2>: 0.283, effective slope p = 2.81
+
+Per-subshell Migdal estimates (q_e^2 = 0.0762 a.u.):
+shell   E_B_eV  N_e  Z_eff_slater  q_r_rms  PA_ion_slater   PB_ion  mean_E_ER_eV
+ K 1s 3.46e+04    2          53.7   0.0089        1.5e-05 1.64e-05      5.49e+04
+L1 2s 5.45e+03    2          49.9   0.0359       0.000243 0.000104      8.66e+03
+L2 2p 5.11e+03    2          49.9   0.0303       0.000174 0.000111      8.11e+03
+L3 2p 4.79e+03    4          49.9   0.0303       0.000347 0.000237       7.6e+03
+M1 3s 1.15e+03    2          42.8   0.0929        0.00163 0.000494      1.82e+03
+M2 3p    1e+03    2          42.8   0.0866        0.00142 0.000566      1.59e+03
+M3 3p      941    4          42.8   0.0866        0.00283  0.00121      1.49e+03
+M4 3d      689    4          32.9   0.0943        0.00336  0.00165      1.09e+03
+M5 3d      676    6          32.9   0.0943        0.00504  0.00252      1.07e+03
+N1 4s      213    2          26.2    0.268         0.0135  0.00266           338
+N2 4p      147    2          26.2    0.258         0.0125  0.00386           233
+N3 4p      145    4          26.2    0.258         0.0251  0.00783           230
+N4 4d     69.5    4          14.9    0.417         0.0658   0.0163           110
+N5 4d     67.5    6          14.9    0.417         0.0987   0.0252           107
+O1 5s     23.4    2          8.25     1.33          0.333   0.0243          37.2
+O2 5p     13.4    2          8.25      1.3          0.317   0.0424          21.3
+O3 5p     12.1    4          8.25      1.3          0.634   0.0938          19.2
+
+Per-shell (K..O) Migdal ionisation probability per 248 keV recoil:
+       E_B_min_eV  E_B_max_eV  N_e  PA_ion_slater   PB_ion  P_ion_geo    P_sat  q_r_max  dipole_valid  mean_E_ER_eV
+group                                                                                                              
+K        3.46e+04    3.46e+04    2        1.5e-05 1.64e-05   1.57e-05 5.28e-05   0.0089          True      5.49e+04
+L        4.79e+03    5.45e+03    8       0.000764 0.000452   0.000588   0.0027   0.0359          True      7.97e+03
+M             676    1.15e+03   18         0.0143  0.00643    0.00959   0.0503   0.0943          True      1.26e+03
+N            67.5         213   18          0.216   0.0559       0.11    0.742    0.417         False           145
+O            12.1        23.4    8           1.28     0.16      0.454     3.46     1.33         False          22.5
+K shell, exact hydrogenic (Stobbe) with Z = 53.7: P_K = 1.50e-05;  route B gives 1.64e-05
+  M-shell events with E_ER = E_e + E_B > 0.9 keV: 0.658
+  M-shell events with E_ER = E_e + E_B > 1.5 keV: 0.197
+  M-shell events with E_ER = E_e + E_B > 2.5 keV: 0.050
+  M-shell events with E_ER = E_e + E_B > 3.5 keV: 0.020
+
+Bremsstrahlung: prefactor (2 alpha/3 pi)(v_A/c)^2 = 6.28e-09; Z_eff(1 keV) = 40, Z_eff(6 keV) = 52, Z_eff(>34.6 keV) = 54
+  P(w>0.1keV, wmax=100keV): 8.20e-05
+  P(w>0.1keV, wmax=248keV): 9.86e-05
+  P(w>1.0keV, wmax=100keV): 7.17e-05
+  P(w>1.0keV, wmax=248keV): 8.83e-05
+  P(w>3.5keV, wmax=100keV): 5.66e-05
+  P(w>3.5keV, wmax=248keV): 7.32e-05
+  P(w>10.0keV, wmax=100keV): 4.05e-05
+  P(w>10.0keV, wmax=248keV): 5.72e-05
+  bare Z = 54, 1-100 keV: 8.43e-05;  Migdal M-shell / brems(>1 keV) = 134
+
+Energy budget: NEST quanta N_q = 5211 -> 71.4 keV visible; Lindhard L = 0.334 -> 82.8 keV electronic.
+  Mean Migdal energy per recoil: outer (N,O) 11.7 eV, inner (K,L,M) 17.6 eV; brems (1-100 keV) 1.75 eV  -> 3.8 x 1e-4 of the electronic energy
+
+NR median at S1c = 540.1 (paper scale, analytic means): 4.0165 (P024 MC 4.0152); slope dlogS2/dlogS1 = 0.286; event -1.58 sigma; ROI ceiling 4.15 = +4.26 sigma
+
+NR(248 keV) + ER(E_ER) at one vertex: shift from the NR median at the hybrid S1c
+ E_ER_keV   Nph_ER   Ne_ER     S1c  log10S2c  shift_dex  shift_sigma  shift_sigma_S1matched  above_2sigma  above_ROI
+    0.100    0.000   8.479 540.100     4.029      0.012        0.385                  0.385         False      False
+    0.500    0.000  38.485 540.100     4.069      0.052        1.669                  1.669         False      False
+    0.700    2.888  49.194 540.418     4.082      0.066        2.097                  2.098          True      False
+    1.000   12.875  61.528 541.516     4.097      0.080        2.570                  2.571          True      False
+    1.500   34.101  77.503 543.851     4.116      0.099        3.151                  3.156          True      False
+    2.000   57.792  91.013 546.457     4.131      0.113        3.618                  3.629          True      False
+    3.500  134.725 125.684 554.920     4.168      0.148        4.733                  4.762          True       True
+    5.000  215.755 156.259 563.833     4.198      0.176        5.630                  5.683          True       True
+   10.000  497.524 246.504 594.828     4.276      0.248        7.918                  8.067          True       True
+   35.000 1971.305 632.790 756.944     4.508      0.450       14.389                 15.070          True       True
+   39.580 2243.251 701.609 786.858     4.539      0.479       15.297                 15.994          True       True
+E_ER giving +2 sigma: 0.65 keV; E_ER lifting the event above the ROI ceiling: 2.72 keV
+
+Probability-weighted shift (sigma units): K: 1.57e-05 x +18.32 = +0.0003, L: 5.88e-04 x +7.08 = +0.0042, M: 9.59e-03 x +2.89 = +0.0277, N: 1.10e-01 x +0.55 = +0.0609, O: 4.54e-01 x +0.09 = +0.0393
+  total expected shift +0.132 sigma (inner shells only +0.0322); the median shift is 0; sign is UP
+  Fraction of 248 keV NRs lifted above +2 sigma: Migdal 1.11e-02, brems 7.51e-05 (Gaussian band tail alone 0.023); above the ROI ceiling (+4.3 sigma): Migdal 1.00e-03, brems 5.97e-05 (Gaussian 1.0e-05)
+
+Ranges in LXe: e- 1/5/35 keV: 0.02/0.3/9 um; K-alpha 29.7 keV mfp 0.46 mm; L-alpha 4.1 keV 3 um  << S2 diffusion sigma 3.1 mm -> one merged S2
+
+Reverse: event is 0.0495 dex = 10.8 % charge-poor (269 vs 301 electrons).
+                                                            mechanism  probability  extra_ER_keV  shift_sigma
+          recombination + electron-counting fluctuation (band itself)       0.0567             0        -1.58
+S2 position-correction residual alone (2 % rms, P024 term 0.0087 dex)     6.19e-09             0        -1.58
+        electron-lifetime mis-correction at 859 us (11 % charge loss)          NaN             0        -1.58
+                               g2 3 % low (systematic, not per event)          NaN             0        -0.44
+                                      Migdal M-shell hole (this work)      0.00959          1.26         2.89
+                                      Migdal L-shell hole (this work)     0.000588          7.97         7.08
+                                      Migdal K-shell hole (this work)     1.57e-05          54.9         18.3
+                   Migdal N+O shells (in electronic stopping already)        0.564        0.0464        0.179
+                    nuclear bremsstrahlung photon > 1 keV (this work)     7.17e-05             1         2.57
+
+Figure written: output/work/P095/figures/P095_fig1_migdal_shift.png
+Results written to P095_results.json

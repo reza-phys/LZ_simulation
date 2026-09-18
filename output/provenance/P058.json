@@ -1,0 +1,64 @@
+{
+ "id": "P058",
+ "title": "If the excited state survives: exothermic down-scattering signals in LZ's data and the lifetime window they exclude",
+ "date": "2026-09-11",
+ "agent_tools": [
+  {"tool": "Read", "count": 24, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; papers P002, P003, P006, P007, P011, P014, P016, P021, P026, P034, P038; work/P011/details.md lines 100-125; LZ_arXiv_2609.02823_fulltext.tex lines 44-75, 120-164, 440-465, 712-786, 880-909; lzcommon.py lines 21-62, 126-215, 310-387; figures_png/Fig4_science_sample_wbands.png; figures_png/FigS4_mssi_sidebands_s1logs2.png; own figures P058_fig1/2/3 (two rounds); dataviz references/palette.md"},
+  {"tool": "Bash", "count": 16, "detail": "ls papers/work/data_requests; cut ledger id/question; grep lzcommon function list; grep P011 details for exothermic; grep tex for inelastic/table/figure labels; cat P011 exothermic.csv, couplings.json, P021 peaks/results, P038 results/mssi/extension csv; grep P011 script kernel/exothermic parts; grep WimPyDD package.py diff_rate/dsigma_der/get_vmin; ls WimPyDD, sed diff_rate body; python timing/factorisation test (3 diff_rate calls, per-stream levels); .venv/bin/python output/code/P058_exothermic.py (three runs: 2364 s full, then 5 s from cache twice); .venv/bin/python output/code/P058_kernels_worker.py (four parallel workers: iso:4000, iso:400, hig:1000, p:1000 configurations); python debug snippet of the profile likelihood; pandas print of kinematics/ratio tables; grep run_log"},
+  {"tool": "Write", "count": 5, "detail": "output/code/P058_exothermic.py; output/code/P058_kernels_worker.py; output/work/P058/details.md; output/provenance/P058.json; output/papers/P058.md"},
+  {"tool": "Edit", "count": 9, "detail": "P058_exothermic.py: replace kappa-profiled UL by fixed-kappa joint likelihood + profile diagnostics + local_Z; Part D extra columns; Part E four-bin Z and companions; isotope-mass check; Fig. 2 constrained_layout (x2); Fig. 1 legend/label positions (x2); expected-counts table"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette and chart rules; JS validator skipped per PAPER_GUIDE)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python from the simulation root"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "diff_rate(target, ham, m, E, vmin, delta_eta, j_chi=0.5, delta=+/-delta, sum_over_streams=False) per-stream kernels; streamed_halo_function via lz.wd_halo(day_of_year, vmin grid); eft_hamiltonian via lz.wd_hamiltonian; Xe.mass isotope list"},
+  {"name": "numpy", "version": "2.5.3", "functions": "linspace, arange, trapezoid, cumsum, interp, savez_compressed/load, gradient"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf; stats.poisson.cdf, stats.norm.pdf; optimize.brentq, optimize.minimize_scalar"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, read_csv, to_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg), subplots, constrained_layout, log axes"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ dict, C_KMS, AMU_GEV, A_XE_MEAN, M_V_GEV, M_NUCLEON_GEV, GEV_TO_CM2, E_R_range_keV, vmin_kms (sign pitfall documented), wd, wd_halo, wd_hamiltonian"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P058_exothermic.py", "purpose": "Kinematics, WimPyDD exothermic/endothermic kernels, region counts, f2 limits (per-region, joint fixed-kappa, kappa-profiled), lifetimes, dark-photon eps and m_A' floors, event-as-exothermic table, four-bin local Z, annual modulation, figures, results JSON", "command": ".venv/bin/python output/code/P058_exothermic.py"},
+  {"path": "output/code/P058_kernels_worker.py", "purpose": "Parallel computation of the same WimPyDD kernels into output/work/P058/cache with atomic writes", "command": ".venv/bin/python output/code/P058_kernels_worker.py iso:4000:300 iso:4000:350 iso:4000:380 (and iso:400:*, hig:1000:380/366/350, p:1000:380/366/350)"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Theory paragraph and Fig. 1 caption (lines 44-75); FV/samples/Fig. 4/salting (120-164); Fig. S1/S2 captions (440-465); MSSI supplement, HE SB definition 800-1700 phd and S2c < 10^4.3, Fig. S4/S5/S6 captions, MSSI count table (712-786); Table of O_i local significances (880-909)"},
+  {"file": "inputs/figures_png/Fig4_science_sample_wbands.png", "parts_used": "science sample to 800 phd: no NR-band events above 600 phd"},
+  {"file": "inputs/figures_png/FigS4_mssi_sidebands_s1logs2.png", "parts_used": "4.7 t science panel: zero events in 600-1700 phd below log10 S2c = 4.3"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "event parameters, background numbers, open questions"},
+  {"file": "output/results_ledger.csv", "parts_used": "ids and questions of P001-P050"},
+  {"file": "output/papers/P026.md", "parts_used": "f2 freeze-out fractions 0.42/0.50; tau_nunu = 2.6e18 s (m_A'/GeV)^-4; exothermic floor m_A' >= 2.45/0.92/0.55/0.25 GeV; Planck photon-channel window"},
+  {"file": "output/papers/P011.md and output/work/P011/details.md, exothermic.csv, N_events_grid.csv, couplings.json", "parts_used": "sigma_p(N=1) table, exothermic counts 858-2.7e6, f2 and tau criterion, eps floor, chi2 width formula, Higgsino c_p/c_n values, kernel/efficiency conventions; cross-check numbers"},
+  {"file": "output/papers/P002.md", "parts_used": "kinematic ceilings, spectral nodes 102/266 keV, spectrum peaks"},
+  {"file": "output/papers/P003.md, P016.md", "parts_used": "WimPyDD coupling convention; low-energy tolerance (~3 events recalled), digitised Fig. 5 counts 42 vs 58.6, 125-200 keV bin 0 vs 0.02, b_H = 5.7e-4, shrinkage mechanism"},
+  {"file": "output/papers/P021.md and work/P021/P021_peaks.csv, P021_results.json", "parts_used": "kappa-hat(delta), mu-hat = 1.0, Z(delta) for comparison"},
+  {"file": "output/papers/P038.md and work/P038/P038_results.json, P038_mssi_vs_edge.csv, P038_signal_vs_background_extension.csv", "parts_used": "E50 and sigma of 600/1000 phd edges, S1c-energy exponent 1.154, plateau 0.955, MSSI 0.018 in 600-1000 phd, Z_1000(380) = 2.33, acceptance fractions"},
+  {"file": "output/papers/P006.md, P034.md", "parts_used": "endothermic modulation fractions and a1 amplitudes for comparison"},
+  {"file": "output/papers/P007.md, P014.md", "parts_used": "Higgsino couplings and chi2 lifetimes 0.1 s / 1e6 s"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "constants, kinematics, WimPyDD wrappers"},
+  {"file": "WimPyDD/package.py", "parts_used": "diff_rate (5351-5480), dsigma_der (5158-5280), get_vmin (5130-5153, abs()), get_vstar/get_estar (4167-4213) to verify negative-delta handling"}
+ ],
+ "recalled_knowledge": [
+  {"item": "atomic mass unit 0.9314941 GeV", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "G_F = 1.1663788e-5 GeV^-2", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "sin^2 theta_W = 0.2312 (low energy)", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "alpha = 1/137.036", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "m_Z = 91.1876 GeV", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "hbar = 6.582e-25 GeV s", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "age of the Universe 13.8 Gyr = 4.35e17 s", "presumed_source": "Planck 2018", "reliability": "certain"},
+  {"item": "Gaussian acceptance within +-1.5 sigma = 0.866", "presumed_source": "statistics", "reliability": "certain"},
+  {"item": "exothermic total cross-section sigma ~ 1/v at low v, so n v sigma is velocity independent", "presumed_source": "Graham et al. 2010 / textbook kinematics", "reliability": "certain"},
+  {"item": "LZ 2024 low-energy search tolerates ~3 signal events in 5.4-55 keV", "presumed_source": "P003/P016 (recalled there)", "reliability": "uncertain (used only as a cross-check column)"},
+  {"item": "Planck photon-channel exclusion window 2e12-1e19 s", "presumed_source": "P026 (re-expressed Slatyer-Wu)", "reliability": "likely (quoted from corpus)"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Factorising the WimPyDD kernel as F^2(E) theta(v - v_min(E)) to avoid recomputing kernels per delta: invalid for natural xenon (each isotope has its own threshold; seven partial-sum levels observed), so full (E, v) kernels were computed for 21 configurations (39 min).",
+  "kappa-profiled joint likelihood as the headline f2 limit: returns no limit because the exothermic population can replace the endothermic event at kappa ~ 1e-7; reported as the kappa-f2 degeneracy and as the 'event is exothermic' hypothesis test instead.",
+  "Reading xenon isotope masses via WD.Xe.element[0].mass returned a scalar; WD.Xe.mass holds the nine isotope masses.",
+  "First full run exceeded the 10-minute foreground limit and continued in the background; four parallel kernel workers were added so later runs read the cache (5 s)."
+ ],
+ "wimpydd_generated_files": ["none outside output/ (kernel caches: output/work/P058/cache/K_{iso,p,hig}_{400,1000,4000}_{m,p}{delta}.npz, 42 files)"]
+}

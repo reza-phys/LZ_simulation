@@ -1,0 +1,76 @@
+{
+ "id": "P025",
+ "title": "Indirect-detection constraints on TeV inelastic dark matter after LZ: gamma-rays, antiprotons and the CMB",
+ "date": "2026-09-08",
+ "agent_tools": [
+  {"tool": "Read", "count": 12, "detail": "provenance/PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv; papers/P007.md; papers/P014.md; papers/P011.md; papers/P012.md; provenance/P014.json (format); dataviz references/palette.md (lines 47-76); work/P025/figures/P025_fig1 (x3 iterations); work/P025/figures/P025_fig2 (x1)"},
+  {"tool": "Bash", "count": 12, "detail": "ls output/{papers,work,provenance,code,data_requests} + head environment/ENVIRONMENT_versions.txt; ls work/P011,P007,P014 + grep -i sommerfeld/fermi/annihilat/planck/alpha_D over papers, dossier, plan; grep def/class in lzcommon.py + grep P025/indirect in 01_landscape_and_plan.md; cat work/P011/relic_lifetime.json, couplings.json, work/P007/relic_and_lifetime.json + grep relic/Lambda in P011/P012 details; grep categorical in dataviz palette.md; .venv/bin/python output/code/P025_indirect.py (x5: two TypeError runs on 1-element arrays, three successful runs incl. figure iterations); wc -w on papers/P025.md sections (x4) + json.load validation of P025.json"},
+  {"tool": "Write", "count": 4, "detail": "code/P025_indirect.py; work/P025/details.md; provenance/P025.json; papers/P025.md"},
+  {"tool": "Edit", "count": 25, "detail": "script (8): overflow-safe Hulthen branch + exact Coulomb function; freeze-out S and dSph threshold in the dark-photon summary; JSON keys; run-log print; Hulthen check print indexing; S_GC float() fix; summary-table wording; figure-label placement (x2). papers/P025.md (16): trimming body 609 -> 550 words, headline 59 -> 45, key numbers 116 -> 110. provenance/P025.json (1): tool-count update"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette slots and mark rules for the two figures)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "logspace, sinh/cosh/cos, where, errstate, clip"},
+  {"name": "scipy", "version": "1.18.1", "functions": "optimize.brentq (thermal Higgsino mass)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, to_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg), fill_between, annotate, log axes"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "M_V_GEV (246.2 GeV), M_NUCLEON_GEV"},
+  {"name": "none: derived by hand", "version": "-", "functions": "Majorana threshold formula sigma v = g_eff^4/(8 pi m^2) x (1/2 identical) calibrated on para-positronium and the wino; Higgsino chi1-chi+-W (g/2) and chi1-chi2-Z (g/(2 c_W)) vertices from the Dirac decomposition; pseudo-Dirac coannihilation counting sigma_eff = pi alpha_D^2/(2 m^2); Hulthen saturation limit and valley minimum 6/eps_phi; tensor-operator annihilation estimate; unitarity bound"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P025_indirect.py", "purpose": "Higgsino freeze-out and present-day WW/ZZ cross-sections, line estimate and Omega h^2 check; comparison with recalled Fermi/H.E.S.S./AMS/Planck/line limits; dark-photon relic alpha_D (two conventions), Hulthen Sommerfeld factor at recombination/dwarf/GC velocities, Planck and dwarf thresholds on m_A'; L10 tensor-operator annihilation, unitarity, relic fraction; summary table; two figures", "command": ".venv/bin/python output/code/P025_indirect.py"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules and deliverable formats"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "sections 1, 5 (explanations I, J), 6 (open question 10)"},
+  {"file": "output/results_ledger.csv", "parts_used": "rows P007, P011, P012, P014 (headline numbers, relic alpha_D, d10, thermal masses)"},
+  {"file": "output/papers/P007.md", "parts_used": "delta(N=1) = 366 keV at 1 TeV; thermal 1.1 TeV and Omega h^2 = 0.099; PeV gauginos; chi2 lifetime"},
+  {"file": "output/papers/P011.md", "parts_used": "thermal alpha_D = 0.0073/0.0245/0.073; m_A' windows 5.0-57, 2.6-34, 0.94-14, 0.52-8.5, 0.09-3.8 GeV; off-diagonal A' current; eps ceiling 1e-3"},
+  {"file": "output/work/P011/relic_lifetime.json", "parts_used": "alpha_D_thermal values and s-channel remarks"},
+  {"file": "output/work/P011/couplings.json", "parts_used": "alpha, m_v, Higgsino c_p/c_n (context)"},
+  {"file": "output/work/P007/relic_and_lifetime.json", "parts_used": "thermal Omega h^2 and DM fractions at 300-4000 GeV"},
+  {"file": "output/papers/P012.md", "parts_used": "d10 = 0.28; d10/m_v^2 = (466 GeV)^-2; (20.9 GeV)^-4; photon-dipole exclusion; DR-001 ambiguity"},
+  {"file": "output/work/P012/details.md", "parts_used": "L10 reduction, dimension-8 reading, UV-completion coupling estimate (mu_chi^V ~ 200 mu_N), tensor charges"},
+  {"file": "output/papers/P014.md", "parts_used": "chargino c tau = 0.71 cm; chi2 invisibility; thermal masses"},
+  {"file": "output/provenance/P014.json", "parts_used": "provenance format"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "M_V_GEV, M_NUCLEON_GEV"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "1 GeV^-2 = 1.167e-17 cm^3/s; sin^2 theta_W = 0.2312; alpha_2 = 1/29.6; alpha = 1/137.04; m_W, m_Z", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "Canonical thermal <sigma v> = 2.2e-26 cm^3/s (Majorana), factor 2 larger for Dirac; Omega_DM h^2 = 0.120", "presumed_source": "Steigman, Dasgupta, Beacom PRD 86 (2012) 023506; Planck 2018", "reliability": "certain"},
+  {"item": "Higgsino effective coannihilation <sigma v>_eff = g^4 (21 + 3 tan^2 + 11 tan^4 theta_W)/(512 pi mu^2); Omega h^2 ~ 0.10 (mu/TeV)^2", "presumed_source": "Arkani-Hamed, Delgado, Giudice NPB 741 (2006) 108", "reliability": "likely (reproduces the 1.1 TeV thermal mass to 6%)"},
+  {"item": "Cirelli-Fornengo-Strumia fermion n-plet coannihilation formula g_2^4(2n^4+17n^2-19) + 4Y^4 g_Y^4(41+8Y^2) + 16 g_2^2 g_Y^2 Y^2 (n^2-1) over 512 pi g_chi M^2", "presumed_source": "Cirelli, Fornengo, Strumia NPB 753 (2006) 178", "reliability": "likely (agrees with ADG to 6.5%)"},
+  {"item": "Thermal Higgsino mass 1.1 TeV; wino 2.7-3 TeV", "presumed_source": "standard results", "reliability": "certain"},
+  {"item": "Heavy-wino tree-level <sigma v>(W+W-) = 2 pi alpha_2^2/m^2; para-positronium sigma v = pi alpha^2/m^2", "presumed_source": "Hisano et al. PRD 71 (2005) 063528; QED textbooks", "reliability": "likely / certain"},
+  {"item": "Pure-Higgsino chargino-neutralino-W coupling g/2 (O^L = -N_i4 V_12/sqrt2, O^R = N_i3 U_12/sqrt2) and off-diagonal Z coupling g/(2 c_W)", "presumed_source": "MSSM Feynman rules (Haber-Kane; Gunion-Haber)", "reliability": "certain (confirmed by Dirac decomposition here)"},
+  {"item": "Higgsino Sommerfeld factor modest (S ~ 1-3) below ~3 TeV, no resonance until several TeV", "presumed_source": "Hisano et al. 2005; Beneke et al. 2019-2020 Higgsino papers", "reliability": "likely"},
+  {"item": "Heavy-wino one-loop line <sigma v>_gg -> 4 pi alpha^2 alpha_2^2 / m_W^2 (mass-independent)", "presumed_source": "Bergstrom & Ullio NPB 504 (1997) 27", "reliability": "likely"},
+  {"item": "Higgsino line ~1/16 of the wino line (g/2 at four vertices)", "presumed_source": "our estimate", "reliability": "uncertain (x3)"},
+  {"item": "Fermi-LAT dSph limits: <sigma v>(bb, WW) ~ 1e-25 at 1 TeV (15 dSphs 6 yr 2015; 45 dSphs 2017), tau tau ~1e-25, mu mu ~1e-24 at 1 TeV", "presumed_source": "Ackermann et al. PRL 115 (2015) 231301; Albert et al. ApJ 834 (2017) 110", "reliability": "likely (x2) for WW/bb/tautau; uncertain for mumu"},
+  {"item": "H.E.S.S. GC continuum: WW ~4e-26 at 1-1.5 TeV (Einasto), tau tau ~1e-26; x10 weaker for cored profiles", "presumed_source": "Abdallah et al. PRL 117 (2016) 111301; PRL 129 (2022) 111101", "reliability": "likely (Einasto)"},
+  {"item": "H.E.S.S. line limits ~4e-28 cm^3/s at 1 TeV (Einasto)", "presumed_source": "Abdallah et al. PRL 120 (2018) 201101", "reliability": "likely (order of magnitude)"},
+  {"item": "AMS-02 antiproton limits ~1e-25 at 1 TeV for bb/WW", "presumed_source": "Cuoco, Kramer, Korsmeier PRL 118 (2017) 191102; Cui et al. PRL 118 (2017) 191101", "reliability": "uncertain (propagation x3-10)"},
+  {"item": "MAGIC Segue 1 158 h: ~1e-24 at 1 TeV", "presumed_source": "Aleksic et al. JCAP 02 (2014) 008", "reliability": "likely (not competitive)"},
+  {"item": "Planck p_ann = f_eff <sigma v>/m < 3.5e-28 cm^3 s^-1 GeV^-1 (3.2e-28 in Planck 2018)", "presumed_source": "Planck 2015/2018 cosmological parameters", "reliability": "likely"},
+  {"item": "f_eff at TeV: e+e- ~0.45, mu+mu- ~0.2, W/hadrons ~0.2", "presumed_source": "Slatyer PRD 93 (2016) 023527", "reliability": "likely"},
+  {"item": "Hulthen-potential Sommerfeld factor S(eps_v, eps_phi) with eps* = pi^2 eps_phi/6; resonances at eps_phi = 6/(pi^2 n^2)", "presumed_source": "Cassel J. Phys. G 37 (2010) 105009; Slatyer JCAP 02 (2010) 028; Feng, Kaplinghat, Yu PRD 82 (2010) 083525", "reliability": "likely (Coulomb and saturation limits verified numerically)"},
+  {"item": "Inelastic (two-state) Sommerfeld enhancement equals the elastic one when delta << potential-energy scales alpha_D m_A' and alpha_D^2 m", "presumed_source": "Slatyer JCAP 02 (2010) 028", "reliability": "likely"},
+  {"item": "DM velocity at recombination ~1e-8-1e-10 for TeV DM (kinetic decoupling at MeV-GeV); dSph v ~ 3e-5; GC/halo v ~ 5e-4", "presumed_source": "standard estimates", "reliability": "likely (irrelevant once saturated)"},
+  {"item": "Fermi dSph cascade (4e/4mu/mixed) limits at 1 TeV ~1e-23 / 1e-24 / 3e-25", "presumed_source": "Elor, Rodd, Slatyer, Xue JCAP 06 (2016) 024", "reliability": "uncertain"},
+  {"item": "AMS-02 positron constraints on leptophilic TeV DM ~1e-24 at 1 TeV", "presumed_source": "John & Linden JCAP 12 (2021) 007; Bergstrom et al. PRL 111 (2013) 171101", "reliability": "uncertain"},
+  {"item": "Dark-photon kinetic-mixing limits eps <~ 1e-3 for m_A' = 1-10 GeV (BaBar, LHCb)", "presumed_source": "Lees et al. PRL 113 (2014) 201801; LHCb PRL 124 (2020) 041801", "reliability": "likely"},
+  {"item": "Nucleon tensor charges delta_u = 0.8, delta_d = -0.2; s-wave unitarity sigma v <= 4 pi/(m^2 v); four-fermion contact annihilation sigma v ~ N_c G^2 m^2/pi with O(1-6) operator factor", "presumed_source": "lattice/phenomenology; Griest-Kamionkowski 1990; Beltran et al. 2009 / Zheng et al. 2010", "reliability": "likely / certain / uncertain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First Hulthen implementation returned NaN at freeze-out velocities (sinh/cosh overflow); replaced by a large-argument branch validated against the exact Coulomb factor.",
+  "Two script runs failed with TypeError from formatting/float() of 1-element numpy arrays after vectorising S_hulthen; fixed by indexing.",
+  "Figure 1 labels collided (Fermi/AMS share an anchor; Higgsino label vs thermal-mass line); two placement iterations.",
+  "The dSph threshold on m_A' at 3 TeV is not reached within the 0.05-100 GeV grid; reported as 'not below 100 GeV'.",
+  "Not attempted: positron propagation, J-factor treatment, full two-state Sommerfeld calculation, electroweak resummation of the Higgsino line (deferred to P084)."
+ ],
+ "wimpydd_generated_files": "none"
+}

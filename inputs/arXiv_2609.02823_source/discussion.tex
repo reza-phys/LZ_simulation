@@ -1,0 +1,43 @@
+\paragraph{Discussion --\label{sec:discussion}}
+Given the 3$\sigma$-level local significance, increased scrutiny of the analysis is warranted. We discuss here detector conditions around the event of interest and additional details of key background topologies.
+Information regarding analysis of the event waveform is given in the \textcolor{black}{Supplemental Material}.
+
+%\prlsubhead{Conditions Around Event}
+The event occurred in close proximity to a calibration period. On 16 June 2023, an ER calibration source, $^{57}$Co, was deployed in a calibration source deployment (CSD) tube~\cite{LZ:Calibrations_2024} and removed 25 minutes before the event was recorded. The source deployment was on the opposite side of the detector from the event of interest. Used for calibrations of the Skin, $^{57}$Co emits primarily 122~keV and 136~keV $\gamma$-rays with a mean free path of less than 4 mm in LXe.
+The previous NR calibration, one of three in the full dataset, was an AmBe deployment on 8 June 2023. 
+The calibration data and the science data in the periods around the event of interest were analyzed and no anomalous populations were observed. The previous observed muon in LZ occurred in the OD 41 minutes before the event, with the previous muon in the TPC occurring 127 minutes before.
+Other key detector parameters showed no abnormalities in the scintillation and ionization responses of the detector in the temporal and spatial vicinity of the interaction in question. LZ has demonstrated the ability to tag events as being likely $^{214}$Pb decays via a radon tag~\cite{LZ:2025xxf}, but the tag cannot be applied to the event of interest as it occurred while the detector was in the mixed flow state~\cite{LZ:SR3_WS2024}.
+
+
+
+
+%\prlsubhead{Backgrounds discussion}
+Although most events in the WS~ROI are from ER backgrounds, discrimination against ER events improves at higher energies with very little leakage predicted for S1$c>250$~phd, as illustrated in~\autoref{fig:er_projection}. Electron capture decays have increased recombination, and hence more S1 and less S2 relative to $\beta$ decays~\cite{LZ:2025hud}.  $^{124}$Xe and $^{125}$I have double-vacancy decay modes releasing 64.3~keV and 67.3~keV of energy, respectively, similar to the reconstructed energy of the event of interest if interpreted as a pure ER. These decays are modeled following Ref.~\cite{LZ:2025hud}, and there is a systematic uncertainty in projecting into the tail of the distribution that we do not include in the statistical inference. We note the lack of events between the event of interest and the bottom of the ER band in~\autoref{fig:finaldataset-S1-logS2}.
+
+In the region of \{S1$c$, log$_{10}$(S2$c$)\} space where the event occurred, the dominant backgrounds are accidentals, atmospheric neutrinos, and MSSI events. 
+While these processes are able to produce a high energy NR-like interaction, such an event is generally in the tail of a larger distribution. 
+The potential for significant mismodeling of these backgrounds is thus constrained by the lack of a larger population in each case. 
+
+
+
+
+Accidental coincidences are expected to be most prevalent at low energies,
+and the accidentals model is well tested in previous analyses~\cite{LZ:SR3_WS2024, LZ:2025lowmass}. More detail can be found in the \textcolor{black}{Supplemental Material}.
+While the flux of atmospheric neutrinos carries some uncertainty, the coherent scattering neutrino interaction is well understood, producing an approximately exponentially-decaying recoil spectrum with increasing energy.
+In addition, the reconstructed energy of the event is not consistent with scattering coherence.
+
+The MSSI simulation is validated using a larger 5.4 tonne analysis volume, a higher energy sideband (HE~SB: 800 $<$ S1$c$ $<$ 1700~phd, $10^{2.75}$ $<$ S2$c$ $<$ $10^{4.3}$~phd), and the \emph{prompt veto} sideband. The 5.4 tonne analysis volume uses the same $z$ boundaries as Ref.~\cite{LZ:SR3_WS2024} with a radial boundary defined by requiring an expected wall background count of less than $(1.0 \pm 0.5)\times10^{-2}$ in the $3-600$~phd WS~ROI; the radial boundary in Ref.~\cite{LZ:SR3_WS2024} was defined by the same criterion over the $3-80$~phd ROI used in that analysis. 
+Events are categorized as wall- or RFR-like, \emph{science} or \emph{prompt veto}, WS~ROI or HE~SB, and in one of the two analysis volumes; excluding the search space of the WS~ROI in the 4.7 tonne FV leaves 12 bins of comparison. 
+A binned Poisson likelihood chi-square test across those 12 bins returns a p-value of 0.7, indicating no inconsistency between model and data~\cite{BAKER1984437}.
+More detail on the MSSI model validation is provided in the \textcolor{black}{Supplemental Material}.
+
+Neutrons are generally considered the most likely cause of NR interactions, and we explore three primary sources: ($\alpha$,n), spontaneous fission, and muon-induced cascades. 
+A neutron must have at least 8 MeV in order to impart 250~keV to a xenon nucleus in elastic scattering, and the cross section for elastic scattering of neutrons on xenon becomes highly forward peaked as the neutron energy increases, leading to small energy depositions. 
+Similar to neutrinos and accidental coincidences, it is thus very unlikely to observe a single  recoil at this energy without also observing several more events at lower energies.
+This spectral information, in addition to the veto systems, provides a strong constraint in the statistical inference on the contribution of neutrons to the background in the region of the event of interest. 
+More details regarding 
+spontaneous fission and muon-induced 
+neutrons are presented in the \textcolor{black}{Supplemental Material}.
+
+
+

@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "deny": [
+      "WebFetch",
+      "WebFetch(domain:*)",
+      "WebSearch",
+      "mcp__*"
+    ]
+  },
+  "disableClaudeAiConnectors": true,
+  "sandbox": {
+    "enabled": true,
+    "failIfUnavailable": true,
+    "allowUnsandboxedCommands": false,
+    "network": {
+      "allowedDomains": []
+    }
+  }
+}

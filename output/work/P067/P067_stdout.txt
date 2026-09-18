@@ -1,0 +1,194 @@
+WARNING: leap-second auto-update failed due to the following exception: TypeError('Configuration value not valid: the value "None" is of the wrong type.') [astropy.time.core]
+lab velocity 16 June 2023 21:22:39 UTC: |v_lab| = 265.8 km/s (lzcommon cosine model 265.1); Sun frame 250.6; v_max(June) = 809.8 km/s
+A_min(delta) at 1 TeV, June: 250 keV: A >= 79, 300 keV: A >= 96, 350 keV: A >= 114, 366 keV: A >= 120, 380 keV: A >= 125
+target     A  ceiling_keV_m1000  delta_max_248keV_1TeV_June  elastic_Emax_keV_1TeV_June window_d300_keV window_d366_keV
+    He   4.0               13.5                      -132.8                        54.0           blind           blind
+     C  12.0               40.3                       -49.6                       159.5           blind           blind
+     O  16.0               53.6                       -19.4                       211.2           blind           blind
+     F  19.0               63.4                         0.7                       249.4           blind           blind
+     S  32.0              105.6                        73.1                       410.2           blind           blind
+    Ca  40.0              131.1                       110.0                       505.4           blind           blind
+    Br  79.9              252.7                       252.5                       940.9           blind           blind
+    Ag 107.9              333.2                       330.2                      1211.1         142-524           blind
+     I 126.9              385.7                       376.8                      1379.6          96-747         207-518
+    Xe 131.4              397.8                       387.2                      1417.8          90-793         182-583
+     W 183.8              533.3                       496.7                      1821.5         52-1257         88-1108
+gas densities kg/m3: CF4_40 0.193, SF6_20 0.160, He_740 0.162, CF3I_40 0.429, Xe_40 0.287, Xe_10bar 54.611, HeSF6 0.322
+                   medium  E_keV  range_mm    range_um
+       F in CF4 @ 40 Torr  250.0  4.162766 4162.766037
+F in He:SF6 (740:20 Torr)  250.0  2.491149 2491.148665
+       S in SF6 @ 20 Torr  250.0  3.122075 3122.074528
+                Xe in LXe  250.0  0.000146    0.145697
+      I in CF3I @ 40 Torr  250.0  0.985259  985.259124
+   Xe in Xe gas @ 40 Torr  250.0  1.470010 1470.009614
+    Xe in Xe gas @ 10 bar  250.0  0.007737    7.736893
+Ag in AgBr emulsion (NIT)  250.0  0.000208    0.208138
+               W in CaWO4  250.0  0.000062    0.062441
+June Xe E=248 delta=0              <cos g>=+0.594 A_FB=+0.884 f(<30deg)=0.22 g50=48 g90=82 | obs <cos>=+0.209 N3(dipole)=68.8 N3(FB)=91.4 N3(axial)=123.8 | thetaR med/max 37.6/65.2
+June Xe E=248 delta=300            <cos g>=+0.887 A_FB=+1.000 f(<30deg)=0.65 g50=25 g90=41 | obs <cos>=+0.314 N3(dipole)=30.3 N3(FB)=57.3 N3(axial)=8.1 | thetaR med/max 15.0/29.5
+June Xe E=248 delta=350            <cos g>=+0.947 A_FB=+1.000 f(<30deg)=0.96 g50=17 g90=27 | obs <cos>=+0.346 N3(dipole)=25.0 N3(FB)=53.0 N3(axial)=5.4 | thetaR med/max 10.1/19.1
+June Xe E=248 delta=366            <cos g>=+0.969 A_FB=+1.000 f(<30deg)=1.00 g50=13 g90=21 | obs <cos>=+0.352 N3(dipole)=24.2 N3(FB)=52.9 N3(axial)=4.6 | thetaR med/max 7.7/14.5
+June Xe E=248 delta=380            <cos g>=+0.989 A_FB=+1.000 f(<30deg)=1.00 g50=8 g90=12 | obs <cos>=+0.364 N3(dipole)=22.6 N3(FB)=50.4 N3(axial)=4.3 | thetaR med/max 4.5/8.3
+June I E=248 delta=0               <cos g>=+0.600 A_FB=+0.888 f(<30deg)=0.23 g50=48 g90=82 | obs <cos>=+0.210 N3(dipole)=68.1 N3(FB)=93.4 N3(axial)=105.8 | thetaR med/max 37.1/64.9
+June I E=248 delta=300             <cos g>=+0.896 A_FB=+1.000 f(<30deg)=0.68 g50=24 g90=39 | obs <cos>=+0.316 N3(dipole)=30.0 N3(FB)=57.0 N3(axial)=7.7 | thetaR med/max 14.3/28.0
+June I E=248 delta=350             <cos g>=+0.961 A_FB=+1.000 f(<30deg)=1.00 g50=15 g90=23 | obs <cos>=+0.350 N3(dipole)=24.4 N3(FB)=53.1 N3(axial)=5.1 | thetaR med/max 8.6/16.4
+June I E=248 delta=366             <cos g>=+0.983 A_FB=+1.000 f(<30deg)=1.00 g50=10 g90=15 | obs <cos>=+0.330 N3(dipole)=27.6 N3(FB)=64.0 N3(axial)=4.1 | thetaR med/max 5.6/10.3
+June I delta=380: vmin=814 km/s >= v_max -> kinematically forbidden
+Sun Xe E=248 delta=0               <cos g>=+0.581 A_FB=+0.867 f(<30deg)=0.22 g50=49 g90=84 | obs <cos>=+0.205 N3(dipole)=71.6 N3(FB)=94.5 N3(axial)=138.2 | thetaR med/max 37.1/64.7
+Sun Xe E=248 delta=300             <cos g>=+0.889 A_FB=+1.000 f(<30deg)=0.66 g50=25 g90=40 | obs <cos>=+0.312 N3(dipole)=30.9 N3(FB)=57.5 N3(axial)=7.9 | thetaR med/max 14.1/27.6
+Sun Xe E=248 delta=350             <cos g>=+0.957 A_FB=+1.000 f(<30deg)=0.98 g50=15 g90=25 | obs <cos>=+0.317 N3(dipole)=29.9 N3(FB)=63.9 N3(axial)=5.1 | thetaR med/max 8.4/15.8
+Sun Xe E=248 delta=366             <cos g>=+0.981 A_FB=+1.000 f(<30deg)=1.00 g50=10 g90=17 | obs <cos>=+0.286 N3(dipole)=36.8 N3(FB)=81.3 N3(axial)=4.4 | thetaR med/max 5.1/9.3
+Sun Xe delta=380: vmin=801 km/s >= v_max -> kinematically forbidden
+Sun I E=248 delta=0                <cos g>=+0.586 A_FB=+0.873 f(<30deg)=0.22 g50=49 g90=83 | obs <cos>=+0.199 N3(dipole)=76.1 N3(FB)=101.7 N3(axial)=124.3 | thetaR med/max 36.6/64.3
+Sun I E=248 delta=300              <cos g>=+0.902 A_FB=+1.000 f(<30deg)=0.71 g50=23 g90=38 | obs <cos>=+0.308 N3(dipole)=31.6 N3(FB)=60.4 N3(axial)=7.3 | thetaR med/max 13.4/25.8
+Sun I E=248 delta=350              <cos g>=+0.972 A_FB=+1.000 f(<30deg)=1.00 g50=12 g90=20 | obs <cos>=+0.287 N3(dipole)=36.4 N3(FB)=78.2 N3(axial)=4.7 | thetaR med/max 6.5/12.1
+Sun I delta=366: vmin=796 km/s >= v_max -> kinematically forbidden
+Sun I delta=380: vmin=814 km/s >= v_max -> kinematically forbidden
+====================
+WARNING
+Only some of the isotopes contained in
+WimPyDD/WimPyC/Sun/densities.tab
+were loaded:
+['1H', '4He', '3He', '12C', '13C', '14N', '15N', '16O', '17O', '18O', '20Ne', '23Na', '24Mg', '27Al', '28Si', '32S', '40Ar', '40Ca', '56Fe', '58Ni']
+the following targets could not be initialized and were ignored:
+['P', 'Cl', 'K', 'Sc', 'Ti', 'V', 'Cr', 'Mn', 'Co']
+====================
+====================
+WARNING
+Only some of the isotopes contained in
+WimPyDD/WimPyC/Earth/densities.tab
+were loaded:
+['16O', '28Si', '27Al', '56Fe', '40Ca', '23Na', '24Mg', '58Ni', '31P', '32S']
+the following targets could not be initialized and were ignored:
+['39K', '48Ti', '59Co']
+====================
+looking for 12C in list of pre-defined targets:
+12C found in predefined carbon element object
+looking for 13C in list of pre-defined targets:
+13C found in predefined carbon element object
+looking for 14N in list of pre-defined targets:
+14N found in predefined nitrogen element object
+looking for 15N in list of pre-defined targets:
+15N found in predefined nitrogen element object
+looking for 16O in list of pre-defined targets:
+16O found in predefined oxygen element object
+looking for 17O in list of pre-defined targets:
+17O found in predefined oxygen element object
+looking for 18O in list of pre-defined targets:
+18O found in predefined oxygen element object
+looking for 1H in list of pre-defined targets:
+1H found in predefined hydrogen element object
+looking for 20Ne in list of pre-defined targets:
+20Ne found in predefined neon element object
+looking for 23Na in list of pre-defined targets:
+23Na found in predefined sodium element object
+looking for 24Mg in list of pre-defined targets:
+24Mg found in predefined magnesium element object
+looking for 27Al in list of pre-defined targets:
+27Al found in predefined aluminium element object
+looking for 28Si in list of pre-defined targets:
+28Si found in predefined silicon element object
+looking for 31P in list of pre-defined targets:
+31P found in predefined phosphorus element object
+looking for 32S in list of pre-defined targets:
+32S found in predefined sulfur element object
+looking for 3He in list of pre-defined targets:
+3He found in predefined helium element object
+looking for 40Ar in list of pre-defined targets:
+40Ar found in predefined argon element object
+looking for 40Ca in list of pre-defined targets:
+40Ca found in predefined calcium element object
+looking for 4He in list of pre-defined targets:
+4He found in predefined helium element object
+looking for 56Fe in list of pre-defined targets:
+56Fe found in predefined iron element object
+looking for 58Ni in list of pre-defined targets:
+58Ni found in predefined nickel element object
+looking for 12C in list of pre-defined targets:
+12C found in predefined carbon element object
+looking for 13C in list of pre-defined targets:
+13C found in predefined carbon element object
+looking for 14N in list of pre-defined targets:
+14N found in predefined nitrogen element object
+looking for 15N in list of pre-defined targets:
+15N found in predefined nitrogen element object
+looking for 16O in list of pre-defined targets:
+16O found in predefined oxygen element object
+looking for 17O in list of pre-defined targets:
+17O found in predefined oxygen element object
+looking for 18O in list of pre-defined targets:
+18O found in predefined oxygen element object
+looking for 1H in list of pre-defined targets:
+1H found in predefined hydrogen element object
+looking for 20Ne in list of pre-defined targets:
+20Ne found in predefined neon element object
+looking for 23Na in list of pre-defined targets:
+23Na found in predefined sodium element object
+looking for 24Mg in list of pre-defined targets:
+24Mg found in predefined magnesium element object
+looking for 27Al in list of pre-defined targets:
+27Al found in predefined aluminium element object
+looking for 28Si in list of pre-defined targets:
+28Si found in predefined silicon element object
+looking for 31P in list of pre-defined targets:
+31P found in predefined phosphorus element object
+looking for 32S in list of pre-defined targets:
+32S found in predefined sulfur element object
+looking for 3He in list of pre-defined targets:
+3He found in predefined helium element object
+looking for 40Ar in list of pre-defined targets:
+40Ar found in predefined argon element object
+looking for 40Ca in list of pre-defined targets:
+40Ca found in predefined calcium element object
+looking for 4He in list of pre-defined targets:
+4He found in predefined helium element object
+looking for 56Fe in list of pre-defined targets:
+56Fe found in predefined iron element object
+looking for 58Ni in list of pre-defined targets:
+58Ni found in predefined nickel element object
+kernel validation F L10 (K*eta0 / direct): [0.998 0.997 1.    1.003 1.006]
+June F L10 elastic E>20 keV        <cos g>=+0.700 A_FB=+0.951 f(<30deg)=0.34 g50=39 g90=71 | obs <cos>=+0.245 N3(dipole)=49.9 N3(FB)=74.6 N3(axial)=32.2 | thetaR med/max 27.7/72.9
+June F L10 elastic E>50 keV        <cos g>=+0.730 A_FB=+0.976 f(<30deg)=0.36 g50=37 g90=67 | obs <cos>=+0.243 N3(dipole)=50.7 N3(FB)=77.3 N3(axial)=27.4 | thetaR med/max 25.8/61.9
+June F L10 elastic 150-250 keV     <cos g>=+0.863 A_FB=+1.000 f(<30deg)=0.59 g50=27 g90=45 | obs <cos>=+0.262 N3(dipole)=43.5 N3(FB)=77.6 N3(axial)=9.9 | thetaR med/max 16.3/38.0
+June Xe L10 elastic 200-270 keV    <cos g>=+0.576 A_FB=+0.863 f(<30deg)=0.22 g50=50 g90=84 | obs <cos>=+0.210 N3(dipole)=68.2 N3(FB)=100.5 N3(axial)=153.4 | thetaR med/max 39.0/67.1
+June Xe L10 elastic E>5.4 keV      <cos g>=+0.600 A_FB=+0.870 f(<30deg)=0.24 g50=47 g90=83 | obs <cos>=+0.211 N3(dipole)=67.2 N3(FB)=93.3 N3(axial)=86.7 | thetaR med/max 35.0/86.1
+June Xe O1 inelastic d=366 full window <cos g>=+0.966 A_FB=+1.000 f(<30deg)=1.00 g50=13 g90=22 | obs <cos>=+0.337 N3(dipole)=26.5 N3(FB)=56.0 N3(axial)=4.8 | thetaR med/max 7.8/15.8
+June Xe O1 inelastic d=366 200-270 keV <cos g>=+0.977 A_FB=+1.000 f(<30deg)=1.00 g50=12 g90=18 | obs <cos>=+0.254 N3(dipole)=46.6 N3(FB)=107.1 N3(axial)=4.6 | thetaR med/max 6.9/14.9
+isotropic control                  <cos g>=+0.001 A_FB=+0.004 f(<30deg)=0.07 g50=90 g90=143 | obs <cos>=+0.002 N3(dipole)=605755.3 N3(FB)=1428548.8 N3(axial)=937602.1
+MC spectrum / (K*eta0) for F L10 (10 keV bins, 5-245 keV): [0.   0.   1.01 0.99 1.03 1.05 0.99 1.   1.04 1.04 1.01 0.98 0.97 1.13 1.06 0.96 1.08 1.22 1.19 1.09 1.33 0.84 1.77 2.32 0.  ]
+toy power (P[Z>3]) vs N for June Xe E=248 delta=366: 5:0.17, 8:0.24, 10:0.25, 15:0.34, 20:0.44, 30:0.62, 50:0.84, 80:0.96, 120:1.00
+toy power (P[Z>3]) vs N for F L10 >20: 5:0.04, 8:0.06, 10:0.08, 15:0.13, 20:0.20, 30:0.31, 50:0.54, 80:0.77, 120:0.93
+toy power (P[Z>3]) vs N for June Xe E=248 delta=0: 5:0.02, 8:0.04, 10:0.05, 15:0.07, 20:0.10, 30:0.16, 50:0.37, 80:0.59, 120:0.84
+LST(SURF) = 8.120 h; apex RA 319.4 Dec 43.7 (l=87.4, b=-3.9; 5.1 deg from RA 312.5/Dec 45): alt -0.5 az 347.4; anti-apex RA 139.4 Dec -43.7: alt +0.5 az 167.4 (az from N through E)
+apex altitude range on 16 June 2023: -1.9 to +89.4 deg; below the horizon 11 % of the day; |alt| < 20 deg 42 % of the day
+June Xe E=248 delta=366: recoil alt 10/50/90 % = -13/+1/+14 deg; az mean 167 deg (68 % half-width 11); upward fraction 0.52
+June Xe E=248 delta=0: recoil alt 10/50/90 % = -46/-0/+46 deg; az mean 167 deg (68 % half-width 49); upward fraction 0.50
+F L10 >20: recoil alt 10/50/90 % = -40/+0/+40 deg; az mean 167 deg (68 % half-width 38); upward fraction 0.50
+L10 unit-coupling LZ-ROI count in 2.84 t yr: 3.32 (P012 "ours": 3.34) -> best-fit scale 0.301
+F L10 rate at LZ best fit per tonne-year of F above 10/20/50/100/150 keV: 10: 0.150, 20: 0.146, 50: 0.114, 100: 0.044, 150: 0.009
+Xe L10 rate per t yr (E > 5.4 keV, no efficiency): 0.408; F/Xe per tonne (E>20 keV) = 0.358
+1000 m3 target masses: F 125 kg (He:SF6) / 166 kg (CF4 40 Torr); Xe 287 kg (40 Torr); I 278 kg (CF3I 40 Torr)
+Ag/Xe full-window rate per tonne (Helm both, June): d=250: 0.268, d=300: 0.0991, d=320: 0.0186; Xe June/Sun-frame at 300 keV (Helm) = 1.54
+                                                              strategy                                      exposure_for_3sigma                 events_needed                                                time_or_date
+                       Keep counting (present generation, LZ-like ROI)        5 sigma at best fit: 12.3 (L10) - 5.7 (d380) t yr                           2-4 2027-2028 (P050); untouched LZ data already 6.8 t yr (P020)
+                            Extend ROI to 400 keV (present generation)                          acceptance 0.83-0.93 for d>=350                           2-4                                             by ~2030 (P050)
+                                               60 t xenon, 400 keV ROI 5 sigma: 8.5/9.6/3.6/1.1/0.13 t yr (L10/300/350/366/380)                 4-6 for shape                               2032 + 1 day to 2 months live
+                                                     Annual modulation    3 sigma: 274/84/33/19/15 t yr (d=300/330/350/366/380)              97/29/12/6.5/5.3                  LZ 2029-30 only if d>=366; 60 t 0.3-5.7 yr
+                                                     CaWO4 delta-meter    100 kg yr + 20 t yr Xe: sigma_delta 99/10/3.5/0.8 keV 3 (2.1 kg yr for L10 vs d366)                            kg yr-scale exposures: few years
+                                           Isotopically enriched xenon              12.8 t yr per detector (natural + enriched)                9 (5 at d=380)                                     nEXO-grade xenon; 2030s
+                                                        NaI modulation                                   2e8-8e9 t yr DAMA-like                             -                                         excluded as a route
+      Directional heavy-gas TPC (Xe, 40 Torr, 1000 m3 = 287 kg), d=300                                     246 yr at 0.12 ev/yr                            30                                                   246 years
+             Directional CF3I TPC (40 Torr, 1000 m3 = 278 kg I), d=300                                    431 yr at 0.070 ev/yr                            30                                                   431 years
+      Directional heavy-gas TPC (Xe, 40 Torr, 1000 m3 = 287 kg), d=350                                     111 yr at 0.22 ev/yr                            25                                                   111 years
+             Directional CF3I TPC (40 Torr, 1000 m3 = 278 kg I), d=350                                    384 yr at 0.065 ev/yr                            25                                                   384 years
+      Directional heavy-gas TPC (Xe, 40 Torr, 1000 m3 = 287 kg), d=366                                      41 yr at 0.60 ev/yr                            24                                                    41 years
+             Directional CF3I TPC (40 Torr, 1000 m3 = 278 kg I), d=366                                    301 yr at 0.081 ev/yr                            24                                                   301 years
+      Directional heavy-gas TPC (Xe, 40 Torr, 1000 m3 = 287 kg), d=380                                       6 yr at 3.61 ev/yr                            23                                                     6 years
+             Directional CF3I TPC (40 Torr, 1000 m3 = 278 kg I), d=380                                    282 yr at 0.080 ev/yr                            23                                                   282 years
+                  Nuclear emulsion (NEWSdm-like, 100 kg yr, Ag), d=300                             1.9e-03 events per 100 kg yr                             -                           not viable; blind for d > 332 keV
+    Directional fluorine TPC (1000 m3 He:SF6, 125 kg F, E>20 keV), L10                                   2738 yr at 0.018 ev/yr                            50           2738 years; x2738 target mass (342 t F) for ~1 yr
+Directional fluorine TPC (1000 m3 CF4 40 Torr, 166 kg F, E>20 keV),...                                   2053 yr at 0.024 ev/yr                            50           2053 years; x2053 target mass (342 t F) for ~1 yr
+    Directional fluorine TPC (1000 m3 He:SF6, 125 kg F, E>50 keV), L10                                   3573 yr at 0.014 ev/yr                            51           3573 years; x3573 target mass (446 t F) for ~1 yr
+Directional fluorine TPC (1000 m3 CF4 40 Torr, 166 kg F, E>50 keV),...                                   2680 yr at 0.019 ev/yr                            51           2680 years; x2680 target mass (446 t F) for ~1 yr
+done in 56 s; 19 recalled items
+EXIT 0

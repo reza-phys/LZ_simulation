@@ -1,0 +1,356 @@
+{
+ "neutron_Tmin_MeV": 8.166124133360947,
+ "F2": {
+  "10": {
+   "helm": 0.609837633069892,
+   "shell": 0.6007568252051876
+  },
+  "30": {
+   "helm": 0.20411463523716772,
+   "shell": 0.19823882040202662
+  },
+  "55": {
+   "helm": 0.03724663881820181,
+   "shell": 0.03801843358462073
+  },
+  "200": {
+   "helm": 0.001503866682413875,
+   "shell": 0.0005054937101285597
+  },
+  "248": {
+   "helm": 0.00016337974009870973,
+   "shell": 2.9112393004355904e-05
+  },
+  "270": {
+   "helm": 1.633180742869535e-05,
+   "shell": 4.007415138707679e-06
+  }
+ },
+ "F2_ratio_30_over_248": {
+  "helm": 1249.3264777740926,
+  "shell": 6809.43062194734
+ },
+ "N_lo_flat": {
+  "none": 0.7226605797935783,
+  "helm": 349.9347414458844,
+  "shell": 1184.4834036485383,
+  "spp_q4": 0.18025986859544604
+ },
+ "N_lo_qladder_flat": {
+  "q^0_helm": 349.9347414458844,
+  "q^0_shell": 1184.4834036485383,
+  "q^2_helm": 33.20158583073174,
+  "q^2_shell": 113.47651666150949,
+  "q^4_helm": 4.11868170117859,
+  "q^4_shell": 14.254084391731755
+ },
+ "N_lo_min_helm": {
+  "N_lo": 349.9347414458843,
+  "E_R_max_keV": 298.0,
+  "N_lo_at_Emax_250": 361.96907177833776,
+  "N_lo_at_Emax_270": 349.9387716644757
+ },
+ "N_lo_min_shell": {
+  "N_lo": 1184.483403648538,
+  "E_R_max_keV": 321.99999999999994,
+  "N_lo_at_Emax_250": 1203.4874521943211,
+  "N_lo_at_Emax_270": 1184.4949673235058
+ },
+ "recalled_limits": {
+  "XENON1T_BP2019": {
+   "m_range_GeV": [
+    0.001,
+    1.0
+   ],
+   "sigma_lower": 1e-31,
+   "sigma_upper": 1e-28,
+   "reliability": "uncertain",
+   "note": "Bringmann & Pospelov PRL 122, 171801 (2019) recast of XENON1T: excluded band roughly 1e-31 to 1e-28 cm^2 for m_chi <~ 0.1-1 GeV"
+  },
+  "PandaX4T_2022": {
+   "m_range_GeV": [
+    0.001,
+    0.1
+   ],
+   "sigma_lower": 3e-32,
+   "sigma_upper": 1e-28,
+   "reliability": "uncertain",
+   "note": "PandaX-4T CRDM search (PRL 128, 171801, 2022): lower edge a few 1e-32 cm^2 (recalled, uncertain)"
+  },
+  "LZ2024_lowE_elastic": {
+   "note": "LZ 2024 low-energy search; any sigma_p giving 1 window event also gives N_lo companions (computed here), independent of recalled limits"
+  }
+ },
+ "N_lo_SHM_1TeV_Helm": 820.0432770134962,
+ "kinematics": [
+  {
+   "m_chi_GeV": 0.001,
+   "T_min_248_MeV": 122.3188784073296,
+   "T_min_200_MeV": 109.73313060989346,
+   "T_min_270_MeV": 127.67773868848742,
+   "beta_min_248": 0.9999671210445537,
+   "p_min_MeV": 123.31482381142075,
+   "E_R_max_at_2Tmin_keV": 982.0614351436845
+  },
+  {
+   "m_chi_GeV": 0.01,
+   "T_min_248_MeV": 113.72002811620473,
+   "T_min_200_MeV": 101.17965461522117,
+   "T_min_270_MeV": 119.06224994639308,
+   "beta_min_248": 0.996728092239532,
+   "p_min_MeV": 123.31522759608599,
+   "E_R_max_at_2Tmin_keV": 916.1161033498088
+  },
+  {
+   "m_chi_GeV": 0.1,
+   "T_min_248_MeV": 58.79343056743943,
+   "T_min_200_MeV": 49.22644889000994,
+   "T_min_270_MeV": 62.991521819162664,
+   "beta_min_248": 0.7767987059526726,
+   "p_min_MeV": 123.35053137857254,
+   "E_R_max_at_2Tmin_keV": 608.0999582879078
+  },
+  {
+   "m_chi_GeV": 1.0,
+   "T_min_248_MeV": 7.683919432079143,
+   "T_min_200_MeV": 6.201141371649964,
+   "T_min_270_MeV": 8.362820846362467,
+   "beta_min_248": 0.12325789408655752,
+   "p_min_MeV": 124.20499781408543,
+   "E_R_max_at_2Tmin_keV": 497.83682325213465
+  },
+  {
+   "m_chi_GeV": 10.0,
+   "T_min_248_MeV": 0.8878356369653995,
+   "T_min_200_MeV": 0.7160009145715807,
+   "T_min_270_MeV": 0.9665925069730633,
+   "beta_min_248": 0.013324544368511796,
+   "p_min_MeV": 133.25727369050537,
+   "E_R_max_at_2Tmin_keV": 496.0158670222829
+  },
+  {
+   "m_chi_GeV": 1000.0,
+   "T_min_248_MeV": 0.6381784539095724,
+   "T_min_200_MeV": 0.5146600629713939,
+   "T_min_270_MeV": 0.6947910467193071,
+   "beta_min_248": 0.0011297591274385366,
+   "p_min_MeV": 1129.7598484150885,
+   "E_R_max_at_2Tmin_keV": 496.0000967425087
+  }
+ ],
+ "sigma_required": [
+  {
+   "m_chi_GeV": 0.001,
+   "sigma_p_1event_helm_D1kpc_cm2": 3.6221927348092116e-30,
+   "sigma_p_1event_helm_D10kpc_cm2": 1.1454379166111377e-30,
+   "sigma_p_1event_shell_D1kpc_cm2": 6.685032663832979e-30,
+   "sigma_p_1event_shell_D10kpc_cm2": 2.113992945033494e-30,
+   "N_lo_crdm_helm": 16911.546876991404,
+   "N_lo_crdm_shell": 56643.33445673102
+  },
+  {
+   "m_chi_GeV": 0.01,
+   "sigma_p_1event_helm_D1kpc_cm2": 4.405176722039657e-30,
+   "sigma_p_1event_helm_D10kpc_cm2": 1.3930391937199775e-30,
+   "sigma_p_1event_shell_D1kpc_cm2": 8.130312158208742e-30,
+   "sigma_p_1event_shell_D10kpc_cm2": 2.5710304508098866e-30,
+   "N_lo_crdm_helm": 14827.829951970787,
+   "N_lo_crdm_shell": 49652.37729023323
+  },
+  {
+   "m_chi_GeV": 0.1,
+   "sigma_p_1event_helm_D1kpc_cm2": 6.33780049958396e-30,
+   "sigma_p_1event_helm_D10kpc_cm2": 2.0041884934438348e-30,
+   "sigma_p_1event_shell_D1kpc_cm2": 1.1708926947985628e-29,
+   "sigma_p_1event_shell_D10kpc_cm2": 3.7026878112158474e-30,
+   "N_lo_crdm_helm": 2186.6554359623433,
+   "N_lo_crdm_shell": 7318.47382627909
+  },
+  {
+   "m_chi_GeV": 1.0,
+   "sigma_p_1event_helm_D1kpc_cm2": 2.3495448698559518e-29,
+   "sigma_p_1event_helm_D10kpc_cm2": 7.429913253508699e-30,
+   "sigma_p_1event_shell_D1kpc_cm2": 4.3566960897338e-29,
+   "sigma_p_1event_shell_D10kpc_cm2": 1.3777082716708127e-29,
+   "N_lo_crdm_helm": 761.8763765939201,
+   "N_lo_crdm_shell": 2567.8818239715747
+  },
+  {
+   "m_chi_GeV": 10.0,
+   "sigma_p_1event_helm_D1kpc_cm2": 2.472864705291208e-29,
+   "sigma_p_1event_helm_D10kpc_cm2": 7.819884814161249e-30,
+   "sigma_p_1event_shell_D1kpc_cm2": 4.5853872740308376e-29,
+   "sigma_p_1event_shell_D10kpc_cm2": 1.45002677398881e-29,
+   "N_lo_crdm_helm": 675.3385375672857,
+   "N_lo_crdm_shell": 2275.1445590820445
+  }
+ ],
+ "attenuation": [
+  {
+   "m_chi_GeV": 0.001,
+   "T_GeV": 0.18347831761099442,
+   "n_scatters_at_1em30": 0.5057122228920142,
+   "frac_loss_at_1em30": 0.0007852360947639955,
+   "sigma_p_30pct_loss_cm2": 3.8205070042044575e-28,
+   "sigma_p_1_scatter_cm2": 1.977409195849182e-30
+  },
+  {
+   "m_chi_GeV": 0.01,
+   "T_GeV": 0.17058004217430708,
+   "n_scatters_at_1em30": 0.5388359657080342,
+   "frac_loss_at_1em30": 0.0008983024713973414,
+   "sigma_p_30pct_loss_cm2": 3.339632357165169e-28,
+   "sigma_p_1_scatter_cm2": 1.855852362575674e-30
+  },
+  {
+   "m_chi_GeV": 0.1,
+   "T_GeV": 0.08819014585115914,
+   "n_scatters_at_1em30": 0.8189376186734707,
+   "frac_loss_at_1em30": 0.0026164416853314497,
+   "sigma_p_30pct_loss_cm2": 1.1465953997059794e-28,
+   "sigma_p_1_scatter_cm2": 1.2210942289106432e-30
+  },
+  {
+   "m_chi_GeV": 1.0,
+   "T_GeV": 0.011525879148118715,
+   "n_scatters_at_1em30": 3.1037646706665147,
+   "frac_loss_at_1em30": 0.07551253166800545,
+   "sigma_p_30pct_loss_cm2": 3.97285051068033e-30,
+   "sigma_p_1_scatter_cm2": 3.221893751968174e-31
+  },
+  {
+   "m_chi_GeV": 10.0,
+   "T_GeV": 0.0013317534554480991,
+   "n_scatters_at_1em30": 84.20246165821015,
+   "frac_loss_at_1em30": 16.01222168117646,
+   "sigma_p_30pct_loss_cm2": 1.8735688649169278e-32,
+   "sigma_p_1_scatter_cm2": 1.1876137351650636e-32
+  },
+  {
+   "m_chi_GeV": 1000.0,
+   "T_GeV": 0.0009572676808643585,
+   "n_scatters_at_1em30": 3223.0049955784025,
+   "frac_loss_at_1em30": 153.62217635038806,
+   "sigma_p_30pct_loss_cm2": 1.952843053829332e-33,
+   "sigma_p_1_scatter_cm2": 3.102694539325526e-34
+  }
+ ],
+ "heavy_fast": [
+  {
+   "m_chi_GeV": 1000.0,
+   "beta": 0.005,
+   "T_GeV": 0.012500234380041775,
+   "E_R_max_keV": 4857.684161080733,
+   "E_R_max_NR_formula_keV": 4857.574517122632,
+   "N_lo_helm": 349.93474144588447,
+   "N_lo_shell": 1184.4834036485386
+  },
+  {
+   "m_chi_GeV": 1000.0,
+   "beta": 0.01,
+   "T_GeV": 0.050003750312610507,
+   "E_R_max_keV": 19432.052493206014,
+   "E_R_max_NR_formula_keV": 19430.298068490527,
+   "N_lo_helm": 349.93474144588436,
+   "N_lo_shell": 1184.4834036485383
+  },
+  {
+   "m_chi_GeV": 1000.0,
+   "beta": 0.02,
+   "T_GeV": 0.20006002000694245,
+   "E_R_max_keV": 77749.27090148164,
+   "E_R_max_NR_formula_keV": 77721.19227396211,
+   "N_lo_helm": 349.93474144588436,
+   "N_lo_shell": 1184.4834036485383
+  },
+  {
+   "m_chi_GeV": 4000.0,
+   "beta": 0.005,
+   "T_GeV": 0.0500009375201671,
+   "E_R_max_keV": 5761.527244902143,
+   "E_R_max_NR_formula_keV": 5761.387355920648,
+   "N_lo_helm": 349.93474144588436,
+   "N_lo_shell": 1184.4834036485381
+  },
+  {
+   "m_chi_GeV": 4000.0,
+   "beta": 0.01,
+   "T_GeV": 0.20001500125044203,
+   "E_R_max_keV": 23047.78781054526,
+   "E_R_max_NR_formula_keV": 23045.54942368259,
+   "N_lo_helm": 349.93474144588447,
+   "N_lo_shell": 1184.4834036485386
+  },
+  {
+   "m_chi_GeV": 4000.0,
+   "beta": 0.02,
+   "T_GeV": 0.8002400800277698,
+   "E_R_max_keV": 92218.02240244918,
+   "E_R_max_NR_formula_keV": 92182.19769473036,
+   "N_lo_helm": 349.9347414458844,
+   "N_lo_shell": 1184.4834036485386
+  }
+ ],
+ "crdm_flux_1e-30_1kpc": [
+  {
+   "m_chi_GeV": 0.001,
+   "Phi_total": 1.0960315780680976e-05,
+   "Phi_T_gt_10MeV": 1.6586192940715088e-06,
+   "Phi_T_gt_Tmin248": 2.1293677114055677e-07,
+   "T_min248_MeV": 122.3188784073296,
+   "recalled_scaling_1em7_GeV_over_m": 9.999999999999999e-05
+  },
+  {
+   "m_chi_GeV": 0.01,
+   "Phi_total": 1.1335226651498187e-06,
+   "Phi_T_gt_10MeV": 6.579019938039577e-07,
+   "Phi_T_gt_Tmin248": 1.3200621350832086e-07,
+   "T_min248_MeV": 113.72002811620473,
+   "recalled_scaling_1em7_GeV_over_m": 9.999999999999999e-06
+  },
+  {
+   "m_chi_GeV": 0.1,
+   "Phi_total": 9.080347018669142e-08,
+   "Phi_T_gt_10MeV": 8.35335249398823e-08,
+   "Phi_T_gt_Tmin248": 5.1879591431993994e-08,
+   "T_min248_MeV": 58.79343056743943,
+   "recalled_scaling_1em7_GeV_over_m": 1e-06
+  },
+  {
+   "m_chi_GeV": 1.0,
+   "Phi_total": 2.5747650432651437e-09,
+   "Phi_T_gt_10MeV": 2.3074416580678728e-09,
+   "Phi_T_gt_Tmin248": 2.3700019508993394e-09,
+   "T_min248_MeV": 7.683919432079143,
+   "recalled_scaling_1em7_GeV_over_m": 1e-07
+  },
+  {
+   "m_chi_GeV": 10.0,
+   "Phi_total": 8.948000746944778e-11,
+   "Phi_T_gt_10MeV": 4.002811710983393e-11,
+   "Phi_T_gt_Tmin248": 8.349126725892545e-11,
+   "T_min248_MeV": 0.8878356369653995,
+   "recalled_scaling_1em7_GeV_over_m": 1e-08
+  }
+ ],
+ "inputs": {
+  "m_N_GeV": 122.38679587728666,
+  "efficiency": "P003 erf model eff0=0.96, sig_lo=3.4, sig_hi=8.0 keV",
+  "rho_chi": 0.3,
+  "proton_spectrum": "PDG 1.8e4 (E/GeV)^-2.7 nucleons m^-2 s^-1 sr^-1 GeV^-1 (recalled, likely)",
+  "rock": {
+   "depth_m": 1478,
+   "rho": 2.7,
+   "X_g_cm2": 399060.0,
+   "composition": {
+    "16": 0.47,
+    "28": 0.34,
+    "27": 0.08,
+    "40": 0.04,
+    "56": 0.05,
+    "24": 0.02
+   }
+  },
+  "lambda2_dipole": 0.71
+ }
+}

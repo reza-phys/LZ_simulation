@@ -1,0 +1,69 @@
+{
+  "id": "P063",
+  "title": "Spontaneous fission of 238U in LZ's detector components: multiplicity, veto probability and the odds of a lone 248 keV recoil",
+  "date": "2026-09-12",
+  "agent_tools": [
+    {"tool": "Read", "count": 13, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; papers P013.md, P049.md, P029.md, P004.md; work/P013/P013_results.json (two pages); work/P013/fission_silent_factor.csv; fulltext.tex l.136-245 and l.780-805; figures P063_fig1/fig2 (two rounds)"},
+    {"tool": "Bash", "count": 6, "detail": "wc/head ledger + grep tex for neutron/veto lines + ls code/work dirs; grep P013 details/ledger rows/lzcommon symbols + radioactivedecay query (U-238, Th-232, Cm-244, Cf-252, U-235) + ENVIRONMENT_versions; sed P013 details 104-120/190-200 + grep P049 details + lzcommon LZ dict; grep dataviz palette.md; run P063_fission.py (3 runs: first bookkeeping, sampled transport, figure fixes); grep console numbers + head P053.json format"},
+    {"tool": "Write", "count": 4, "detail": "output/code/P063_fission.py; work/P063/details.md; provenance/P063.json; papers/P063.md"},
+    {"tool": "Edit", "count": 14, "detail": "mu_lin cleanup; gamma_mc rewritten as sampled Compton-continuation MC; geometry (ICV/OD extents, LXe dome); PMT source depth; per-location result bookkeeping + variants; scenario list additions; figure selection by name; three figure-cosmetic edits; details.md Cf-252 number; three word-budget trims in P063.md; this count"},
+    {"tool": "Skill", "count": 1, "detail": "dataviz (palette hex values from references/palette.md; JS validator skipped per PAPER_GUIDE)"}
+  ],
+  "software": [
+    {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python from the simulation root"},
+    {"name": "numpy", "version": "2.5.3", "functions": "random.default_rng(63): uniform/exponential sampling, isotropic directions; vectorised region lookup (hypot, boolean masks); interp (log-log attenuation); exp; array algebra for P(nu), f_n, f_gamma"},
+    {"name": "scipy", "version": "1.18.1", "functions": "integrate.quad (Watt spectrum normalisation, tail fractions, mean); stats.norm.cdf (Terrell and narrow gamma multiplicity discretisation); stats.poisson.pmf"},
+    {"name": "pandas", "version": "3.0.5", "functions": "DataFrame tables -> CSV (inventory, f_gamma, expected by component, sensitivity, burst signatures)"},
+    {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; bar/barh figures P063_fig1_silent_gamma.png, P063_fig2_expected.png"},
+    {"name": "radioactivedecay", "version": "0.6.1", "functions": "Nuclide('U-238').branching_fractions/progeny/decay_modes/half_life (SF branching 5.45e-7); same for Th-232, Cm-244, Cf-252"},
+    {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ dict: live_days, neutron_veto_eff (0.92), detector_NR_fit_interval (0, 0.118)"},
+    {"name": "none: derived by hand", "version": "-", "functions": "f_n = sum P(nu) nu p_n^(nu-1)/nu_bar; f_gamma = sum P(k) p^k; P_lone product; route B/C algebra; fragment surface-escape fraction"}
+  ],
+  "scripts_and_commands": [
+    {"path": "output/code/P063_fission.py", "purpose": "SF nuclear data, 238U inventory and fission rate (routes A/B/C), prompt-gamma transport MC by source location, silent-companion factors, per-fission lone-recoil probability, expected counts, sensitivity, burst signatures, figures", "command": ".venv/bin/python output/code/P063_fission.py"}
+  ],
+  "local_inputs": [
+    {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "l.82-83 detector description; l.141-147 veto samples and thresholds; l.178 neutron tagging 92+-4%; Table I l.210-245 (detector NRs [0,0.118], delayed sample 55 vs 50.4); supplement Neutrons l.787-798 (SF included, two orders below (alpha,n), MS cross-check 0.02+-0.02, rock-neutron tagging 80%)"},
+    {"file": "output/work/P013/P013_results.json", "parts_used": "kinematics.E_n_min_MeV; spectra.watt; combined rows fission_238U and alpha_n (p_ss_roi, p_ss_200_270 for thr 1/3/5 keV and both FVs); MC.samples.watt_bulk n_anydep/N; expected.silent_factor; recalled P(nu) and OD_geometry"},
+    {"file": "output/work/P013/fission_silent_factor.csv", "parts_used": "P013 grid of p_n, p_gamma, f_silent"},
+    {"file": "output/work/P013/details.md", "parts_used": "sections 3.2 (SF data) and silent-companion paragraph (l.104-120, 190-200)"},
+    {"file": "output/papers/P013.md", "parts_used": "headline, table, key numbers"},
+    {"file": "output/papers/P049.md and output/work/P049/details.md", "parts_used": "Gd capture time, untagged-fraction reasoning, OD geometry recall"},
+    {"file": "output/papers/P029.md, output/papers/P004.md", "parts_used": "context: attenuation lengths in LXe, radioactivedecay usage, Skin/OD tagging"},
+    {"file": "output/00_evidence_dossier.md", "parts_used": "sections 1-6 (event, handles, explanation D neutrons, open question 7)"},
+    {"file": "output/results_ledger.csv", "parts_used": "header, rows P013/P029/P049"},
+    {"file": "output/code/common/lzcommon.py", "parts_used": "LZ dict"},
+    {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"},
+    {"file": "output/provenance/P053.json, output/provenance/PAPER_GUIDE.md", "parts_used": "format"}
+  ],
+  "recalled_knowledge": [
+    {"item": "238U SF prompt-neutron multiplicity nu_bar = 2.01", "presumed_source": "Holden & Zucker compilation / ENDF", "reliability": "likely"},
+    {"item": "Terrell Gaussian multiplicity width sigma = 1.08", "presumed_source": "Terrell, Phys. Rev. 108, 783 (1957)", "reliability": "likely"},
+    {"item": "Watt spectrum a = 0.988 MeV, b = 2.249 MeV^-1 for 238U SF", "presumed_source": "SOURCES-4C manual", "reliability": "likely"},
+    {"item": "prompt gamma multiplicity ~6.5, mean energy ~0.9 MeV, exponential-like spectrum", "presumed_source": "252Cf/235U fission gamma data extrapolated to 238U SF", "reliability": "uncertain"},
+    {"item": "232Th SF branching ~1e-11", "presumed_source": "nuclear data tables", "reliability": "likely"},
+    {"item": "LZ PTFE mass ~1 t and 238U(early) ~10 uBq/kg (3-100)", "presumed_source": "LZ radioassay paper EPJC 80, 1044", "reliability": "uncertain"},
+    {"item": "LZ Ti cryostat mass ~2.2 t; 238U(early) < 1.6 mBq/kg, 238U(late) 0.09 mBq/kg", "presumed_source": "LZ titanium assay, Astropart. Phys. 96, 1", "reliability": "uncertain"},
+    {"item": "R11410 PMTs 238U(early) 1-3 mBq each; 494 TPC + 131 Skin PMTs", "presumed_source": "LZ radioassay / instrument papers", "reliability": "uncertain"},
+    {"item": "cables, feedthroughs, bases: 0.1-0.6 Bq 238U total", "presumed_source": "order-of-magnitude from LZ background model", "reliability": "uncertain"},
+    {"item": "(alpha,n) yield of the 238U late chain in PTFE ~1e-4 n per chain decay (0.5-2e-4)", "presumed_source": "SOURCES-4 / Mei-Zhang-Hime 2009 thick-target yields", "reliability": "uncertain"},
+    {"item": "gamma mass attenuation coefficients for Xe, LAB, Ti, SiO2, water at 0.1-7 MeV", "presumed_source": "NIST XCOM", "reliability": "likely (+-20%)"},
+    {"item": "photoelectric fraction of total attenuation in Ti and SiO2 vs energy", "presumed_source": "NIST XCOM partial cross sections", "reliability": "uncertain"},
+    {"item": "LZ geometry: Skin outer radius ~79 cm, RFR ~20 cm, PMT arrays ~15 cm, ICV r ~80 cm, OCV r ~92 cm, Ti 0.8 cm, GdLS side 61 cm, top/bottom ~30 cm", "presumed_source": "LZ instrument paper NIM A 953, 163047", "reliability": "likely/uncertain"},
+    {"item": "per-companion-neutron silent probability 0.10 (0.05-0.20) and self-untagged 0.10 (0.08-0.20)", "presumed_source": "LZ 8% untagged (alpha,n) / 20% rock neutrons, P049", "reliability": "estimated"},
+    {"item": "P(>=2 deposits >3 keV | neutron enters LXe) ~0.5 (0.3-0.7)", "presumed_source": "lambda_el ~16 cm at 2 MeV, mean recoil ~30 keV", "reliability": "estimated"},
+    {"item": "P(neutron ends in a tagged capture within 600 us) ~0.6 (0.5-0.8)", "presumed_source": "Gd capture ~30 us, OD coverage", "reliability": "estimated"},
+    {"item": "geometric entering fractions: wall 0.5, cryostat 0.35, PMT arrays 0.4, misc 0.2", "presumed_source": "geometry", "reliability": "estimated"},
+    {"item": "OD prompt threshold 4.5 phd ~ few tens of keV; Skin 2.5 phd ~ few keV", "presumed_source": "LZ OD/Skin light yields", "reliability": "uncertain"},
+    {"item": "<= 3 (1-5) unexplained NR multiple scatters tolerated in LZ's MS neutron sample", "presumed_source": "tolerance assumption (P013 used <=3 low-E SS)", "reliability": "uncertain"},
+    {"item": "fission-fragment range <~10 um in solids; 235U/238U activity ratio 4.6% in natural U", "presumed_source": "textbook", "reliability": "certain"}
+  ],
+  "datasets": "none",
+  "data_requests": "none",
+  "failed_or_abandoned": [
+    "First gamma bookkeeping (every Ti/PMT-array interaction = silent absorption) gave p_gamma 0.46-0.69 for cryostat/PMT sources and 3.2e-8 total; replaced by a sampled Compton-continuation MC and kept only as an over-conservative bracket (4.4e-8)",
+    "Deterministic survival-weight propagation could not follow energy degradation after Compton scatters; replaced by sampled interactions",
+    "No explicit model of fission-fragment escape from LXe-facing surfaces beyond the <~2e-3 geometric fraction"
+  ],
+  "wimpydd_generated_files": []
+}

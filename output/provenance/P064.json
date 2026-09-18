@@ -1,0 +1,57 @@
+{
+ "id": "P064",
+ "title": "Nuclear-recoil quenching at 250 keV: Lindhard theory, the NEST power law and the energy-scale systematic of the LZ event",
+ "date": "2026-09-12",
+ "agent_tools": [
+  {"tool": "Read", "count": 16, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (page 1); papers P009, P024, P043, P038; fulltext.tex l.84-123 (gains, calibrations, Fig.2 caption, ROI) and l.586-690 (detector-response supplement, p(E) break, Tables S3-S5); lzcommon.py l.18-77 and l.255-294; inputs/figures_png/Fig2_Calibrations.png; provenance/P043.json (format); own figures fig1/fig2/fig4"},
+  {"tool": "Bash", "count": 11, "detail": "(1) pandas listing of ledger id/category/title + grep tex for yield/calibration lines + grep lzcommon defs; (2) cat P009/P024 results.json, ls work dirs, ls figures_png, ENVIRONMENT_versions; (3) .venv/bin/python snippet validating the analytic NEST NR formula against lz.nest_nr_yields (both parameter sets, 9 energies); (4) grep P043/P024/P009 details for budget, N_i/N_ex, contour numbers; (5) head/describe of work/P024/ambe_points_fig2.csv; (6) .venv/bin/python output/code/P064_quenching.py (tee failed to open log, script complete); (7) rerun with redirection to run_stdout.txt + ls; (8-11) wc -w budget checks of papers/P064.md x4 and JSON validation"},
+  {"tool": "Write", "count": 5, "detail": "output/code/P064_quenching.py; work/P064/details.md; provenance/P064.json; papers/P064.md (x2: initial and tightened rewrite)"},
+  {"tool": "Edit", "count": 8, "detail": "papers/P064.md word-budget trims x6; provenance/P064.json tool tally x1; work/P064/details.md tools section x1"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python from the simulation root"},
+  {"name": "numpy", "version": "2.5.3", "functions": "vectorised Lindhard/NEST yield evaluation, logspace grids, log1p, interp"},
+  {"name": "scipy", "version": "1.18.1", "functions": "optimize.brentq (energy inversion, k inversion), optimize.least_squares (p(E) fits to Thomas-Imel; (a,b) refits at scaled N_q)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame/pivot/CSV tables"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg PNG figures (4)"},
+  {"name": "nestpy", "version": "2.1.1", "functions": "NESTcalc.GetYields (NR, LZ_WS2024) via lzcommon.nest_nr_yields, used to validate the analytic NEST v2 NR yield formula (max deviation 0.11 %)"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ dict (S1c, S2c, g1, g2), NEST_NR_LZ, NEST_NR_DEFAULT, DRIFT_FIELD_VCM, A_XE_MEAN, nest_nr_yields"},
+  {"name": "none: derived by hand", "version": "-", "functions": "Lindhard L(E) and beta_eff; Thomas-Imel box-model N_e = (4/sigma) ln(1 + sigma N_i/4); anchored-slope elasticity dlnE/dbeta = -ln(E/E0)/beta; AmBe endpoint kinematics"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P064_quenching.py", "purpose": "Lindhard L(E), N_q and beta_eff vs NEST power laws (Table S5, contour scale, default); nestpy validation; event energy under each model; anchored slope / Lindhard-k / kink systematics; partition (Q_y with/without break, Thomas-Imel box model, electron fraction, band slope); light-yield-scale vs (a,b) degeneracy in the AmBe band; four figures; results.json", "command": ".venv/bin/python output/code/P064_quenching.py > output/work/P064/run_stdout.txt 2>&1  (about 40 s)"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "l.88 g1, g2; l.92 D-D 0-74 keV, AmBe 0-330 keV; l.101-106 Fig.2 caption; l.114-117 ROI; l.591-606 NEST v2.4.5 p(E) break, Aprile 2006 / Lenardo 2015 justification; Table S5 l.654-685; l.691 sparse AmBe calibration near 250 keV"},
+  {"file": "inputs/figures_png/Fig2_Calibrations.png", "parts_used": "visual check that AmBe (purple) points end near S1c = 600 phd"},
+  {"file": "output/work/P009/results.json", "parts_used": "alpha_paper 11.3245, beta_paper 1.11167, W_paper 13.46; estimator energies for cross-check"},
+  {"file": "output/work/P024/results.json; output/work/P024/details.md; output/work/P024/ambe_points_fig2.csv", "parts_used": "band sd 0.0313 dex, no-break 5.02 sigma, N_i = 2012, N_ex/N_i = 1.399, N_e = 301 at 248 keV; AmBe median precision +-0.007 dex; digitised AmBe points (max S1c 599.6 phd)"},
+  {"file": "output/work/P043/details.md", "parts_used": "energy budget (gains 3.8 keV; 4 % scale 8.7 keV; sigma_s = 10.4 % needed for 23 keV); d log10 S2c/dE = 0.00058"},
+  {"file": "output/00_evidence_dossier.md; output/results_ledger.csv; papers P009, P024, P038, P043", "parts_used": "context, event quanta (N_q 5179), prior numbers cited"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "functions listed under software"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Lindhard quenching L = k g/(1+kg), eps = 11.5 E Z^-7/3, k = 0.133 Z^2/3 A^-1/2", "presumed_source": "Lindhard et al. 1963; Lewin & Smith 1996", "reliability": "certain"},
+  {"item": "g(eps) = 3 eps^0.15 + 0.7 eps^0.6 + eps parametrisation", "presumed_source": "Lewin & Smith 1996", "reliability": "certain"},
+  {"item": "W = 13.7 eV (NEST v2) and 13.5 eV per quantum", "presumed_source": "NEST / Dahl thesis", "reliability": "likely"},
+  {"item": "NEST v2 NR mean-yield functional form (N_q = alpha E^beta; Q_y = 1/(sigma (E+eps)^p) with sigmoid turn-ons; L_y = N_q/E - Q_y)", "presumed_source": "NEST v2 source code / Szydagis et al. 2022", "reliability": "likely (validated against nestpy to 0.11 %)"},
+  {"item": "Thomas-Imel box model N_e/N_i = ln(1+xi)/xi", "presumed_source": "Thomas & Imel 1987", "reliability": "certain"},
+  {"item": "Lenardo et al. 2015 global fit: Lindhard k ~ 0.139 with W = 13.7 eV", "presumed_source": "Lenardo et al., IEEE TNS 62, 3387 (2015)", "reliability": "likely"},
+  {"item": "LUX D-D (2016) total-quanta Lindhard fit k ~ 0.17", "presumed_source": "Akerib et al., arXiv:1608.05381", "reliability": "uncertain"},
+  {"item": "Aprile 2006 measured L_eff at 10.4-56.5 keV, roughly flat ~0.2", "presumed_source": "Aprile et al., PRL 97, 081302", "reliability": "likely"},
+  {"item": "Manzur 2010 (4-66 keV) and Plante 2011 (3-66 keV) L_eff rising ~0.09 to ~0.19", "presumed_source": "PRC 81, 025808; PRC 84, 045805", "reliability": "likely"},
+  {"item": "L_eff is an S1-only quantity relative to 122 keV gamma at zero field, not the Lindhard L", "presumed_source": "standard LXe literature", "reliability": "certain"},
+  {"item": "Measured NR N_ex/N_i ~ 1", "presumed_source": "Dahl thesis 2009; Sorensen & Dahl 2011", "reliability": "likely"},
+  {"item": "AmBe neutron spectrum endpoint ~ 11 MeV", "presumed_source": "ISO 8529 / standard source data", "reliability": "likely"},
+  {"item": "n-Xe elastic kinematics E_R,max = 4 m_n M/(m_n+M)^2 E_n", "presumed_source": "kinematics", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Quantitative conversion of recalled L_eff values (Aprile 2006, Manzur 2010, Plante 2011) to Lindhard L abandoned: requires zero-field NR photon fraction and 122 keV gamma light yield, recalled only roughly; used qualitatively.",
+  "SRIM-like stopping-power calculation of the electronic/nuclear partition not attempted (no offline tables); Lindhard g(eps) used as theory reference.",
+  "First script run: tee opened its log before the script created output/work/P064; rerun with shell redirection (results unaffected)."
+ ],
+ "wimpydd_generated_files": []
+}

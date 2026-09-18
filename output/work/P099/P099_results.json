@@ -1,0 +1,325 @@
+{
+ "inputs": {
+  "E_LZ": 2.84,
+  "rates_band": {
+   "L10": 0.121,
+   "d300": 0.063,
+   "d350": 0.178,
+   "d366": 0.274,
+   "d380": 0.278
+  },
+  "rates_400": {
+   "L10": 0.22,
+   "d300": 0.112,
+   "d350": 0.516,
+   "d366": 1.63,
+   "d380": 10.5
+  },
+  "bkg_per_2p84": {
+   "band": 0.00057,
+   "ext": 0.0028,
+   "low": 0.12,
+   "corpus_nb": 0.00094
+  },
+  "weights": [
+   0.015,
+   0.148,
+   0.789
+  ],
+  "ledger": {
+   "LZ_untouched": 6.76,
+   "XENONnT_analysed_lowE": 3.1,
+   "XENONnT_untouched": 3.0,
+   "PandaX4T_analysed_lowE": 1.54,
+   "PandaX4T_untouched": 2.5
+  },
+  "accrual": {
+   "LZ": 2.79,
+   "XENONnT": 2.4,
+   "PandaX4T": 1.62
+  }
+ },
+ "posterior_gamma": {
+  "shape": 0.5510056716995625,
+  "scale_per_2p84": 0.6987223903022226,
+  "q16": 0.02067075846749558,
+  "q84": 0.7553644382139001,
+  "P081_68": [
+   0.036,
+   0.69
+  ]
+ },
+ "validation_P081_2p8_band": {
+  "ours_P0_P1_Pge2": [
+   0.7491893585811189,
+   0.16838093309728647,
+   0.08242970832159457
+  ],
+  "P081": [
+   0.752,
+   0.169,
+   0.079
+  ],
+  "ours_P1_bkg": 0.0005616561073692924,
+  "P081_P1_bkg": 0.00056
+ },
+ "validation_P081_10_band": {
+  "ours": [
+   0.5045984925016983,
+   0.19768596048107623,
+   0.29771554701722536
+  ],
+  "P081": [
+   0.492,
+   0.215,
+   0.293
+  ]
+ },
+ "exposure_for_Pge1_band": {
+  "P0.5": 10.235634568997147,
+  "P0.9": 261.32084138937466,
+  "P081": [
+   9.85,
+   123.3
+  ]
+ },
+ "validation_P081_decision_2p8": {
+  "ours_PDM_N0_N1_N2": [
+   0.0149379053339708,
+   0.024950528327806684,
+   0.016056055313480932
+  ],
+  "P081_PDM_N0_N1_N2": [
+   0.0143,
+   0.029,
+   0.0176
+  ],
+  "ours_BF_DM_B_N1": 299.79364755055514,
+  "P081_BF_DM_B_N1": 300.3,
+  "ours_BF_DM_Usteady_N1": 0.6735576118525457,
+  "P081": 0.674
+ },
+ "energy_placement_bkg_side": {
+  "P(2 in 270-420 | B)": 3.799850867008656e-06,
+  "P081_P_B_both_270_420": 3.4e-06,
+  "P081_BF_DM_B": 3793,
+  "P081_BF_DM_U": 7529,
+  "P081_postDM": 0.9865,
+  "P081_one_band_plus_one_ext_postDM": 0.571,
+  "P081_both_band_postDM": 0.0109,
+  "P081_band_plus_55_200_postDM": 0.061,
+  "P081_both_55_200_postDM": 0.153
+ },
+ "null_branch": {
+  "k_for_P_lt_1e-3": 2.9004099745466503,
+  "present_600phd_dates": {
+   "L10": 2027.6,
+   "d300": 2030.84,
+   "d350": 2026.71,
+   "d366": 2026.71,
+   "d380": 2026.71
+  },
+  "P088_present_600phd": {
+   "L10": 2027.61,
+   "d300": 2030.86,
+   "d350": 2026.38,
+   "d366": 2025.16
+  },
+  "LZ_600phd_dates": {
+   "L10": 2032.88,
+   "d300": 2040.79,
+   "d350": 2030.13,
+   "d366": 2028.08,
+   "d380": 2028.03
+  },
+  "LZ_1000phd_dates": {
+   "L10": 2028.55,
+   "d300": 2033.12,
+   "d350": 2026.71,
+   "d366": 2026.71,
+   "d380": 2026.71
+  },
+  "P088_LZ_1000phd": {
+   "L10": 2027.69,
+   "d300": "never<2035",
+   "d350": 2024.98,
+   "d366": 2023.6
+  }
+ },
+ "reanalysis": {
+  "mu_unexamined": {
+   "L10": 2.166,
+   "d300": 1.128,
+   "d350": 3.186,
+   "d366": 4.905,
+   "d380": 4.976,
+   "posterior_unexamined_17.9": 2.427,
+   "posterior_XP_10.1": 1.375,
+   "posterior_LZ_6.76": 0.916
+  },
+  "P088_mu_unexamined": {
+   "L10": 2.2,
+   "d300": 1.1,
+   "d350": 3.2,
+   "d366": 4.9
+  },
+  "P0_unexamined": {
+   "L10": 0.1146,
+   "d300": 0.3238,
+   "d350": 0.0413,
+   "d366": 0.0074,
+   "d380": 0.0069,
+   "posterior_unexamined_17.9": 0.3947,
+   "posterior_XP_10.1": 0.5019,
+   "posterior_LZ_6.76": 0.5829
+  },
+  "P088_P0": {
+   "L10": 0.12,
+   "d300": 0.32,
+   "d350": 0.04,
+   "d366": 0.007
+  },
+  "b_unexamined": 0.0035926056338028167,
+  "Z_two_new_events": 4.362202782887627,
+  "P088_Z": 4.3,
+  "Z_two_new_plus_LZ": 5.580612659338496,
+  "P088_Z_with_LZ": 5.5
+ },
+ "validation_P079": {
+  "ours": [
+   {
+    "model": "L10",
+    "mu_600": 2.38,
+    "n_5sigma_600": 3.0,
+    "P5sigma_600": 0.4250573023902456,
+    "mu_1000": 4.4982,
+    "n_5sigma_1000": 3,
+    "P5sigma_1000": 0.8262193663743796
+   },
+   {
+    "model": "d350",
+    "mu_600": null,
+    "n_5sigma_600": null,
+    "P5sigma_600": null,
+    "mu_1000": 7.14,
+    "n_5sigma_1000": 3,
+    "P5sigma_1000": 0.9733399055462519
+   },
+   {
+    "model": "d366",
+    "mu_600": null,
+    "n_5sigma_600": null,
+    "P5sigma_600": null,
+    "mu_1000": 14.994,
+    "n_5sigma_1000": 3,
+    "P5sigma_1000": 0.9999604845299699
+   }
+  ],
+  "P079": {
+   "L10_600": 0.43,
+   "L10_1000": 0.83,
+   "d366_1000": 1.0
+  }
+ },
+ "sideband": {
+  "P0_SR3": {
+   "L10": 0.7547,
+   "d300": 0.8564,
+   "d350": 0.3458,
+   "d366": 0.0221,
+   "d380": 0.0
+  },
+  "P088_P0_SR3_d366": 0.022,
+  "P0_untouched": {
+   "L10": 0.51168,
+   "d300": 0.69146,
+   "d350": 0.07983,
+   "d366": 0.00012,
+   "d380": 0.0
+  }
+ },
+ "exothermic": [
+  {
+   "abs_delta_keV": "278",
+   "companions_per_band_event": 5.7,
+   "P0_companions_given_1_band": 0.003345965457471272,
+   "P0_companions_given_2_band": 1.119548484259094e-05
+  },
+  {
+   "abs_delta_keV": "300",
+   "companions_per_band_event": 5.4,
+   "P0_companions_given_1_band": 0.004516580942612666,
+   "P0_companions_given_2_band": 2.0399503411171922e-05
+  },
+  {
+   "abs_delta_keV": "350",
+   "companions_per_band_event": 4.5,
+   "P0_companions_given_1_band": 0.011108996538242306,
+   "P0_companions_given_2_band": 0.00012340980408667956
+  },
+  {
+   "abs_delta_keV": "500",
+   "companions_per_band_event": 2.1,
+   "P0_companions_given_1_band": 0.1224564282529819,
+   "P0_companions_given_2_band": 0.014995576820477703
+  }
+ ],
+ "preregistered": [
+  {
+   "id": "F1",
+   "dataset": "LZ next release, 2.8 t.yr new, 200-270 keV, 600 phd edge",
+   "outcome": "N=0",
+   "P_DM_posterior": 0.7491893585811189,
+   "P_background": 0.9994381860456081,
+   "cross_reference": "P081: 0.75 / 0.9994"
+  },
+  {
+   "id": "F2",
+   "dataset": "same",
+   "outcome": "N>=1",
+   "P_DM_posterior": 0.2508106414188811,
+   "P_background": 0.0005618139543919209,
+   "cross_reference": "P081: 0.25 / 5.6e-4"
+  },
+  {
+   "id": "F3",
+   "dataset": "same",
+   "outcome": "N>=2",
+   "P_DM_posterior": 0.08242970832159457,
+   "P_background": 1.5784702266337704e-07,
+   "cross_reference": "P081: 0.08 / 1.6e-7"
+  },
+  {
+   "id": "F4",
+   "dataset": "same, 55-270 keV",
+   "outcome": "N>=1",
+   "P_DM_posterior": 0.5,
+   "P_background": 0.11207840249507739,
+   "cross_reference": "P081: 0.50 (DM); background dominated by 55-125 keV"
+  },
+  {
+   "id": "F5",
+   "dataset": "same, 1000 phd edge, 270-420 keV only",
+   "outcome": "N>=1",
+   "P_DM_posterior": 0.26,
+   "P_background": 0.0027567565290171903,
+   "cross_reference": "P081 median: 0.26 (DM) / 0.0028 (B)"
+  },
+  {
+   "id": "F6",
+   "dataset": "LZ full untouched 6.76 t.yr, 200-270 keV",
+   "outcome": "N>=1",
+   "P_DM_posterior": 0.41708658951235245,
+   "P_background": 0.001355840579879919,
+   "cross_reference": "P020 plug-in (band-anchored): 0.91"
+  },
+  {
+   "id": "F7",
+   "dataset": "XENONnT+PandaX-4T 10.1 t.yr reanalysed above 200 keV",
+   "outcome": "N>=1",
+   "P_DM_posterior": 0.4981479258746563,
+   "P_background": 0.0020330713500834596,
+   "cross_reference": "P069 best fit: 0.71 (L10) - 0.94 (d366)"
+  }
+ ]
+}

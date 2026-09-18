@@ -1,0 +1,61 @@
+{
+ "id": "P041",
+ "title": "Detector artefacts: could partial charge loss turn a 71 keV electron recoil into the LZ event?",
+ "date": "2026-09-10",
+ "agent_tools": [
+  {"tool": "Read", "count": 20, "detail": "output/provenance/PAPER_GUIDE.md; output/00_evidence_dossier.md; output/results_ledger.csv (3 pages); output/papers/P010.md, P022.md, P024.md, P009.md, P004.md; inputs/LZ_arXiv_2609.02823_fulltext.tex lines 76-130, 148-158, 160-167, 294-305, 687-696; inputs/figures_png/Fig4_science_sample_wbands.png; output/work/P041/figures/*.png (3); scratchpad Fig. 4 crop"},
+  {"tool": "Bash", "count": 10, "detail": "grep detector/event/discussion/waveform keywords in fulltext.tex + wc; grep lzcommon symbols + print lz.LZ + ENVIRONMENT_versions head + ls work/P022 + head P022.json; grep fiducial/drift in tex + ls papers, figures_png; probe: lz.nest_er_yields(2-80 keV), Fig. 4 frame/ROI rows via PIL; .venv/bin/python output/code/P041_charge_loss.py (run 1); head run_log + Fig. 4 crop + grey-pixel histogram/colours; .venv/bin/python output/code/P041_charge_loss.py (run 2, final) + ls; JSON validity + paper word counts (3 passes)"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P041_charge_loss.py; output/work/P041/details.md; output/provenance/P041.json; output/papers/P041.md"},
+  {"tool": "Edit", "count": 13, "detail": "P041_charge_loss.py x2: column-wise Fig. 4 envelope + S1c 520-800 strip test; bulk-lifetime channel factor (300 s silent window x tau-window coincidence). P041.md x10: STANCE line to an allowed value; trims of Abstract, Question, Results (table removed), Key numbers to the page budget. P041.json x1: tool counts"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python from simulation root"},
+  {"name": "numpy", "version": "2.5.3", "functions": "arrays, trapezoid, histogram, unique(axis=0), interp, savetxt"},
+  {"name": "scipy", "version": "1.18.1", "functions": "integrate.quad (Marcum-Q disk loss), special.i0e, stats.norm.ppf/pdf"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; bar, step, fill_between, axhspan figures"},
+  {"name": "Pillow", "version": "12.3.0", "functions": "Image.open/convert/crop for Fig. 4 pixel digitisation (grey ER envelope, strip emptiness, colour census)"},
+  {"name": "nestpy", "version": "2.1.1", "functions": "via lzcommon.nest_er_yields (LZ-tuned ER yields at 2-80 keV, 41.5 keV, 69.6 keV)"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ dict (g1, g2, S1c, S2c, Table I counts, FV mass, live days), nest_er_yields, combined_energy_keV"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P041_charge_loss.py", "purpose": "required loss and landing regions (Fig. 4 digitisation), electron-lifetime mechanism, absorbing-disk local-absorber model and population budget, extraction/pulse pathologies, channel summary, three figures", "command": ".venv/bin/python output/code/P041_charge_loss.py"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "sections 2, 4, 5 (hypothesis F prior 0.18), 6"},
+  {"file": "output/results_ledger.csv", "parts_used": "all rows P001-P040"},
+  {"file": "output/papers/P010.md", "parts_used": "N_e = 1226 mean, 269 observed, r = 0.939, sigma(N_e) = 150, E_ee = 69.6 keV, 564 KK decays, gap definition"},
+  {"file": "output/papers/P022.md", "parts_used": "T_max 1049 us, t_ev 859 us, v_d, FV drift window 93-985 us, S2 width 1.49/1.65 us, D_L = 25 cm2/s, accidental k = 708 vs 183"},
+  {"file": "output/papers/P024.md", "parts_used": "NR-band sigma 0.0313 dex, median 4.015 at S1c 540, extraction efficiency 0.80 assumption, g2 +-3% sensitivity"},
+  {"file": "output/papers/P009.md", "parts_used": "Fig. 4 axis calibration approach, band position"},
+  {"file": "output/papers/P004.md", "parts_used": "wall-MSSI k >= 620 vs < 1.6; neighbourhood definition +-2 sigma_NR"},
+  {"file": "output/work/P022/details.md", "parts_used": "grep for drift geometry (Fig. 3 axis, FV in drift time)"},
+  {"file": "output/code/P009_digitise_bands.py", "parts_used": "grep for Fig. 4 frame / ROI-edge calibration method"},
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "l.76-95 detector (S1c/S2c corrections, g1, g2 from monoenergetic peaks); l.110-117 ROI; l.119-130 Fig. 3 caption (gas events 56 us); l.139 FV boundaries; l.148-158 Fig. 4 caption; l.160-167 event description; l.296-305 Discussion (no abnormalities); l.687-700 waveform analysis and accidentals width cut"},
+  {"file": "inputs/figures_png/Fig4_science_sample_wbands.png", "parts_used": "grey ER population lower envelope at S1c 330-800; emptiness of 4.15-4.30 at S1c 520-800; black pixels in ROI at S1c 330-600; colour census"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "LZ dict, nest_er_yields, combined_energy_keV"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "LZ gate-cathode drift length 145.6 cm and active radius 72.8 cm", "presumed_source": "LZ NIM A 953, 163047 (2020)", "reliability": "likely"},
+  {"item": "transverse electron diffusion in LXe D_T ~ 50-60 cm2/s near 100 V/cm", "presumed_source": "EXO-200 PRC 95, 025502 (2017); NEST", "reliability": "likely"},
+  {"item": "longitudinal diffusion D_L ~ 25 cm2/s", "presumed_source": "P022 / LUX-EXO measurements", "reliability": "likely"},
+  {"item": "LZ electron lifetime >~ 5-10 ms in WS2024", "presumed_source": "LZ SR1/WS2024 papers", "reliability": "likely"},
+  {"item": "extraction efficiency ~ 0.80 and its field dependence", "presumed_source": "Xu et al. PRD 99, 103024 (2019); P024", "reliability": "uncertain"},
+  {"item": "typical S2c (x,y) correction-map amplitude <~ 20 %", "presumed_source": "LZ/LUX detector papers", "reliability": "likely"},
+  {"item": "136Xe abundance 8.86 %, T1/2 = 2.165e21 yr", "presumed_source": "EXO-200 / KamLAND-Zen", "reliability": "certain / likely"},
+  {"item": "222Rn in LZ WS2024 ~ 1 (0.5-2) uBq/kg", "presumed_source": "LZ 2024 WIMP-search paper", "reliability": "uncertain"},
+  {"item": "83mKr decays per injection 1e5-1e6; 83mKr S2 resolution ~10 %", "presumed_source": "LZ calibration paper", "reliability": "uncertain"},
+  {"item": "alpha (5.5 MeV) S2 of 2-4e4 electrons (recombination 0.90-0.95)", "presumed_source": "LUX/LZ alpha analyses", "reliability": "uncertain"},
+  {"item": "electron attachment to O2 in LXe: tau_e x [O2] ~ 150-300 us ppb", "presumed_source": "Bakale, Sowada, Schmidt 1976", "reliability": "uncertain"},
+  {"item": "LXe convective velocities ~ mm/s; gas-gap electron transit ~0.7-1 us; PTFE density 2.2 g/cm3", "presumed_source": "LZ radon-tag paper; dual-phase TPC literature", "reliability": "uncertain / likely"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "fixed-level strip test (4.15-4.34, S1c 330-800) counted 1366 grey pixels that were anti-aliased ER-cloud points at S1c 330-520; replaced by a column-wise envelope and an S1c 520-800 test (0 pixels)",
+  "bulk-lifetime channel factor with a 60 s silent window (0.25) rejected as unphysical for a bulk purity transient; replaced by 300 s and a tau-window coincidence factor",
+  "direct count of Fig. 4 grey points for the parent population abandoned (saturated core); Table I flat extrapolation with x0.5-2 bracket used instead"
+ ],
+ "wimpydd_generated_files": []
+}

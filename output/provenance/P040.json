@@ -1,0 +1,55 @@
+{
+ "id": "P040",
+ "title": "Cosmic-ray-boosted and otherwise fast light dark matter at the extended LZ window: can a relativistic light particle leave a lone 248 keV recoil?",
+ "date": "2026-09-09",
+ "agent_tools": [
+  {"tool": "Read", "count": 15, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (2 pages); P003.md; P019.md; P013.md; P016.md; P017.md; lzcommon.py; fulltext.tex l.200-270 (Table I, Fig. 5 caption); figures P040_fig1, P040_fig2"},
+  {"tool": "Bash", "count": 9, "detail": "grep fulltext.tex for Table I/Data Analysis/ROI + ls work dirs + cat ENVIRONMENT_versions; grep Fig.5 caption + list/head P017 CSVs; python inspection of P017_response_curves.npz keys + grep P003 efficiency constants + sed P017_M_ratios.csv; mkdir work/P040/figures; .venv/bin/python output/code/P040_boosted_dm.py (3 runs: syntax error, full run with log, re-run after figure fix); wc -w / awk word-budget checks + json validity (3 runs)"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P040_boosted_dm.py; output/work/P040/details.md; output/provenance/P040.json; output/papers/P040.md"},
+  {"tool": "Edit", "count": 9, "detail": "P040_boosted_dm.py: two invalid dict-key identifiers fixed; Fig. 2 annotation moved inside axes. P040.md: abstract, results, headline trimmed to budget (3 + 2 trims). P040.json: tool counts updated"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": "interpreter (.venv/bin/python)"},
+  {"name": "numpy", "version": "2.5.3", "functions": "trapezoid, interp, logspace, linspace, where, load (npz)"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf (efficiency model)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, to_csv, to_string"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend, pyplot subplots/plot/fill_between/axhspan, savefig PNG"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ dict (live_days, fiducial_mass_t, E_50pct edges), XE_ISOTOPES, A_XE_MEAN, AMU_GEV, M_NUCLEON_GEV, RHO0_GEV_CM3, helm_F2, mu_red, dRdE_SI (SHM cross-check)"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "not run; P017's cached shell-model M and Sigma'' response tables (P017_response_curves.npz) reused"},
+  {"name": "none: derived by hand", "version": "-", "functions": "relativistic two-body kinematics E_R,max(T,m); inversion for T_min; vector/scalar/pseudoscalar amplitude structures; N_lo floor argument; mean-energy-loss attenuation"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P040_boosted_dm.py", "purpose": "kinematics, beam/power-law/CRDM recoil spectra and N_lo, CRDM flux and sigma_chi p for one LZ event, Earth attenuation, heavy fast component, four figures", "command": ".venv/bin/python output/code/P040_boosted_dm.py > output/work/P040/run_log.txt 2>&1"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Data Analysis paragraph l.110-117 (ROI, 5.4-55 keV 2024 search, 96% efficiency), Table I l.210-246 (backgrounds, 1710 observed), Fig. 5 caption l.255-266, Fig. S2 caption l.453-459"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "Sec. 1-2 event summary; Sec. 5 hypothesis K (boosted DM, P=0.04)"},
+  {"file": "output/results_ledger.csv", "parts_used": "P001-P030 rows (P003 N_lo criterion, P017 form-factor ratios, P019 exotic-neutrino N_lo, P030 Helm-flat 353 / shell 1182)"},
+  {"file": "output/papers/P003.md, P013.md, P016.md, P017.md, P019.md", "parts_used": "lone-event criterion and tolerance; neutron T_min 8.20 MeV; fitted low-energy tolerance 1.6-2.2; shell/Helm F2 at 248 keV; relativistic-beam N_lo argument for neutrinos"},
+  {"file": "output/work/P017/P017_response_curves.npz, P017_M_ratios.csv", "parts_used": "E_grid, F2_shell (natural and per isotope), F2_helm, 129/131 Sigma'' W00 tables"},
+  {"file": "output/code/P003_nreft_shapes.py", "parts_used": "efficiency model constants (0.96, sig_lo 3.4, sig_hi 8.0 keV)"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "constants, helm_F2, mu_red, dRdE_SI"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Relativistic two-body kinematics: E_R,max = 2 m_N p^2/s", "presumed_source": "textbook", "reliability": "certain"},
+  {"item": "Vector-mediator Dirac-fermion squared amplitude 2(s-Sigma)^2 + 2st + t^2", "presumed_source": "QED e-mu scattering trace", "reliability": "likely"},
+  {"item": "Scalar-mediator amplitude (4m^2-t)(4m_N^2-t); pseudoscalar t^2 with spin-dependent nucleon vertex", "presumed_source": "simplified-model CRDM literature (Dent et al. 2020)", "reliability": "likely"},
+  {"item": "PDG all-nucleon cosmic-ray intensity 1.8e4 (E/GeV)^-2.7 m^-2 s^-1 sr^-1 GeV^-1", "presumed_source": "PDG Review of Particle Physics, cosmic rays", "reliability": "likely"},
+  {"item": "Proton dipole form factor G = (1+q^2/0.71 GeV^2)^-2", "presumed_source": "standard", "reliability": "likely"},
+  {"item": "CRDM flux formula with D_eff = 1 kpc effective column, rho = 0.3 GeV/cm^3", "presumed_source": "Bringmann & Pospelov PRL 122, 171801 (2019)", "reliability": "likely"},
+  {"item": "XENON1T CRDM recast excluded band ~1e-31 to 1e-28 cm^2 for m_chi <~ 0.1-1 GeV", "presumed_source": "Bringmann & Pospelov 2019 Fig. 3", "reliability": "uncertain"},
+  {"item": "PandaX-4T CRDM search lower edge a few 1e-32 cm^2", "presumed_source": "PandaX-4T PRL 128, 171801 (2022)", "reliability": "uncertain"},
+  {"item": "SURF depth 1478 m (4850 ft), standard rock 2.7 g/cm^3, crustal composition O/Si/Al/Ca/Fe/Mg", "presumed_source": "general", "reliability": "likely"},
+  {"item": "2024 LZ low-energy tolerance ~3-5 signal events", "presumed_source": "corpus P003 (recalled there)", "reliability": "uncertain"},
+  {"item": "Order-of-magnitude CRDM flux scaling 1e-7 (sigma/1e-30)(GeV/m_chi) cm^-2 s^-1 above 10 MeV", "presumed_source": "assignment/memory; superseded by the numerical integral", "reliability": "uncertain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Working hypothesis that the form factor costs only x5-10 between 10 and 248 keV (N_lo ~ 3-7, borderline): abandoned after evaluating Helm/shell F2 (ratio 1.2e3-6.8e3); N_lo floor is 350 (Helm) / 1184 (shell).",
+  "Recalled CRDM flux scaling 1e-7 (sigma/1e-30)(GeV/m) replaced by the numerical PDG-spectrum integral, which differs from it by x0.06-17 depending on mass.",
+  "Separate normalisation of blazar- and decay-boosted fluxes not pursued: their N_lo obeys the same response-set floor."
+ ],
+ "wimpydd_generated_files": "none"
+}

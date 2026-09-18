@@ -1,0 +1,7 @@
+{
+ "sympy_leading_order_splitting": "epsilon",
+ "delta_keV_M1_10TeV_bino_only": 197875.44907728716,
+ "delta_keV_M1_100TeV_bino_only": 19255.31026995486,
+ "delta_keV_M1eqM2_1000TeV": 8317.271130977133,
+ "radiative_charged_neutral_MeV_recalled": 355.0
+}

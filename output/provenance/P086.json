@@ -1,0 +1,80 @@
+{
+ "id": "P086",
+ "title": "BBN and CMB constraints on the mediator required for the LZ inelastic cross-section: dark photons, dark Higgs and light Z' in the early Universe",
+ "date": "2026-09-16",
+ "agent_tools": [
+  {"tool": "Read", "count": 13, "detail": "PAPER_GUIDE.md; papers P011, P025, P026, P051, P054, P058, P074; four P086 figures (visual check)"},
+  {"tool": "Bash", "count": 12, "detail": "ls output/papers (P075 absent) + ls work dirs + cat environment/ENVIRONMENT_versions.txt; cat P011 epsilon_required.csv, mA_window.csv, relic_lifetime.json, couplings.json; head P025 darkphoton_sommerfeld_grid.csv + grep P051 details (accelerator recalls); grep lzcommon constants + P011 details; head ledger + ls data_requests; python one-liner on P025 grid + grep P025/P051/P026 details; 6x '.venv/bin/python output/code/P086_mediator_cosmology.py' (iterative debugging); one diagnostic python heredoc (Boltzmann ODE solver test); rm of three stale CSVs; python one-liner printing P086_summary.json"},
+  {"tool": "Write", "count": 4, "detail": "output/code/P086_mediator_cosmology.py; output/work/P086/details.md; output/provenance/P086.json; output/papers/P086.md"},
+  {"tool": "Edit", "count": 18, "detail": "fixes to P086_mediator_cosmology.py: Radau+Jacobian Boltzmann solver, thermalisation criterion, T_nu/T ratio, t(T) units and interpolation, T grid, SIDM ceiling, dark-Higgs exclusion grid and map layers, delta=380 bracket, figure cosmetics"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python"},
+  {"name": "numpy", "version": "2.5.3", "functions": "logspace, meshgrid, interp, gradient, tanh, where"},
+  {"name": "scipy", "version": "1.18.1", "functions": "integrate.quad (thermal integrals, t(T), freeze-in yield), integrate.solve_ivp (Radau with analytic Jacobian; dark-Higgs Boltzmann equation), special.kve (K1, K2), optimize.brentq"},
+  {"name": "pandas", "version": "3.0.5", "functions": "read_csv (P011 band), DataFrame.to_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; contourf/contour, fill_between, loglog"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "GEV_TO_CM2 (GeV^-2 -> cm^2)"},
+  {"name": "none: derived by hand", "version": "-", "functions": "A'-loop dark-Higgs width (loop function set to 1), 4-body h_D -> A'*A'* -> 4f estimate, detailed-balance forbidden <sigma v>, Delta N_eff(T_dec), classical Yukawa sigma_T bracketing"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P086_mediator_cosmology.py", "purpose": "g*(T)/g*s(T)/H/t from exact thermal integrals; A' widths, lifetime map, thermalisation line, freeze-in yield and BBN/FIRAS/Planck late-decay tests; dark-Higgs mass relation, Boltzmann relic (forbidden regime), lifetimes, exclusion grids, Higgs-portal escape; chi1 self-interaction sigma_T/m; Z' check; combined (m_A', eps) map; four figures; tables and summary JSON", "command": ".venv/bin/python output/code/P086_mediator_cosmology.py"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "rules, deliverables, template, word budgets"},
+  {"file": "output/papers/P011.md + output/work/P011/details.md (sec. 3.5-3.6) + output/work/P011/{epsilon_required.csv, mA_window.csv, relic_lifetime.json, couplings.json}", "parts_used": "eps(m_A', delta) band at 1 TeV, alpha_D=0.1 (eps2alphaD_over_mA4, S_propagator), chi2-decay eps floors, rate suppression 0.034 at 0.1 GeV, relic alpha_D"},
+  {"file": "output/papers/P025.md + output/work/P025/details.md + darkphoton_sommerfeld_grid.csv", "parts_used": "Planck Sommerfeld floor m_A' >= 9.2 GeV (thermal alpha_D=0.035), p_ann criterion and S_allowed=23"},
+  {"file": "output/papers/P026.md + output/work/P026/details.md", "parts_used": "FIRAS mu/y limits, Planck 0.2 eV/baryon re-expression of Slatyer-Wu, exothermic m_A' floors 2.45/0.92/0.55/0.25 GeV"},
+  {"file": "output/papers/P051.md + output/work/P051/details.md (sec. 3.3)", "parts_used": "recalled accelerator bounds (BaBar, LHCb, beam dumps, FASER) with reliabilities; light-mediator eps values"},
+  {"file": "output/papers/P054.md", "parts_used": "Z' benchmarks (m_Z' = 0.5-2 TeV, g_q = 0.017-0.026, v_S = 0.2-0.7 TeV); cited in place of the absent P075"},
+  {"file": "output/papers/P058.md", "parts_used": "exothermic floors m_A' >= 2.39/0.92/0.53/0.25 GeV, eps >= 4.2-4.7e-6"},
+  {"file": "output/papers/P074.md", "parts_used": "contact-like regime above ~0.46 GeV; light-mediator spectral statements"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "GEV_TO_CM2"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"},
+  {"file": "output/results_ledger.csv", "parts_used": "header/format only (no P07x-P08x rows present)"}
+ ],
+ "recalled_knowledge": [
+  {"item": "M_Pl = 1.2209e19 GeV, hbar = 6.582e-25 GeV s, alpha = 1/137.036", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "lepton, meson (pi, K, eta, rho: m, Gamma), quark, W, Z, h masses", "presumed_source": "PDG", "reliability": "certain (quark MSbar masses: likely)"},
+  {"item": "g* = 106.75 above the EW scale, 10.75 at 10 MeV, 3.363/3.909 at T << m_e; t(1 MeV) ~ 1 s", "presumed_source": "Kolb & Turner", "reliability": "certain"},
+  {"item": "quark-hadron transition at T ~ 170 MeV, smoothed over ~25 MeV", "presumed_source": "lattice QCD (Borsanyi et al.)", "reliability": "likely"},
+  {"item": "neutrino decoupling ~2 MeV (instantaneous)", "presumed_source": "standard cosmology", "reliability": "likely"},
+  {"item": "Planck 2018: H0 = 67.4 km/s/Mpc, Omega_m = 0.315, Omega_Lambda = 0.685, T0 = 2.7255 K, Omega_DM h^2 = 0.12 <-> rho_DM/s = 0.44 eV, s0 = 2891 cm^-3, rho_c/h^2 = 1.054e-5 GeV cm^-3, n_b/s = 8.6e-11", "presumed_source": "Planck 2018 / PDG", "reliability": "likely/certain"},
+  {"item": "Planck N_eff = 2.99 +- 0.17, so Delta N_eff < ~0.3", "presumed_source": "Planck 2018", "reliability": "likely"},
+  {"item": "Delta N_eff = (g_eff/(7/4)) (g*s(T_nu,dec)/g*s(T_dec))^(4/3) for a decoupled relativistic relic", "presumed_source": "standard", "reliability": "certain"},
+  {"item": "Gamma(A' -> l+l-) = alpha eps^2 m/3 (1+2m_l^2/m^2) sqrt(1-4m_l^2/m^2); Gamma_had = Gamma_mumu R(s)", "presumed_source": "standard dark-photon literature", "reliability": "certain"},
+  {"item": "R(s): 2pi via rho form factor below 1 GeV, ~2 (uds) for 1.5-3.7 GeV, ~3.5 above 4 GeV, ~3.7 above 11 GeV, x1.05 QCD; narrow resonances ignored", "presumed_source": "PDG R plot", "reliability": "uncertain (x1.5-2 below 2 GeV)"},
+  {"item": "inverse-decay collision term gamma = g m^2 T K1(m/T) Gamma/(2 pi^2); freeze-in yield formula (Hall et al. 2010)", "presumed_source": "Hall, Jedamzik, March-Russell, West 2010", "reliability": "likely"},
+  {"item": "BBN envelope E_vis Y_X vs tau (1e-5 at 1 s ... 1e-13 at 1e7 s ... 1e-12 at 1e10-1e12 s) for a GeV-scale particle with EM+hadronic decays", "presumed_source": "Kawasaki, Kohri, Moroi 2005; Kawasaki, Kohri, Moroi, Takaesu 2018", "reliability": "uncertain (x10)"},
+  {"item": "FIRAS |mu| < 9e-5, |y| < 1.5e-5; mu = 1.4 Delta rho/rho_gamma for 1e6 < tau < 1e9 s; y = Delta rho/rho_gamma/4 later", "presumed_source": "Fixsen et al. 1996; Chluba & Sunyaev 2012", "reliability": "certain (limits) / likely (mapping)"},
+  {"item": "Planck decaying-DM bound: f_eff (rho_X/rho_DM) Gamma < 1e-25 s^-1 for tau >> t_U; P026's 0.2 eV/baryon re-expression for 1e13 s < tau < t_U", "presumed_source": "Slatyer & Wu 2017; P026", "reliability": "likely (x3)"},
+  {"item": "'very dark photon' BBN/CMB exclusion band eps ~ 1e-11-1e-14 for m_A' ~ MeV-few GeV", "presumed_source": "Fradette, Pospelov, Pradler, Ritz 2014", "reliability": "uncertain"},
+  {"item": "Boltzmann equation dY/dx = -sqrt(pi/45) M_Pl m (g*s/sqrt g*) <sigma v> x^-2 (Y^2 - Y_eq^2); Omega h^2 ~ 1.07e9 x_f/(sqrt(g*) M_Pl <sigma v>)", "presumed_source": "Kolb & Turner; Gondolo & Gelmini", "reliability": "certain"},
+  {"item": "forbidden-channel detailed balance <sv>_{12->34} = <sv>_{34->12} (n3 n4/n1 n2)_eq", "presumed_source": "D'Agnolo & Ruderman 2015", "reliability": "certain"},
+  {"item": "s-wave <sigma v>(h h -> A'A') ~ pi alpha_D^2/m^2 (O(1) normalisation)", "presumed_source": "dimensional analysis / secluded-sector literature", "reliability": "likely (x3)"},
+  {"item": "dark-Higgs decay through an A' loop: Gamma ~ alpha_D alpha^2 eps^4 m_f^2 m_h/m_A'^2 x O(1)", "presumed_source": "Batell, Pospelov, Ritz 2009 (parametric form); derived here with loop function = 1", "reliability": "likely (x3)"},
+  {"item": "4-body phase space Phi_4 = m^4/(2 (4 pi)^5 3! 2!) for massless final states", "presumed_source": "standard", "reliability": "certain"},
+  {"item": "Gamma(H -> f fbar) = N_c m_f^2 m_H beta^3/(8 pi v^2); H -> VV width formula", "presumed_source": "standard", "reliability": "certain"},
+  {"item": "Higgs-portal scalar mixing limits theta <~ 1e-4-1e-3 for GeV scalars (B decays, CHARM)", "presumed_source": "LHCb, CHARM recasts", "reliability": "uncertain"},
+  {"item": "classical Yukawa transfer cross-sections (attractive/repulsive fits) with beta = 2 alpha m_med/(m v^2)", "presumed_source": "Tulin, Yu, Zurek 2013; Khrapak et al.", "reliability": "likely"},
+  {"item": "Bullet cluster sigma/m < ~1 cm^2/g (1.25 at 68 % CL); dwarf cores need 0.1-1 cm^2/g", "presumed_source": "Randall et al. 2008; Markevitch et al. 2004; Tulin & Yu review", "reliability": "likely"},
+  {"item": "self-scattering of pseudo-Dirac DM bracketed by attractive/repulsive Yukawa channels when KE >> delta", "presumed_source": "Schutz & Slatyer 2015", "reliability": "likely"},
+  {"item": "BaBar visible A' bound eps <~ 1e-3 for 0.02-10 GeV", "presumed_source": "BaBar 2014 (PRL 113, 201801)", "reliability": "likely"},
+  {"item": "LHCb prompt A' bound eps ~ 3e-4 over ~10-70 GeV; beam-dump bounds eps ~ 1e-8-1e-5 only for m_A' <~ 0.1-0.4 GeV", "presumed_source": "LHCb 2018/2020; Bjorken et al. 2009", "reliability": "uncertain"},
+  {"item": "Gamma(Z' -> q qbar) = N_c g_q^2 m_Z'/(12 pi) per flavour", "presumed_source": "standard", "reliability": "certain"},
+  {"item": "m_A' = q_h g_D v_D, m_h = sqrt(2 lambda) v_D for V = lambda(|Phi|^2 - v_D^2/2)^2", "presumed_source": "standard abelian Higgs model", "reliability": "certain"},
+  {"item": "GeV -> g (1.7827e-24), GeV^-2 -> cm^2 via lzcommon", "presumed_source": "PDG", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Thermalisation defined by max over T of Gamma K1/K2 / H: diverges towards T << m (no fermions can produce an A'), gave eps_therm ~ 1e-10 with a freeze-in yield only 0.3 % of equilibrium; replaced by Y_FI = Y_eq(T=m) (criterion A) cross-checked with Gamma K1/K2 = H at T = m/3 (criterion B), which agree within x1.4.",
+  "LSODA on the stiff dark-Higgs Boltzmann equation returned the initial condition unchanged (Omega h^2 ~ 1e5) without an error flag; replaced by Radau with an analytic Jacobian (agrees with the analytic Omega h^2 estimate to x2).",
+  "Inverted T_nu/T_gamma ratio after neutrino decoupling (g* = 17.9 at 0.1 MeV) and missing GeV^-1 -> s conversion plus decreasing-abscissa np.interp in t(T) (t(1 MeV) = 1e24): both caught by the validation printout and fixed (g* = 3.371, t(1 MeV) = 0.745 s, t(z=1100) = 1.16e13 s).",
+  "T grid initially stopped at 10 keV, clamping T(t) for tau > 1e4 s and corrupting the FIRAS mu/y estimates; extended to 0.1 eV.",
+  "s-wave unitarity ceiling applied in the classical (many-partial-wave) SIDM regime; restricted to m_chi v/m_A' < 1.",
+  "r = m_h/m_A' = 1.0 exactly gives zero phase space in both annihilation formulae (no evolution); dropped in favour of 0.99 and 1.05.",
+  "P075 (thermal history) does not exist in the corpus; P054 cited instead as instructed."
+ ],
+ "wimpydd_generated_files": "none"
+}

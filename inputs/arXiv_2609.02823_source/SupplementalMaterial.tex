@@ -1,0 +1,254 @@
+\section*{Supplemental Material}
+\pagestyle{plain}
+% Restart and rename Figures
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{S\arabic{figure}}
+
+% Restart and rename Tables
+\setcounter{table}{0}
+\renewcommand{\thetable}{S\arabic{table}}
+
+\subsection{Data Samples and Salt}
+Figure~\ref{fig:all_samples_data} shows the events passing all data selection criteria separated into the three samples used in the statistical inference, plus a fourth sample showing the salt. 
+The points in the \emph{delayed veto} sample come primarily from random coincidences of background pulses in the veto detectors with ER backgrounds in the TPC due to the long coincidence window. 
+The points in the \emph{prompt veto} sample come primarily from $\gamma$-rays interacting in the top corner of the TPC and in the Skin detector (see Fig.~\ref{fig:roi_fv}).
+The bottom right panel shows the \emph{salt} events, which appeared in the \emph{science} sample prior to unsalting. 
+In addition to the seven salt events from Ref.~\cite{LZ:SR3_WS2024}, three new salt events appear in the WS~ROI, with a fourth just above. 
+As discussed in the main text, the model used to generate the salt was tuned before the AmBe calibration data set was obtained, and the salt events fall above the main signal region in brown. Figure~\ref{fig:efficiency} shows the signal detection efficiency as a function of NR energy.
+
+
+\begin{figure}[!h]
+    \includegraphics[width=0.41\columnwidth]{\plotfolder FigS1a_science_sample_marked.pdf}
+    \includegraphics[width=0.41\columnwidth]{\plotfolder FigS1b_delayed_sample_marked.pdf}
+    \includegraphics[width=0.41\columnwidth]{\plotfolder FigS1c_prompt_sample_marked.pdf}
+    \includegraphics[width=0.41\columnwidth]{\plotfolder FigS1d_salt_sample_marked.pdf}
+    \caption{
+    The black points show the WIMP search data after all cuts in \{S1c, log$_{10}$(S2c)\} space with each panel showing a different sample, including the \emph{salt} (pink) in the bottom right.
+    The dashed gray area indicates the WS~ROI.
+    The contours show 68\% (solid) and 95\% (dashed) containment regions for: a 1000~GeV/c$^2$ $\mathcal{L}^{s}_{10}$ interaction (brown), MSSI (dark blue), accidental coincidences (yellow), combined ER backgrounds (light blue), and the detector NR background (green). The lower left panel splits the ER contribution into ERs from detector materials (orange) and $^{127}$Xe (magenta).  
+    Contours of constant recoil energy are shown in gray.
+    The \emph{science} sample is the same data as those shown in~\autoref{fig:finaldataset-S1-logS2}.
+    }
+    \label{fig:all_samples_data}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{\plotfolder FigS2_efficiency_werror.pdf}
+    \caption{
+    Signal efficiency as a function of the NR energy from the trigger (blue); S1 threshold (orange); the SS reconstruction and analysis cuts (green); and the WS~ROI in S1$c$ and S2$c$ (black).
+    The high energy behavior is shown in the insert, where the dotted line at 269.9~keV indicates the nuclear recoil energy at which the efficiency is 50\%.
+    The uncertainty (gray) is assessed with $^3$H, $^{220}$Rn, and AmLi calibration data. The low energy behavior is shown in Fig.~2 of Ref.~\cite{LZ:SR3_WS2024}, crossing 50\% efficiency at 5.4~keV.
+    }
+    \label{fig:efficiency}
+\end{figure}
+
+
+
+\subsection{Log-Likelihood Function and the Look Elsewhere Effect}
+The likelihood is defined as
+\begin{equation}
+\begin{aligned}
+    \mathcal{L}(\theta) = \prod_{i=0}^{2} \Bigg[ \mathrm{Pois}(N_i|\mu_{\mathrm{tot},i})
+     \times \prod^{N_i}_{e=1}\frac{1}{\mu_{\mathrm{tot},i}}\bigg(\mu_{\mathrm{sig},i}(\vec{\lambda})f_{\mathrm{sig},i}(\vec{x}_e) + \sum^{N_b}_{b=1}\mu_{b,i}(\vec{\lambda}) f_{b,i}(\vec{x}_e) \bigg) \Bigg] 
+     \times \prod^{N_b+N_\lambda}_{k=0} g_k(\phi_k|\vec{\nu}_{\phi_k}),
+\end{aligned}
+\label{eq:likelihood_ack}
+\end{equation}
+where $N_i$ is the number of data events in the $i$th sample; $\mu_{\rm{tot},i}$ is the expected number of events expressed as the sum of the expected number of signal ($\mu_{\mathrm{sig},i}$) and background ($\mu_{b,i}$) events and both are a function of $\theta$, which expresses the parameters of the model. The numbers of signal and background events in each sample are not independent between samples, but are related with tagging efficiency ($\vec{\lambda}$) parameters. The vector $\vec{x}_e$ is the event coordinate in \{S1c, log$_{10}$(S2c)\} space.
+The functions $f_{\mathrm{sig},i}$ and $f_{b,i}$ describe the probability density functions of the signal and background components of the model. 
+The $g(\phi_k|\vec{\nu}_{\phi_k})$ term represents constraint functions on the rate of each background component and the tagging efficiencies $\vec{\lambda}$, where $\vec{\nu_\phi}$ defines any fixed parameters of the function. 
+
+Each background is constrained by a Gaussian function except for the detector neutrons, which are not given a direct rate constraint.
+The neutron component is constrained by both the \emph{prompt veto} and \emph{delayed veto} by tagging efficiencies $\lambda_\text{PN}$ and $\lambda_\text{DN}$, respectively.
+The \emph{prompt veto} sample additionally constrains the MSSI component through a tagging efficiency, denoted $\lambda_\text{MSSI}$, and single scatters from Detector ERs and $^{127}$Xe/$^{125}$Xe through $\lambda_\text{PG}$.
+
+
+Goodness-of-fit (GoF) tests were performed to study the compatibility of the background model with the data, including one-dimensional projections on S1$c$ and log$_{10}$(S2$c$), and over a two-dimensional binning into bins containing equal expectation values of 21.1, 5.6, and 7.7 for the \emph{science, prompt veto,} and \emph{delayed veto} samples, respectively.
+All tests returned p-values above 0.05, and were thus considered acceptable. Pull-studies comparing the best-fit parameters with the expected spread found that all parameters were pulled by less than $2\sigma$ from their nominal values, and no parameters were identified as being strongly correlated with the signal strength. 
+The GoF tests support the validity of the background model in the WS~ROI, but because of their binned nature, they are not sensitive to single outlier events such as the event of interest. 
+Outlier-focused rejection tests if applied would also not have rejected this event since it lies in the signal region where an analysis should not reject valid events.  
+
+
+A look elsewhere effect (LEE) correction is calculated for this analysis using toy Monte Carlo datasets, as described in Ref.~\cite{DM_parameters:BAXTER2021_Conventions}.
+Toy datasets are generated from the background-only model and analyzed with the same procedure as the real data. 
+For each toy dataset, the smallest p-value from all of the models is recorded, and a probability distribution of minimum p-values is generated. 
+The minimum p-value for the real data is compared to this distribution to extract a global p-value that quantifies how likely it is to observe a data set at least as extreme as the real data, given the model space tested.
+
+The total LEE depends on the signal search space, and care was taken to span the full range of signal search space while also not performing redundant calculations on very similar spectra.
+The space of models is chosen to cover all of the isoscalar and isovector options $\mathcal{L}_1$--$\mathcal{L}_{20}$ using 13 logarithmically spaced dark matter masses from 10 to 4000 GeV/c$^2$. 
+The inelastic models include isoscalar and isovector options for $\mathcal{O}_1$ and $\mathcal{O}_4$ for 400~GeV/c$^2$, 1000~GeV/c$^2$, and 4000~GeV/c$^2$ WIMP masses and eight mass splittings: 0, 50, 100, 150, 200, 250, 300, 350~keV. 
+In total, there are 616 models. 
+However, the model space has some degeneracies, and as the LEE only depends on the number of distinguishable spectra, these degeneracies have been exploited to reduce the computation time.
+Specifically, the pairs $\mathcal{L}_1$ and $\mathcal{L}_5$; $\mathcal{L}_2$ and $\mathcal{L}_8$; $\mathcal{L}_3$ and $\mathcal{L}_{17}$; $\mathcal{L}_4$ and $\mathcal{L}_{20}$; and $\mathcal{L}_{11}$ and $\mathcal{L}_{14}$ differ from each other only by a scalar constant. 
+In addition, for some models, the energy spectra for the isoscalar and isovector couplings of that model are indistinguishable; this applies to Lagrangians $\mathcal{L}_2$, $\mathcal{L}_4$, $\mathcal{L}_7$, $\mathcal{L}_8$, $\mathcal{L}_{10}$, $\mathcal{L}_{11}$, $\mathcal{L}_{14}$, $\mathcal{L}_{15}$, $\mathcal{L}_{19}$, and $\mathcal{L}_{20}$ and the inelastic operator $\mathcal{O}_4$.
+Finally, for all of the Lagrangians, masses of  400~GeV/c$^2$ and above have nearly degenerate recoil spectra, so only one mass (1000~GeV/c$^2$) is kept. 
+This procedure reduces the number of models to be tested to 293.
+
+When reporting our results, we perform a raster scan over masses or masses and mass splittings as appropriate for the Lagrangian or operator being tested. Our limits therefore show the best region of coupling strength for each mass separately, and not a region optimized in coupling and mass simultaneously. We do not set an additional threshold requirement on the local significance of any model to report a lower limit on the coupling strength in this scan. 
+
+
+\subsection{Fit Results in Veto Samples}
+In this section we present the pre- and post-fit expectations in the \emph{prompt} (\autoref{tab:prompt_sample_fit_table}) and \emph{delayed} (\autoref{tab:delayed_sample_fit_table}) samples for the best combined fit of the background model plus a 1000~GeV/c$^2$ $\mathcal{L}_{10}^s$ signal to the data. 
+\input{table_prompt_sample}
+
+\input{table_delayed_sample}
+
+
+\subsection{Details of the Detector Response modeling}
+
+\input{nest}
+
+\subsection{Waveform Analysis}
+The shapes of the S1 and S2 pulses can provide additional information about an event. Scintillation light in LXe is produced from the decay of a metastable dimer Xe$^*_2$, which exists in either a singlet or triplet molecular state with lifetimes of $2-4$~ns and $21-28$~ns, respectively.
+ER and NR interactions populate the singlet and triplet states with different ratios, with NRs having a higher proportion of singlet decays and therefore a faster S1, providing some discrimination power between interaction types~\cite{PSD:Theory,PSD:time1,PSD:time2,PSD:time3,XMASS:2018hil,LZ:PSD_2026}.
+In a TPC as large as LZ, the S1 shape also has a position dependence, with photons produced further from PMTs experiencing a broader distribution of propagation times prior to collection.
+Unfortunately, the S1 pulse timing has limited discrimination power on an event-by-event basis for events with S$1c\sim550$~phd and the event of interest is generally compatible with both ER and NR populations. Existing NR calibration data around 250~keV are limited, and there are no such calibration events within a few cm of the event of interest. We find that AmBe calibration NRs with approximately 150~keV are not inconsistent with an ER template built from $^{131\text{m}}$Xe calibration data near the position of the event of interest, showing the lack of event-by-event discrimination power.  
+
+
+The pulse timing provides more discrimination regarding the $z$-position of the event. Both ER and NR events near the bottom of the detector have fast rise times because light can travel more directly to the bottom PMT array.  Examination of waveforms for a sample of events from below the FV near the cathode, where most RFR MSSI events would be found, finds shorter rise times than all samples at the same depth as the event of interest. The waveform of the event of interest is thus less consistent with that of a RFR MSSI than with a NR at the reconstructed position.
+
+Pulse shapes can also inform the classification of an event as a single scatter event from near the reconstructed position. Examination of the S2 shape of the event of interest finds consistency with a template for single-site interactions around the same location generated from a selection of alpha decays. The partitioning of S1 between the top and bottom PMT array (also known as the ``top-bottom asymmetry'') for the event of interest is also consistent with a selection of events from the same $z$. Examination of the S1 hit pattern across all the individual PMTs in the PMT arrays finds consistency at the 2$\sigma$ level in $z$ and 1$\sigma$ level in $(x,y)$ with a selection of SS ER events of similar S1 size and location as the event of interest. Analysis of the S1 pattern shows inconsistency with an RFR MSSI template, but this analysis could not distinguish between a single scatter at the reconstructed position of the event of interest and a wall MSSI template.  
+
+\subsection{Accidental backgrounds}
+The accidentals model is constructed in similar fashion to Refs.~\cite{LZ:SR3_WS2024,LZ:2025lowmass}. A high statistics synthetic dataset is generated from isolated S1 and S2 pulses that pass a minimal set of data quality selections. These S1 and S2 pulses are paired at the waveform level to generate a sample of accidental coincidence events, containing pairs of pulses that have either physical drift times (PDTs) or unphysical drift times (UDTs) depending on whether the apparent drift time is shorter or longer than the drift time for events at the cathode. 
+
+The model is validated by comparing to the UDT population in data, as these are by definition accidental pairings of S1 and S2 pulses. In the validation, the synthetic dataset of UDTs is normalized to the real UDT dataset before applying pulse-based selections that specifically target accidental populations. For example, one pulse-based selection ensures that the S2 pulse width matches the inferred drift time of the event. Model and UDT agreement is checked as each cut is applied, and all comparisons are within 20\%. After all cuts are applied, the normalized synthetic model predicts $2.4\pm0.2$ UDT events, with 3 remaining events in the UDT dataset. The left panel of \autoref{fig:accidentals} shows the \{S1$c$,~$\log_{10}(\mathrm{S}2c)$\} distribution of the UDT model and UDT population at the normalization step, along with 1D projections. The right panel shows the same distributions after all selections are applied.  The good agreement is taken to indicate that the PDT component is also well-modeled. 
+
+\begin{figure}[!h]
+    \includegraphics[width=0.45\columnwidth]{\plotfolder FigS3a_accs_baseline.pdf}
+    \includegraphics[width=0.45\columnwidth]{\plotfolder FigS3b_accs_all_cuts.pdf}
+    \caption{\label{fig:accidentals} Probability density function in \{S1$c$, $\log_{10}(\mathrm{S}2c)$\} space for the accidentals model compared to unphysical drift time events in the data: (left) with initial loose data quality cuts when the model is normalized to the data and (right) after all cuts targeting the accidental background. 1D projections of each axis are also shown with the blue band representing the combined systematic and statistical uncertainty on the model. The blue and red regions represent the continuous ER background and the best fit 1000~GeV/c$^2$ $\mathcal{L}_{10}^s$ WIMP model.
+    After all cuts, the accidentals model predicts $2.4\pm0.2$ events in the UDT dataset, with 3 events observed. 
+    }
+\end{figure}
+
+
+\subsection{Multiple-scintillation single-ionization (MSSI) events}
+The MSSI background is of interest as it can populate regions of \{S1$c$, $\log_{10}(\mathrm{S}2c$\} space below the ER band, but generally at reconstructed energies above those explored in Refs.~\cite{LZ:SR1WS_2022, LZ:SR3_WS2024}. The basic topology is that the S1 and S2 of a typical ER are combined with an S1 from a second scatter in a charge dead region in the RFR or near the wall, moving an ER event horizontally in the \{S1$c$, $\log_{10}(\mathrm{S}2c$\} plane. Various combinations of scatters can result in MSSI, including:
+\begin{itemize}
+    \item{$\beta$ decay in the FV with an associated $\gamma$-ray depositing energy in a charge dead region before leaving the detector}
+    \item{The inverse, where a $\beta$ decays in a charge dead region and the $\gamma$-ray scatters or photoabsorbs in the FV}
+    \item{Compton scattering of a $\gamma$-ray emitted from detector components or internal radioactivity, with one scatter in the FV and one or more scatters in a charge dead region}
+    \item{Decays of radon daughters or other isotopes that plate out on the cathode or TPC walls, such that a $\beta$, $\alpha$, or NR is degraded by the relevant plateout surface with associated $\gamma$-rays interacting in the FV and/or RFR.}
+\end{itemize}
+
+As described in the main text, the MSSI model is derived from simulations of detector materials  and $^{214}$Pb decays distributed throughout the LXe. Other distributed radioactive isotopes, including $^{124}$Xe, $^{127}$Xe, $^{133}$Xe, $^{125}$I were simulated and shown to be subdominant. Low energy ($\lesssim 1.5$~MeV) $\gamma$-rays in general do not penetrate into the analysis volumes without depositing more than 100~keV in the LXe. Radon plate-out on the cathode was studied in Ref.~\cite{LZ:2026hpq} and found to have similar levels of activity as radioactivity in the cathode wires themselves, which are already included in the detector materials. A concern in radon daughter plate-out is high energy $\gamma$-rays associated with $^{214}$Bi, but a significant fraction of those will be observed with $^{214}$Po alpha decay. These contributions were therefore not included in the MSSI model. 
+
+
+
+
+The MSSI simulation is validated with a 5.4 tonne analysis volume, events in a higher energy sideband to the WS~ROI (HE~SB: 800 $<$ S1$_c$ $<$ 1700~phd, $10^{2.75}$ $<$ S2$c$ $<$ $10^{4.3}$~phd), and the \emph{prompt veto} sideband.  The 5.4 tonne analysis volume uses the same $z$ boundaries as Ref.~\cite{LZ:SR3_WS2024} with a radial boundary defined by requiring an expected wall background count of less than $(1.0 \pm 0.5)\times10^{-2}$ in the $3-600$~phd WS~ROI; the radial boundary in Ref.~\cite{LZ:SR3_WS2024} was defined by the same criterion over the $3-80$~phd ROI used in that analysis. 
+Figure~\ref{fig:MSSI_samples} shows the \emph{science} and \emph{prompt veto} samples for both analysis volumes in \{S1c, log$_{10}$(S2c)\} space, and Figure~\ref{fig:MSSI_FVs} shows $r^2-z$ projections for the WS ROI and the HE SB. 
+\autoref{tab:MSSI_comp} shows the counts in the various subsamples used to validate the MSSI model. The veto efficiency $\lambda_{MSSI}$ is much lower in the HE~SB of the 5.4-tonne analysis volume than the $94\pm2$\% reported for the main analysis, because the primary source of MSSI events in that sample is $^{214}$Pb RFR MSSI where the gamma is fully contained in the RFR.
+The model shows good agreement with each subsample, including the division between RFR and wall events; a binned Poisson likelihood chi-square test using the numbers in \autoref{tab:MSSI_comp} returns a p-value of 0.7~\cite{BAKER1984437}.
+Figure~\ref{fig:MSSI_contours} further splits up the HE~SB of the 5.4~tonne analysis volume into Wall and RFR components in the \emph{science} and \emph{prompt veto} samples, with contours showing the 68\% (solid) and 95\% (dashed) containment of the simulated MSSI model.
+The contours show broad agreement with the data, albeit with limited statistics. %, and a GoF test finds XXX. 
+
+In the HE~SB, the dominant component of the \emph{science} sample is predicted to be RFR events from $^{214}$Pb MSSI. 
+As a cross check, we deploy the radon tag~\cite{LZ:2025xxf}; 12 events occur in radon-tag-active periods, and 7 events are tagged, consistent with the measured radon tagging efficiency of 60\%. 
+In the same HE~SB, the \emph{veto} sample is expected to be dominated by detector radioactivity; the wall event and two of the RFR events are in radon-tag-active periods, with one of the RFR events radon tagged.  
+These findings support the overall compatibility of the model with the sideband data.  
+
+Under the hypothesis that the event of interest is MSSI consisting of two ER deposits where the first scatter is at the location of the event with S1 and S2 observed and the second scatter in a charge dead region with only S1 observed, the two scatters can be reconstructed. For an observed S2$c$ of 9268~phd, the expected energy of the first scatter is $12\pm2$~keV with an expected S1$c$ of $69\pm17$~phd, leaving approximately 471 phd for the S1$c$ of the second scatter. 
+Interpreted as a wall MSSI event (assuming the same $g_1$ as the bulk of the LXe), the second scatter would be $77\pm7$~keV. Interpreted as an RFR MSSI event (where the second scatter is in the high field of the RFR with suppressed recombination), the second scatter would be $204^{+65}_{-38}$~keV.  
+While we use event positions to determine whether or not an event is in the FV, we do not use the position explicitly in the statistical inference. We note that it is unlikely for any MSSI category to include a scatter with only $\sim$12~keV of energy deposition more than 20 cm from the boundaries of the TPC. Compton scattering of a high energy $\gamma$-ray requires a very shallow scattering angle to deposit so little energy, and thus the $\gamma$-ray must traverse more than 60~cm through LXe without a second interaction. A low energy $\gamma$-ray is very unlikely to penetrate far enough to photoabsorb. 
+
+
+
+\begin{figure}[!h]
+    \includegraphics[width=\columnwidth]{\plotfolder FigS4_mssi_sidebands_s1logs2.pdf}
+    \caption{\label{fig:MSSI_samples} Samples used for validation of the MSSI model in \{S1c, log$_{10}$(S2c)\} space: the 4.7~tonne FV used in this analysis (top row), an increased analysis volume of 5.4~tonne (bottom row), \emph{science} sample (left column), and \emph{prompt veto} sample (right column). 
+    The two green dashed boxes show the analysis regions for the comparison, with the WS~ROI for the analysis at lower S1 and the HE~SB at higher S1. Counts that appear in the green boxes in the 4.7~tonne FV are shown in grey in the larger 5.4~tonne volume. 
+    The observed counts in each sample are compared to the model predictions in~\autoref{tab:MSSI_comp}. 
+    }
+\end{figure}
+
+\begin{figure}[!h]
+    \includegraphics[width=0.45\columnwidth]{\plotfolder FigS5a_LE_MSSI_rz.pdf}
+    \includegraphics[width=0.45\columnwidth]{\plotfolder FigS5b_HE_MSSI_rz.pdf}
+    \caption{Reconstructed $r^2-z$ projections for the two analysis regions: WS~ROI of the main analysis (left) and the high energy sideband (HE~SB) used to validate the MSSI model (right). 
+    The \emph{science} and \emph{prompt veto} samples are denoted by black circles or orange crosses, respectively. 
+    In the WS~ROI, the events shown are 5$\sigma$ or greater from the ER band, with the event of interest shown as the brown star.
+    The dashed line indicates the reconstructed wall, averaged over azimuth, indicating the active volume.
+    The solid lines indicate the minimum and maximum radial extent of the 4.7~t (black) and 5.4~t (blue) analysis volumes.
+    }.
+    \label{fig:MSSI_FVs}
+\end{figure}
+
+\begin{figure}[!h]
+    \includegraphics[width=\columnwidth]{\plotfolder FigS6_mssi_HE_wall_and_rfr_sidebands_s1logs2.pdf}
+    \caption{\label{fig:MSSI_contours}
+    Data in the high energy sideband (HE~SB) used for validation of the MSSI model in \{S1c, log$_{10}$(S2c)\} space for the 5.4~tonne LXe analysis volume, split up by     \emph{science} sample (left column), \emph{prompt veto} sample (right column), wall MSSI (top row), and RFR MSSI (bottom row).
+    The contours are the 68\% (solid) and 95\% (dashed) containment regions for MSSI of that type in the relevant sample.
+    }
+\end{figure}
+
+
+\begin{table}[htbp]
+  \centering
+  \caption{Comparison of simulated and observed MSSI counts. The ``WS~ROI'' is the WIMP search region of interest used in the main analysis with ``HE~SB'' referring to the higher energy sideband. ``RFR'' events fall close to the cathode and ``wall'' events are higher in the TPC along the TPC walls. Two analysis volumes are shown, the 4.7 tonne fiducial volume used in the main analysis and a 5.4 tonne analysis volume similar to that used in previous WIMP searches~\cite{LZ:SR3_WS2024}; in this table, the analysis volumes are disjoint, with the larger one including only counts outside of the nested inner FV. A binned Poisson likelihood chi-square test excluding the data in the main analysis (WS~ROI, 4.7~tonne FV) finds a p-value of 0.7, suggesting compatibility. }
+  \setlength{\tabcolsep}{6pt} % Increases padding (default is 6pt)
+  \begin{tabular}{lcccccc}
+    \hline\hline
+    \multirow{2}{*}{Region} & MSSI &  Analysis Vol. & {Simulated}    & Observed   & Simulated  &Observed   \\ 
+     & type & (tonne) & \emph{science} &\emph{science} & \emph{prompt} & \emph{prompt} \\   \hline 
+    WS~ROI &Wall & 4.7 & 0.0048   & --  & 0.09 & -- \\
+    WS~ROI &RFR & 4.7  & 0.0001  & --  & 0.10 & -- \\ \hline
+    WS~ROI &Wall & 5.4 & 0.03   & 0  & 0.1 & 1 \\
+    WS~ROI &RFR & 5.4  & 0.003  & 0  & 1.9 & 2 \\
+     HE~SB &Wall & 4.7   & 0.1   & 0  & 0.3 & 1 \\
+    HE~SB &RFR & 4.7    & 0.5   & 0  & 0.5 & 0 \\
+    HE~SB &Wall & 5.4   & 0.5   & 0  & 2.2 & 0 \\
+    HE~SB &RFR & 5.4    & 21.5  & 18 & 5.2 & 3 \\   \hline\hline
+  \end{tabular}
+  \label{tab:MSSI_comp}
+\end{table}
+
+\clearpage
+
+\subsection{Neutrons}
+
+
+The dominant neutron component comes from ($\alpha$,n) reactions in detector materials. 
+Spontaneous fission neutrons are included in the statistical inference although the rate is up to two orders of magnitude lower than ($\alpha$,n): the high neutron and $\gamma$-ray multiplicity of spontaneous fission leads to a high probability of multiple interactions in the LZ detectors~\cite{LZ:simulations_2021}. 
+As a cross-check, multiple scatter neutrons were analyzed to provide a secondary estimate for the number of SS neutrons in the WS~ROI, predicting 0.02$\pm$0.02. 
+
+
+
+Muon-induced cascades can produce neutrons of up to GeV energies that are likely to be aligned with the muon direction.  
+Simulations of 2.1$\times10^{9}$ atmospheric muon events were generated using MUSUN~\cite{Kudryavtsev:2008qh}, equivalent to $1200$ years of LZ exposure, with no signal-like deposits seen.
+The muon simulations are validated against GEANT4 and FLUKA neutron yields~\cite{ARAUJO2005398, Pec:2023yic}, with an estimated uncertainty of a factor of 2. 
+Additional simulations of neutrons with energies ranging from 50~MeV -- 1~GeV produced in rock were carried out to evaluate the tagging efficiency of the veto system for the case when neither a muon nor any other secondary particle trigger any detector. 
+This tagging efficiency was found to be $80.0\pm4.0$\%. 
+We set a 90\% confidence level upper limit on the number of predicted SS events of any energy from muon-induced neutrons of $4.6 \times 10^{-4}$, and we do not include muon-induced neutrons in the background model. 
+
+
+
+\subsection{Interpretation of $\mathcal{O}_1$ as a cross-section}
+This analysis was performed in the isoscalar and isovector basis.
+To enable comparison to SI cross-sections, the constraints set on $\mathcal{O}_1^s$ can be recast through 
+\begin{equation}
+    (c_1^s \times m_\nu^2)^2 = \sigma^N_{SI}\frac{\pi \cdot m_\nu^4}{\mu^2},
+\end{equation}
+where $m_\nu$ is the Higgs vacuum expectation value and $\mu$ is the reduced mass of the WIMP-nucleon system.
+Figure~\ref{fig:inelastic_as_si} shows the recasting of $\mathcal{O}_1^s$ assuming scalar coupling.
+These limits can additionally be converted to limits on the cross-section for vector coupling by multiplying by a factor $(A/((A-Z)-(1-4\sin^2\theta_w)Z))^2\simeq 3.2$ (for Xe).
+
+
+\begin{figure}[!h]
+    \includegraphics[width=0.5\columnwidth]{\plotfolder FigS7_O1_as_SI.pdf}
+    \caption{\label{fig:inelastic_as_si}
+    Two-sided 90\% confidence-level intervals (solid-black) on inelastic DM-nucleon scattering cross sections assuming scalar normalization.
+    The black dotted line is the median sensitivity, and the green and yellow bands contain 68\% and 95\% of expected upper limits given the best-fit background model.
+    Previous limits are shown for CRESST-II (orange)~\cite{inelasticlimits:creest_2020,Bramante2016:inelasticDM}, PICO (red)~\cite{PICO:InelasticDM_2023}, Xenon-1T (green)~\cite{inelasticlimits:xenon1t}, PandaX-4T (blue)~\cite{PandaX4T:SI2023}, and LZ (violet)~\cite{LZ:SR1_NREFT_2023}.
+    Limits with a star indicate the limit was derived by the PICO collaboration~\cite{PICO:InelasticDM_2023}. 
+    }
+\end{figure}
+
+\subsection{Local significance}
+Table~\ref{tab:lagrangian_significance} contains the local significance of the Lagrangian models tested, and Table~\ref{tab:operator_significance} shows the same for the $\mathcal{O}_i$ models.
+A minimum of 30,000 toy distributions were generated for each case.
+The toys are used to determine the $p_0$ value of the fit to our data, from Eq.~6 of Ref.~\cite{DM_parameters:BAXTER2021_Conventions}.  The value in the table is the number of normal-distribution standard deviations (one-sided) that correspond to the observed $p_0$ for each model and WIMP mass.
+\input{table_local_significance}

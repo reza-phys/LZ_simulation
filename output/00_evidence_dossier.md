@@ -1,0 +1,82 @@
+# 00 · Evidence dossier: the LZ 248 keV nuclear-recoil-like event (arXiv:2609.02823)
+
+*Written 3 September 2026 (simulated), from the paper, its supplement, tables and figures only. Numbers marked [calc] come from `output/code/P000_dossier_checks.py` (results in `output/work/dossier/dossier_numbers.json`); numbers marked [paper] are quoted from the LZ paper; [recall] marks training knowledge. This dossier is frozen: later papers may dispute it but it will not be edited.*
+
+## 1. What the paper actually reports
+
+LZ extended its WIMP search region from S1c = 3–80 phd to 3–600 phd (nuclear recoils of roughly 5.4–270 keV at 50% efficiency, 96% average efficiency between 14 and 250 keV) in the same 220 live-day dataset used for the 2024 result, with a fiducial mass reduced by 14.5% to 4.71 ± 0.08 t (exposure 2.84 t·yr; check: 220 d × 4.71 t = 2.837 t·yr [calc]). One event appears deep in the high-energy part of the NR band: S1c = 540.1 phd, S2c = 9268 phd (log₁₀S2c = 3.967), 1.5σ below the NR-band median and 6.7σ below the ER-band median, reconstructed at 26.4 cm above the cathode (drift time ≈ 870 μs, read from Fig. 3) and 26.9 cm from the true wall, recorded 16 June 2023 21:22:39 UTC. Interpreted as an elastic NR it has E_R = 248 ± 23 (stat) ± 23 (sys) keV. Tested against 616 signal models (293 distinguishable spectra), the maximum local significance is 3.4σ, and the toy-MC global significance is 2.6σ. Upper limits are world-leading for every model tested, and two-sided 90% intervals lift off zero for many.
+
+## 2. Every quantitative handle, and what each does and does not establish
+
+| Handle | Value [paper] | Establishes | Does not establish |
+|---|---|---|---|
+| S1c, S2c | 540.1 phd, 9268 phd → Nph = 4910, Ne = 269, Nq = 5179 [calc, g₁ = 0.110, g₂ = 34.5] | Location in the NR band; recoil energy under the NR hypothesis | Whether the S1 is from one or two sites |
+| NR energy | 248 ± 23 ± 23 keV | Energy under the single-site NR hypothesis | The energy under MSSI (12 keV + 77 or 204 keV) or ER (~64–71 keV) hypotheses |
+| Position in band | −1.5σ (NR), −6.7σ (ER) | Strongly disfavours a *normal* β/γ ER; consistent with NR | Does not separate NR from wall-MSSI: Fig. S1a shows the MSSI 68% contour reaching log₁₀S2c ≈ 3.95 at S1c ≈ 540, so the event sits in the NR–MSSI overlap |
+| Position in TPC | z = 26.4 cm above cathode, r ≈ 45.9 cm, 26.9 cm from true wall, 12.8/9 cm FV margins | Inside the FV with margin; not a wall event by position | Whether a second S1-only deposit occurred in a charge-dead region elsewhere |
+| S2 pulse shape | consistent with a point-like single site at that depth | No second ionising deposit within the S2 window at a *different* z resolvable | A second deposit within a few mm of the same z, or an S1-only deposit |
+| S1 top/bottom asymmetry, hit pattern | consistent with reconstructed z (2σ) and x,y (1σ); disfavours RFR MSSI; cannot exclude wall MSSI | RFR-MSSI unlikely | Wall-MSSI vs genuine NR |
+| S1 pulse shape (PSD) | inconclusive at S1c ≈ 550 phd | Nothing | NR vs ER |
+| Background in the S1c > 500 phd panel (Fig. 5) | 0.0106 ± 0.0008 events, of which most lies at +1 to +5σ (ER tail); ≈ 5 × 10⁻⁵ per 0.5σ bin near −1.5σ | P(≥1 event anywhere in the panel) = 1.05% → 2.3σ one-sided on its own [calc]; P(≥1 within ±2σ of the NR median) ~ 2 × 10⁻⁴ | Whether the *model* is right; the 100% MSSI uncertainty encompasses only a ×2 change |
+| Local/global significance | 3.4σ local → p = 3.4 × 10⁻⁴; 2.6σ global → p = 4.7 × 10⁻³ | Effective number of independent trials ≈ 14 [calc] | An absolute DM probability; the test is against modelled backgrounds only |
+| Best-fit L₁₀ˢ (1000 GeV) signal | 1.0 (+1.4, −0.7) events | The event is fit as ~1 signal event; nothing else in the ROI pulls the signal | Which model; all high-mass models with high-energy spectra fit equally (3.0–3.4σ) |
+| Significance pattern (Tables S6, S7) | ≈ 0 for m ≤ 50 GeV, for L₁ˢ, L₅ˢ, elastic O₁ˢ; rises to 3.4σ for L₁₀, L₁₆ at m ≥ 400 GeV and for O₁ᵛ/O₄ at δ = 300–350 keV; "–" for 400 GeV, δ = 350 keV | Any explanation must produce a 248 keV recoil *without* a low-energy population: SI-like spectra give ≈ 900 events below 200 keV per event above 200 keV for a 1000 GeV WIMP [calc] | Where the significance peaks in δ: the grid stops at 350 keV while kinematics allow δ up to 387 keV (1000 GeV, June) [calc] |
+| Sample counts | science 1710 vs 1713 ± 39; prompt 66 vs 69.4 ± 11.7; delayed 55 vs 50.4 ± 2.0 | Global background model is adequate (all GoF p > 0.05) | Binned GoF is insensitive to a single outlier (the paper says so) |
+| MSSI sidebands | 12 bins, p = 0.7; HE-SB RFR 5.4 t: 21.5 predicted vs 18 observed; wall MSSI predicted 0.5–0.1 with 0 observed | RFR-MSSI normalisation is validated to ~20% | Wall-MSSI normalisation: the wall sidebands contain 0–1 events, so a ×5 wall-MSSI mismodelling is not excluded by data |
+| Radon tag | not applicable (mixed-flow state) | Nothing | Whether the event coincided with a ²¹⁴Pb decay; the ²¹⁴Pb rate in mixed flow is not given |
+| Calibration proximity | ⁵⁷Co removed 25 min before (opposite side, γ mean free path < 4 mm); AmBe on 8 June (8 d before) | ⁵⁷Co γ's cannot reach the FV | Activation products (¹²⁵Xe t½ 16.9 h, ¹²⁷Xe 36.4 d, ¹²⁹ᵐXe 8.9 d, ¹³¹ᵐXe 11.8 d, ¹³³Xe 5.2 d [recall]) present at elevated levels 8 d after AmBe |
+| Muons | OD muon 41 min before, TPC muon 127 min before | No prompt muon correlation | Delayed neutron/activation correlations are not analysed |
+| Salting | failed above ~55 keV; analysis therefore non-blind | Selections were frozen from the 2024 analysis | Freedom from bias in the new FV, ROI and MSSI handling; the FV shrink is a post-hoc-looking choice motivated by MSSI |
+| NEST retuning | new NR charge-yield break above E₀ = 74.7 keV (a = 0.0230, b = 0.0289), new ER fluctuation model | Tuned to AmBe up to 330 keV | Whether the NR-band width at 250 keV is right where the AmBe calibration is sparse "within a few cm of the event" |
+
+Two consistency checks worth recording. (i) With the LZ-tuned NEST parameters (Table S5, including the p(E) break), the NR-band centre at 248 keV is S1c ≈ 498 phd, log₁₀S2c ≈ 4.017, and at 270 keV S1c ≈ 549 phd; the observed S1c = 540 phd therefore corresponds to ≈ 265 keV on the S1 axis alone, while the S2c of 9268 phd is ≈ 0.05 dex low, which is the "1.5σ below the NR median" [calc]. The 248 keV quoted comes from the two-dimensional fit; a genuine NR of 260–270 keV is equally compatible, and that puts the event within ~1σ of the 269.9 keV 50%-efficiency edge. (ii) Under the ER hypothesis the combined energy is W(S1c/g₁ + S2c/g₂) = 70.9 keV (W = 13.7 eV) or 69.9 keV (13.5 eV) [calc], slightly above the ¹²⁴Xe (64.3 keV) and ¹²⁵I (67.3 keV) double-K-vacancy lines the paper invokes; the paper's "~64 keVee" presumably uses an energy scale tuned to the ER band, but Fig. 4's 70.6 keVee contour passes through the event. Either way, an ER at this energy would need a recombination fraction of ≈ 0.95 instead of the typical ≈ 0.76 [calc, NEST-LZ ER yields], i.e. only ≈ 269 of ≈ 5180 quanta appearing as electrons.
+
+## 3. Strongest points for a dark-matter interpretation
+
+1. **The background model predicts ~2 × 10⁻⁴ events within ±2σ of the NR median at S1c > 500 phd**, and the event is a clean, single-site, well-reconstructed interaction far from any surface. Every modelled background (accidentals, atmospheric-ν CEνNS, neutrons, MSSI) predicts a *population* dominated by lower energies or other band positions; none was seen.
+2. **Kinematic coherence.** A 248 keV Xe recoil needs m_χ ≳ 73 GeV (elastic, v_max on 16 June = 809 km/s) [calc], and the significance table indeed switches on between 50 and 100 GeV. For inelastic scattering the recoil requires δ ≤ 341/387/409 keV for m = 400/1000/4000 GeV [calc], which explains the "not physical" table entries at (400 GeV, 350 keV). The event is *exactly* where momentum-suppressed EFT operators and inelastic DM predict their spectra to peak (Fig. 1).
+3. **Timing.** The event fell 2 weeks after the annual-modulation maximum (≈ 2 June). For δ = 300 keV and m = 1000 GeV the predicted rate in the ROI is 2.5× higher in June than in December [calc]; for large δ the whole rate lives in the high-velocity tail, so a June event is the expected phase.
+4. **Blind-ish selections.** The event selection, likelihood and NEST model were fixed before unsalting, and the S1c < 600 phd ROI was inherited from the 2023 NREFT search.
+5. **Room in parameter space.** The best-fit couplings (Fig. 6) are below all previous limits (LUX, PandaX-II, LZ 2024), so no other experiment excludes the interpretation yet.
+
+## 4. Strongest points against
+
+1. **Global 2.6σ is weak evidence.** p = 0.5% with ~14 effective trials; single-event anomalies at this level (CDMS-II Si, CRESST-II, XENON1T's ER excess) have historically resolved as backgrounds or artifacts.
+2. **Non-blind analysis with a re-optimised fiducial volume.** The salting failed precisely in the high-energy signal region; the 14.5% FV cut and the 5.4 t MSSI sideband were defined with the event in hand.
+3. **The event lies in the NR–MSSI overlap.** The hit-pattern analysis cannot exclude a wall MSSI, and the wall-MSSI rate is constrained only by simulation (100% uncertainty by construction) and by sidebands containing 0–1 events. A ×50 mismodelling of *wall* MSSI (needed to make the −1.5σ location likely) is not obviously excluded by data.
+4. **An unmodelled ER tail.** The ¹²⁴Xe/¹²⁵I double-vacancy decays have enhanced recombination and the paper explicitly excludes the tail systematic from the inference; ≈ 30 such decays are expected in the ROI (21.0 + 8.9). A 6.7σ Gaussian tail is impossible, but the EC recombination distribution is not Gaussian.
+5. **Calibration proximity.** AmBe activation 8 days earlier populates the LXe, including charge-dead regions, with γ/IC emitters; the ⁵⁷Co deployment 25 min earlier means the detector was in a non-steady state (mixed flow, radon tag unavailable).
+6. **Marginal energy.** If the true recoil is 260–270 keV the event is at the efficiency edge, where the NR-band model relies on the sparse AmBe calibration and the new power-law break.
+7. **A single event carries no spectral or temporal information**, so the model-space degeneracy is total: L₂, L₄, L₆ᵛ, L₉–L₁₂, L₁₆, L₁₈–L₂₀, O₄ and O₁ᵛ at δ ≥ 300 keV all fit at 3.0–3.4σ.
+
+## 5. Full list of explanations, with initial probabilities
+
+| # | Explanation | P | Reasoning |
+|---|---|---|---|
+| A | Statistical fluctuation of a correctly modelled known background (atm-ν, accidentals, MSSI, ER leakage as modelled) | 0.10 | The model itself gives ~10⁻⁴ for this location, but the *union* of all modelled backgrounds over the panel is 1%; Poisson upward fluctuations of well-understood small backgrounds are the historical norm |
+| B | Mismodelled or unmodelled MSSI (wall charge-dead geometry, plate-out, activation γ emitters in dead regions, ²¹⁴Pb in mixed-flow) | 0.19 | The event is in the MSSI overlap; wall MSSI is simulation-only with tiny sideband statistics; the decomposition 12 keV + 471 phd S1-only is physically reasonable |
+| C | Mismodelled ER leakage (EC double-vacancy tail of ¹²⁴Xe/¹²⁵I, recombination-fluctuation tail, activation lines ¹²⁹ᵐXe/¹³¹ᵐXe/¹³³Xe) | 0.13 | E_ee ≈ 64–71 keV is suspiciously close to known lines with enhanced recombination; the tail systematic is explicitly not modelled |
+| D | Neutron of any origin ((α,n), spontaneous fission, muon-induced, photoneutron, AmBe-related delayed neutrons) | 0.08 | Needs E_n ≥ 8.3 MeV [calc] and would come with low-energy scatters; veto tagging 92%; but neutrons remain the only conventional single-site NR source |
+| E | Mismodelled accidental coincidence (isolated 540 phd S1 + isolated 270-electron S2 with matching drift time and S2 width) | 0.05 | UDT validation is good to 20% at low energies; the tail to large isolated S2s is poorly sampled |
+| F | Detector or reconstruction artifact (local charge loss making a ~71 keV ER look charge-poor; misclassified multi-site; PMT/electronics pathology; drift-time or position mis-reconstruction at 870 μs drift) | 0.18 | The event needs ~80% charge loss if it is an ER; long drift near the cathode maximises purity/field corrections; "unknown unknowns" dominate single-event anomalies |
+| G | Calibration-related effect not covered by B–F (⁵⁷Co deployment mechanics, AmBe activation, salting-induced bias in selection) | 0.05 | Temporal coincidence with calibration activity is the most striking circumstantial fact |
+| H | Non-DM new physics (exotic neutrino interactions, new neutral particles from the Sun or atmosphere) | 0.02 | Rates would also produce low-energy populations unless kinematically special |
+| I | Inelastic DM, δ ≈ 150–400 keV, m ≳ 200 GeV (Higgsino-like, dark-photon-mediated pseudo-Dirac, etc.) | 0.10 | Fits the energy, the absence of low-energy events, the June timing and the significance table; testable |
+| J | Heavy WIMP with momentum-/spin-suppressed elastic EFT interaction (magnetic dipole L₁₀, anapole L₁₆, L₂/L₄ etc.) | 0.06 | Fits, but these spectra also predict a low-energy shoulder (Fig. 1) that the 2024 low-energy search constrains |
+| K | Other DM (cosmic-ray-boosted or otherwise fast light DM, composite/multi-component DM, halo substructure/stream) | 0.04 | Can produce high-energy recoils without a low-energy population in special cases |
+| | **Total** | **1.00** | DM total 0.20; background/artifact total 0.78; non-DM new physics 0.02 |
+
+## 6. Open questions and the calculations or measurements that would answer them
+
+1. **Where does the likelihood actually peak in (m, δ)?** The δ grid stops at 350 keV but kinematics allow up to ≈ 390 keV at 1000 GeV. *Calculation:* our own extended-likelihood scan with WimPyDD spectra, the tuned NEST response and the paper's background numbers, out to δ_max(m).
+2. **How much can wall MSSI be mismodelled?** *Calculation:* a Poisson likelihood on the wall sideband bins (0.5 + 0.1 + 0.03 predicted, 0 observed in science; 2.2 + 0.3 + 0.1 predicted vs 0 + 1 + 1 observed in prompt) to obtain the 90% upper limit on a wall-MSSI scale factor, then the implied P(≥1 wall MSSI at the event's location).
+3. **What ER tail is needed?** *Calculation:* the recombination fraction required (≈ 0.95) versus the distribution implied by the double-skew-Gaussian σ_p model, and the number of ¹²⁴Xe/¹²⁵I double-vacancy decays expected.
+4. **Is the event's S1c/S2c consistent with 265 keV rather than 248 keV, and what does that do to the efficiency and to inelastic δ ranges?** *Calculation:* NEST-based 2D likelihood in (S1c, log S2c) with the tuned parameters and band widths.
+5. **What did other experiments already exclude?** XENONnT (3.1 t·yr, 2025) and PandaX-4T (1.54 t·yr, 2025) have comparable exposures but standard ROIs up to ~60–70 keV [recall]; PICO-60, CRESST, XENON1T and PandaX-4T inelastic limits are shown in Fig. S7 and are weaker. *Calculation:* recast of the best-fit couplings into expected event counts in those experiments' published ROIs.
+6. **What will LZ's post-April-2024 data show?** *Calculation:* Poisson predictions for the additional exposure (≈ 1.4–2.4 yr of livetime) under the best-fit models versus background, including the annual-modulation phase.
+7. **Is a high-energy single-site NR from neutrons really excluded?** *Calculation:* neutron elastic and inelastic recoil spectra for (α,n) and fission sources, expected multiplicity of accompanying low-energy events, and the muon-induced high-energy neutron rate at 4850 ft.
+8. **Was the detector state (mixed flow, ⁵⁷Co, AmBe activation) special?** *Measurement (LZ only):* ²¹⁴Pb and activation rates in the 24 h around the event; Skin/OD activity below veto thresholds within the S1 window. *Calculation (us):* activity of AmBe-induced isotopes 8 days after a typical calibration and their MSSI-capable decay branches.
+9. **Does the event's position (r ≈ 46 cm, z ≈ 26 cm) match the spatial PDFs of wall MSSI, RFR MSSI and neutrons?** *Calculation:* simple geometric models of γ-ray propagation from wall/RFR dead regions to the FV.
+10. **What does the DM interpretation require of the model?** *Calculation:* relic abundance, direct-detection couplings and collider/indirect constraints for Higgsino-like and dark-photon inelastic models at δ ≈ 200–390 keV, and for magnetic-dipole DM at d₁₀ ≈ 0.1–0.5.
+
+The papers in this corpus are organised to answer these questions.

@@ -1,0 +1,279 @@
+{
+ "v_lab_kms": 265.8187456667295,
+ "v_sun_kms": 250.55246955478208,
+ "vmax_june_kms": 809.8187456667295,
+ "v_lab_gal_kms": [
+  12.126047702280824,
+  264.92798658525174,
+  -18.04789291967677
+ ],
+ "A_min_1TeV_June": {
+  "250.0": 78.97387898934613,
+  "300.0": 96.18378180601741,
+  "350.0": 113.91544741085553,
+  "366.0": 119.70367102403355,
+  "380.0": 124.81485431433455
+ },
+ "gas_densities_kg_m3": {
+  "CF4_40": 0.19263970996305368,
+  "SF6_20": 0.15991285014546672,
+  "He_740": 0.1619924833780224,
+  "CF3I_40": 0.42884226342911613,
+  "Xe_40": 0.287427203615329,
+  "Xe_10bar": 54.61116868691251,
+  "HeSF6": 0.32190533352348916
+ },
+ "target_masses_1000m3_kg": {
+  "F_HeSF6": 124.77799395334158,
+  "F_CF4_40Torr": 166.37065860445546,
+  "Xe_40Torr": 287.42720361532895,
+  "I_CF3I_40Torr": 277.7952181171763
+ },
+ "L10_unit_coupling_LZ_count": 3.3240741156136946,
+ "L10_F_rates_per_tyr_bestfit": {
+  "10.0": 0.1496368434546495,
+  "20.0": 0.14599024040016778,
+  "50.0": 0.11373814253926702,
+  "100.0": 0.044265788000451695,
+  "150.0": 0.00936132840556725
+ },
+ "xe_full_window_rate_per_tyr": {
+  "300.0": 0.42940570250772936,
+  "350.0": 0.7824726134585289,
+  "366.0": 2.071251035625518,
+  "380.0": 12.575452716297788
+ },
+ "Ag_over_Xe_helm": {
+  "250.0": 0.26769572273487946,
+  "300.0": 0.09913458874358336,
+  "320.0": 0.018630601982542506
+ },
+ "N3_obs_dipole": {
+  "inelastic_248keV": {
+   "300.0": 30.349753879825887,
+   "350.0": 25.026798518500254,
+   "366.0": 24.230645769237732,
+   "380.0": 22.630520163585793
+  },
+  "inelastic_366_spectrum": 26.4553898497024,
+  "F_L10_gt20": 49.87152224514655,
+  "F_L10_gt50": 50.70485791178024,
+  "Xe_L10_elastic": 67.23997596658404
+ },
+ "toys": {
+  "June Xe E=248 delta=366": {
+   "5": 0.17333333333333334,
+   "8": 0.23866666666666667,
+   "10": 0.25466666666666665,
+   "15": 0.3393333333333333,
+   "20": 0.44,
+   "30": 0.616,
+   "50": 0.8406666666666667,
+   "80": 0.9633333333333334,
+   "120": 0.9973333333333333
+  },
+  "F L10 >20": {
+   "5": 0.038,
+   "8": 0.06066666666666667,
+   "10": 0.07666666666666666,
+   "15": 0.13133333333333333,
+   "20": 0.19666666666666666,
+   "30": 0.314,
+   "50": 0.5393333333333333,
+   "80": 0.774,
+   "120": 0.9253333333333333
+  },
+  "June Xe E=248 delta=0": {
+   "5": 0.021333333333333333,
+   "8": 0.044,
+   "10": 0.048,
+   "15": 0.07333333333333333,
+   "20": 0.09866666666666667,
+   "30": 0.158,
+   "50": 0.37266666666666665,
+   "80": 0.5913333333333334,
+   "120": 0.8353333333333334
+  }
+ },
+ "geometry": {
+  "LST_h": 8.11988176546415,
+  "apex_ra_dec": [
+   319.4419080516625,
+   43.74486756120416
+  ],
+  "apex_alt_az": [
+   -0.5105108264459696,
+   347.3512536373452
+  ],
+  "antiapex_ra_dec": [
+   139.44190805166244,
+   -43.744867561204146
+  ],
+  "antiapex_alt_az": [
+   0.5105108264460013,
+   167.35125363734528
+  ],
+  "apex_l_b": [
+   87.37933771088869,
+   -3.8931197926164427
+  ],
+  "sep_from_RA312p5_Dec45_deg": 5.11660431529186,
+  "apex_alt_range_day": [
+   -1.902034666319944,
+   89.39286744764783
+  ],
+  "frac_day_apex_below_horizon": 0.11418685121107267,
+  "recoil_directions": {
+   "June Xe E=248 delta=366": {
+    "alt_10_50_90": [
+     -12.785853908557906,
+     0.5584902610257444,
+     13.573627559394346
+    ],
+    "az_mean_deg": 167.37547765770057,
+    "az_68pct_halfwidth_deg": 11.046904157407312,
+    "frac_upward": 0.5241608254435524,
+    "frac_within_30deg_of_antiapex": 1.0
+   },
+   "June Xe E=248 delta=0": {
+    "alt_10_50_90": [
+     -45.81511208889455,
+     -0.001197033962008899,
+     46.14399083892107
+    ],
+    "az_mean_deg": 167.28153488682608,
+    "az_68pct_halfwidth_deg": 48.56345133813545,
+    "frac_upward": 0.49988553912365374,
+    "frac_within_30deg_of_antiapex": 0.22097466325306542
+   },
+   "F L10 >20": {
+    "alt_10_50_90": [
+     -39.57016373608858,
+     0.13481810505159633,
+     39.742262828307666
+    ],
+    "az_mean_deg": 167.22136333069233,
+    "az_68pct_halfwidth_deg": 38.15701465093079,
+    "frac_upward": 0.5021412687934868,
+    "frac_within_30deg_of_antiapex": 0.3411658270278504
+   }
+  }
+ },
+ "recalled": [
+  {
+   "item": "natural isotopes: Br 79/81 (50.7/49.3 %), Ag 107/109 (51.8/48.2 %), mean A 79.9 / 107.9",
+   "value": "A",
+   "presumed_source": "nuclear data tables",
+   "reliability": "certain"
+  },
+  {
+   "item": "nuclear masses approximated by A x amu (0.9315 GeV); error < 0.1 % in delta_max",
+   "value": "approx",
+   "presumed_source": "standard",
+   "reliability": "certain"
+  },
+  {
+   "item": "range exponent ~0.8 for 50-300 keV heavy ions (SRIM-like)",
+   "value": 0.8,
+   "presumed_source": "SRIM systematics",
+   "reliability": "uncertain"
+  },
+  {
+   "item": "F recoil range in CF4 at 40 Torr, 100 keV: ~2 mm (DMTPC ~1 mm at 75 Torr)",
+   "value": 2.0,
+   "presumed_source": "DMTPC/SRIM",
+   "reliability": "uncertain"
+  },
+  {
+   "item": "S recoil in 40 Torr CS2, 100 keV: ~1.5 mm (DRIFT); SF6 at 20 Torr similar density -> ~1.5 mm",
+   "value": 1.5,
+   "presumed_source": "DRIFT/SRIM",
+   "reliability": "uncertain"
+  },
+  {
+   "item": "Xe recoil range in LXe, 100 keV: ~0.07 um (projected; 0.05-0.1 um)",
+   "value": 7e-05,
+   "presumed_source": "SRIM (LXe, 2.9 g/cm3)",
+   "reliability": "uncertain"
+  },
+  {
+   "item": "Ag/Br recoil range in nuclear emulsion, 100 keV: ~0.1 um (NEWSdm: 100 nm ~ 30 keV C, ~100 keV Ag)",
+   "value": 0.0001,
+   "presumed_source": "NEWSdm/SRIM",
+   "reliability": "uncertain"
+  },
+  {
+   "item": "W recoil range in CaWO4, 100 keV: ~0.03 um",
+   "value": 3e-05,
+   "presumed_source": "SRIM",
+   "reliability": "uncertain"
+  },
+  {
+   "item": "ideal-gas densities at 293 K; molar masses CF4 88.0, SF6 146.1, CF3I 195.9, Xe 131.3, He 4.0 g/mol",
+   "value": "formula",
+   "presumed_source": "standard",
+   "reliability": "certain"
+  },
+  {
+   "item": "LXe density 2.9 g/cm3 (LZ conditions)",
+   "value": 2.9,
+   "presumed_source": "LZ/NEST",
+   "reliability": "likely"
+  },
+  {
+   "item": "iodine stopping in CF3I gas approximated by xenon-in-xenon scaled by mass density",
+   "value": "approx",
+   "presumed_source": "Bragg/Lindhard scaling",
+   "reliability": "uncertain"
+  },
+  {
+   "item": "directional thresholds: ~1 mm track for gas TPC head-tail, ~100 nm for NIT emulsions",
+   "value": "thresholds",
+   "presumed_source": "CYGNUS/NEWSdm design papers",
+   "reliability": "likely"
+  },
+  {
+   "item": "angular resolution 30 deg and head-tail efficiency 70 % for a gas-TPC directional detector at 100-250 keV",
+   "value": "30 deg / 0.70",
+   "presumed_source": "CYGNUS/DRIFT/DMTPC performance papers",
+   "reliability": "uncertain (assumption)"
+  },
+  {
+   "item": "SURF Davis campus latitude 44.352 N, longitude 103.751 W",
+   "value": 44.352,
+   "presumed_source": "geography (as P042)",
+   "reliability": "likely"
+  },
+  {
+   "item": "GMST = 18.697374558 + 24.06570982441908 D hours (D = JD - 2451545.0), UT1 ~ UTC to < 1 s",
+   "value": "formula",
+   "presumed_source": "USNO",
+   "reliability": "certain"
+  },
+  {
+   "item": "Cygnus / solar apex direction ~ RA 20h50m, Dec +45 deg (l ~ 90, b ~ 0)",
+   "value": "RA 312.5 Dec 45",
+   "presumed_source": "standard",
+   "reliability": "likely"
+  },
+  {
+   "item": "LZ efficiency: 50 % at 5.4 and 269.9 keV, 96 % plateau (paper); logistic roll-off widths 1.5/8 keV assumed",
+   "value": "model",
+   "presumed_source": "LZ paper Fig. S2 / P002",
+   "reliability": "likely"
+  },
+  {
+   "item": "CYGNUS-1000: 1000 m3 He:SF6 at 740:20 Torr (design option); pure CF4 at 40 Torr as alternative",
+   "value": "design",
+   "presumed_source": "CYGNUS white paper (Vahsen et al. 2020)",
+   "reliability": "uncertain"
+  },
+  {
+   "item": "NEWSdm nuclear-emulsion (NIT) programme: AgBr-C-N-O gel, 10 kg yr pilot to ~100 kg yr; Ag+Br ~ 78 % of the mass",
+   "value": "design",
+   "presumed_source": "NEWSdm LOI/papers",
+   "reliability": "uncertain"
+  }
+ ],
+ "runtime_s": 55.65984082221985
+}

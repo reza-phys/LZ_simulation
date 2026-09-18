@@ -1,0 +1,55 @@
+{
+ "id": "P021",
+ "title": "A full likelihood fit of the single LZ event in (m_chi, delta, sigma): where does inelastic dark matter actually prefer to sit?",
+ "date": "2026-09-08",
+ "agent_tools": [
+  {"tool": "Read", "count": 27, "detail": "PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv; papers P002, P007, P003, P009, P016, P008; work/P007/lz_intervals_digitised.csv; fulltext.tex lines 262-301, 462-501, 798-822, 878-911; code/common/lzcommon.py lines 18-59, 98-111, 159-218, 300-390; work/P016/P016_results.json; code/P016_joint_constraint.py lines 125-244; code/P007_higgsino_inelastic.py lines 40-109, 150-239; work/P021/figures fig1 (1x), fig2 (2x), fig3 (2x)"},
+  {"tool": "Bash", "count": 15, "detail": "grep of fulltext.tex section markers + ls of work dirs + lzcommon function index; grep of table labels, P007 efficiency, P016 bins; python: read P007 higgsino_couplings.json + ls provenance; python: WimPyDD kernel timing test + kinematic ceilings + ENVIRONMENT_versions.txt + P007 run_log; run P021 script --spectra s --no-analysis (111 s); run --spectra v hig with analysis (205 s); re-run after fixes (11 s); re-run + pandas print of all result tables (persisted output); awk extraction of 1000 GeV tables; awk extraction of Table S7/peaks/intervals tables; re-run after gauss3 fix + print of variants and global numbers; wc -w checks of the paper (4 runs)"},
+  {"tool": "Write", "count": 6, "detail": "output/code/P021_full_likelihood.py; output/work/P021/details.md; output/provenance/P021.json; output/papers/P021.md (written 3 times while trimming to the word budget)"},
+  {"tool": "Edit", "count": 16, "detail": "P021_full_likelihood.py (13): exact_p rewritten with q0(E) ordering (2 edits), companion-free criterion, median-delta interpolation sort, kappa grid to 1e3, Higgsino crossing on the rising branch, delta-preference block, -inf guard for p=1, fig2 shading/legend (2), fig3 label/legend (2), P007 window label, gauss3 variant keeps the 125-200 keV Poisson term; papers/P021.md (3): word-budget trims of Abstract and Results"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (chart conventions; Okabe-Ito categorical colours in fixed order by mass)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python"},
+  {"name": "numpy", "version": "2.5.3", "functions": "arrays, logspace, meshgrid, vectorised bisection for the nuisance profile, savez/load caches"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats.norm.pdf/cdf/sf/isf, special.erf/erfc"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, groupby, pivot, read_csv/to_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; plot, fill_between, contourf, errorbar, secondary_yaxis"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian (via lzcommon.wd_hamiltonian), streamed_halo_function with explicit vmin grid (lzcommon.wd_halo, day_of_the_year), diff_rate(Xe, ..., sum_over_streams=False, delta=...) per-stream kernels"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ dict, OSIG/OSIG_DELTAS (Table S7), M_V_GEV, M_NUCLEON_GEV, A_XE_MEAN, C_KMS, mu_red, m_nucleus_gev, E_R_range_keV, delta_max_kev, vmax_kms, v_earth_kms, wd, wd_halo, wd_hamiltonian, wd_c_from_anand"},
+  {"name": "profile-likelihood algebra", "version": "none: derived by hand", "functions": "q0 = 2[ln(f/b) - 1 + b/f] for one event with free normalisation; E* = delta mu/m_N at the kinematic ceiling; sigma_n = kappa mu_N^2/(pi m_v^4)"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P021_full_likelihood.py", "purpose": "WimPyDD O1 (s, v, Higgsino) inelastic spectra on a (m, delta) grid via per-stream kernels for annual/June/Sun halos (cached npz); efficiency x resolution smearing to observed energy; extended likelihood with P016 Fig. 5 bins, 125-200 keV bin and the unbinned 248 keV event; profile over coupling and ER-scale nuisance; Z(delta), 68/90% intervals, 2D (delta, kappa) surface, Table S7 and Fig. 6 comparisons, Higgsino fixed-coupling fit, exact single-event p check, variants; figures", "command": ".venv/bin/python output/code/P021_full_likelihood.py --spectra s --no-analysis ; .venv/bin/python output/code/P021_full_likelihood.py --spectra v hig ; .venv/bin/python output/code/P021_full_likelihood.py"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Results paragraph and Fig. 6 caption (lines 268-294); likelihood/LEE supplement incl. delta grid 0-350 keV and masses 400/1000/4000 (462-500); 'Interpretation of O1 as a cross-section' and Fig. S7 caption (800-818); Table S7 (880-909); efficiency numbers (117, 455-457)"},
+  {"file": "output/work/P007/lz_intervals_digitised.csv", "parts_used": "Fig. 6 top two-sided 90% intervals (c1s mv2)^2 lower/median/upper at delta = 0-350 keV"},
+  {"file": "output/work/P007/higgsino_couplings.json", "parts_used": "c0_wimpydd, c1_wimpydd, c_eq_isoscalar_mv2_sq = 0.0777, sigma_n = 7.40e-39 cm^2, vector factor 3.214"},
+  {"file": "output/code/P007_higgsino_inelastic.py", "parts_used": "efficiency edge sigma_hi = 11.5 keV; per-stream kernel method; 12-day annual halo average"},
+  {"file": "output/work/P016/P016_results.json", "parts_used": "fig5_top_digitised (sigma_bin_low, total, data_counts); b_H anchors 5.70e-4 / 3.37e-4; b_M = 0.02, n_M = 0; sig_theta = 0.3"},
+  {"file": "output/code/P016_joint_constraint.py", "parts_used": "few-bin likelihood structure (bins below +2 sigma, Gaussian signal fractions, theta nuisance)"},
+  {"file": "output/papers/P002.md; P003.md; P007.md; P008.md; P009.md; P016.md", "parts_used": "kinematic edges and true-energy percentiles (P002); WimPyDD coupling convention (P003); Higgsino window 358-380 keV and delta(N=1) (P007); N_eff 9.3/12.2/14.5 (P008); sigma_E 10-12 keV, E_ML 246/262 keV, E50 271.7 keV (P009); b_H, low-energy tolerance, Fig. 5 bins (P016)"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "LZ numbers, Table S7 (OSIG), kinematics, WimPyDD wrapper with explicit vmin grid, wd_c_from_anand"},
+  {"file": "output/00_evidence_dossier.md; output/results_ledger.csv; output/provenance/PAPER_GUIDE.md; environment/ENVIRONMENT_versions.txt", "parts_used": "context, prior headline results, deliverable format, package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "(hbar c)^2 = 0.3894e-27 GeV^2 cm^2 for converting GeV^-2 to cm^2", "presumed_source": "PDG constants", "reliability": "certain"},
+  {"item": "Wilks/Cowan asymptotics: one-sided discovery statistic q0, Z = sqrt(q0)", "presumed_source": "Cowan, Cranmer, Gross, Vitells EPJC 71 (2011) 1554", "reliability": "certain"},
+  {"item": "chi^2 quantiles: 1.0 and 2.706 (1 dof, 68.3% and 90%), 2.30 and 4.61 (2 dof)", "presumed_source": "standard statistics tables", "reliability": "certain"},
+  {"item": "profile-ratio (Feldman-Cousins-like) 90% interval for one observed event with negligible background is mu in [0.105, 3.65]", "presumed_source": "Feldman & Cousins PRD 57 (1998) 3873; reproduced numerically here (0.097-0.105, 3.64-3.65)", "reliability": "likely"},
+  {"item": "at the kinematic ceiling delta = mu v^2/2 the allowed recoil window collapses to E* = delta mu/m_N", "presumed_source": "derived from v_min(E_R, delta) = (m_N E_R/mu + delta)/sqrt(2 m_N E_R)", "reliability": "certain"},
+  {"item": "Okabe-Ito colour set is colour-vision-deficiency safe (figure cosmetics only)", "presumed_source": "Okabe & Ito 2008", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First exact single-event p-value summed background density where d(E) >= f_248 without requiring q0(E) > 0 (gave a finite p at the ceiling where q0_obs = 0) and ran only for S_M ~ 0; replaced by the q0(E)-ordering formula with p = 1 when q0_obs = 0, applied for S_L < 1e-3 S_tot (delta >= 335 keV)",
+  "Gaussian low-energy variant initially dropped the 125-200 keV Poisson term (Z = 3.22 instead of 2.68 at delta = 300 keV); corrected so that only the Fig. 5 bins are replaced by the penalty",
+  "delta at which 248 keV is the observed median was interpolated on a non-monotonic array (returned 395 keV); fixed by sorting (380.8 keV)",
+  "Higgsino-line crossing interpolation included kappa_hat = 0 at the ceiling (log 0); restricted to the rising branch up to the Z peak",
+  "2 keV true-energy grid rejected (x1.5 kernel time for < 1% change in smeared densities); 3 keV used",
+  "A 2D {S1c, log S2c} likelihood was not attempted (no public LZ PDFs); the 1D observed-energy model with P016's anchor is the proxy"
+ ],
+ "wimpydd_generated_files": []
+}

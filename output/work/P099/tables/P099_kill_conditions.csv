@@ -1,0 +1,7 @@
+interpretation,kill_condition,expected_date
+"inelastic O1, delta 335-390 keV (P082)","empty 600-1000 phd in LZ's untouched 6.76 t.yr: P(0|d366)=1.2e-4, P(0|d350)=0.08; any event <125 keV (LR<=0.04); Higgsino sub-case already excluded by solar capture (P076)",2027 (next LZ release)
+elastic q^4-spin (L10/O6/O9xq^2),zero band events in 17.9 t.yr unexamined (P(0)=0.12 best fit; UL90 -> rate <1.0x best fit); a second event above 300 keV with a 1000 phd edge (LR 6-7 for inelastic); definitive exclusion of the 0.105 lower edge needs 49-62 t.yr,"2027 (weak), 2033 XLZD (strong)"
+"exothermic down-scatter (P072, B<=2)",already P(0 companions | 1 band event)=exp(-5.4)=0.005 at |delta|=300 keV; any confirmed band event without a 125-200 keV companion,now / with the next event
+background one-off (modelled or transient),any new NR-band event above 200 keV in LZ: BF>=300 (P081); expected with P=0.25 per 2.8 t.yr under the DM posterior,2027
+steady LZ-specific unknown,an event in XENONnT/PandaX-4T (P(>=1)=0.71-0.94 at best fit); or LZ events in 270-420 or 55-200 keV (two extension events: P(DM)=0.99),mid-2027 (reanalysis) / 2027 (LZ 1000 phd)
+instrumental artefact / charge-poor ER,"waveform-level quantities (DR-003): S1 prompt fraction, S2 width, TBA; P041's predicted 65-101 charge-deficient ERs in the empty strip and 83mKr map hole",at LZ's discretion; no exposure needed

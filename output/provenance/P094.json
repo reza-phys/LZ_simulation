@@ -1,0 +1,70 @@
+{
+ "id": "P094",
+ "title": "Multi-component dark matter with a populated excited state: electron-recoil lines, low-threshold recoils and the two-state phenomenology across experiments",
+ "date": "2026-09-16",
+ "agent_tools": [
+  {"tool": "Read", "count": 13, "detail": "PAPER_GUIDE.md; papers P058, P026, P011, P065, P066; work/P058/details.md; code/common/lzcommon.py; LZ tex lines 148-159; inputs/figures_png/Fig4_science_sample_wbands.png; own figures fig1 x2, fig2 x3"},
+  {"tool": "Bash", "count": 18, "detail": "ls papers/work/P058 cache/data_requests; grep tex (ER band, ROI, 136Xe); grep dossier/P016/P038/ledger/plan (digitised ER, resolution, P072/P075); probe.py (WimPyDD targets, timing, NEST) x2; probe2.py (NEST ER yields); grep P065 script for W patch + sed WimPyDD 180W file; script runs x6 (.venv/bin/python output/code/P094_multicomponent.py); pandas table print + ENVIRONMENT_versions grep; ls cache/wc log; wc -w word counts"},
+  {"tool": "Write", "count": 4, "detail": "code/P094_multicomponent.py; work/P094/details.md; provenance/P094.json; papers/P094.md"},
+  {"tool": "Edit", "count": 23, "detail": "script x9: Ca/W target handling x2, column rename x2, threshold formula, Earth Pb rows, figure layout x2, self-up-scattering part + Fig.2 curve; papers/P094.md x13 (word-budget trimming); provenance/P094.json x1 (this count)"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette/mark guidance; JS validator skipped per PAPER_GUIDE)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python, run from simulation root"},
+  {"name": "numpy", "version": "2.5.3", "functions": "trapezoid, linspace, exp, interp, argmax"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats.norm.pdf (line shapes); special (via lzcommon)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, to_csv, to_string"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "pyplot (Agg), subplots, annotate, savefig"},
+  {"name": "nestpy", "version": "2.1.1", "functions": "via lz.nest_er_yields(E, params=NEST_ER_LZ): ER photon/electron yields at 20-380 keV"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "diff_rate with delta<0 (exothermic) and delta>0 (Fe, Xe up-scattering) on Xe/Ar/Ge/Si/O/Ca/W/Na/I/Fe via lz.wd_rate; streamed_halo_function via lz.wd_halo (Sun frame); eft_hamiltonian via lz.wd_hamiltonian; runtime injection of np into 18xW/4xCa response modules (P065 fix, no file edited)"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ dict, C_KMS, AMU_GEV, M_NUCLEON_GEV, GEV_TO_CM2, RHO0_GEV_CM3, V0_KMS, VESC_KMS, v_earth_kms, vmin_kms (check), nest_er_yields, wd, wd_halo, wd_hamiltonian, wd_rate, NEST_ER_LZ"},
+  {"name": "none: derived by hand", "version": "-", "functions": "relativistic chi2 e -> chi1 e two-body kinematics; electron trace and exothermic cross-section sigma v = sigma_e c (p_f/m_e)(1+delta/2m_e); self-scattering threshold sqrt(8 delta/m); v_min,opt = sqrt(2 delta/mu); sigma_0 = 4 pi alpha_D^2 m^2/m_A'^4"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P094_multicomponent.py", "purpose": "Parts A-F: electron-line kinematics and rate, LZ ER-line sensitivity estimate, WimPyDD exothermic spectra on 9 targets + CaWO4/NaI, per-experiment counts, re-population (thresholds, Earth/Sun/ISM/CR, halo self-up-scattering steady state), (tau,f2) map, two figures", "command": ".venv/bin/python output/code/P094_multicomponent.py  (26 s cached / ~50 s cold)"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules, deliverables, template"},
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "WS ROI definition (line 114), Fig. 4 caption (148-159), Table I counts (1710; internal beta 1341; 136Xe 110), er_projection text (line 305)"},
+  {"file": "inputs/figures_png/Fig4_science_sample_wbands.png", "parts_used": "ER band leaves the ROI ceiling at S1c ~150 phd; grey ER population to >800 phd"},
+  {"file": "output/papers/P058.md + output/work/P058/details.md", "parts_used": "R_ROI per unit f2 (proton-only 859/1.81e4/1.43e5/2.64e6), joint f2 limits, tau0(m_A'=1 GeV), E*/half-width formulae, vmin sign pitfall, sigma_p(N=1) at 366 keV, ROI acceptance"},
+  {"file": "output/papers/P026.md", "parts_used": "f2,fo = 0.50 (dark photon), 0.42 (Higgsino); tau_nunu(Higgsino) = 1.2e6 s; Planck photon-channel window 2e12-1e19 s"},
+  {"file": "output/papers/P011.md", "parts_used": "sigma_p(N=1) table; sigma_p = 16 pi alpha alpha_D eps^2 mu_p^2/m_A'^4; relic alpha_D = 0.0073/0.0245/0.073"},
+  {"file": "output/papers/P066.md", "parts_used": "f2/tau_gamma < 5e-24-5e-23 s^-1 (SPI, gamma channel)"},
+  {"file": "output/papers/P065.md + output/code/P065_midm.py", "parts_used": "W target runtime patch; I/W target context"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "constants, LZ dict, NEST ER yields, WimPyDD wrapper"},
+  {"file": "output/01_landscape_and_plan.md", "parts_used": "P072/P075 planned topics (papers not yet written)"},
+  {"file": "output/work/P058/cache/", "parts_used": "not needed: WimPyDD calls were fast enough (0.01-0.04 s) to recompute per-target spectra directly"}
+ ],
+ "recalled_knowledge": [
+  {"item": "m_e = 0.51099895 MeV, m_p = 0.938272 GeV, N_A, c, t_U = 13.8 Gyr, G_F = 1.1664e-5 GeV^-2", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "Electron trace for vector current: Tr[(p_f+m)gamma^0(p_i+m)gamma^0] = 4(E_f E_i + p_f.p_i + m^2)", "presumed_source": "textbook QED", "reliability": "certain"},
+  {"item": "136Xe 2nbb half-life 2.165e21 yr", "presumed_source": "EXO-200, PRC 89, 015502 (2014)", "reliability": "likely"},
+  {"item": "136Xe Q-value 2457.8 keV; natural abundance 8.857 %", "presumed_source": "nuclear data tables", "reliability": "certain"},
+  {"item": "Primakoff-Rosen 2nbb summed-energy spectrum K(T0-K)^5(1+2K+4K^2/3+K^3/3+K^4/30)", "presumed_source": "Primakoff & Rosen 1959 / reviews", "reliability": "likely"},
+  {"item": "LXe TPC ER resolution sigma/E = 0.32/sqrt(E/keV) + 0.0015", "presumed_source": "XENON1T, EPJC 80, 785 (2020); LZ similar", "reliability": "likely"},
+  {"item": "214Pb ground-state beta branch Q = 1019 keV, daughter Z = 83; allowed shape with Fermi function", "presumed_source": "nuclear data", "reliability": "likely"},
+  {"item": "Earth core mass fraction 0.325 (Fe/Ni), R_core = 3480 km, R_E = 6371 km", "presumed_source": "geophysics", "reliability": "likely"},
+  {"item": "Bulk-Earth Pb abundance ~0.2 ppm by mass", "presumed_source": "cosmochemistry", "reliability": "uncertain"},
+  {"item": "ISM heavy-nucleus (A>100) number density ~1e-9 cm^-3; Sun Fe/H = 3e-5; solar core escape speed ~1400 km/s", "presumed_source": "solar abundances / solar model", "reliability": "uncertain"},
+  {"item": "Cosmic-ray proton flux above ~GeV ~1 cm^-2 s^-1", "presumed_source": "PDG cosmic rays", "reliability": "likely"},
+  {"item": "Exposures: XENONnT SR0+SR1 ~3.1 t yr (uncertain); PandaX-4T Run0+Run1 1.54 t yr (likely); XENON1T 1.0 t yr (certain); DEAP-3600 758 t d (likely); DarkSide-50 16 660 kg d (likely); SuperCDMS Soudan iZIP 1690 kg d (likely); EDELWEISS-III 496 kg d (likely); CRESST-III 5.6 kg d (likely); COSINE-100 ~172 kg yr (uncertain)", "presumed_source": "respective collaboration papers", "reliability": "mixed, as flagged"},
+  {"item": "Analysis ranges: CRESST-III 0.03-16 keV; SuperCDMS iZIP 8-115 keV; DarkSide-50 ~30-200 keV_nr; DEAP-3600 WIMP ROI ~50-100 keV_nr; XENONnT ER search 1-140 keV_ee", "presumed_source": "respective papers", "reliability": "likely"},
+  {"item": "XENON1T/XENONnT double-weak-decay (124Xe, 136Xe) and PandaX-4T 2nbb/0nbb analyses publish ER spectra to >2.5 MeV; EXO-200 threshold ~1 MeV; KamLAND-Zen ~0.5 MeV", "presumed_source": "collaboration papers 2019-2024", "reliability": "likely"},
+  {"item": "39Ar activity in atmospheric argon ~1 Bq/kg; LAr pulse-shape discrimination strongest at high energy", "presumed_source": "DEAP/DarkSide papers", "reliability": "likely"},
+  {"item": "Self-interaction bound sigma/m < ~1 cm^2/g (Bullet cluster)", "presumed_source": "Randall et al. 2008", "reliability": "likely"},
+  {"item": "Off-diagonal A' vertex in the Majorana basis (P011); chi1 chi1 -> chi1 chi2 absent at tree level", "presumed_source": "pseudo-Dirac literature / P011", "reliability": "certain"},
+  {"item": "Maxwellian relative-speed distribution has v0_rel = sqrt(2) v0", "presumed_source": "kinetic theory", "reliability": "certain"},
+  {"item": "Helm form-factor nodes in Xe at ~102 and ~266 keV", "presumed_source": "P002/P003 corpus", "reliability": "certain (corpus)"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "lz.dRdE_SI with delta<0 for light targets (vmin sign pitfall) -- replaced by WimPyDD diff_rate with delta<0",
+  "WimPyDD Ca and W targets crashed (NameError np in 42Ca/180W response files) -- fixed at runtime as in P065, no file edited",
+  "Initial threshold formula v_min,opt = sqrt(delta/2mu) wrong by factor 2 (exposed by WimPyDD Fe up-scattering = 0); corrected to sqrt(2 delta/mu) and checked against lz.vmin_kms",
+  "Using LZ WS-ROI counts to bound the ER line: the line sits at S1c 1400-1700 phd, log10 S2c 5.5-5.6, outside the ROI; replaced by a background estimate for LZ's high-energy ER data",
+  "First figure layouts had label collisions; fixed"
+ ],
+ "wimpydd_generated_files": ["none outside output/ (31 cached spectra in output/work/P094/cache/*.npy)"]
+}

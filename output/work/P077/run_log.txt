@@ -1,0 +1,118 @@
+== 1. optical MC ==
+z=  -7.0  coll=0.132 f_top=0.078 TBA=-0.844  <t>=11.86 med= 2.59 sd=21.99  <t>_bot= 9.00 <t>_top=45.67  direct_bot=0.38
+z=  -2.0  coll=0.128 f_top=0.098 TBA=-0.803  <t>=14.34 med= 4.17 sd=23.94  <t>_bot=11.00 <t>_top=44.99  direct_bot=0.66
+z=   2.0  coll=0.123 f_top=0.118 TBA=-0.764  <t>=17.25 med= 6.49 sd=25.12  <t>_bot=13.68 <t>_top=43.89  direct_bot=0.89
+z=  10.0  coll=0.121 f_top=0.148 TBA=-0.704  <t>=20.44 med= 9.60 sd=26.77  <t>_bot=16.25 <t>_top=44.57  direct_bot=1.34
+z=  26.4  coll=0.117 f_top=0.212 TBA=-0.576  <t>=26.70 med=16.16 sd=28.98  <t>_bot=22.29 <t>_top=43.10  direct_bot=2.26
+z=  40.0  coll=0.116 f_top=0.275 TBA=-0.451  <t>=30.64 med=20.66 sd=29.52  <t>_bot=26.65 <t>_top=41.19  direct_bot=3.03
+z=  60.0  coll=0.111 f_top=0.358 TBA=-0.283  <t>=34.76 med=24.89 sd=30.83  <t>_bot=32.72 <t>_top=38.42  direct_bot=4.16
+z=  73.0  coll=0.112 f_top=0.414 TBA=-0.172  <t>=35.68 med=26.07 sd=30.72  <t>_bot=35.74 <t>_top=35.59  direct_bot=4.89
+z= 100.0  coll=0.109 f_top=0.527 TBA=+0.053  <t>=36.10 med=26.75 sd=31.79  <t>_bot=42.53 <t>_top=30.32  direct_bot=6.41
+z= 120.0  coll=0.113 f_top=0.601 TBA=+0.201  <t>=33.85 med=25.15 sd=31.73  <t>_bot=46.10 <t>_top=25.71  direct_bot=7.54
+z= 140.0  coll=0.114 f_top=0.666 TBA=+0.332  <t>=30.75 med=21.73 sd=32.10  <t>_bot=48.26 <t>_top=21.97  direct_bot=8.67
+variants at z_event: n=1.9 -> <t>=29.68 sd=32.06;  lambda_R=30 -> <t>=27.29 sd=29.52;  PTFE R=0.90 -> coll=0.101 <t>=22.11 sd=23.91 f_top=0.19
+[14s]
+NR_base   <t_emit> = 11.40 ns
+NR_lo     <t_emit> = 15.00 ns
+NR_hi     <t_emit> =  7.50 ns
+ER_base   <t_emit> = 18.33 ns
+ER_fast   <t_emit> = 16.12 ns
+ER_slow   <t_emit> = 20.14 ns
+ER_rec    <t_emit> = 22.83 ns
+ER_zeroF  <t_emit> = 66.32 ns
+
+== 2/3. pulse simulation at the event depth ==
+[65s]  N_det AmBe = 297
+NR_base  vs ER_base  [540 ] d<t_emit>= -6.93 ns | fp20: d=3.41 leak50=0.000 | tmean: d=3.73 | dig tmean d=3.76 | ideal LLR d=4.54 LR(NRmed)=52651.5 LR(ERmed)=2.5e-05
+NR_base  vs ER_base  [AmBe] d<t_emit>= -6.93 ns | fp20: d=2.70 leak50=0.003 | tmean: d=2.86 | dig tmean d=2.87 | ideal LLR d=3.39 LR(NRmed)=410.3 LR(ERmed)=0.0032
+NR_lo    vs ER_fast  [540 ] d<t_emit>= -1.12 ns | fp20: d=1.15 leak50=0.123 | tmean: d=0.58 | dig tmean d=0.58 | ideal LLR d=1.39 LR(NRmed)=3.1 LR(ERmed)=0.36
+NR_lo    vs ER_fast  [AmBe] d<t_emit>= -1.12 ns | fp20: d=0.85 leak50=0.197 | tmean: d=0.42 | dig tmean d=0.42 | ideal LLR d=0.99 LR(NRmed)=1.8 LR(ERmed)=0.59
+NR_hi    vs ER_slow  [540 ] d<t_emit>=-12.64 ns | fp20: d=6.17 leak50=0.000 | tmean: d=6.99 | dig tmean d=7.04 | ideal LLR d=8.35 LR(NRmed)=4396281101247645.5 LR(ERmed)=2e-16
+NR_hi    vs ER_slow  [AmBe] d<t_emit>=-12.64 ns | fp20: d=4.89 leak50=0.000 | tmean: d=5.36 | dig tmean d=5.39 | ideal LLR d=6.16 LR(NRmed)=415087686.7 LR(ERmed)=3e-09
+NR_base  vs ER_rec   [540 ] d<t_emit>=-11.43 ns | fp20: d=5.59 leak50=0.000 | tmean: d=6.04 | dig tmean d=6.07 | ideal LLR d=7.37 LR(NRmed)=1963091895581.8 LR(ERmed)=8.8e-13
+NR_base  vs ER_rec   [AmBe] d<t_emit>=-11.43 ns | fp20: d=4.35 leak50=0.000 | tmean: d=4.57 | dig tmean d=4.59 | ideal LLR d=5.43 LR(NRmed)=6408471.1 LR(ERmed)=3.2e-07
+NR_base  vs ER_zeroF [540 ] d<t_emit>=-54.92 ns | fp20: d=15.87 leak50=0.000 | tmean: d=20.66 | dig tmean d=20.69 | ideal LLR d=23.02 LR(NRmed)=416811854074527682013928081797342917304433580359521116728840886416930056851312082480554548573859269229062876631010383311424392040421160329936896.0 LR(ERmed)=9.9e-151
+NR_base  vs ER_zeroF [AmBe] d<t_emit>=-54.92 ns | fp20: d=12.32 leak50=0.000 | tmean: d=15.57 | dig tmean d=15.58 | ideal LLR d=17.12 LR(NRmed)=15337654733612077099053385617247214740736328034960532676036879604055185645633536.0 LR(ERmed)=2.7e-83
+[120s]
+
+== 3b. optics variants (540 phd) ==
+optics=fast NR_base vs ER_base: d_fp20=3.75 d_tmean=4.16 d_llr=5.03 leak50=0.000  fp20 ER/NR=0.351/0.446
+optics=fast NR_lo vs ER_fast: d_fp20=1.15 d_tmean=0.58 d_llr=1.45 leak50=0.071  fp20 ER/NR=0.374/0.403
+optics=none NR_base vs ER_base: d_fp20=7.17 d_tmean=5.96 d_llr=8.72 leak50=0.000  fp20 ER/NR=0.649/0.797
+optics=none NR_lo vs ER_fast: d_fp20=1.91 d_tmean=0.88 d_llr=3.28 leak50=0.001  fp20 ER/NR=0.687/0.728
+[150s]
+
+== 4. scan of the NR singlet/triplet ratio at fixed lifetimes (ER fixed at I_s/I_t = 0.5, 3/26 ns) ==
+Delta= 0.5 ns tau_t= 26.0 | 540: d_fp=0.28 d_tm=0.27 d_llr=0.20 LR(NRmed)=0.92 | AmBe: d_llr=0.13 LR=1.02 | 100phd d_llr=0.08
+Delta= 1.0 ns tau_t= 26.0 | 540: d_fp=0.50 d_tm=0.50 d_llr=0.41 LR(NRmed)=1.05 | AmBe: d_llr=0.35 LR=1.14 | 100phd d_llr=0.21
+Delta= 1.8 ns tau_t= 26.0 | 540: d_fp=0.99 d_tm=0.96 d_llr=1.07 LR(NRmed)=2.00 | AmBe: d_llr=0.78 LR=1.51 | 100phd d_llr=0.46
+Delta= 2.6 ns tau_t= 26.0 | 540: d_fp=1.37 d_tm=1.34 d_llr=1.64 LR(NRmed)=4.23 | AmBe: d_llr=1.26 LR=2.53 | 100phd d_llr=0.68
+Delta= 3.8 ns tau_t= 26.0 | 540: d_fp=2.01 d_tm=1.98 d_llr=2.51 LR(NRmed)=28.59 | AmBe: d_llr=1.92 LR=7.23 | 100phd d_llr=1.08
+Delta= 5.1 ns tau_t= 26.0 | 540: d_fp=2.75 d_tm=2.70 d_llr=3.46 LR(NRmed)=452.67 | AmBe: d_llr=2.53 LR=31.31 | 100phd d_llr=1.49
+Delta= 6.1 ns tau_t= 26.0 | 540: d_fp=3.27 d_tm=3.21 d_llr=4.17 LR(NRmed)=8541.59 | AmBe: d_llr=3.12 LR=162.22 | 100phd d_llr=1.81
+Delta= 7.7 ns tau_t= 26.0 | 540: d_fp=4.14 d_tm=4.11 d_llr=5.27 LR(NRmed)=1561891.24 | AmBe: d_llr=3.88 LR=2599.91 | 100phd d_llr=2.22
+Delta= 9.6 ns tau_t= 26.0 | 540: d_fp=5.14 d_tm=5.29 d_llr=6.52 LR(NRmed)=4898847130.22 | AmBe: d_llr=4.92 LR=275379.42 | 100phd d_llr=2.90
+[255s]
+n_AmBe= 5: d(AmBe)<0.89 -> Delta<1.98 ns -> d(540)<1.21 -> LR at NR median < 2.08
+n_AmBe=10: d(AmBe)<0.63 -> Delta<1.51 ns -> d(540)<0.85 -> LR at NR median < 1.43
+n_AmBe=30: d(AmBe)<0.37 -> Delta<1.00 ns -> d(540)<0.44 -> LR at NR median < 1.10
+mean ratio d(540)/d(AmBe) = 1.34 (sqrt(540/297) = 1.35)
+
+== 5. position dependence ==
+z=   2.0: fp20 ER=0.4168+-0.0241 NR=0.5242 | <t> ER=36.61+-1.67 NR=29.97 | rise ER=20.07+-1.52
+z=  10.0: fp20 ER=0.3816+-0.0248 NR=0.4831 | <t> ER=39.12+-1.75 NR=32.44 | rise ER=22.01+-1.59
+z=  26.4: fp20 ER=0.3135+-0.0240 NR=0.3987 | <t> ER=43.90+-1.82 NR=37.33 | rise ER=25.56+-1.65
+z=  40.0: fp20 ER=0.2745+-0.0231 NR=0.3508 | <t> ER=46.66+-1.86 NR=40.05 | rise ER=27.30+-1.73
+z=  60.0: fp20 ER=0.2454+-0.0237 NR=0.3149 | <t> ER=49.06+-1.92 NR=42.54 | rise ER=28.73+-1.75
+z=  73.0: fp20 ER=0.2342+-0.0232 NR=0.2997 | <t> ER=49.88+-1.93 NR=43.31 | rise ER=29.19+-1.84
+z= 100.0: fp20 ER=0.2075+-0.0217 NR=0.2668 | <t> ER=52.34+-1.95 NR=45.79 | rise ER=30.73+-1.85
+z= 120.0: fp20 ER=0.2186+-0.0211 NR=0.2782 | <t> ER=51.73+-1.95 NR=45.20 | rise ER=31.79+-1.83
+z= 140.0: fp20 ER=0.2446+-0.0207 NR=0.3103 | <t> ER=50.31+-1.89 NR=43.65 | rise ER=32.01+-1.88
+{
+ "shift_tmean_26_to_100_ns": 8.434708317437014,
+ "shift_fp20_26_to_100": -0.10594727986942615,
+ "ER_NR_tmean_diff_ns": 6.569368176730954,
+ "ER_NR_fp20_diff": 0.08521153111236035,
+ "shift_over_ERNR_tmean": 1.283945136050251,
+ "shift_over_ERNR_fp": -1.2433443981862446,
+ "slope_tmean_ns_per_cm": 0.24305945014150243,
+ "slope_fp20_per_cm": -0.0034496538892906364,
+ "residual_pm5cm_in_sigma_tmean": 0.6662967008159535,
+ "residual_pm10cm_in_sigma_tmean": 1.332593401631907,
+ "residual_pm5cm_in_sigma_fp": 0.7198723557643236,
+ "residual_pm10cm_in_sigma_fp": 1.4397447115286472,
+ "sigma_tmean_540": 1.8239580793650145,
+ "sigma_fp20_540": 0.02396017753472399
+}
+
+== 6. RFR vs FV origin ==
+z=  -7.0: rise10-50=16.13+-1.37 ns  t10=2.90 t50=19.03  f_top=0.078 TBA=-0.844  direct_bot=0.38 ns  fp20=0.4848
+z=  -2.0: rise10-50=17.69+-1.44 ns  t10=3.68 t50=21.38  f_top=0.098 TBA=-0.803  direct_bot=0.66 ns  fp20=0.4569
+z=   2.0: rise10-50=20.05+-1.53 ns  t10=4.60 t50=24.65  f_top=0.118 TBA=-0.764  direct_bot=0.89 ns  fp20=0.4166
+z=  10.0: rise10-50=22.02+-1.59 ns  t10=5.92 t50=27.93  f_top=0.148 TBA=-0.704  direct_bot=1.34 ns  fp20=0.3815
+z=  26.4: rise10-50=25.63+-1.69 ns  t10=9.08 t50=34.71  f_top=0.212 TBA=-0.576  direct_bot=2.26 ns  fp20=0.3124
+{
+ "direct_path_offset_ns": 1.8828387682126275,
+ "rise_diff_ns": 9.499801038640957,
+ "rise_separation_sigma": 6.184545310704717,
+ "TBA_RFR": -0.8441499603579115,
+ "TBA_event": -0.5759395915565471,
+ "sigma_TBA_540": 0.03517926543349283,
+ "TBA_separation_sigma": 7.624103729750183,
+ "fp20_separation_sigma": 7.140288776548165,
+ "c_lxe_cm_per_ns": 17.739171597633135
+}
+
+== 7. single-event LR table ==
+NR_base|ER_base|540          d= 4.54  LR(NR med)=52651.50  LR(ER med)=2.45e-05  LR(mid)=1.14  leak50=0.000
+NR_lo|ER_fast|540            d= 1.39  LR(NR med)=    3.06  LR(ER med)=0.36  LR(mid)=1.05  leak50=0.083
+NR_hi|ER_slow|540            d= 8.35  LR(NR med)=4396281101247645.50  LR(ER med)=2.04e-16  LR(mid)=0.95  leak50=0.000
+NR_base|ER_rec|540           d= 7.37  LR(NR med)=1963091895581.78  LR(ER med)=8.81e-13  LR(mid)=1.31  leak50=0.000
+NR_base|ER_zeroF|540         d=23.02  LR(NR med)=416811854074527682013928081797342917304433580359521116728840886416930056851312082480554548573859269229062876631010383311424392040421160329936896.00  LR(ER med)=9.89e-151  LR(mid)=0.00  leak50=0.000
+Gaussian d=0.5: LR at NR median = 1.13, at ER median = 0.882, midway = 1; leak50 = 0.309
+Gaussian d=1.0: LR at NR median = 1.65, at ER median = 0.607, midway = 1; leak50 = 0.159
+Gaussian d=1.5: LR at NR median = 3.08, at ER median = 0.325, midway = 1; leak50 = 0.067
+Gaussian d=2.0: LR at NR median = 7.39, at ER median = 0.135, midway = 1; leak50 = 0.023
+Gaussian d=3.0: LR at NR median = 90.02, at ER median = 0.011, midway = 1; leak50 = 0.001
+
+done in 302 s

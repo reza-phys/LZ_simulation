@@ -1,0 +1,25 @@
+stratum,B_DM,f_FP,Bprime,r_mean,P_median,P_lo68,P_hi68,P_hi95,P_naive_median,P_naive_hi68
+"DD, new physics",P027 uniform spectra,f_FP=1,1.1233,0.0625,0.0347,0.0031,0.1409,0.3160,0.3440,0.7054
+"DD, new physics",P027 uniform spectra,f_FP=3,0.3744,0.0625,0.0118,0.0010,0.0518,0.1335,0.3440,0.7054
+"DD, new physics",P027 uniform spectra,f_FP=10,0.1123,0.0625,0.0036,0.0003,0.0161,0.0442,0.3440,0.7054
+"DD, new physics",P027 class priors,f_FP=1,1.9658,0.0625,0.0591,0.0055,0.2230,0.4471,0.4786,0.8074
+"DD, new physics",P027 class priors,f_FP=3,0.6553,0.0625,0.0205,0.0018,0.0873,0.2123,0.4786,0.8074
+"DD, new physics",P027 class priors,f_FP=10,0.1966,0.0625,0.0062,0.0005,0.0279,0.0748,0.4786,0.8074
+"all, new physics",P027 uniform spectra,f_FP=1,1.1233,0.0192,0.0100,0.0009,0.0429,0.1049,0.1290,0.3953
+"all, new physics",P027 uniform spectra,f_FP=3,0.3744,0.0192,0.0034,0.0003,0.0147,0.0376,0.1290,0.3953
+"all, new physics",P027 uniform spectra,f_FP=10,0.1123,0.0192,0.0010,0.0001,0.0045,0.0116,0.1290,0.3953
+"all, new physics",P027 class priors,f_FP=1,1.9658,0.0192,0.0174,0.0016,0.0727,0.1701,0.2059,0.5336
+"all, new physics",P027 class priors,f_FP=3,0.6553,0.0192,0.0059,0.0005,0.0255,0.0640,0.2059,0.5336
+"all, new physics",P027 class priors,f_FP=10,0.1966,0.0192,0.0018,0.0002,0.0078,0.0201,0.2059,0.5336
+"all, new physics, in window",P027 uniform spectra,f_FP=1,1.1233,0.0356,0.0190,0.0017,0.0794,0.1890,0.2207,0.5575
+"all, new physics, in window",P027 uniform spectra,f_FP=3,0.3744,0.0356,0.0064,0.0006,0.0280,0.0721,0.2207,0.5575
+"all, new physics, in window",P027 uniform spectra,f_FP=10,0.1123,0.0356,0.0019,0.0002,0.0086,0.0228,0.2207,0.5575
+"all, new physics, in window",P027 class priors,f_FP=1,1.9658,0.0356,0.0328,0.0030,0.1312,0.2896,0.3314,0.6880
+"all, new physics, in window",P027 class priors,f_FP=3,0.6553,0.0356,0.0112,0.0010,0.0479,0.1196,0.3314,0.6880
+"all, new physics, in window",P027 class priors,f_FP=10,0.1966,0.0356,0.0034,0.0003,0.0149,0.0392,0.3314,0.6880
+"all, new physics, few-event",P027 uniform spectra,f_FP=1,1.1233,0.1252,0.0750,0.0072,0.2848,0.5635,0.5422,0.8532
+"all, new physics, few-event",P027 uniform spectra,f_FP=3,0.3744,0.1252,0.0263,0.0024,0.1172,0.3008,0.5422,0.8532
+"all, new physics, few-event",P027 uniform spectra,f_FP=10,0.1123,0.1252,0.0080,0.0007,0.0383,0.1143,0.5422,0.8532
+"all, new physics, few-event",P027 class priors,f_FP=1,1.9658,0.1252,0.1243,0.0125,0.4106,0.6932,0.6746,0.9105
+"all, new physics, few-event",P027 class priors,f_FP=3,0.6553,0.1252,0.0452,0.0042,0.1885,0.4296,0.6746,0.9105
+"all, new physics, few-event",P027 class priors,f_FP=10,0.1966,0.1252,0.0140,0.0013,0.0651,0.1843,0.6746,0.9105

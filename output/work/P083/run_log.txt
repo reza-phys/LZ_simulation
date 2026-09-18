@@ -1,0 +1,173 @@
+=== compilation ===
+{'n_total': 45, 'n_primary': 43, 'n_uncertain': 2, 'n_DD': 11, 'n_few_event': 10, 'n_in_window': 24, 'n_unresolved': 14, 'n_sig_unknown': 9, 'outcomes': {'unresolved': 13, 'statistical': 9, 'contradicted': 7, 'real': 4, 'artefact': 4, 'background': 3, 'theory_revision': 3}, 'outcomes_by_prior': {'artefact': {'expected': 0, 'new': 4}, 'background': {'expected': 0, 'new': 3}, 'contradicted': {'expected': 0, 'new': 7}, 'real': {'expected': 4, 'new': 0}, 'statistical': {'expected': 1, 'new': 8}, 'theory_revision': {'expected': 0, 'new': 3}, 'unresolved': {'expected': 3, 'new': 10}}}
+
+=== outcomes by prior type (primary) ===
+ outcome     artefact  background  contradicted  real  statistical  theory_revision  unresolved
+prior_type                                                                                    
+expected           0           0             0     4            1                0           3
+new                4           3             7     0            8                3          10
+
+=== Beta posteriors (Jeffreys, resolved only) ===
+                         stratum  k  n  n_unresolved     mean     lo68     hi68     hi95  up95_onesided
+                 DD, new physics  0  7             1 0.062500 0.002805 0.127175 0.292436       0.232465
+      DD, new physics, in window  0  4             0 0.100000 0.004776 0.206739 0.444763       0.362487
+            broader, new physics  0 18             9 0.026316 0.001116 0.052644 0.128558       0.099876
+ broader, new physics, in window  0  9             5 0.050000 0.002200 0.101160 0.237610       0.187366
+                all, new physics  0 25            10 0.019231 0.000807 0.038336 0.094683       0.073239
+     all, new physics, in window  0 13             5 0.035714 0.001537 0.071771 0.172619       0.134893
+     all, new physics, few-event  0  3             2 0.125000 0.006233 0.260859 0.535583       0.444067
+           all, expected process  4  5             3 0.750000 0.579029 0.915206 0.977487       0.963553
+all, expected process, in window  3  4             2 0.700000 0.499539 0.893671 0.971529       0.953993
+                       all items  4 30            13 0.145161 0.083744 0.206756 0.286529       0.259343
+            all items, in window  3 17             7 0.194444 0.104131 0.285357 0.400123       0.361577
+
+=== variants (DD & all new physics) ===
+                    stratum            variant    prior  k  n     mean     lo68     hi68  up95_onesided
+            DD, new physics      resolved only Jeffreys  0  7 0.062500 0.002805 0.127175       0.232465
+            DD, new physics      resolved only  uniform  0  7 0.111111 0.021558 0.204729       0.312344
+            DD, new physics unresolved as null Jeffreys  0  8 0.055556 0.002466 0.112689       0.207508
+            DD, new physics unresolved as null  uniform  0  8 0.100000 0.019186 0.184228       0.283129
+            DD, new physics unresolved as real Jeffreys  1  8 0.166667 0.052772 0.283884       0.396673
+            DD, new physics unresolved as real  uniform  1  8 0.200000 0.080522 0.321787       0.429136
+           all, new physics      resolved only Jeffreys  0 25 0.019231 0.000807 0.038336       0.073239
+           all, new physics      resolved only  uniform  0 25 0.037037 0.006683 0.068057       0.108830
+           all, new physics unresolved as null Jeffreys  0 35 0.013889 0.000578 0.027614       0.053028
+           all, new physics unresolved as null  uniform  0 35 0.027027 0.004831 0.049631       0.079847
+           all, new physics unresolved as real Jeffreys 10 35 0.291667 0.216657 0.366725       0.421111
+           all, new physics unresolved as real  uniform 10 35 0.297297 0.222865 0.371772       0.425460
+all, new physics, in window      resolved only Jeffreys  0 13 0.035714 0.001537 0.071771       0.134893
+all, new physics, in window      resolved only  uniform  0 13 0.066667 0.012377 0.122693       0.192636
+all, new physics, in window unresolved as null Jeffreys  0 18 0.026316 0.001116 0.052644       0.099876
+all, new physics, in window unresolved as null  uniform  0 18 0.050000 0.009135 0.091946       0.145869
+all, new physics, in window unresolved as real Jeffreys  5 18 0.289474 0.187007 0.392274       0.468723
+all, new physics, in window unresolved as real  uniform  5 18 0.300000 0.198926 0.401351       0.475797
+
+=== selection corrections ===
+                     stratum    r_obs  f_null_over_f_real  unrecalled_per_recalled  r_corrected
+            DD, new physics 0.062500                1.00                        0     0.062500
+            DD, new physics 0.062500                1.00                        2     0.020833
+            DD, new physics 0.062500                1.00                        5     0.010417
+            DD, new physics 0.062500                0.50                        0     0.032258
+            DD, new physics 0.062500                0.50                        2     0.010753
+            DD, new physics 0.062500                0.50                        5     0.005376
+            DD, new physics 0.062500                0.33                        0     0.021526
+            DD, new physics 0.062500                0.33                        2     0.007175
+            DD, new physics 0.062500                0.33                        5     0.003588
+           all, new physics 0.019231                1.00                        0     0.019231
+           all, new physics 0.019231                1.00                        2     0.006410
+           all, new physics 0.019231                1.00                        5     0.003205
+           all, new physics 0.019231                0.50                        0     0.009709
+           all, new physics 0.019231                0.50                        2     0.003236
+           all, new physics 0.019231                0.50                        5     0.001618
+           all, new physics 0.019231                0.33                        0     0.006429
+           all, new physics 0.019231                0.33                        2     0.002143
+           all, new physics 0.019231                0.33                        5     0.001071
+all, new physics, in window 0.035714                1.00                        0     0.035714
+all, new physics, in window 0.035714                1.00                        2     0.011905
+all, new physics, in window 0.035714                1.00                        5     0.005952
+all, new physics, in window 0.035714                0.50                        0     0.018182
+all, new physics, in window 0.035714                0.50                        2     0.006061
+all, new physics, in window 0.035714                0.50                        5     0.003030
+all, new physics, in window 0.035714                0.33                        0     0.012075
+all, new physics, in window 0.035714                0.33                        2     0.004025
+all, new physics, in window 0.035714                0.33                        5     0.002012
+
+=== DD claim rate === {'n_DD_new_physics_claims_2008_2026': 8, 'rate_per_yr': 0.427807486631015, 'pure_fluctuation_expectation_per_yr': {'10 results/yr x 10 trials': np.float64(0.13417274686916336), '10 results/yr x 30 trials': np.float64(0.39714169702206426), '20 results/yr x 10 trials': np.float64(0.2683454937383267), '20 results/yr x 30 trials': np.float64(0.7942833940441285)}}
+
+=== survival ===
+                                            stratum  n  n_resolved       F1       F2       F3       F5      F10  median_yr
+                                   all new physics 35          25 0.171429 0.400000 0.457143 0.571429 0.664336        4.0
+new physics, independent comparable test available 24          20 0.250000 0.458333 0.541667 0.708333 0.800000        3.0
+       new physics, no comparable independent test 11           5 0.000000 0.272727 0.272727 0.272727 0.363636        inf
+                            direct detection (all) 10           8 0.200000 0.400000 0.640000 0.760000 1.000000        3.0
+                           few-event (n <= 5), all  9           5 0.333333 0.444444 0.583333 0.583333 0.583333        3.0
+                                  expected process  8           5 0.375000 0.375000 0.791667 0.791667 0.791667        3.0
+                            new physics, in window 18          13 0.111111 0.333333 0.333333 0.555556 0.611111        4.0
+
+=== routes ===
+                       new physics (resolved)  few-event (resolved)  DD (resolved)  share_new_physics
+route                                                                                               
+calibration_hardware                       2                     0              1               0.08
+independent_expt                          13                     2              5               0.52
+more_data_same                             4                     1              1               0.16
+reanalysis                                 3                     2              1               0.12
+theory                                     3                     0              0               0.12
+                      count  median       mean
+route                                         
+calibration_hardware      2    1.85   1.850000
+independent_expt         13    2.00   3.623077
+more_data_same            4    1.75   1.550000
+reanalysis                3    1.70   2.400000
+theory                    3    7.00  10.666667
+
+=== few-event items ===
+  id                                        name                  n_events     outcome  t_res_yr            route indep_comparable
+A03                CDMS-II silicon three events          3 (0.7 expected) statistical       0.5 independent_expt              yes
+A08                CDMS-II germanium two events          2 (0.8 expected) statistical       1.0 independent_expt              yes
+B06                   LEP Higgs hint at 115 GeV ~4 ALEPH candidate events statistical       3.0       reanalysis               no
+B09        IceCube two PeV cascades (2012 data)                         2        real       0.7   more_data_same               no
+B10 IceCube Glashow-resonance candidate (6 PeV)                         1  unresolved       NaN             none               no
+B11          KM3NeT KM3-230213A (~220 PeV muon)                         1  unresolved       NaN             none              yes
+B12   ANITA anomalous upgoing air-shower events    2 (flights 2006, 2014)  unresolved       NaN             none               no
+B31         KOTO K_L -> pi0 nu nubar candidates         4 (0.05 expected)  background       1.5       reanalysis               no
+B33                AMS-02 antihelium candidates             ~8 candidates  unresolved       NaN             none               no
+
+=== LZ posterior (P061 Eq. 3) ===
+                     stratum                 B_DM    f_FP   Bprime   r_mean  P_median   P_lo68   P_hi68   P_hi95  P_naive_median  P_naive_hi68
+            DD, new physics P027 uniform spectra  f_FP=1 1.123288 0.062495  0.034675 0.003127 0.140912 0.316036        0.344023      0.705430
+            DD, new physics P027 uniform spectra  f_FP=3 0.374429 0.062495  0.011832 0.001045 0.051841 0.133465        0.344023      0.705430
+            DD, new physics P027 uniform spectra f_FP=10 0.112329 0.062495  0.003579 0.000314 0.016138 0.044166        0.344023      0.705430
+            DD, new physics    P027 class priors  f_FP=1 1.965753 0.062495  0.059144 0.005460 0.223026 0.447090        0.478563      0.807353
+            DD, new physics    P027 class priors  f_FP=3 0.655251 0.062495  0.020524 0.001827 0.087326 0.212312        0.478563      0.807353
+            DD, new physics    P027 class priors f_FP=10 0.196575 0.062495  0.006247 0.000549 0.027904 0.074812        0.478563      0.807353
+           all, new physics P027 uniform spectra  f_FP=1 1.123288 0.019224  0.010046 0.000888 0.042855 0.104861        0.129036      0.395295
+           all, new physics P027 uniform spectra  f_FP=3 0.374429 0.019224  0.003371 0.000296 0.014705 0.037581        0.129036      0.395295
+           all, new physics P027 uniform spectra f_FP=10 0.112329 0.019224  0.001014 0.000089 0.004457 0.011579        0.129036      0.395295
+           all, new physics    P027 class priors  f_FP=1 1.965753 0.019224  0.017448 0.001553 0.072661 0.170127        0.205888      0.533576
+           all, new physics    P027 class priors  f_FP=3 0.655251 0.019224  0.005885 0.000518 0.025453 0.063963        0.205888      0.533576
+           all, new physics    P027 class priors f_FP=10 0.196575 0.019224  0.001773 0.000156 0.007775 0.020088        0.205888      0.533576
+all, new physics, in window P027 uniform spectra  f_FP=1 1.123288 0.035574  0.019033 0.001695 0.079448 0.188960        0.220746      0.557533
+all, new physics, in window P027 uniform spectra  f_FP=3 0.374429 0.035574  0.006426 0.000566 0.027964 0.072065        0.220746      0.557533
+all, new physics, in window P027 uniform spectra f_FP=10 0.112329 0.035574  0.001937 0.000170 0.008557 0.022768        0.220746      0.557533
+all, new physics, in window    P027 class priors  f_FP=1 1.965753 0.035574  0.032840 0.002962 0.131216 0.289633        0.331434      0.687997
+all, new physics, in window    P027 class priors  f_FP=3 0.655251 0.035574  0.011192 0.000989 0.047932 0.119647        0.331434      0.687997
+all, new physics, in window    P027 class priors f_FP=10 0.196575 0.035574  0.003384 0.000297 0.014879 0.039175        0.331434      0.687997
+all, new physics, few-event P027 uniform spectra  f_FP=1 1.123288 0.125234  0.075047 0.007161 0.284771 0.563487        0.542247      0.853223
+all, new physics, few-event P027 uniform spectra  f_FP=3 0.374429 0.125234  0.026333 0.002399 0.117168 0.300843        0.542247      0.853223
+all, new physics, few-event P027 uniform spectra f_FP=10 0.112329 0.125234  0.008048 0.000721 0.038291 0.114330        0.542247      0.853223
+all, new physics, few-event    P027 class priors  f_FP=1 1.965753 0.125234  0.124334 0.012465 0.410645 0.693162        0.674588      0.910497
+all, new physics, few-event    P027 class priors  f_FP=3 0.655251 0.125234  0.045191 0.004190 0.188481 0.429555        0.674588      0.910497
+all, new physics, few-event    P027 class priors f_FP=10 0.196575 0.125234  0.014000 0.001261 0.065138 0.184276        0.674588      0.910497
+
+=== prior translation === {
+ "B_typ": 14.6,
+ "pi_DM_implied_DD_Lrest001": {
+  "median": 0.009348722643532044,
+  "lo68": 0.0007147382906606824,
+  "hi68": 0.04304449763892057,
+  "up95": 0.0825300234257537
+ },
+ "pi_DM_implied_DD_Lrest01": {
+  "median": 0.0436975785644832,
+  "lo68": 0.0033194305160839494,
+  "hi68": 0.2019662964626822,
+  "up95": 0.38786377093935154
+ },
+ "P061_loguniform_pi_median": 0.017320508075688773,
+ "loglog_fit_check_ratio": {
+  "r=0.02": 0.9783722641372506,
+  "r=0.05": 1.022542010922177,
+  "r=0.1": 1.028447837899266,
+  "r=0.2": 0.9719242948400441
+ },
+ "r_needed_for_pi_0p089": 0.2497108330850138,
+ "prob_r_exceeds_that": {
+  "DD": 0.041104621489227916,
+  "all": 0.0001392234494551914
+ },
+ "r_equivalent_to_P061_median": 0.054622923226743385,
+ "pi_up95_translated": 0.08239850614197407,
+ "frac_P061_logu_range_above_up95": 0.2265540758245654
+}
+
+=== LZ timeline === {'P_resolved_within_1yr': 0.25, 'P_resolved_within_2yr': 0.45833333333333337, 'P_resolved_within_3yr': 0.5416666666666667, 'P_resolved_within_5yr': 0.7083333333333334, 'median_yr': 3.0, 'claim_date': '2026-09-02', 'route_shares_in_stratum': {'independent_expt': 0.55, 'more_data_same': 0.15, 'theory': 0.15, 'calibration_hardware': 0.1, 'reanalysis': 0.05}}

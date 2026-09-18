@@ -1,0 +1,207 @@
+{
+ "id": "P092",
+ "title": "Sidereal and diurnal effects on the high-velocity tail: is there any time-of-day information in a delta ~ 300-385 keV event?",
+ "date": "2026-09-16",
+ "agent_tools": [
+  {
+   "tool": "Read",
+   "count": 13,
+   "detail": "PAPER_GUIDE.md; papers P006, P018, P034, P042, P055, P067; lzcommon.py lines 18-62, 110-210, 310-395; P055_gaia_substructures.py lines 44-104; P067_directional.py lines 40-80 and 346-376; P034_modulation_test.py lines 40-120; figures fig1/fig2/fig3 (visual check)"
+  },
+  {
+   "tool": "Bash",
+   "count": 16,
+   "detail": "ls output/papers (P085 absent), work/P055, work/P067; grep function lists in lzcommon, P055, P067, P034 scripts; cat P055 earth_velocity_validation.json; grep P034/P018 details (a1, KL, N3sigma, slope); grep corpus for 'diurnal|sidereal' (none); python probes of WimPyDD streamed_halo_function / _maxwellian / v_earth_sun / diff_rate source, isotopes_list convention, Xe isotope masses, unit-stream timing (3 probes); grep ENVIRONMENT_versions.txt; .venv/bin/python output/code/P092_diurnal.py (4 runs: 2 syntax fixes, 2 complete); cat P092 CSVs and run_log; python print of P092_results.json; wc -w budget checks (4); cross-check of paper numbers vs details/log; ls deliverables; this JSON update"
+  },
+  {
+   "tool": "Write",
+   "count": 5,
+   "detail": "output/code/P092_diurnal.py; output/work/P092/details.md; output/provenance/P092.json; output/papers/P092.md (written twice: first draft over budget)"
+  },
+  {
+   "tool": "Edit",
+   "count": 10,
+   "detail": "P092_diurnal.py: savetxt clean-up, JSON key names, ephemeris sanity block (2), Fig. 2 linear axis; P092.md: 5 budget-trimming edits (Results x2, Q&A, KEY NUMBERS x2, compact table)"
+  }
+ ],
+ "software": [
+  {
+   "name": "python",
+   "version": "3.12.13",
+   "functions": ".venv/bin/python run from the simulation root"
+  },
+  {
+   "name": "numpy",
+   "version": "2.5.3",
+   "functions": "linalg.norm, linalg.lstsq (cosine fit), trapezoid, clip, interp, savez/load"
+  },
+  {
+   "name": "scipy",
+   "version": "1.18.1",
+   "functions": "stats.norm.cdf (efficiency roll-off)"
+  },
+  {
+   "name": "matplotlib",
+   "version": "3.11.2",
+   "functions": "pyplot (Agg), three PNG figures"
+  },
+  {
+   "name": "pandas",
+   "version": "3.0.5",
+   "functions": "Timestamp (wimprates j2000 input)"
+  },
+  {
+   "name": "astropy",
+   "version": "8.0.1",
+   "functions": "time.Time (JD for analytic GMST), coordinates.get_body_barycentric_posvel (built-in ERFA ephemeris, Earth and Sun; offline), SkyCoord/CartesianRepresentation for the fixed ICRS<->Galactic rotation; iers auto_download disabled; no AltAz frame used"
+  },
+  {
+   "name": "wimprates",
+   "version": "0.5.0",
+   "functions": "earth_velocity, j2000 (validation of the geocentric lab velocity); numericalunits for units"
+  },
+  {
+   "name": "WimPyDD",
+   "version": "2.0.4",
+   "functions": "diff_rate (per-isotope unit-stream response via isotopes_list={0:[i]}, sum_over_streams=True; day-halo validation), eft_hamiltonian (via lz.wd_hamiltonian), v_earth_sun, streamed_halo_function (via lz.wd_halo, explicit v_min grid), Xe.mass / Xe.abundance / Xe.a"
+  },
+  {
+   "name": "common/lzcommon.py",
+   "version": "corpus shared library",
+   "functions": "LZ dict (ev_time_utc, E_50pct_low/high_keV, eff_plateau, exposure_tyr), V0_KMS, VESC_KMS, V_SUN_PEC, A_XE_MEAN, C_KMS, GEV_TO_CM2, M_NUCLEON_GEV, eta0, mu_red, m_nucleus_gev, delta_max_kev, v_earth_kms, wd, wd_halo, wd_hamiltonian, wd_rate"
+  },
+  {
+   "name": "none: derived by hand",
+   "version": "-",
+   "functions": "rotation-vector projection V_ROT cos(Dec_apex) sin(-HA); d delta_max/dv = sqrt(2 m_N E_R)/c; Gaussian N_3sigma = 9 Var/(dE)^2 and 18/a1^2; gravitational blueshift v_esc^2/(2v); focusing order (v_esc/v)^2; mean free path 1/(sigma_n rho/m_u sum f_A A^3); chord geometry s = -r sin a + sqrt(r^2 sin^2 a + R^2 - r^2)"
+  }
+ ],
+ "scripts_and_commands": [
+  {
+   "path": "output/code/P092_diurnal.py",
+   "purpose": "lab velocity vector vs UTC (Sun + astropy orbit + analytic rotation), ephemeris and wimprates/P055 validation, delta_max vs time, per-isotope WimPyDD O1 response x analytic Baxter eta at the exact lab speed, sidereal modulation amplitude/phase/KL/N_3sigma, event-hour likelihood ratio, apex alt-az, gravitational focusing and Earth-shadowing estimates, hourly table, figures, JSON",
+   "command": ".venv/bin/python output/code/P092_diurnal.py   (23-37 s; caches output/work/P092/P092_unit_stream_kernel.npz)"
+  }
+ ],
+ "local_inputs": [
+  {
+   "file": "output/provenance/PAPER_GUIDE.md",
+   "parts_used": "all rules, deliverables, template, budgets"
+  },
+  {
+   "file": "inputs/LZ_arXiv_2609.02823_fulltext.tex (via lzcommon.LZ)",
+   "parts_used": "event time 2023-06-16T21:22:39 UTC, 248 keV, efficiency 50% points 5.4/269.9 keV and 0.96 plateau, exposure 2.84 t yr"
+  },
+  {
+   "file": "output/papers/P006.md",
+   "parts_used": "date LR, v_E(16 June) = 266, delta_max 387.3 keV, N_3sigma Gaussian formula"
+  },
+  {
+   "file": "output/papers/P018.md; output/work/P018/details.md",
+   "parts_used": "d delta_max/dv = 0.8218 keV/(km/s); v_esc 528/560 variants; bin-averaged-eta remark"
+  },
+  {
+   "file": "output/papers/P034.md; output/work/P034/details.md; output/code/P034_modulation_test.py",
+   "parts_used": "a1 0.43/1.18/1.52/1.66, KL 0.047/0.39/0.72/0.90 nats, N_3sigma 96.5/11.5/6.5/5.3; annual-mean unit counts; efficiency parametrisation; stream-kernel convention"
+  },
+  {
+   "file": "output/papers/P042.md",
+   "parts_used": "SURF vertical projection, lab frame on 16 June"
+  },
+  {
+   "file": "output/papers/P055.md; output/work/P055/earth_velocity_validation.json; output/code/P055_gaia_substructures.py",
+   "parts_used": "from-scratch circular-orbit frame, vE(event) = 265.963, wimprates 265.977, Hipparcos matrix"
+  },
+  {
+   "file": "output/papers/P067.md; output/work/P067/P067_summary.json; output/work/P067/P067_run_log.txt; output/code/P067_directional.py",
+   "parts_used": "apex RA 319.4 Dec 43.7, alt -0.5 az 347.4 at LST 8.120 h; altitude range -1.9..89.4; GMST formula and alt-az routine; recoil az 167 +- 11"
+  },
+  {
+   "file": "output/code/common/lzcommon.py",
+   "parts_used": "halo constants, kinematics, eta0, WimPyDD wrappers, coupling conventions"
+  },
+  {
+   "file": "output/results_ledger.csv",
+   "parts_used": "header and recent rows (to confirm P085 absent and no diurnal paper exists)"
+  },
+  {
+   "file": "environment/ENVIRONMENT_versions.txt",
+   "parts_used": "package versions"
+  }
+ ],
+ "recalled_knowledge": [
+  {
+   "item": "SURF Davis campus latitude 44.352 N, longitude 103.751 W",
+   "presumed_source": "geography (as P042/P067)",
+   "reliability": "likely"
+  },
+  {
+   "item": "Davis campus depth 4850 ft = 1.478 km",
+   "presumed_source": "SURF public description",
+   "reliability": "likely"
+  },
+  {
+   "item": "Earth sidereal rotation rate 7.2921150e-5 rad/s",
+   "presumed_source": "IERS conventions",
+   "reliability": "certain"
+  },
+  {
+   "item": "Earth radius: mean 6371 km; geocentric radius at 44.35 deg = 6367.5 km (WGS84 a = 6378.137 km, f = 1/298.257)",
+   "presumed_source": "WGS84",
+   "reliability": "certain"
+  },
+  {
+   "item": "GMST(h) = 18.697374558 + 24.06570982441908 D, D = JD(UT1) - 2451545.0; |UT1 - UTC| < 1 s in 2023",
+   "presumed_source": "USNO",
+   "reliability": "certain"
+  },
+  {
+   "item": "Earth surface escape speed 11.19 km/s",
+   "presumed_source": "standard",
+   "reliability": "certain"
+  },
+  {
+   "item": "Solar escape speed at 1 AU 42.1 km/s",
+   "presumed_source": "standard",
+   "reliability": "certain"
+  },
+  {
+   "item": "geodetic-geocentric latitude difference 0.19 deg and 23 yr of precession 0.32 deg neglected (< 0.003 km/s)",
+   "presumed_source": "geometry",
+   "reliability": "certain"
+  },
+  {
+   "item": "Earth perihelion 4 Jan 2023 (~30.29 km/s), aphelion 6 Jul 2023 (~29.29 km/s), e = 0.0167; equation of centre 1.915 deg sin M",
+   "presumed_source": "almanac / celestial mechanics",
+   "reliability": "certain"
+  },
+  {
+   "item": "Solar gravitational focusing shifts the annual-modulation phase mainly at low v_min (Lee, Lisanti, Peter, Safdi, PRL 112, 011301, 2014)",
+   "presumed_source": "literature",
+   "reliability": "likely"
+  },
+  {
+   "item": "Earth bulk composition by mass O 0.30, Fe 0.32, Si 0.15, Mg 0.14, Ni 0.018, Ca 0.015, Al 0.014, S 0.029; mean density 5.51 g/cm3",
+   "presumed_source": "geochemistry (McDonough & Sun type)",
+   "reliability": "likely"
+  },
+  {
+   "item": "crust rock density 2.7 g/cm3; by mass O 0.47, Si 0.28, Al 0.08, Fe 0.05, Ca 0.04, Mg 0.02, K+Na 0.05",
+   "presumed_source": "geochemistry",
+   "reliability": "likely"
+  },
+  {
+   "item": "LZ elastic SI limit at 1 TeV ~ 1e-45 cm2 (2024 WS result ~2e-47 at 40 GeV scaled with mass)",
+   "presumed_source": "LZ 2024 WS paper",
+   "reliability": "likely"
+  }
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Stream-grid Delta-eta approach (P034-style kernels x WimPyDD/analytic Delta-eta on a 0.5 km/s v_min grid): rejected before use because the grid quantisation is comparable to the 0.24 km/s diurnal shift; replaced by the exact O1 factorisation dR/dE = sum_A C_A(E) eta(v_min,A) with the analytic eta at the exact lab speed (validated to 0.01-1.6 % against WimPyDD's day halo).",
+  "Two trivial script errors fixed before the first complete run (invalid dict-key names with hyphens; a cluttered savetxt line).",
+  "P085 (exact Earth velocity) does not exist yet; the ephemeris comparison was therefore done here against P055 and wimprates."
+ ],
+ "wimpydd_generated_files": []
+}

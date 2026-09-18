@@ -1,0 +1,63 @@
+{
+ "id": "P042",
+ "title": "The de-excitation photon: what the excited state chi2 must do after scattering in LZ, and what a single-site event already implies",
+ "date": "2026-09-10",
+ "agent_tools": [
+  {"tool": "Read", "count": 11, "detail": "provenance/PAPER_GUIDE.md; 00_evidence_dossier.md; results_ledger.csv (3 pages); papers/P023.md, P014.md, P026.md, P011.md, P012.md; figures P042_fig1 and P042_fig2 (visual check)"},
+  {"tool": "Bash", "count": 22, "detail": "grep LZ tex for veto/geometry/event lines; ls papers/work + grep P029.md and P023 details; grep lzcommon API + ENVIRONMENT_versions; sed tex l.76-90,119-130,139-148,162-170,425-435,500-520; ls work dirs + cat P023 lifetime/ceiling CSVs + grep P023 script; sed lzcommon l.21-62,312-375; grep P014 details/P011 relic_lifetime/P012 files; sed tex l.520-585 (veto tables); sed P014 details l.196-206 + print P023.json structure; sed lzcommon l.108-145 + astropy offline test (AltAz failed); grep dataviz palette; run script (timed out at 600 s, background, stopped); cat run log; run again (timed out, stopped); grep log; profile script ($TMPDIR/prof42.py); full run (125 s); ls + summary print; rerun with shortened title (114 s) + kinematics CSV + recalled list; wc -w budget checks"},
+  {"tool": "Write", "count": 4, "detail": "code/P042_deexcitation_photon.py; work/P042/details.md; provenance/P042.json; papers/P042.md"},
+  {"tool": "Edit", "count": 11, "detail": "script: MC sizes x4, batched halo-tail sampling x2, delta-390 guard x2, figure title; paper trims"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette and chart rules)"},
+  {"tool": "ToolSearch", "count": 1, "detail": "select:TaskStop"},
+  {"tool": "TaskStop", "count": 2, "detail": "stopped the two runs that exceeded the foreground timeout"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python from the simulation root"},
+  {"name": "numpy", "version": "2.5.3", "functions": "default_rng(42), einsum, vectorised Woodcock photon transport, Klein-Nishina rejection sampling, trapezoid, interp"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame/to_csv/read_csv (P023 ceiling CSV)"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend, two PNG figures"},
+  {"name": "astropy", "version": "8.0.1", "functions": "Time; get_body_barycentric_posvel (built-in ephemeris) for the Earth velocity; SkyCoord Galactic<->ICRS rotation; iers.conf.auto_download=False (AltAz transform unusable offline, replaced by analytic GMST/hour-angle altitude)"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ dict (event position/time/energy, thresholds), vmin_kms, m_nucleus_gev, A_XE_MEAN, V0_KMS, VESC_KMS, V_SUN_PEC, v_earth_kms, C_KMS, M_NUCLEON_GEV, M_V_GEV"},
+  {"name": "none: derived by hand", "version": "-", "functions": "chi2 recoil kinematics (v2 = u - q/m, cos theta_q), decay-in-flight integration, single-event likelihood/limit, BR_gamma bound, loop-dipole estimate for a tensor contact"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P042_deexcitation_photon.py", "purpose": "chi2 kinematics with DM-wind directions at SURF; simplified LZ geometry; Woodcock photon MC; topology probabilities vs tau; single-event limits; mapping to mu_tr(delta) with P023 moments; model points; population predictions; figures; summary/recalled JSON", "command": ".venv/bin/python output/code/P042_deexcitation_photon.py   (114-125 s; seeded, reproducible)"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules and budgets"},
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "detector paragraph (Skin 2 t LXe, OD 17 t GdLS + 229 t water), Fig. 3 caption (event at (45.9^2, 26.4)), samples paragraph (prompt +-0.25/0.3 us, 2.5/4.5 phd; delayed 600 us, Skin >300 / OD >200 keV; random-coincidence fractions), event description (single scatter, S2 point-like, 26.9 cm from wall), MSSI paragraph (RFR 13.75 cm), supplement samples and veto-sample fit tables (66 prompt, 55 delayed), waveform analysis"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "event summary, S2 pulse-shape handle, hypothesis I"},
+  {"file": "output/results_ledger.csv", "parts_used": "P001-P040 headline results (context, lifetimes)"},
+  {"file": "output/papers/P023.md + work/P023/P023_single_site_ceiling.csv + P023_chi2_lifetime.csv + details.md sec. 4", "parts_used": "mu_tr(N_ROI = 1, 0.105, 3.65) for delta = 200-390 keV; tau = 66 us; 12.7 us criterion; 326 keV ceiling"},
+  {"file": "output/papers/P014.md + work/P014/details.md sec. 8", "parts_used": "Higgsino chi2 widths: e+e- closed, tau(nunu) 4.6e5 s, tau(gamma) ~ 0.06 s loop estimate"},
+  {"file": "output/papers/P011.md + work/P011/relic_lifetime.json", "parts_used": "dark-photon chi2 -> chi1 nu nubar lifetime 1.9e18 s (eps = 1e-6), no photon channel, m_A' window"},
+  {"file": "output/papers/P026.md", "parts_used": "lifetime summary and cosmological context"},
+  {"file": "output/papers/P012.md", "parts_used": "d10 = 0.28, contact strength, elastic photon-dipole moment 2.1e-5 mu_N"},
+  {"file": "output/papers/P029.md, P004 (ledger row)", "parts_used": "LXe attenuation lengths 0.3 cm (122 keV), 0.62/0.99/1.42/2.9 cm (164/203/243/375 keV) used as anchors"},
+  {"file": "output/code/common/lzcommon.py; output/code/P023_composite_idm.py (structure only)", "parts_used": "constants and kinematics; script layout"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "hbar = 6.582e-25 GeV s; alpha = 1/137.036; m_e = 511 keV; nuclear magneton e/(2 m_p)", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "GMST(hours) = 18.697374558 + 24.06570982441908 D; altitude from hour angle", "presumed_source": "USNO approximate sidereal time; spherical astronomy", "reliability": "certain"},
+  {"item": "SURF latitude 44.352 N, longitude 103.751 W", "presumed_source": "geography", "reliability": "likely"},
+  {"item": "LZ active radius 72.8 cm and drift length 145.6 cm", "presumed_source": "LZ instrument paper (NIM A 953, 163047)", "reliability": "likely"},
+  {"item": "PTFE wall/field cage ~3 cm; side Skin 4-8 cm (6 used); bottom Skin ~25 cm; PMT arrays ~15 cm; Ti vessels 0.8 cm with 7 cm vacuum gap", "presumed_source": "LZ instrument paper / TDR", "reliability": "uncertain"},
+  {"item": "OD GdLS tanks ~61 cm thick; water tank radius 3.8 m", "presumed_source": "LZ OD and instrument papers", "reliability": "likely"},
+  {"item": "mass attenuation coefficients Xe (anchored on P004/P029), water, LAB, PTFE, Ti at 10-400 keV; photoelectric fractions", "presumed_source": "NIST XCOM (from memory)", "reliability": "likely (+-20%)"},
+  {"item": "densities LXe 2.86, PTFE 2.2, Ti 4.51, GdLS 0.86 g/cm3; PMT-array structure ~1.5 g/cm3", "presumed_source": "handbook values", "reliability": "likely (structure uncertain)"},
+  {"item": "Skin 2.5 phd ~ 5 keV and OD 4.5 phd ~ 30 keV deposited; Skin resolution ~10% at 300 keV", "presumed_source": "LZ Skin/OD performance papers (order of magnitude)", "reliability": "uncertain"},
+  {"item": "two S1 pulses merge if closer than ~0.15 us", "presumed_source": "LXe S1 pulse widths 100-200 ns", "reliability": "uncertain"},
+  {"item": "Gamma(chi2 -> chi1 gamma) = mu_tr^2 delta^3 / pi", "presumed_source": "Chang, Weiner, Yavin 2010 (MiDM); as used by P014/P023", "reliability": "likely"},
+  {"item": "loop-induced transition dipole from a tensor contact: mu ~ e C m_f ln/(16 pi^2) with m_f = m_N or m_q", "presumed_source": "dimensional / Schwinger-type estimate", "reliability": "uncertain (x10)"},
+  {"item": "Baxter-2021 SHM parameters via lzcommon; Solar apex toward l = 90 deg", "presumed_source": "Baxter et al. 2021; standard", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Two full runs exceeded the 600 s foreground budget: the halo-tail rejection sampler called astropy inside the loop and delta = 390 keV (kinematically forbidden on 16 June, v_min 813 > v_max 810 km/s) never terminated; fixed by batching the numpy rejection and guarding v_min >= v_max",
+  "astropy AltAz transformation unusable offline (IERS configuration error); replaced by analytic GMST/hour-angle altitude",
+  "Xe K-fluorescence escape and exact veto light yields not modelled; bracketed instead"
+ ],
+ "wimpydd_generated_files": "none (WimPyDD not run; P023's WimPyDD-based mu_tr(delta) table reused)"
+}

@@ -1,0 +1,53 @@
+{
+ "id": "P072",
+ "title": "Exothermic scattering of a metastable excited state as the origin of the LZ 248 keV event: kinematics, spectral shape, companions and the required relic fraction",
+ "date": "2026-09-15",
+ "agent_tools": [
+  {"tool": "Read", "count": 20, "detail": "output/provenance/PAPER_GUIDE.md; papers P058, P011, P026, P038, P021, P066, P016, P034 (full); work/P058/details.md; code/P058_exothermic.py; code/common/lzcommon.py; own figures P072_fig1-4 (two rounds, 7 reads); work/P072/run_log.txt"},
+  {"tool": "Bash", "count": 27, "detail": "ls of work/P058 (+cache), code, papers, data_requests; cat P058 CSVs (event_as_exothermic, delta_for_Estar248, counts head); one command aborted on sysctl (sandbox); grep ledger for P007/P011/P021/P026/P038/P066 rows + header/tail; grep tex for fig labels/ROI/600 phd; sed tex lines 140-165, 440-465, 765-786; python inspection of P058.json keys and ledger_row.json; sed heads of P002/P007 papers and grep of P001/P006/P027/P061/P062 headlines; python timing test of WimPyDD diff_rate (1200/60/1 streams, 138 calls) and inspection of WD.Xe attributes; grep WimPyDD/package.py for get_vmin/diff_rate/element and sed of get_vmin + isotopes_list handling; python inspection of element.__init__; python check of wd_halo delta_eta vs lz.eta0 and per-isotope diff_rate (list form failed); python per-isotope step/mass-scaling verification with isotopes_list dict; grep dataviz palette.md for hex values; .venv/bin/python output/code/P072_exothermic_origin.py (8 runs: 3 crashed on bugs, 5 complete, 12-25 s each); tail of crashed run output + ls; pandas summary snippet of P072_grid.csv and two-population CSV; grep environment versions; grep run_log for robustness/summary lines (2); word-count snippets of the paper (4); json validity check"},
+  {"tool": "Write", "count": 5, "detail": "output/code/P072_exothermic_origin.py; output/work/P072/details.md; output/provenance/P072.json; output/papers/P072.md (written twice: draft and tightened version)"},
+  {"tool": "Edit", "count": 29, "detail": "script (21): dead code removal (2), N_hi guards (3), date-factor block, B-variant summary, figure lookups (3), pcolormesh edges, figure cosmetics (6), robustness block, nll0 consistency (3); details.md section 6 update (1); paper word-budget trims (6); provenance tool-count update (1)"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette and chart rules; JS validator skipped per PAPER_GUIDE)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python from the simulation root; multiprocessing (fork context, Pool(9))"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "diff_rate(Xe, ham, m, E, [3000 km/s], [1], j_chi=0.5, delta=0, sum_over_streams=False, isotopes_list={0:[i]}) single-isotope single-stream tables (27 x 641 calls); streamed_halo_function via lz.wd_halo(day_of_year, vmin grid) on 24 days; eft_hamiltonian via lz.wd_hamiltonian; Xe.mass, Xe.a, Xe.average_a"},
+  {"name": "numpy", "version": "2.5.3", "functions": "arrays, searchsorted, cumsum, einsum (kernel rebuild), trapezoid, savez_compressed"},
+  {"name": "scipy", "version": "1.18.1", "functions": "special.erf; stats.norm.pdf (smearing matrix); stats.poisson (unused import); optimize.minimize_scalar (profile), brentq (dark-photon branch); interpolate.CubicSpline (periodic day-of-year curves)"},
+  {"name": "pandas", "version": "3.0.5", "functions": "DataFrame, pivot, to_csv, read_csv"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; pyplot subplots/plot/pcolormesh/contour/clabel/colorbar/savefig"},
+  {"name": "common/lzcommon.py", "version": "corpus", "functions": "LZ dict, C_KMS, M_NUCLEON_GEV, GEV_TO_CM2, M_V_GEV, eta0, v_earth_kms, wd, wd_halo, wd_hamiltonian"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P072_exothermic_origin.py", "purpose": "Per-isotope O1 step tables from WimPyDD (exact kernel factorisation), validation vs P058 kernels and R_ROI, (m,|delta|) grid of exothermic/endothermic spectra with observed-energy smearing, region counts, companions, five-term likelihood (Poisson bins + event density), Bayes factors and date factors, coupling/lifetime/dark-photon window, annual modulation, two-population (f2,delta) plane, low-dispersion and dark-disk halos, robustness, figures, results JSON", "command": ".venv/bin/python output/code/P072_exothermic_origin.py"}
+ ],
+ "local_inputs": [
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "Fig. 4 caption and event paragraph (lines 140-165); Fig. S1/S2 captions (440-465); MSSI comparison table (765-786); ROI definition (line 114)"},
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules, deliverables, template, exothermic pitfall note"},
+  {"file": "output/papers/P058.md; output/work/P058/details.md; output/code/P058_exothermic.py; output/work/P058/cache/K_*.npz; output/work/P058/P058_event_as_exothermic.csv; P058_delta_for_Estar248.csv; P058_counts_per_unit_coupling.csv; output/provenance/P058.json; output/work/P058/ledger_row.json", "parts_used": "competing analysis: methods, OBS counts, efficiency conventions, event-as-exothermic table, five cached kernels used for validation, provenance format"},
+  {"file": "output/papers/P011.md, P026.md, P038.md, P021.md, P066.md, P016.md, P034.md, P002.md, P007.md", "parts_used": "P011 858 exothermic events, sigma_p, width formula, relic alpha_D; P026 f2 freeze-out 0.42/0.50, Higgsino lifetime; P038 edges 271.6/423.2 keV, MSSI 0.006-0.018; P021 likelihood form, resolution, b_H; P066 SPI f2/tau_gamma bound; P016 counts 42/58.6, 0/0.02, b_H = 5.7e-4, flat-prior Bayes convention; P034 modulation a1 values; P002/P007 context"},
+  {"file": "output/results_ledger.csv", "parts_used": "rows P007, P011, P021, P026, P038 and header/format"},
+  {"file": "output/code/common/lzcommon.py", "parts_used": "constants, eta0, wd wrappers, conventions"},
+  {"file": "WimPyDD/package.py", "parts_used": "get_vmin (lines 5130-5157), diff_rate isotopes_list handling (5351-5485), element.__init__ (mass = 0.931 A)"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "G_F = 1.1664e-5 GeV^-2, sin^2 theta_W = 0.2312, alpha = 1/137.036, m_Z = 91.19 GeV, hbar = 6.582e-25 GeV s, AMU = 0.9315 GeV", "presumed_source": "PDG", "reliability": "certain"},
+  {"item": "t_U = 13.8 Gyr = 4.35e17 s", "presumed_source": "Planck cosmology", "reliability": "certain"},
+  {"item": "exothermic total rate n sigma v is velocity-independent to leading order (sigma ~ 1/v)", "presumed_source": "textbook kinematics (Graham et al. 2010)", "reliability": "certain"},
+  {"item": "dark-disk parameters: lag 0-150 km/s, dispersion ~10-50 km/s, density rho_d/rho_0 <~ 0.2-1; Gaia-era bounds rho_d/rho_0 <~ 0.2-0.3", "presumed_source": "Read et al. 2008; Schutz et al. 2018; Buch et al. 2019", "reliability": "uncertain"},
+  {"item": "Gaussian +-1.5 sigma acceptance 0.866", "presumed_source": "elementary statistics (P058 convention)", "reliability": "certain"},
+  {"item": "flat prior mu in [0,10] and log-uniform prior as Bayes-factor conventions; Kass-Raftery scale", "presumed_source": "P001/P016; Kass & Raftery 1995", "reliability": "certain"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "Brute-force WimPyDD kernels for the 246-point (m,|delta|) grid (~3e5 diff_rate calls, ~3 h): replaced by the exact per-isotope step factorisation, verified to 1e-16 against P058's cached kernels",
+  "diff_rate(isotopes_list=[i]) with a list: AttributeError; the argument must be a dict {element_index: [isotope indices]}",
+  "First likelihood run crashed on endothermic spectra just above delta_max (N_hi ~ 1e-200 from smearing tails, kappa overflow): added N_hi > 1e-6 guard",
+  "Flat delta prior over 100-500 keV for the endothermic hypothesis as headline marginal comparison: prior-dominated (B(exo/endo) = 1.21), reported only as a variant",
+  "Search for (m,|delta|) placing 248 keV at the mode or 84th/95th percentile of the accepted exothermic spectrum: no solution exists on the grid",
+  "Figure bugs: 278 keV not on the 10 keV grid (KeyError), pcolormesh edge arrays, colour-scale ranges too wide; fixed"
+ ],
+ "wimpydd_generated_files": ["none outside output/ (per-isotope tables cached in output/work/P072/cache/w_tables.npz)"]
+}

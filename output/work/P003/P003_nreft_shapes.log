@@ -1,0 +1,149 @@
+halo: 1000 vmin bins, vmax = 794.6 km/s
+O1 s m=   200  R_lo=5.928e+08  R_hi=7.509e+04  R_hi/R_lo=1.267e-04  N_lo/hi=  7895.29   (2s)
+O1 s m=  1000  R_lo=1.288e+08  R_hi=4.681e+04  R_hi/R_lo=3.634e-04  N_lo/hi=  2752.06   (4s)
+O1 s m=  4000  R_lo=3.260e+07  R_hi=1.367e+04  R_hi/R_lo=4.194e-04  N_lo/hi=  2384.30   (7s)
+O1 v m=   200  R_lo=1.316e+07  R_hi=8.178e+03  R_hi/R_lo=6.215e-04  N_lo/hi=  1608.94   (9s)
+O1 v m=  1000  R_lo=2.823e+06  R_hi=5.923e+03  R_hi/R_lo=2.098e-03  N_lo/hi=   476.60   (11s)
+O1 v m=  4000  R_lo=7.130e+05  R_hi=1.765e+03  R_hi/R_lo=2.475e-03  N_lo/hi=   403.96   (13s)
+O3 s m=   200  R_lo=3.189e+02  R_hi=8.562e+00  R_hi/R_lo=2.684e-02  N_lo/hi=    37.25   (15s)
+O3 s m=  1000  R_lo=7.394e+01  R_hi=5.846e+00  R_hi/R_lo=7.906e-02  N_lo/hi=    12.65   (17s)
+O3 s m=  4000  R_lo=1.888e+01  R_hi=1.728e+00  R_hi/R_lo=9.153e-02  N_lo/hi=    10.93   (19s)
+O3 v m=   200  R_lo=1.057e+01  R_hi=7.453e-01  R_hi/R_lo=7.049e-02  N_lo/hi=    14.19   (21s)
+O3 v m=  1000  R_lo=2.433e+00  R_hi=4.828e-01  R_hi/R_lo=1.985e-01  N_lo/hi=     5.04   (23s)
+O3 v m=  4000  R_lo=6.206e-01  R_hi=1.417e-01  R_hi/R_lo=2.283e-01  N_lo/hi=     4.38   (25s)
+O4 s m=   200  R_lo=5.476e+02  R_hi=6.348e+00  R_hi/R_lo=1.159e-02  N_lo/hi=    86.27   (30s)
+O4 s m=  1000  R_lo=1.198e+02  R_hi=4.262e+00  R_hi/R_lo=3.556e-02  N_lo/hi=    28.12   (35s)
+O4 s m=  4000  R_lo=3.036e+01  R_hi=1.259e+00  R_hi/R_lo=4.146e-02  N_lo/hi=    24.12   (39s)
+O4 v m=   200  R_lo=4.924e+02  R_hi=5.460e+00  R_hi/R_lo=1.109e-02  N_lo/hi=    90.19   (44s)
+O4 v m=  1000  R_lo=1.078e+02  R_hi=3.671e+00  R_hi/R_lo=3.404e-02  N_lo/hi=    29.37   (49s)
+O4 v m=  4000  R_lo=2.731e+01  R_hi=1.084e+00  R_hi/R_lo=3.969e-02  N_lo/hi=    25.20   (53s)
+O5 s m=   200  R_lo=1.004e+00  R_hi=2.335e-02  R_hi/R_lo=2.325e-02  N_lo/hi=    43.02   (57s)
+O5 s m=  1000  R_lo=2.294e-01  R_hi=1.616e-02  R_hi/R_lo=7.044e-02  N_lo/hi=    14.20   (61s)
+O5 s m=  4000  R_lo=5.847e-02  R_hi=4.790e-03  R_hi/R_lo=8.192e-02  N_lo/hi=    12.21   (66s)
+O5 v m=   200  R_lo=7.716e-02  R_hi=2.451e-02  R_hi/R_lo=3.177e-01  N_lo/hi=     3.15   (70s)
+O5 v m=  1000  R_lo=1.784e-02  R_hi=1.697e-02  R_hi/R_lo=9.510e-01  N_lo/hi=     1.05   (74s)
+O5 v m=  4000  R_lo=4.555e-03  R_hi=5.031e-03  R_hi/R_lo=1.105e+00  N_lo/hi=     0.91   (78s)
+O6 s m=   200  R_lo=1.974e-02  R_hi=1.552e-02  R_hi/R_lo=7.862e-01  N_lo/hi=     1.27   (82s)
+O6 s m=  1000  R_lo=4.641e-03  R_hi=1.067e-02  R_hi/R_lo=2.300e+00  N_lo/hi=     0.43   (86s)
+O6 s m=  4000  R_lo=1.187e-03  R_hi=3.162e-03  R_hi/R_lo=2.663e+00  N_lo/hi=     0.38   (90s)
+O6 v m=   200  R_lo=1.865e-02  R_hi=1.424e-02  R_hi/R_lo=7.635e-01  N_lo/hi=     1.31   (94s)
+O6 v m=  1000  R_lo=4.387e-03  R_hi=9.792e-03  R_hi/R_lo=2.232e+00  N_lo/hi=     0.45   (97s)
+O6 v m=  4000  R_lo=1.123e-03  R_hi=2.901e-03  R_hi/R_lo=2.584e+00  N_lo/hi=     0.39   (100s)
+O7 s m=   200  R_lo=4.890e-04  R_hi=4.352e-06  R_hi/R_lo=8.900e-03  N_lo/hi=   112.36   (102s)
+O7 s m=  1000  R_lo=1.060e-04  R_hi=3.278e-06  R_hi/R_lo=3.093e-02  N_lo/hi=    32.33   (103s)
+O7 s m=  4000  R_lo=2.681e-05  R_hi=9.852e-07  R_hi/R_lo=3.674e-02  N_lo/hi=    27.22   (105s)
+O7 v m=   200  R_lo=4.185e-04  R_hi=3.363e-06  R_hi/R_lo=8.036e-03  N_lo/hi=   124.44   (106s)
+O7 v m=  1000  R_lo=9.045e-05  R_hi=2.540e-06  R_hi/R_lo=2.809e-02  N_lo/hi=    35.60   (107s)
+O7 v m=  4000  R_lo=2.287e-05  R_hi=7.637e-07  R_hi/R_lo=3.339e-02  N_lo/hi=    29.95   (109s)
+O8 s m=   200  R_lo=1.769e+02  R_hi=3.663e-01  R_hi/R_lo=2.071e-03  N_lo/hi=   482.84   (112s)
+O8 s m=  1000  R_lo=3.909e+01  R_hi=2.509e-01  R_hi/R_lo=6.419e-03  N_lo/hi=   155.79   (116s)
+O8 s m=  4000  R_lo=9.920e+00  R_hi=7.430e-02  R_hi/R_lo=7.491e-03  N_lo/hi=   133.50   (120s)
+O8 v m=   200  R_lo=1.078e+01  R_hi=3.837e-01  R_hi/R_lo=3.559e-02  N_lo/hi=    28.10   (123s)
+O8 v m=  1000  R_lo=2.417e+00  R_hi=2.629e-01  R_hi/R_lo=1.088e-01  N_lo/hi=     9.19   (126s)
+O8 v m=  4000  R_lo=6.144e-01  R_hi=7.785e-02  R_hi/R_lo=1.267e-01  N_lo/hi=     7.89   (130s)
+O9 s m=   200  R_lo=9.913e-01  R_hi=1.561e-01  R_hi/R_lo=1.575e-01  N_lo/hi=     6.35   (133s)
+O9 s m=  1000  R_lo=2.171e-01  R_hi=1.051e-01  R_hi/R_lo=4.842e-01  N_lo/hi=     2.07   (136s)
+O9 s m=  4000  R_lo=5.500e-02  R_hi=3.106e-02  R_hi/R_lo=5.646e-01  N_lo/hi=     1.77   (140s)
+O9 v m=   200  R_lo=8.208e-01  R_hi=1.210e-01  R_hi/R_lo=1.474e-01  N_lo/hi=     6.78   (143s)
+O9 v m=  1000  R_lo=1.790e-01  R_hi=8.168e-02  R_hi/R_lo=4.564e-01  N_lo/hi=     2.19   (146s)
+O9 v m=  4000  R_lo=4.531e-02  R_hi=2.414e-02  R_hi/R_lo=5.328e-01  N_lo/hi=     1.88   (150s)
+O10s m=   200  R_lo=8.915e+00  R_hi=9.749e-01  R_hi/R_lo=1.094e-01  N_lo/hi=     9.14   (151s)
+O10s m=  1000  R_lo=2.045e+00  R_hi=6.638e-01  R_hi/R_lo=3.246e-01  N_lo/hi=     3.08   (153s)
+O10s m=  4000  R_lo=5.214e-01  R_hi=1.964e-01  R_hi/R_lo=3.766e-01  N_lo/hi=     2.66   (154s)
+O10v m=   200  R_lo=8.362e+00  R_hi=8.940e-01  R_hi/R_lo=1.069e-01  N_lo/hi=     9.35   (156s)
+O10v m=  1000  R_lo=1.920e+00  R_hi=6.087e-01  R_hi/R_lo=3.170e-01  N_lo/hi=     3.15   (158s)
+O10v m=  4000  R_lo=4.897e-01  R_hi=1.801e-01  R_hi/R_lo=3.677e-01  N_lo/hi=     2.72   (159s)
+O11s m=   200  R_lo=8.179e+05  R_hi=1.131e+03  R_hi/R_lo=1.382e-03  N_lo/hi=   723.46   (163s)
+O11s m=  1000  R_lo=1.828e+05  R_hi=7.078e+02  R_hi/R_lo=3.872e-03  N_lo/hi=   258.27   (167s)
+O11s m=  4000  R_lo=4.644e+04  R_hi=2.068e+02  R_hi/R_lo=4.454e-03  N_lo/hi=   224.53   (171s)
+O11v m=   200  R_lo=1.553e+04  R_hi=1.373e+02  R_hi/R_lo=8.843e-03  N_lo/hi=   113.09   (176s)
+O11v m=  1000  R_lo=3.406e+03  R_hi=1.003e+02  R_hi/R_lo=2.945e-02  N_lo/hi=    33.96   (179s)
+O11v m=  4000  R_lo=8.630e+02  R_hi=2.992e+01  R_hi/R_lo=3.467e-02  N_lo/hi=    28.84   (183s)
+O12s m=   200  R_lo=1.001e+04  R_hi=3.337e+01  R_hi/R_lo=3.335e-03  N_lo/hi=   299.85   (186s)
+O12s m=  1000  R_lo=2.260e+03  R_hi=2.257e+01  R_hi/R_lo=9.989e-03  N_lo/hi=   100.11   (190s)
+O12s m=  4000  R_lo=5.750e+02  R_hi=6.666e+00  R_hi/R_lo=1.159e-02  N_lo/hi=    86.26   (193s)
+O12v m=   200  R_lo=3.551e+02  R_hi=3.004e+00  R_hi/R_lo=8.461e-03  N_lo/hi=   118.19   (197s)
+O12v m=  1000  R_lo=7.956e+01  R_hi=1.934e+00  R_hi/R_lo=2.431e-02  N_lo/hi=    41.13   (200s)
+O12v m=  4000  R_lo=2.022e+01  R_hi=5.671e-01  R_hi/R_lo=2.805e-02  N_lo/hi=    35.66   (204s)
+O13s m=   200  R_lo=1.506e-02  R_hi=1.038e-03  R_hi/R_lo=6.889e-02  N_lo/hi=    14.52   (207s)
+O13s m=  1000  R_lo=3.484e-03  R_hi=7.108e-04  R_hi/R_lo=2.040e-01  N_lo/hi=     4.90   (210s)
+O13s m=  4000  R_lo=8.894e-04  R_hi=2.104e-04  R_hi/R_lo=2.365e-01  N_lo/hi=     4.23   (214s)
+O13v m=   200  R_lo=3.961e-02  R_hi=1.345e-03  R_hi/R_lo=3.395e-02  N_lo/hi=    29.46   (217s)
+O13v m=  1000  R_lo=9.233e-03  R_hi=9.699e-04  R_hi/R_lo=1.050e-01  N_lo/hi=     9.52   (221s)
+O13v m=  4000  R_lo=2.360e-03  R_hi=2.890e-04  R_hi/R_lo=1.225e-01  N_lo/hi=     8.16   (225s)
+O14s m=   200  R_lo=5.451e-07  R_hi=6.802e-08  R_hi/R_lo=1.248e-01  N_lo/hi=     8.01   (229s)
+O14s m=  1000  R_lo=1.213e-07  R_hi=5.174e-08  R_hi/R_lo=4.265e-01  N_lo/hi=     2.34   (233s)
+O14s m=  4000  R_lo=3.081e-08  R_hi=1.557e-08  R_hi/R_lo=5.053e-01  N_lo/hi=     1.98   (236s)
+O14v m=   200  R_lo=4.519e-07  R_hi=5.269e-08  R_hi/R_lo=1.166e-01  N_lo/hi=     8.58   (239s)
+O14v m=  1000  R_lo=1.001e-07  R_hi=4.020e-08  R_hi/R_lo=4.017e-01  N_lo/hi=     2.49   (243s)
+O14v m=  4000  R_lo=2.540e-08  R_hi=1.210e-08  R_hi/R_lo=4.765e-01  N_lo/hi=     2.10   (247s)
+O15s m=   200  R_lo=7.684e-01  R_hi=1.383e-01  R_hi/R_lo=1.799e-01  N_lo/hi=     5.56   (251s)
+O15s m=  1000  R_lo=1.816e-01  R_hi=9.529e-02  R_hi/R_lo=5.246e-01  N_lo/hi=     1.91   (254s)
+O15s m=  4000  R_lo=4.652e-02  R_hi=2.821e-02  R_hi/R_lo=6.065e-01  N_lo/hi=     1.65   (258s)
+O15v m=   200  R_lo=2.449e-02  R_hi=1.169e-02  R_hi/R_lo=4.774e-01  N_lo/hi=     2.09   (262s)
+O15v m=  1000  R_lo=5.754e-03  R_hi=7.630e-03  R_hi/R_lo=1.326e+00  N_lo/hi=     0.75   (265s)
+O15v m=  4000  R_lo=1.472e-03  R_hi=2.241e-03  R_hi/R_lo=1.522e+00  N_lo/hi=     0.66   (268s)
+   operator isospin     N_lo_200    N_lo_1000    N_lo_4000  compatible_Nmax3_at_1000  compatible_Nmax5_at_1000  compatible_Nmax10_at_1000                                               verdict
+0        O1       s  7895.285911  2752.058658  2384.301560                     False                     False                      False  excluded by absent low-energy population (N_lo > 10)
+1        O1       v  1608.939522   476.601680   403.963833                     False                     False                      False  excluded by absent low-energy population (N_lo > 10)
+2        O3       s    37.251065    12.648137    10.925012                     False                     False                      False  excluded by absent low-energy population (N_lo > 10)
+3        O3       v    14.186397     5.038416     4.380840                     False                     False                       True                             marginal (5 < N_lo <= 10)
+4        O4       s    86.269433    28.119222    24.121585                     False                     False                      False  excluded by absent low-energy population (N_lo > 10)
+5        O4       v    90.188290    29.374379    25.196984                     False                     False                      False  excluded by absent low-energy population (N_lo > 10)
+6        O5       s    43.016155    14.196675    12.207358                     False                     False                      False  excluded by absent low-energy population (N_lo > 10)
+7        O5       v     3.147874     1.051519     0.905341                      True                      True                       True                     lone-event compatible (N_lo <= 5)
+8        O6       s     1.271999     0.434813     0.375521                      True                      True                       True                     lone-event compatible (N_lo <= 5)
+9        O6       v     1.309700     0.448067     0.387024                      True                      True                       True                     lone-event compatible (N_lo <= 5)
+10       O7       s   112.358226    32.326485    27.215344                     False                     False                      False  excluded by absent low-energy population (N_lo > 10)
+11       O7       v   124.435002    35.603226    29.950809                     False                     False                      False  excluded by absent low-energy population (N_lo > 10)
+12       O8       s   482.836277   155.788192   133.502370                     False                     False                      False  excluded by absent low-energy population (N_lo > 10)
+13       O8       v    28.095038     9.192441     7.891474                     False                     False                       True                             marginal (5 < N_lo <= 10)
+14       O9       s     6.349832     2.065415     1.771029                      True                      True                       True                     lone-event compatible (N_lo <= 5)
+15       O9       v     6.784883     2.190896     1.876780                      True                      True                       True                     lone-event compatible (N_lo <= 5)
+16      O10       s     9.143725     3.080547     2.655145                     False                      True                       True                     lone-event compatible (N_lo <= 5)
+17      O10       v     9.353356     3.154617     2.719488                     False                      True                       True                     lone-event compatible (N_lo <= 5)
+18      O11       s   723.457119   258.271389   224.527414                     False                     False                      False  excluded by absent low-energy population (N_lo > 10)
+19      O11       v   113.088965    33.956201    28.840428                     False                     False                      False  excluded by absent low-energy population (N_lo > 10)
+20      O12       s   299.853641   100.107366    86.261174                     False                     False                      False  excluded by absent low-energy population (N_lo > 10)
+21      O12       v   118.193005    41.127915    35.656296                     False                     False                      False  excluded by absent low-energy population (N_lo > 10)
+22      O13       s    14.515076     4.901875     4.227838                     False                      True                       True                     lone-event compatible (N_lo <= 5)
+23      O13       v    29.456686     9.520395     8.164494                     False                     False                       True                             marginal (5 < N_lo <= 10)
+24      O14       s     8.012963     2.344423     1.978973                      True                      True                       True                     lone-event compatible (N_lo <= 5)
+25      O14       v     8.576913     2.489270     2.098827                      True                      True                       True                     lone-event compatible (N_lo <= 5)
+26      O15       s     5.557770     1.906171     1.648860                      True                      True                       True                     lone-event compatible (N_lo <= 5)
+27      O15       v     2.094499     0.754126     0.656961                      True                      True                       True                     lone-event compatible (N_lo <= 5)
+L10 comparison m=50: scale=229, rms log10 resid=0.109, peaks fig (19.0, 109.0, nan) vs wd (16.0, 109.0, nan); N_lo fig=inf wd=inf
+L10 comparison m=200: scale=248, rms log10 resid=0.086, peaks fig (118.0, 64.0, 172.0) vs wd (19.0, 52.0, 178.0); N_lo fig=0.47 wd=0.60
+L10 comparison m=1000: scale=247, rms log10 resid=0.086, peaks fig (118.0, 61.0, 205.0) vs wd (118.0, 52.0, 196.0); N_lo fig=0.15 wd=0.20
+{
+ "O1s_1000_fig1": {
+  "R_lo": 507848169.4256218,
+  "R_hi": 206915.23233518674,
+  "R_5_300": 524738820.12321657,
+  "ratio_hi_lo": 0.00040743522334482104,
+  "N_lo_per_hi": 2454.3778807108165,
+  "frac_hi": 0.00039432042075065066
+ },
+ "O1s_1000_wimpydd": {
+  "R_lo": 128835783.4389132,
+  "R_hi": 46814.330446016414,
+  "R_5_300": 133193612.44091922,
+  "ratio_hi_lo": 0.00036336434798188796,
+  "N_lo_per_hi": 2752.0586583520444,
+  "frac_hi": 0.0003514757921802134
+ },
+ "O1s_1000_wimpydd_c0_2_over_mv2": {
+  "R_lo": 515343133.7556524,
+  "R_hi": 187257.32178406566,
+  "R_5_300": 532774449.76367664,
+  "ratio_hi_lo": 0.00036336434798188823,
+  "N_lo_per_hi": 2752.0586583520426,
+  "frac_hi": 0.0003514757921802136
+ }
+}
+{
+ "(2)^2 WimPyDD c=cp+cn convention": 61.87377184522221,
+ "4^2 (Anand L10 -> 4[(q^2/mN^2)O4 - O6], m_M = m_N) x 2^2": 3.867110740326388,
+ "4^2 only": 15.468442961305552
+}
+done in 315 s

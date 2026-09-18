@@ -1,0 +1,149 @@
+kind,true,test,xe_window,expo_Xe_tyr,Z_at_CaWO4_0p01,Z_at_0p1,Z_at_1,CaWO4_tyr_for_3sigma,CaWO4_tyr_for_5sigma,N_Xe_true
+inelastic delta pair,delta=300,delta=380,Xe_LZ270,10,4.4157,5.7489,6.4125,0.0016474,0.024241,3.5211
+inelastic delta pair,delta=380,delta=300,Xe_LZ270,10,21.679,49.432,81.285,0.00013147,0.00037474,3.5211
+inelastic delta pair,delta=300,delta=350,Xe_LZ270,10,0.7104,1.8011,2.7856,4.2681,inf,3.5211
+inelastic delta pair,delta=350,delta=300,Xe_LZ270,10,1.0365,2.9026,5.4463,0.10901,0.61677,3.5211
+inelastic delta pair,delta=350,delta=380,Xe_LZ270,10,4.1685,5.0301,5.2313,0.0018468,0.086024,3.5211
+inelastic delta pair,delta=380,delta=350,Xe_LZ270,10,15.122,25.687,29.74,0.00021112,0.00062409,3.5211
+inelastic delta pair,delta=366,delta=380,Xe_LZ270,10,3.392,3.7286,3.773,0.0037067,inf,3.5211
+inelastic delta pair,delta=380,delta=366,Xe_LZ270,10,8.2222,10.152,10.456,0.00045155,0.0016064,3.5211
+inelastic delta pair,delta=330,delta=366,Xe_LZ270,10,1.8448,3.2891,3.9157,0.057885,inf,3.5211
+inelastic delta pair,delta=366,delta=330,Xe_LZ270,10,3.4048,7.9181,11.534,0.0075315,0.025179,3.5211
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=300,L10,Xe_LZ270,10,0.60479,1.9003,5.7167,0.25433,0.74656,3.5211
+true L10 vs inelastic,L10,delta=300,Xe_LZ270,10,0.28984,0.89199,2.3293,2.3177,71.964,3.5211
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=350,L10,Xe_LZ270,10,2.29,7.0219,19.612,0.017268,0.049122,3.5211
+true L10 vs inelastic,L10,delta=350,Xe_LZ270,10,0.88056,2.328,4.1964,0.22471,3.2291,3.5211
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=366,L10,Xe_LZ270,10,6.8011,19.896,53.109,0.0018857,0.0053139,3.5211
+true L10 vs inelastic,L10,delta=366,Xe_LZ270,10,2.0501,3.9458,5.5501,0.031756,0.42223,3.5211
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=380,L10,Xe_LZ270,10,32.448,90.304,236.63,7.0654e-05,0.00019782,3.5211
+true L10 vs inelastic,L10,delta=380,Xe_LZ270,10,4.4677,5.9798,7.1888,0.0016155,0.021123,3.5211
+inelastic delta pair,delta=300,delta=380,Xe_LZ270,20,5.5181,7.6548,8.8881,0.0011285,0.0062988,7.0423
+inelastic delta pair,delta=380,delta=300,Xe_LZ270,20,23.023,55.935,103.54,0.00013044,0.00036736,7.0423
+inelastic delta pair,delta=300,delta=350,Xe_LZ270,20,0.72235,2.0066,3.6442,0.36092,inf,7.0423
+inelastic delta pair,delta=350,delta=300,Xe_LZ270,20,1.0451,3.0884,6.7609,0.09353,0.34442,7.0423
+inelastic delta pair,delta=350,delta=380,Xe_LZ270,20,5.2802,6.879,7.3612,0.0012051,0.0075282,7.0423
+inelastic delta pair,delta=380,delta=350,Xe_LZ270,20,16.835,32.49,41.229,0.00020709,0.00059486,7.0423
+inelastic delta pair,delta=366,delta=380,Xe_LZ270,20,4.4381,5.2078,5.3286,0.0016923,0.03538,7.0423
+inelastic delta pair,delta=380,delta=366,Xe_LZ270,20,10.013,13.93,14.737,0.00042157,0.001323,7.0423
+inelastic delta pair,delta=330,delta=366,Xe_LZ270,20,1.9922,4.1211,5.3939,0.030068,0.35915,7.0423
+inelastic delta pair,delta=366,delta=330,Xe_LZ270,20,3.515,9.0682,15.286,0.0071398,0.021794,7.0423
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=300,L10,Xe_LZ270,20,0.60501,1.907,5.8628,0.25006,0.71536,7.0423
+true L10 vs inelastic,L10,delta=300,Xe_LZ270,20,0.2903,0.90529,2.5554,1.5299,9.303,7.0423
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=350,L10,Xe_LZ270,20,2.2949,7.1318,20.64,0.017143,0.048235,7.0423
+true L10 vs inelastic,L10,delta=350,Xe_LZ270,20,0.8927,2.5396,5.1755,0.15423,0.85766,7.0423
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=366,L10,Xe_LZ270,20,6.8631,20.554,56.474,0.0018777,0.0052557,7.0423
+true L10 vs inelastic,L10,delta=366,Xe_LZ270,20,2.196,4.7824,7.2302,0.021915,0.12039,7.0423
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=380,L10,Xe_LZ270,20,33.371,94.36,252.45,7.0486e-05,0.0001966,7.0423
+true L10 vs inelastic,L10,delta=380,Xe_LZ270,20,5.5647,7.8662,9.6884,0.0011161,0.0061155,7.0423
+inelastic delta pair,delta=300,delta=380,Xe_LZ270,30,6.2031,8.9877,10.709,0.0010031,0.0043164,10.563
+inelastic delta pair,delta=380,delta=300,Xe_LZ270,30,23.695,59.454,117.08,0.0001301,0.00036477,10.563
+inelastic delta pair,delta=300,delta=350,Xe_LZ270,30,0.7265,2.0953,4.1836,0.26508,4.9166,10.563
+inelastic delta pair,delta=350,delta=300,Xe_LZ270,30,1.0481,3.1617,7.4896,0.089075,0.29578,10.563
+inelastic delta pair,delta=350,delta=380,Xe_LZ270,30,5.9715,8.1954,8.9724,0.0010594,0.0047955,10.563
+inelastic delta pair,delta=380,delta=350,Xe_LZ270,30,17.69,36.553,49.556,0.00020575,0.00058465,10.563
+inelastic delta pair,delta=366,delta=380,Xe_LZ270,30,5.1044,6.3032,6.5175,0.0013936,0.0089046,10.563
+inelastic delta pair,delta=380,delta=366,Xe_LZ270,30,10.985,16.592,17.988,0.00041197,0.0012417,10.563
+inelastic delta pair,delta=330,delta=366,Xe_LZ270,30,2.0522,4.6073,6.4519,0.025277,0.14338,10.563
+inelastic delta pair,delta=366,delta=330,Xe_LZ270,30,3.5563,9.6295,17.715,0.0070127,0.020756,10.563
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=300,L10,Xe_LZ270,30,0.60508,1.9093,5.9198,0.24858,0.70477,10.563
+true L10 vs inelastic,L10,delta=300,Xe_LZ270,30,0.29045,0.90992,2.6532,1.3484,6.0314,10.563
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=350,L10,Xe_LZ270,30,2.2966,7.1745,21.144,0.0171,0.047923,10.563
+true L10 vs inelastic,L10,delta=350,Xe_LZ270,30,0.89691,2.6305,5.7658,0.13716,0.58898,10.563
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=366,L10,Xe_LZ270,30,6.8865,20.869,58.286,0.0018749,0.0052352,10.563
+true L10 vs inelastic,L10,delta=366,Xe_LZ270,30,2.2554,5.2669,8.381,0.019514,0.08333,10.563
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=380,L10,Xe_LZ270,30,33.842,96.602,261.24,7.0429e-05,0.00019618,10.563
+true L10 vs inelastic,L10,delta=380,Xe_LZ270,30,6.2471,9.1869,11.506,0.00099398,0.0042397,10.563
+inelastic delta pair,delta=300,delta=380,Xe_LZ270,50,7.0707,10.913,13.467,0.00091558,0.0032632,17.606
+inelastic delta pair,delta=380,delta=300,Xe_LZ270,50,24.415,63.568,134.1,0.00012977,0.00036264,17.606
+inelastic delta pair,delta=300,delta=350,Xe_LZ270,50,0.72987,2.1771,4.8615,0.21601,1.132,17.606
+inelastic delta pair,delta=350,delta=300,Xe_LZ270,50,1.0505,3.2258,8.3074,0.085718,0.26413,17.606
+inelastic delta pair,delta=350,delta=380,Xe_LZ270,50,6.8468,10.116,11.478,0.00095985,0.0034993,17.606
+inelastic delta pair,delta=380,delta=350,Xe_LZ270,50,18.603,41.549,61.805,0.00020464,0.00057648,17.606
+inelastic delta pair,delta=366,delta=380,Xe_LZ270,50,5.9595,7.9597,8.3918,0.001211,0.0050401,17.606
+inelastic delta pair,delta=380,delta=366,Xe_LZ270,50,12.068,20.371,23.069,0.00040443,0.00118,17.606
+inelastic delta pair,delta=330,delta=366,Xe_LZ270,50,2.1056,5.1816,7.9909,0.022247,0.088837,17.606
+inelastic delta pair,delta=366,delta=330,Xe_LZ270,50,3.5915,10.207,20.878,0.0069123,0.019956,17.606
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=300,L10,Xe_LZ270,50,0.60514,1.9111,5.9694,0.24746,0.69597,17.606
+true L10 vs inelastic,L10,delta=300,Xe_LZ270,50,0.29058,0.91369,2.7437,1.2237,4.4382,17.606
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=350,L10,Xe_LZ270,50,2.298,7.2117,21.672,0.017065,0.047644,17.606
+true L10 vs inelastic,L10,delta=350,Xe_LZ270,50,0.90034,2.714,6.4897,0.12519,0.4459,17.606
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=366,L10,Xe_LZ270,50,6.9064,21.193,60.395,0.001873,0.0052183,17.606
+true L10 vs inelastic,L10,delta=366,Xe_LZ270,50,2.3082,5.8372,10.006,0.017826,0.063325,17.606
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=380,L10,Xe_LZ270,50,34.353,99.278,271.88,7.0383e-05,0.00019583,17.606
+true L10 vs inelastic,L10,delta=380,Xe_LZ270,50,7.1118,11.097,14.245,0.00090839,0.0032249,17.606
+inelastic delta pair,delta=300,delta=380,Xe_5_1000,10,1.6571,3.3956,4.4965,0.058391,inf,4.1304
+inelastic delta pair,delta=380,delta=300,Xe_5_1000,10,17.146,45.031,80.563,0.0002858,0.00079723,122.47
+inelastic delta pair,delta=300,delta=350,Xe_5_1000,10,0.45889,1.2701,2.2512,inf,inf,4.1304
+inelastic delta pair,delta=350,delta=300,Xe_5_1000,10,0.81813,2.3808,4.8535,0.17953,1.1864,7.5839
+inelastic delta pair,delta=350,delta=380,Xe_5_1000,10,1.8584,3.5478,4.247,0.043611,inf,7.5839
+inelastic delta pair,delta=380,delta=350,Xe_5_1000,10,11.165,25.313,34.309,0.00064059,0.0018085,122.47
+inelastic delta pair,delta=366,delta=380,Xe_5_1000,10,2.0712,3.6818,4.1828,0.032471,inf,19.588
+inelastic delta pair,delta=380,delta=366,Xe_5_1000,10,6.5162,12.781,15.222,0.0017978,0.0053872,122.47
+inelastic delta pair,delta=330,delta=366,Xe_5_1000,10,0.86769,2.0922,3.001,0.99472,inf,4.9482
+inelastic delta pair,delta=366,delta=330,Xe_5_1000,10,2.3971,6.4086,10.741,0.016111,0.051774,19.588
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=300,L10,Xe_5_1000,10,0.6497,2.0448,6.2242,0.21777,0.62726,4.1304
+true L10 vs inelastic,L10,delta=300,Xe_5_1000,10,0.40337,1.2464,3.3287,0.75198,3.9799,7.8724
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=350,L10,Xe_5_1000,10,2.302,7.1622,20.811,0.017033,0.04788,7.5839
+true L10 vs inelastic,L10,delta=350,Xe_5_1000,10,0.91051,2.6065,5.3838,0.14306,0.73076,7.8724
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=366,L10,Xe_5_1000,10,6.5187,19.977,56.339,0.0021021,0.0058605,19.588
+true L10 vs inelastic,L10,delta=366,Xe_5_1000,10,1.4678,3.7674,6.5591,0.052643,0.26708,7.8724
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=380,L10,Xe_5_1000,10,30.78,91.986,252.8,9.2796e-05,0.00025787,122.47
+true L10 vs inelastic,L10,delta=380,Xe_5_1000,10,2.442,5.2064,7.7664,0.016754,0.084735,7.8724
+inelastic delta pair,delta=300,delta=380,Xe_5_1000,20,1.7396,4.0734,6.0495,0.037944,0.24552,8.2608
+inelastic delta pair,delta=380,delta=300,Xe_5_1000,20,17.436,49.062,100.68,0.00028554,0.00079474,244.95
+inelastic delta pair,delta=300,delta=350,Xe_5_1000,20,0.46293,1.3607,2.8503,1.328,inf,8.2608
+inelastic delta pair,delta=350,delta=300,Xe_5_1000,20,0.82239,2.4878,5.8829,0.15247,0.57525,15.168
+inelastic delta pair,delta=350,delta=380,Xe_5_1000,20,1.9658,4.3838,5.8572,0.028319,0.19575,15.168
+inelastic delta pair,delta=380,delta=350,Xe_5_1000,20,11.511,29.457,46.3,0.0006377,0.0017857,244.95
+inelastic delta pair,delta=366,delta=380,Xe_5_1000,20,2.213,4.6668,5.8207,0.021322,0.14892,39.175
+inelastic delta pair,delta=380,delta=366,Xe_5_1000,20,6.839,15.723,21.037,0.0017613,0.0050755,244.95
+inelastic delta pair,delta=330,delta=366,Xe_5_1000,20,0.88664,2.3817,4.0005,0.21043,inf,9.8963
+inelastic delta pair,delta=366,delta=330,Xe_5_1000,20,2.426,6.9714,13.8,0.015494,0.046164,39.175
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=300,L10,Xe_5_1000,20,0.64988,2.0501,6.3463,0.21541,0.61005,8.2608
+true L10 vs inelastic,L10,delta=300,Xe_5_1000,20,0.40391,1.2623,3.6165,0.64053,2.381,15.745
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=350,L10,Xe_5_1000,20,2.3044,7.2238,21.601,0.016974,0.047425,15.168
+true L10 vs inelastic,L10,delta=350,Xe_5_1000,20,0.91653,2.7438,6.4024,0.12252,0.45049,15.745
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=366,L10,Xe_5_1000,20,6.5338,20.29,58.977,0.0021002,0.0058441,39.175
+true L10 vs inelastic,L10,delta=366,Xe_5_1000,20,1.4928,4.1599,8.1524,0.045137,0.16559,15.745
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=380,L10,Xe_5_1000,20,30.952,94.316,266.2,9.2784e-05,0.00025779,244.95
+true L10 vs inelastic,L10,delta=380,Xe_5_1000,20,2.5545,6.1313,9.9884,0.014369,0.05267,15.745
+inelastic delta pair,delta=300,delta=380,Xe_5_1000,30,1.7709,4.4368,7.1104,0.033456,0.15128,12.391
+inelastic delta pair,delta=380,delta=300,Xe_5_1000,30,17.541,50.877,112.31,0.00028543,0.00079392,367.42
+inelastic delta pair,delta=300,delta=350,Xe_5_1000,30,0.4643,1.3961,3.1947,0.78252,inf,12.391
+inelastic delta pair,delta=350,delta=300,Xe_5_1000,30,0.82383,2.5275,6.4165,0.14496,0.48614,22.752
+inelastic delta pair,delta=350,delta=380,Xe_5_1000,30,2.0068,4.8429,7.0081,0.025176,0.11256,22.752
+inelastic delta pair,delta=380,delta=350,Xe_5_1000,30,11.637,31.452,54.374,0.00063674,0.0017786,367.42
+inelastic delta pair,delta=366,delta=380,Xe_5_1000,30,2.2676,5.2296,7.0188,0.019089,0.083802,58.763
+inelastic delta pair,delta=380,delta=366,Xe_5_1000,30,6.9587,17.285,25.207,0.0017495,0.0049779,367.42
+inelastic delta pair,delta=330,delta=366,Xe_5_1000,30,0.89328,2.5123,4.6541,0.16269,1.8301,14.844
+inelastic delta pair,delta=366,delta=330,Xe_5_1000,30,2.436,7.2025,15.623,0.015299,0.044501,58.763
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=300,L10,Xe_5_1000,30,0.64994,2.052,6.3933,0.21458,0.60404,12.391
+true L10 vs inelastic,L10,delta=300,Xe_5_1000,30,0.40409,1.2678,3.7382,0.60828,2.0386,23.617
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=350,L10,Xe_5_1000,30,2.3052,7.2462,21.963,0.016954,0.047277,22.752
+true L10 vs inelastic,L10,delta=350,Xe_5_1000,30,0.91858,2.7969,6.9612,0.11657,0.38814,23.617
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=366,L10,Xe_5_1000,30,6.539,20.414,60.296,0.0020995,0.0058385,58.763
+true L10 vs inelastic,L10,delta=366,Xe_5_1000,30,1.5015,4.3346,9.1353,0.042945,0.14288,23.617
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=380,L10,Xe_5_1000,30,31.014,95.372,273.32,9.278e-05,0.00025776,367.42
+true L10 vs inelastic,L10,delta=380,Xe_5_1000,30,2.5972,6.6268,11.473,0.013671,0.045466,23.617
+inelastic delta pair,delta=300,delta=380,Xe_5_1000,50,1.7977,4.8338,8.584,0.030409,0.11011,20.652
+inelastic delta pair,delta=380,delta=300,Xe_5_1000,50,17.628,52.633,126.12,0.00028535,0.00079334,612.37
+inelastic delta pair,delta=300,delta=350,Xe_5_1000,50,0.46541,1.4266,3.5898,0.58088,4.7443,20.652
+inelastic delta pair,delta=350,delta=300,Xe_5_1000,50,0.82498,2.561,6.9787,0.13938,0.43088,37.92
+inelastic delta pair,delta=350,delta=380,Xe_5_1000,50,2.0418,5.3508,8.6711,0.023069,0.08199,37.92
+inelastic delta pair,delta=380,delta=350,Xe_5_1000,50,11.742,33.449,65.245,0.00063597,0.0017721,612.37
+inelastic delta pair,delta=366,delta=380,Xe_5_1000,50,2.3145,5.8695,8.7975,0.017598,0.061614,97.939
+inelastic delta pair,delta=380,delta=366,Xe_5_1000,50,7.0597,18.955,31.237,0.0017402,0.004903,612.37
+inelastic delta pair,delta=330,delta=366,Xe_5_1000,50,0.89872,2.6361,5.508,0.13675,0.64558,24.741
+inelastic delta pair,delta=366,delta=330,Xe_5_1000,50,2.4441,7.4094,17.792,0.015141,0.043222,97.939
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=300,L10,Xe_5_1000,50,0.64998,2.0534,6.4338,0.21398,0.59915,20.652
+true L10 vs inelastic,L10,delta=300,Xe_5_1000,50,0.40424,1.2722,3.8489,0.58403,1.8104,39.362
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=350,L10,Xe_5_1000,50,2.3058,7.265,22.32,0.016938,0.047158,37.92
+true L10 vs inelastic,L10,delta=350,Xe_5_1000,50,0.92023,2.8427,7.585,0.11206,0.3462,39.362
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=366,L10,Xe_5_1000,50,6.5432,20.524,61.708,0.0020989,0.005834,97.939
+true L10 vs inelastic,L10,delta=366,Xe_5_1000,50,1.5087,4.4991,10.37,0.041302,0.12749,39.362
+true inelastic vs L10 (WimPyDD W Sigma-prime),delta=380,L10,Xe_5_1000,50,31.066,96.399,281.47,9.2777e-05,0.00025773,612.37
+true L10 vs inelastic,L10,delta=380,Xe_5_1000,50,2.6337,7.1679,13.511,0.013149,0.040588,39.362
+true inelastic vs L10 (zero-q spin estimate W/Xe),delta=300,L10,Xe_5_1000,20,0.62163,1.9606,6.0573,0.23593,0.67072,8.2608
+true inelastic vs L10 (zero-q spin estimate W/Xe),delta=350,L10,Xe_5_1000,20,2.2296,6.9852,20.804,0.018138,0.050722,15.168
+true inelastic vs L10 (zero-q spin estimate W/Xe),delta=366,L10,Xe_5_1000,20,6.35,19.697,56.937,0.0022232,0.0061877,39.175
+true inelastic vs L10 (zero-q spin estimate W/Xe),delta=380,L10,Xe_5_1000,20,30.192,91.82,257.34,9.7454e-05,0.00027076,244.95

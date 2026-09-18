@@ -1,0 +1,95 @@
+During development of the detector response model, NEST v2.4.0~\cite{nest_v2_4_0} was found not to reproduce the measured ER-band widths across the full calibration energy range, due to inaccurate modelling of recombination fluctuations. In NEST v2.4.0, $\sigma_p$ is a parameter controlling the component of recombination fluctuations that depends on the  number of ions~\cite{NEST:paper_2023}, modeled as a single skewed Gaussian. The discrepancy was resolved in NEST~v2.4.5~\cite{nest_v2_4_5}, with
+the final model parameterizing $\sigma_p$ as the sum of two skewed Gaussian functions of the number of quanta, $N_q$:
+\begin{equation}
+    \sigma_p(x) = \sum_{i=1}^2 \left[A_i\left[1 + \mathrm{erf}\left(\frac{\alpha_i (x - \mu_i) }{\sqrt{2}\sigma_i}\right)\right]\exp\left(-\frac{(x-\mu_i)^2}{2\sigma_i^2}\right)\right] 
+\end{equation}
+where $x = \log_{10}(N_q)$, and $A_i$, $\alpha_i$, $\mu_i$, and $\sigma_i$ are the parameters of the skew-Gaussians. This modification provides good agreement with the measured ER-band widths across the calibrated range. Tables~\ref{tab:eft2024_er_mean_yield} and~\ref{tab:eft2024_er_double_gaussian_parameters} show the NEST parameters used in the final ER model. 
+
+The NEST v2.4.0 model for nuclear recoils below 75 keV was well calibrated with DD neutrons for Ref.~\cite{LZ:2025lowmass}, but including the higher-energy AmBe calibration data revealed a tension between the NR charge yield parameters preferred by the DD and AmBe regions, preventing a consistent parameter set across the full energy range. In NEST, the NR charge yields are governed by a power law with exponent $p$. To resolve the tension, NEST v2.4.5 introduces a break in the power law such that  $p=0.5$ below a threshold energy $E_0$ and follows a logarithmic energy dependence above $E_0$, 
+\begin{equation}
+    p(E)=0.5 + a \ln\!\left[1 + b\,(E - E_0)\right].
+\end{equation}
+Here, $a$ controls the overall suppression strength, and $b$ controls how the suppression develops with recoil energy.
+This treatment allows the low- and high-energy responses to be described within a unified NR model.
+Previous work identified an abrupt change in the electronic stopping-power behaviour of xenon nuclear recoils~\cite{Aprile:2006} and a preference for a larger value of the power-law exponent at high recoil energies~\cite{Lenardo:2015}, supporting the need for such a modification. Table~\ref{tab:eft2024_nr_yield_parameters} shows the NEST parameters used in the final NR model. 
+
+
+
+\begin{table*}[ht]
+    \centering
+    \caption{
+       Model parameters for the NEST ER mean
+        charge-yield model.
+    }
+    \begin{tabular}{lcc}
+        \hline\hline
+        Parameter & {NEST Default at 97 V/cm} & {Value in Analysis} \\
+        \hline
+        $m_{1}$ [$\mathrm{keV}^{-1}$] & 14.6 & 12.31 \\
+        $m_{2}$ [$\mathrm{keV}^{-1}$] & 77.3 & 84.91 \\
+        $m_{3}$ [$\mathrm{keV}$]      & 0.8  & 0.5707 \\
+        $m_{4}$                       & 2.1  & 2.804 \\
+        $m_{5}$ [$\mathrm{keV}^{-1}$] & 19.3 & 34.04 \\
+        $m_{6}$ [$\mathrm{keV}^{-1}$] & 0    & 0 \\
+        $m_{7}$ [$\mathrm{keV}$]      & 78.0 & 82.57 \\
+        $m_{8}$                       & 4.3  & 4.557 \\
+        $m_{9}$                       & 0.33 & 0.2207 \\
+        $m_{10}$                      & 0.08 & 0.1272 \\
+        \hline\hline
+    \end{tabular}
+    \label{tab:eft2024_er_mean_yield}
+\end{table*}
+
+\begin{table*}[ht]
+    \centering
+    \caption{Tuned parameters for the double skewed-Gaussian ER fluctuation model.}
+    \begin{tabular}{lc}
+        \hline\hline
+        Parameter & Value in Analysis \\
+        \hline
+        $A_1$      & 0.03174 \\
+        $\mu_1$    & 2.588 \\
+        $\sigma_1$ & 0.3627 \\
+        $\alpha_1$ & -0.3583 \\
+        \hline
+        $A_2$      & 0.06211 \\
+        $\mu_2$    & 5.2 \\
+        $\sigma_2$ & 1.359 \\
+        $\alpha_2$ & -2.599 \\
+        \hline\hline
+    \end{tabular}
+    \label{tab:eft2024_er_double_gaussian_parameters}
+\end{table*}
+
+\begin{table*}[ht]
+    \centering
+    \caption{
+        Model parameters for the NEST NR mean light- and charge-yield model.
+        The parameters $f_1$ and $f_2$ control the asymmetric low-energy
+        turn-on of the charge and light yields, respectively. Parameters $a$, $b$, and $E_0$ control the energy-dependent modification of $p$.
+    }
+    \begin{tabular}{lcc}
+        \hline\hline
+        Parameter & NEST Default & Value in Analysis \\
+        \hline
+        $\alpha$ [$\mathrm{keV}^{1/\beta}$] & 11.0 & 11.2 \\
+        $\beta$ & 1.1 & 1.1 \\
+        $\gamma$ [$(\mathrm{V/cm})^{1/\delta}$] & 0.048 & 0.052 \\
+        $\delta$ & -0.0533 & -0.0533 \\
+        $\epsilon$ [$\mathrm{keV}$] & 12.6 & 10.8 \\
+        $\zeta$ [$\mathrm{keV}$] & 0.30 & 0.53 \\
+        $\eta$ & 2.0 & 1.4 \\
+        $\theta$ [$\mathrm{keV}$] & 0.30 & 0.31 \\
+        $\iota$ & 2.0 & 2.5 \\
+        $p$ & 0.50 & 0.50 \\
+        \hline
+        $f_1$ & 1.0 & 1.39 \\
+        $f_2$ & 1.0 & 1.74 \\
+                \hline
+        $a$ & NA & 0.0230 \\
+        $b$ & NA &  0.0289 \\
+        $E_0$ [$\mathrm{keV}$] & NA & 74.7 \\
+        \hline\hline
+    \end{tabular}
+    \label{tab:eft2024_nr_yield_parameters}
+\end{table*}

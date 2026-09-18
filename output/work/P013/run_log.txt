@@ -1,0 +1,98 @@
+=== 1. Kinematics ===
+  124Xe abund 0.0009  E_max/E_n = 0.03204  E_n,min(248 keV) = 7.741 MeV
+  126Xe abund 0.0009  E_max/E_n = 0.03154  E_n,min(248 keV) = 7.864 MeV
+  128Xe abund 0.0191  E_max/E_n = 0.03105  E_n,min(248 keV) = 7.986 MeV
+  129Xe abund 0.2644  E_max/E_n = 0.03082  E_n,min(248 keV) = 8.048 MeV
+  130Xe abund 0.0408  E_max/E_n = 0.03058  E_n,min(248 keV) = 8.109 MeV
+  131Xe abund 0.2118  E_max/E_n = 0.03035  E_n,min(248 keV) = 8.171 MeV
+  132Xe abund 0.2689  E_max/E_n = 0.03013  E_n,min(248 keV) = 8.232 MeV
+  134Xe abund 0.1044  E_max/E_n = 0.02968  E_n,min(248 keV) = 8.355 MeV
+  136Xe abund 0.0887  E_max/E_n = 0.02925  E_n,min(248 keV) = 8.478 MeV
+  natural mix: kappa=0.03026; E_n,min = 6.609 (200), 8.195 (248), 8.922 (270 keV) MeV; 248+-46 keV -> 7.43-9.71 MeV; q(248 keV) = 1.248 fm^-1
+  E_n=   8.5 MeV E_max=  257.2 keV kR= 4.05  f(>200): iso 0.223 bd 7.23e-03 (R5.6 4.0e-03, R7.1 1.8e-02) gauss 2.9e-06 | f(200-270): iso 0.223 bd 7.23e-03 (R5.6 4.0e-03, R7.1 1.8e-02)
+  E_n=  10.0 MeV E_max=  302.6 keV kR= 4.39  f(>200): iso 0.339 bd 1.95e-02 (R5.6 6.6e-03, R7.1 2.4e-02) gauss 2.9e-06 | f(200-270): iso 0.231 bd 1.05e-02 (R5.6 4.2e-03, R7.1 2.1e-02)
+  E_n=  15.0 MeV E_max=  454.0 keV kR= 5.39  f(>200): iso 0.559 bd 3.02e-02 (R5.6 3.2e-02, R7.1 3.5e-02) gauss 2.8e-06 | f(200-270): iso 0.154 bd 1.04e-02 (R5.6 4.1e-03, R7.1 2.1e-02)
+  E_n=  50.0 MeV E_max= 1513.2 keV kR= 9.92  f(>200): iso 0.868 bd 5.96e-02 (R5.6 5.8e-02, R7.1 5.8e-02) gauss 2.2e-06 | f(200-270): iso 0.046 bd 1.01e-02 (R5.6 4.0e-03, R7.1 2.0e-02)
+  E_n= 200.0 MeV E_max= 6052.7 keV kR=20.60  f(>200): iso 0.967 bd 7.48e-02 (R5.6 7.7e-02, R7.1 7.2e-02) gauss 8.1e-07 | f(200-270): iso 0.012 bd 9.93e-03 (R5.6 3.9e-03, R7.1 2.0e-02)
+  black-disk zeros (R=6.35 fm) at E_R = 58, 194, 408, 700 keV
+=== 2. Source spectra ===
+  19F   Q=-1.951: E_n,max = 218Po(U) 3.65, 214Po(U) 5.26, 210Po(U) 2.98, 220Rn(Th) 3.92, 216Po(Th) 4.39, 212Po(Th) 6.31
+  13C   Q=+2.216: E_n,max = 218Po(U) 7.95, 214Po(U) 9.53, 210Po(U) 7.30, 220Rn(Th) 8.22, 216Po(Th) 8.68, 212Po(Th) 10.56
+  17O   Q=+0.587: E_n,max = 218Po(U) 6.31, 214Po(U) 7.90, 210Po(U) 5.64, 220Rn(Th) 6.58, 216Po(Th) 7.04, 212Po(Th) 8.94
+  18O   Q=-0.697: E_n,max = 218Po(U) 4.97, 214Po(U) 6.57, 210Po(U) 4.30, 220Rn(Th) 5.24, 216Po(Th) 5.71, 212Po(Th) 7.61
+  10B   Q=+1.059: E_n,max = 218Po(U) 6.65, 214Po(U) 8.20, 210Po(U) 6.01, 220Rn(Th) 6.91, 216Po(Th) 7.36, 212Po(Th) 9.21
+  11B   Q=+0.158: E_n,max = 218Po(U) 5.71, 214Po(U) 7.27, 210Po(U) 5.07, 220Rn(Th) 5.98, 216Po(Th) 6.43, 212Po(Th) 8.28
+  27Al  Q=-2.644: E_n,max = 218Po(U) 3.03, 214Po(U) 4.66, 210Po(U) 2.35, 220Rn(Th) 3.30, 216Po(Th) 3.78, 212Po(Th) 5.73
+  9Be   Q=+5.702: E_n,max = 218Po(U) 11.52, 214Po(U) 13.08, 210Po(U) 10.87, 220Rn(Th) 11.78, 216Po(Th) 12.24, 212Po(Th) 14.10
+  25Mg  Q=+2.654: E_n,max = 218Po(U) 8.52, 214Po(U) 10.14, 210Po(U) 7.84, 220Rn(Th) 8.79, 216Po(Th) 9.27, 212Po(Th) 11.20
+  29Si  Q=-1.527: E_n,max = 218Po(U) 4.22, 214Po(U) 5.86, 210Po(U) 3.55, 220Rn(Th) 4.50, 216Po(Th) 4.98, 212Po(Th) 6.92
+  alpha energy for 13C(a,n) to reach 8.19 MeV: 6.26 MeV; 19F(a,n) with 8.785 MeV alpha reaches 6.31 MeV -> 19F can never give 248 keV
+  estimated fraction of PTFE (a,n) neutrons above 8.19 MeV: U chain 4.07e-04, Th chain 6.19e-04 (recalled yields, x3 uncertain)
+  238U SF Watt: mean 2.031 MeV; f(>6.61) = 1.74e-02; f(>8.19) = 5.24e-03; f(>10) = 1.29e-03
+  (alpha,n) model (f_C=0.0025): f(>6.61) = 2.43e-03; f(>8.19) = 1.44e-03
+  sigma(E=2 MeV): el 4.80 b, nonel 1.40 b -> lambda_el 15.7 cm, lambda_tot 12.1 cm
+  sigma(E=10 MeV): el 3.50 b, nonel 1.80 b -> lambda_el 21.5 cm, lambda_tot 14.2 cm
+  sigma(E=100 MeV): el 2.00 b, nonel 1.60 b -> lambda_el 37.6 cm, lambda_tot 20.9 cm
+  sigma(E=1000 MeV): el 1.00 b, nonel 1.60 b -> lambda_el 75.2 cm, lambda_tot 28.9 cm
+  first-scatter fractions alpha_n     : >200 keV iso 3.69e-04 bd 1.56e-05; 200-270 iso 3.13e-04 bd 1.10e-05; <55 keV bd 0.990
+  first-scatter fractions fission_238U: >200 keV iso 1.78e-03 bd 6.05e-05; 200-270 iso 1.55e-03 bd 4.32e-05; <55 keV bd 0.990
+  first-scatter fractions muon_E-1    : >200 keV iso 7.54e-01 bd 5.70e-02; 200-270 iso 6.71e-02 bd 9.98e-03; <55 keV bd 0.868
+  first-scatter fractions muon_E-2    : >200 keV iso 6.29e-01 bd 4.04e-02; 200-270 iso 1.29e-01 bd 1.03e-02; <55 keV bd 0.883
+=== 3. Monte Carlo transport ===
+  fv63x131: r<63.0 cm, 4.0<z<135.0 cm -> 4.74 t
+  fv60x115: r<60.0 cm, 15.0<z<130.0 cm -> 3.77 t
+  F_bulk       (wall, N=600000): any-dep 0.887; SS-in-FV 0.0097 (P(SS|dep)=0.011); SS 5.4-55 4570, 200-270 0, >200 0  [3s]
+  C_high       (wall, N=1500000): any-dep 0.893; SS-in-FV 0.0052 (P(SS|dep)=0.006); SS 5.4-55 4928, 200-270 240, >200 374  [6s]
+  watt_bulk    (wall, N=600000): any-dep 0.871; SS-in-FV 0.0112 (P(SS|dep)=0.013); SS 5.4-55 4937, 200-270 0, >200 0  [8s]
+  watt_high    (wall, N=1500000): any-dep 0.894; SS-in-FV 0.0051 (P(SS|dep)=0.006); SS 5.4-55 4890, 200-270 139, >200 207  [11s]
+  mu_E1        (surface, N=1500000): any-dep 0.841; SS-in-FV 0.0117 (P(SS|dep)=0.014); SS 5.4-55 11415, 200-270 289, >200 2153  [13s]
+  mu_E2        (surface, N=1500000): any-dep 0.869; SS-in-FV 0.0090 (P(SS|dep)=0.010); SS 5.4-55 8494, 200-270 362, >200 1690  [15s]
+  C_high_ends  (ends, N=600000): any-dep 0.888; SS-in-FV 0.0097 (P(SS|dep)=0.011); SS 5.4-55 3648, 200-270 180, >200 272  [16s]
+  C_high_iso   : SS-in-FV 0.0108; SS 5.4-55 1152, 200-270 4970, >200 6045
+  mono    8.5 MeV: P(any dep) 0.893; P(SS in FV | dep) 0.006; SS 200-270/SS-FV 4.80e-02; <n_el> 1.32; nonel frac 0.72
+  mono   10.0 MeV: P(any dep) 0.893; P(SS in FV | dep) 0.006; SS 200-270/SS-FV 5.05e-02; <n_el> 1.38; nonel frac 0.71
+  mono   15.0 MeV: P(any dep) 0.878; P(SS in FV | dep) 0.007; SS 200-270/SS-FV 3.39e-02; <n_el> 1.14; nonel frac 0.72
+  mono   50.0 MeV: P(any dep) 0.860; P(SS in FV | dep) 0.010; SS 200-270/SS-FV 1.34e-02; <n_el> 1.02; nonel frac 0.70
+  mono  100.0 MeV: P(any dep) 0.850; P(SS in FV | dep) 0.011; SS 200-270/SS-FV 1.08e-02; <n_el> 0.89; nonel frac 0.71
+  mono  200.0 MeV: P(any dep) 0.827; P(SS in FV | dep) 0.014; SS 200-270/SS-FV 1.28e-02; <n_el> 0.70; nonel frac 0.70
+  alpha_n (f_C=2.5e-3)              : P(SS in ROI)/n = 7.89e-03; P(SS 200-270)/n = 4.00e-07 +- 2.6e-08; F(200-270|ROI SS) = 5.07e-05; companions(<55)/(200-270) = 1.9e+04; (<55)/(>200) = 1.22e+04
+  alpha_n (f_C=1e-2)                : P(SS in ROI)/n = 7.86e-03; P(SS 200-270)/n = 1.60e-06 +- 1.0e-07; F(200-270|ROI SS) = 2.04e-04; companions(<55)/(200-270) = 4.73e+03; (<55)/(>200) = 3.04e+03
+  alpha_n (f_C=5e-4)                : P(SS in ROI)/n = 7.89e-03; P(SS 200-270)/n = 8.00e-08 +- 5.2e-09; F(200-270|ROI SS) = 1.01e-05; companions(<55)/(200-270) = 9.52e+04; (<55)/(>200) = 6.11e+04
+  alpha_n iso-angles (f_C=2.5e-3)   : P(SS in ROI)/n = 7.90e-03; P(SS 200-270)/n = 8.28e-06 +- 1.2e-07; F(200-270|ROI SS) = 1.05e-03; companions(<55)/(200-270) = 917; (<55)/(>200) = 754
+  fission_238U                      : P(SS in ROI)/n = 8.38e-03; P(SS 200-270)/n = 1.61e-06 +- 1.4e-07; F(200-270|ROI SS) = 1.92e-04; companions(<55)/(200-270) = 5.06e+03; (<55)/(>200) = 3.4e+03
+  muon_E-1                          : P(SS in ROI)/n = 8.92e-03; P(SS 200-270)/n = 1.93e-04 +- 1.1e-05; F(200-270|ROI SS) = 2.16e-02; companions(<55)/(200-270) = 39.5; (<55)/(>200) = 5.3
+  muon_E-2                          : P(SS in ROI)/n = 6.98e-03; P(SS 200-270)/n = 2.41e-04 +- 1.3e-05; F(200-270|ROI SS) = 3.46e-02; companions(<55)/(200-270) = 23.5; (<55)/(>200) = 5.03
+=== 4. Expected counts ===
+  veto partition: science 0.08, delayed 0.87, prompt 0.05; 1 science neutron SS <-> 10.9 delayed + 0.63 prompt NR-band events; delayed fit UL 1.3 -> science 0.120 (paper: 0.118)
+  238U SF: nu_bar(model)=2.07; silent-companion factor central 3.8e-04 (range 2.6e-04-1.4e-03)
+  alpha_n (f_C=2.5e-3) | fit UL 0.118                          N(200-270) = 5.98e-06  P(>=1) = 5.98e-06   science-sample total NR SS x spectral fraction
+  alpha_n (f_C=2.5e-3) | MS cross-check 0.02                   N(200-270) = 1.01e-06  P(>=1) = 1.01e-06   0.02+-0.02 SS neutrons
+  alpha_n (f_C=2.5e-3) | <=3 low-E NR events                   N(200-270) = 1.58e-04  P(>=1) = 1.58e-04   empty 5.4-55 keV NR band (recalled tolerance)
+  alpha_n (f_C=1e-2) | fit UL 0.118                            N(200-270) = 2.40e-05  P(>=1) = 2.40e-05   science-sample total NR SS x spectral fraction
+  alpha_n (f_C=1e-2) | MS cross-check 0.02                     N(200-270) = 4.07e-06  P(>=1) = 4.07e-06   0.02+-0.02 SS neutrons
+  alpha_n (f_C=1e-2) | <=3 low-E NR events                     N(200-270) = 6.34e-04  P(>=1) = 6.34e-04   empty 5.4-55 keV NR band (recalled tolerance)
+  alpha_n (f_C=5e-4) | fit UL 0.118                            N(200-270) = 1.20e-06  P(>=1) = 1.20e-06   science-sample total NR SS x spectral fraction
+  alpha_n (f_C=5e-4) | MS cross-check 0.02                     N(200-270) = 2.03e-07  P(>=1) = 2.03e-07   0.02+-0.02 SS neutrons
+  alpha_n (f_C=5e-4) | <=3 low-E NR events                     N(200-270) = 3.15e-05  P(>=1) = 3.15e-05   empty 5.4-55 keV NR band (recalled tolerance)
+  alpha_n iso-angles (f_C=2.5e-3) | fit UL 0.118               N(200-270) = 1.24e-04  P(>=1) = 1.24e-04   science-sample total NR SS x spectral fraction
+  alpha_n iso-angles (f_C=2.5e-3) | MS cross-check 0.02        N(200-270) = 2.10e-05  P(>=1) = 2.10e-05   0.02+-0.02 SS neutrons
+  alpha_n iso-angles (f_C=2.5e-3) | <=3 low-E NR events        N(200-270) = 3.27e-03  P(>=1) = 3.26e-03   empty 5.4-55 keV NR band (recalled tolerance)
+  fission 238U | 1% of (a,n) x silent factor (central)         N(200-270) = 9.27e-11  P(>=1) = 9.27e-11   SS-prob ratio SF/(a,n) 1.06; silent 3.8e-04
+  fission 238U | 1% of (a,n), no multiplicity penalty          N(200-270) = 2.41e-07  P(>=1) = 2.41e-07   upper bound ignoring companions
+  fission 238U | silent factor at its maximum                  N(200-270) = 3.28e-10  P(>=1) = 3.28e-10   
+  muon_E-1 | UL 4.6e-4 SS of any energy                        N(200-270) = 5.94e-07  P(>=1) = 5.94e-07   all single deposits incl. nonelastic
+  muon_E-1 | UL 4.6e-4, elastic-only denominator               N(200-270) = 9.94e-06  P(>=1) = 9.94e-06   conservative
+  muon_E-1 | <=3 low-E NR events                               N(200-270) = 7.60e-02  P(>=1) = 7.31e-02   
+  muon_E-2 | UL 4.6e-4 SS of any energy                        N(200-270) = 9.43e-07  P(>=1) = 9.43e-07   all single deposits incl. nonelastic
+  muon_E-2 | UL 4.6e-4, elastic-only denominator               N(200-270) = 1.59e-05  P(>=1) = 1.59e-05   conservative
+  muon_E-2 | <=3 low-E NR events                               N(200-270) = 1.28e-01  P(>=1) = 1.20e-01   
+  ALL SOURCES central (0.118 normalisation)                    N(200-270) = 6.58e-06  P(>=1) = 6.58e-06   sum of central scenarios
+  ALL SOURCES generous (iso angles, f_C=1e-2, max silent, elastic denom.) N(200-270) = 5.05e-04  P(>=1) = 5.05e-04   stacked conservative choices
+  (a,n): one 200-270 keV SS requires 1.97e+04 ROI NR SS in the science sample, i.e. 2.14e+05 delayed-veto NR events (fit UL 1.3), and 1.9e+04 science-sample 5.4-55 keV NR events
+  muon UL check: 0 events in 1200 yr -> 90% UL 1.16e-03 per 220 d before tagging; x0.2 untagged -> 2.31e-04; paper quotes 4.6e-04
+=== 5. Inelastic hybrids ===
+  pure NR: S1c=540.1 <-> E_NR=266.2 keV, median log10S2c=4.027; event 3.967 -> -1.81 sigma (0.033 dex)
+  129Xe 39.6 keV: ER quanta Nph=2243 Ne=702; 248 keV NR + line -> S1c=745 phd, log10S2c=4.539 (ROI? False); at S1c=540: E_NR=157 keV, log10S2c=4.520 = +14.9 sigma above NR median (event -1.8)
+  131Xe 80.2 keV: ER quanta Nph=4497 Ne=1470; 248 keV NR + line -> S1c=992 phd, log10S2c=4.786 (ROI? False); at S1c=540: E_NR=34 keV, log10S2c=4.740 = +21.6 sigma above NR median (event -1.8)
+=== Figures ===
+done in 22 s; results -> output/work/P013/P013_results.json

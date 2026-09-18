@@ -1,0 +1,319 @@
+{
+ "settings": {
+  "E_lo": [
+   5.4,
+   55.0
+  ],
+  "E_hi": [
+   200.0,
+   270.0
+  ],
+  "sig_lo": 3.4,
+  "sig_hi": 8.0,
+  "eff0": 0.96,
+  "masses": [
+   200.0,
+   1000.0,
+   4000.0
+  ],
+  "coupling": "c^tau = 1/m_v^2 in WimPyDD convention (c0 = c_p + c_n); rates scale as c^2",
+  "halo": "WimPyDD streamed_halo_function, v0=238, vesc=544, v_sun_pec=(11.1,12.2,7.3), no Earth orbital velocity",
+  "vmax_kms": 794.5524695547821
+ },
+ "classification": {
+  "O1s": {
+   "N_lo_200": 7895.285911029729,
+   "N_lo_1000": 2752.0586583520444,
+   "N_lo_4000": 2384.3015604438597,
+   "verdict": "excluded by absent low-energy population (N_lo > 10)"
+  },
+  "O1v": {
+   "N_lo_200": 1608.9395224262591,
+   "N_lo_1000": 476.60167989658726,
+   "N_lo_4000": 403.96383301587343,
+   "verdict": "excluded by absent low-energy population (N_lo > 10)"
+  },
+  "O3s": {
+   "N_lo_200": 37.25106510618302,
+   "N_lo_1000": 12.648136965023445,
+   "N_lo_4000": 10.925011747217102,
+   "verdict": "excluded by absent low-energy population (N_lo > 10)"
+  },
+  "O3v": {
+   "N_lo_200": 14.186396911078216,
+   "N_lo_1000": 5.038416078758769,
+   "N_lo_4000": 4.380840019738725,
+   "verdict": "marginal (5 < N_lo <= 10)"
+  },
+  "O4s": {
+   "N_lo_200": 86.26943276925081,
+   "N_lo_1000": 28.119221852244035,
+   "N_lo_4000": 24.121585439794213,
+   "verdict": "excluded by absent low-energy population (N_lo > 10)"
+  },
+  "O4v": {
+   "N_lo_200": 90.18828964047376,
+   "N_lo_1000": 29.37437932039108,
+   "N_lo_4000": 25.19698377328489,
+   "verdict": "excluded by absent low-energy population (N_lo > 10)"
+  },
+  "O5s": {
+   "N_lo_200": 43.01615464323869,
+   "N_lo_1000": 14.196675192158223,
+   "N_lo_4000": 12.20735799984704,
+   "verdict": "excluded by absent low-energy population (N_lo > 10)"
+  },
+  "O5v": {
+   "N_lo_200": 3.1478740541110706,
+   "N_lo_1000": 1.0515193548573585,
+   "N_lo_4000": 0.9053411150260083,
+   "verdict": "lone-event compatible (N_lo <= 5)"
+  },
+  "O6s": {
+   "N_lo_200": 1.2719987711327936,
+   "N_lo_1000": 0.434813233022554,
+   "N_lo_4000": 0.375521335581142,
+   "verdict": "lone-event compatible (N_lo <= 5)"
+  },
+  "O6v": {
+   "N_lo_200": 1.3097003207169784,
+   "N_lo_1000": 0.44806661863194064,
+   "N_lo_4000": 0.38702362562634335,
+   "verdict": "lone-event compatible (N_lo <= 5)"
+  },
+  "O7s": {
+   "N_lo_200": 112.35822588507381,
+   "N_lo_1000": 32.32648540050791,
+   "N_lo_4000": 27.215343853423665,
+   "verdict": "excluded by absent low-energy population (N_lo > 10)"
+  },
+  "O7v": {
+   "N_lo_200": 124.43500219587055,
+   "N_lo_1000": 35.603225905954815,
+   "N_lo_4000": 29.950809487986817,
+   "verdict": "excluded by absent low-energy population (N_lo > 10)"
+  },
+  "O8s": {
+   "N_lo_200": 482.8362766365709,
+   "N_lo_1000": 155.78819186093068,
+   "N_lo_4000": 133.5023700584626,
+   "verdict": "excluded by absent low-energy population (N_lo > 10)"
+  },
+  "O8v": {
+   "N_lo_200": 28.09503832467575,
+   "N_lo_1000": 9.192441492267655,
+   "N_lo_4000": 7.8914744615798025,
+   "verdict": "marginal (5 < N_lo <= 10)"
+  },
+  "O9s": {
+   "N_lo_200": 6.349831997665019,
+   "N_lo_1000": 2.0654153130760764,
+   "N_lo_4000": 1.771028689695441,
+   "verdict": "lone-event compatible (N_lo <= 5)"
+  },
+  "O9v": {
+   "N_lo_200": 6.78488251349992,
+   "N_lo_1000": 2.1908964193344276,
+   "N_lo_4000": 1.876779800723881,
+   "verdict": "lone-event compatible (N_lo <= 5)"
+  },
+  "O10s": {
+   "N_lo_200": 9.14372518489345,
+   "N_lo_1000": 3.0805465502078815,
+   "N_lo_4000": 2.655144919911533,
+   "verdict": "lone-event compatible (N_lo <= 5)"
+  },
+  "O10v": {
+   "N_lo_200": 9.353356288398947,
+   "N_lo_1000": 3.1546166893319816,
+   "N_lo_4000": 2.7194878286438584,
+   "verdict": "lone-event compatible (N_lo <= 5)"
+  },
+  "O11s": {
+   "N_lo_200": 723.4571192890547,
+   "N_lo_1000": 258.27138854550776,
+   "N_lo_4000": 224.52741445221687,
+   "verdict": "excluded by absent low-energy population (N_lo > 10)"
+  },
+  "O11v": {
+   "N_lo_200": 113.08896457527614,
+   "N_lo_1000": 33.95620063710466,
+   "N_lo_4000": 28.84042781916544,
+   "verdict": "excluded by absent low-energy population (N_lo > 10)"
+  },
+  "O12s": {
+   "N_lo_200": 299.8536406191379,
+   "N_lo_1000": 100.1073658376418,
+   "N_lo_4000": 86.26117353360074,
+   "verdict": "excluded by absent low-energy population (N_lo > 10)"
+  },
+  "O12v": {
+   "N_lo_200": 118.1930051628016,
+   "N_lo_1000": 41.12791465602874,
+   "N_lo_4000": 35.65629572846136,
+   "verdict": "excluded by absent low-energy population (N_lo > 10)"
+  },
+  "O13s": {
+   "N_lo_200": 14.515076391612029,
+   "N_lo_1000": 4.901874500265604,
+   "N_lo_4000": 4.227838453380452,
+   "verdict": "lone-event compatible (N_lo <= 5)"
+  },
+  "O13v": {
+   "N_lo_200": 29.456686447798468,
+   "N_lo_1000": 9.520395176319884,
+   "N_lo_4000": 8.164494425408433,
+   "verdict": "marginal (5 < N_lo <= 10)"
+  },
+  "O14s": {
+   "N_lo_200": 8.01296293982426,
+   "N_lo_1000": 2.3444229102140897,
+   "N_lo_4000": 1.9789726680910351,
+   "verdict": "lone-event compatible (N_lo <= 5)"
+  },
+  "O14v": {
+   "N_lo_200": 8.576913298834345,
+   "N_lo_1000": 2.4892700239923347,
+   "N_lo_4000": 2.0988267041693924,
+   "verdict": "lone-event compatible (N_lo <= 5)"
+  },
+  "O15s": {
+   "N_lo_200": 5.557769736102433,
+   "N_lo_1000": 1.906171122539835,
+   "N_lo_4000": 1.6488596099858899,
+   "verdict": "lone-event compatible (N_lo <= 5)"
+  },
+  "O15v": {
+   "N_lo_200": 2.0944990007692184,
+   "N_lo_1000": 0.7541258683424336,
+   "N_lo_4000": 0.6569614176385907,
+   "verdict": "lone-event compatible (N_lo <= 5)"
+  }
+ },
+ "inelastic_reference": [
+  {
+   "model": "O1s delta=0 keV, 1000 GeV",
+   "R_lo": 128835783.4389132,
+   "R_hi": 46814.330446016414,
+   "R_5_300": 133193612.44091922,
+   "ratio_hi_lo": 0.00036336434798188796,
+   "N_lo_per_hi": 2752.0586583520444,
+   "frac_hi": 0.0003514757921802134
+  },
+  {
+   "model": "O1s delta=100 keV, 1000 GeV",
+   "R_lo": 8018406.949968938,
+   "R_hi": 16016.89854151502,
+   "R_5_300": 9136352.218574753,
+   "ratio_hi_lo": 0.001997516294876636,
+   "N_lo_per_hi": 500.6216983385153,
+   "frac_hi": 0.0017530955635611009
+  },
+  {
+   "model": "O1s delta=200 keV, 1000 GeV",
+   "R_lo": 23589.619300706738,
+   "R_hi": 3095.1460478991285,
+   "R_5_300": 88874.78023111018,
+   "ratio_hi_lo": 0.1312079694226519,
+   "N_lo_per_hi": 7.621488270874489,
+   "frac_hi": 0.034825920692580094
+  },
+  {
+   "model": "O1s delta=300 keV, 1000 GeV",
+   "R_lo": 0.0,
+   "R_hi": 211.538628169957,
+   "R_5_300": 1108.8559063482423,
+   "ratio_hi_lo": Infinity,
+   "N_lo_per_hi": 0.0,
+   "frac_hi": 0.19077197222731132
+  }
+ ],
+ "L10_comparison": [
+  {
+   "m_chi_GeV": 50.0,
+   "scale_fig_over_wimpydd_A_1_over_mv2": 228.50036689026643,
+   "rms_log10_residual": 0.10903178601759411,
+   "max_abs_log10_residual": 0.19471589533595912,
+   "fig_peak1_keV": 19.0,
+   "fig_dip_keV": 109.0,
+   "fig_peak2_keV": NaN,
+   "wd_peak1_keV": 16.0,
+   "wd_dip_keV": 109.0,
+   "wd_peak2_keV": NaN,
+   "N_lo_per_hi_fig1": Infinity,
+   "N_lo_per_hi_wimpydd": Infinity,
+   "R_hi_fig1_per_tyr": 0.0,
+   "R_lo_fig1_per_tyr": 2.0503912752145803,
+   "frac_hi_fig1": 0.0,
+   "frac_hi_wimpydd": 0.0
+  },
+  {
+   "m_chi_GeV": 200.0,
+   "scale_fig_over_wimpydd_A_1_over_mv2": 247.68462618663233,
+   "rms_log10_residual": 0.08613391346601149,
+   "max_abs_log10_residual": 0.20723026834542446,
+   "fig_peak1_keV": 118.0,
+   "fig_dip_keV": 64.0,
+   "fig_peak2_keV": 172.0,
+   "wd_peak1_keV": 19.0,
+   "wd_dip_keV": 52.0,
+   "wd_peak2_keV": 178.0,
+   "N_lo_per_hi_fig1": 0.46675476760432305,
+   "N_lo_per_hi_wimpydd": 0.6000767689304959,
+   "R_hi_fig1_per_tyr": 2.771030925385153,
+   "R_lo_fig1_per_tyr": 1.2933918956025394,
+   "frac_hi_fig1": 0.2741978307870143,
+   "frac_hi_wimpydd": 0.23333337747202063
+  },
+  {
+   "m_chi_GeV": 1000.0,
+   "scale_fig_over_wimpydd_A_1_over_mv2": 247.49508738088883,
+   "rms_log10_residual": 0.08601721719619229,
+   "max_abs_log10_residual": 0.20838935214761803,
+   "fig_peak1_keV": 118.0,
+   "fig_dip_keV": 61.0,
+   "fig_peak2_keV": 205.0,
+   "wd_peak1_keV": 118.0,
+   "wd_dip_keV": 52.0,
+   "wd_peak2_keV": 196.0,
+   "N_lo_per_hi_fig1": 0.15494597729108897,
+   "N_lo_per_hi_wimpydd": 0.19849183983893265,
+   "R_hi_fig1_per_tyr": 1.9060456424252799,
+   "R_lo_fig1_per_tyr": 0.2953341048270065,
+   "frac_hi_fig1": 0.4011903542262518,
+   "frac_hi_wimpydd": 0.3531227700283621
+  }
+ ],
+ "L10_scale_hypotheses": {
+  "(2)^2 WimPyDD c=cp+cn convention": 61.87377184522221,
+  "4^2 (Anand L10 -> 4[(q^2/mN^2)O4 - O6], m_M = m_N) x 2^2": 3.867110740326388,
+  "4^2 only": 15.468442961305552
+ },
+ "pipeline_crosscheck_O1s_fig1_vs_wimpydd": {
+  "O1s_1000_fig1": {
+   "R_lo": 507848169.4256218,
+   "R_hi": 206915.23233518674,
+   "R_5_300": 524738820.12321657,
+   "ratio_hi_lo": 0.00040743522334482104,
+   "N_lo_per_hi": 2454.3778807108165,
+   "frac_hi": 0.00039432042075065066
+  },
+  "O1s_1000_wimpydd": {
+   "R_lo": 128835783.4389132,
+   "R_hi": 46814.330446016414,
+   "R_5_300": 133193612.44091922,
+   "ratio_hi_lo": 0.00036336434798188796,
+   "N_lo_per_hi": 2752.0586583520444,
+   "frac_hi": 0.0003514757921802134
+  },
+  "O1s_1000_wimpydd_c0_2_over_mv2": {
+   "R_lo": 515343133.7556524,
+   "R_hi": 187257.32178406566,
+   "R_5_300": 532774449.76367664,
+   "ratio_hi_lo": 0.00036336434798188823,
+   "N_lo_per_hi": 2752.0586583520426,
+   "frac_hi": 0.0003514757921802136
+  }
+ },
+ "runtime_s": 315.1697030067444
+}

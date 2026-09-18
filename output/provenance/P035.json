@@ -1,0 +1,61 @@
+{
+  "id": "P035",
+  "title": "Recasting XENONnT and PandaX-4T to inelastic dark matter: the exclusion they could publish tomorrow",
+  "date": "2026-09-09",
+  "agent_tools": [
+    {"tool": "Read", "count": 18, "detail": "output/provenance/PAPER_GUIDE.md; output/00_evidence_dossier.md; output/results_ledger.csv (2 pages); output/papers/P005.md, P021.md, P007.md, P015.md, P020.md; inputs/LZ_arXiv_2609.02823_fulltext.tex lines 798-819; output/code/common/lzcommon.py lines 18-62 and 305-384; output/work/P007/lz_intervals_digitised.csv; output/code/P005_other_xenon_expectations.py lines 38-87; own figures delta_sigma_plane_1TeV.png, joint_discovery_case.png, roi_edge_scan.png, efficiency_models.png"},
+    {"tool": "Bash", "count": 23, "detail": "grep fulltext.tex for S7/XENON1T/PandaX/PICO/cross-section + ls output/data_requests, work/P005,P007,P015,P021, arXiv source; grep defs/constants in lzcommon.py; grep P005 and P021 scripts for efficiency/coupling; python: inspect P015 figS7_curves.json, P015 figS7_comparison.csv, P021 scan_baseline (1000 GeV O1s columns); cat data_requests/index.csv + head DR-001.md + grep efficiency lines in tex + cat ENVIRONMENT_versions.txt; python: P021 spectra npz structure, Fig. S7 curve endpoints, E_R_range at delta=231/303, WimPyDD timing; run 1 of P035_recast_xenon.py (600 s timeout); python: compare P035 vs P021 spectra near the ceiling; grep P021 script for halo construction + WimPyDD streamed_halo_function docstring; python: compare N_unit with P021 cfg=sun/june; run 2 of the script (exceeded 600 s, moved to background and killed); tail run_log.txt; head P005 details.md + python print of P005.json structure; check run status/ls work dir; run 3 of the script in foreground (completed); ls/npz check of which run wrote outputs; sed/awk extraction of result tables from the run log; python print of P035_summary.json blocks and limit tables; wc -w / JSON key / WimPyDD-file check; four further wc -w recounts of the paper while trimming to budget"},
+    {"tool": "Write", "count": 4, "detail": "output/code/P035_recast_xenon.py; output/work/P035/details.md; output/provenance/P035.json; output/papers/P035.md"},
+    {"tool": "Edit", "count": 31, "detail": "papers/P035.md: 13 trims of Abstract/Results/Headline/Key numbers/Confidence to meet the word budgets; provenance/P035.json: 4 tally updates (this entry, incl. this one); work/P035/details.md: 2 tally updates; P035_recast_xenon.py (12 edits): halo construction + validation block; normalisation-consistent exclusion fraction and halo bracket in the LZ comparison; extended say() columns; XENON1T recast delta=0/50 and shape normalisation; summary halo/frac blocks; zero_event_limits key names; Fig. 1 annual-halo line; incremental spectra cache; reduced ANN_DELTAS grid; validation lookup; comparison lookup; summary annual_over_sun keys"},
+    {"tool": "Skill", "count": 1, "detail": "dataviz (chart conventions: fixed CVD-safe categorical order, one axis per panel, legends + selective direct labels)"},
+    {"tool": "ToolSearch", "count": 1, "detail": "select:Monitor"},
+    {"tool": "Monitor", "count": 1, "detail": "watch run_log.txt for 'done.'/Traceback during the background run"}
+  ],
+  "software": [
+    {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python interpreter, run from the simulation root"},
+    {"name": "WimPyDD", "version": "2.0.4", "functions": "eft_hamiltonian (O1 isoscalar, via lz.wd_hamiltonian), streamed_halo_function with explicit v_min grid (via lz.wd_halo; default day = Sun-frame; 12 monthly days averaged for the bracket), diff_rate on natural Xe with delta (via lz.wd_rate)"},
+    {"name": "numpy", "version": "2.5.3", "functions": "trapezoid, interp, logspace, argmax/unravel_index, savez/load, clip, nan_to_num"},
+    {"name": "scipy", "version": "1.18.1", "functions": "special.erf; stats.poisson.pmf/cdf, stats.norm.isf; optimize.brentq"},
+    {"name": "pandas", "version": "3.0.5", "functions": "DataFrame/read_csv/to_csv, indexing of P021 scans"},
+    {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; plot, fill_between, contour, annotate; PNG output"},
+    {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "LZ constants (exposure, efficiency edges, plateau, backgrounds), M_V_GEV, M_NUCLEON_GEV, A_XE_MEAN, C_KMS, wd_c_from_anand, wd_halo, wd_hamiltonian, wd_rate, E_R_range_keV, vmax_kms, v_earth_kms, mu_red, m_nucleus_gev"},
+    {"name": "Feldman-Cousins construction, Poisson limits, asymptotic single-event q0", "version": "none: derived by hand", "functions": "implemented in the script (fc_upper, pois_upper, q0_single)"}
+  ],
+  "scripts_and_commands": [
+    {"path": "output/code/P035_recast_xenon.py", "purpose": "WimPyDD O1s inelastic spectra (400/1000/4000 GeV, delta 100 keV to the June ceiling; Sun-frame halo; 12-day annual bracket at 1000 GeV for 9 deltas; delta=0/50 for the XENON1T check), expected counts per unit coupling in LZ/XENONnT/PandaX-4T for LZ-like, high-edge and hard-edge efficiencies, Poisson and Feldman-Cousins 90% limits for 0/1 events with exposure-scaled backgrounds, sigma_SI conversion, normalisation-consistent comparison with LZ's Fig. 6 interval and P021's kappa_hat, significance reduction if null, discovery counting and joint (delta, kappa) extended likelihood for LZ + one XENONnT event, XENON1T 2018 vs LZ comparison and recast check, ROI edges implied by Fig. S7 endpoints, ROI-edge scan, tables, JSON summary and four figures", "command": ".venv/bin/python output/code/P035_recast_xenon.py   (run 1: initial version; run 2: exceeded the 600 s limit while computing the full-grid annual halo and was killed; run 3: final, reduced annual grid, all outputs on disk)"}
+  ],
+  "local_inputs": [
+    {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "whole"},
+    {"file": "output/00_evidence_dossier.md", "parts_used": "sections 1-6 (event, Table I numbers, open question 5)"},
+    {"file": "output/results_ledger.csv", "parts_used": "rows P001-P030 (headline results of P005, P007, P015, P016, P018, P020, P021)"},
+    {"file": "output/papers/P005.md, P007.md, P015.md, P020.md, P021.md", "parts_used": "whole (counts, digitised intervals, Fig. S7 curve endpoints, kappa_hat(delta), efficiency model)"},
+    {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "l.28 (Introduction citations), l.117 (96% efficiency), l.347-412 (bibliography: XENON1T 2018, PandaX-4T 2021/2025), l.453-459 (Fig. S2 caption), l.798-819 (Interpretation of O1 as a cross-section; Fig. S7 caption)"},
+    {"file": "output/work/P007/lz_intervals_digitised.csv", "parts_used": "LZ Fig. 6/S7 two-sided 90% edges in (c1s mv2)^2 and sigma_SI, delta = 0-350 keV, 1 TeV"},
+    {"file": "output/work/P015/figS7_curves.json", "parts_used": "digitised XENON1T 2018 (green) and PandaX-4T 2021 (blue) inelastic limit curves and endpoints"},
+    {"file": "output/work/P021/P021_scan_baseline.csv, P021_scan_all.csv, spectra_s_1000.npz", "parts_used": "1000 GeV O1s S_tot_unit, kappa_hat, 68/90% kappa bands, Z(delta) for 'baseline' (annual) and 'sun' configurations; cached spectra for the halo comparison"},
+    {"file": "output/code/P005_other_xenon_expectations.py, output/code/P021_full_likelihood.py", "parts_used": "efficiency model (erf widths), coupling/sigma conversion, halo construction (grep/read)"},
+    {"file": "output/code/common/lzcommon.py", "parts_used": "LZ constants and WimPyDD wrappers (Sec. 1 and 8 of the file)"},
+    {"file": "WimPyDD/package.py", "parts_used": "streamed_halo_function docstring (default day_of_the_year = modulation_phase - T/4), read-only"},
+    {"file": "output/work/P005/details.md, output/provenance/P005.json", "parts_used": "format reference only"},
+    {"file": "output/data_requests/index.csv, DR-001.md", "parts_used": "existing DR numbering (DR-002 free; not used)"},
+    {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+  ],
+  "recalled_knowledge": [
+    {"item": "XENONnT 2025 WIMP-search exposure 3.1 t yr", "presumed_source": "Aprile et al., PRL 135, 221003 (2025); title cited in the LZ bibliography", "reliability": "certain"},
+    {"item": "PandaX-4T 2025 WIMP-search exposure 1.54 t yr", "presumed_source": "Bo et al., PRL 134, 011805 (2025); title cited in the LZ bibliography", "reliability": "certain"},
+    {"item": "XENON1T 2018 exposure 1.0 t yr and NR ROI cS1 3-70 PE ~ 4.9-40.9 keV", "presumed_source": "Aprile et al., PRL 121, 111302 (2018)", "reliability": "likely"},
+    {"item": "(hbar c)^2 = 0.3894e-27 GeV^2 cm^2", "presumed_source": "PDG", "reliability": "certain"},
+    {"item": "Poisson 90% upper limits 2.303 (n=0) and 3.890 (n=1); Feldman-Cousins single-count interval [0.11, 4.36]", "presumed_source": "Feldman & Cousins 1998, PDG statistics review (reproduced numerically here)", "reliability": "certain / likely"},
+    {"item": "Wilks/Cowan asymptotics and chi2 quantiles 2.30 / 4.61 (2 dof, 68/90%)", "presumed_source": "Cowan et al. 2011; standard tables", "reliability": "certain"},
+    {"item": "XENON1T 2018 elastic SI limit at 1 TeV ~ 8e-46 cm^2 (used only to interpret the delta=0 point of the digitised curve)", "presumed_source": "Aprile et al. 2018 Fig. 5", "reliability": "likely"},
+    {"item": "Okabe-Ito colour palette (cosmetic)", "presumed_source": "Okabe & Ito 2008", "reliability": "certain"}
+  ],
+  "datasets": "none",
+  "data_requests": "none",
+  "failed_or_abandoned": [
+    "Run 2: full-grid (38 delta) 12-day annual-halo bracket exceeded the 600 s foreground limit; the process was moved to the background and killed before caching. Replaced by a 9-point delta grid (300-385 keV) with an incremental cache (run 3).",
+    "Initial 'fraction of LZ interval excluded' mixed this work's N_unit (Sun-frame halo) with P021's kappa_hat (annual halo), giving 0 near the ceiling; redefined normalisation-consistently using P021's own kappa_hat and edges (Sec. 3.2 of details.md).",
+    "No data request filed: HEPData efficiency tables of XENONnT/PandaX-4T end at their ROI edges and cannot supply the 200-300 keV acceptance."
+  ],
+  "wimpydd_generated_files": []
+}

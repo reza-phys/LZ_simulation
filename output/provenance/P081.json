@@ -1,0 +1,60 @@
+{
+ "id": "P081",
+ "title": "Posterior predictive counts for LZ's next release: P(0), P(1), P(>=2) high-energy events under the corpus posterior",
+ "date": "2026-09-15",
+ "agent_tools": [
+  {"tool": "Read", "count": 22, "detail": "PAPER_GUIDE.md; results_ledger.csv (6 pages, all 71 rows); papers P001, P020, P027, P038, P061, P068, P069; P027_bayes_models.py lines 28-130 and 255-315; one persisted tool output (P034/P068/P038 tables); figures P081_fig1 (three views) and fig2 (two views)"},
+  {"tool": "Bash", "count": 20, "detail": "wc/ls of ledger, papers, code; python inspection of P027 spectra/models/results, P016 results, P061 code grep; head of P069/P020/P038/P034/P068 tables (x2); grep dossier/tex for 0.0106, run dates, middle panel; python check of P027 weights/E grid and P050/P038 caches; P008 cache and P069 labels check; four runs of output/code/P081_posterior_predictive.py (two with CSV prints); print of variants and predictive CSVs (x2); wc -w of the paper (x4)"},
+  {"tool": "Write", "count": 5, "detail": "P081_posterior_predictive.py; work/P081/details.md; provenance/P081.json; papers/P081.md (written twice: full draft, then trimmed rewrite)"},
+  {"tool": "Edit", "count": 25, "detail": "script (12): B_X definition, P008 spectrum fallback (get_spectrum), extension loop, elastic truncation factor, P069 row filter, season flag in region_means, extra variants, figure legend/band, P(>=2) quantile fix (x3); details.md (2): mixture table bands; paper (10): one table cell and nine word-budget trims; provenance (1): this tally"},
+  {"tool": "Skill", "count": 1, "detail": "dataviz (palette/mark guidance; JavaScript validator skipped per PAPER_GUIDE; Okabe-Ito palette used)"}
+ ],
+ "software": [
+  {"name": "python", "version": "3.12.13", "functions": ".venv/bin/python, run from the simulation root"},
+  {"name": "numpy", "version": "2.5.3", "functions": "default_rng (choice, normal, uniform, random), quantile, trapezoid, interp, cumsum, logspace/geomspace"},
+  {"name": "scipy", "version": "1.18.1", "functions": "stats.norm (cdf, logpdf, pdf), special.erf, special.logsumexp, special.gammaln"},
+  {"name": "pandas", "version": "3.0.5", "functions": "read_csv, DataFrame, to_csv, groupby"},
+  {"name": "matplotlib", "version": "3.11.2", "functions": "Agg backend; bar, plot, fill_between, legend, savefig"},
+  {"name": "common/lzcommon.py", "version": "corpus shared library", "functions": "imported (sys.path); no numerical call used; LZ exposure 2.84 t yr entered by hand from the paper"},
+  {"name": "WimPyDD", "version": "2.0.4", "functions": "not run; spectra taken from the P027, P008, P038 and P050 caches"}
+ ],
+ "scripts_and_commands": [
+  {"path": "output/code/P081_posterior_predictive.py", "purpose": "rebuild P027 per-model rate posteriors, region ratios with 600/1000 phd edges, seasonal and astro factors, Monte Carlo posterior predictive for DM / background / unknown, P061 hyper-prior mixture, decision and energy-placement tables, figures", "command": ".venv/bin/python output/code/P081_posterior_predictive.py   (61 s)"}
+ ],
+ "local_inputs": [
+  {"file": "output/provenance/PAPER_GUIDE.md", "parts_used": "all rules, deliverables, template"},
+  {"file": "output/results_ledger.csv", "parts_used": "all 71 rows (P001-P074)"},
+  {"file": "output/papers/P001.md, P020.md, P027.md, P038.md, P061.md, P068.md, P069.md", "parts_used": "full one-page papers"},
+  {"file": "output/code/P027_bayes_models.py", "parts_used": "likelihood construction (lines 28-130, 255-315) reproduced in P081"},
+  {"file": "output/code/P061_prior_sensitivity.py", "parts_used": "posterior formula, hyper-prior ranges, f_trans/f_spec (grep)"},
+  {"file": "output/work/P027/P027_models.csv, P027_spectra.npz, P027_results.json, P027_posterior_predictive.csv", "parts_used": "posterior model weights, window fractions, rho, spectra to 400 keV, likelihood inputs, 6.76 t yr predictive"},
+  {"file": "output/work/P008/spectra_cache.npz", "parts_used": "elastic spectra (2-400 keV) for 114 models absent from the P027 cache"},
+  {"file": "output/work/P016/P016_results.json", "parts_used": "digitised Fig. 5 low-energy bins, b_H = 5.695e-4, baseline settings"},
+  {"file": "output/work/P038/P038_results.json, P038_acceptance_vs_delta.csv, P038_signal_vs_background_extension.csv, P038_mssi_vs_edge.csv, spectra_s_1000_full.npz", "parts_used": "E50/sigma of 600 and 1000 phd edges, extra 600-1000 phd events per ROI event, NR-band MSSI 0.0027 at 1000 phd, full 1 TeV inelastic spectra"},
+  {"file": "output/work/P050/P050_spectra_cache.npz", "parts_used": "L10 spectrum to 1498 keV (elastic truncation factor)"},
+  {"file": "output/work/P034/time_pdfs.csv, time_pdf_summary.csv", "parts_used": "annual time PDFs for delta = 300-380 keV, a1"},
+  {"file": "output/work/P068/marginals_and_sensitivities.csv", "parts_used": "a1 68 % bands at delta = 300/350/366/380, a1_L10"},
+  {"file": "output/work/P069/P069_hidden_events.csv", "parts_used": "LZ untouched 6.76 t yr rows (200-270 keV, 400 keV edge) for cross-check"},
+  {"file": "output/work/P020/predictive_L10_2026-09-02.csv, decision_table.csv", "parts_used": "P020 plug-in numbers (cross-check via the paper)"},
+  {"file": "inputs/LZ_arXiv_2609.02823_fulltext.tex", "parts_used": "l.111 run dates and 220 live days; l.334 data taking since 1 April 2024; Fig. 5 caption (0.0106 +- 0.0008)"},
+  {"file": "output/00_evidence_dossier.md", "parts_used": "background panel statements (grep); no middle-panel number found"},
+  {"file": "environment/ENVIRONMENT_versions.txt", "parts_used": "package versions"}
+ ],
+ "recalled_knowledge": [
+  {"item": "Poisson-Gamma predictive = negative binomial; Gamma(alpha,1) rate with exposure k gives P(n) = C(n+alpha-1,n) (1/(1+k))^alpha (k/(1+k))^n", "presumed_source": "standard Bayesian statistics", "reliability": "certain"},
+  {"item": "log-uniform prior on a Poisson rate updated by one event gives an Exponential(1) posterior (mean 1 = MLE); flat prior gives Gamma(2,1) (mean 2); Jeffreys gives Gamma(1.5,1)", "presumed_source": "standard Bayesian statistics", "reliability": "certain"},
+  {"item": "1 April 2024 is day 92 of the (leap) year; 27 March 2023 is day 86; 27 March 2023 - 1 April 2024 spans 371 calendar days", "presumed_source": "calendar arithmetic", "reliability": "certain"},
+  {"item": "Bayes factor and posterior-odds algebra for a three-hypothesis mixture", "presumed_source": "Kass & Raftery 1995", "reliability": "certain"},
+  {"item": "Okabe-Ito colour-blind-safe palette hex values", "presumed_source": "Okabe & Ito 2008", "reliability": "certain (cosmetic)"}
+ ],
+ "datasets": "none",
+ "data_requests": "none",
+ "failed_or_abandoned": [
+  "First run: 114 elastic models (39.5 % of the posterior weight) had no spectrum in P027's cache because P027 took them from P008's cache; fixed by loading output/work/P008/spectra_cache.npz",
+  "First run: the P069 cross-check indexed every 'untouched' dataset row (three experiments) and crashed; restricted to 'LZ untouched since Apr 2024'",
+  "Quoting the astrophysically shifted extension mean (tail-dominated, 4.5 vs median 0.16 events at 2.8 t yr) was abandoned in favour of medians and probabilities",
+  "Figure 1's legend anchored outside the first axis squashed all panels under tight_layout; replaced by a figure-level legend",
+  "No corpus number exists for the 55-125 keV NR-band background; an estimate (0.10 per 2.84 t yr, bracket 0.03-0.3) is used and flagged"
+ ],
+ "wimpydd_generated_files": "none"
+}
